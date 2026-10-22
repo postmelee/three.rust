@@ -19,7 +19,7 @@ under mydocs/. The historical bench/results trees are immutable for this task.
 
 ## Stage 1
 
-Define M3–M6, dependencies, measurable acceptance criteria, migration/API tracks
+Define M3–M8 (expanded after reading the supplied original discussion), dependencies, measurable acceptance criteria, migration/API tracks
 and stop/pivot gates. Translate prose in report generators and output. Generate
 an SVG from explicit states rather than a fabricated total port percentage.
 Check regenerated report numbers against preserved JSON.

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "title": "three.rust — engine ownership and evidence",
+  "scope": "Status map, not a percentage of Three.js translated",
+  "rows": [
+    {"area":"Eligible object transforms","implementation":"Rust batch implemented","verification":"Bounded tests passed","performance":"No general gain; regression","state":"measured","evidence":"docs/REPORT.md"},
+    {"area":"Authoritative scene state","implementation":"JS still authoritative","verification":"New contract planned","performance":"Not evaluated","state":"planned","evidence":"docs/ARCHITECTURE.md"},
+    {"area":"Animation + bone palettes","implementation":"Remain JS","verification":"Rust pipeline planned","performance":"Not evaluated","state":"planned","evidence":"docs/PROJECT_PLAN.md"},
+    {"area":"Visibility / LOD / render lists","implementation":"Remain JS","verification":"Multi-pass work planned","performance":"Not evaluated","state":"planned","evidence":"docs/PROJECT_PLAN.md"},
+    {"area":"Upload / prepared rendering","implementation":"Remain JS","verification":"Boundary work planned","performance":"Not evaluated","state":"planned","evidence":"docs/PROJECT_PLAN.md"},
+    {"area":"Physical GPU validation","implementation":"Workflow configuration","verification":"Hardware run outstanding","performance":"No hardware claim","state":"blocked","evidence":"docs/CI.md"},
+    {"area":"GPU shaders","implementation":"Retained upstream","verification":"Cloud image checks only","performance":"CPU port does not remove work","state":"retained","evidence":"docs/COMPATIBILITY.md"}
+  ]
+}

@@ -87,3 +87,11 @@ already presented in this conversation. Treat this batch as authorized; do not
 invent separate retrospective approvals. Future engine implementation and
 changes to scope retain normal Hyper-Waterfall decision gates. The framework
 payload was installed first in f43cd58 and tracked immediately afterward by #2.
+
+## Source access resolution
+
+The task requester subsequently supplied the full initial discussion as text. All
+948 lines were read before roadmap finalization. docs/INITIAL_DISCUSSION.md records
+its hash and reconciliation. Add mandatory M4 reuse/renderer assessment and gated
+M7 full-scene evaluation plus M8 backend/sustainability decisions to preserve the
+original long-term scope. No new engine implementation is authorized by this update.
