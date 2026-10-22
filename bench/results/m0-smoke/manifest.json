@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-22T09:37:47.560Z",
+  "commit": "98f59c5a86a3ae35d6f17dadf17b4d22f49addb0",
+  "node": "v24.19.0",
+  "os": "6.18.55",
+  "cpu": {
+    "model": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "speed": 0,
+    "times": {
+      "user": 4890,
+      "nice": 0,
+      "sys": 2300,
+      "idle": 290870,
+      "irq": 0
+    }
+  },
+  "cpus": 5,
+  "browser": "154.0.8037.57",
+  "args": [
+    "--no-sandbox",
+    "--use-angle=swiftshader",
+    "--enable-unsafe-swiftshader"
+  ],
+  "warmup": 5,
+  "samples": 10,
+  "repeats": 1,
+  "engines": [
+    "original"
+  ],
+  "scenarios": [
+    "cubes",
+    "skinning",
+    "shader",
+    "small",
+    "hierarchy"
+  ],
+  "protocol": "fixed-frame exploratory cloud CPU; not 10s+30s hardware protocol",
+  "profile": true,
+  "runs": [
+    "cubes-original-0.json",
+    "skinning-original-0.json",
+    "shader-original-0.json",
+    "small-original-0.json",
+    "hierarchy-original-0.json"
+  ]
+}
