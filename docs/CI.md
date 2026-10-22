@@ -10,7 +10,8 @@ tracks runner qualification; #4 tracks the first accepted hardware baseline.
 repository permissions. It pins Node 22, Rust 1.90.0, Three.js 0.186.1 and
 Playwright 1.56.1 through the toolchain and lockfiles. It builds Wasm and runs
 Rust, upstream differential, TypeScript, browser image/numerical, package,
-demo and infrastructure checks. Chromium uses SwiftShader deliberately here.
+demo, standalone progress-page and infrastructure checks. Python 3.10+ generates
+the progress HTML/JSON/SVG without external dependencies. Chromium uses SwiftShader deliberately here.
 A negative test reads the actual SwiftShader WebGL renderer and proves that the
 hardware guard rejects it. Ten-sample smoke timings are diagnostic only.
 
@@ -92,7 +93,9 @@ Keep viewport, quality, assets, simulation ticks, browser, backend and hardware
 identical. Compare per-run CPU p50/p95/p99 and frame intervals; preserve complete
 raw samples and regressions. `analysis.json` checks draw-work parity and actual
 Wasm execution. Bootstrap intervals across runs are exploratory, especially
-for small/quantized costs. A/A raw datasets expose drift; this workflow does
+for small/quantized costs. Fewer than three valid run pairs receive no interval;
+zero reference quantiles are omitted from ratios and counted explicitly.
+A/A raw datasets expose drift; this workflow does
 not yet automatically certify a noise threshold or a product performance gate.
 Before accepting #4, predeclare an A/A noise rule, repeat sessions and examine
 thermal/clock drift. An eight-run artifact alone does not complete #4.

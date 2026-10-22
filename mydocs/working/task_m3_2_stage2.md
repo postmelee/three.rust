@@ -67,3 +67,12 @@ fix any remote failures and preserve the evidence in the final report.
 
 Proceeding to the authorized push, remote issue/milestone synchronization and
 stacked draft PR. No merge, paid provisioning or new engine implementation is implied.
+
+## Follow-up from smoke analysis
+
+Inspection of the smoke analyzer revealed a degenerate confidence interval for
+one run. The analyzer now omits intervals with fewer than three valid pairs and
+counts zero-reference-quantile omissions instead of emitting infinite ratios.
+A fifth infrastructure test covers both cases and passed. This changes future
+analysis behavior; historical analysis JSON remains untouched. The original
+stage commit's remote correctness/artifact workflow passed in run 39785321835.

@@ -2,6 +2,7 @@
 
 Start from this branch in a new checkout; do not reuse generated package files.
 Dependencies: Linux/macOS/Windows with Node 22+ (observed 24.19.0), npm, curl,
+Python 3.10+ for progress generation/checks,
 Rust/rustup 1.90.0 including wasm32-unknown-unknown, and Chromium. This work used
 Linux Chromium 154.0.8037.57; CI downloads the browser matching Playwright
 1.56.1. A different browser is a new environment, not the same performance run.

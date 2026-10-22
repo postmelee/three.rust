@@ -27,3 +27,20 @@ test('roadmap sync refuses unmarked issues and closed milestones',async()=>{
  const f=fixture(false);await assert.rejects(syncRoadmap(f.args),/marker/);assert.equal(f.calls.length,0);
  const g=fixture();g.milestones.push({title:'M3',state:'closed',number:1});await assert.rejects(syncRoadmap(g.args),/closed/);assert.equal(g.calls.length,0);
 });
+test('analysis refuses false confidence from one run or zero reference timings',async()=>{
+ const {mkdtempSync,writeFileSync,readFileSync,rmSync}=await import('node:fs');
+ const {tmpdir}=await import('node:os');const {execFileSync}=await import('node:child_process');
+ const dir=mkdtempSync(tmpdir()+'/rthree-analysis-');
+ try{
+  const m={status:'complete',repeats:1,samples:2,scenarios:['small'],engines:['original','js'],runs:['a.json','b.json']};
+  writeFileSync(dir+'/manifest.json',JSON.stringify(m));
+  for(const [file,engine,cpu] of [['a.json','original',0],['b.json','js',1]])writeFileSync(dir+'/'+file,JSON.stringify({scenario:'small',engine,rep:0,rows:[{cpu,interval:16},{cpu,interval:17}],info:{},startupMs:1}));
+  execFileSync(process.execPath,['bench/analyze.mjs',dir]);
+  let x=JSON.parse(readFileSync(dir+'/analysis.json')).comparisons[0].relativeP50Percent;
+  assert.equal(x.median,null);assert.equal(x.lo,null);assert.equal(x.omitted,1);
+  const a=JSON.parse(readFileSync(dir+'/a.json'));a.rows.forEach(x=>x.cpu=1);writeFileSync(dir+'/a.json',JSON.stringify(a));
+  execFileSync(process.execPath,['bench/analyze.mjs',dir]);
+  x=JSON.parse(readFileSync(dir+'/analysis.json')).comparisons[0].relativeP50Percent;
+  assert.equal(x.median,0);assert.equal(x.lo,null);assert.equal(x.hi,null);
+ }finally{rmSync(dir,{recursive:true,force:true});}
+});

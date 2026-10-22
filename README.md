@@ -20,12 +20,15 @@ See [the report](docs/REPORT.md), [compatibility](docs/COMPATIBILITY.md),
 
 ## Project status and direction
 
-[![Engine ownership and evidence status](docs/assets/progress.svg)](docs/PROJECT_PLAN.md)
+[![Engine ownership and evidence status](docs/assets/progress.svg)](docs/progress.html)
 
 This map separates Rust implementation, verification and whole-frame evidence.
 It does not count translated lines or claim a percentage of all Three.js APIs.
-The [versioned status data](docs/progress.json) links each row to evidence; run
-`npm run docs:generate` when changing it. Hardware results remain outstanding.
+The [standalone HTML table](docs/progress.html), [raw JSON](docs/progress.json) and
+SVG are generated together by `python3 tools/progress.py` (or `npm run docs:generate`).
+Edit the [bounded inventory](docs/progress-inventory.json); see [counting rules](docs/PROGRESS.md).
+Open `http://127.0.0.1:4173/docs/progress.html` with the local demo running.
+Hardware results remain outstanding.
 
 The long-term goal is a **Rust-owned scene evaluation engine**: scene state,
 animation, object/bone transforms, visibility, per-pass render lists and upload

@@ -1,14 +1,353 @@
 {
-  "schemaVersion": 1,
-  "title": "three.rust — engine ownership and evidence",
-  "scope": "Status map, not a percentage of Three.js translated",
-  "rows": [
-    {"area":"Eligible object transforms","implementation":"Rust batch implemented","verification":"Bounded tests passed","performance":"No general gain; regression","state":"measured","evidence":"docs/REPORT.md"},
-    {"area":"Authoritative scene state","implementation":"JS still authoritative","verification":"New contract planned","performance":"Not evaluated","state":"planned","evidence":"docs/ARCHITECTURE.md"},
-    {"area":"Animation + bone palettes","implementation":"Remain JS","verification":"Rust pipeline planned","performance":"Not evaluated","state":"planned","evidence":"docs/PROJECT_PLAN.md"},
-    {"area":"Visibility / LOD / render lists","implementation":"Remain JS","verification":"Multi-pass work planned","performance":"Not evaluated","state":"planned","evidence":"docs/PROJECT_PLAN.md"},
-    {"area":"Upload / prepared rendering","implementation":"Remain JS","verification":"Boundary work planned","performance":"Not evaluated","state":"planned","evidence":"docs/PROJECT_PLAN.md"},
-    {"area":"Physical GPU validation","implementation":"Workflow configuration","verification":"Hardware run outstanding","performance":"No hardware claim","state":"blocked","evidence":"docs/CI.md"},
-    {"area":"GPU shaders","implementation":"Retained upstream","verification":"Cloud image checks only","performance":"CPU port does not remove work","state":"retained","evidence":"docs/COMPATIBILITY.md"}
-  ]
+  "schemaVersion": 2,
+  "title": "three.rust status",
+  "sourceRef": "codex/ownership-roadmap",
+  "scope": "Declared capability inventory only — not all Three.js APIs, equal work units, or performance coverage.",
+  "retained": "Animation, skeleton palettes, visibility, render lists, uploads and shaders currently retain upstream JS/GPU behavior. Only the scoped transform batch runs in Rust.",
+  "cpu": {
+    "done": 6,
+    "total": 29,
+    "groups": [
+      {
+        "id": "transforms",
+        "name": "Transforms",
+        "items": [
+          {
+            "id": "transforms-1",
+            "name": "Local TRS composition (eligible nodes)",
+            "state": "implemented",
+            "evidence": "crates/scene-core/src/lib.rs"
+          },
+          {
+            "id": "transforms-2",
+            "name": "Parent-to-world multiplication (eligible nodes)",
+            "state": "implemented",
+            "evidence": "crates/scene-core/src/lib.rs"
+          },
+          {
+            "id": "transforms-3",
+            "name": "Manual local/world matrix flags",
+            "state": "implemented",
+            "evidence": "crates/scene-core/src/lib.rs"
+          },
+          {
+            "id": "transforms-4",
+            "name": "Forced descendant updates",
+            "state": "implemented",
+            "evidence": "crates/scene-core/src/lib.rs"
+          },
+          {
+            "id": "transforms-5",
+            "name": "Pivot and negative-scale composition",
+            "state": "implemented",
+            "evidence": "crates/scene-core/src/lib.rs"
+          },
+          {
+            "id": "transforms-6",
+            "name": "Persistent f64 transform arena",
+            "state": "implemented",
+            "evidence": "crates/scene-core/src/lib.rs"
+          }
+        ],
+        "done": 6,
+        "total": 6
+      },
+      {
+        "id": "authority",
+        "name": "Scene authority",
+        "items": [
+          {
+            "id": "authority-1",
+            "name": "Rust-authoritative scene ownership",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          },
+          {
+            "id": "authority-2",
+            "name": "Mutation command batches",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          },
+          {
+            "id": "authority-3",
+            "name": "Stable public-object handle contract",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          },
+          {
+            "id": "authority-4",
+            "name": "Synchronous read barriers",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          }
+        ],
+        "done": 0,
+        "total": 4
+      },
+      {
+        "id": "animation",
+        "name": "Animation",
+        "items": [
+          {
+            "id": "animation-1",
+            "name": "Animation clock and action state",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          },
+          {
+            "id": "animation-2",
+            "name": "Track interpolation",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          },
+          {
+            "id": "animation-3",
+            "name": "Blending and weights",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          },
+          {
+            "id": "animation-4",
+            "name": "Property binding and event delivery",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          }
+        ],
+        "done": 0,
+        "total": 4
+      },
+      {
+        "id": "skeleton",
+        "name": "Skeletons",
+        "items": [
+          {
+            "id": "skeleton-1",
+            "name": "Skeleton state ownership",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          },
+          {
+            "id": "skeleton-2",
+            "name": "Bone palette evaluation",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          },
+          {
+            "id": "skeleton-3",
+            "name": "Palette dirty-range output",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          }
+        ],
+        "done": 0,
+        "total": 3
+      },
+      {
+        "id": "visibility",
+        "name": "Visibility / LOD",
+        "items": [
+          {
+            "id": "visibility-1",
+            "name": "Persistent bounds",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          },
+          {
+            "id": "visibility-2",
+            "name": "Frustum and layer visibility",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          },
+          {
+            "id": "visibility-3",
+            "name": "LOD selection",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          },
+          {
+            "id": "visibility-4",
+            "name": "Camera and shadow-pass visibility",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          }
+        ],
+        "done": 0,
+        "total": 4
+      },
+      {
+        "id": "lists",
+        "name": "Render lists",
+        "items": [
+          {
+            "id": "lists-1",
+            "name": "Opaque/transmissive/transparent classification",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          },
+          {
+            "id": "lists-2",
+            "name": "Per-pass ordering",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          },
+          {
+            "id": "lists-3",
+            "name": "Custom-sort callback contract",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          },
+          {
+            "id": "lists-4",
+            "name": "Prepared draw-plan output",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          }
+        ],
+        "done": 0,
+        "total": 4
+      },
+      {
+        "id": "uploads",
+        "name": "Upload preparation",
+        "items": [
+          {
+            "id": "uploads-1",
+            "name": "Resource handle lifetime",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          },
+          {
+            "id": "uploads-2",
+            "name": "Dirty-buffer spans",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          },
+          {
+            "id": "uploads-3",
+            "name": "Instance upload preparation",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          },
+          {
+            "id": "uploads-4",
+            "name": "Renderer consumption without recomputation",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          }
+        ],
+        "done": 0,
+        "total": 4
+      }
+    ]
+  },
+  "evidence": {
+    "done": 7,
+    "total": 12,
+    "groups": [
+      {
+        "id": "correctness",
+        "name": "Correctness",
+        "items": [
+          {
+            "id": "correctness-1",
+            "name": "Native Rust tests",
+            "state": "passed",
+            "evidence": "docs/REPORT.md"
+          },
+          {
+            "id": "correctness-2",
+            "name": "Upstream numerical/semantic differential tests",
+            "state": "passed",
+            "evidence": "docs/REPORT.md"
+          },
+          {
+            "id": "correctness-3",
+            "name": "Cloud browser images and callbacks",
+            "state": "passed",
+            "evidence": "docs/REPORT.md"
+          }
+        ],
+        "done": 3,
+        "total": 3
+      },
+      {
+        "id": "integration",
+        "name": "Integration",
+        "items": [
+          {
+            "id": "integration-1",
+            "name": "Actual Wasm and replaced-JS bypass proof",
+            "state": "passed",
+            "evidence": "docs/REPORT.md"
+          },
+          {
+            "id": "integration-2",
+            "name": "Isolated ESM/addon/TypeScript consumer",
+            "state": "passed",
+            "evidence": "docs/REPORT.md"
+          },
+          {
+            "id": "integration-3",
+            "name": "A/B/C/D browser rendering",
+            "state": "passed",
+            "evidence": "docs/REPORT.md"
+          }
+        ],
+        "done": 3,
+        "total": 3
+      },
+      {
+        "id": "performance",
+        "name": "Performance",
+        "items": [
+          {
+            "id": "performance-1",
+            "name": "Repeated cloud dataset retained",
+            "state": "passed",
+            "evidence": "docs/REPORT.md"
+          },
+          {
+            "id": "performance-2",
+            "name": "Broad whole-frame gain",
+            "state": "regression",
+            "evidence": "docs/REPORT.md"
+          },
+          {
+            "id": "performance-3",
+            "name": "Physical GPU baseline",
+            "state": "pending",
+            "evidence": "docs/CI.md"
+          },
+          {
+            "id": "performance-4",
+            "name": "Second hardware class validation",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          }
+        ],
+        "done": 1,
+        "total": 4
+      },
+      {
+        "id": "ownership",
+        "name": "Broad ownership",
+        "items": [
+          {
+            "id": "ownership-1",
+            "name": "Full pipeline selected from hardware profiles",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          },
+          {
+            "id": "ownership-2",
+            "name": "Intermediate JS/Rust round trips removed",
+            "state": "pending",
+            "evidence": "docs/PROJECT_PLAN.md"
+          }
+        ],
+        "done": 0,
+        "total": 2
+      }
+    ]
+  }
 }
