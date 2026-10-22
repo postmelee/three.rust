@@ -1,5 +1,10 @@
 name: correctness
 on: [push, pull_request]
+permissions:
+  contents: read
+concurrency:
+  group: correctness-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   test:
     runs-on: ubuntu-24.04
@@ -19,13 +24,15 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: echo "CHROMIUM=$(node --input-type=module -e 'import {chromium} from "playwright"; console.log(chromium.executablePath())')" >> "$GITHUB_ENV"
+      - run: npm run docs:check && npm run test:infra
       - run: npm run fixtures
       - run: cargo fmt --check && cargo clippy --all-targets -- -D warnings
       - run: npm run build && npm test
-      - run: npm run test:browser
-      - run: npm run test:package
-      - run: npm run test:demo
+      - run: npm run test:browser && npm run test:gpu-guard
+      - run: npm run test:package && npm run test:demo
       - run: npm run bench:smoke
+      - run: npm run bundle:demo && npm run test:bundle
+      - run: mkdir -p dist/package && npm pack ./packages/rthree --pack-destination dist/package
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -33,4 +40,11 @@ jobs:
           path: |
             work/ci-correctness
             work/ci-demo
-            bench/results/smoke
+            work/package
+            work/gpu-guard
+            work/bundle-validation
+            work/bench-smoke
+      - uses: actions/upload-artifact@v4
+        with:
+          name: portable-demo-and-local-package
+          path: dist

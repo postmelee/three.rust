@@ -1,0 +1,33 @@
+name: roadmap synchronization
+on:
+  push:
+    branches: [main, codex/ownership-roadmap]
+    paths: [docs/roadmap.json, scripts/roadmap-sync.mjs, .github/workflows/roadmap-sync.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: roadmap-sync
+  cancel-in-progress: false
+jobs:
+  sync:
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/codex/ownership-roadmap'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('node:fs');
+            const {pathToFileURL} = require('node:url');
+            const {syncRoadmap} = await import(pathToFileURL(`${process.env.GITHUB_WORKSPACE}/scripts/roadmap-sync.mjs`).href);
+            const roadmap = JSON.parse(fs.readFileSync('docs/roadmap.json', 'utf8'));
+            const result = await syncRoadmap({github, ...context.repo, roadmap});
+            fs.mkdirSync('work', {recursive: true});
+            fs.writeFileSync('work/roadmap-sync.json', JSON.stringify(result, null, 2));
+            core.info(JSON.stringify(result));
+      - uses: actions/upload-artifact@v4
+        with:
+          name: roadmap-associations
+          path: work/roadmap-sync.json

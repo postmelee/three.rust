@@ -48,3 +48,6 @@ scans public state and writes public matrix arrays. All that cost stays visible.
 
 See CLOUD_SETUP.md for clean installation, software/hardware modes and
 longer hardware reproduction. See REPORT.md for actual evidence and omissions.
+
+The new opt-in hardware Actions protocol is specified separately in [CI.md](CI.md).
+It does not replace these historical M0–M2 settings or establish a hardware result.

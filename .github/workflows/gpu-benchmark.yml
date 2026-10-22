@@ -1,0 +1,97 @@
+name: hardware browser benchmark
+on:
+  workflow_dispatch:
+    inputs:
+      suite:
+        description: 'Smoke is diagnostic; full collects repeated experiment samples'
+        type: choice
+        options: [smoke, full]
+        default: smoke
+      runner:
+        description: 'Runner must be configured separately; no GPU is provisioned here'
+        type: choice
+        options: [self-hosted, github-gpu]
+        default: self-hosted
+      headless:
+        description: 'Headless intervals do not represent physical display presentation'
+        type: boolean
+        default: true
+  schedule:
+    - cron: '23 3 * * 1'
+permissions:
+  contents: read
+concurrency:
+  group: hardware-benchmark
+  cancel-in-progress: false
+jobs:
+  select:
+    if: github.ref_name == github.event.repository.default_branch && vars.GPU_BENCHMARK_ENABLED == 'true' && (github.event_name == 'workflow_dispatch' || vars.GPU_BENCHMARK_SCHEDULE_ENABLED == 'true')
+    runs-on: ubuntu-24.04
+    outputs:
+      labels: ${{ steps.select.outputs.labels }}
+    steps:
+      - id: select
+        env:
+          RUNNER_KIND: ${{ inputs.runner || 'self-hosted' }}
+          SELF_LABELS: ${{ vars.GPU_SELF_HOSTED_LABELS }}
+          HOSTED_LABEL: ${{ vars.GPU_HOSTED_LABEL }}
+        run: |
+          node --input-type=module <<'JS'
+          import {appendFileSync} from 'node:fs';
+          const hosted = process.env.RUNNER_KIND === 'github-gpu';
+          const labels = hosted ? [process.env.HOSTED_LABEL] : JSON.parse(process.env.SELF_LABELS || '["self-hosted","linux","x64","rthree-gpu"]');
+          if (!Array.isArray(labels) || !labels.length || labels.some(x => typeof x !== 'string' || !/^[\w.-]+$/.test(x))) throw Error('Configure valid GPU runner labels');
+          if (!hosted && !labels.includes('self-hosted')) throw Error('Self-hosted label required');
+          appendFileSync(process.env.GITHUB_OUTPUT, `labels=${JSON.stringify(labels)}\n`);
+          JS
+  benchmark:
+    needs: select
+    runs-on: ${{ fromJSON(needs.select.outputs.labels) }}
+    timeout-minutes: 90
+    env:
+      SUITE: ${{ inputs.suite || 'full' }}
+      HEADLESS: ${{ github.event_name == 'schedule' && 'true' || format('{0}', inputs.headless) }}
+      ANGLE_BACKEND: ${{ vars.GPU_ANGLE_BACKEND }}
+      RTHREE_RESULTS_DIR: work/gpu/correctness
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: dtolnay/rust-toolchain@1.90.0
+        with:
+          targets: wasm32-unknown-unknown
+      - run: npm ci
+      - run: npx playwright install chromium
+      - run: echo "CHROMIUM=$(node --input-type=module -e 'import {chromium} from "playwright"; console.log(chromium.executablePath())')" >> "$GITHUB_ENV"
+      - run: npm run fixtures && npm run build && npm test && npm run test:infra
+      - run: node scripts/runner-environment.mjs work/gpu
+      - name: Hardware numerical and image correctness
+        run: node tests/browser.mjs
+        env:
+          RTHREE_BROWSER_MODE: hardware
+          RTHREE_HEADLESS: ${{ env.HEADLESS }}
+          RTHREE_ANGLE_BACKEND: ${{ env.ANGLE_BACKEND }}
+      - name: Separate A/A calibration and A/B/C/D timing
+        shell: bash
+        run: |
+          options=(mode=hardware "headless=$HEADLESS")
+          if [ -n "$ANGLE_BACKEND" ]; then options+=("angle=$ANGLE_BACKEND"); fi
+          if [ "$SUITE" = full ]; then
+            protocol=(repeats=8 warmup=120 samples=600)
+            calibration=(repeats=4 warmup=120 samples=600)
+          else
+            protocol=(repeats=1 warmup=5 samples=10)
+            calibration=(repeats=1 warmup=5 samples=10)
+          fi
+          node bench/run.mjs "${options[@]}" "${calibration[@]}" engines=original out=work/gpu/aa-first
+          node bench/run.mjs "${options[@]}" "${protocol[@]}" engines=original,js,wasm,packed-js out=work/gpu/abcd
+          node bench/run.mjs "${options[@]}" "${calibration[@]}" engines=original out=work/gpu/aa-last
+          node bench/analyze.mjs work/gpu/abcd
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hardware-${{ inputs.suite || 'full' }}-${{ github.run_id }}
+          path: work/gpu
+          retention-days: 90
