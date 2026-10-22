@@ -320,6 +320,20 @@
       "verification": "Cost-based ADR, compatibility matrix, cross-hardware evidence and maintainability/release checklist.",
       "excluded": "Automatic full renderer rewrite, unsupported ecosystem promises or npm publication.",
       "issue": 18
+    },
+    {
+      "key": "progress-page",
+      "milestone": "m3",
+      "issue": 19,
+      "title": "Generate a standalone progress page and subsystem tile image from a bounded inventory",
+      "dependsOn": [],
+      "criteria": [
+        "Deterministic HTML, JSON and SVG from one explicit inventory",
+        "Simple table, dark grouped tiles, evidence links and precise counting rules",
+        "Desktop/mobile inspection and CI freshness check"
+      ],
+      "verification": "Generator unit/freshness tests and browser inspection",
+      "excluded": "Full Three.js percentage, copied GPL code, public deployment"
     }
   ]
 }

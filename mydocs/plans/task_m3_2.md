@@ -95,3 +95,19 @@ The task requester subsequently supplied the full initial discussion as text. Al
 its hash and reconciliation. Add mandatory M4 reuse/renderer assessment and gated
 M7 full-scene evaluation plus M8 backend/sustainability decisions to preserve the
 original long-term scope. No new engine implementation is authorized by this update.
+
+## Authorized visual refinement — issue #19
+
+During Stage 3 the requester supplied AnyPS5's progress.html, progress.json,
+tools/progress.py and screenshot, explicitly asking for the same separate HTML
+and generated image pattern. Track the refinement as #19 on this active branch;
+it is a subtask of #2, not a replacement for remote CI/milestone completion.
+Use tools/progress.py (Python standard library), a versioned bounded inventory,
+generated docs/progress.html and docs/progress.json plus docs/assets/progress.svg.
+The public documentation location remains docs/; no public deployment is implied.
+The visual style is a dark grouped tile map plus a simple HTML table. Implement
+an independent generator; AnyPS5's GPL-2.0 code and its PS5 counting assumptions
+are not copied. Source-translation percentage remains inappropriate; report only
+explicitly enumerated capabilities and evidence gates, with definitions/links.
+Verify deterministic generation, counts, desktop/mobile rendering and inclusion
+in the downloadable demo. Include this authorized refinement before final report.
