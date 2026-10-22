@@ -16,10 +16,11 @@ PR #1 implements and measures M0–M2. The public JS state remains authoritative
 the persistent Rust arena alone does not remove scanning/materialization. The
 task requester now explicitly authorizes Hyper-Waterfall adoption, English
 documents, a progress visual, GitHub milestones/issues and CI/CD configuration.
-The linked initial ChatGPT thread cannot be read: read_thread is unavailable;
-the share page exposes its title but no body, and direct HTTP returns 403.
-The requester's stated broad-ownership intent and current repository evidence
-are available. No content is attributed to the unread thread.
+At registration, the linked initial thread was inaccessible: read_thread was
+unavailable, the share page exposed only its title, and direct HTTP returned 403.
+The requester subsequently supplied the full text. All 948 lines were read and
+reconciled in docs/INITIAL_DISCUSSION.md; see the resolution below. This access
+limitation is resolved and is retained here only as task chronology.
 
 ## Scope
 
