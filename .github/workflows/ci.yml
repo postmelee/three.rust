@@ -2,7 +2,9 @@ name: correctness
 on: [push, pull_request]
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    env:
+      RTHREE_RESULTS_DIR: work/ci-correctness
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -27,5 +29,5 @@ jobs:
         with:
           name: correctness-and-diagnostic-only
           path: |
-            bench/results/correctness
+            work/ci-correctness
             bench/results/smoke

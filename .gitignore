@@ -7,3 +7,11 @@ packages/rthree/addons/
 packages/rthree/scene_core.wasm
 packages/rthree/LICENSE
 packages/rthree/THREE-LICENSE
+dist/
+playwright-report/
+test-results/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example

@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import {chromium} from 'playwright';
 import {mkdirSync,writeFileSync} from 'node:fs';
 import {serve} from '../scripts/server.mjs';
-const out='bench/results/correctness';mkdirSync(out,{recursive:true});const server=await serve();
+const out=process.env.RTHREE_RESULTS_DIR||'bench/results/correctness';mkdirSync(out,{recursive:true});const server=await serve();
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM||'/usr/bin/chromium',headless:true,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
 const results=[];
 try{for(const scenario of ['cubes','skinning','shader','small','hierarchy']){
