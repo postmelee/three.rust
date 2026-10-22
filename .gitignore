@@ -1,0 +1,10 @@
+node_modules/
+target/
+dist/
+playwright-report/
+test-results/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
