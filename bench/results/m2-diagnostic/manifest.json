@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-22T10:27:53.182Z",
+  "commit": "26af42f68386c6a3e40c69877abe20a430dc3a15",
+  "node": "v24.19.0",
+  "os": "6.18.55",
+  "cpu": {
+    "model": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "speed": 0,
+    "times": {
+      "user": 1173520,
+      "nice": 0,
+      "sys": 118100,
+      "idle": 1850890,
+      "irq": 0
+    }
+  },
+  "cpus": 5,
+  "browser": "154.0.8037.57",
+  "args": [
+    "--no-sandbox",
+    "--use-angle=swiftshader",
+    "--enable-unsafe-swiftshader"
+  ],
+  "warmup": 30,
+  "samples": 60,
+  "repeats": 1,
+  "engines": [
+    "original",
+    "js",
+    "wasm",
+    "packed-js"
+  ],
+  "scenarios": [
+    "cubes",
+    "skinning",
+    "shader",
+    "small",
+    "hierarchy"
+  ],
+  "protocol": "fixed-frame exploratory cloud CPU; not 10s+30s hardware protocol",
+  "profile": false,
+  "hardware": false,
+  "gpuQuery": true,
+  "bridgeTimings": true,
+  "hashes": {
+    "package-lock.json": "b938b0b7c45499a8962d4beff96db709ec0caafe2e44d94e1d53754e2666a355",
+    "packages/rthree/scene_core.wasm": "7e70bf336717cd8ffaa70b5374f6f112149396e1bd154a1640e73c36879927ed",
+    "packages/rthree/core.js": "1288ad362561a38831ca4195218e083e061ef270975c27511e3336551064948f",
+    "packages/rthree/runtime.js": "9475be555e4bec0e89826b46e18123a012d0cd1500f748d012aafc6a3b2c8629",
+    "packages/rthree/packed.js": "2247ef8bd5ffa57692002b37ea718004a099aadf2123bab759928a661883b1c5",
+    "bench/browser.mjs": "70fe0de5b72b2c51a2a3c5bbdac882105a26872237d02250120ae735c0fbd40f"
+  },
+  "runs": [
+    "cubes-original-0.json",
+    "cubes-js-0.json",
+    "cubes-wasm-0.json",
+    "cubes-packed-js-0.json",
+    "skinning-original-0.json",
+    "skinning-js-0.json",
+    "skinning-wasm-0.json",
+    "skinning-packed-js-0.json",
+    "shader-original-0.json",
+    "shader-js-0.json",
+    "shader-wasm-0.json",
+    "shader-packed-js-0.json",
+    "small-original-0.json",
+    "small-js-0.json",
+    "small-wasm-0.json",
+    "small-packed-js-0.json",
+    "hierarchy-original-0.json",
+    "hierarchy-js-0.json",
+    "hierarchy-wasm-0.json",
+    "hierarchy-packed-js-0.json"
+  ]
+}

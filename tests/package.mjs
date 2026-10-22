@@ -5,6 +5,7 @@ import os from 'node:os';
 import assert from 'node:assert/strict';
 const root=process.cwd();mkdirSync('work',{recursive:true});
 const pack=JSON.parse(execFileSync('npm',['pack','--workspace=rthree','--pack-destination=work','--json'],{encoding:'utf8'}))[0];
+assert.ok(pack.files.some(f=>f.path==='THREE-TYPES-LICENSE'));
 const dir=mkdtempSync(path.join(os.tmpdir(),'rthree-consumer-'));writeFileSync(`${dir}/package.json`,JSON.stringify({name:'rthree-local-consumer',private:true,type:'module'}));
 execFileSync('npm',['install','--ignore-scripts','--no-audit','--no-fund',path.join(root,'work',pack.filename)],{cwd:dir,stdio:'inherit'});
 const source=`import assert from 'node:assert/strict';
@@ -28,4 +29,4 @@ execFileSync('node',[path.join(root,'node_modules/typescript/bin/tsc'),'-p','tsc
 writeFileSync(`${dir}/app.js`,"import * as T from 'rthree'; import {GLTFLoader} from 'rthree/addons/loaders/GLTFLoader.js'; await T.init({wasmURL:'/assets/scene_core.wasm'}); window.test = {scene:new T.Scene(),loader:new GLTFLoader()};");
 execFileSync(path.join(root,'node_modules/.bin/esbuild'),['app.js','--bundle','--format=esm','--outfile=app.bundle.js','--metafile=meta.json'],{cwd:dir,stdio:'inherit'});
 const meta=JSON.parse(readFileSync(`${dir}/meta.json`));assert.equal(Object.keys(meta.inputs).filter(x=>x.endsWith('/core.js')).length,1);
-mkdirSync('bench/results/package',{recursive:true});writeFileSync('bench/results/package/result.json',JSON.stringify({pack:{filename:pack.filename,size:pack.size,unpackedSize:pack.unpackedSize,shasum:pack.shasum,integrity:pack.integrity},passed:true,checks:['fresh tarball install','Node ESM','no-init error','init reject/retry','addon identity','no runtime three','TypeScript NodeNext','esbuild single core'],sourceCommit:execFileSync('git',['rev-parse','HEAD']).toString().trim()},null,2));
+mkdirSync('bench/results/package',{recursive:true});writeFileSync('bench/results/package/result.json',JSON.stringify({pack:{filename:pack.filename,size:pack.size,unpackedSize:pack.unpackedSize,shasum:pack.shasum,integrity:pack.integrity},passed:true,checks:['fresh tarball install','Node ESM','no-init error','init reject/retry','addon identity','no runtime three','TypeScript NodeNext','esbuild single core'],sourceBaseCommit:execFileSync('git',['rev-parse','HEAD']).toString().trim(),sourceTreeDirty:execFileSync('git',['status','--porcelain']).toString().trim().length>0},null,2));

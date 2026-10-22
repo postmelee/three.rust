@@ -53,3 +53,13 @@ FinalizationRegistry is best-effort and Wasm linear memory does not shrink.
 Handles never reuse a freed ID (stale handles cannot alias new arenas); tombstone
 registry storage grows with lifetime arena count. Large-scale lifetime churn is
 not optimized in this alpha.
+
+Hosting also needs a CSP that permits WebAssembly compilation (typically
+`script-src 'wasm-unsafe-eval'` under the site's policy) and fetch/CORS permission
+for a separately hosted Wasm URL. CSP/offline/base-path combinations were not
+exhaustively tested. No SharedArrayBuffer or threading is used, so the engine
+does not itself require COOP/COEP isolation. Numeric comparisons use f64 with
+absolute/relative tolerances, not a promise of bitwise IEEE equivalence for
+NaN payloads or signed zero. Scalar synchronization uses JS numeric equality:
+a change from +0 to -0 alone is not transferred, so sign-sensitive reciprocal
+observations are outside the supported numeric contract.

@@ -14,6 +14,7 @@ await build({entryPoints:['work/build/src/Three.js'],bundle:true,format:'esm',ta
 cpSync('node_modules/three/examples/jsm',`${pkg}/addons`,{recursive:true});
 cpSync('node_modules/@types/three/examples/jsm',`${pkg}/addons`,{recursive:true});
 function rewrite(dir){for(const e of readdirSync(dir,{withFileTypes:true})){const path=dir+'/'+e.name;if(e.isDirectory())rewrite(path);else if((e.name.endsWith('.js')||e.name.endsWith('.d.ts'))){let s=readFileSync(path,'utf8');const rel='../'.repeat(path.slice(pkg.length+1).split('/').length-1)+'index.js';s=s.replace(/from ['"]three['"]/g,`from '${rel}'`);writeFileSync(path,s);}}}rewrite(`${pkg}/addons`);
+cpSync('node_modules/@types/three/LICENSE',`${pkg}/THREE-TYPES-LICENSE`);
 cpSync('LICENSE',`${pkg}/LICENSE`);cpSync('node_modules/three/LICENSE',`${pkg}/THREE-LICENSE`);
 execFileSync('cargo',['build','--release','--locked','--target','wasm32-unknown-unknown'],{stdio:'inherit'});
 cpSync('target/wasm32-unknown-unknown/release/rthree_scene_core.wasm',`${pkg}/scene_core.wasm`);

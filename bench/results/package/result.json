@@ -1,10 +1,10 @@
 {
   "pack": {
     "filename": "rthree-0.1.0-alpha.0.tgz",
-    "size": 2793174,
-    "unpackedSize": 11298980,
-    "shasum": "171438de22c95b9495ce598c31e9564eb6baa8fe",
-    "integrity": "sha512-MBEWOHbU2E7AT6eH3L7t1DiTs18yioSXQrKhFsjh4VdwNdHnRiPp2KMGZDoNZJ1zdbIYxDLSAORacgM7n2JFnw=="
+    "size": 2793348,
+    "unpackedSize": 11300303,
+    "shasum": "126c2cc8d25b79cbc9fbff726371af459929ff78",
+    "integrity": "sha512-lt+oAewkyklcpELlgAciPVzYJOxRddG0kdKPj9XsM0G3Qr557/Ivmts6bTnzsW8bESfom65eRmOID55uQHVBhA=="
   },
   "passed": true,
   "checks": [
@@ -15,7 +15,9 @@
     "addon identity",
     "no runtime three",
     "TypeScript NodeNext",
-    "esbuild single core"
+    "esbuild single core",
+    "Three and copied TypeScript license notices present in tarball"
   ],
-  "sourceCommit": "c458d7320a5c017fb83eb4d42bc1119aebc7cde2"
+  "sourceBaseCommit": "26af42f68386c6a3e40c69877abe20a430dc3a15",
+  "sourceTreeDirty": true
 }

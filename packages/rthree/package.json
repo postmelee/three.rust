@@ -1,36 +1,37 @@
 {
- "name": "rthree",
- "version": "0.1.0-alpha.0",
- "description": "Experimental persistent Rust/Wasm CPU transforms with a bounded Three.js r186 compatibility fork",
- "type": "module",
- "license": "MIT",
- "exports": {
-  ".": {
-   "types": "./index.d.ts",
-   "import": "./index.js"
+  "name": "rthree",
+  "version": "0.1.0-alpha.0",
+  "description": "Experimental persistent Rust/Wasm CPU transforms with a bounded Three.js r186 compatibility fork",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js"
+    },
+    "./js": {
+      "types": "./index.d.ts",
+      "import": "./js.js"
+    },
+    "./packed-js": {
+      "types": "./index.d.ts",
+      "import": "./packed-js.js"
+    },
+    "./addons/*": "./addons/*",
+    "./examples/jsm/*": "./addons/*",
+    "./scene_core.wasm": "./scene_core.wasm"
   },
-  "./js": {
-   "types": "./index.d.ts",
-   "import": "./js.js"
-  },
-  "./packed-js": {
-   "types": "./index.d.ts",
-   "import": "./packed-js.js"
-  },
-  "./addons/*": "./addons/*",
-  "./examples/jsm/*": "./addons/*",
-  "./scene_core.wasm": "./scene_core.wasm"
- },
- "files": [
-  "*.js",
-  "*.d.ts",
-  "*.wasm",
-  "addons",
-  "LICENSE",
-  "THREE-LICENSE",
-  "README.md"
- ],
- "dependencies": {
-  "@types/three": "0.186.0"
- }
+  "files": [
+    "*.js",
+    "*.d.ts",
+    "*.wasm",
+    "addons",
+    "LICENSE",
+    "THREE-LICENSE",
+    "README.md",
+    "THREE-TYPES-LICENSE"
+  ],
+  "dependencies": {
+    "@types/three": "0.186.0"
+  }
 }

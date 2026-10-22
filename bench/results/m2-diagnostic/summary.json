@@ -1,0 +1,360 @@
+{
+  "scope": "separate one-repeat instrumented software-GPU diagnostic, not main product measurement",
+  "summary": [
+    {
+      "scenario": "cubes",
+      "engine": "original",
+      "meanPerFrame": {},
+      "gpuStatus": {
+        "available": 57,
+        "pending-at-end": 3
+      },
+      "gpuP50Ms": 17.592489,
+      "gpuP95Ms": 36.064661
+    },
+    {
+      "scenario": "cubes",
+      "engine": "js",
+      "meanPerFrame": {
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "scannedBytes": 0,
+        "uploadedBytes": 0,
+        "materializedBytes": 0,
+        "wasmCalls": 0,
+        "wasmNodes": 0
+      },
+      "gpuStatus": {
+        "available": 57,
+        "pending-at-end": 3
+      },
+      "gpuP50Ms": 19.5991,
+      "gpuP95Ms": 36.277919
+    },
+    {
+      "scenario": "cubes",
+      "engine": "wasm",
+      "meanPerFrame": {
+        "syncMs": 0.4576271186519604,
+        "kernelMs": 0.177966101663345,
+        "readMs": 0.15423728813717175,
+        "scannedBytes": 784784,
+        "uploadedBytes": 0,
+        "materializedBytes": 512512,
+        "wasmCalls": 1,
+        "wasmNodes": 2002
+      },
+      "gpuStatus": {
+        "available": 57,
+        "pending-at-end": 3
+      },
+      "gpuP50Ms": 17.271096,
+      "gpuP95Ms": 36.851519
+    },
+    {
+      "scenario": "cubes",
+      "engine": "packed-js",
+      "meanPerFrame": {
+        "syncMs": 0.46101694913991426,
+        "kernelMs": 0.38305084745920565,
+        "readMs": 0.16610169490420465,
+        "scannedBytes": 784784,
+        "uploadedBytes": 0,
+        "materializedBytes": 512512,
+        "wasmCalls": 0,
+        "wasmNodes": 0
+      },
+      "gpuStatus": {
+        "available": 57,
+        "pending-at-end": 3
+      },
+      "gpuP50Ms": 20.099592,
+      "gpuP95Ms": 52.78663
+    },
+    {
+      "scenario": "skinning",
+      "engine": "original",
+      "meanPerFrame": {},
+      "gpuStatus": {
+        "available": 57,
+        "pending-at-end": 3
+      },
+      "gpuP50Ms": 66.243525,
+      "gpuP95Ms": 113.22638
+    },
+    {
+      "scenario": "skinning",
+      "engine": "js",
+      "meanPerFrame": {
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "scannedBytes": 0,
+        "uploadedBytes": 0,
+        "materializedBytes": 0,
+        "wasmCalls": 0,
+        "wasmNodes": 0
+      },
+      "gpuStatus": {
+        "available": 57,
+        "pending-at-end": 3
+      },
+      "gpuP50Ms": 64.941092,
+      "gpuP95Ms": 70.815806
+    },
+    {
+      "scenario": "skinning",
+      "engine": "wasm",
+      "meanPerFrame": {
+        "syncMs": 0.04745762712337961,
+        "kernelMs": 0.005084745759554839,
+        "readMs": 0.005084745759554839,
+        "scannedBytes": 26656,
+        "uploadedBytes": 4235.796610169492,
+        "materializedBytes": 17408,
+        "wasmCalls": 4,
+        "wasmNodes": 68
+      },
+      "gpuStatus": {
+        "available": 57,
+        "pending-at-end": 3
+      },
+      "gpuP50Ms": 64.988746,
+      "gpuP95Ms": 72.209663
+    },
+    {
+      "scenario": "skinning",
+      "engine": "packed-js",
+      "meanPerFrame": {
+        "syncMs": 0.02881355930151323,
+        "kernelMs": 0.022033898325605414,
+        "readMs": 0.006779661023263204,
+        "scannedBytes": 26656,
+        "uploadedBytes": 4235.796610169492,
+        "materializedBytes": 17408,
+        "wasmCalls": 0,
+        "wasmNodes": 0
+      },
+      "gpuStatus": {
+        "available": 57,
+        "pending-at-end": 3
+      },
+      "gpuP50Ms": 65.349173,
+      "gpuP95Ms": 70.001834
+    },
+    {
+      "scenario": "shader",
+      "engine": "original",
+      "meanPerFrame": {},
+      "gpuStatus": {
+        "available": 59,
+        "pending-at-end": 1
+      },
+      "gpuP50Ms": 4.55589,
+      "gpuP95Ms": 7.049207
+    },
+    {
+      "scenario": "shader",
+      "engine": "js",
+      "meanPerFrame": {
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "scannedBytes": 0,
+        "uploadedBytes": 0,
+        "materializedBytes": 0,
+        "wasmCalls": 0,
+        "wasmNodes": 0
+      },
+      "gpuStatus": {
+        "available": 59,
+        "pending-at-end": 1
+      },
+      "gpuP50Ms": 3.577664,
+      "gpuP95Ms": 5.062143
+    },
+    {
+      "scenario": "shader",
+      "engine": "wasm",
+      "meanPerFrame": {
+        "syncMs": 0.028813559309405795,
+        "kernelMs": 0.003389830511631602,
+        "readMs": 0.008474576279079006,
+        "scannedBytes": 784,
+        "uploadedBytes": 0,
+        "materializedBytes": 512,
+        "wasmCalls": 1,
+        "wasmNodes": 2
+      },
+      "gpuStatus": {
+        "available": 59,
+        "pending-at-end": 1
+      },
+      "gpuP50Ms": 3.530564,
+      "gpuP95Ms": 4.271562
+    },
+    {
+      "scenario": "shader",
+      "engine": "packed-js",
+      "meanPerFrame": {
+        "syncMs": 0.018644067813973812,
+        "kernelMs": 0.015254237278664515,
+        "readMs": 0.003389830511631602,
+        "scannedBytes": 784,
+        "uploadedBytes": 0,
+        "materializedBytes": 512,
+        "wasmCalls": 0,
+        "wasmNodes": 0
+      },
+      "gpuStatus": {
+        "available": 59,
+        "pending-at-end": 1
+      },
+      "gpuP50Ms": 3.573217,
+      "gpuP95Ms": 4.381184
+    },
+    {
+      "scenario": "small",
+      "engine": "original",
+      "meanPerFrame": {},
+      "gpuStatus": {
+        "available": 59,
+        "pending-at-end": 1
+      },
+      "gpuP50Ms": 0.501528,
+      "gpuP95Ms": 1.143238
+    },
+    {
+      "scenario": "small",
+      "engine": "js",
+      "meanPerFrame": {
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "scannedBytes": 0,
+        "uploadedBytes": 0,
+        "materializedBytes": 0,
+        "wasmCalls": 0,
+        "wasmNodes": 0
+      },
+      "gpuStatus": {
+        "available": 59,
+        "pending-at-end": 1
+      },
+      "gpuP50Ms": 0.518503,
+      "gpuP95Ms": 0.802024
+    },
+    {
+      "scenario": "small",
+      "engine": "wasm",
+      "meanPerFrame": {
+        "syncMs": 0.013559322022848715,
+        "kernelMs": 0.003389830511631602,
+        "readMs": 0,
+        "scannedBytes": 3920,
+        "uploadedBytes": 0,
+        "materializedBytes": 2560,
+        "wasmCalls": 1,
+        "wasmNodes": 10
+      },
+      "gpuStatus": {
+        "available": 59,
+        "pending-at-end": 1
+      },
+      "gpuP50Ms": 0.498392,
+      "gpuP95Ms": 1.030035
+    },
+    {
+      "scenario": "small",
+      "engine": "packed-js",
+      "meanPerFrame": {
+        "syncMs": 0.025423728813559324,
+        "kernelMs": 0.001694915255815801,
+        "readMs": 0.001694915255815801,
+        "scannedBytes": 3920,
+        "uploadedBytes": 0,
+        "materializedBytes": 2560,
+        "wasmCalls": 0,
+        "wasmNodes": 0
+      },
+      "gpuStatus": {
+        "available": 59,
+        "pending-at-end": 1
+      },
+      "gpuP50Ms": 0.507496,
+      "gpuP95Ms": 0.796133
+    },
+    {
+      "scenario": "hierarchy",
+      "engine": "original",
+      "meanPerFrame": {},
+      "gpuStatus": {
+        "available": 57,
+        "pending-at-end": 3
+      },
+      "gpuP50Ms": 90.479778,
+      "gpuP95Ms": 124.968319
+    },
+    {
+      "scenario": "hierarchy",
+      "engine": "js",
+      "meanPerFrame": {
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "scannedBytes": 0,
+        "uploadedBytes": 0,
+        "materializedBytes": 0,
+        "wasmCalls": 0,
+        "wasmNodes": 0
+      },
+      "gpuStatus": {
+        "available": 57,
+        "pending-at-end": 3
+      },
+      "gpuP50Ms": 85.066721,
+      "gpuP95Ms": 102.376337
+    },
+    {
+      "scenario": "hierarchy",
+      "engine": "wasm",
+      "meanPerFrame": {
+        "syncMs": 3.5661016949136757,
+        "kernelMs": 1.1542372881450642,
+        "readMs": 1.1915254237256565,
+        "scannedBytes": 4312784,
+        "uploadedBytes": 16000,
+        "materializedBytes": 2816512,
+        "wasmCalls": 1,
+        "wasmNodes": 11002
+      },
+      "gpuStatus": {
+        "available": 57,
+        "pending-at-end": 3
+      },
+      "gpuP50Ms": 86.229653,
+      "gpuP95Ms": 94.791548
+    },
+    {
+      "scenario": "hierarchy",
+      "engine": "packed-js",
+      "meanPerFrame": {
+        "syncMs": 4.22711864407411,
+        "kernelMs": 2.34406779663069,
+        "readMs": 1.4728813559148397,
+        "scannedBytes": 4312784,
+        "uploadedBytes": 16000,
+        "materializedBytes": 2816512,
+        "wasmCalls": 0,
+        "wasmNodes": 0
+      },
+      "gpuStatus": {
+        "available": 57,
+        "pending-at-end": 3
+      },
+      "gpuP50Ms": 90.445118,
+      "gpuP95Ms": 162.0917
+    }
+  ]
+}

@@ -46,4 +46,4 @@ FinalizationRegistry is only best-effort. Linear memory does not shrink.
 
 Cloud benchmark results include regressions; do not use kernel timings as
 product speed claims. See repository docs/REPORT.md and docs/COMPATIBILITY.md.
-Both project MIT and upstream THREE-LICENSE notices are included.
+Project MIT, upstream THREE-LICENSE and copied declaration THREE-TYPES-LICENSE notices are included.
