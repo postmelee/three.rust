@@ -4,7 +4,7 @@ mkdirSync('fixtures/generated',{recursive:true});
 for(const [name,file] of Object.entries(scenarios)){
  let s=readFileSync(`fixtures/original/${file}.html`,'utf8');
  s=s.replace('href="main.css"','href="/fixtures/original/main.css"').replace('../build/three.module.js','/node_modules/three/build/three.module.js').replace('"./jsm/"','"/node_modules/three/examples/jsm/"');
- s=s.replace("import * as THREE from 'three';",`import * as THREE from 'three';\nimport {install} from '/bench/browser.mjs';\nconst seeded = (()=>{let s=42;return ()=>((s=Math.imul(1664525,s)+1013904223>>>0)/4294967296)})(); Math.random=seeded;`);
+ s=s.replace("import * as THREE from 'three';",`import * as THREE from 'three';\nimport {install} from '/bench/browser.mjs';\nif(THREE.init) await THREE.init();\nconst seeded = (()=>{let s=42;return ()=>((s=Math.imul(1664525,s)+1013904223>>>0)/4294967296)})(); Math.random=seeded;`);
  s=s.replaceAll('renderer.setAnimationLoop( animate );','/* harness owns frame schedule */');
  s=s.replace("'models/gltf/Soldier.glb'","'/work/three-upstream/examples/models/gltf/Soldier.glb'");
  s=s.replace('let mixerUpdateDelta = timer.getDelta();','let mixerUpdateDelta = 1 / 60;');

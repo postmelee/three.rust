@@ -1,0 +1,10 @@
+import * as THREE from 'rthree';
+import { GLTFLoader } from 'rthree/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'rthree/addons/controls/OrbitControls.js';
+await THREE.init();
+const scene: THREE.Object3D = new THREE.Scene();
+const mesh = new THREE.Mesh(new THREE.BoxGeometry(),new THREE.MeshStandardMaterial());
+scene.add(mesh); mesh.position.x=1; scene.updateMatrixWorld(true);
+mesh.getWorldPosition(new THREE.Vector3());
+new GLTFLoader(); new OrbitControls(new THREE.PerspectiveCamera(),document.createElement('canvas'));
+THREE.release(scene);
