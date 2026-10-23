@@ -6,9 +6,15 @@ const pkg='packages/rthree';mkdirSync('work/build',{recursive:true});
 const source='node_modules/three/src/core/Object3D.js';const p=JSON.parse(readFileSync('fixtures/provenance.json'));const expected=p.files.find(f=>f.path===source).sha256;
 if(createHash('sha256').update(readFileSync(source)).digest('hex')!==expected)throw Error('Upstream hook version/hash mismatch');
 cpSync('node_modules/three/src','work/build/src',{recursive:true});
-let s=readFileSync(source,'utf8');const needle='updateMatrixWorld( force ) {';
-if(s.split(needle).length!==2)throw Error('Unexpected update hook count');
-s="import { batchUpdate } from '../../../packages/rthree/runtime.js';\n"+s.replace(needle,needle+'\n\n\t\tif ( batchUpdate( this, force, Object3D.prototype.updateMatrixWorld, Object3D.prototype.updateMatrix ) ) return;');
+let s=readFileSync(source,'utf8');
+const hooks=[
+ ['this.pivot = null;', '\n\t\ttrackFacadeObject( this );'],
+ ['updateMatrix() {','\n\t\tif ( facadeLocal( this, Object3D.prototype ) ) return;'],
+ ['updateMatrixWorld( force ) {','\n\t\tif ( batchUpdate( this, force, Object3D.prototype.updateMatrixWorld, Object3D.prototype.updateMatrix, Object3D.prototype.updateWorldMatrix ) ) return;'],
+ ['updateWorldMatrix( updateParents, updateChildren, force = false ) {','\n\t\tif ( facadeSelective( this, updateParents, updateChildren, force, Object3D.prototype ) ) return;']
+];
+for(const [needle,hook] of hooks){if(s.split(needle).length!==2)throw Error(`Unexpected hook count: ${needle}`);s=s.replace(needle,needle+hook);}
+s="import { batchUpdate, trackFacadeObject, facadeLocal, facadeSelective } from '../../../packages/rthree/runtime.js';\n"+s;
 writeFileSync('work/build/src/core/Object3D.js',s);
 await build({entryPoints:['work/build/src/Three.js'],bundle:true,format:'esm',target:'es2022',outfile:`${pkg}/core.js`,minify:false,legalComments:'eof',plugins:[{name:'one-runtime',setup(b){b.onResolve({filter:/runtime\.js$/},()=>({path:'./runtime.js',external:true}));}}]});
 cpSync('node_modules/three/examples/jsm',`${pkg}/addons`,{recursive:true});

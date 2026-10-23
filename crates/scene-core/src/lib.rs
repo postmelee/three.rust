@@ -1,11 +1,13 @@
 //! Persistent f64 transform arenas. No JS imports, renderer calls, or per-value ABI.
 //! Layout is shared with packages/rthree/runtime.js; slot 0 is external parent.
+mod facade;
 mod owned;
 use std::cell::RefCell;
 const STRIDE: usize = 64;
 #[derive(Default)]
 struct Scene {
     data: Vec<f64>,
+    ops: Vec<u32>,
     calls: u32,
     nodes: u32,
 }

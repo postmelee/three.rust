@@ -1,11 +1,12 @@
 # Architecture
 
-The implemented runtime has two distinct API paths. The planned broader engine is
+The implemented runtime has three distinct API paths. The planned broader engine is
 not yet a replacement for either path.
 
 | Path | State authority and work | Contract |
 |---|---|---|
 | Compatible transform bridge | Public JS objects own mutable values; a Rust arena computes eligible transform batches | [Compatibility](COMPATIBILITY.md) |
+| Persistent transform facade | JS owns public inputs/topology; Rust retains evaluated matrices; tracked writes and demand-driven snapshots | [C2 contract](PERSISTENT_FACADE.md) |
 | Explicit owned animation | Rust owns finite clips/actions, poses, hierarchy, world transforms and palettes; JS consumes final presentation data | [Owned API](OWNED_ANIMATION.md) |
 | Wider compatible CPU engine | Planned facade and prepared-pass boundary through visibility/order/upload preparation | [Direction](RUST_ENGINE_STRATEGY.md) |
 
@@ -20,8 +21,9 @@ The existing renderer consumes those results without a second scene transform
 pass. Its view/model/normal matrix work, culling, sort, skeleton update, GPU
 submission and shaders are not ported or removed.
 
-The build verifies the exact upstream Object3D SHA-256 before applying a single
-source hook. It bundles that source as one core and rewrites addon core imports
+The build verifies the exact upstream Object3D SHA-256 before applying guarded
+source hooks (constructor and three update methods; facade hooks are inactive in
+legacy modes). It bundles that source as one core and rewrites addon core imports
 to the same package root. There are no global prototype patches in the package.
 Instrumentation wrappers exist only in M0 profiling. The runtime does not import
 Three or call its JS math from Rust. Wasm instantiation has no JS math imports.

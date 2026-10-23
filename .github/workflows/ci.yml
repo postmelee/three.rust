@@ -30,6 +30,7 @@ jobs:
       - run: npm run fixtures
       - run: cargo fmt --check && cargo clippy --all-targets -- -D warnings
       - run: npm run build && npm test
+      - run: npm run test:facade
       - run: npm run test:compatibility
       - run: npm run test:owned
       - run: npm run test:browser-path && npm run test:fox

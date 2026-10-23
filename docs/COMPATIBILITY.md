@@ -4,8 +4,9 @@ Runtime reference **three 0.186.1**, matching r186 commit 9b4a2ac…;
 declarations **@types/three 0.186.0**, independently checked on npm.
 This replaces the bootstrap's proposed promises with the implemented boundary.
 The [observable contract](FACADE_CONTRACT.md) adds executable identity, mutation,
-read/event and lifecycle requirements for the next facade; that wider facade is
-not implemented by the contract tests.
+read/event and lifecycle requirements. The table below describes the default legacy
+bridge. The optional [persistent facade](PERSISTENT_FACADE.md) adds lazy proxy arrays
+and Rust evaluation of all three transform-update methods, with separate restrictions.
 
 | Path/API | Implementation and verification |
 |---|---|

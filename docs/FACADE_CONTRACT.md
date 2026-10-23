@@ -1,8 +1,8 @@
 # Observable compatibility contract
 
 Scope: C1, pinned **three 0.186.1 / r186**, declarations **@types/three 0.186.0**.
-The tests below characterize existing routes and define requirements for the next
-facade. They do not implement a wider Rust-owned scene or qualify an application.
+The tests below characterize six routes, including the bounded
+[C2 persistent transform facade](PERSISTENT_FACADE.md). They do not qualify an application.
 See [current compatibility](COMPATIBILITY.md) and the separate [owned API](OWNED_ANIMATION.md).
 
 ## API tiers
@@ -12,13 +12,13 @@ See [current compatibility](COMPATIBILITY.md) and the separate [owned API](OWNED
 | Ordinary original / compatibility JS | Three.js objects, methods, events and state | Reference and control |
 | Ordinary Wasm transform bridge | JS properties authoritative; Rust batches eligible transforms; public matrices updated in place | Implemented; same application operations in the contract suite |
 | Explicit owned rig | Rust or matched JS owns descriptor/action/pose/world/palette; commands and paid snapshots | Implemented finite API; not ordinary AnimationMixer compatibility |
-| Wider compatible facade (C2) | Stable public objects plus persistent engine authority, ordered mutation and defined observation points | Planned; must pass this contract and new implementation-specific tests |
+| Persistent transform facade (C2) | JS public inputs; persistent evaluated Rust matrices and stable proxy snapshots | Implemented opt-in subset; passes this contract and [dirty/read/lifecycle tests](../tests/facade-worker.mjs) |
 
 ## Executable matrix
 
 Each ID identifies a scenario in [cases.mjs](../tests/compatibility/cases.mjs).
 Every scenario asserts independent expectations on the upstream route before its
-trace is compared with JS, Wasm and packed JS. Ordinary animation, events and palette
+trace is compared with compatibility JS, Wasm, packed JS and both C2 routes. Ordinary animation, events and palette
 methods below still execute upstream JS, even when transforms use Rust.
 
 | ID | Required observable behavior | Existing Wasm route |
@@ -105,6 +105,7 @@ After [clean installation](CLOUD_SETUP.md), fixtures and build:
 
 ```sh
 npm run test:compatibility
+npm run test:facade
 npm test
 npm run test:package
 npm run test:browser

@@ -1,29 +1,36 @@
 import { updatePacked } from './packed.js';
+import { configureFacade, trackFacadeObject, facadeUpdate, releaseFacade } from './facade-state.js';
+export { trackFacadeObject };
 let backend = 'uninitialized', wasm, pending;
 const contexts = new WeakMap();
-const counters = { batches:0, nodes:0, fallbackRoots:0, wasmCalls:0, wasmNodes:0, uploadedBytes:0, scannedBytes:0, materializedBytes:0, arenas:0, syncMs:0, kernelMs:0, readMs:0 };
+const counters = { batches:0, nodes:0, fallbackRoots:0, wasmCalls:0, wasmNodes:0, uploadedBytes:0, scannedBytes:0, materializedBytes:0, arenas:0, syncMs:0, kernelMs:0, readMs:0, abiCalls:0, operationBytes:0, matrixReads:0, liveNodes:0 };
 let timing = false;
+const facadeEnabled=()=>backend==='facade-wasm'||backend==='facade-js';
+configureFacade({enabled:facadeEnabled,api(){if(backend==='facade-js')return null;if(!wasm)throw Error('rthree: await init() before updating objects');return wasm;},counters,timings:()=>timing});
 const finalizer = new FinalizationRegistry(({id,api})=>{ api.scene_free(id); counters.arenas--; });
 export function setBackend(value) {
  if (backend !== 'uninitialized' && backend !== value) throw Error('rthree: choose one engine per module graph');
  backend=value;
 }
 export async function init(options={}) {
- if(backend==='js'||backend==='packed-js') return;
- if(backend==='wasm') return;
+ if(backend==='js'||backend==='packed-js'||backend==='facade-js') return;
+ if(wasm) return;
  if(pending) return pending;
+ const requested=backend;
  pending=(async()=>{
   const bytes=options.wasmBytes ?? await (async()=>{const r=await fetch(options.wasmURL ?? new URL('./scene_core.wasm',import.meta.url));if(!r.ok)throw Error(`rthree Wasm HTTP ${r.status}`);return r.arrayBuffer()})();
-  const result=await WebAssembly.instantiate(bytes,{});wasm=result.instance.exports;
-  if(backend!=='uninitialized')throw Error('rthree: backend changed during init');
-  backend='wasm';
+  const result=await WebAssembly.instantiate(bytes,{});
+  if(backend!==requested)throw Error('rthree: backend changed during init');
+  wasm=result.instance.exports;backend=requested==='facade-wasm'?'facade-wasm':'wasm';
  })();
  try {await pending;} catch(e){pending=undefined;throw e;}
 }
-export function diagnostics(){return {backend,wasmActive:backend==='wasm',...counters,wasmMemoryBytes:wasm?.memory.buffer.byteLength??0};}
+export function diagnostics(){return {backend,wasmActive:backend==='wasm'||(backend==='facade-wasm'&&!!wasm),...counters,wasmMemoryBytes:wasm?.memory.buffer.byteLength??0};}
 export function configureDiagnostics({timings=false}={}){timing=timings;}
-export function resetDiagnostics(){for(const k of Object.keys(counters))if(k!=='arenas')counters[k]=0;}
-export function release(root){const c=contexts.get(root);if(c){if(c.id){wasm.scene_free(c.id);finalizer.unregister(c);counters.arenas--;}contexts.delete(root);}for(const child of root.children)release(child);}
+export function resetDiagnostics(){for(const k of Object.keys(counters))if(k!=='arenas'&&k!=='liveNodes')counters[k]=0;}
+export function release(root){if(facadeEnabled())return releaseFacade(root);const c=contexts.get(root);if(c){if(c.id){wasm.scene_free(c.id);finalizer.unregister(c);counters.arenas--;}contexts.delete(root);}for(const child of root.children)release(child);}
+export function facadeLocal(root,base){return facadeUpdate(root,'local',base);}
+export function facadeSelective(root,parents,children,force,base){return facadeUpdate(root,'updateWorldMatrix',base,{parents:parents===true,children:children===true,force:!!force});}
 function context(root,n){
  let c=contexts.get(root);
  if(!c){c={capacity:0,id:backend==='wasm'?wasm.scene_new():0};contexts.set(root,c);if(c.id){counters.arenas++;finalizer.register(root,{id:c.id,api:wasm},c);}}
@@ -32,7 +39,8 @@ function context(root,n){
  if(c.id)c.data=new Float64Array(wasm.memory.buffer,wasm.scene_ptr(c.id),(c.capacity+1)*64);
  return c;
 }
-export function batchUpdate(root,force,baseWorld,baseLocal){
+export function batchUpdate(root,force,baseWorld,baseLocal,baseSelective){
+ if(facadeEnabled())return facadeUpdate(root,'updateMatrixWorld',{updateMatrixWorld:baseWorld,updateMatrix:baseLocal,updateWorldMatrix:baseSelective},{force:!!force,children:true});
  if(backend==='js')return false;
  if(backend==='uninitialized')throw Error('rthree: await init() before updating objects');
  // Version-specific overrides must execute their own post-update work.

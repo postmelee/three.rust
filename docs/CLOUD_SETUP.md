@@ -17,6 +17,7 @@ npm ci
 npm run fixtures
 npm run build
 npm test
+npm run test:facade
 ```
 
 `npm run fixtures` downloads only the pinned Soldier asset (SHA-256 checked)
@@ -66,7 +67,8 @@ package exports alone are interpreted by Node/bundlers, not browser URL loaders.
 
 Run the local demo with `npm run dev`, open http://127.0.0.1:4173. In a cloud
 session forward port 4173 using the environment's port-forwarding UI. No public
-hosting deployment is implied. Choose A/B/C/D and a scene; Pause stops the loop.
+hosting deployment is implied. Choose an engine and scene; the two optional C2
+facade routes are described in [their contract](PERSISTENT_FACADE.md). Pause stops the loop.
 For manual hardware frame timings use the benchmark command below instead of
 the live demo counter.
 
