@@ -1,55 +1,86 @@
-# Progress counting and generation
+# Computation and ownership progress
 
-Run `python3 tools/progress.py` (Python 3.10+; no third-party packages) or
-`npm run docs:generate`. The single source is `docs/progress-inventory.json`.
-The generator writes `docs/progress.json`, `docs/progress.html` and
-`docs/assets/progress.svg`. `--check` validates these outputs without changing
-files; CI fails if any is stale. There are no timestamps or network-dependent
-values in generated output. `npm run test:progress` also produces desktop/mobile
-PNG screenshots under ignored `work/progress-validation/` using Chromium.
+![Current ownership map](assets/progress.svg)
 
-Open docs/progress.html directly in a browser, or run `npm run dev` and open
-http://127.0.0.1:4173/docs/progress.html. The portable demo artifact includes the
-page, JSON and SVG under docs/. It works without JavaScript or network access;
-evidence links lead to the repository. GitHub's blob view shows HTML source,
-not a hosted website. This task does not configure or claim a Pages deployment.
+[Progress history](HISTORY.md) · [Raw inventory](progress.json) ·
+[Standalone page](progress.html) · [Source selection](progress-source.json)
 
-## Denominators and meaning
+The upper band shows the present boundary and the intended Rust-owned pipeline.
+The dashed target is planned, not implemented. Computation and state ownership
+are independent: the current Rust arena is a cache of authoritative JS values.
 
-- **CPU capabilities:** 29 explicitly named items across seven subsystems.
-  Six scoped transform capabilities currently run in Rust. One tile is one
-  inventory item, not a function, source line, equal development effort or
-  measured CPU cost. This denominator is intentionally incomplete and can
-  change when the contract is refined; it is not the full Three.js API.
-- **Evidence gates:** 12 named research/verification criteria. Seven have
-  recorded supporting evidence. The broad whole-frame gain criterion is amber:
-  no general gain is established and the measured hierarchy regressed. Four
-  criteria remain pending. Passed evidence is a reviewed snapshot of the named
-  environment/scope, not a live CI status or an all-platform guarantee.
-- Gray means outstanding; green means implemented (CPU panel) or passed
-  (evidence panel). Amber records an unfavorable outcome. Text in the table
-  and item details provides the same information without relying on color.
-- JS forwarding, retained animation/skeleton calculations and GPU shaders do
-  not count as Rust implementations. A transform test passing does not establish
-  a Rust animation implementation. GPU shader work is not removed by a CPU port.
+## Units and legend
 
-Status is deliberately curated from source, tests and recorded reports. The
-script validates unique IDs, allowed states and evidence paths, then calculates
-counts. It does not infer semantic completeness from a function body, a symbol
-name, a stub's absence or an open/closed issue. Change an item's state only with
-reviewable implementation and evidence. CI checks generation and inventory
-integrity; it cannot automatically certify the truth of a manual status claim.
-The sourceRef field points at the active review branch and should be changed
-when the work is integrated. Git history records inventory changes; no synthetic
-historical series is generated.
+| Color | Meaning |
+|---|---|
+| Gray | JavaScript execution or JavaScript-owned state |
+| Amber | Conditional Rust batch computation; authoritative state remains JS |
+| Blue | A callable's computation is implemented in Rust within its declared contract |
+| Green | A declared state field is authoritative and persistent in Rust |
 
-## Reference
+The left map has one tile per named callable definition in the selected Three.js
+source files. The right map has one tile per statically declared state field in
+selected scene/animation classes. These are different denominators, not equal
+work estimates. Neither map is a percentage of all Three.js or proof of speedup.
+Some public metadata, controls and callbacks may intentionally remain in JS.
 
-The requested presentation reference is [AnyPS5 progress](https://boykopovar.github.io/AnyPS5/progress.html),
-its [JSON](https://boykopovar.github.io/AnyPS5/progress.json) and
-[generator](https://github.com/boykopovar/AnyPS5/blob/main/tools/progress.py).
-That project counts declared library functions and decoded shader instructions.
-Those units do not transfer to a state-ownership experiment. Its repository
-license is GPL-2.0; our Python-standard-library generator is independently
-implemented, using a recursive split layout and this project's own inventory.
-No AnyPS5 implementation code or generated artwork is included.
+`Object3D.updateMatrixWorld` is the sole amber route today. Its eligible subtree
+uses Rust composition/propagation; custom dispatch and other paths retain JS.
+`Matrix4.compose` is not marked ported globally just because similar arithmetic
+exists in Rust. No state field is green: public JS values are still scanned and
+matrices materialized. Renderer/shader work is not counted as removed by a CPU port.
+
+## Source extraction
+
+`scripts/progress-source.mjs` parses three@0.186.1 with the locked TypeScript
+parser. It inventories named function declarations, class methods/accessors,
+variable-assigned functions and `this.method = function` definitions under
+animation, cameras, core, math, objects, renderers/webgl and WebGLRenderer.js.
+Constructors, anonymous callbacks, inherited duplicates, imported code and addon
+sources are excluded. Nested named helpers count independently; source identity
+includes path, qualified name, kind where needed and duplicate ordinal.
+
+State extraction covers Object3D, AnimationAction, AnimationMixer, PropertyBinding,
+PropertyMixer, Interpolant, Skeleton and SkinnedMesh. It collects unique literal
+`this.field = ...`, Object.defineProperty and Object.defineProperties declarations
+in those classes, including initialization helpers. It does not infer dynamic
+computed property names, inherited fields or arbitrary runtime object structure.
+Ordinary nested functions have their own this and are excluded from field collection.
+
+Each item records a pinned upstream path and source line. Every scanned file has
+a SHA-256 in progress-source.json. CI regenerates from the clean pinned dependency
+and fails on drift. Explicit reviewed overrides in progress-inventory.json add
+Rust execution/ownership claims and evidence links; absence means JS. AST parsing
+establishes declarations, not correctness or semantic completeness.
+
+## Generation and history
+
+```sh
+npm ci
+npm run docs:generate
+npm run docs:check
+npm run test:progress
+```
+
+The npm generator first refreshes the source extraction, then runs
+`python3 tools/progress.py` (Python 3.10+, standard library only). After an actual
+reviewed observation, record the **implementation commit being observed**:
+
+```sh
+python3 tools/progress.py --record FULL_IMPLEMENTATION_COMMIT_SHA
+```
+
+Ordinary generation never fabricates a new observation or alters history.
+The original 6/29 capability and 7/12 evidence counts are retained as schema 2.
+The source-derived schema 3 observation uses the same unchanged engine, with a
+new denominator. History does not join these into a misleading progress curve.
+There is currently one observation per scheme; no trend can be inferred.
+
+Open `/docs/progress.html` or `/docs/history.html` with `npm run dev`. The pages
+also ship in the portable demo. GitHub renders HISTORY.md directly, so the README
+history link works on main without a Pages deployment. The HTML pages use no
+external assets or scripts. `sourceRef` now targets main.
+
+Presentation reference: [AnyPS5](https://boykopovar.github.io/AnyPS5/progress.html).
+Its function/instruction units inspired the fine-grained report; no AnyPS5 code
+or artwork is copied. This project's generator and source extraction are independent.
