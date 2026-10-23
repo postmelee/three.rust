@@ -1,15 +1,20 @@
 import assert from "node:assert/strict";
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync } from "node:fs";
 const dir = process.argv[2];
 if (!dir) throw Error("Usage: node bench/fox-compare.mjs SESSION");
 const read = (p) => JSON.parse(readFileSync(`${dir}/${p}/summary.json`)),
   before = read("aa-before"),
   after = read("aa-after"),
   main = read("main");
-const manifests = ["aa-before", "main", "aa-after"].map((p) =>
+const jsBefore = existsSync(`${dir}/aa-js-before`),
+  jsAfter = existsSync(`${dir}/aa-js-after`);
+assert.equal(jsBefore, jsAfter, "Incomplete matched-JS A/A phases");
+const phases = ["aa-before", "main", "aa-after", ...(jsBefore ? ["aa-js-before", "aa-js-after"] : [])];
+const manifests = phases.map((p) =>
   JSON.parse(readFileSync(`${dir}/${p}/manifest.json`)),
 );
 for (const manifest of manifests) {
+  assert.deepEqual(manifest.timing ?? null, manifests[1].timing ?? null, "Different timing policies");
   assert.equal(manifest.status, "complete", "Incomplete phase");
   assert.deepEqual(
     manifest.hashes,
@@ -39,11 +44,12 @@ const median = (a) => {
     ? a[(a.length - 1) / 2]
     : (a[a.length / 2 - 1] + a[a.length / 2]) / 2;
 };
+function compare(before, after, baseline, variants) {
 const decisions = [];
 for (const scenario of [...new Set(main.groups.map((g) => g.scenario))]) {
   const values = (s) =>
       s.rows
-        .filter((r) => r.scenario === scenario && r.variant === "original")
+        .filter((r) => r.scenario === scenario && r.variant === baseline)
         .map((r) => r.metrics.cpu.p50),
     a = values(before),
     b = values(after),
@@ -52,12 +58,12 @@ for (const scenario of [...new Set(main.groups.map((g) => g.scenario))]) {
     mad = (x) => median(x.map((v) => Math.abs(v - median(x)))) / median(x),
     drift = ma > 0 ? Math.abs(mb / ma - 1) : Infinity,
     noise = Math.max(0.05, 2 * drift, 2 * mad(a), 2 * mad(b));
-  for (const variant of ["owned-js", "owned-wasm"]) {
+  for (const variant of variants) {
     const g = main.groups.find(
         (g) => g.scenario === scenario && g.variant === variant,
       ),
       ref = main.groups.find(
-        (g) => g.scenario === scenario && g.variant === "original",
+        (g) => g.scenario === scenario && g.variant === baseline,
       ),
       gain = 1 - g.metrics.cpu.p50.median / ref.metrics.cpu.p50.median;
     decisions.push({
@@ -77,12 +83,17 @@ for (const scenario of [...new Set(main.groups.map((g) => g.scenario))]) {
     });
   }
 }
+return decisions;
+}
+const decisions = compare(before, after, "original", ["owned-js", "owned-wasm"]);
+const matchedJsDecisions = jsBefore ? compare(read("aa-js-before"), read("aa-js-after"), "owned-js", ["owned-wasm"]) : null;
 writeFileSync(
   `${dir}/comparison.json`,
   JSON.stringify(
     {
       rule: "Gain > max(5%, twice absolute before/after original p50 drift, twice relative within-session MAD). Timer-resolution and all workload/tail gates still require human interpretation. Single machine with uncontrolled background work.",
       decisions,
+      ...(matchedJsDecisions ? { matchedJsDecisions } : {}),
     },
     null,
     2,

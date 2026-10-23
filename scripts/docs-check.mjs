@@ -1,6 +1,7 @@
 import {readFileSync,existsSync} from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import assert from 'node:assert/strict';
+execFileSync(process.execPath,['scripts/performance-summary.mjs','--check'],{stdio:'inherit'});
 const r=JSON.parse(readFileSync('docs/roadmap.json'));
 assert.equal(r.schemaVersion,1);
 const keys=new Set(r.tasks.map(t=>t.key)),milestones=new Set(r.milestones.map(m=>m.key));
