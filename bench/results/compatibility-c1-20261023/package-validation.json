@@ -1,0 +1,23 @@
+{
+  "pack": {
+    "filename": "rthree-0.1.0-alpha.0.tgz",
+    "size": 2817359,
+    "unpackedSize": 11358255,
+    "shasum": "53b359119a974a267bb6e26fb335338403f88102",
+    "integrity": "sha512-jPgahZcqKG029j1FNtNOoBF+Sk/LWHzV4/qYs9TTe/e/LseFjqTIQ/492d8i1YIlF723mT9aufcFxRFkrpN+Rg=="
+  },
+  "passed": true,
+  "checks": [
+    "fresh tarball install",
+    "Node ESM",
+    "no-init error",
+    "init reject/concurrent retry",
+    "mixed-mode rejection",
+    "addon identity",
+    "no runtime three",
+    "TypeScript NodeNext and Bundler",
+    "esbuild single core"
+  ],
+  "sourceBaseCommit": "1671a51e113fe8f0bfb613c074592a6abeb6c954",
+  "sourceTreeDirty": true
+}

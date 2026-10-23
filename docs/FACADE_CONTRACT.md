@@ -117,3 +117,6 @@ dirty-state and source/Wasm hashes; JSON preserves traces, call counts and failu
 CI uploads these with correctness artifacts. Browser mode follows the existing
 hardware guard; default cloud SwiftShader proves correctness only. No timing or
 product-readiness increment follows from these tests.
+
+[Recorded C1 validation](../bench/results/compatibility-c1-20261023/README.md)
+preserves the clean-commit traces, images and limitations.
