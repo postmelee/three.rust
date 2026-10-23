@@ -7,6 +7,18 @@ to the renderer. One-to-one source translation and ported line counts are not
 success criteria. The local package is `rthree`; complete compatibility and
 whole-frame acceleration remain unproven.
 
+## Product destination and release gates
+
+The destination is a useful replacement for declared real Three.js applications:
+small migration, equivalent behavior and worthwhile end-to-end performance.
+The prospective [adoption contract](PRODUCT_GOALS.md) and [ADR 0004](adr/0004-adoption-goals.md)
+define six gates. Initial application targets are at least 20% and 1 ms CPU p50/p95
+saving versus Three.js, with a separate matched-JS gate before recommending Rust.
+These are future qualification budgets, not current results or a universal promise.
+An explicit accelerator can be released first; import/init/config-only application
+replacement requires the stronger migration contract and a new qualification.
+README Status tracks these gates; source ownership remains a separate engineering view.
+
 ## Requirements, hypothesis and measured facts
 
 **Requirements:** real browser rendering, explicit Wasm initialization, documented
@@ -89,9 +101,10 @@ Keep comparable precision: f32/SIMD/parallel modes are separate experiments.
 
 Animation time → interpolation → blending → local/world transforms → bone palette
 or upload preparation is the original discussion's preferred coherent first unit.
-It remains the leading hypothesis, **not an already measured target selection**.
-Fresh representative many-character/object profiles must compare its useful CPU
-fraction and data volume with spatial/render-list candidates and controls.
+ADR 0003 implemented this finite explicit pipeline; the [Mac report](MAC_HARDWARE_REPORT.md)
+adds one real-asset experiment. That is not a representative application portfolio
+or a general next-target ranking. Fresh application profiles must compare residual
+CPU fractions and data volume with spatial/render-list candidates and controls.
 
 Before new engine code, validate pinned WAMR3D, oneilltomhq/three-rs and
 eugenehp/threers sources, licenses, build paths and reusable tests. Reproduce any
@@ -115,8 +128,9 @@ GPU shader work does not disappear when CPU code changes language.
 ## Acceptance and delivery
 
 M4 must predeclare workload-specific meaningful improvements and regression budgets
-using M3 A/A noise and cost fractions. The bootstrap's 20% aspiration is not a
-universal promise. Measure complete application-to-render-return CPU time, tails
+using M3 A/A noise and cost fractions. The bootstrap's 20% aspiration was not a
+universal promise. The new adoption-v1 targets combine relative and absolute savings
+for a future declared application cohort; historical runs are not retroactively qualified. Measure complete application-to-render-return CPU time, tails
 and intervals; diagnose GPU, startup, memory and GC separately. Preserve A original,
 B facade JS, C Rust and D algorithm/layout-matched JS. Name explicit-API variants
 separately. Use run-level repetition, matching visual work and raw evidence.

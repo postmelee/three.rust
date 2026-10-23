@@ -11,19 +11,35 @@ renderer. The local JavaScript package is `rthree`.
 
 ## Status
 
+The goal is a useful Three.js replacement: little application change, preserved
+behavior and worthwhile performance headroom. **Current stage: research prototype.**
+
 [![Computation and persistent state ownership](docs/assets/progress.svg)](https://postmelee.github.io/three.rust/progress.html)
 
-[Progress history](https://postmelee.github.io/three.rust/history.html) · [Detailed inventory](https://postmelee.github.io/three.rust/progress.html)
+[Progress history](https://postmelee.github.io/three.rust/history.html) · [Detailed status](https://postmelee.github.io/three.rust/progress.html)
 
-\* Cells represent known callable definitions and state declarations in the
-[selected Three.js r186 sources](docs/PROGRESS.md), not all Three.js features
-or equal amounts of work. The inventory grows as the supported scope grows.
+Cells represent known callable definitions and state declarations in the
+[selected Three.js r186 sources](docs/PROGRESS.md), not all Three.js features or
+product completion. History tracks these implementation counts.
 
-The compatibility facade batches eligible transforms in Rust while JS retains
-public state. The separate [owned rig API](docs/OWNED_ANIMATION.md) keeps bounded
-animation, object/bone transforms and bone palettes in Rust across frames.
-It requires explicit commands and reads; it is not import-only AnimationMixer
-compatibility. General application and FPS gains remain unproven.
+An explicit accelerator is the first release target; application replacement then
+requires only import, preparation and resolution changes. These are **future
+qualification targets**, not measured promises. Early evidence does not mean a
+gate is met; no gate is qualified yet.
+
+<!-- adoption-goals:start -->
+| Product gate | Target | Current status |
+|---|---|---|
+| Useful app-level speed | 20% and 1 ms less CPU time at p50 and p95 | Early evidence |
+| A reason to choose Rust | 10% and 0.5 ms beyond the matched JS design | Not yet |
+| Low migration cost | Import, preparation and resolution changes only | Early evidence |
+| Preserved app behavior | Same features, interaction and visual quality | Early evidence |
+| Bounded total cost | Control, startup, download and memory budgets | Not yet |
+| Repeatable supported release | Two hardware classes and browser engines | Early evidence |
+<!-- adoption-goals:end -->
+
+[Product goals and acceptance rules](docs/PRODUCT_GOALS.md) explain the application
+cohort, API tiers, budgets and evidence required for qualification.
 
 ## How much faster is it?
 

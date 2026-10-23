@@ -124,15 +124,75 @@ def shell(title,body):
     return f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{escape(title)}</title><style>{STYLE}</style></head><body>{body}</body></html>\n'
 
 
+GATE_STATES = {'open': 'Not yet', 'early': 'Early evidence', 'qualified': 'Qualified'}
+
+
+def validate_goals(goals):
+    if goals['schemaVersion'] != 1 or goals['apiTier'] != 'application-replacement':
+        raise ValueError('Unknown adoption schema or API tier')
+    ids = set()
+    for gate in goals['gates']:
+        if gate['id'] in ids or gate['status'] not in GATE_STATES:
+            raise ValueError('Duplicate gate or unknown state')
+        ids.add(gate['id'])
+        for evidence in gate['evidence']:
+            p = (ROOT / evidence).resolve()
+            if not p.is_relative_to(ROOT) or not p.is_file():
+                raise ValueError('Missing adoption evidence')
+        if gate['status'] == 'qualified':
+            q = gate.get('qualification', {})
+            if (q.get('profile') != goals['profile'] or q.get('apiTier') != goals['apiTier']
+                or q.get('report') not in gate['evidence']
+                or not re.fullmatch('[a-f0-9]{40}', q.get('implementationCommit', ''))):
+                raise ValueError('Qualified gate requires matching profile/tier, report and pinned implementation')
+    if len(ids) != 6:
+        raise ValueError('Adoption profile must declare six gates')
+    return goals
+
+
+def read_goals():
+    return validate_goals(json.loads((ROOT/'docs/product-goals.json').read_text()))
+
+
+def readme_goals(goals):
+    source = (ROOT/'README.md').read_text()
+    start, end = '<!-- adoption-goals:start -->', '<!-- adoption-goals:end -->'
+    if source.count(start) != 1 or source.count(end) != 1 or source.index(start) >= source.index(end):
+        raise ValueError('README requires one adoption-goals marker pair')
+    lines = ['| Product gate | Target | Current status |', '|---|---|---|']
+    def cell(value):
+        return escape(value).replace('|', '&#124;').replace('\n', ' ')
+    for gate in goals['gates']:
+        label = GATE_STATES[gate['status']]
+        lines.append('| '+ ' | '.join(cell(v) for v in [gate['title'],gate['target'],label])+' |')
+    return source[:source.index(start)+len(start)]+'\n'+'\n'.join(lines)+'\n'+source[source.index(end):]
+
+
+def readiness_html(goals, base):
+    parts = ['<section aria-labelledby="adoption-heading"><h2 id="adoption-heading">Product goals</h2>',
+             '<p><strong>'+escape(goals['stage'])+' — '+escape(goals['claim'])+'</strong></p>',
+             '<p><a href="'+base+goals['contract']+'">Product goals and qualification budgets</a> · <a href="'+base+'docs/product-goals.json">Declared gates</a></p>',
+             '<p>Early evidence is not qualification. These gates describe application replacement; an explicit accelerator has a separate migration contract. Source ownership is implementation evidence, not product completion.</p>',
+             '<table id="adoption-gates"><caption>Application replacement: prospective targets and current evidence</caption><thead><tr><th>Gate / target</th><th>Status / current evidence</th></tr></thead><tbody>']
+    for gate in goals['gates']:
+        label = GATE_STATES[gate['status']]
+        links = ' · '.join('<a href="'+base+escape(e)+'">Evidence '+str(i+1)+'</a>' for i,e in enumerate(gate['evidence']))
+        parts.append('<tr><th>'+escape(gate['title'])+'<br><small>'+escape(gate['target'])+'</small></th><td><strong>'+label+'</strong><br>'+escape(gate['current'])+'<br>'+links+'</td></tr>')
+    parts.append('</tbody></table></section>')
+    return '\n'.join(parts)
+
+
 def render_html(data):
     base=BASE+'blob/'+data['sourceRef']+'/'
     parts=['<h1>Ownership progress</h1>',render_svg(data),'<p><a href="history.html">Progress history</a> · <a href="progress.json">Raw data</a> · <a href="'+base+'docs/PROGRESS.md">Counting rules</a></p>']
+    parts.append('<p>The goal is a useful Three.js replacement with little application change. This map tracks implementation; <a href="#adoption-heading">product goals and current evidence</a> are listed separately below.</p>')
     for panel,title,statuses in [('functions','Known CPU callable definitions',['js','rust-batch','rust']),('state','Known scene and animation state fields',['js','rust-owned'])]:
         p=data[panel]
         parts.append(f'<table id="{panel}"><caption>{title}</caption><thead><tr><th>Source group</th>'+''.join(f'<th>{s}</th>' for s in statuses)+'<th>Total</th></tr></thead><tbody>')
         for g in p['groups']:
             parts.append(f'<tr><th><a href="#{panel}-{g["id"]}">{escape(g["name"])}</a></th>'+''.join(f'<td>{g["counts"][s]}</td>' for s in statuses)+f'<td>{g["total"]}</td></tr>')
         parts.append('</tbody><tfoot><tr><th>Total</th>'+''.join(f'<td>{p["counts"][s]}</td>' for s in statuses)+f'<td>{p["total"]}</td></tr></tfoot></table>')
+    parts.append(readiness_html(read_goals(),base))
     parts.append('<p>State fields are inventoried independently of computation. Public metadata and callbacks may remain in JS by design. No 100% Rust target is implied for every declaration. Unsupported custom transform dispatch retains the documented JS path.</p><h2>Definitions and evidence</h2>')
     for panel in ['functions','state']:
         for g in data[panel]['groups']:
@@ -278,7 +338,7 @@ def main():
         record(history,data,args.record);validate_history(history)
         (ROOT/'docs/progress-history.json').write_text(json.dumps(history,indent=2)+'\n')
     md,html=history_views(history)
-    outputs={'docs/progress.json':json.dumps(data,indent=2)+'\n','docs/progress.html':render_html(data),'docs/assets/progress.svg':render_svg(data),'docs/HISTORY.md':md,'docs/history.html':html,'docs/assets/history.svg':history_chart(history)+'\n'}
+    outputs={'README.md':readme_goals(read_goals()),'docs/progress.json':json.dumps(data,indent=2)+'\n','docs/progress.html':render_html(data),'docs/assets/progress.svg':render_svg(data),'docs/HISTORY.md':md,'docs/history.html':html,'docs/assets/history.svg':history_chart(history)+'\n'}
     for name,content in outputs.items():
         p=ROOT/name
         if args.check:

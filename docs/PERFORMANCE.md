@@ -2,7 +2,9 @@
 
 The explicit owned-animation prototype reduces CPU work in the measured
 many-character scene. It is not yet a generally faster, import-compatible
-replacement for Three.js. The [README table](../README.md#how-much-faster-is-it)
+replacement for Three.js. The prospective [adoption goals](PRODUCT_GOALS.md)
+require useful absolute savings and low migration cost; this experiment's 0.25 ms
+saving does not meet the future 1 ms application gate. The [README table](../README.md#how-much-faster-is-it)
 is generated directly from the preserved hardware summary with
 `npm run docs:performance`; CI checks that it stays in sync.
 
