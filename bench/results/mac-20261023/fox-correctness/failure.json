@@ -1,0 +1,624 @@
+{
+  "error": "AssertionError [ERR_ASSERTION]: Numeric delta 0.0009945238441880348 at 103",
+  "results": [
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 1,
+      "numeric": {},
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 120,
+      "numeric": {},
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 150,
+      "numeric": {},
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 180,
+      "numeric": {},
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 240,
+      "numeric": {},
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 300,
+      "numeric": {},
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 420,
+      "numeric": {},
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 450,
+      "numeric": {},
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 480,
+      "numeric": {},
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 540,
+      "numeric": {},
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 600,
+      "numeric": {},
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 1,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 120,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 150,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 180,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 240,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 300,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 420,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 450,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 480,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 540,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 600,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 1,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 120,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 150,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 180,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 240,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 300,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 420,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "timerQuery": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+animated-1 original passed
+animated-1 original passed
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Numeric delta 0.0009945238441880348 at 103
+    at compare (file:///Users/melee/.codex/worktrees/mac-owned-validation/three.rust/tests/fox-browser.mjs:11:149)
+    at file:///Users/melee/.codex/worktrees/mac-owned-validation/three.rust/tests/fox-browser.mjs:22:109 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.15.0

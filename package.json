@@ -28,7 +28,10 @@
     "bundle:status": "python3 tools/status_site.py work/status-site",
     "test:status": "python3 -m unittest discover -s tests -p test_status_site.py && node tests/status-site.mjs work/status-site",
     "test:owned": "node scripts/pipeline-audit.mjs --check && node --test tests/owned.mjs && node tests/owned-browser.mjs",
-    "bench:owned": "node bench/owned.mjs"
+    "bench:owned": "node bench/owned.mjs",
+    "test:fox": "node scripts/fetch-fox.mjs && node tests/fox-rejections.mjs && node tests/fox-browser.mjs",
+    "test:browser-path": "node --test tests/browser-path.mjs",
+    "bench:mac": "bash scripts/mac-validation.sh"
   },
   "devDependencies": {
     "@types/three": "0.186.0",

@@ -200,3 +200,24 @@ original-only A/A sessions and a predeclared noise rule. The existing GPU workfl
 still measures the M2 workload; it does not yet schedule the new owned workload.
 Do not mix these datasets or infer a hardware result from correctness CI. Hardware
 registration, real-asset profiles and M5/M6 acceptance remain outstanding.
+
+## Physical Mac validation
+
+The Mac follow-up is reproducible on a local Apple GPU machine or a self-hosted Mac runner. A cloud software-renderer correctness job does not substitute for Apple GPU/Metal measurements. This change does not register a runner or alter the default-branch-only hardware workflow. See [the Mac report](MAC_HARDWARE_REPORT.md) for the actual environment, results and issue coverage.
+
+```sh
+npm ci
+npm run fixtures
+npm run build
+npm test
+node scripts/fetch-fox.mjs
+bash scripts/mac-validation.sh work/mac-session-NEW
+```
+
+Browser resolution honors `CHROMIUM` first, then installed Google Chrome/Chromium application paths on macOS, then Playwright's browser. An invalid explicit override fails rather than silently selecting another binary. Capture the actual version and executable path for every run; an installed Chrome update is a new environment. Linux retains the system-browser fallbacks; CI's pinned Playwright override is authoritative.
+
+`mac-preflight.mjs` records macOS build, CPU/GPU model, Metal capability, power settings, available display metadata, browser/CDP GPU data, actual WebGL renderer and observed rAF intervals. Host collection allowlists fields and excludes serial/UUID/UDID. The Apple driver is tied to the OS build; unreported display refresh and instantaneous CPU/GPU temperatures remain unknown. Observed rAF cadence is not independently measured scanout latency.
+
+The script runs synthetic correctness/baseline, Fox checkpoint correctness, five original A/A runs before and after six balanced-permutation comparisons, then five separate boundary/read diagnostic repeats. Real-asset timing uses 1200/3600 fixed warmup/sample frames, calibrated for the observed ~120 Hz Mac cadence (approximately 10/30 seconds, not a duration guarantee). All three scenarios include original-size Fox, 16-rig scalability and static-one. Inputs reset after warmup; all variants receive the same six input cycles. Fresh output paths are required, failures remain recorded, and hashes are verified again after the experiment.
+
+The main timer includes requested synchronous snapshots once per 60 ticks, input construction/validation, commands, animation/transform/palette computation, output copying and renderer return. Separate diagnostics split evaluate, prepare/copy, read and render. Navigation, asset loading, descriptor conversion, domain initialization and shader/first-draw readiness are separate startup metrics with shared browser caches, not cold-start claims. Ordinary CI additionally executes Fox numerical/image/bypass correctness under software rendering; it does not certify performance.

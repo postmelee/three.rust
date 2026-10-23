@@ -31,6 +31,7 @@ jobs:
       - run: cargo fmt --check && cargo clippy --all-targets -- -D warnings
       - run: npm run build && npm test
       - run: npm run test:owned
+      - run: npm run test:browser-path && npm run test:fox
       - run: npm run test:pipeline
       - run: npm run test:browser && npm run test:gpu-guard
       - run: npm run test:package && npm run test:demo
@@ -47,6 +48,8 @@ jobs:
             work/ci-demo
             work/package
             work/gpu-guard
+            work/fox-rejections
+            work/fox-validation
             work/owned-validation
             work/owned-smoke
             work/pipeline-validation
