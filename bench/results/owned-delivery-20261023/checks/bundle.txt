@@ -1,0 +1,22 @@
+dist/owned-final-demo
+Demo original/Wasm switch and pause passed
+Progress and history desktop/mobile checks passed
+pipeline original ok
+pipeline original ok
+pipeline js ok
+pipeline wasm ok
+pipeline packed-js ok
+owned browser original passed
+owned browser original passed
+owned browser js passed
+owned browser wasm passed
+owned browser packed-js passed
+owned browser owned-js passed
+owned browser owned-wasm passed
+owned browser original passed
+owned browser original passed
+owned browser js passed
+owned browser wasm passed
+owned browser packed-js passed
+owned browser owned-js passed
+owned browser owned-wasm passed

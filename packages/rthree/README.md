@@ -1,7 +1,7 @@
 # rthree 0.1.0-alpha.0
 
-Local research package. Based on Three.js 0.186.1. Only eligible Object3D
-`updateMatrixWorld` subtree composition/propagation is ported to Rust/Wasm.
+Local research package. Based on Three.js 0.186.1. The compatibility facade ports eligible Object3D
+`updateMatrixWorld` subtree composition/propagation to Rust/Wasm.
 Existing WebGL renderer, math API, animation, skeleton palette, materials and
 shaders remain JavaScript/GPU. This is **not** a complete Three.js Rust port.
 
@@ -47,3 +47,20 @@ FinalizationRegistry is only best-effort. Linear memory does not shrink.
 Cloud benchmark results include regressions; do not use kernel timings as
 product speed claims. See repository docs/REPORT.md and docs/COMPATIBILITY.md.
 Project MIT, upstream THREE-LICENSE and copied declaration THREE-TYPES-LICENSE notices are included.
+
+
+## Explicit owned animation API
+
+`rthree/owned` adds a separate experimental descriptor/command API. Await
+`createOwnedAnimation(descriptor, {backend: 'wasm'})` (or `js` for the matched
+reference), submit `commands(...)`, advance with `step(dt)`, and use `snapshot()`
+for paid synchronous copies. `dispose()` releases the domain. `createOwnedRenderer`
+consumes final palettes with the supplied Three.js namespace and opaque WebGL
+materials; it does not expose ordinary Bone objects or run their JS updates.
+
+Rust retains clips, action state, TRS poses, hierarchy, world matrices and final
+palettes across frames. Linear TRS tracks, quaternion slerp, normal weighted blends,
+repeat and clamped-once playback form the finite contract. Event listeners,
+arbitrary bindings, additive/cubic tracks, transparent rendering and CPU raycasts
+are unsupported. This requires application migration and is not an import-only
+AnimationMixer acceleration claim. See docs/OWNED_ANIMATION.md in the repository.

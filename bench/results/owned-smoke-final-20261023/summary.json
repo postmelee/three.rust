@@ -1,0 +1,781 @@
+{
+  "sourceCommit": "1c018649efecc0b0731e3be074444953660b2827",
+  "classification": "Smoke/short diagnostic only; not a performance conclusion",
+  "method": "Linear quantiles per run; median and range across run quantiles. Ratios pair repeat indices. No outlier removal, pooled-frame confidence intervals, significance or hardware speedup claim.",
+  "groups": [
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "metrics": {
+        "cpu": {
+          "p50": {
+            "median": 0.5,
+            "range": [
+              0.5,
+              0.5
+            ]
+          },
+          "p95": {
+            "median": 1.4199999988079066,
+            "range": [
+              1.4199999988079066,
+              1.4199999988079066
+            ]
+          },
+          "p99": {
+            "median": 1.5640000009536743,
+            "range": [
+              1.5640000009536743,
+              1.5640000009536743
+            ]
+          },
+          "mean": {
+            "median": 0.6200000010430813,
+            "range": [
+              0.6200000010430813,
+              0.6200000010430813
+            ]
+          }
+        },
+        "frameInterval": {
+          "p50": {
+            "median": 16.700000002980232,
+            "range": [
+              16.700000002980232,
+              16.700000002980232
+            ]
+          },
+          "p95": {
+            "median": 19.23999999910593,
+            "range": [
+              19.23999999910593,
+              19.23999999910593
+            ]
+          },
+          "p99": {
+            "median": 20.167999998629092,
+            "range": [
+              20.167999998629092,
+              20.167999998629092
+            ]
+          },
+          "mean": {
+            "median": 16.655555555389988,
+            "range": [
+              16.655555555389988,
+              16.655555555389988
+            ]
+          }
+        }
+      },
+      "startupMs": {
+        "p50": 469.51870700000006,
+        "p95": 469.51870700000006,
+        "p99": 469.51870700000006,
+        "mean": 469.51870700000006,
+        "min": 469.51870700000006,
+        "max": 469.51870700000006
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "metrics": {
+        "cpu": {
+          "p50": {
+            "median": 0.3999999985098839,
+            "range": [
+              0.3999999985098839,
+              0.3999999985098839
+            ]
+          },
+          "p95": {
+            "median": 1.420000002160668,
+            "range": [
+              1.420000002160668,
+              1.420000002160668
+            ]
+          },
+          "p99": {
+            "median": 1.5640000016242266,
+            "range": [
+              1.5640000016242266,
+              1.5640000016242266
+            ]
+          },
+          "mean": {
+            "median": 0.5900000013411045,
+            "range": [
+              0.5900000013411045,
+              0.5900000013411045
+            ]
+          }
+        },
+        "frameInterval": {
+          "p50": {
+            "median": 16.600000001490116,
+            "range": [
+              16.600000001490116,
+              16.600000001490116
+            ]
+          },
+          "p95": {
+            "median": 17.639999999105928,
+            "range": [
+              17.639999999105928,
+              17.639999999105928
+            ]
+          },
+          "p99": {
+            "median": 18.087999996244907,
+            "range": [
+              18.087999996244907,
+              18.087999996244907
+            ]
+          },
+          "mean": {
+            "median": 16.58888888855775,
+            "range": [
+              16.58888888855775,
+              16.58888888855775
+            ]
+          }
+        }
+      },
+      "startupMs": {
+        "p50": 329.979292,
+        "p95": 329.979292,
+        "p99": 329.979292,
+        "mean": 329.979292,
+        "min": 329.979292,
+        "max": 329.979292
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "metrics": {
+        "cpu": {
+          "p50": {
+            "median": 0.3500000014901161,
+            "range": [
+              0.3500000014901161,
+              0.3500000014901161
+            ]
+          },
+          "p95": {
+            "median": 0.6100000016391275,
+            "range": [
+              0.6100000016391275,
+              0.6100000016391275
+            ]
+          },
+          "p99": {
+            "median": 0.6820000027120113,
+            "range": [
+              0.6820000027120113,
+              0.6820000027120113
+            ]
+          },
+          "mean": {
+            "median": 0.3700000010430813,
+            "range": [
+              0.3700000010430813,
+              0.3700000010430813
+            ]
+          }
+        },
+        "frameInterval": {
+          "p50": {
+            "median": 16.600000001490116,
+            "range": [
+              16.600000001490116,
+              16.600000001490116
+            ]
+          },
+          "p95": {
+            "median": 17.400000001490117,
+            "range": [
+              17.400000001490117,
+              17.400000001490117
+            ]
+          },
+          "p99": {
+            "median": 17.560000001490117,
+            "range": [
+              17.560000001490117,
+              17.560000001490117
+            ]
+          },
+          "mean": {
+            "median": 16.666666666666668,
+            "range": [
+              16.666666666666668,
+              16.666666666666668
+            ]
+          }
+        }
+      },
+      "startupMs": {
+        "p50": 300.7658700000002,
+        "p95": 300.7658700000002,
+        "p99": 300.7658700000002,
+        "mean": 300.7658700000002,
+        "min": 300.7658700000002,
+        "max": 300.7658700000002
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "metrics": {
+        "cpu": {
+          "p50": {
+            "median": 0.30000000074505806,
+            "range": [
+              0.30000000074505806,
+              0.30000000074505806
+            ]
+          },
+          "p95": {
+            "median": 0.5550000008195638,
+            "range": [
+              0.5550000008195638,
+              0.5550000008195638
+            ]
+          },
+          "p99": {
+            "median": 0.5910000013560057,
+            "range": [
+              0.5910000013560057,
+              0.5910000013560057
+            ]
+          },
+          "mean": {
+            "median": 0.3100000016391277,
+            "range": [
+              0.3100000016391277,
+              0.3100000016391277
+            ]
+          }
+        },
+        "frameInterval": {
+          "p50": {
+            "median": 16.69999999552965,
+            "range": [
+              16.69999999552965,
+              16.69999999552965
+            ]
+          },
+          "p95": {
+            "median": 16.86000000536442,
+            "range": [
+              16.86000000536442,
+              16.86000000536442
+            ]
+          },
+          "p99": {
+            "median": 16.892000005841254,
+            "range": [
+              16.892000005841254,
+              16.892000005841254
+            ]
+          },
+          "mean": {
+            "median": 16.677777777943348,
+            "range": [
+              16.677777777943348,
+              16.677777777943348
+            ]
+          }
+        }
+      },
+      "startupMs": {
+        "p50": 242.66658400000006,
+        "p95": 242.66658400000006,
+        "p99": 242.66658400000006,
+        "mean": 242.66658400000006,
+        "min": 242.66658400000006,
+        "max": 242.66658400000006
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "metrics": {
+        "cpu": {
+          "p50": {
+            "median": 0.29999999701976776,
+            "range": [
+              0.29999999701976776,
+              0.29999999701976776
+            ]
+          },
+          "p95": {
+            "median": 0.8750000014901156,
+            "range": [
+              0.8750000014901156,
+              0.8750000014901156
+            ]
+          },
+          "p99": {
+            "median": 1.0550000014901162,
+            "range": [
+              1.0550000014901162,
+              1.0550000014901162
+            ]
+          },
+          "mean": {
+            "median": 0.34000000059604646,
+            "range": [
+              0.34000000059604646,
+              0.34000000059604646
+            ]
+          }
+        },
+        "frameInterval": {
+          "p50": {
+            "median": 16.69999999552965,
+            "range": [
+              16.69999999552965,
+              16.69999999552965
+            ]
+          },
+          "p95": {
+            "median": 16.86000000089407,
+            "range": [
+              16.86000000089407,
+              16.86000000089407
+            ]
+          },
+          "p99": {
+            "median": 16.89199999898672,
+            "range": [
+              16.89199999898672,
+              16.89199999898672
+            ]
+          },
+          "mean": {
+            "median": 16.688888888392185,
+            "range": [
+              16.688888888392185,
+              16.688888888392185
+            ]
+          }
+        }
+      },
+      "startupMs": {
+        "p50": 237.9848649999999,
+        "p95": 237.9848649999999,
+        "p99": 237.9848649999999,
+        "mean": 237.9848649999999,
+        "min": 237.9848649999999,
+        "max": 237.9848649999999
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "metrics": {
+        "cpu": {
+          "p50": {
+            "median": 0.30000000074505806,
+            "range": [
+              0.30000000074505806,
+              0.30000000074505806
+            ]
+          },
+          "p95": {
+            "median": 0.4549999993294476,
+            "range": [
+              0.4549999993294476,
+              0.4549999993294476
+            ]
+          },
+          "p99": {
+            "median": 0.49099999986588955,
+            "range": [
+              0.49099999986588955,
+              0.49099999986588955
+            ]
+          },
+          "mean": {
+            "median": 0.25000000074505807,
+            "range": [
+              0.25000000074505807,
+              0.25000000074505807
+            ]
+          }
+        },
+        "frameInterval": {
+          "p50": {
+            "median": 16.700000002980232,
+            "range": [
+              16.700000002980232,
+              16.700000002980232
+            ]
+          },
+          "p95": {
+            "median": 16.760000003874303,
+            "range": [
+              16.760000003874303,
+              16.760000003874303
+            ]
+          },
+          "p99": {
+            "median": 16.792000004351138,
+            "range": [
+              16.792000004351138,
+              16.792000004351138
+            ]
+          },
+          "mean": {
+            "median": 16.677777777943348,
+            "range": [
+              16.677777777943348,
+              16.677777777943348
+            ]
+          }
+        }
+      },
+      "startupMs": {
+        "p50": 253.83699799999977,
+        "p95": 253.83699799999977,
+        "p99": 253.83699799999977,
+        "mean": 253.83699799999977,
+        "min": 253.83699799999977,
+        "max": 253.83699799999977
+      }
+    }
+  ],
+  "pairedRatios": [
+    {
+      "scenario": "animated-1",
+      "baseline": "original",
+      "variant": "owned-js",
+      "zeroReferences": 0,
+      "ratios": [
+        0.7999999970197678
+      ],
+      "median": 0.7999999970197678
+    },
+    {
+      "scenario": "animated-1",
+      "baseline": "original",
+      "variant": "owned-wasm",
+      "zeroReferences": 0,
+      "ratios": [
+        0.7000000029802322
+      ],
+      "median": 0.7000000029802322
+    },
+    {
+      "scenario": "animated-1",
+      "baseline": "owned-js",
+      "variant": "original",
+      "zeroReferences": 0,
+      "ratios": [
+        1.2500000046566129
+      ],
+      "median": 1.2500000046566129
+    },
+    {
+      "scenario": "animated-1",
+      "baseline": "owned-js",
+      "variant": "owned-wasm",
+      "zeroReferences": 0,
+      "ratios": [
+        0.8750000069849193
+      ],
+      "median": 0.8750000069849193
+    },
+    {
+      "scenario": "static-1",
+      "baseline": "original",
+      "variant": "owned-js",
+      "zeroReferences": 0,
+      "ratios": [
+        0.9999999875823657
+      ],
+      "median": 0.9999999875823657
+    },
+    {
+      "scenario": "static-1",
+      "baseline": "original",
+      "variant": "owned-wasm",
+      "zeroReferences": 0,
+      "ratios": [
+        1
+      ],
+      "median": 1
+    },
+    {
+      "scenario": "static-1",
+      "baseline": "owned-js",
+      "variant": "original",
+      "zeroReferences": 0,
+      "ratios": [
+        1.0000000124176345
+      ],
+      "median": 1.0000000124176345
+    },
+    {
+      "scenario": "static-1",
+      "baseline": "owned-js",
+      "variant": "owned-wasm",
+      "zeroReferences": 0,
+      "ratios": [
+        1.0000000124176345
+      ],
+      "median": 1.0000000124176345
+    }
+  ],
+  "runs": [
+    {
+      "file": "render-animated-1-original-0.json",
+      "scenario": "animated-1",
+      "variant": "original",
+      "repeat": 0,
+      "startupMs": 469.51870700000006,
+      "metrics": {
+        "cpu": {
+          "p50": 0.5,
+          "p95": 1.4199999988079066,
+          "p99": 1.5640000009536743,
+          "mean": 0.6200000010430813,
+          "min": 0.20000000298023224,
+          "max": 1.6000000014901161
+        },
+        "frameInterval": {
+          "p50": 16.700000002980232,
+          "p95": 19.23999999910593,
+          "p99": 20.167999998629092,
+          "mean": 16.655555555389988,
+          "min": 13.100000001490116,
+          "max": 20.399999998509884
+        }
+      },
+      "diagnostics": null,
+      "adapter": null
+    },
+    {
+      "file": "render-animated-1-owned-js-0.json",
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "repeat": 0,
+      "startupMs": 329.979292,
+      "metrics": {
+        "cpu": {
+          "p50": 0.3999999985098839,
+          "p95": 1.420000002160668,
+          "p99": 1.5640000016242266,
+          "mean": 0.5900000013411045,
+          "min": 0.20000000298023224,
+          "max": 1.6000000014901161
+        },
+        "frameInterval": {
+          "p50": 16.600000001490116,
+          "p95": 17.639999999105928,
+          "p99": 18.087999996244907,
+          "mean": 16.58888888855775,
+          "min": 15.300000004470348,
+          "max": 18.19999999552965
+        }
+      },
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 15,
+        "steps": 15,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 16496,
+        "commandBatches": 1,
+        "commandBytes": 320,
+        "readBytes": 0,
+        "paletteBytes": 23040,
+        "rootBytes": 1920
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 15,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 15
+      }
+    },
+    {
+      "file": "render-animated-1-owned-wasm-0.json",
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "repeat": 0,
+      "startupMs": 300.7658700000002,
+      "metrics": {
+        "cpu": {
+          "p50": 0.3500000014901161,
+          "p95": 0.6100000016391275,
+          "p99": 0.6820000027120113,
+          "mean": 0.3700000010430813,
+          "min": 0.10000000149011612,
+          "max": 0.7000000029802322
+        },
+        "frameInterval": {
+          "p50": 16.600000001490116,
+          "p95": 17.400000001490117,
+          "p99": 17.560000001490117,
+          "mean": 16.666666666666668,
+          "min": 15.799999997019768,
+          "max": 17.600000001490116
+        }
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 15,
+        "steps": 15,
+        "wasmCalls": 16,
+        "wasmMemoryBytes": 1245184,
+        "initialBytes": 16496,
+        "commandBatches": 1,
+        "commandBytes": 320,
+        "readBytes": 0,
+        "paletteBytes": 23040,
+        "rootBytes": 1920
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 15,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 15
+      }
+    },
+    {
+      "file": "render-static-1-original-0.json",
+      "scenario": "static-1",
+      "variant": "original",
+      "repeat": 0,
+      "startupMs": 242.66658400000006,
+      "metrics": {
+        "cpu": {
+          "p50": 0.30000000074505806,
+          "p95": 0.5550000008195638,
+          "p99": 0.5910000013560057,
+          "mean": 0.3100000016391277,
+          "min": 0,
+          "max": 0.6000000014901161
+        },
+        "frameInterval": {
+          "p50": 16.69999999552965,
+          "p95": 16.86000000536442,
+          "p99": 16.892000005841254,
+          "mean": 16.677777777943348,
+          "min": 16.5,
+          "max": 16.900000005960464
+        }
+      },
+      "diagnostics": null,
+      "adapter": null
+    },
+    {
+      "file": "render-static-1-owned-js-0.json",
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "repeat": 0,
+      "startupMs": 237.9848649999999,
+      "metrics": {
+        "cpu": {
+          "p50": 0.29999999701976776,
+          "p95": 0.8750000014901156,
+          "p99": 1.0550000014901162,
+          "mean": 0.34000000059604646,
+          "min": 0,
+          "max": 1.1000000014901161
+        },
+        "frameInterval": {
+          "p50": 16.69999999552965,
+          "p95": 16.86000000089407,
+          "p99": 16.89199999898672,
+          "mean": 16.688888888392185,
+          "min": 16.5,
+          "max": 16.899999998509884
+        }
+      },
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 1,
+        "steps": 1,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 16496,
+        "commandBatches": 0,
+        "commandBytes": 0,
+        "readBytes": 0,
+        "paletteBytes": 1536,
+        "rootBytes": 128
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 15,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 1
+      }
+    },
+    {
+      "file": "render-static-1-owned-wasm-0.json",
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "repeat": 0,
+      "startupMs": 253.83699799999977,
+      "metrics": {
+        "cpu": {
+          "p50": 0.30000000074505806,
+          "p95": 0.4549999993294476,
+          "p99": 0.49099999986588955,
+          "mean": 0.25000000074505807,
+          "min": 0.09999999403953552,
+          "max": 0.5
+        },
+        "frameInterval": {
+          "p50": 16.700000002980232,
+          "p95": 16.760000003874303,
+          "p99": 16.792000004351138,
+          "mean": 16.677777777943348,
+          "min": 16.599999994039536,
+          "max": 16.80000000447035
+        }
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 1,
+        "steps": 1,
+        "wasmCalls": 1,
+        "wasmMemoryBytes": 1245184,
+        "initialBytes": 16496,
+        "commandBatches": 0,
+        "commandBytes": 0,
+        "readBytes": 0,
+        "paletteBytes": 1536,
+        "rootBytes": 128
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 15,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 1
+      }
+    }
+  ]
+}

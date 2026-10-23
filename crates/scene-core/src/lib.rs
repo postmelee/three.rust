@@ -1,5 +1,6 @@
 //! Persistent f64 transform arenas. No JS imports, renderer calls, or per-value ABI.
 //! Layout is shared with packages/rthree/runtime.js; slot 0 is external parent.
+mod owned;
 use std::cell::RefCell;
 const STRIDE: usize = 64;
 #[derive(Default)]

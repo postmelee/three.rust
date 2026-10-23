@@ -367,6 +367,22 @@
       ],
       "verification": "Generator tests, desktop/mobile artifact browser checks, CI and public HTTP verification.",
       "excluded": "Fabricated historical counts, inferred speedups or repository administration bypass."
+    },
+    {
+      "key": "owned-animation-prototype",
+      "milestone": "m5",
+      "issue": 26,
+      "title": "Implement a bounded owned animation-to-palette pipeline with matched JS and Rust backends",
+      "dependsOn": [
+        "ownership-progress-preparation"
+      ],
+      "criteria": [
+        "Commit finite experimental ADR, reuse/build evidence and explicit API contract before engine changes.",
+        "Implement equivalent owned JS/Rust state and real WebGL output consumption without replaced JS work.",
+        "Verify native/upstream/browser/lifecycle/package behavior and preserve repeated full-path data with controls."
+      ],
+      "verification": "Native/differential/image/bypass/lifecycle/types/package tests, raw cloud CPU measurements and CI.",
+      "excluded": "Accepting the hardware product gates, full AnimationMixer compatibility, npm publication or a general speedup claim."
     }
   ]
 }

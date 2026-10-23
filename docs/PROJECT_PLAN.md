@@ -138,3 +138,17 @@ previous abandoned implementation sessions remain excluded.
 Public documents and GitHub work artifacts are English. Conversation with the task
 requester is Korean. Public project contracts stay in docs/ and task memory in
 mydocs/. See [ownership ADR](adr/0002-ownership-roadmap.md).
+
+
+## Task #26 experimental increment
+
+Under the requester's continuation instruction, a finite owned rig prototype supplies
+additional evidence before hardware product acceptance: matched typed-array JS,
+persistent Rust/Wasm, explicit command/read semantics and a retained WebGL palette
+adapter. [ADR 0003](adr/0003-owned-animation-experiment.md) records the scope and
+sequencing clarification before code. It contributes to #7–#11 and #15 without
+closing their broader hardware/representative-workload/reuse gates or claiming M5
+complete. Ordinary import-compatible animation still executes upstream JS.
+
+The [owned experiment report](OWNED_REPORT.md) preserves the first implementation,
+matched JS comparison, raw repeated results, readback cost and unfavorable cases.

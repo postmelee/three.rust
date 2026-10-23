@@ -1,0 +1,467 @@
+{
+  "repeat": 4,
+  "scenario": "animated-1",
+  "variant": "owned-wasm",
+  "count": 1,
+  "startupMs": 256.68774100000155,
+  "raw": [
+    {
+      "start": 765.5,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 782.1000000014901,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 799.1000000014901,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0.10000000149011612,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 815.6000000014901,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 832.1000000014901,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0.10000000149011612,
+      "read": 0
+    },
+    {
+      "start": 848.7999999970198,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 865.5,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 882.1000000014901,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 898.7999999970198,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 915.2999999970198,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0.10000000149011612
+    },
+    {
+      "start": 932,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0.10000000149011612,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 948.7000000029802,
+      "cpu": 0.09999999403953552,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0.09999999403953552
+    },
+    {
+      "start": 965.3999999985099,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0.10000000149011612,
+      "read": 0
+    },
+    {
+      "start": 982,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0.10000000149011612,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 998.7000000029802,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1015.3999999985099,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0.10000000149011612
+    },
+    {
+      "start": 1032.1000000014901,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0.10000000149011612
+    },
+    {
+      "start": 1048.7000000029802,
+      "cpu": 0.09999999403953552,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0.09999999403953552
+    },
+    {
+      "start": 1065.2999999970198,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1082.1000000014901,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0.10000000149011612,
+      "read": 0
+    },
+    {
+      "start": 1099.8999999985099,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0.10000000149011612,
+      "read": 0
+    },
+    {
+      "start": 1115.2999999970198,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0.10000000149011612
+    },
+    {
+      "start": 1132.1000000014901,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1148.7000000029802,
+      "cpu": 0.09999999403953552,
+      "evaluate": 0.09999999403953552,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1165.3999999985099,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1182,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0.10000000149011612,
+      "read": 0
+    },
+    {
+      "start": 1198.7000000029802,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1215.3999999985099,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1232.1000000014901,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1248.7999999970198,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1265.5,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1282.8999999985099,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1298.7000000029802,
+      "cpu": 0.09999999403953552,
+      "evaluate": 0.09999999403953552,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1315.6000000014901,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1332,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0.10000000149011612
+    },
+    {
+      "start": 1348.7999999970198,
+      "cpu": 0.20000000298023224,
+      "evaluate": 0.10000000149011612,
+      "copy": 0,
+      "read": 0.10000000149011612
+    },
+    {
+      "start": 1365.3999999985099,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1383.1000000014901,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0.10000000149011612,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1398.7999999970198,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0.10000000149011612
+    },
+    {
+      "start": 1415.2999999970198,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0.10000000149011612
+    },
+    {
+      "start": 1432.1000000014901,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1448.7000000029802,
+      "cpu": 0.09999999403953552,
+      "evaluate": 0.09999999403953552,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1465.6000000014901,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0.10000000149011612
+    },
+    {
+      "start": 1482.1000000014901,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1498.7999999970198,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1515.3999999985099,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1532,
+      "cpu": 0.20000000298023224,
+      "evaluate": 0,
+      "copy": 0.10000000149011612,
+      "read": 0.10000000149011612
+    },
+    {
+      "start": 1549,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1566.7999999970198,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1582.1000000014901,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1598.7999999970198,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1615.3999999985099,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0.10000000149011612,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1632,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1648.7999999970198,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0.10000000149011612
+    },
+    {
+      "start": 1665.3999999985099,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1682.1000000014901,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1698.7999999970198,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0.10000000149011612
+    },
+    {
+      "start": 1715.3999999985099,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1732,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1748.7000000029802,
+      "cpu": 0.09999999403953552,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0.09999999403953552
+    }
+  ],
+  "gpu": {
+    "vendor": "Google Inc. (Google)",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+  },
+  "volumes": {
+    "characters": 1,
+    "bones": 24,
+    "sceneNodes": 27,
+    "activeTracks": 48,
+    "clipBytes": 4800,
+    "usefulPaletteBytes": 1536,
+    "allocatedPaletteBytes": 1536,
+    "allWorldMatrixReadBytes": 3072
+  },
+  "draws": 0,
+  "diagnostics": {
+    "backend": "wasm",
+    "nodes": 24,
+    "rigs": 1,
+    "clips": 2,
+    "revision": 90,
+    "steps": 90,
+    "wasmCalls": 91,
+    "wasmMemoryBytes": 1245184,
+    "initialBytes": 16496,
+    "commandBatches": 1,
+    "commandBytes": 320,
+    "readBytes": 606240,
+    "paletteBytes": 138240,
+    "rootBytes": 11520
+  },
+  "adapter": {
+    "presentationMeshes": 1,
+    "ordinaryBones": 0,
+    "paletteConsumes": 0,
+    "paddedPaletteBytes": 2304,
+    "appliedRevision": 90
+  }
+}

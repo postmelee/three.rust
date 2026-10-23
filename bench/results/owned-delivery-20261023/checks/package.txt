@@ -1,0 +1,11 @@
+
+> three-rust-research@0.1.0 test:package
+> node tests/package.mjs
+
+
+added 8 packages in 2s
+Fresh tarball consumer: init failure/retry, root/addon identity, Wasm execution, no runtime three dependency OK
+
+  app.bundle.js  1013.3kb
+
+⚡ Done in 90ms

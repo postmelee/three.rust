@@ -5,18 +5,19 @@
 [Progress history](https://postmelee.github.io/three.rust/history.html) · [Raw inventory](progress.json) ·
 [Standalone page](progress.html) · [Source selection](progress-source.json)
 
-The upper band shows the present boundary and the intended Rust-owned pipeline.
-The dashed target is planned, not implemented. Computation and state ownership
-are independent: the current Rust arena is a cache of authoritative JS values.
+The upper bands distinguish the compatibility facade from the implemented, bounded
+explicit owned-rig API. The facade arena remains a cache of authoritative JS values.
+The opt-in domain owns its animation/pose/world/palette state. Broader scene-core
+ownership is still planned. Computation and state ownership are independent.
 
 ## Units and legend
 
 | Color | Meaning |
 |---|---|
 | Gray | JavaScript execution or JavaScript-owned state |
-| Amber | Conditional Rust batch computation; authoritative state remains JS |
+| Amber | Scoped Rust computation; inspect the declared API tier and exclusions |
 | Blue | A callable's computation is implemented in Rust within its declared contract |
-| Green | A declared state field is authoritative and persistent in Rust |
+| Green | The logical field is authoritative in Rust within the explicit owned API |
 
 The left map has one tile per named callable definition in the selected Three.js
 source files. The right map has one tile per statically declared state field in
@@ -28,11 +29,18 @@ layout. A Rust batch can combine many operations; a claim is added only for its
 verified scope. A green field means Rust owns the corresponding logical state,
 not that Rust happens to allocate another copy with the same name.
 
-`Object3D.updateMatrixWorld` is the sole amber route today. Its eligible subtree
-uses Rust composition/propagation; custom dispatch and other paths retain JS.
-`Matrix4.compose` is not marked ported globally just because similar arithmetic
-exists in Rust. No state field is green: public JS values are still scanned and
-matrices materialized. Renderer/shader work is not counted as removed by a CPU port.
+Three source mappings are amber: the existing eligible Object3D transform route,
+plus bounded AnimationMixer.update and Skeleton.update algorithms in the explicit
+owned API. The latter ordinary JS methods still run in JS. Twelve green fields
+map logical rig TRS/parent/world, action time/scale/weight/pause/loop and inverse-bind/
+palette state to Rust authority in that opt-in domain. Ordinary Three.js objects do
+not acquire Rust authority. Each mapping links the finite contract and tests.
+
+This extends the original conditional-computation legend to distinguish API tiers;
+it does not count helper arithmetic as globally ported public math methods. Scalar
+Matrix4/Quaternion APIs remain JS. Renderer/shader work is not counted as removed.
+Full event/binding/facade semantics are outside the new mappings. See
+[owned API](OWNED_ANIMATION.md) and its [experimental ADR](adr/0003-owned-animation-experiment.md).
 
 ## Source extraction
 

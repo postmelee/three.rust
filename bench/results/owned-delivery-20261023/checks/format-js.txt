@@ -1,0 +1,2 @@
+bench/owned-report.mjs 90ms
+bench/owned.mjs 31ms

@@ -19,7 +19,11 @@
     },
     "./addons/*": "./addons/*",
     "./examples/jsm/*": "./addons/*",
-    "./scene_core.wasm": "./scene_core.wasm"
+    "./scene_core.wasm": "./scene_core.wasm",
+    "./owned": {
+      "types": "./owned.d.ts",
+      "import": "./owned.js"
+    }
   },
   "files": [
     "*.js",

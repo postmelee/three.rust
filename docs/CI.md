@@ -176,3 +176,27 @@ Published URLs after successful deployment:
 
 This status-site deployment is separate from the portable engine demo and npm
 publication. Its history records implementation claims, not benchmark speedups.
+
+## Owned animation experiment
+
+CI additionally runs `npm run test:owned` (upstream/JS/Wasm differential tests,
+raw Wasm lifetime and growth checks, real-browser palette/image comparisons and
+replaced-work bypass guards). `work/owned-validation` preserves browser evidence;
+`work/owned-smoke` is a six-run short smoke, not a performance baseline. The portable
+demo includes `/fixtures/owned/index.html`; the bundle test executes its image and
+numeric checks from the extracted artifact without a Rust build or model download.
+
+For a qualified hardware runner, repeat the owned experiment independently:
+
+```sh
+RTHREE_BROWSER_MODE=hardware RTHREE_HEADLESS=false npm run test:owned
+node bench/owned.mjs mode=hardware headless=false repeats=6 warmup=120 samples=600 \
+  out=work/owned-hardware-001
+node bench/owned-report.mjs work/owned-hardware-001
+```
+
+Use the existing environment preflight, fixed browser/driver/display, before/after
+original-only A/A sessions and a predeclared noise rule. The existing GPU workflow
+still measures the M2 workload; it does not yet schedule the new owned workload.
+Do not mix these datasets or infer a hardware result from correctness CI. Hardware
+registration, real-asset profiles and M5/M6 acceptance remain outstanding.

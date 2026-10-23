@@ -140,9 +140,9 @@
   },
   "pipeline": [
     {
-      "name": "Scene state",
+      "name": "Scene / rig state",
       "current": "JS authority",
-      "target": "Rust authority"
+      "target": "Rust rig authority"
     },
     {
       "name": "Animation",
@@ -748,7 +748,14 @@
             "line": 676,
             "path": "animation/AnimationMixer.js",
             "kind": "method",
-            "status": "js"
+            "status": "rust-batch",
+            "evidence": [
+              "docs/OWNED_ANIMATION.md",
+              "crates/scene-core/src/owned.rs",
+              "tests/owned.mjs",
+              "tests/owned-browser.mjs"
+            ],
+            "note": "Algorithm mapping for the explicit owned rig API only: finite TRS/normal-blend/repeat/once pipeline and prepared palettes. The ordinary public Three.js method remains JS; this is not full method compatibility."
           },
           {
             "id": "animation/AnimationMixer.js::AnimationMixer.setTime",
@@ -793,9 +800,9 @@
         ],
         "total": 31,
         "counts": {
-          "js": 31,
+          "js": 30,
           "rust": 0,
-          "rust-batch": 0
+          "rust-batch": 1
         }
       },
       {
@@ -9623,7 +9630,14 @@
             "line": 199,
             "path": "objects/Skeleton.js",
             "kind": "method",
-            "status": "js"
+            "status": "rust-batch",
+            "evidence": [
+              "docs/OWNED_ANIMATION.md",
+              "crates/scene-core/src/owned.rs",
+              "tests/owned.mjs",
+              "tests/owned-browser.mjs"
+            ],
+            "note": "Algorithm mapping for the explicit owned rig API only: finite TRS/normal-blend/repeat/once pipeline and prepared palettes. The ordinary public Three.js method remains JS; this is not full method compatibility."
           },
           {
             "id": "objects/Skeleton.js::Skeleton.clone",
@@ -9676,9 +9690,9 @@
         ],
         "total": 10,
         "counts": {
-          "js": 10,
+          "js": 9,
           "rust": 0,
-          "rust-batch": 0
+          "rust-batch": 1
         }
       },
       {
@@ -13609,9 +13623,9 @@
     ],
     "total": 1515,
     "counts": {
-      "js": 1514,
+      "js": 1512,
       "rust": 0,
-      "rust-batch": 1
+      "rust-batch": 3
     }
   },
   "state": {
@@ -13723,7 +13737,14 @@
             "line": 68,
             "path": "animation/AnimationAction.js",
             "kind": "declared-field",
-            "status": "js"
+            "status": "rust-owned",
+            "evidence": [
+              "docs/OWNED_ANIMATION.md",
+              "crates/scene-core/src/owned.rs",
+              "tests/owned.mjs",
+              "tests/owned-browser.mjs"
+            ],
+            "note": "Explicit owned rigs retain the logical loop state in Rust. Numeric descriptors/commands and paid snapshots replace object access. Ordinary JS AnimationAction instances remain JS-owned; see the finite contract."
           },
           {
             "id": "animation/AnimationAction.js::AnimationAction._loopCount",
@@ -13747,7 +13768,14 @@
             "line": 84,
             "path": "animation/AnimationAction.js",
             "kind": "declared-field",
-            "status": "js"
+            "status": "rust-owned",
+            "evidence": [
+              "docs/OWNED_ANIMATION.md",
+              "crates/scene-core/src/owned.rs",
+              "tests/owned.mjs",
+              "tests/owned-browser.mjs"
+            ],
+            "note": "Explicit owned rigs retain the logical time state in Rust. Numeric descriptors/commands and paid snapshots replace object access. Ordinary JS AnimationAction instances remain JS-owned; see the finite contract."
           },
           {
             "id": "animation/AnimationAction.js::AnimationAction.timeScale",
@@ -13755,7 +13783,14 @@
             "line": 93,
             "path": "animation/AnimationAction.js",
             "kind": "declared-field",
-            "status": "js"
+            "status": "rust-owned",
+            "evidence": [
+              "docs/OWNED_ANIMATION.md",
+              "crates/scene-core/src/owned.rs",
+              "tests/owned.mjs",
+              "tests/owned-browser.mjs"
+            ],
+            "note": "Explicit owned rigs retain the logical timeScale state in Rust. Numeric descriptors/commands and paid snapshots replace object access. Ordinary JS AnimationAction instances remain JS-owned; see the finite contract."
           },
           {
             "id": "animation/AnimationAction.js::AnimationAction._effectiveTimeScale",
@@ -13771,7 +13806,14 @@
             "line": 104,
             "path": "animation/AnimationAction.js",
             "kind": "declared-field",
-            "status": "js"
+            "status": "rust-owned",
+            "evidence": [
+              "docs/OWNED_ANIMATION.md",
+              "crates/scene-core/src/owned.rs",
+              "tests/owned.mjs",
+              "tests/owned-browser.mjs"
+            ],
+            "note": "Explicit owned rigs retain the logical weight state in Rust. Numeric descriptors/commands and paid snapshots replace object access. Ordinary JS AnimationAction instances remain JS-owned; see the finite contract."
           },
           {
             "id": "animation/AnimationAction.js::AnimationAction._effectiveWeight",
@@ -13795,7 +13837,14 @@
             "line": 125,
             "path": "animation/AnimationAction.js",
             "kind": "declared-field",
-            "status": "js"
+            "status": "rust-owned",
+            "evidence": [
+              "docs/OWNED_ANIMATION.md",
+              "crates/scene-core/src/owned.rs",
+              "tests/owned.mjs",
+              "tests/owned-browser.mjs"
+            ],
+            "note": "Explicit owned rigs retain the logical paused state in Rust. Numeric descriptors/commands and paid snapshots replace object access. Ordinary JS AnimationAction instances remain JS-owned; see the finite contract."
           },
           {
             "id": "animation/AnimationAction.js::AnimationAction.enabled",
@@ -13832,8 +13881,8 @@
         ],
         "total": 26,
         "counts": {
-          "js": 26,
-          "rust-owned": 0
+          "js": 21,
+          "rust-owned": 5
         }
       },
       {
@@ -14227,7 +14276,14 @@
             "line": 121,
             "path": "core/Object3D.js",
             "kind": "declared-field",
-            "status": "js"
+            "status": "rust-owned",
+            "evidence": [
+              "docs/OWNED_ANIMATION.md",
+              "crates/scene-core/src/owned.rs",
+              "tests/owned.mjs",
+              "tests/owned-browser.mjs"
+            ],
+            "note": "Explicit owned rigs retain the logical parent state in Rust. Numeric descriptors/commands and paid snapshots replace object access. Ordinary JS Object3D instances remain JS-owned; see the finite contract."
           },
           {
             "id": "core/Object3D.js::Object3D.children",
@@ -14251,7 +14307,14 @@
             "line": 168,
             "path": "core/Object3D.js",
             "kind": "declared-field",
-            "status": "js"
+            "status": "rust-owned",
+            "evidence": [
+              "docs/OWNED_ANIMATION.md",
+              "crates/scene-core/src/owned.rs",
+              "tests/owned.mjs",
+              "tests/owned-browser.mjs"
+            ],
+            "note": "Explicit owned rigs retain the logical position state in Rust. Numeric descriptors/commands and paid snapshots replace object access. Ordinary JS Object3D instances remain JS-owned; see the finite contract."
           },
           {
             "id": "core/Object3D.js::Object3D.rotation",
@@ -14267,7 +14330,14 @@
             "line": 191,
             "path": "core/Object3D.js",
             "kind": "declared-field",
-            "status": "js"
+            "status": "rust-owned",
+            "evidence": [
+              "docs/OWNED_ANIMATION.md",
+              "crates/scene-core/src/owned.rs",
+              "tests/owned.mjs",
+              "tests/owned-browser.mjs"
+            ],
+            "note": "Explicit owned rigs retain the logical quaternion state in Rust. Numeric descriptors/commands and paid snapshots replace object access. Ordinary JS Object3D instances remain JS-owned; see the finite contract."
           },
           {
             "id": "core/Object3D.js::Object3D.scale",
@@ -14275,7 +14345,14 @@
             "line": 203,
             "path": "core/Object3D.js",
             "kind": "declared-field",
-            "status": "js"
+            "status": "rust-owned",
+            "evidence": [
+              "docs/OWNED_ANIMATION.md",
+              "crates/scene-core/src/owned.rs",
+              "tests/owned.mjs",
+              "tests/owned-browser.mjs"
+            ],
+            "note": "Explicit owned rigs retain the logical scale state in Rust. Numeric descriptors/commands and paid snapshots replace object access. Ordinary JS Object3D instances remain JS-owned; see the finite contract."
           },
           {
             "id": "core/Object3D.js::Object3D.modelViewMatrix",
@@ -14307,7 +14384,14 @@
             "line": 241,
             "path": "core/Object3D.js",
             "kind": "declared-field",
-            "status": "js"
+            "status": "rust-owned",
+            "evidence": [
+              "docs/OWNED_ANIMATION.md",
+              "crates/scene-core/src/owned.rs",
+              "tests/owned.mjs",
+              "tests/owned-browser.mjs"
+            ],
+            "note": "Explicit owned rigs retain the logical matrixWorld state in Rust. Numeric descriptors/commands and paid snapshots replace object access. Ordinary JS Object3D instances remain JS-owned; see the finite contract."
           },
           {
             "id": "core/Object3D.js::Object3D.matrixAutoUpdate",
@@ -14432,8 +14516,8 @@
         ],
         "total": 31,
         "counts": {
-          "js": 31,
-          "rust-owned": 0
+          "js": 26,
+          "rust-owned": 5
         }
       },
       {
@@ -14531,7 +14615,14 @@
             "line": 62,
             "path": "objects/Skeleton.js",
             "kind": "declared-field",
-            "status": "js"
+            "status": "rust-owned",
+            "evidence": [
+              "docs/OWNED_ANIMATION.md",
+              "crates/scene-core/src/owned.rs",
+              "tests/owned.mjs",
+              "tests/owned-browser.mjs"
+            ],
+            "note": "Explicit owned rigs retain the logical boneInverses state in Rust. Numeric descriptors/commands and paid snapshots replace object access. Ordinary JS Skeleton instances remain JS-owned; see the finite contract."
           },
           {
             "id": "objects/Skeleton.js::Skeleton.boneMatrices",
@@ -14539,7 +14630,14 @@
             "line": 71,
             "path": "objects/Skeleton.js",
             "kind": "declared-field",
-            "status": "js"
+            "status": "rust-owned",
+            "evidence": [
+              "docs/OWNED_ANIMATION.md",
+              "crates/scene-core/src/owned.rs",
+              "tests/owned.mjs",
+              "tests/owned-browser.mjs"
+            ],
+            "note": "Explicit owned rigs retain the logical boneMatrices state in Rust. Numeric descriptors/commands and paid snapshots replace object access. Ordinary JS Skeleton instances remain JS-owned; see the finite contract."
           },
           {
             "id": "objects/Skeleton.js::Skeleton.boneTexture",
@@ -14552,8 +14650,8 @@
         ],
         "total": 5,
         "counts": {
-          "js": 5,
-          "rust-owned": 0
+          "js": 3,
+          "rust-owned": 2
         }
       },
       {
@@ -14635,9 +14733,9 @@
     ],
     "total": 115,
     "counts": {
-      "js": 115,
-      "rust-owned": 0
+      "js": 103,
+      "rust-owned": 12
     }
   },
-  "inventoryHash": "dfa10057a47013ffc228add6d0358e859df4a3d23f26490127aac1f9a25f282f"
+  "inventoryHash": "9262ba53637e667c99720f7a4d24d0a4a78800468eacef345ff19a6c593afad8"
 }

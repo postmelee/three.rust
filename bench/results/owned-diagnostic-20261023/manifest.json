@@ -1,0 +1,120 @@
+{
+  "classification": "Separate owned CPU/boundary diagnostic, not main-path timing",
+  "status": "complete",
+  "startedAt": "2026-10-23T03:29:56.906Z",
+  "sourceCommit": "1c018649efecc0b0731e3be074444953660b2827",
+  "dirty": true,
+  "fileHashes": {
+    "fixtures/owned/index.html": "4ba6eaf3ce2d9da4bd0fa3ec5e4ff08a719d2909f913319c1fbfd995d256d816",
+    "fixtures/owned/descriptor.mjs": "6d516035b76be31eb92027eb39096165cce03a000776652bc3ea61ae61803357",
+    "fixtures/pipeline/rig.mjs": "f6fec5ac7dba4d00c5398059d9140f2c4b5109c6122fc61233b87d8719b45220",
+    "fixtures/pipeline/source-audit.json": "e06314e80597cfe2d2535c1bc15fb0245718d8a22545fbaefe1e50f4ff8ca47f",
+    "bench/owned.mjs": "cac648f8a4ff9bb609b01f7265a42fbb1c7cfe5cd10f8f64967c61ec9fb637eb",
+    "package-lock.json": "b938b0b7c45499a8962d4beff96db709ec0caafe2e44d94e1d53754e2666a355",
+    "packages/rthree/core.js": "1288ad362561a38831ca4195218e083e061ef270975c27511e3336551064948f",
+    "packages/rthree/runtime.js": "9475be555e4bec0e89826b46e18123a012d0cd1500f748d012aafc6a3b2c8629",
+    "packages/rthree/owned.js": "1e870a4cbca4e85b68e579927e238ac1938e9623b421826bdb943467eacdd77a",
+    "packages/rthree/owned-layout.js": "bf13651d0a3d5116367bb5b99af2e480054e336cfb756abbd2dbb5874d58699e",
+    "packages/rthree/owned-js.js": "30be8cc69039f5257643de0fb14ac15513beee243d1482a149b234a295875b52",
+    "packages/rthree/owned-wasm.js": "fa84190d0b3be2eacb70c5c2340dc75a8a58e84109b43a49b7e5912d836200ec",
+    "packages/rthree/owned-renderer.js": "f028170077823ce847706bfdc1fc0487add7cd53f53299302802a658ca0d4357",
+    "packages/rthree/owned-state.js": "bafeaf358a3d9b6c5d7f47a32482f51b66a04aa72f80f0ba329c80ede061de87",
+    "crates/scene-core/src/owned.rs": "5506e83a3e69328e9e2dbdbaaf23a81607f5f48fb64f8f18e49a6a6a6c5d9d97",
+    "packages/rthree/scene_core.wasm": "edfe1c9ae78e2e4ea76db9515fb17e4ae91a8231fb097dd30388147b3f75fcec"
+  },
+  "options": {
+    "out": "bench/results/m0",
+    "scenarios": [
+      "cubes",
+      "skinning",
+      "shader",
+      "small",
+      "hierarchy"
+    ],
+    "engines": [
+      "original"
+    ],
+    "repeats": 5,
+    "warmup": 30,
+    "samples": 60,
+    "hardware": false,
+    "headless": true,
+    "args": [
+      "--no-sandbox",
+      "--use-angle=swiftshader",
+      "--enable-unsafe-swiftshader"
+    ],
+    "viewport": {
+      "width": 640,
+      "height": 540
+    },
+    "profile": false,
+    "gpu": false,
+    "timings": false,
+    "variants": [
+      "original",
+      "owned-js",
+      "owned-wasm"
+    ],
+    "cases": [
+      "animated-1",
+      "animated-64"
+    ],
+    "stage": "diagnostic"
+  },
+  "renderTarget": {
+    "width": 640,
+    "height": 480,
+    "devicePixelRatio": 1
+  },
+  "host": {
+    "platform": "linux",
+    "release": "6.18.55",
+    "cpus": [
+      "INTEL(R) XEON(R) PLATINUM 8573C",
+      "INTEL(R) XEON(R) PLATINUM 8573C",
+      "INTEL(R) XEON(R) PLATINUM 8573C",
+      "INTEL(R) XEON(R) PLATINUM 8573C",
+      "INTEL(R) XEON(R) PLATINUM 8573C"
+    ],
+    "memory": 18882674688,
+    "cpuQuota": "400000 100000",
+    "memoryLimit": "17179869184",
+    "gpuDeviceDirectory": false,
+    "node": "v24.19.0"
+  },
+  "runs": [
+    "diagnostic-animated-1-original-0.json",
+    "diagnostic-animated-1-owned-js-0.json",
+    "diagnostic-animated-1-owned-wasm-0.json",
+    "diagnostic-animated-64-original-0.json",
+    "diagnostic-animated-64-owned-js-0.json",
+    "diagnostic-animated-64-owned-wasm-0.json",
+    "diagnostic-animated-64-owned-js-1.json",
+    "diagnostic-animated-64-owned-wasm-1.json",
+    "diagnostic-animated-64-original-1.json",
+    "diagnostic-animated-1-owned-js-1.json",
+    "diagnostic-animated-1-owned-wasm-1.json",
+    "diagnostic-animated-1-original-1.json",
+    "diagnostic-animated-1-owned-wasm-2.json",
+    "diagnostic-animated-1-original-2.json",
+    "diagnostic-animated-1-owned-js-2.json",
+    "diagnostic-animated-64-owned-wasm-2.json",
+    "diagnostic-animated-64-original-2.json",
+    "diagnostic-animated-64-owned-js-2.json",
+    "diagnostic-animated-64-original-3.json",
+    "diagnostic-animated-64-owned-js-3.json",
+    "diagnostic-animated-64-owned-wasm-3.json",
+    "diagnostic-animated-1-original-3.json",
+    "diagnostic-animated-1-owned-js-3.json",
+    "diagnostic-animated-1-owned-wasm-3.json",
+    "diagnostic-animated-1-owned-js-4.json",
+    "diagnostic-animated-1-owned-wasm-4.json",
+    "diagnostic-animated-1-original-4.json",
+    "diagnostic-animated-64-owned-js-4.json",
+    "diagnostic-animated-64-owned-wasm-4.json",
+    "diagnostic-animated-64-original-4.json"
+  ],
+  "browser": "154.0.8037.57",
+  "finishedAt": "2026-10-23T03:30:59.561Z"
+}

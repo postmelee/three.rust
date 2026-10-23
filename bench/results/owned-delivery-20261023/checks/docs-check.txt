@@ -1,0 +1,3 @@
+Source inventory: 1515 callable definitions, 115 declared state fields
+Progress: 1515 source functions, 115 state fields; 3 observed history records
+Roadmap: 6 milestones, 21 unique issues, acyclic dependencies; English documentation and progress generation checked
