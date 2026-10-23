@@ -14,7 +14,7 @@ mkdirSync(out, { recursive: true });
 const config = { repeats: 8, warmupTicks: 128, blocks: 24, ticksPerBlock: 16,
   shapes: [[1, 24], [16, 24], [64, 24], [64, 96]],
   modes: ['retained', 'batch', 'fragmented', 'snapshot'], backends: ['js', 'wasm'] };
-const paths = ['bench/ownership-boundary.mjs', 'bench/timing.mjs', 'scripts/server.mjs',
+const paths = ['bench/ownership-boundary.mjs', 'fixtures/ownership-boundary.html', 'bench/timing.mjs', 'scripts/server.mjs',
   'scripts/browser-path.mjs', 'package-lock.json', 'fixtures/owned/descriptor.mjs',
   'fixtures/pipeline/rig.mjs', 'node_modules/three/build/three.module.js',
   'node_modules/three/build/three.core.js', 'packages/rthree/scene_core.wasm',
@@ -48,7 +48,7 @@ try {
         const page = await browser.newPage(), errors = [];
         page.on('pageerror', e => errors.push(String(e)));
         // An inert same-origin document avoids starting any demo loop.
-        await page.goto(`http://127.0.0.1:${server.address().port}/LICENSE`);
+        await page.goto(`http://127.0.0.1:${server.address().port}/fixtures/ownership-boundary.html`);
         const result = await page.evaluate(async cfg => {
           const THREE = await import('/node_modules/three/build/three.module.js');
           const { createRig } = await import('/fixtures/pipeline/rig.mjs');
