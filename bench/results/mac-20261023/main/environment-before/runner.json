@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-23T06:27:07.602Z",
+  "platform": "darwin",
+  "release": "25.5.0",
+  "arch": "arm64",
+  "cpuModel": "Apple M4 Pro",
+  "logicalCpus": 12,
+  "totalMemory": 25769803776,
+  "browserPath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "node": "v24.15.0",
+  "macos": {
+    "available": true,
+    "output": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.2\nBuildVersion:\t\t25F84"
+  },
+  "hardware": {
+    "machine_name": "MacBook Pro",
+    "machine_model": "Mac16,8",
+    "chip_type": "Apple M4 Pro",
+    "number_processors": "proc 12:8:4:0",
+    "physical_memory": "24 GB"
+  },
+  "graphics": [
+    {
+      "model": "Apple M4 Pro",
+      "cores": "16",
+      "metal": "spdisplays_metal4",
+      "displays": [
+        {
+          "_name": "Color LCD",
+          "spdisplays_main": "spdisplays_yes",
+          "spdisplays_online": "spdisplays_yes",
+          "spdisplays_connection_type": "spdisplays_internal"
+        }
+      ]
+    }
+  ],
+  "power": {
+    "available": true,
+    "output": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=22937699)\t94%; charging; 0:23 remaining present: true"
+  },
+  "powerSettings": {
+    "available": true,
+    "output": "Battery Power:\n Sleep On Power Button 1\n powermode            0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             0\n hibernatefile        /var/vm/sleepimage\n displaysleep         1\n womp                 0\n networkoversleep     0\n sleep                1\n lessbright           1\n tcpkeepalive         1\n disksleep            10\nAC Power:\n Sleep On Power Button 1\n powermode            0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             1\n hibernatefile        /var/vm/sleepimage\n displaysleep         10\n womp                 1\n networkoversleep     0\n sleep                0\n tcpkeepalive         1\n disksleep            10"
+  },
+  "thermal": {
+    "available": true,
+    "output": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded"
+  },
+  "driver": "Apple GPU driver ships with the recorded macOS build; no separate driver version queried."
+}

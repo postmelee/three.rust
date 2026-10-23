@@ -1,0 +1,25 @@
+{
+  "method": "Lossless gzip; SHA-256 of original file bytes; manifests retain original logical run filenames. Reports transparently read .json.gz.",
+  "files": {
+    "gpu-summary.json": {
+      "sha256": "798e550a3e5431778f2643eb820bbdc664bd862392e20433c01696821b64903b",
+      "archivedAs": "gpu-summary.json"
+    },
+    "manifest.json": {
+      "sha256": "27ec931a32c0ae2842a878fd4446547329aed0374c6ef46ea2346dd28b71bdb5",
+      "archivedAs": "manifest.json"
+    },
+    "shader-original-0.json": {
+      "sha256": "c67138c53990df776c3f1b3e6f01d85654a9d1990213e5e3f28fabddcaa5f3f4",
+      "archivedAs": "shader-original-0.json"
+    },
+    "shader-original-1.json": {
+      "sha256": "972e448c8f11bfdc59d96121460c836a84317386d336a1cd5488423f52740408",
+      "archivedAs": "shader-original-1.json"
+    },
+    "shader-original-2.json": {
+      "sha256": "65af1f6e6b7af7b56fdf8228cad36d899554d7b32c41a9b9be08e6962ac9d1b5",
+      "archivedAs": "shader-original-2.json"
+    }
+  }
+}

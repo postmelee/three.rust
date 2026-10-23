@@ -1,0 +1,1274 @@
+diff --git a/bench/fox.mjs b/bench/fox.mjs
+new file mode 100644
+index 0000000..dfca93d
+--- /dev/null
++++ b/bench/fox.mjs
+@@ -0,0 +1,210 @@
++import { chromium } from "playwright";
++import { serve } from "../scripts/server.mjs";
++import { browserPath } from "../scripts/browser-path.mjs";
++import { configuration, hardwareRenderer } from "./config.mjs";
++import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
++import { execFileSync } from "node:child_process";
++import { createHash } from "node:crypto";
++const opt = {};
++for (const a of process.argv.slice(2)) {
++  const i = a.indexOf("=");
++  if (i < 1) throw Error("Expected key=value");
++  const k = a.slice(0, i);
++  if (
++    k in opt ||
++    ![
++      "out",
++      "cases",
++      "variants",
++      "repeats",
++      "warmup",
++      "samples",
++      "stage",
++      "mode",
++      "headless",
++    ].includes(k)
++  )
++    throw Error(`Invalid option ${k}`);
++  opt[k] = a.slice(i + 1);
++}
++const cfg = configuration([
++  `mode=${opt.mode || "hardware"}`,
++  `headless=${opt.headless || "false"}`,
++  `repeats=${opt.repeats || 6}`,
++  `warmup=${opt.warmup || 600}`,
++  `samples=${opt.samples || 1800}`,
++]);
++const variants = (opt.variants || "original,owned-js,owned-wasm").split(","),
++  cases = (opt.cases || "animated-1,animated-16,static-1").split(","),
++  stage = opt.stage || "render",
++  out = opt.out;
++if (
++  !out ||
++  existsSync(out) ||
++  new Set(variants).size !== variants.length ||
++  variants.some((v) => !["original", "owned-js", "owned-wasm"].includes(v)) ||
++  new Set(cases).size !== cases.length ||
++  cases.some((c) => !["animated-1", "animated-16", "static-1"].includes(c)) ||
++  !["render", "diagnostic"].includes(stage)
++)
++  throw Error("Invalid experiment or existing output");
++mkdirSync(out, { recursive: true });
++execFileSync(process.execPath, [
++  "scripts/runner-environment.mjs",
++  `${out}/environment-before`,
++]);
++const paths = [
++  "fixtures/fox/index.html",
++  "fixtures/fox/replay.mjs",
++  "fixtures/fox/descriptor.mjs",
++  "fixtures/fox/provenance.json",
++  "fixtures/fox/LICENSE.md",
++  "work/assets/Fox.glb",
++  "bench/fox.mjs",
++  "bench/config.mjs",
++  "scripts/browser-path.mjs",
++  "scripts/server.mjs",
++  "package-lock.json",
++  "rust-toolchain.toml",
++  "node_modules/three/build/three.module.js",
++  "node_modules/three/build/three.core.js",
++  "node_modules/three/examples/jsm/loaders/GLTFLoader.js",
++  "node_modules/three/examples/jsm/utils/SkeletonUtils.js",
++  "crates/scene-core/src/owned.rs",
++  ...[
++    "owned",
++    "owned-layout",
++    "owned-js",
++    "owned-wasm",
++    "owned-renderer",
++    "owned-state",
++  ].map((n) => `packages/rthree/${n}.js`),
++  "packages/rthree/scene_core.wasm",
++];
++const hash = (p) => createHash("sha256").update(readFileSync(p)).digest("hex"),
++  manifest = {
++    status: "running",
++    classification:
++      stage === "render"
++        ? cfg.repeats < 5 || cfg.warmup < 1200 || cfg.samples < 3600
++      ? "Smoke/short hardware diagnostic only; not a performance conclusion"
++      : "Hardware fixed-frame real-asset experiment; explicit API; no automatic product verdict"
++        : "Separate instrumented copy/read diagnostic",
++    startedAt: new Date().toISOString(),
++    sourceCommit: execFileSync("git", ["rev-parse", "HEAD"]).toString().trim(),
++    dirty: !!execFileSync("git", ["status", "--porcelain"]).length,
++    hashes: Object.fromEntries(paths.map((p) => [p, hash(p)])),
++    options: { ...cfg, variants, cases, stage },
++    renderTarget: {
++      width: 640,
++      height: 480,
++      dpr: 1,
++      antialias: false,
++      shadows: false,
++      preserveDrawingBuffer: true,
++    },
++    runs: [],
++    executablePath: browserPath(),
++    backgroundWork:
++      "Requester cannot guarantee absence of other heavy work; no process names collected. Retain all samples; qualify with A/A.",
++    cache:
++      "Fresh page/context per run; shared browser/code/OS caches; startup is not cold-cache.",
++  };
++const save = () =>
++  writeFileSync(
++    `${out}/manifest.json`,
++    JSON.stringify(manifest, null, 2) + "\n",
++  );
++save();
++const server = await serve();
++let browser;
++const permutations = [
++  [0, 1, 2],
++  [2, 1, 0],
++  [1, 2, 0],
++  [0, 2, 1],
++  [2, 0, 1],
++  [1, 0, 2],
++];
++try {
++  browser = await chromium.launch({
++    executablePath: browserPath(),
++    headless: cfg.headless,
++    args: cfg.args,
++  });
++  manifest.browser = browser.version();
++  const cdp = await browser.newBrowserCDPSession();
++  manifest.gpuSystem = (await cdp.send("SystemInfo.getInfo")).gpu;
++  save();
++  for (let repeat = 0; repeat < cfg.repeats; repeat++) {
++    const order =
++      variants.length === 3
++        ? permutations[repeat % 6].map((i) => variants[i])
++        : variants;
++    for (const scenario of repeat % 2 ? [...cases].reverse() : cases)
++      for (const variant of order) {
++        manifest.activeRun = { repeat, scenario, variant };
++        save();
++        const page = await browser.newPage({
++            viewport: { width: 640, height: 540 },
++            deviceScaleFactor: 1,
++          }),
++          errors = [];
++        page.on("pageerror", (e) => errors.push(String(e)));
++        const start = performance.now(),
++          [kind, count] = scenario.split("-");
++        await page.goto(
++          `http://127.0.0.1:4173/fixtures/fox/index.html?manual&count=${count}&variant=${variant}${kind === "static" ? "&static" : ""}`,
++        );
++        await page.waitForFunction(() => !!window.__fox);
++        await page.bringToFront();
++        const startupMs = performance.now() - start,
++          gpu = await page.evaluate(() => window.__fox.gpu);
++        if (cfg.hardware) hardwareRenderer(gpu.renderer);
++        const data = await page.evaluate((c) => window.__fox.measure(c), {
++          warmup: cfg.warmup,
++          samples: cfg.samples,
++          mode: stage,
++        });
++        const name = `${stage}-${scenario}-${variant}-${repeat}.json`;
++        writeFileSync(
++          `${out}/${name}`,
++          JSON.stringify(
++            { repeat, scenario, variant, order, startupMs, errors, ...data },
++            null,
++            2,
++          ) + "\n",
++        );
++        manifest.runs.push(name);
++        delete manifest.activeRun;
++        save();
++        if (
++          errors.length ||
++          data.invalid.length ||
++          data.raw.length !== cfg.samples ||
++          data.draws !== Number(count) ||
++          (variant === "owned-wasm" && !data.diagnostics.wasmCalls)
++        )
++          throw Error(`Invalid run ${name}`);
++        await page.close();
++        console.log(name);
++      }
++  }
++  for (const p of paths)
++    if (hash(p) !== manifest.hashes[p])
++      throw Error(`Measured input changed: ${p}`);
++  manifest.status = "complete";
++} catch (e) {
++  manifest.status = "failed";
++  manifest.error = String(e);
++  throw e;
++} finally {
++  manifest.finishedAt = new Date().toISOString();
++  save();
++  if (browser) await browser.close();
++  server.close();
++  execFileSync(process.execPath, [
++    "scripts/runner-environment.mjs",
++    `${out}/environment-after`,
++  ]);
++}
+diff --git a/bench/owned.mjs b/bench/owned.mjs
+index 1151a9d..4d07d02 100644
+--- a/bench/owned.mjs
++++ b/bench/owned.mjs
+@@ -1,3 +1,4 @@
++import { browserPath } from '../scripts/browser-path.mjs';
+ import { chromium } from "playwright";
+ import { serve } from "../scripts/server.mjs";
+ import { configuration, hardwareRenderer } from "./config.mjs";
+@@ -141,11 +142,12 @@ const server = await serve();
+ let browser;
+ try {
+   browser = await chromium.launch({
+-    executablePath: process.env.CHROMIUM || "/usr/bin/chromium",
++    executablePath: browserPath(),
+     headless: cfg.headless,
+     args: cfg.args,
+   });
+   manifest.browser = browser.version();
++  manifest.executablePath = browserPath();
+   for (let repeat = 0; repeat < cfg.repeats; repeat++) {
+     const order = [
+       ...variants.slice(repeat % variants.length),
+@@ -168,6 +170,7 @@ try {
+           `http://127.0.0.1:4173/fixtures/owned/index.html?manual&count=${count}&bones=24&variant=${variant}&engine=${engine}${scenario.startsWith("static") ? "&static" : ""}`,
+         );
+         await page.waitForFunction(() => !!window.__owned);
++        await page.bringToFront();
+         const startupMs = performance.now() - start,
+           gpu = await page.evaluate(() => window.__owned.gpu);
+         if (cfg.hardware) hardwareRenderer(gpu.renderer);
+diff --git a/fixtures/fox/LICENSE.md b/fixtures/fox/LICENSE.md
+new file mode 100644
+index 0000000..5901304
+--- /dev/null
++++ b/fixtures/fox/LICENSE.md
+@@ -0,0 +1,21 @@
++# LICENSE file for the model: Fox
++
++All files in this directory tree are licensed as indicated below.
++
++* All files directly associated with the model including all text, image and binary files:
++
++  * [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode) [SPDX license identifier: "CC0-1.0"]
++
++  * [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode) [SPDX license identifier: "CC-BY-4.0"]
++
++  * [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode) [SPDX license identifier: "CC-BY-4.0"]
++
++* This file and all other metadocumentation files including "metadata.json":
++
++  * [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode) [SPDX license identifier: "CC-BY-4.0"]
++
++Full license text of these licenses are available at the links above.
++
++This license excludes logos and associated trademarks.
++
++<!-- This file is auto-generated by modelmetadata. Do not edit by hand. -->
+diff --git a/fixtures/fox/README.md b/fixtures/fox/README.md
+new file mode 100644
+index 0000000..058e588
+--- /dev/null
++++ b/fixtures/fox/README.md
+@@ -0,0 +1,24 @@
++# Pinned Fox real-asset replay
++
++Source: [Khronos glTF Sample Assets, Fox](https://github.com/KhronosGroup/glTF-Sample-Assets/tree/15cd02d304e54cb42a4db4eefe719f76190f4b68/Models/Fox).
++Source commit, download URL and SHA-256 are in provenance.json. `node scripts/fetch-fox.mjs` downloads the original GLB to ignored `work/assets/Fox.glb` and verifies both it and the retained upstream LICENSE.md. The GLB is not included in the package or committed here.
++
++Attribution retained for the asset and screenshots derived from it:
++- Model: PixelMannen, [Fox and Shiba](https://opengameart.org/content/fox-and-shiba), CC0-1.0.
++- Rigging and animation: tomkranis, [animated low-poly fox](https://sketchfab.com/3d-models/low-poly-fox-by-pixelmannen-animated-371dea88d7e04a76af5763f2a36866bc), CC-BY-4.0.
++- glTF conversion: AsoboStudio and scurest, CC-BY-4.0.
++- [CC BY 4.0 terms](https://creativecommons.org/licenses/by/4.0/), [CC0 terms](https://creativecommons.org/publicdomain/zero/1.0/). Upstream LICENSE.md and embedded copyright are preserved; this repository's MIT license does not replace them.
++
++Adaptation: this is a new benchmark application, not an unmodified upstream example. Geometry, skin weights, materials, texture and all three animation clips remain original. Scale/placement, lighting, camera and deterministic normal-weight blending are application changes, identical across paths. The asset's three clips animate overlapping joints; blending here is an explicit Three.js application policy, not a glTF playback requirement. No model binary changes. Existing `fixtures/original/` and synthetic rigs are unchanged.
++
++`descriptor.mjs` accepts only the audited one-mesh, identity-bind, parent-before-child, opaque, linear TRS joint-animation subset. It rejects unsupported mesh transforms, non-joint ancestor transforms, morphs, multiple materials, transparent materials, additive and non-linear/arbitrary bindings. It is not a general glTF importer. Fox has 24 joints and 21 tracks per clip (Survey, Walk, Run). A separate original Three.js object graph is created for each baseline rig; the owned paths acquire numeric descriptors and use the existing prepared-palette renderer. Upstream work is poisoned during owned correctness checks.
++
++Replay repeats every 600 fixed ticks at 1/60 simulation seconds. Ticks 0–119 walk; 120–179 pause; 180–299 externally blend walk into run; 300–419 run; 420–479 stop (zero weights, seek zero, paused, rest pose); 480–599 restart Survey. Root translation and camera orbit are deterministic; every 60th tick reads a complete synchronous snapshot inside the main CPU timer. Static-one uses the rest pose and fixed camera with the same read cadence. Stop is the explicit composition of supported commands, not full `AnimationAction.stop()` identity/event semantics. No crossFadeTo scheduling, warping, additive/cubic/morph/material tracks, events, raycasts or CPU animated bounds are claimed. They remain unsupported and are covered by rejection tests for the finite owned API.
++
++All paths render 640×480 DPR1, antialias off, preserved drawing buffer, opaque original material, equal lighting and no shadows. The conservative bound/sort-point policy is identical; draw and triangle parity are checked. The 16-rig variant is a scalability workload, not an original-size asset claim. Browser frame CPU includes input creation/validation, commands, evaluation, requested snapshots, palette/root copies and renderer return. GPU completion and screenshot capture are outside the timer. Instrumented diagnostics split evaluate, copy/preparation, read and renderer submission; the upstream preparation includes world/palette calculation while owned preparation copies final buffers, so these labels describe boundaries rather than equal algorithms.
++
++Correctness uses exact A/A pixels, all numeric buffers and camera matrices at 11 input checkpoints. Before measurements, alternate-path raster tolerance is fixed at <0.1% differing RGBA channels and mean absolute channel error <0.02 (8-bit); numeric tolerance is 2e-5 + 1e-6 × reference magnitude. This accommodates sparse raster edges from f64 arithmetic, not missing material/geometry. Captures are reviewed separately from timings.
++
++## Observed raw quaternion representation difference
++
++The first real-asset correctness run rejected component-wise pose equality during the zero-weight stop phase. Investigation showed two joints with exactly antipodal quaternions (q versus -q); world matrices, palettes and actions matched. r186 PropertyMixer retains an accumulator hemisphere when mixing fully back to rest, whereas the owned evaluator directly restores its descriptor base quaternion. Both encode the same rotation and render identically, but raw snapshot components are not identical. The oracle now compares quaternion rotations modulo sign while recording every sign flip and raw maximum difference; no engine code or rendered pose is changed. Applications requiring component-sign continuity or ordinary Bone identity must use the upstream facade. The failed check is preserved and this is a compatibility limitation, not silently dropped data.
+diff --git a/fixtures/fox/descriptor.mjs b/fixtures/fox/descriptor.mjs
+new file mode 100644
+index 0000000..2acf42d
+--- /dev/null
++++ b/fixtures/fox/descriptor.mjs
+@@ -0,0 +1,72 @@
++// Finite, fail-closed fixture conversion for the pinned Fox; not a general glTF importer.
++export function descriptorFromFox(THREE, model, clips, roots) {
++  model.updateMatrixWorld(true);
++  const meshes = [];
++  model.traverse((o) => {
++    if (o.isMesh) meshes.push(o);
++  });
++  if (meshes.length !== 1 || !meshes[0].isSkinnedMesh)
++    throw Error("Fox fixture requires exactly one SkinnedMesh");
++  const mesh = meshes[0],
++    bones = mesh.skeleton.bones,
++    index = new Map(bones.map((b, i) => [b, i]));
++  const identity = (m) =>
++    m.elements.every((x, i) => Math.abs(x - (i % 5 === 0 ? 1 : 0)) < 1e-10);
++  if (
++    !identity(mesh.matrixWorld) ||
++    !identity(mesh.bindMatrix) ||
++    mesh.bindMode !== "attached"
++  )
++    throw Error("Unsupported Fox mesh/bind transform");
++  if (
++    mesh.morphTargetInfluences?.length ||
++    Array.isArray(mesh.material) ||
++    mesh.material.transparent ||
++    mesh.material.transmission > 0
++  )
++    throw Error("Unsupported Fox morph/multiple/transparent material");
++  for (const [i, b] of bones.entries()) {
++    if (index.has(b.parent)) {
++      if (index.get(b.parent) >= i) throw Error("Unsupported joint ordering");
++    } else if (!identity(b.parent.matrixWorld))
++      throw Error("Unsupported non-joint parent transform");
++  }
++  const descriptor = {
++    parents: bones.map((b) => index.get(b.parent) ?? -1),
++    basePose: bones.map((b) => [
++      ...b.position.toArray(),
++      ...b.quaternion.toArray(),
++      ...b.scale.toArray(),
++    ]),
++    inverseBind: mesh.skeleton.boneInverses.map((m) => m.toArray()),
++    roots,
++    clips: clips.map((c) => {
++      if (c.blendMode !== THREE.NormalAnimationBlendMode)
++        throw Error("Unsupported additive animation");
++      return {
++        duration: c.duration,
++        tracks: c.tracks.map((t) => {
++          const p = THREE.PropertyBinding.parseTrackName(t.name),
++            b = THREE.PropertyBinding.findNode(model, p.nodeName),
++            node = index.get(b);
++          if (
++            node === undefined ||
++            p.objectName ||
++            p.propertyIndex !== undefined ||
++            !["position", "quaternion", "scale"].includes(p.propertyName) ||
++            t.getInterpolation() !== THREE.InterpolateLinear ||
++            t.createInterpolant.isInterpolantFactoryMethodGLTFCubicSpline
++          )
++            throw Error(`Unsupported Fox track: ${t.name}`);
++          return {
++            node,
++            property: p.propertyName,
++            times: Array.from(t.times),
++            values: Array.from(t.values),
++          };
++        }),
++      };
++    }),
++  };
++  return { descriptor, mesh, bones };
++}
+diff --git a/fixtures/fox/index.html b/fixtures/fox/index.html
+new file mode 100644
+index 0000000..1605d80
+--- /dev/null
++++ b/fixtures/fox/index.html
+@@ -0,0 +1,2 @@
++<!doctype html><html lang="en"><meta charset="utf-8"><title>Fox owned pipeline replay</title><style>body{margin:0;background:#17202a;color:white;font:14px system-ui}canvas{display:block}p{margin:8px}</style><p id="status">Loading pinned Fox…</p>
++<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script><script type="module" src="./replay.mjs"></script></html>
+diff --git a/fixtures/fox/provenance.json b/fixtures/fox/provenance.json
+new file mode 100644
+index 0000000..da97960
+--- /dev/null
++++ b/fixtures/fox/provenance.json
+@@ -0,0 +1,18 @@
++{
++  "repository": "https://github.com/KhronosGroup/glTF-Sample-Assets",
++  "commit": "15cd02d304e54cb42a4db4eefe719f76190f4b68",
++  "source": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/15cd02d304e54cb42a4db4eefe719f76190f4b68/Models/Fox/README.md",
++  "attribution": "Model: PixelMannen (CC0-1.0); rigging/animation: tomkranis (CC-BY-4.0); glTF conversion: AsoboStudio and scurest (CC-BY-4.0). Embedded GLB copyright retained.",
++  "files": [
++    {
++      "path": "work/assets/Fox.glb",
++      "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/15cd02d304e54cb42a4db4eefe719f76190f4b68/Models/Fox/glTF-Binary/Fox.glb",
++      "sha256": "d97044e701822bac5a62696459b27d7b375aada5de8574ed4362edbba94771f7"
++    },
++    {
++      "path": "fixtures/fox/LICENSE.md",
++      "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/15cd02d304e54cb42a4db4eefe719f76190f4b68/Models/Fox/LICENSE.md",
++      "sha256": "9ddaa2edd6a8f72117eec9709d38cd7d284f61f77752d342c32c828e61f78eae"
++    }
++  ]
++}
+\ No newline at end of file
+diff --git a/fixtures/fox/replay.mjs b/fixtures/fox/replay.mjs
+new file mode 100644
+index 0000000..b29ad81
+--- /dev/null
++++ b/fixtures/fox/replay.mjs
+@@ -0,0 +1,376 @@
++import * as THREE from "three";
++import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
++import { clone } from "three/addons/utils/SkeletonUtils.js";
++import {
++  createOwnedAnimation,
++  createOwnedRenderer,
++} from "/packages/rthree/owned.js";
++import { descriptorFromFox } from "./descriptor.mjs";
++const started = performance.now(),
++  q = new URLSearchParams(location.search),
++  variant = q.get("variant") || "original",
++  count = Number(q.get("count") || 1),
++  isStatic = q.has("static");
++if (
++  !["original", "owned-js", "owned-wasm"].includes(variant) ||
++  ![1, 16].includes(count)
++)
++  throw Error("Unsupported comparison");
++const loadStart = performance.now(),
++  gltf = await new GLTFLoader().loadAsync("/work/assets/Fox.glb"),
++  assetMs = performance.now() - loadStart;
++if (gltf.animations.map((c) => c.name).join(",") !== "Survey,Walk,Run")
++  throw Error("Unexpected clips");
++const scene = new THREE.Scene();
++scene.background = new THREE.Color(0x243041);
++scene.add(new THREE.HemisphereLight(0xcfe8ff, 0x5b4832, 2));
++const sun = new THREE.DirectionalLight(0xffffff, 3);
++sun.position.set(3, 6, 4);
++scene.add(sun);
++const camera = new THREE.PerspectiveCamera(42, 640 / 480, 0.1, 100);
++const span = count === 1 ? 1 : 4;
++const roots = Array.from({ length: count }, (_, i) =>
++  new THREE.Matrix4()
++    .compose(
++      new THREE.Vector3(
++        ((i % span) - (span - 1) / 2) * 2.7,
++        0,
++        (Math.floor(i / span) - (span - 1) / 2) * 2.7,
++      ),
++      new THREE.Quaternion(),
++      new THREE.Vector3(0.015, 0.015, 0.015),
++    )
++    .toArray(),
++);
++const convertStart = performance.now(),
++  converted = descriptorFromFox(THREE, gltf.scene, gltf.animations, roots),
++  descriptor = converted.descriptor,
++  conversionMs = performance.now() - convertStart;
++let domain,
++  adapter,
++  rigs = [];
++const initStart = performance.now();
++if (variant === "original") {
++  for (let i = 0; i < count; i++) {
++    const model = clone(gltf.scene),
++      group = new THREE.Group();
++    group.matrixAutoUpdate = false;
++    group.matrix.fromArray(roots[i]);
++    group.add(model);
++    scene.add(group);
++    let mesh;
++    model.traverse((o) => {
++      if (o.isSkinnedMesh) mesh = o;
++    });
++    mesh.frustumCulled = false;
++    // Equal conservative sorting/bounds policy; no implicit CPU skinning in either path.
++    if (!mesh.geometry.boundingSphere) mesh.geometry.computeBoundingSphere();
++    mesh.boundingSphere = new THREE.Sphere(
++      mesh.geometry.boundingSphere.center.clone(),
++      Infinity,
++    );
++    const mixer = new THREE.AnimationMixer(model),
++      actions = gltf.animations.map((c) => mixer.clipAction(c).play());
++    rigs.push({ model, group, mesh, mixer, actions });
++  }
++} else {
++  domain = await createOwnedAnimation(descriptor, {
++    backend: variant.slice(6),
++  });
++  adapter = createOwnedRenderer(THREE, domain, {
++    scene,
++    geometry: converted.mesh.geometry,
++    material: converted.mesh.material,
++  });
++}
++const initMs = performance.now() - initStart;
++const renderer = new THREE.WebGLRenderer({
++  antialias: false,
++  preserveDrawingBuffer: true,
++});
++renderer.setPixelRatio(1);
++renderer.setSize(640, 480);
++document.body.append(renderer.domElement);
++const gl = renderer.getContext(),
++  debug = gl.getExtension("WEBGL_debug_renderer_info"),
++  gpu = {
++    renderer: debug ? gl.getParameter(debug.UNMASKED_RENDERER_WEBGL) : null,
++    vendor: debug ? gl.getParameter(debug.UNMASKED_VENDOR_WEBGL) : null,
++    timerQuery: !!gl.getExtension("EXT_disjoint_timer_query_webgl2"),
++  };
++let tick = 0,
++  lastRead = null,
++  readCount = 0,
++  events = [];
++const submit = (commands) => {
++  for (let i = 0; i < commands.length; i += 256)
++    domain.commands(commands.slice(i, i + 256));
++};
++function reset() {
++  tick = 0;
++  readCount = 0;
++  lastRead = null;
++  events = [];
++  if (domain) {
++    submit(
++      roots.flatMap((root, rig) => [
++        { type: "root", rig, value: root },
++        ...descriptor.clips.map((_, clip) => ({
++          type: "action",
++          rig,
++          clip,
++          time: 0,
++          weight: isStatic ? 0 : Number(clip === 1),
++          paused: isStatic,
++        })),
++      ]),
++    );
++    domain.step(0);
++  } else
++    for (const r of rigs) {
++      r.group.matrix.fromArray(roots[rigs.indexOf(r)]);
++      r.group.matrixWorldNeedsUpdate = true;
++      r.actions.forEach((a, clip) => {
++        a.reset().play();
++        a.weight = isStatic ? 0 : Number(clip === 1);
++        a.paused = isStatic;
++      });
++      r.mixer.update(0);
++    }
++  updateCamera(0);
++}
++function updateCamera(t) {
++  const angle = 0.45 + Math.sin(t / 120) * 0.22,
++    d = count === 1 ? 5.4 : 17;
++  camera.position.set(
++    Math.sin(angle) * d,
++    count === 1 ? 2.1 : 10,
++    Math.cos(angle) * d,
++  );
++  camera.lookAt(0, count === 1 ? 0.7 : 0, 0);
++}
++function inputs() {
++  const t = tick % 600,
++    commands = [];
++  let weights = [0, 1, 0];
++  if (t >= 180 && t < 300) weights = [0, 1 - (t - 180) / 120, (t - 180) / 120];
++  else if (t >= 300 && t < 420) weights = [0, 0, 1];
++  else if (t >= 420 && t < 480) weights = [0, 0, 0];
++  else if (t >= 480) weights = [1, 0, 0];
++  const paused = (t >= 120 && t < 180) || (t >= 420 && t < 480);
++  for (let rig = 0; rig < count; rig++) {
++    const root = roots[rig].slice();
++    root[12] += 0.35 * Math.sin(t / 55);
++    root[14] += 0.15 * Math.cos(t / 65);
++    if (domain) {
++      commands.push({ type: "root", rig, value: root });
++      for (let clip = 0; clip < 3; clip++) {
++        commands.push(
++          { type: "weight", rig, clip, value: weights[clip] },
++          { type: "pause", rig, clip, value: paused },
++        );
++        if (t === 420 || t === 480 || t === 0)
++          commands.push({ type: "seek", rig, clip, value: 0 });
++      }
++    } else {
++      const r = rigs[rig];
++      r.group.matrix.fromArray(root);
++      r.group.matrixWorldNeedsUpdate = true;
++      r.actions.forEach((a, clip) => {
++        a.weight = weights[clip];
++        a.paused = paused;
++        if (t === 420 || t === 480 || t === 0) a.time = 0;
++      });
++    }
++  }
++  if (domain) submit(commands);
++  updateCamera(t);
++  return t;
++}
++function step() {
++  if (!isStatic) {
++    inputs();
++    if (domain) domain.step(1 / 60);
++    else for (const r of rigs) r.mixer.update(1 / 60);
++  }
++  tick++;
++}
++function draw() {
++  if (adapter) adapter.render(renderer, camera);
++  else renderer.render(scene, camera);
++}
++function snapshot() {
++  if (domain) return domain.snapshot();
++  scene.updateMatrixWorld(true);
++  const pose = [],
++    world = [],
++    palette = [],
++    actions = [],
++    root = [];
++  for (const r of rigs) {
++    r.mesh.skeleton.update();
++    for (const b of r.mesh.skeleton.bones) {
++      pose.push(
++        ...b.position.toArray(),
++        ...b.quaternion.toArray(),
++        ...b.scale.toArray(),
++      );
++      world.push(...b.matrixWorld.elements);
++    }
++    palette.push(
++      ...r.mesh.skeleton.boneMatrices.subarray(
++        0,
++        r.mesh.skeleton.bones.length * 16,
++      ),
++    );
++    root.push(...r.group.matrix.elements);
++    for (const a of r.actions)
++      actions.push(a.time, a.weight, a.timeScale, Number(a.paused), 0);
++  }
++  return { pose, world, palette, actions, roots: root };
++}
++function read() {
++  lastRead = snapshot();
++  readCount++;
++  return lastRead;
++}
++function frame() {
++  step();
++  if (tick % 60 === 0) read();
++  draw();
++}
++function numeric() {
++  const s = snapshot();
++  return {
++    ...Object.fromEntries(
++      ["pose", "world", "palette", "actions", "roots"].map((k) => [
++        k,
++        Array.from(s[k]),
++      ]),
++    ),
++    camera: [
++      ...camera.matrixWorld.elements,
++      ...camera.projectionMatrix.elements,
++    ],
++  };
++}
++function pixels() {
++  const p = new Uint8Array(640 * 480 * 4);
++  gl.readPixels(0, 0, 640, 480, gl.RGBA, gl.UNSIGNED_BYTE, p);
++  return Array.from(p);
++}
++reset();
++const shaderStart = performance.now();
++await renderer.compileAsync(scene, camera);
++draw();
++const shaderMs = performance.now() - shaderStart;
++window.__fox = {
++  variant,
++  count,
++  domain,
++  adapter,
++  renderer,
++  gpu,
++  descriptor,
++  reset,
++  frame,
++  draw,
++  numeric,
++  pixels,
++  get tick() {
++    return tick;
++  },
++  startup: {
++    assetMs,
++    conversionMs,
++    initMs,
++    shaderMs,
++    totalMs: performance.now() - started,
++  },
++  poison() {
++    if (!domain) throw Error("Owned only");
++    const fail = () => {
++      throw Error("Upstream animation/bone/palette recomputation");
++    };
++    THREE.AnimationMixer.prototype.update = fail;
++    THREE.Bone.prototype.updateMatrixWorld = fail;
++    THREE.Skeleton.prototype.update = fail;
++  },
++  async measure({ warmup = 600, samples = 1800, mode = "render" }) {
++    const raw = [],
++      invalid = [];
++    let hidden = false;
++    const visibility = () => {
++      if (document.visibilityState !== "visible") hidden = true;
++    };
++    document.addEventListener("visibilitychange", visibility);
++    reset();
++    for (let i = 0; i < warmup; i++) {
++      await new Promise(requestAnimationFrame);
++      frame();
++    }
++    reset();
++    const diagnosticsBefore = domain?.diagnostics() ?? null;
++    const began = performance.now();
++    try {
++      for (let i = 0; i < samples; i++) {
++        const raf = await new Promise(requestAnimationFrame),
++          start = performance.now();
++        if (mode === "render") {
++          frame();
++          raw.push({ start, raf, cpu: performance.now() - start });
++        } else {
++          step();
++          const evaluated = performance.now();
++          if (adapter) adapter.sync();
++          else {
++            scene.updateMatrixWorld();
++            for (const r of rigs) r.mesh.skeleton.update();
++          }
++          const copied = performance.now();
++          read();
++          const readEnd = performance.now();
++          draw();
++          const end = performance.now();
++          raw.push({
++            start,
++            raf,
++            cpu: end - start,
++            evaluate: evaluated - start,
++            copy: copied - evaluated,
++            read: readEnd - copied,
++            render: end - readEnd,
++          });
++        }
++      }
++    } finally {
++      document.removeEventListener("visibilitychange", visibility);
++    }
++    if (hidden || document.visibilityState !== "visible")
++      invalid.push("hidden-page");
++    if (gl.isContextLost()) invalid.push("context-lost");
++    return {
++      raw,
++      durationMs: performance.now() - began,
++      invalid,
++      readCount,
++      diagnosticsBefore,
++      gpu,
++      draws: renderer.info.render.calls,
++      triangles: renderer.info.render.triangles,
++      startup: this.startup,
++      diagnostics: domain?.diagnostics() ?? null,
++      adapter: adapter?.diagnostics() ?? null,
++      final: numeric(),
++    };
++  },
++};
++document.querySelector("#status").textContent =
++  `Fox · ${variant} · ${count} rig(s) · play/pause/weights/stop/root/camera/snapshot replay`;
++if (!q.has("manual")) {
++  const loop = () => {
++    frame();
++    requestAnimationFrame(loop);
++  };
++  loop();
++}
+diff --git a/scripts/browser-path.mjs b/scripts/browser-path.mjs
+new file mode 100644
+index 0000000..af5f55e
+--- /dev/null
++++ b/scripts/browser-path.mjs
+@@ -0,0 +1,20 @@
++import { existsSync } from "node:fs";
++import { chromium } from "playwright";
++// Explicit override is authoritative: an invalid override must not silently fall back.
++export function browserPath(env = process.env, platform = process.platform) {
++  if (env.CHROMIUM) return env.CHROMIUM;
++  const candidates =
++    platform === "darwin"
++      ? [
++          "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
++          "/Applications/Chromium.app/Contents/MacOS/Chromium",
++        ]
++      : platform === "win32"
++        ? []
++        : [
++            "/usr/bin/chromium",
++            "/usr/bin/chromium-browser",
++            "/usr/bin/google-chrome",
++          ];
++  return candidates.find(existsSync) || chromium.executablePath();
++}
+diff --git a/scripts/fetch-fox.mjs b/scripts/fetch-fox.mjs
+new file mode 100644
+index 0000000..b4e0ef6
+--- /dev/null
++++ b/scripts/fetch-fox.mjs
+@@ -0,0 +1,22 @@
++import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
++import { createHash } from "node:crypto";
++import { execFileSync } from "node:child_process";
++const manifest = JSON.parse(readFileSync("fixtures/fox/provenance.json"));
++for (const f of manifest.files) {
++  mkdirSync(f.path.slice(0, f.path.lastIndexOf("/")), { recursive: true });
++  if (!existsSync(f.path))
++    execFileSync("curl", [
++      "--fail",
++      "--location",
++      "--silent",
++      "--show-error",
++      f.url,
++      "-o",
++      f.path,
++    ]);
++  if (
++    createHash("sha256").update(readFileSync(f.path)).digest("hex") !== f.sha256
++  )
++    throw Error(`Fox checksum mismatch: ${f.path}`);
++}
++console.log("Pinned Fox asset and attribution verified");
+diff --git a/scripts/mac-preflight.mjs b/scripts/mac-preflight.mjs
+new file mode 100644
+index 0000000..2f24d37
+--- /dev/null
++++ b/scripts/mac-preflight.mjs
+@@ -0,0 +1,67 @@
++import { chromium } from "playwright";
++import { browserPath } from "./browser-path.mjs";
++import { hardwareRenderer } from "../bench/config.mjs";
++import { mkdirSync, writeFileSync, existsSync } from "node:fs";
++import { execFileSync } from "node:child_process";
++const out = process.argv[2];
++if (!out || existsSync(out)) throw Error("Choose a fresh output directory");
++mkdirSync(out, { recursive: true });
++execFileSync(process.execPath, ["scripts/runner-environment.mjs", out]);
++let browser;
++const result = {
++  startedAt: new Date().toISOString(),
++  path: browserPath(),
++  headless: false,
++};
++try {
++  browser = await chromium.launch({
++    executablePath: browserPath(),
++    headless: false,
++  });
++  result.browser = browser.version();
++  const page = await browser.newPage();
++  await page.bringToFront();
++  result.webgl = await page.evaluate(async () => {
++    const c = document.createElement("canvas"),
++      g = c.getContext("webgl2");
++    if (!g) throw Error("WebGL2 unavailable");
++    const e = g.getExtension("WEBGL_debug_renderer_info"),
++      samples = [];
++    for (let i = 0; i < 61; i++)
++      samples.push(await new Promise(requestAnimationFrame));
++    let resolution = Infinity,
++      previous = performance.now();
++    for (let i = 0; i < 100000; i++) {
++      const now = performance.now();
++      if (now > previous) resolution = Math.min(resolution, now - previous);
++      previous = now;
++    }
++    return {
++      renderer: e ? g.getParameter(e.UNMASKED_RENDERER_WEBGL) : null,
++      vendor: e ? g.getParameter(e.UNMASKED_VENDOR_WEBGL) : null,
++      version: g.getParameter(g.VERSION),
++      visibility: document.visibilityState,
++      screen: {
++        width: screen.width,
++        height: screen.height,
++        dpr: devicePixelRatio,
++      },
++      rafIntervals: samples.slice(1).map((x, i) => x - samples[i]),
++      timerResolutionMs: Number.isFinite(resolution) ? resolution : null,
++      gpuTimerQuery: !!g.getExtension("EXT_disjoint_timer_query_webgl2"),
++    };
++  });
++  hardwareRenderer(result.webgl.renderer);
++  const cdp = await browser.newBrowserCDPSession();
++  result.systemGpu = (await cdp.send("SystemInfo.getInfo")).gpu;
++  result.status = "hardware-confirmed";
++  console.log(result.webgl.renderer);
++} catch (e) {
++  result.status = "failed";
++  result.error = String(e);
++  throw e;
++} finally {
++  result.finishedAt = new Date().toISOString();
++  writeFileSync(`${out}/browser.json`, JSON.stringify(result, null, 2) + "\n");
++  if (browser) await browser.close();
++}
+diff --git a/scripts/mac-validation.sh b/scripts/mac-validation.sh
+new file mode 100755
+index 0000000..a95066e
+--- /dev/null
++++ b/scripts/mac-validation.sh
+@@ -0,0 +1,22 @@
++#!/usr/bin/env bash
++set -euo pipefail
++# Run from repository root. Each invocation must have a new output directory.
++out=${1:?Usage: bash scripts/mac-validation.sh work/mac-session-NEW}
++if [[ -e "$out" ]]; then echo "Choose a fresh output directory" >&2; exit 1; fi
++mkdir -p "$out/checks"
++node scripts/fetch-fox.mjs
++node scripts/mac-preflight.mjs "$out/preflight"
++RTHREE_BROWSER_MODE=hardware RTHREE_HEADLESS=false RTHREE_OWNED_RESULTS_DIR="$out/synthetic-correctness" npm run test:owned > "$out/checks/synthetic.txt" 2>&1
++npm run test:gpu-guard > "$out/checks/gpu-guard.txt" 2>&1
++node bench/owned.mjs mode=hardware headless=false variants=original,owned-js,owned-wasm repeats=6 warmup=120 samples=600 out="$out/synthetic"
++node bench/owned-report.mjs "$out/synthetic"
++RTHREE_BROWSER_MODE=hardware RTHREE_FOX_RESULTS_DIR="$out/fox-correctness" node tests/fox-browser.mjs > "$out/checks/fox.txt" 2>&1
++# 1200/3600 targets ~10/30 seconds at the observed 120 Hz; record actual duration.
++for phase in aa-before main aa-after; do
++  if [[ "$phase" == main ]]; then variants=original,owned-js,owned-wasm; repeats=6; else variants=original; repeats=5; fi
++  node bench/fox.mjs mode=hardware headless=false variants="$variants" repeats="$repeats" warmup=1200 samples=3600 out="$out/$phase"
++  node bench/fox-report.mjs "$out/$phase"
++done
++node bench/fox.mjs mode=hardware headless=false stage=diagnostic repeats=5 warmup=60 samples=120 out="$out/diagnostic"
++node bench/fox-report.mjs "$out/diagnostic"
++node bench/fox-compare.mjs "$out"
+diff --git a/scripts/runner-environment.mjs b/scripts/runner-environment.mjs
+index bbb4975..786fd5e 100644
+--- a/scripts/runner-environment.mjs
++++ b/scripts/runner-environment.mjs
+@@ -1,8 +1,100 @@
+-import {execFileSync} from 'node:child_process';
+-import {mkdirSync,writeFileSync,readFileSync} from 'node:fs';
+-import os from 'node:os';
+-const out=process.argv[2]||'work/gpu';mkdirSync(out,{recursive:true});
+-function command(file,args){try{return {available:true,output:execFileSync(file,args,{encoding:'utf8',timeout:15000,stdio:['ignore','pipe','pipe']}).trim()};}catch(e){return {available:false,reason:e.code||`exit ${e.status}`};}}
+-const info={date:new Date().toISOString(),platform:os.platform(),release:os.release(),arch:os.arch(),cpu:os.cpus()[0],logicalCpus:os.cpus().length,totalMemory:os.totalmem(),nvidia:command('nvidia-smi',['--query-gpu=name,driver_version,pci.bus_id,memory.total,temperature.gpu,pstate','--format=csv']),pci:command('lspci',['-nnk']),glx:command('glxinfo',['-B']),vulkan:command('vulkaninfo',['--summary'])};
+-for(const [key,path] of [['cpuQuota','/sys/fs/cgroup/cpu.max'],['memoryLimit','/sys/fs/cgroup/memory.max']])try{info[key]=readFileSync(path,'utf8').trim();}catch{info[key]='unavailable';}
+-writeFileSync(`${out}/runner.json`,JSON.stringify(info,null,2));console.log('Recorded available hardware/driver observations; browser hardware use must still be verified.');
++import { execFileSync } from "node:child_process";
++import { mkdirSync, writeFileSync, readFileSync } from "node:fs";
++import os from "node:os";
++import { browserPath } from "./browser-path.mjs";
++const out = process.argv[2] || "work/gpu";
++mkdirSync(out, { recursive: true });
++function command(file, args) {
++  try {
++    return {
++      available: true,
++      output: execFileSync(file, args, {
++        encoding: "utf8",
++        timeout: 15000,
++        stdio: ["ignore", "pipe", "pipe"],
++      }).trim(),
++    };
++  } catch (e) {
++    return { available: false, reason: e.code || `exit ${e.status}` };
++  }
++}
++const info = {
++  date: new Date().toISOString(),
++  platform: os.platform(),
++  release: os.release(),
++  arch: os.arch(),
++  cpuModel: os.cpus()[0]?.model,
++  logicalCpus: os.cpus().length,
++  totalMemory: os.totalmem(),
++  browserPath: browserPath(),
++  node: process.version,
++};
++if (process.platform === "darwin") {
++  info.macos = command("sw_vers", []);
++  // Allowlist model/core/memory fields; never publish serial, UUID, UDID or display serial.
++  const raw = command("system_profiler", [
++    "-json",
++    "SPHardwareDataType",
++    "SPDisplaysDataType",
++  ]);
++  if (raw.available) {
++    const s = JSON.parse(raw.output),
++      h = s.SPHardwareDataType[0];
++    info.hardware = Object.fromEntries(
++      [
++        "machine_name",
++        "machine_model",
++        "chip_type",
++        "number_processors",
++        "physical_memory",
++      ]
++        .filter((k) => k in h)
++        .map((k) => [k, h[k]]),
++    );
++    info.graphics = s.SPDisplaysDataType.map((g) => ({
++      model: g.sppci_model,
++      cores: g.sppci_cores,
++      metal: g.spdisplays_mtlgpufamilysupport,
++      displays: (g.spdisplays_ndrvs || []).map((d) =>
++        Object.fromEntries(
++          [
++            "_name",
++            "spdisplays_resolution",
++            "spdisplays_refresh_rate",
++            "spdisplays_main",
++            "spdisplays_online",
++            "spdisplays_connection_type",
++          ]
++            .filter((k) => k in d)
++            .map((k) => [k, d[k]]),
++        ),
++      ),
++    }));
++  } else info.hardware = raw;
++  info.power = command("pmset", ["-g", "batt"]);
++  info.powerSettings = command("pmset", ["-g", "custom"]);
++  info.thermal = command("pmset", ["-g", "therm"]);
++  info.driver =
++    "Apple GPU driver ships with the recorded macOS build; no separate driver version queried.";
++} else {
++  info.nvidia = command("nvidia-smi", [
++    "--query-gpu=name,driver_version,pci.bus_id,memory.total,temperature.gpu,pstate",
++    "--format=csv",
++  ]);
++  info.pci = command("lspci", ["-nnk"]);
++  info.glx = command("glxinfo", ["-B"]);
++  info.vulkan = command("vulkaninfo", ["--summary"]);
++  for (const [key, path] of [
++    ["cpuQuota", "/sys/fs/cgroup/cpu.max"],
++    ["memoryLimit", "/sys/fs/cgroup/memory.max"],
++  ])
++    try {
++      info[key] = readFileSync(path, "utf8").trim();
++    } catch {
++      info[key] = "unavailable";
++    }
++}
++writeFileSync(`${out}/runner.json`, JSON.stringify(info, null, 2) + "\n");
++console.log(
++  "Recorded allowlisted host observations; verify actual WebGL backend separately.",
++);
+diff --git a/tests/fox-browser.mjs b/tests/fox-browser.mjs
+new file mode 100644
+index 0000000..2d3ecbe
+--- /dev/null
++++ b/tests/fox-browser.mjs
+@@ -0,0 +1,171 @@
++import { chromium } from "playwright";
++import { browserPath } from "../scripts/browser-path.mjs";
++import { serve } from "../scripts/server.mjs";
++import { hardwareRenderer, configuration } from "../bench/config.mjs";
++import { mkdirSync, writeFileSync } from "node:fs";
++import assert from "node:assert/strict";
++const out = process.env.RTHREE_FOX_RESULTS_DIR || "work/fox-validation";
++mkdirSync(out, { recursive: true });
++const hardware = process.env.RTHREE_BROWSER_MODE === "hardware",
++  cfg = configuration(hardware ? ["mode=hardware", "headless=false"] : []);
++const server = await serve(),
++  browser = await chromium.launch({
++    executablePath: browserPath(),
++    headless: cfg.headless,
++    args: cfg.args,
++  });
++const results = [];
++// Predeclared numeric tolerance: world units originate in centimeter-scale asset data.
++function compare(a, b) {
++  assert.equal(a.length, b.length);
++  let max = 0;
++  for (let i = 0; i < a.length; i++) {
++    const delta = Math.abs(a[i] - b[i]);
++    max = Math.max(max, delta);
++    assert(
++      delta <= 2e-5 + 1e-6 * Math.abs(b[i]),
++      `Numeric delta ${delta} at ${i}`,
++    );
++  }
++  return max;
++}
++try {
++  for (const scenario of ["animated-1", "animated-16", "static-1"]) {
++    const [kind, count] = scenario.split("-");
++    let reference;
++    for (const [v, variant] of [
++      "original",
++      "original",
++      "owned-js",
++      "owned-wasm",
++    ].entries()) {
++      const page = await browser.newPage({
++          viewport: { width: 640, height: 540 },
++          deviceScaleFactor: 1,
++        }),
++        errors = [];
++      page.on("pageerror", (e) => errors.push(String(e)));
++      await page.goto(
++        `http://127.0.0.1:4173/fixtures/fox/index.html?manual&count=${count}&variant=${variant}${kind === "static" ? "&static" : ""}`,
++      );
++      await page.waitForFunction(() => !!window.__fox);
++      await page.bringToFront();
++      const gpu = await page.evaluate(() => window.__fox.gpu);
++      if (hardware) hardwareRenderer(gpu.renderer);
++      if (variant !== "original")
++        await page.evaluate(() => window.__fox.poison());
++      const states = [];
++      for (const tick of [
++        1, 120, 150, 180, 240, 300, 420, 450, 480, 540, 600,
++      ]) {
++        const state = await page.evaluate((t) => {
++          const p = window.__fox;
++          while (p.tick < t) p.frame();
++          p.draw();
++          return {
++            numeric: p.numeric(),
++            pixels: p.pixels(),
++            draws: p.renderer.info.render.calls,
++            triangles: p.renderer.info.render.triangles,
++          };
++        }, tick);
++        assert.equal(state.draws, Number(count));
++        let numeric = {},
++          maxPixel = 0,
++          changed = 0,
++          absolute = 0,
++          quaternionSignFlips = 0,
++          rawPoseMax = 0;
++        if (reference) {
++          const prior = reference[states.length];
++          for (const k of Object.keys(state.numeric)) {
++            const a = state.numeric[k].slice(),
++              b = prior.numeric[k];
++            if (k === "pose") {
++              rawPoseMax = Math.max(...a.map((x, i) => Math.abs(x - b[i])));
++              for (let i = 0; i < a.length; i += 10) {
++                let dot = 0;
++                for (let j = 3; j < 7; j++) dot += a[i + j] * b[i + j];
++                if (dot < 0) {
++                  quaternionSignFlips++;
++                  for (let j = 3; j < 7; j++) a[i + j] *= -1;
++                }
++              }
++            }
++            numeric[k] = compare(a, b);
++          }
++          for (let i = 0; i < state.pixels.length; i++) {
++            const d = Math.abs(state.pixels[i] - prior.pixels[i]);
++            maxPixel = Math.max(maxPixel, d);
++            changed += Number(d > 0);
++            absolute += d;
++          }
++          assert.equal(state.triangles, prior.triangles);
++          // A/A must be exact. For differing f64 arithmetic, permit only sparse raster edge differences.
++          if (variant === "original") assert.equal(maxPixel, 0);
++          else
++            assert(
++              changed / state.pixels.length < 0.001 &&
++                absolute / state.pixels.length < 0.02,
++              `Pixel mismatch ${maxPixel}, changed ${changed}`,
++            );
++        }
++        results.push({
++          scenario,
++          variant,
++          view: v,
++          tick,
++          numeric,
++          rawPoseMax,
++          quaternionSignFlips,
++          maxPixel,
++          changedChannels: changed,
++          meanAbsolutePixel: absolute / state.pixels.length,
++          draws: state.draws,
++          triangles: state.triangles,
++          gpu,
++        });
++        states.push(state);
++        if ([1, 150, 240, 450, 540].includes(tick))
++          await page
++            .locator("canvas")
++            .screenshot({
++              path: `${out}/${scenario}-${variant}-${v}-${tick}.png`,
++            });
++      }
++      if (!reference) reference = states;
++      assert.deepEqual(errors, []);
++      if (variant === "owned-wasm") {
++        const diag = await page.evaluate(() =>
++          window.__fox.domain.diagnostics(),
++        );
++        assert(diag.wasmCalls > 0);
++      }
++      await page.close();
++      console.log(scenario, variant, "passed");
++    }
++  }
++  writeFileSync(
++    `${out}/results.json`,
++    JSON.stringify(
++      {
++        status: "complete",
++        browser: browser.version(),
++        method:
++          "11 input checkpoints; pose rotations compared modulo quaternion sign, raw sign differences retained; all world/palette/action/root elements; poisoned upstream recomputation; exact A/A; alternate paths <0.1% changed channels and <0.02 mean absolute 8-bit channel error",
++        results,
++      },
++      null,
++      2,
++    ) + "\n",
++  );
++} catch (e) {
++  writeFileSync(
++    `${out}/failure.json`,
++    JSON.stringify({ error: String(e), results }, null, 2),
++  );
++  throw e;
++} finally {
++  await browser.close();
++  server.close();
++}
+diff --git a/tests/fox-rejections.mjs b/tests/fox-rejections.mjs
+new file mode 100644
+index 0000000..60d04ba
+--- /dev/null
++++ b/tests/fox-rejections.mjs
+@@ -0,0 +1,26 @@
++import { chromium } from 'playwright';
++import { browserPath } from '../scripts/browser-path.mjs';
++import { serve } from '../scripts/server.mjs';
++import { configuration, hardwareRenderer } from '../bench/config.mjs';
++import assert from 'node:assert/strict';
++import { mkdirSync, writeFileSync } from 'node:fs';
++const out=process.env.RTHREE_FOX_REJECTION_DIR||'work/fox-rejections';mkdirSync(out,{recursive:true});
++const cfg=configuration(process.env.RTHREE_BROWSER_MODE==='hardware'?['mode=hardware','headless=false']:[]),server=await serve();
++const browser=await chromium.launch({executablePath:browserPath(),headless:cfg.headless,args:cfg.args});
++try{const page=await browser.newPage();await page.goto('http://127.0.0.1:4173/fixtures/fox/index.html?manual&variant=original');await page.waitForFunction(()=>window.__fox);const gpu=await page.evaluate(()=>window.__fox.gpu);if(cfg.hardware)hardwareRenderer(gpu.renderer);
++const results=await page.evaluate(async()=>{
++ const THREE=await import('three'),{GLTFLoader}=await import('three/addons/loaders/GLTFLoader.js'),{descriptorFromFox}=await import('./descriptor.mjs'),{createOwnedAnimation}=await import('/packages/rthree/owned.js');
++ const gltf=await new GLTFLoader().loadAsync('/work/assets/Fox.glb'),roots=[new THREE.Matrix4().toArray()],errors={};
++ const check=(label,mutate)=>{const undo=mutate();try{descriptorFromFox(THREE,gltf.scene,gltf.animations,roots);}catch(e){errors[label]=String(e);}finally{undo();}};
++ let mesh;gltf.scene.traverse(o=>{if(o.isSkinnedMesh)mesh=o;});
++ check('transparent',()=>{mesh.material.transparent=true;return()=>mesh.material.transparent=false;});
++ check('morph',()=>{mesh.morphTargetInfluences=[1];return()=>delete mesh.morphTargetInfluences;});
++ check('bind-transform',()=>{mesh.bindMatrix.elements[12]=1;return()=>mesh.bindMatrix.identity();});
++ check('non-joint-parent',()=>{const p=mesh.skeleton.bones[0].parent;p.position.x=1;return()=>{p.position.x=0;p.updateMatrixWorld(true);};});
++ check('discrete-track',()=>{const t=gltf.animations[0].tracks[0];t.setInterpolation(THREE.InterpolateDiscrete);return()=>t.setInterpolation(THREE.InterpolateLinear);});
++ check('arbitrary-binding',()=>{const t=gltf.animations[0].tracks[0],name=t.name;t.name='fox.material.opacity';return()=>t.name=name;});
++ check('additive',()=>{gltf.animations[0].blendMode=THREE.AdditiveAnimationBlendMode;return()=>gltf.animations[0].blendMode=THREE.NormalAnimationBlendMode;});
++ const descriptor=descriptorFromFox(THREE,gltf.scene,gltf.animations,roots).descriptor;
++ for(const backend of ['js','wasm']){for(const field of ['events','crossfade','morphTargets'])try{const d=await createOwnedAnimation({...descriptor,[field]:[]},{backend});d.dispose();}catch(e){errors[backend+'-'+field]=String(e);}}
++ return errors;
++});assert.equal(Object.keys(results).length,13);writeFileSync(`${out}/results.json`,JSON.stringify({status:'passed',gpu,results},null,2)+'\n');console.log('13 unsupported fixture/API cases rejected');}finally{await browser.close();server.close();}

@@ -1,0 +1,81 @@
+{
+  "method": "Lossless gzip; SHA-256 of original file bytes; manifests retain original logical run filenames. Reports transparently read .json.gz.",
+  "files": {
+    "environment-after/runner.json": {
+      "sha256": "0c08bee6615bcc4f356ab468db519d275d09e514c1d8502440ed1eb88d9d36cf",
+      "archivedAs": "environment-after/runner.json"
+    },
+    "environment-before/runner.json": {
+      "sha256": "2294e0c241057759b3e4b23c43cd5d39184ab27186e2223e842da23dcebb837a",
+      "archivedAs": "environment-before/runner.json"
+    },
+    "manifest.json": {
+      "sha256": "3499ad6056b8a27490012bfa0584243ad083c8626d347659046f1e475d3b977c",
+      "archivedAs": "manifest.json"
+    },
+    "render-animated-1-original-0.json": {
+      "sha256": "505a459dbea7a9c79b3356c3718da38692d73e6eab69c2e84b4d2da293947d6b",
+      "archivedAs": "render-animated-1-original-0.json.gz"
+    },
+    "render-animated-1-original-1.json": {
+      "sha256": "d5ae06d7b3c83e8dfe7018f933663d2103a0d4e119606bd943cdb857a23c6b14",
+      "archivedAs": "render-animated-1-original-1.json.gz"
+    },
+    "render-animated-1-original-2.json": {
+      "sha256": "516a54b64f34e645a5b7a6d445193007f9f55e64f998305fd916a42bf05ad099",
+      "archivedAs": "render-animated-1-original-2.json.gz"
+    },
+    "render-animated-1-original-3.json": {
+      "sha256": "87ee70b7afd147d3ada874bc47de0e860d111571a9daa61736358cc83203f400",
+      "archivedAs": "render-animated-1-original-3.json.gz"
+    },
+    "render-animated-1-original-4.json": {
+      "sha256": "32639614c91c3e8050cfc4f6bc350e1a91346e25e8a1c6ff7be16401d9309985",
+      "archivedAs": "render-animated-1-original-4.json.gz"
+    },
+    "render-animated-16-original-0.json": {
+      "sha256": "05a56ac495052a61758c8eb0995aeb83f88fdf1e7617cf45b92172178aee9c27",
+      "archivedAs": "render-animated-16-original-0.json.gz"
+    },
+    "render-animated-16-original-1.json": {
+      "sha256": "0da124a764fae4e0916eaaedfe98aac3f35891ee47d7cbf8ad7a7a09e0a6a198",
+      "archivedAs": "render-animated-16-original-1.json.gz"
+    },
+    "render-animated-16-original-2.json": {
+      "sha256": "1947f3bb49964f52ef49ac32db8ad61b7142a2bceb5b23b3276acfdba5edc749",
+      "archivedAs": "render-animated-16-original-2.json.gz"
+    },
+    "render-animated-16-original-3.json": {
+      "sha256": "855ad35ce1f58458704089e285b3fe92e23d35e44a4ba8049729c0b2ad2d233b",
+      "archivedAs": "render-animated-16-original-3.json.gz"
+    },
+    "render-animated-16-original-4.json": {
+      "sha256": "b910a34714b608479c0e4c2e6494d039a203f12c05e31e3d5a17d8f1a48380bb",
+      "archivedAs": "render-animated-16-original-4.json.gz"
+    },
+    "render-static-1-original-0.json": {
+      "sha256": "aff6454fa90fb231d14eebd648ab4f4449f00efc89e978d4b77be0cae05493e7",
+      "archivedAs": "render-static-1-original-0.json.gz"
+    },
+    "render-static-1-original-1.json": {
+      "sha256": "cd76ebacde987c8ffb579da107167986888636d9ecdc2427862562f560480ebd",
+      "archivedAs": "render-static-1-original-1.json.gz"
+    },
+    "render-static-1-original-2.json": {
+      "sha256": "8210e59bea615505531664f6787a8e258763e46bef660f55747b34ed2a4cd715",
+      "archivedAs": "render-static-1-original-2.json.gz"
+    },
+    "render-static-1-original-3.json": {
+      "sha256": "a7fb1b2563a6dbbb61bd87be2d8251bdbec2503d5574109a7bc2c8951524f9b3",
+      "archivedAs": "render-static-1-original-3.json.gz"
+    },
+    "render-static-1-original-4.json": {
+      "sha256": "e080d675ad6fbd932a52f4cfd3679fb13055a82945dff21b30df88b622394847",
+      "archivedAs": "render-static-1-original-4.json.gz"
+    },
+    "summary.json": {
+      "sha256": "da38785afa02bc53f7292e17fbc24fcf98c923dcac5b00bc3c48988ca266984e",
+      "archivedAs": "summary.json"
+    }
+  }
+}

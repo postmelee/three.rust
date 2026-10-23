@@ -1,0 +1,45 @@
+{
+  "method": "Lossless gzip; SHA-256 of original file bytes; manifests retain original logical run filenames. Reports transparently read .json.gz.",
+  "files": {
+    "environment-after/runner.json": {
+      "sha256": "c3ddf75c4bf00db34a75b31cbd63d08e10fc21c28b88d67c559cfefead528836",
+      "archivedAs": "environment-after/runner.json"
+    },
+    "environment-before/runner.json": {
+      "sha256": "64cedcc9f72e9200de845a1ae6911d9cc751a8f40ee8d2d43e3e4bc303ded016",
+      "archivedAs": "environment-before/runner.json"
+    },
+    "manifest.json": {
+      "sha256": "13bc52aed4a187cae606c1ec65f4943a2d7aa1660eb50dcc8b30ad12e0390fb0",
+      "archivedAs": "manifest.json"
+    },
+    "render-animated-1-original-0.json": {
+      "sha256": "af436dce09504a7f58e3408c471620f127a04f22b312a6661d4ffb581148d1d6",
+      "archivedAs": "render-animated-1-original-0.json.gz"
+    },
+    "render-animated-1-owned-js-0.json": {
+      "sha256": "3cc5b5c0a12d25cb6bc60340d2b2cb87cac6323a21cbb69615b920b2ee55c30f",
+      "archivedAs": "render-animated-1-owned-js-0.json.gz"
+    },
+    "render-animated-1-owned-wasm-0.json": {
+      "sha256": "558395037a36207726aaa02d723bf443bf16c1daf2f1fa522899f908ff97bdb3",
+      "archivedAs": "render-animated-1-owned-wasm-0.json.gz"
+    },
+    "render-static-1-original-0.json": {
+      "sha256": "d12ef5f08446a58a46fd8bca0637568588ae1b236b220c78617c26c7638d2e74",
+      "archivedAs": "render-static-1-original-0.json.gz"
+    },
+    "render-static-1-owned-js-0.json": {
+      "sha256": "add7247a032ed9c09540d972154ab629f5a32d1b4c430dbdabd4128c1b6789ae",
+      "archivedAs": "render-static-1-owned-js-0.json.gz"
+    },
+    "render-static-1-owned-wasm-0.json": {
+      "sha256": "ad7efec90a4f94bb1955a799b37bbc9b528af925d0ad89c4e23d83661d7fd74c",
+      "archivedAs": "render-static-1-owned-wasm-0.json.gz"
+    },
+    "summary.json": {
+      "sha256": "614adc61abc945f754d6b3344d30cc7c81e2b46e9be8c7c41507556779536892",
+      "archivedAs": "summary.json"
+    }
+  }
+}

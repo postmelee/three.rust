@@ -1,0 +1,3 @@
+shader-original-0.json {"cpu":0.09999999962747097,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-original-1.json {"cpu":0.10000000055879354,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-original-2.json {"cpu":0.09999999962747097,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}

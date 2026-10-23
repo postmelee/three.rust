@@ -1,0 +1,21 @@
+render-animated-1-original-0.json
+render-animated-1-owned-js-0.json
+render-animated-1-owned-wasm-0.json
+render-animated-64-original-0.json
+render-animated-64-owned-js-0.json
+render-animated-64-owned-wasm-0.json
+render-static-1-original-0.json
+render-static-1-owned-js-0.json
+render-static-1-owned-wasm-0.json
+render-static-1-owned-js-1.json
+render-static-1-owned-wasm-1.json
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.evaluate: Execution context was destroyed, most likely because of a navigation.
+    at /Users/melee/.codex/worktrees/mac-owned-validation/three.rust/bench/owned.mjs:176:33 {
+  name: 'Error'
+}
+
+Node.js v24.15.0

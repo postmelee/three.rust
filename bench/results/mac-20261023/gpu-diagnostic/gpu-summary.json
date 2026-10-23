@@ -1,0 +1,80 @@
+{
+  "method": "Per-run nearest-rank (floor index) quantiles of available asynchronous query ranges only. Missing/disjoint/pending values stay null in raw data. Separate instrumented workload; not Fox GPU time or display latency.",
+  "rows": [
+    {
+      "file": "shader-original-0.json",
+      "scenario": "shader",
+      "engine": "original",
+      "rep": 0,
+      "statuses": {
+        "available": 299,
+        "pending-at-end": 1
+      },
+      "gpuMs": {
+        "p50": 0.141499,
+        "p95": 1.966875,
+        "p99": 2.131708
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2
+      }
+    },
+    {
+      "file": "shader-original-1.json",
+      "scenario": "shader",
+      "engine": "original",
+      "rep": 1,
+      "statuses": {
+        "available": 299,
+        "pending-at-end": 1
+      },
+      "gpuMs": {
+        "p50": 0.141624,
+        "p95": 1.404,
+        "p99": 1.986499
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2
+      }
+    },
+    {
+      "file": "shader-original-2.json",
+      "scenario": "shader",
+      "engine": "original",
+      "rep": 2,
+      "statuses": {
+        "available": 299,
+        "pending-at-end": 1
+      },
+      "gpuMs": {
+        "p50": 0.142875,
+        "p95": 1.721999,
+        "p99": 2.126
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2
+      }
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import assert from "node:assert/strict";
 import { readFileSync, writeFileSync } from "node:fs";
 const dir = process.argv[2];
 if (!dir) throw Error("Usage: node bench/fox-compare.mjs SESSION");
@@ -5,6 +6,33 @@ const read = (p) => JSON.parse(readFileSync(`${dir}/${p}/summary.json`)),
   before = read("aa-before"),
   after = read("aa-after"),
   main = read("main");
+const manifests = ["aa-before", "main", "aa-after"].map((p) =>
+  JSON.parse(readFileSync(`${dir}/${p}/manifest.json`)),
+);
+for (const manifest of manifests) {
+  assert.equal(manifest.status, "complete", "Incomplete phase");
+  assert.deepEqual(
+    manifest.hashes,
+    manifests[1].hashes,
+    "Different measured source hashes",
+  );
+  assert.equal(
+    manifest.browser,
+    manifests[1].browser,
+    "Different browser versions",
+  );
+  assert.deepEqual(
+    manifest.renderTarget,
+    manifests[1].renderTarget,
+    "Different render targets",
+  );
+  for (const key of ["samples", "warmup", "hardware", "headless", "cases"])
+    assert.deepEqual(
+      manifest.options[key],
+      manifests[1].options[key],
+      `Different ${key}`,
+    );
+}
 const median = (a) => {
   a = [...a].sort((x, y) => x - y);
   return a.length % 2

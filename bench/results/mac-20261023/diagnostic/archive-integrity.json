@@ -1,0 +1,201 @@
+{
+  "method": "Lossless gzip; SHA-256 of original file bytes; manifests retain original logical run filenames. Reports transparently read .json.gz.",
+  "files": {
+    "diagnostic-animated-1-original-0.json": {
+      "sha256": "236a64acf9d35926bb5543a985e63f7d05030302d42bcb01f360bd1c96323989",
+      "archivedAs": "diagnostic-animated-1-original-0.json.gz"
+    },
+    "diagnostic-animated-1-original-1.json": {
+      "sha256": "2fc64657baab1911ff4f51985f7095fcbf608bb56a674993a1879b4b2ad76792",
+      "archivedAs": "diagnostic-animated-1-original-1.json.gz"
+    },
+    "diagnostic-animated-1-original-2.json": {
+      "sha256": "bab03977f088e5a06e9b47581e0b42fd5e5a4a8373344777a69acc2248ef2a66",
+      "archivedAs": "diagnostic-animated-1-original-2.json.gz"
+    },
+    "diagnostic-animated-1-original-3.json": {
+      "sha256": "bb6f64ef49179ba676abb00f145d88dff89224b1beb039b5b40ff5ab92736acb",
+      "archivedAs": "diagnostic-animated-1-original-3.json.gz"
+    },
+    "diagnostic-animated-1-original-4.json": {
+      "sha256": "58baabb0e80fd50ece551c75d677b82738de50a4204871e5e254d3a3df368454",
+      "archivedAs": "diagnostic-animated-1-original-4.json.gz"
+    },
+    "diagnostic-animated-1-owned-js-0.json": {
+      "sha256": "e87d64a894d131f854d6fbda218dd9b05144e8715e5417707e1e36b0ea15445d",
+      "archivedAs": "diagnostic-animated-1-owned-js-0.json.gz"
+    },
+    "diagnostic-animated-1-owned-js-1.json": {
+      "sha256": "a6c728483000abb0aa9c9a7ea3c2a6e054b05df833d2ebc57377215ccb957807",
+      "archivedAs": "diagnostic-animated-1-owned-js-1.json.gz"
+    },
+    "diagnostic-animated-1-owned-js-2.json": {
+      "sha256": "a76a5da65d31c20bb76bb504ee31d23ebbbd831e402c1667c04fc33dba225b0f",
+      "archivedAs": "diagnostic-animated-1-owned-js-2.json.gz"
+    },
+    "diagnostic-animated-1-owned-js-3.json": {
+      "sha256": "0db1ee03871154d033da5390bf74482668491b051807ccb764354444c35606c1",
+      "archivedAs": "diagnostic-animated-1-owned-js-3.json.gz"
+    },
+    "diagnostic-animated-1-owned-js-4.json": {
+      "sha256": "e946dcf3eb98dd0e8bed1390ef8581f5888de39aec9f201d71edd8f6952abaef",
+      "archivedAs": "diagnostic-animated-1-owned-js-4.json.gz"
+    },
+    "diagnostic-animated-1-owned-wasm-0.json": {
+      "sha256": "1ed2f3592036325a5e5f8c1b04e6ea65d53fe260bbe39eefd0d996c0166fe18b",
+      "archivedAs": "diagnostic-animated-1-owned-wasm-0.json.gz"
+    },
+    "diagnostic-animated-1-owned-wasm-1.json": {
+      "sha256": "72f8f516b67e29ff5a03ec22c697c7f54b74555a4528bc8f8ad233529e38a0cd",
+      "archivedAs": "diagnostic-animated-1-owned-wasm-1.json.gz"
+    },
+    "diagnostic-animated-1-owned-wasm-2.json": {
+      "sha256": "c13236d1ca42094860d94828b5386215261c99b877fef1c2ed007c423429ac28",
+      "archivedAs": "diagnostic-animated-1-owned-wasm-2.json.gz"
+    },
+    "diagnostic-animated-1-owned-wasm-3.json": {
+      "sha256": "82e24fc0a2cf5efba673dab6049edf4cb4f29eeddcca92e7cb5fa9d6c45b3804",
+      "archivedAs": "diagnostic-animated-1-owned-wasm-3.json.gz"
+    },
+    "diagnostic-animated-1-owned-wasm-4.json": {
+      "sha256": "08a25141e027f827745f050c7f30294c29137bc3bf53284eb33e1a158cf6d162",
+      "archivedAs": "diagnostic-animated-1-owned-wasm-4.json.gz"
+    },
+    "diagnostic-animated-16-original-0.json": {
+      "sha256": "cd2c32393f59e2ad50677f60425878d3edc0c389baad9090c42d8db7afc49bba",
+      "archivedAs": "diagnostic-animated-16-original-0.json.gz"
+    },
+    "diagnostic-animated-16-original-1.json": {
+      "sha256": "df244ba1f58122a0589ea583f3c7f497dc466d237905abad6131b13802852b16",
+      "archivedAs": "diagnostic-animated-16-original-1.json.gz"
+    },
+    "diagnostic-animated-16-original-2.json": {
+      "sha256": "2e676c1fd1aeef6491d04eb5100691af07f8a2504952401af0d98f0a750a3ca3",
+      "archivedAs": "diagnostic-animated-16-original-2.json.gz"
+    },
+    "diagnostic-animated-16-original-3.json": {
+      "sha256": "b968ac7ae7385ef502b9a8de53712e7e5a47ccfcd213c4a14eab3b719b5cc636",
+      "archivedAs": "diagnostic-animated-16-original-3.json.gz"
+    },
+    "diagnostic-animated-16-original-4.json": {
+      "sha256": "695c80e62a73ded4a395e4ba8c2c2cfd16f19c907dda842c8b67b309e21235a3",
+      "archivedAs": "diagnostic-animated-16-original-4.json.gz"
+    },
+    "diagnostic-animated-16-owned-js-0.json": {
+      "sha256": "be80b9af20a8d6d4bf92a4c352b8fe087ded99b52806b1868f437f5f474c53d0",
+      "archivedAs": "diagnostic-animated-16-owned-js-0.json.gz"
+    },
+    "diagnostic-animated-16-owned-js-1.json": {
+      "sha256": "1240786ed613ba6bd43ef00821a10efae6a1e02cdf2a8a8df940767bd8ce452c",
+      "archivedAs": "diagnostic-animated-16-owned-js-1.json.gz"
+    },
+    "diagnostic-animated-16-owned-js-2.json": {
+      "sha256": "a3ff3185d50371ed418216a607fb8768a48a39e0f1c118270618dd58d9e52f6b",
+      "archivedAs": "diagnostic-animated-16-owned-js-2.json.gz"
+    },
+    "diagnostic-animated-16-owned-js-3.json": {
+      "sha256": "ec929886a5be3c20bc7a11f0eb6e3c0d6227104db29403319b5f4acb103b92e6",
+      "archivedAs": "diagnostic-animated-16-owned-js-3.json.gz"
+    },
+    "diagnostic-animated-16-owned-js-4.json": {
+      "sha256": "a97c55e74d486a2ae39f83e90a7fb203b493767d923a46036e8ed0f9028b7e30",
+      "archivedAs": "diagnostic-animated-16-owned-js-4.json.gz"
+    },
+    "diagnostic-animated-16-owned-wasm-0.json": {
+      "sha256": "0a2ff10d1958138cba240b78d149244f5ac457e761a0fe0a444198eb9d933a29",
+      "archivedAs": "diagnostic-animated-16-owned-wasm-0.json.gz"
+    },
+    "diagnostic-animated-16-owned-wasm-1.json": {
+      "sha256": "0742d8e23ff4e34eb210b031f2eeedcab06e9e228c8a4b380aec6465e82cd484",
+      "archivedAs": "diagnostic-animated-16-owned-wasm-1.json.gz"
+    },
+    "diagnostic-animated-16-owned-wasm-2.json": {
+      "sha256": "c66710b802c71a75a7ab368b8ecfb6e96d22ffd83868503a4e8f85ddd1d8f4f4",
+      "archivedAs": "diagnostic-animated-16-owned-wasm-2.json.gz"
+    },
+    "diagnostic-animated-16-owned-wasm-3.json": {
+      "sha256": "be8445fda5ba9a4d0d399b2d1909b03f83dbb4a0088391105b34ec0bee635e94",
+      "archivedAs": "diagnostic-animated-16-owned-wasm-3.json.gz"
+    },
+    "diagnostic-animated-16-owned-wasm-4.json": {
+      "sha256": "48ceb49b65428169a06a41d4fad6cb9fbb407db51085a6a37dca73a3ae8533d6",
+      "archivedAs": "diagnostic-animated-16-owned-wasm-4.json.gz"
+    },
+    "diagnostic-static-1-original-0.json": {
+      "sha256": "e60b528dc151609084cca85e4ed0078018ea78ce9ce642cfdd6f95d97296e9f3",
+      "archivedAs": "diagnostic-static-1-original-0.json.gz"
+    },
+    "diagnostic-static-1-original-1.json": {
+      "sha256": "36cdfd31a1f5717961ee975db0c2ca106b9062b7fd0d714c4d173d9178fa7ef0",
+      "archivedAs": "diagnostic-static-1-original-1.json.gz"
+    },
+    "diagnostic-static-1-original-2.json": {
+      "sha256": "c84e999f1c7c974e15678fc657f4ff21889000ea8610726c8772d48886c07e37",
+      "archivedAs": "diagnostic-static-1-original-2.json.gz"
+    },
+    "diagnostic-static-1-original-3.json": {
+      "sha256": "a1627e28dceea66df1197960cdf192d88c72a48d0eba8f6c519e2a241af2eb44",
+      "archivedAs": "diagnostic-static-1-original-3.json.gz"
+    },
+    "diagnostic-static-1-original-4.json": {
+      "sha256": "ff5f500951284017065688e67d83eedacab0ff57456f736aae14597be9b227ea",
+      "archivedAs": "diagnostic-static-1-original-4.json.gz"
+    },
+    "diagnostic-static-1-owned-js-0.json": {
+      "sha256": "0164ebc78c091b9cb008fc6559f3292655787f3be280cdf440d362b49ba30149",
+      "archivedAs": "diagnostic-static-1-owned-js-0.json.gz"
+    },
+    "diagnostic-static-1-owned-js-1.json": {
+      "sha256": "8a886e995897f540a9f4ffed7e475559ce5c29197cd050c5809b1e0e3cf11745",
+      "archivedAs": "diagnostic-static-1-owned-js-1.json.gz"
+    },
+    "diagnostic-static-1-owned-js-2.json": {
+      "sha256": "9211258720c0886066cf6aa942bc960acad69120c4f78f1dbeae524b5792d397",
+      "archivedAs": "diagnostic-static-1-owned-js-2.json.gz"
+    },
+    "diagnostic-static-1-owned-js-3.json": {
+      "sha256": "51fa3fe1f970ca6e28bd42182c727d753664b4f5dc942e9761b75b493797db54",
+      "archivedAs": "diagnostic-static-1-owned-js-3.json.gz"
+    },
+    "diagnostic-static-1-owned-js-4.json": {
+      "sha256": "499fbef28319a12db4c137381022d277071559abf70c3b5f9b610873ea56edc8",
+      "archivedAs": "diagnostic-static-1-owned-js-4.json.gz"
+    },
+    "diagnostic-static-1-owned-wasm-0.json": {
+      "sha256": "9cea95294421394a6cbcb6074e3a8bda1c249623e9b98a0cc7f691dee334f6b0",
+      "archivedAs": "diagnostic-static-1-owned-wasm-0.json.gz"
+    },
+    "diagnostic-static-1-owned-wasm-1.json": {
+      "sha256": "46888f2adb4857e5af0ea0ac0bd1c963a2f42ebf95f2a6d62fe0215cb25eef92",
+      "archivedAs": "diagnostic-static-1-owned-wasm-1.json.gz"
+    },
+    "diagnostic-static-1-owned-wasm-2.json": {
+      "sha256": "3f553f48db4774891d838a092388992ca0a9c5c73febd6bea3c6cadb15fd6d1e",
+      "archivedAs": "diagnostic-static-1-owned-wasm-2.json.gz"
+    },
+    "diagnostic-static-1-owned-wasm-3.json": {
+      "sha256": "5e45f3f3600ad29c5bd54c06bde8a90f85df0191af270a260fc39469261fa4c8",
+      "archivedAs": "diagnostic-static-1-owned-wasm-3.json.gz"
+    },
+    "diagnostic-static-1-owned-wasm-4.json": {
+      "sha256": "445a482d5822ec9a8d8fa5fc4aa38f1f9a793f1fbc8e396a679ea8028fe39265",
+      "archivedAs": "diagnostic-static-1-owned-wasm-4.json.gz"
+    },
+    "environment-after/runner.json": {
+      "sha256": "eb0a0e28c1596b3f3efdeddef02c0fee850c2302e8caf8339427a5789fa5af82",
+      "archivedAs": "environment-after/runner.json"
+    },
+    "environment-before/runner.json": {
+      "sha256": "d7649a3260100109c570afe91edf9c59abe2a5888eac94ca0605512a602eb1bd",
+      "archivedAs": "environment-before/runner.json"
+    },
+    "manifest.json": {
+      "sha256": "201c75c6be9c2ccbde0730a9f2d9f33a734fc0b787b34433c7a304e0aa39a8db",
+      "archivedAs": "manifest.json"
+    },
+    "summary.json": {
+      "sha256": "418c645d74eb02cfe41779a53703345447d7485795c043473e2a6f3121ebe426",
+      "archivedAs": "summary.json"
+    }
+  }
+}

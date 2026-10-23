@@ -34,6 +34,8 @@ const cfg = configuration([
   `warmup=${opt.warmup || 600}`,
   `samples=${opt.samples || 1800}`,
 ]);
+// The actual page viewport, independent of the legacy M0 defaults.
+cfg.viewport = { width: 640, height: 540 };
 const variants = (opt.variants || "original,owned-js,owned-wasm").split(","),
   cases = (opt.cases || "animated-1,animated-16,static-1").split(","),
   stage = opt.stage || "render",
@@ -87,14 +89,25 @@ const hash = (p) => createHash("sha256").update(readFileSync(p)).digest("hex"),
     classification:
       stage === "render"
         ? cfg.repeats < 5 || cfg.warmup < 1200 || cfg.samples < 3600
-      ? "Smoke/short hardware diagnostic only; not a performance conclusion"
-      : "Hardware fixed-frame real-asset experiment; explicit API; no automatic product verdict"
+          ? "Smoke/short diagnostic only; not a performance conclusion"
+          : `${cfg.hardware ? "Hardware" : "Software-renderer"} fixed-frame real-asset experiment; explicit API; no automatic product verdict`
         : "Separate instrumented copy/read diagnostic",
     startedAt: new Date().toISOString(),
     sourceCommit: execFileSync("git", ["rev-parse", "HEAD"]).toString().trim(),
     dirty: !!execFileSync("git", ["status", "--porcelain"]).length,
     hashes: Object.fromEntries(paths.map((p) => [p, hash(p)])),
-    options: { ...cfg, variants, cases, stage },
+    options: {
+      repeats: cfg.repeats,
+      warmup: cfg.warmup,
+      samples: cfg.samples,
+      hardware: cfg.hardware,
+      headless: cfg.headless,
+      args: cfg.args,
+      viewport: cfg.viewport,
+      variants,
+      cases,
+      stage,
+    },
     renderTarget: {
       width: 640,
       height: 480,
@@ -146,7 +159,7 @@ try {
         manifest.activeRun = { repeat, scenario, variant };
         save();
         const page = await browser.newPage({
-            viewport: { width: 640, height: 540 },
+            viewport: cfg.viewport,
             deviceScaleFactor: 1,
           }),
           errors = [];

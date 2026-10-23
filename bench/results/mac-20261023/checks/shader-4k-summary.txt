@@ -1,0 +1,17 @@
+| Scene | Engine | CPU p50 | CPU p95 | CPU p99 | interval p95 |
+|---|---|---:|---:|---:|---:|
+| shader | original | 0.10 | 0.30 | 0.30 | 9.00 |
+| shader | js | 0.10 | 0.20 | 0.30 | 8.90 |
+| shader | wasm | 0.10 | 0.20 | 0.30 | 9.00 |
+| shader | packed-js | 0.10 | 0.20 | 0.30 | 8.90 |
+
+[
+  {
+    scene: 'shader',
+    median: 0,
+    lo: -9.313225746154785e-7,
+    hi: 0,
+    samples: [ 0, -9.313225746154785e-7, 0, 0 ],
+    omitted: 0
+  }
+]
