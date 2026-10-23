@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>Compatibility contract runner</title>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+<canvas id="contract" width="64" height="64"></canvas>
+<script type="module">
+import * as T from 'three';
+import {runSemantics} from './cases.mjs';
+import {runRenderContract} from './render.mjs';
+try {
+  await T.init?.();
+  const results=runSemantics(T);
+  const rendering=runRenderContract(T,document.querySelector('canvas'));
+  window.__contract={results,rendering,diagnostics:T.diagnostics?.()??null};
+}catch(error){window.__contract={error:error.stack??String(error)};}
+</script></html>

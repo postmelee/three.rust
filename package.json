@@ -33,6 +33,7 @@
     "test:browser-path": "node --test tests/browser-path.mjs",
     "bench:mac": "bash scripts/mac-validation.sh",
     "test:timing": "node --test tests/timing.mjs",
+    "test:compatibility": "node tests/compatibility.mjs && node tests/compatibility-browser.mjs",
     "docs:performance": "node scripts/performance-summary.mjs"
   },
   "devDependencies": {

@@ -16,6 +16,10 @@ explicit owned-rig API. The facade arena remains a cache of authoritative JS val
 The opt-in domain owns its animation/pose/world/palette state. Broader scene-core
 ownership is still planned. Computation and state ownership are independent.
 
+The [C1 observable contract](FACADE_CONTRACT.md) supplies a verified behavioral
+baseline for that next facade. It changes no ownership tiles, history observation
+or product qualification state; tests of existing JS behavior are not a Rust port.
+
 ## Units and legend
 
 | Color | Meaning |

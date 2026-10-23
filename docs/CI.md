@@ -29,6 +29,13 @@ asset is excluded; run `npm run fetch-assets` there before using that scene.
 Other scenes work offline. This delivery does not publish npm, deploy a public
 site, or merge changes. Generated build outputs stay out of Git.
 
+The C1 `npm run test:compatibility` suite runs 16 semantic scenarios in isolated
+Node processes and Chromium pages for original/JS/Wasm/packed-JS, plus two-camera
+callback and pixel comparisons. Its source-hashed traces and images are uploaded
+from `work/compatibility-node` and `work/compatibility-browser`. See the
+[contract matrix](FACADE_CONTRACT.md). These are correctness checks, not new Rust
+ownership or performance evidence.
+
 ## Hardware runner setup
 
 See [runner choices, configuration and qualification](CI_GPU.md#hardware-runner-setup).

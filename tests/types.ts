@@ -9,6 +9,18 @@ mesh.getWorldPosition(new THREE.Vector3());
 new GLTFLoader(); new OrbitControls(new THREE.PerspectiveCamera(),document.createElement('canvas'));
 THREE.release(scene);
 
+// Public references retain their ordinary types across synchronous operations.
+const positionAlias: THREE.Vector3 = mesh.position;
+const worldAlias: THREE.Matrix4 = mesh.matrixWorld;
+positionAlias.x = 2;
+mesh.updateWorldMatrix(true, false, true);
+const worldTarget: THREE.Vector3 = mesh.getWorldPosition(new THREE.Vector3());
+const skeleton = new THREE.Skeleton([new THREE.Bone()]);
+if (skeleton.boneMatrices === null) throw new Error('Skeleton palette unavailable');
+const paletteAlias: Float32Array = skeleton.boneMatrices;
+skeleton.update(); skeleton.computeBoneTexture(); skeleton.dispose(); mesh.dispose();
+void worldAlias; void worldTarget; void paletteAlias;
+
 import {createOwnedAnimation,createOwnedRenderer,type OwnedDescriptor,type OwnedCommand} from 'rthree/owned';
 const ownedDescriptor:OwnedDescriptor={parents:[-1],basePose:[[0,0,0,0,0,0,1,1,1,1]],inverseBind:[new THREE.Matrix4().toArray()],roots:[new THREE.Matrix4().toArray()],clips:[{duration:1,tracks:[]}]};
 const owned=await createOwnedAnimation(ownedDescriptor,{backend:'js'});

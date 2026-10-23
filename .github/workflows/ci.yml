@@ -30,6 +30,7 @@ jobs:
       - run: npm run fixtures
       - run: cargo fmt --check && cargo clippy --all-targets -- -D warnings
       - run: npm run build && npm test
+      - run: npm run test:compatibility
       - run: npm run test:owned
       - run: npm run test:browser-path && npm run test:fox
       - run: npm run test:timing
@@ -47,6 +48,8 @@ jobs:
           path: |
             work/ci-correctness
             work/ci-demo
+            work/compatibility-node
+            work/compatibility-browser
             work/package
             work/gpu-guard
             work/fox-rejections
