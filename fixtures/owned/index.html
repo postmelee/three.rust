@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>three.rust owned animation experiment</title>
+<style>body{margin:0;background:#17202a;color:#eee;font:16px system-ui}p{padding:0 16px}canvas{display:block}</style>
+<p>Owned animation → transforms → bone palette. <span id="status">Loading</span></p>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';import {createRig} from '../pipeline/rig.mjs';import {descriptorFromRig,initialActions} from './descriptor.mjs';import {createOwnedAnimation} from '/packages/rthree/owned.js';import {createOwnedRenderer} from '/packages/rthree/owned-renderer.js';
+if(THREE.init)await THREE.init();const q=new URLSearchParams(location.search),variant=q.get('variant')||'original',isStatic=q.has('static'),count=Number(q.get('count')||16),bones=Number(q.get('bones')||24);if(!['original','js','wasm','packed-js','owned-js','owned-wasm'].includes(variant))throw Error('Unknown variant');
+let rig=createRig(THREE,{count,bones}),domain,adapter;const {scene,camera}=rig,volumes=rig.volumes();
+if(variant.startsWith('owned-')){const d=descriptorFromRig(rig),geometry=rig.meshes[0].geometry,material=rig.meshes[0].material;domain=await createOwnedAnimation(d,{backend:variant.slice(6)});if(!isStatic)for(const cmd of [initialActions(d)])domain.commands(cmd);for(const mesh of rig.meshes){scene.remove(mesh);mesh.skeleton.dispose();}adapter=createOwnedRenderer(THREE,domain,{scene,geometry,material});rig=null;}
+const renderer=new THREE.WebGLRenderer({antialias:false,preserveDrawingBuffer:true});renderer.setSize(640,480);renderer.setPixelRatio(1);document.body.append(renderer.domElement);const gl=renderer.getContext(),ext=gl.getExtension('WEBGL_debug_renderer_info'),gpu={vendor:ext?gl.getParameter(ext.UNMASKED_VENDOR_WEBGL):null,renderer:ext?gl.getParameter(ext.UNMASKED_RENDERER_WEBGL):null};
+const step=()=>{if(isStatic)return;if(domain)domain.step(1/60);else rig.animate();};const draw=(view=camera)=>{if(adapter)adapter.render(renderer,view);else renderer.render(scene,view);};
+const palette=()=>domain?Array.from(domain.snapshot().palette):rig.snapshot();
+window.__owned={variant,domain,adapter,renderer,scene,camera,gpu,volumes,step,draw,palette,
+ frame(){step();draw();},
+ translateRoot(x){if(domain){const m=Array.from(domain.snapshot().roots.subarray(0,16));m[12]+=x;domain.commands([{type:"root",rig:0,value:m}]);}else rig.meshes[0].position.x+=x;},
+ pixels(){const a=new Uint8Array(640*480*4);gl.readPixels(0,0,640,480,gl.RGBA,gl.UNSIGNED_BYTE,a);return Array.from(a);},
+ poison(){if(!domain)throw Error('Only owned variants');const fail=()=>{throw Error('Replaced JS work executed');};THREE.AnimationMixer.prototype.update=fail;THREE.Bone.prototype.updateMatrixWorld=fail;THREE.Skeleton.prototype.update=fail;},
+ async measure({mode='render',warmup=60,samples=120}={}){if(!['render','cpu','diagnostic'].includes(mode))throw Error('Invalid measurement mode');const raw=[];for(let i=-warmup;i<samples;i++){await new Promise(requestAnimationFrame);const start=performance.now();if(mode==='render'){step();draw();const end=performance.now();if(i>=0)raw.push({start,cpu:end-start});}else if(mode==='cpu'){step();if(!domain){scene.updateMatrixWorld();for(const s of rig.skeletons)s.update();}const end=performance.now();if(i>=0)raw.push({start,cpu:end-start});}else{step();const evaluated=performance.now();if(adapter)adapter.sync();else{scene.updateMatrixWorld();for(const s of rig.skeletons)s.update();}const copied=performance.now();if(domain)domain.snapshot();else rig.snapshot();const read=performance.now();if(i>=0)raw.push({start,cpu:read-start,evaluate:evaluated-start,copy:copied-evaluated,read:read-copied});}}
+ return {raw,gpu,volumes,draws:renderer.info.render.calls,diagnostics:domain?.diagnostics()??THREE.diagnostics?.()??null,adapter:adapter?.diagnostics()??null};}
+};document.querySelector('#status').textContent=`${variant}: ${count} rigs × ${bones} bones. Explicit API results are not import-only gains.`;if(!q.has('manual')){const loop=()=>{window.__owned.frame();requestAnimationFrame(loop);};loop();}
+</script></html>

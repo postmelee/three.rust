@@ -1,0 +1,14 @@
+{
+  "sourceParent": "2348e98882df74416d8ebcdbaa8656d0f0127d36",
+  "sourceTreeDirty": true,
+  "fileHashes": {
+    "crates/scene-core/src/owned.rs": "5506e83a3e69328e9e2dbdbaaf23a81607f5f48fb64f8f18e49a6a6a6c5d9d97",
+    "packages/rthree/owned.js": "5dc5fb3a2eb8897867f4dbdc8b1f735b953d7d334553f7aad026bc1cbdc415f8",
+    "packages/rthree/owned-js.js": "30be8cc69039f5257643de0fb14ac15513beee243d1482a149b234a295875b52",
+    "packages/rthree/owned-wasm.js": "fa84190d0b3be2eacb70c5c2340dc75a8a58e84109b43a49b7e5912d836200ec",
+    "packages/rthree/owned-renderer.js": "3d71cff22829cf83a64c5819120c606a7d626ba1567d89ea0426c05d214a6fee",
+    "tests/owned.mjs": "89c3eca0b91656deee762c1071957d2dade8fb0d72eec006ae42cefef07b5382",
+    "tests/owned-browser.mjs": "07e9f246284751175a771eb78dd48f28f711812cd8f6cb9e2778b7c8d7aa06ec",
+    "packages/rthree/scene_core.wasm": "edfe1c9ae78e2e4ea76db9515fb17e4ae91a8231fb097dd30388147b3f75fcec"
+  }
+}

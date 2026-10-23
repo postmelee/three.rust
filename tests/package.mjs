@@ -11,6 +11,7 @@ execFileSync('npm',['install','--ignore-scripts','--no-audit','--no-fund',path.j
 const source=`import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import * as T from 'rthree';
+import {createOwnedAnimation} from 'rthree/owned';
 import {GLTFLoader} from 'rthree/addons/loaders/GLTFLoader.js';
 import {GLTFLoader as Alias} from 'rthree/examples/jsm/loaders/GLTFLoader.js';
 assert.equal(GLTFLoader,Alias);
@@ -20,6 +21,7 @@ assert.equal(T.diagnostics().wasmActive,false);
 await T.init({wasmBytes:readFileSync(new URL(import.meta.resolve('rthree/scene_core.wasm')))});
 const scene=new T.Scene();scene.add(new T.Mesh());scene.updateMatrixWorld();assert.ok(T.diagnostics().wasmCalls>0);
 const gltf=await new GLTFLoader().parseAsync(JSON.stringify({asset:{version:'2.0'},scenes:[{nodes:[0]}],nodes:[{}],scene:0}),'');assert.ok(gltf.scene instanceof T.Object3D);
+const identity=new T.Matrix4().toArray();const owned=await createOwnedAnimation({parents:[-1],basePose:[[0,0,0,0,0,0,1,1,1,1]],inverseBind:[identity],roots:[identity],clips:[{duration:1,tracks:[]}]},{backend:'wasm',wasmBytes:readFileSync(new URL(import.meta.resolve('rthree/scene_core.wasm')))});owned.step(0);assert.equal(owned.snapshot().palette[0],1);assert.equal(owned.diagnostics().steps,1);owned.dispose();
 assert.throws(()=>import.meta.resolve('three'));T.release(scene);T.release(gltf.scene);
 console.log('Fresh tarball consumer: init failure/retry, root/addon identity, Wasm execution, no runtime three dependency OK');`;
 writeFileSync(`${dir}/test.mjs`,source);execFileSync('node',['test.mjs'],{cwd:dir,stdio:'inherit'});

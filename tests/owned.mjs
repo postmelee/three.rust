@@ -1,15 +1,317 @@
-import test from 'node:test';import assert from 'node:assert/strict';import * as T from 'three';import {readFileSync,existsSync} from 'node:fs';
-import {createOwnedAnimation} from '../packages/rthree/owned.js';import {createRig} from '../fixtures/pipeline/rig.mjs';import {descriptorFromRig,initialActions} from '../fixtures/owned/descriptor.mjs';
-const wasm=process.env.OWNED_WASM==='1';const options=backend=>backend==='wasm'?{backend,wasmBytes:readFileSync('packages/rthree/scene_core.wasm')}:{backend};const backends=wasm?['js','wasm']:['js'];
-function close(a,b,tolerance=2e-6){assert.equal(a.length,b.length);for(let i=0;i<a.length;i++)assert(Math.abs(a[i]-b[i])<=tolerance*(1+Math.abs(a[i])),`[${i}] ${a[i]} != ${b[i]}`);}
-function oracle(d){const rigs=d.roots.map(root=>{const mesh=new T.Object3D();mesh.matrixAutoUpdate=false;mesh.matrix.fromArray(root);const bones=d.parents.map((_,i)=>{const b=new T.Bone();b.name=`node${i}`;b.position.fromArray(d.basePose[i]);b.quaternion.fromArray(d.basePose[i],3);b.scale.fromArray(d.basePose[i],7);return b;});d.parents.forEach((p,i)=>(p<0?mesh:bones[p]).add(bones[i]));const mixer=new T.AnimationMixer(mesh),actions=d.clips.map(c=>mixer.clipAction(new T.AnimationClip('',c.duration,c.tracks.map(t=>new (t.property==='quaternion'?T.QuaternionKeyframeTrack:T.VectorKeyframeTrack)(`node${t.node}.${t.property}`,t.times,t.values)))).play().setEffectiveWeight(0));const skeleton=new T.Skeleton(bones,d.inverseBind.map(m=>new T.Matrix4().fromArray(m)));return {mesh,bones,mixer,actions,skeleton};});return {rigs,command(cmd){const r=rigs[cmd.rig],a=r.actions[cmd.clip];if(cmd.type==='action'){a.time=cmd.time??0;a.setEffectiveWeight(cmd.weight??1);a.setEffectiveTimeScale(cmd.timeScale??1);a.paused=!!cmd.paused;a.setLoop(cmd.loop==='once'?T.LoopOnce:T.LoopRepeat,Infinity);a.clampWhenFinished=true;}if(cmd.type==='weight')a.setEffectiveWeight(cmd.value);if(cmd.type==='seek')a.time=cmd.value;if(cmd.type==='pause')a.paused=cmd.value;if(cmd.type==='root')r.mesh.matrix.fromArray(cmd.value);if(cmd.type==='reparent')(cmd.parent<0?r.mesh:r.bones[cmd.parent]).add(r.bones[cmd.node]);},step(dt){for(const r of rigs){r.mixer.update(dt);r.mesh.updateMatrixWorld(true);r.skeleton.update();}},snapshot(){return {pose:rigs.flatMap(r=>r.bones.flatMap(b=>[...b.position.toArray(),...b.quaternion.toArray(),...b.scale.toArray()])),world:rigs.flatMap(r=>r.bones.flatMap(b=>b.matrixWorld.toArray())),palette:rigs.flatMap(r=>Array.from(r.skeleton.boneMatrices))};}};}
-for(const backend of backends){
- test(`${backend}: upstream blended poses/world/palette, repeat/reverse/pause/once and root/reparent`,async()=>{const d=descriptorFromRig(createRig(T,{count:3,bones:8})),a=await createOwnedAnimation(d,options(backend)),o=oracle(d);const commands=initialActions(d);a.commands(commands);commands.forEach(c=>o.command(c));
-  for(let i=0;i<100;i++){let edits=[];if(i===20)edits=[{type:'pause',rig:0,clip:0,value:true},{type:'weight',rig:1,clip:1,value:.1}];if(i===35)edits=[{type:'action',rig:2,clip:1,time:1.9,loop:'once',weight:.25}];if(i===50)edits=[{type:'reparent',rig:1,node:7,parent:0},{type:'root',rig:0,value:new T.Matrix4().makeRotationY(.3).toArray()}];if(edits.length){a.commands(edits);edits.forEach(c=>o.command(c));}const dt=i%7===0?-.037:.041;a.step(dt);o.step(dt);const actual=a.snapshot(),expected=o.snapshot();for(const key of ['pose','world','palette'])close(actual[key],expected[key]);}
-  assert.equal(a.diagnostics().steps,100);if(backend==='wasm')assert(a.diagnostics().wasmCalls>=100);a.dispose();
- });
- test(`${backend}: rejection is atomic, snapshot isolated, forced reads and lifetime`,async()=>{const d=descriptorFromRig(createRig(T,{count:1,bones:3})),a=await createOwnedAnimation(d,options(backend));a.commands(initialActions(d));a.step(.1);const before=a.snapshot();assert.throws(()=>a.commands([{type:'weight',rig:0,clip:0,value:.1},{type:'reparent',rig:0,node:1,parent:2}]));close(a.snapshot().palette,before.palette,0);assert.throws(()=>a.step(NaN));assert.throws(()=>a.commands([{type:'action',rig:0,clip:0,loop:'pingpong'}]));before.pose[0]=999;assert.notEqual(a.snapshot().pose[0],999);a.commands([{type:'weight',rig:0,clip:0,value:0},{type:'weight',rig:0,clip:1,value:0},{type:'pose',rig:0,node:0,value:[1,2,3,0,0,0,1,1,1,1]}]);assert.equal(a.snapshot().pose[0],1);const steps=a.diagnostics().steps;a.snapshot();assert.equal(a.diagnostics().steps,steps);a.dispose();a.dispose();assert.throws(()=>a.snapshot(),/disposed/);assert.throws(()=>a.step(0),/disposed/);const b=await createOwnedAnimation(d,options(backend));b.step(0);assert.equal(b.snapshot().pose[0],0);b.dispose();
- });
- test(`${backend}: randomized vector/quaternion clips and normalized overweight blending`,async()=>{let seed=0x2468;const rand=()=>((seed=Math.imul(seed,1664525)+1013904223|0)>>>0)/2**32;for(let run=0;run<12;run++){const d=descriptorFromRig(createRig(T,{count:2,bones:5}));for(const clip of d.clips){clip.tracks=[];for(let node=0;node<5;node++){for(const property of ['position','quaternion','scale']){const values=[];for(let k=0;k<4;k++){if(property==='quaternion')values.push(...new T.Quaternion().setFromEuler(new T.Euler(rand(),rand(),rand())).toArray());else values.push(...Array.from({length:3},()=>property==='scale'?.5+rand():rand()-.5));}clip.tracks.push({node,property,times:[0,.37,1.1,2],values});}}}const a=await createOwnedAnimation(d,options(backend)),o=oracle(d),cmds=initialActions(d).map(c=>({...c,weight:rand()*2,timeScale:rand()*.8+.2}));a.commands(cmds);cmds.forEach(c=>o.command(c));for(let i=0;i<20;i++){const dt=rand()*.3;a.step(dt);o.step(dt);const x=a.snapshot(),y=o.snapshot();close(x.pose,y.pose);close(x.world,y.world);close(x.palette,y.palette);}a.dispose();}});
+import test from "node:test";
+import assert from "node:assert/strict";
+import * as T from "three";
+import { readFileSync, existsSync } from "node:fs";
+import { createOwnedAnimation } from "../packages/rthree/owned.js";
+import { createRig } from "../fixtures/pipeline/rig.mjs";
+import {
+  descriptorFromRig,
+  initialActions,
+} from "../fixtures/owned/descriptor.mjs";
+const wasm = process.env.OWNED_JS_ONLY !== "1",
+  wasmBytes = wasm ? readFileSync("packages/rthree/scene_core.wasm") : null;
+const options = (backend) =>
+  backend === "wasm" ? { backend, wasmBytes } : { backend };
+const backends = wasm ? ["js", "wasm"] : ["js"];
+function close(a, b, tolerance = 2e-6) {
+  assert.equal(a.length, b.length);
+  for (let i = 0; i < a.length; i++)
+    assert(
+      Math.abs(a[i] - b[i]) <= tolerance * (1 + Math.abs(a[i])),
+      `[${i}] ${a[i]} != ${b[i]}`,
+    );
 }
-test('unsupported acquisition fails without changing caller descriptors',async()=>{const d=descriptorFromRig(createRig(T,{count:1,bones:3}));const copy=structuredClone(d);d.clips[0].tracks[0].property='visible';await assert.rejects(createOwnedAnimation(d,{backend:'js'}),/unsupported/);d.clips[0].tracks[0].property='quaternion';assert.deepEqual(d,copy);d.clips[0].tracks[0].times=[0,0,1,1.5,2];await assert.rejects(createOwnedAnimation(d,{backend:'js'}),/Float32/);});
+function oracle(d) {
+  const rigs = d.roots.map((root) => {
+    const mesh = new T.Object3D();
+    mesh.matrixAutoUpdate = false;
+    mesh.matrix.fromArray(root);
+    const bones = d.parents.map((_, i) => {
+      const b = new T.Bone();
+      b.name = `node${i}`;
+      b.position.fromArray(d.basePose[i]);
+      b.quaternion.fromArray(d.basePose[i], 3);
+      b.scale.fromArray(d.basePose[i], 7);
+      return b;
+    });
+    d.parents.forEach((p, i) => (p < 0 ? mesh : bones[p]).add(bones[i]));
+    const mixer = new T.AnimationMixer(mesh),
+      actions = d.clips.map((c) =>
+        mixer
+          .clipAction(
+            new T.AnimationClip(
+              "",
+              c.duration,
+              c.tracks.map(
+                (t) =>
+                  new (t.property === "quaternion"
+                    ? T.QuaternionKeyframeTrack
+                    : T.VectorKeyframeTrack)(
+                    `node${t.node}.${t.property}`,
+                    t.times,
+                    t.values,
+                  ),
+              ),
+            ),
+          )
+          .play()
+          .setEffectiveWeight(0),
+      );
+    const skeleton = new T.Skeleton(
+      bones,
+      d.inverseBind.map((m) => new T.Matrix4().fromArray(m)),
+    );
+    return { mesh, bones, mixer, actions, skeleton };
+  });
+  return {
+    rigs,
+    command(cmd) {
+      const r = rigs[cmd.rig],
+        a = r.actions[cmd.clip];
+      if (cmd.type === "action") {
+        a.time = cmd.time ?? 0;
+        a.setEffectiveWeight(cmd.weight ?? 1);
+        a.setEffectiveTimeScale(cmd.timeScale ?? 1);
+        a.paused = !!cmd.paused;
+        a.setLoop(cmd.loop === "once" ? T.LoopOnce : T.LoopRepeat, Infinity);
+        a.clampWhenFinished = true;
+      }
+      if (cmd.type === "weight") a.setEffectiveWeight(cmd.value);
+      if (cmd.type === "seek") a.time = cmd.value;
+      if (cmd.type === "pause") a.paused = cmd.value;
+      if (cmd.type === "root") r.mesh.matrix.fromArray(cmd.value);
+      if (cmd.type === "reparent")
+        (cmd.parent < 0 ? r.mesh : r.bones[cmd.parent]).add(r.bones[cmd.node]);
+    },
+    step(dt) {
+      for (const r of rigs) {
+        r.mixer.update(dt);
+        r.mesh.updateMatrixWorld(true);
+        r.skeleton.update();
+      }
+    },
+    snapshot() {
+      return {
+        pose: rigs.flatMap((r) =>
+          r.bones.flatMap((b) => [
+            ...b.position.toArray(),
+            ...b.quaternion.toArray(),
+            ...b.scale.toArray(),
+          ]),
+        ),
+        world: rigs.flatMap((r) =>
+          r.bones.flatMap((b) => b.matrixWorld.toArray()),
+        ),
+        palette: rigs.flatMap((r) => Array.from(r.skeleton.boneMatrices)),
+      };
+    },
+  };
+}
+for (const backend of backends) {
+  test(`${backend}: upstream blended poses/world/palette, repeat/reverse/pause/once and root/reparent`, async () => {
+    const d = descriptorFromRig(createRig(T, { count: 3, bones: 8 })),
+      a = await createOwnedAnimation(d, options(backend)),
+      o = oracle(d);
+    const commands = initialActions(d);
+    a.commands(commands);
+    commands.forEach((c) => o.command(c));
+    for (let i = 0; i < 100; i++) {
+      let edits = [];
+      if (i === 20)
+        edits = [
+          { type: "pause", rig: 0, clip: 0, value: true },
+          { type: "weight", rig: 1, clip: 1, value: 0.1 },
+        ];
+      if (i === 35)
+        edits = [
+          {
+            type: "action",
+            rig: 2,
+            clip: 1,
+            time: 1.9,
+            loop: "once",
+            weight: 0.25,
+          },
+        ];
+      if (i === 50)
+        edits = [
+          { type: "reparent", rig: 1, node: 7, parent: 0 },
+          {
+            type: "root",
+            rig: 0,
+            value: new T.Matrix4().makeRotationY(0.3).toArray(),
+          },
+        ];
+      if (edits.length) {
+        a.commands(edits);
+        edits.forEach((c) => o.command(c));
+      }
+      const dt = i % 7 === 0 ? -0.037 : 0.041;
+      a.step(dt);
+      o.step(dt);
+      const actual = a.snapshot(),
+        expected = o.snapshot();
+      for (const key of ["pose", "world", "palette"])
+        close(actual[key], expected[key]);
+    }
+    assert.equal(a.diagnostics().steps, 100);
+    if (backend === "wasm") assert(a.diagnostics().wasmCalls >= 100);
+    a.dispose();
+  });
+  test(`${backend}: rejection is atomic, snapshot isolated, forced reads and lifetime`, async () => {
+    const d = descriptorFromRig(createRig(T, { count: 1, bones: 3 })),
+      a = await createOwnedAnimation(d, options(backend));
+    a.commands(initialActions(d));
+    a.step(0.1);
+    const before = a.snapshot();
+    assert.throws(() =>
+      a.commands([
+        { type: "weight", rig: 0, clip: 0, value: 0.1 },
+        { type: "reparent", rig: 0, node: 1, parent: 2 },
+      ]),
+    );
+    close(a.snapshot().palette, before.palette, 0);
+    assert.throws(() => a.step(NaN));
+    assert.throws(() =>
+      a.commands([{ type: "action", rig: 0, clip: 0, loop: "pingpong" }]),
+    );
+    before.pose[0] = 999;
+    assert.notEqual(a.snapshot().pose[0], 999);
+    a.commands([
+      { type: "weight", rig: 0, clip: 0, value: 0 },
+      { type: "weight", rig: 0, clip: 1, value: 0 },
+      { type: "pose", rig: 0, node: 0, value: [1, 2, 3, 0, 0, 0, 1, 1, 1, 1] },
+    ]);
+    assert.equal(a.snapshot().pose[0], 1);
+    const steps = a.diagnostics().steps;
+    a.snapshot();
+    assert.equal(a.diagnostics().steps, steps);
+    a.dispose();
+    a.dispose();
+    assert.throws(() => a.snapshot(), /disposed/);
+    assert.throws(() => a.step(0), /disposed/);
+    const b = await createOwnedAnimation(d, options(backend));
+    b.step(0);
+    assert.equal(b.snapshot().pose[0], 0);
+    b.dispose();
+  });
+  test(`${backend}: randomized vector/quaternion clips and normalized overweight blending`, async () => {
+    let seed = 0x2468;
+    const rand = () =>
+      ((seed = (Math.imul(seed, 1664525) + 1013904223) | 0) >>> 0) / 2 ** 32;
+    for (let run = 0; run < 12; run++) {
+      const d = descriptorFromRig(createRig(T, { count: 2, bones: 5 }));
+      for (const clip of d.clips) {
+        clip.tracks = [];
+        for (let node = 0; node < 5; node++) {
+          for (const property of ["position", "quaternion", "scale"]) {
+            const values = [];
+            for (let k = 0; k < 4; k++) {
+              if (property === "quaternion")
+                values.push(
+                  ...new T.Quaternion()
+                    .setFromEuler(new T.Euler(rand(), rand(), rand()))
+                    .toArray(),
+                );
+              else
+                values.push(
+                  ...Array.from({ length: 3 }, () =>
+                    property === "scale" ? 0.5 + rand() : rand() - 0.5,
+                  ),
+                );
+            }
+            clip.tracks.push({
+              node,
+              property,
+              times: [0, 0.37, 1.1, 2],
+              values,
+            });
+          }
+        }
+      }
+      const a = await createOwnedAnimation(d, options(backend)),
+        o = oracle(d),
+        cmds = initialActions(d).map((c) => ({
+          ...c,
+          weight: rand() * 2,
+          timeScale: rand() * 0.8 + 0.2,
+        }));
+      a.commands(cmds);
+      cmds.forEach((c) => o.command(c));
+      for (let i = 0; i < 20; i++) {
+        const dt = rand() * 0.3;
+        a.step(dt);
+        o.step(dt);
+        const x = a.snapshot(),
+          y = o.snapshot();
+        close(x.pose, y.pose);
+        close(x.world, y.world);
+        close(x.palette, y.palette);
+      }
+      a.dispose();
+    }
+  });
+}
+test("unsupported acquisition fails without changing caller descriptors", async () => {
+  const d = descriptorFromRig(createRig(T, { count: 1, bones: 3 }));
+  const copy = structuredClone(d);
+  d.clips[0].tracks[0].property = "visible";
+  await assert.rejects(
+    createOwnedAnimation(d, { backend: "js" }),
+    /unsupported/,
+  );
+  d.clips[0].tracks[0].property = "quaternion";
+  assert.deepEqual(d, copy);
+  d.clips[0].tracks[0].times = [0, 0, 1, 1.5, 2];
+  await assert.rejects(createOwnedAnimation(d, { backend: "js" }), /Float32/);
+});
+
+if (wasm)
+  test("Wasm ABI growth, invalid native batches and module retry", async () => {
+    const { encodeDescriptor, encodeCommands } = await import(
+      "../packages/rthree/owned-layout.js"
+    );
+    const { wasmCore } = await import("../packages/rthree/owned-wasm.js");
+    const module = await WebAssembly.compile(wasmBytes);
+    assert.deepEqual(WebAssembly.Module.imports(module), []);
+    const api = (await WebAssembly.instantiate(module, {})).exports;
+    const d = descriptorFromRig(createRig(T, { count: 1, bones: 5 })),
+      encoded = encodeDescriptor(d),
+      a = wasmCore(api, encoded);
+    a.commands(encodeCommands(initialActions(d), encoded));
+    a.step(0.2);
+    const before = a.buffers().palette.slice();
+    api.memory.grow(8);
+    close(a.buffers().palette, before, 0);
+    a.step(0.1);
+    assert.notDeepEqual(a.buffers().palette, before);
+    const id = api.owned_new(encoded.data.length);
+    new Float64Array(
+      api.memory.buffer,
+      api.owned_input(id),
+      encoded.data.length,
+    ).set(encoded.data);
+    assert.equal(api.owned_init(id), 1);
+    const ptr = api.owned_command_ptr(id),
+      commands = new Float64Array(api.memory.buffer, ptr, 40);
+    commands.set([1, 0, 0, 0.5]);
+    commands.set([6, 0, 2, 2], 20);
+    assert.equal(api.owned_commands(id, 2), 0);
+    assert.equal(
+      new Float64Array(api.memory.buffer, api.owned_buffer(id, 3), 10)[1],
+      0,
+    );
+    api.owned_free(id);
+    assert.equal(api.owned_step(id, 0.1), 0);
+    assert.equal(api.owned_buffer(id, 4), 0);
+    a.dispose();
+    await assert.rejects(
+      createOwnedAnimation(d, {
+        backend: "wasm",
+        wasmBytes: new Uint8Array([1, 2, 3]),
+      }),
+    );
+    const good = await createOwnedAnimation(d, { backend: "wasm", wasmBytes });
+    good.step(0);
+    good.dispose();
+  });
