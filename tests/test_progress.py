@@ -39,6 +39,26 @@ class ProgressTests(unittest.TestCase):
         md,html=progress.history_views(h);self.assertIn('not comparable',md);self.assertIn('not comparable',html)
         h['observations'][-1]['counts']['state']['total']+=1
         with self.assertRaises(ValueError):progress.validate_history(h)
+    def test_history_charts_use_real_daily_points_and_do_not_bridge_pins(self):
+        h=json.loads((ROOT/'docs/progress-history.json').read_text())
+        h['observations']=[next(o for o in h['observations'] if o['schemaVersion']==3)]
+        self.assertEqual(len(progress.daily_history(h)),1)
+        svg=ET.fromstring(progress.history_chart(h))
+        self.assertEqual(len([e for e in svg.iter() if e.tag.endswith('path')]),0)
+        self.assertEqual(len([e for e in svg.iter() if 'data-detail' in e.attrib]),1)
+        p=copy.deepcopy(h['observations'][-1]);p['recordedAt']='2026-10-24T23:00:00+00:00';h['observations'].append(p)
+        self.assertEqual(len(progress.daily_history(h)),2)
+        self.assertIn('data-series="rust-batch" d=',progress.history_chart(h))
+        p['upstreamCommit']='f'*40
+        self.assertNotIn('data-series="rust-batch" d=',progress.history_chart(h))
+        p['recordedAt']=h['observations'][-2]['recordedAt'][:10]+'T23:59:59+00:00'
+        self.assertEqual(len(progress.daily_history(h)),1)
+        self.assertIn('No comparable',progress.history_chart({'observations':[]}))
+        early=copy.deepcopy(h['observations'][0]);late=copy.deepcopy(early)
+        early['recordedAt']='2026-10-23T23:00:00+09:00'
+        late['recordedAt']='2026-10-23T15:00:00+00:00'
+        late['implementationCommit']='e'*40
+        self.assertEqual(progress.daily_history({'observations':[late,early]})[0]['implementationCommit'],'e'*40)
     def test_layout_area_and_no_overlap(self):
         boxes=progress.layout([{'total':9},{'total':5},{'total':1}],0,0,500,300)
         self.assertAlmostEqual(sum(w*h for _,x,y,w,h in boxes),150000)

@@ -2,7 +2,7 @@
 
 ![Current ownership map](assets/progress.svg)
 
-[Progress history](HISTORY.md) · [Raw inventory](progress.json) ·
+[Progress history](https://postmelee.github.io/three.rust/history.html) · [Raw inventory](progress.json) ·
 [Standalone page](progress.html) · [Source selection](progress-source.json)
 
 The upper band shows the present boundary and the intended Rust-owned pipeline.
@@ -78,12 +78,38 @@ Ordinary generation never fabricates a new observation or alters history.
 The original 6/29 capability and 7/12 evidence counts are retained as schema 2.
 The source-derived schema 3 observation uses the same unchanged engine, with a
 new denominator. History does not join these into a misleading progress curve.
-There is currently one observation per scheme; no trend can be inferred.
+The chart has separate computation and state panels. Solid series show Rust
+computation, conditional batch routes and authoritative state; dashed series show
+their declared totals. Hover, tap or focus a date for exact counts. One comparable
+date produces points, not a fabricated trend; different upstream pins are not joined.
 
-Open `/docs/progress.html` or `/docs/history.html` with `npm run dev`. The pages
-also ship in the portable demo. GitHub renders HISTORY.md directly, so the README
-history link works on main without a Pages deployment. The HTML pages use no
-external assets or scripts. `sourceRef` now targets main.
+The [public history](https://postmelee.github.io/three.rust/history.html) uses the
+last first-parent main commit per UTC day. `tools/status_site.py` reads each day's
+**committed schema-3 inventory**, not a retrospective inference from today's rules.
+Days without that inventory are omitted. Legacy observations remain separately
+available. `history.json` retains full commit IDs, counts, source and upstream pins.
+Changes to extraction rules/denominators must be interpreted through those records;
+counts alone do not establish implementation or performance gains.
+
+The checked-in `docs/progress-history.json` is an explicit observation ledger.
+`npm run docs:generate` renders that ledger for local review. The Pages build
+assembles daily main history without rewriting it or fabricating observations.
+Open `/docs/progress.html` or `/docs/history.html` with `npm run dev`; these local
+previews also ship in the portable demo. HISTORY.md is a readable repository
+fallback. Pages use inline SVG and a small inline interaction script, with no
+external runtime dependencies. `sourceRef` targets main.
+
+Build a fresh public-site preview and validate its project subpath:
+
+```sh
+npm run bundle:status
+npm run test:status
+# For another build, use a new output directory:
+python3 tools/status_site.py work/status-site-next
+node tests/status-site.mjs work/status-site-next
+```
+
+Public deployment and first-time activation are documented in [CI](CI.md#public-status-site).
 
 Presentation reference: [AnyPS5](https://boykopovar.github.io/AnyPS5/progress.html).
 Its function/instruction units inspired the fine-grained report; no AnyPS5 code

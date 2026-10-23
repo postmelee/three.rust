@@ -4,6 +4,9 @@ import {mkdirSync,readFileSync,writeFileSync} from 'node:fs';
 import assert from 'node:assert/strict';
 const out=process.env.RTHREE_PROGRESS_RESULTS_DIR||'work/progress-validation';mkdirSync(out,{recursive:true});
 const data=JSON.parse(readFileSync('docs/progress.json'));
+const history=JSON.parse(readFileSync('docs/progress-history.json'));
+const days=new Map();for(const point of history.observations.filter(p=>p.schemaVersion===3).sort((a,b)=>Date.parse(a.recordedAt)-Date.parse(b.recordedAt)))days.set(new Date(point.recordedAt).toISOString().slice(0,10),point);
+const first=[...days.entries()].sort(([a],[b])=>a.localeCompare(b))[0][1];
 const server=await serve();let browser;const results=[];
 try{browser=await chromium.launch({executablePath:process.env.CHROMIUM||'/usr/bin/chromium',headless:true,args:['--no-sandbox']});
  for(const [name,width,height] of [['desktop',1280,1000],['mobile',390,844]]){
@@ -16,6 +19,9 @@ try{browser=await chromium.launch({executablePath:process.env.CHROMIUM||'/usr/bi
   await page.locator('#state-state-core-Object3D-js summary').click();assert((await page.locator('#state-state-core-Object3D-js li').count())>20);
   await page.goto('http://127.0.0.1:4173/docs/history.html');assert(await page.locator('body').textContent().then(x=>x.includes('not comparable')));
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert.deepEqual(errors,[]);
+  assert.equal(await page.locator('[data-role=history-chart] [data-panel]').count(),2);
+  await page.locator('[data-detail]').first().focus();assert((await page.locator('#history-detail').textContent()).includes(`conditional Rust ${first.counts.functions.states['rust-batch']}/${first.counts.functions.total}`));
+  assert.equal(await page.locator('#history-table tbody tr').count(),days.size);
   await page.screenshot({path:`${out}/${name}-history.png`,fullPage:true});results.push({name,width,passed:true,checks:['actual source tile count','totals match JSON','no overflow','field evidence expands','history distinguishes schemas']});await page.close();
  }
  writeFileSync(`${out}/results.json`,JSON.stringify(results,null,2));console.log('Progress and history desktop/mobile checks passed');

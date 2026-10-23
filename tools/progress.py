@@ -175,6 +175,70 @@ def record(history,data,commit):
     history['observations'].append({'schemaVersion':3,'recordedAt':datetime.now(timezone.utc).isoformat(),'implementationCommit':commit,'label':'Source-derived computation and authority inventory','inventoryHash':data['inventoryHash'],'upstreamCommit':data['upstream']['commit'],'counts':{p:{'total':data[p]['total'],'states':data[p]['counts']} for p in ['functions','state']},'note':'New counting scheme; no engine port is implied by the denominator change.'})
 
 
+def daily_history(history):
+    """Last genuine schema-3 observation per UTC day; legacy rows stay separate."""
+    points = {}
+    for observation in sorted(history['observations'], key=lambda o:datetime.fromisoformat(o['recordedAt'].replace('Z','+00:00'))):
+        if observation['schemaVersion'] == 3:
+            day = datetime.fromisoformat(observation['recordedAt'].replace('Z','+00:00')).astimezone(timezone.utc).date().isoformat()
+            points[day] = {**observation, 'day': day}
+    return list(sorted(points.values(), key=lambda o:o['day']))
+
+
+def history_chart(history):
+    points = daily_history(history)
+    if not points:
+        return '<p>No comparable source-derived observations yet.</p>'
+    from datetime import date
+    days = [date.fromisoformat(p['day']).toordinal() for p in points]
+    left, right, width = 70, 920, 1200
+    xs = [((left+right)/2 if days[0]==days[-1] else left+(d-days[0])/(days[-1]-days[0])*(right-left)) for d in days]
+    panels = [('functions','CPU callable definitions',[('rust','Rust computation','#58a6ff'),('rust-batch','Conditional Rust','#d29922')]),('state','Persistent state authority',[('rust-owned','Rust authority','#2ea043')])]
+    svg = ['<svg xmlns="http://www.w3.org/2000/svg" data-role="history-chart" viewBox="0 0 1200 520" role="img" aria-labelledby="history-title history-description">',
+           '<title id="history-title">Computation and state ownership over time</title>',
+           '<desc id="history-description">Two independently scaled panels. Solid colored series show Rust computation or state authority; the gray dashed series is the declared inventory. Conditional Rust computation is separate. Only genuine comparable observations are plotted.</desc>',
+           '<rect width="1200" height="520" rx="6" fill="#0d1117"/><g fill="#f0f6fc" font-family="Arial,sans-serif" font-size="13">']
+    for index,(panel,title,series) in enumerate(panels):
+        offset=index*260; top=offset+64; bottom=offset+218
+        peak=max(1,max(p['counts'][panel]['total'] for p in points))
+        magnitude=10**math.floor(math.log10(peak));step=max(1,math.ceil(peak/magnitude/4)*magnitude);ceiling=math.ceil(peak/step)*step
+        y=lambda value: bottom-value/ceiling*(bottom-top)
+        svg.append(f'<g data-panel="{panel}">')
+        svg.append(svg_text(left,offset+26,title,19))
+        legend='Solid: '+', '.join(label for _,label,_ in series)+' · Dashed: declared inventory'
+        svg.append(svg_text(left,offset+48,legend,12))
+        for value in range(0,ceiling+1,step):
+            svg.append(f'<line x1="{left}" x2="{right}" y1="{y(value):.2f}" y2="{y(value):.2f}" stroke="#30363d"/>')
+            svg.append(svg_text(left-12,y(value)+4,str(value),12,'text-anchor="end" fill="#b1bac4"'))
+        for key,label,color in [('total','Declared','#b1bac4'),*series]:
+            values=[p['counts'][panel]['total'] if key=='total' else p['counts'][panel]['states'][key] for p in points]
+            # Only connect adjacent observations on the same upstream pin.
+            for i in range(1,len(points)):
+                if points[i].get('upstreamCommit')!=points[i-1].get('upstreamCommit'):
+                    continue
+                dash=' stroke-dasharray="7 5"' if key=='total' else ''
+                svg.append(f'<path data-series="{key}" d="M {xs[i-1]:.2f} {y(values[i-1]):.2f} L {xs[i]:.2f} {y(values[i]):.2f}" fill="none" stroke="{color}" stroke-width="2"{dash}/>')
+            for x,v in zip(xs,values):
+                svg.append(f'<circle data-series="{key}" cx="{x:.2f}" cy="{y(v):.2f}" r="4" fill="{color}" stroke="#0d1117"/>')
+            # A fixed right-hand key avoids overlapping labels when values are zero.
+            line=offset+92+([k for k,_,_ in [('total','Declared','#b1bac4'),*series]].index(key))*26
+            dash=' stroke-dasharray="7 5"' if key=='total' else ''
+            svg.append(f'<line x1="940" x2="966" y1="{line-4}" y2="{line-4}" stroke="{color}" stroke-width="2"{dash}/>')
+            svg.append(svg_text(974,line,f'{label}: {values[-1]:,}',13))
+        stride=max(1,math.ceil(len(points)/6))
+        for i,p in enumerate(points):
+            if i%stride==0 or i==len(points)-1:
+                svg.append(svg_text(xs[i],bottom+23,p['day'],12,'text-anchor="middle" fill="#b1bac4"'))
+        svg.append('</g>')
+    for i,p in enumerate(points):
+        f=p['counts']['functions'];s=p['counts']['state']
+        detail=f'{p["day"]}: Rust computation {f["states"]["rust"]}/{f["total"]}; conditional Rust {f["states"]["rust-batch"]}/{f["total"]}; Rust authority {s["states"]["rust-owned"]}/{s["total"]}. Commit {p["implementationCommit"][:7]}.'
+        lo=left if i==0 else (xs[i-1]+xs[i])/2;hi=right if i==len(points)-1 else (xs[i]+xs[i+1])/2
+        svg.append(f'<g tabindex="0" role="button" aria-label="{escape(detail)}" data-detail="{escape(detail)}"><title>{escape(detail)}</title><rect x="{lo:.2f}" y="55" width="{hi-lo:.2f}" height="430" fill="#ffffff" fill-opacity="0"/></g>')
+    svg.append('</g></svg>')
+    return '\n'.join(svg)
+
+
 def history_views(history):
     rows=[]
     for o in history['observations']:
@@ -183,11 +247,21 @@ def history_views(history):
         rows.append((o['recordedAt'],str(o['schemaVersion']),o['implementationCommit'],values,o['note']))
     intro='Recorded observations only. Schema 2 counted curated capabilities; schema 3 counts source definitions and state fields. The two series are not comparable. A changed denominator is not a porting gain. No trend is inferred from a single observation.'
     md='# Progress history\n\n'+intro+'\n\n[Current ownership map](PROGRESS.md) · [Raw history](progress-history.json) · [HTML page](history.html)\n\n| Observation (UTC) | Scheme | Implementation | Counts | Note |\n|---|---|---|---|---|\n'
-    html='<h1>Progress history</h1><p>'+intro+'</p><p><a href="progress.html">Current progress</a> · <a href="progress-history.json">Raw history</a></p><table><thead><tr><th>Observation (UTC)</th><th>Scheme</th><th>Implementation</th><th>Counts</th><th>Note</th></tr></thead><tbody>'
     for date,scheme,commit,values,note in rows:
         md+=f'| {date} | {scheme} | [{commit[:7]}]({BASE}commit/{commit}) | {values} | {note} |\n'
-        html+=f'<tr><td>{escape(date)}</td><td>{scheme}</td><td><a href="{BASE}commit/{commit}">{commit[:7]}</a></td><td>{escape(values)}</td><td>{escape(note)}</td></tr>'
-    html+='</tbody></table>'
+    html='<h1>Progress history</h1><div class="chart-scroll">'+history_chart(history)+'</div><output id="history-detail" aria-live="polite">Hover, tap or focus a date for exact counts.</output>'
+    html+='<p>Each panel has its own scale. Solid series show Rust computation, conditional computation and state authority separately; the dashed series is the declared inventory. One point per UTC day, using the last comparable recorded observation. A single point does not establish a trend. Different upstream pins are not connected.</p>'
+    if history.get('source')=='main-commits':
+        html+='<p>Published observations use the last main commit of each UTC day with a schema-3 inventory. Counts come from that committed inventory, not an inferred port or a retroactive reclassification.</p>'
+    html+='<p><a href="progress-history.json">Raw history</a> · <a href="progress.html">Back to current progress</a></p><table id="history-table"><thead><tr><th>Date (UTC)</th><th>Rust computation</th><th>Conditional Rust</th><th>Rust authority</th><th>Commit</th></tr></thead><tbody>'
+    for p in reversed(daily_history(history)):
+        f=p['counts']['functions'];s=p['counts']['state'];commit=p['implementationCommit']
+        html+=f'<tr><td>{p["day"]}</td><td>{f["states"]["rust"]}/{f["total"]}</td><td>{f["states"]["rust-batch"]}/{f["total"]}</td><td>{s["states"]["rust-owned"]}/{s["total"]}</td><td><a href="{BASE}commit/{commit}">{commit[:7]}</a></td></tr>'
+    html+='</tbody></table><p>Counts cover the selected source inventory, not equal effort, full Three.js compatibility or performance. Conditional computation keeps JS authority.</p><details><summary>Earlier counting scheme</summary><p>'+intro+'</p><ul>'
+    for date,scheme,commit,values,note in rows:
+        if scheme=='2':
+            html+=f'<li>{escape(date)}: {escape(values)}. {escape(note)} <a href="{BASE}commit/{commit}">{commit[:7]}</a></li>'
+    html+='</ul></details><style>.chart-scroll{overflow-x:auto}.chart-scroll svg{min-width:640px}#history-detail{display:block;padding:12px;background:#161b22;border-left:3px solid #58a6ff}g[data-detail]:focus{outline:none}g[data-detail]:hover rect,g[data-detail]:focus rect{fill-opacity:.06}</style><script>for(const item of document.querySelectorAll("[data-detail]")){const show=()=>document.querySelector("#history-detail").textContent=item.dataset.detail;for(const event of ["pointerenter","focus","click"])item.addEventListener(event,show);item.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();show();}});}</script>'
     return md,shell('three.rust progress history',html)
 
 
@@ -204,7 +278,7 @@ def main():
         record(history,data,args.record);validate_history(history)
         (ROOT/'docs/progress-history.json').write_text(json.dumps(history,indent=2)+'\n')
     md,html=history_views(history)
-    outputs={'docs/progress.json':json.dumps(data,indent=2)+'\n','docs/progress.html':render_html(data),'docs/assets/progress.svg':render_svg(data),'docs/HISTORY.md':md,'docs/history.html':html}
+    outputs={'docs/progress.json':json.dumps(data,indent=2)+'\n','docs/progress.html':render_html(data),'docs/assets/progress.svg':render_svg(data),'docs/HISTORY.md':md,'docs/history.html':html,'docs/assets/history.svg':history_chart(history)+'\n'}
     for name,content in outputs.items():
         p=ROOT/name
         if args.check:

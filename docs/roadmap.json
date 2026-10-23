@@ -351,6 +351,22 @@
       ],
       "verification": "Source inventory/history tests, browser visuals, upstream oracle, raw diagnostics and exact-head main CI.",
       "excluded": "New Rust animation implementation, physical-GPU claims or paid runner provisioning."
+    },
+    {
+      "key": "published-history",
+      "milestone": "m3",
+      "issue": 23,
+      "title": "Publish interactive HTML progress history through GitHub Pages",
+      "dependsOn": [
+        "ownership-progress-preparation"
+      ],
+      "criteria": [
+        "Render independently scaled computation and authority charts with genuine daily counts.",
+        "Validate an allowlisted site at the project subpath and automate main-only Pages deployment.",
+        "Link README to the rendered public page and verify actual publication."
+      ],
+      "verification": "Generator tests, desktop/mobile artifact browser checks, CI and public HTTP verification.",
+      "excluded": "Fabricated historical counts, inferred speedups or repository administration bypass."
     }
   ]
 }

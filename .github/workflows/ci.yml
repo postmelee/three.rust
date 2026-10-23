@@ -26,6 +26,7 @@ jobs:
       - run: echo "CHROMIUM=$(node --input-type=module -e 'import {chromium} from "playwright"; console.log(chromium.executablePath())')" >> "$GITHUB_ENV"
       - run: npm run docs:check && npm run test:infra
       - run: npm run test:progress
+      - run: npm run bundle:status && npm run test:status
       - run: npm run fixtures
       - run: cargo fmt --check && cargo clippy --all-targets -- -D warnings
       - run: npm run build && npm test
@@ -46,6 +47,7 @@ jobs:
             work/gpu-guard
             work/pipeline-validation
             work/progress-validation
+            work/status-site-validation
             work/bundle-validation
             work/bundle-pipeline
             work/bundle-progress
