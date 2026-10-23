@@ -8,7 +8,13 @@ mkdirSync(out, { recursive: true });
 const hardware = process.env.RTHREE_BROWSER_MODE === "hardware",
   cfg = configuration(
     hardware
-      ? ["mode=hardware", `headless=${process.env.RTHREE_HEADLESS || "true"}`]
+      ? [
+          "mode=hardware",
+          `headless=${process.env.RTHREE_HEADLESS || "true"}`,
+          ...(process.env.RTHREE_ANGLE_BACKEND
+            ? [`angle=${process.env.RTHREE_ANGLE_BACKEND}`]
+            : []),
+        ]
       : [],
   );
 const server = await serve();

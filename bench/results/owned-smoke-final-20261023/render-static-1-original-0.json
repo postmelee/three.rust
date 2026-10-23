@@ -1,0 +1,66 @@
+{
+  "repeat": 0,
+  "scenario": "static-1",
+  "variant": "original",
+  "count": 1,
+  "startupMs": 242.66658400000006,
+  "raw": [
+    {
+      "start": 392.3999999985099,
+      "cpu": 0.3999999985098839
+    },
+    {
+      "start": 409.09999999403954,
+      "cpu": 0.4000000059604645
+    },
+    {
+      "start": 425.59999999403954,
+      "cpu": 0.5
+    },
+    {
+      "start": 442.3999999985099,
+      "cpu": 0.6000000014901161
+    },
+    {
+      "start": 459.09999999403954,
+      "cpu": 0.4000000059604645
+    },
+    {
+      "start": 475.59999999403954,
+      "cpu": 0.20000000298023224
+    },
+    {
+      "start": 492.29999999701977,
+      "cpu": 0.20000000298023224
+    },
+    {
+      "start": 509.09999999403954,
+      "cpu": 0
+    },
+    {
+      "start": 525.5999999940395,
+      "cpu": 0.20000000298023224
+    },
+    {
+      "start": 542.5,
+      "cpu": 0.19999999552965164
+    }
+  ],
+  "gpu": {
+    "vendor": "Google Inc. (Google)",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+  },
+  "volumes": {
+    "characters": 1,
+    "bones": 24,
+    "sceneNodes": 27,
+    "activeTracks": 48,
+    "clipBytes": 4800,
+    "usefulPaletteBytes": 1536,
+    "allocatedPaletteBytes": 1536,
+    "allWorldMatrixReadBytes": 3072
+  },
+  "draws": 1,
+  "diagnostics": null,
+  "adapter": null
+}

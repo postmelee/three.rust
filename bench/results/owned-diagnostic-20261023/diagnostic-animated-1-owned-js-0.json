@@ -1,0 +1,467 @@
+{
+  "repeat": 0,
+  "scenario": "animated-1",
+  "variant": "owned-js",
+  "count": 1,
+  "startupMs": 317.43895999999995,
+  "raw": [
+    {
+      "start": 824.7999999970198,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 841.5,
+      "cpu": 0.09999999403953552,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0.09999999403953552
+    },
+    {
+      "start": 858.3999999985099,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 875.0999999940395,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 891.5999999940395,
+      "cpu": 0.20000000298023224,
+      "evaluate": 0.10000000149011612,
+      "copy": 0,
+      "read": 0.10000000149011612
+    },
+    {
+      "start": 908.1999999955297,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0.10000000149011612,
+      "read": 0
+    },
+    {
+      "start": 925,
+      "cpu": 0.09999999403953552,
+      "evaluate": 0.09999999403953552,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 941.5999999940395,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 958.2999999970198,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 975,
+      "cpu": 0.09999999403953552,
+      "evaluate": 0.09999999403953552,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 991.3999999985099,
+      "cpu": 0.19999999552965164,
+      "evaluate": 0.19999999552965164,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1008.0999999940395,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0.10000000149011612,
+      "read": 0
+    },
+    {
+      "start": 1024.7999999970198,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0.10000000149011612,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1041.5999999940395,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1058.1999999955297,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1074.6999999955297,
+      "cpu": 0.20000000298023224,
+      "evaluate": 0.10000000149011612,
+      "copy": 0,
+      "read": 0.10000000149011612
+    },
+    {
+      "start": 1091.6999999955297,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0.10000000149011612,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1108.2999999970198,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1124.8999999985099,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1141.5999999940395,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0.10000000149011612,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1158.0999999940395,
+      "cpu": 0.20000000298023224,
+      "evaluate": 0.10000000149011612,
+      "copy": 0,
+      "read": 0.10000000149011612
+    },
+    {
+      "start": 1174.7999999970198,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0.10000000149011612
+    },
+    {
+      "start": 1191.5999999940395,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1208.3999999985099,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1224.7999999970198,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1241.5,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1258.1999999955297,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0.10000000149011612,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1274.7999999970198,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0.10000000149011612
+    },
+    {
+      "start": 1291.3999999985099,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0.10000000149011612,
+      "read": 0
+    },
+    {
+      "start": 1308,
+      "cpu": 0.09999999403953552,
+      "evaluate": 0.09999999403953552,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1325,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1341.5,
+      "cpu": 0.09999999403953552,
+      "evaluate": 0.09999999403953552,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1358.1999999955297,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1375,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1391.6999999955297,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1408.0999999940395,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1425,
+      "cpu": 0.09999999403953552,
+      "evaluate": 0.09999999403953552,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1441.6999999955297,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1458.1999999955297,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0.10000000149011612
+    },
+    {
+      "start": 1475,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1491.5,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1508.1999999955297,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1524.7999999970198,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1541.5999999940395,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0.10000000149011612,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1558.3999999985099,
+      "cpu": 0.19999999552965164,
+      "evaluate": 0.10000000149011612,
+      "copy": 0,
+      "read": 0.09999999403953552
+    },
+    {
+      "start": 1575.1999999955297,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0.10000000149011612,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1591.5999999940395,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1608.0999999940395,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1624.8999999985099,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1641.5999999940395,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0.10000000149011612
+    },
+    {
+      "start": 1658.1999999955297,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1674.7999999970198,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1691.3999999985099,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1708.3999999985099,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1724.8999999985099,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1741.3999999985099,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1758.1999999955297,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1774.6999999955297,
+      "cpu": 0.10000000149011612,
+      "evaluate": 0,
+      "copy": 0.10000000149011612,
+      "read": 0
+    },
+    {
+      "start": 1791.6999999955297,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    },
+    {
+      "start": 1808.0999999940395,
+      "cpu": 0,
+      "evaluate": 0,
+      "copy": 0,
+      "read": 0
+    }
+  ],
+  "gpu": {
+    "vendor": "Google Inc. (Google)",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+  },
+  "volumes": {
+    "characters": 1,
+    "bones": 24,
+    "sceneNodes": 27,
+    "activeTracks": 48,
+    "clipBytes": 4800,
+    "usefulPaletteBytes": 1536,
+    "allocatedPaletteBytes": 1536,
+    "allWorldMatrixReadBytes": 3072
+  },
+  "draws": 0,
+  "diagnostics": {
+    "backend": "js",
+    "nodes": 24,
+    "rigs": 1,
+    "clips": 2,
+    "revision": 90,
+    "steps": 90,
+    "wasmCalls": 0,
+    "wasmMemoryBytes": 0,
+    "initialBytes": 16496,
+    "commandBatches": 1,
+    "commandBytes": 320,
+    "readBytes": 606240,
+    "paletteBytes": 138240,
+    "rootBytes": 11520
+  },
+  "adapter": {
+    "presentationMeshes": 1,
+    "ordinaryBones": 0,
+    "paletteConsumes": 0,
+    "paddedPaletteBytes": 2304,
+    "appliedRevision": 90
+  }
+}

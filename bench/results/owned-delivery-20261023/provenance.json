@@ -1,0 +1,30 @@
+{
+  "sourceParent": "1c018649efecc0b0731e3be074444953660b2827",
+  "sourceTreeDirty": true,
+  "recordedAt": "2026-10-23T03:44:49.382943+00:00",
+  "note": "Final local delivery checks; measured engine/fixture hashes still match the clean main benchmark commit. Only benchmark metadata was cleaned up afterwards. Remote CI is tracked in the PR.",
+  "fileHashes": {
+    "fixtures/owned/index.html": "4ba6eaf3ce2d9da4bd0fa3ec5e4ff08a719d2909f913319c1fbfd995d256d816",
+    "fixtures/owned/descriptor.mjs": "6d516035b76be31eb92027eb39096165cce03a000776652bc3ea61ae61803357",
+    "fixtures/pipeline/rig.mjs": "f6fec5ac7dba4d00c5398059d9140f2c4b5109c6122fc61233b87d8719b45220",
+    "fixtures/pipeline/source-audit.json": "e06314e80597cfe2d2535c1bc15fb0245718d8a22545fbaefe1e50f4ff8ca47f",
+    "bench/owned.mjs": "b4cef97fa6008c8ef777b40856c51fc83d430f126e4c93641c2f6ef995306b2a",
+    "package-lock.json": "b938b0b7c45499a8962d4beff96db709ec0caafe2e44d94e1d53754e2666a355",
+    "packages/rthree/core.js": "1288ad362561a38831ca4195218e083e061ef270975c27511e3336551064948f",
+    "packages/rthree/runtime.js": "9475be555e4bec0e89826b46e18123a012d0cd1500f748d012aafc6a3b2c8629",
+    "packages/rthree/owned.js": "1e870a4cbca4e85b68e579927e238ac1938e9623b421826bdb943467eacdd77a",
+    "packages/rthree/owned-layout.js": "bf13651d0a3d5116367bb5b99af2e480054e336cfb756abbd2dbb5874d58699e",
+    "packages/rthree/owned-js.js": "30be8cc69039f5257643de0fb14ac15513beee243d1482a149b234a295875b52",
+    "packages/rthree/owned-wasm.js": "fa84190d0b3be2eacb70c5c2340dc75a8a58e84109b43a49b7e5912d836200ec",
+    "packages/rthree/owned-renderer.js": "f028170077823ce847706bfdc1fc0487add7cd53f53299302802a658ca0d4357",
+    "packages/rthree/owned-state.js": "bafeaf358a3d9b6c5d7f47a32482f51b66a04aa72f80f0ba329c80ede061de87",
+    "crates/scene-core/src/owned.rs": "5506e83a3e69328e9e2dbdbaaf23a81607f5f48fb64f8f18e49a6a6a6c5d9d97",
+    "packages/rthree/scene_core.wasm": "edfe1c9ae78e2e4ea76db9515fb17e4ae91a8231fb097dd30388147b3f75fcec",
+    "tests/owned.mjs": "89c3eca0b91656deee762c1071957d2dade8fb0d72eec006ae42cefef07b5382",
+    "tests/owned-browser.mjs": "0a41299e42b6abf61648d5254ab30e764502d7acaf3582499b79537416fce588",
+    "tests/bundle.mjs": "c09e2cd5ef05901583396e2f6759ee67222f36453b6263700d6d4719ea170e66",
+    "scripts/bundle-demo.mjs": "5acd4f55bdbb36be4311edceb9d0637c90470c63c81783fb4ff65a120965b662",
+    "bench/owned-report.mjs": "d1ce5ef67d1c5b5b9c079c14e00069f48a086da6087181e2383b0fbe3c54e32e",
+    ".github/workflows/ci.yml": "71433d91e116f76479e16ab84f56f5579e03758d0367b2ef56c48a0149e24e6e"
+  }
+}

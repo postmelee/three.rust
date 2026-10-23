@@ -1,0 +1,6 @@
+
+> three-rust-research@0.1.0 docs:generate
+> node scripts/progress.mjs
+
+Source inventory: 1515 callable definitions, 115 declared state fields
+Progress: 1515 source functions, 115 state fields; 3 observed history records

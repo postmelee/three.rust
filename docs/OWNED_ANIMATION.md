@@ -65,8 +65,8 @@ but are not claimed to implement AnimationAction.crossFadeTo. The ordinary facad
 retains upstream synchronous events and direct mutation. No silent fallback inside
 this explicit API; choose the ordinary facade for unsupported semantics.
 
-This document is the pre-implementation contract. The task report records actual
-implemented coverage and test/measurement results; hardware acceptance remains open.
+The finite contract was committed before implementation. The [experiment report](OWNED_REPORT.md)
+records implemented coverage and measurements; hardware acceptance remains open.
 
 
 ## Usage and buffer layout
@@ -114,7 +114,8 @@ the original namespace in this comparison. `static` selects the non-animated con
 ```sh
 npm run build
 npm run test:owned
-node bench/owned.mjs out=work/owned-main-001
+node bench/owned.mjs repeats=6 out=work/owned-main-001
+node bench/owned-report.mjs work/owned-main-001
 node bench/owned.mjs stage=diagnostic variants=original,owned-js,owned-wasm \
   cases=animated-1,animated-64 repeats=5 warmup=30 samples=60 out=work/owned-diag-001
 ```

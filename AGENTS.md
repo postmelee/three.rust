@@ -4,7 +4,7 @@ Operational rules for every coding agent working in this repository, including C
 
 ## Project Overview
 
-three.rust investigates whether persistent Rust/WebAssembly CPU engine state can improve real Three.js applications while preserving a bounded JavaScript API. The local ESM package is rthree. The M0–M2 transform experiment is implemented and measured; whole-frame acceleration and complete compatibility are not established.
+three.rust investigates whether persistent Rust/WebAssembly CPU engine state can improve real Three.js applications while preserving a bounded JavaScript API. The local ESM package is rthree. The M0–M2 transform experiment and finite explicit-owned animation-to-palette prototype are implemented and measured; hardware whole-frame acceleration and complete compatibility are not established.
 
 ## Core Hyper-Waterfall Rules
 

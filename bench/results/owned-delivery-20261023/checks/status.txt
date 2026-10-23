@@ -1,0 +1,8 @@
+Status site: work/owned-final-status; 1 real daily points
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.169s
+
+OK
+Status site: /tmp/tmpabg753zo/site; 2 real daily points
+Published-site artifact: subpath, history/current/raw links and desktop/mobile passed

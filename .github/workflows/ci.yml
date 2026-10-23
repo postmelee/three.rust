@@ -53,6 +53,7 @@ jobs:
             work/progress-validation
             work/status-site-validation
             work/bundle-validation
+            work/bundle-owned
             work/bundle-pipeline
             work/bundle-progress
             work/bench-smoke

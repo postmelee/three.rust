@@ -8,5 +8,6 @@ process.env.RTHREE_DEMO_RESULTS_DIR=resolve('work/bundle-validation');
 assert.ok(existsSync(bundle+'/docs/progress.html'));
 process.env.RTHREE_PROGRESS_RESULTS_DIR=resolve('work/bundle-progress');
 process.env.RTHREE_PIPELINE_RESULTS_DIR=resolve('work/bundle-pipeline');
+process.env.RTHREE_OWNED_RESULTS_DIR=resolve('work/bundle-owned');
 process.chdir(bundle);
-try{await import('./demo.mjs');await import('./progress.mjs');await import('./pipeline-browser.mjs');}finally{process.chdir(root);}
+try{await import('./demo.mjs');await import('./progress.mjs');await import('./pipeline-browser.mjs');await import('./owned-browser.mjs');}finally{process.chdir(root);}

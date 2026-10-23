@@ -7,7 +7,7 @@ renderer. The local JavaScript package is `rthree`.
 
 [Build & run](docs/CLOUD_SETUP.md) · [Compatibility](docs/COMPATIBILITY.md) ·
 [Architecture](docs/ARCHITECTURE.md) · [Roadmap](docs/PROJECT_PLAN.md) ·
-[Benchmarks](docs/REPORT.md) · [Owned animation API](docs/OWNED_ANIMATION.md) · [Contributing](AGENTS.md)
+[Benchmarks](docs/OWNED_REPORT.md) · [Owned animation API](docs/OWNED_ANIMATION.md) · [Contributing](AGENTS.md)
 
 ## Status
 

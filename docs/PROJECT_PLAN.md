@@ -149,3 +149,6 @@ adapter. [ADR 0003](adr/0003-owned-animation-experiment.md) records the scope an
 sequencing clarification before code. It contributes to #7–#11 and #15 without
 closing their broader hardware/representative-workload/reuse gates or claiming M5
 complete. Ordinary import-compatible animation still executes upstream JS.
+
+The [owned experiment report](OWNED_REPORT.md) preserves the first implementation,
+matched JS comparison, raw repeated results, readback cost and unfavorable cases.
