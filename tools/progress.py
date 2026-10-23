@@ -178,7 +178,7 @@ def record(history,data,commit):
 def daily_history(history):
     """Last genuine schema-3 observation per UTC day; legacy rows stay separate."""
     points = {}
-    for observation in sorted(history['observations'], key=lambda o:o['recordedAt']):
+    for observation in sorted(history['observations'], key=lambda o:datetime.fromisoformat(o['recordedAt'].replace('Z','+00:00'))):
         if observation['schemaVersion'] == 3:
             day = datetime.fromisoformat(observation['recordedAt'].replace('Z','+00:00')).astimezone(timezone.utc).date().isoformat()
             points[day] = {**observation, 'day': day}

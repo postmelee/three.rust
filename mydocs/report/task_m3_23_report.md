@@ -47,3 +47,8 @@ old trees under today's rules. Denominator changes require the recorded source p
 and inventory hash to be interpreted. Public deployment requires the normal
 repository Pages setting, now confirmed; no administration bypass, paid runner,
 engine deployment or npm publication is included.
+
+Final review also removed fixed history-row/inventory counts from browser checks,
+so genuine future records can grow without test rewrites, and verified UTC ordering
+for observations with different timezone offsets. Applicable progress and artifact
+checks passed again after that change.
