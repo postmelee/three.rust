@@ -1,4 +1,10 @@
-# Computation and ownership progress
+# Product readiness and implementation progress
+
+[Adoption goals](PRODUCT_GOALS.md) define when an application has a reason to migrate.
+README and the standalone page lead with a separate gate overview from
+product-goals.json. Early evidence does not mean qualification; there is no overall
+completion percentage. The existing fine-grained map below remains implementation
+evidence, and its historical counts retain their original meaning.
 
 ![Current ownership map](assets/progress.svg)
 

@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "profile": "adoption-v1",
+  "stage": "Research prototype",
+  "claim": "Not yet qualified as a Three.js replacement",
+  "contract": "docs/PRODUCT_GOALS.md",
+  "gates": [
+    {
+      "id": "speed",
+      "title": "Useful app-level speed",
+      "status": "early",
+      "target": "20% and 1 ms less CPU time at p50 and p95",
+      "current": "One scaled asset; no app qualification yet",
+      "evidence": [
+        "docs/MAC_HARDWARE_REPORT.md"
+      ],
+      "issues": [
+        4,
+        5,
+        12
+      ]
+    },
+    {
+      "id": "rust",
+      "title": "A reason to choose Rust",
+      "status": "open",
+      "target": "10% and 0.5 ms beyond the matched JS design",
+      "current": "Independent Rust benefit remains unproven",
+      "evidence": [
+        "docs/MAC_HARDWARE_REPORT.md",
+        "docs/PERFORMANCE.md"
+      ],
+      "issues": [
+        7,
+        12,
+        14
+      ]
+    },
+    {
+      "id": "migration",
+      "title": "Low migration cost",
+      "status": "early",
+      "target": "Import, preparation and resolution changes only",
+      "current": "Owned animation still needs explicit migration",
+      "evidence": [
+        "docs/COMPATIBILITY.md",
+        "docs/OWNED_ANIMATION.md"
+      ],
+      "issues": [
+        8,
+        13
+      ]
+    },
+    {
+      "id": "behavior",
+      "title": "Preserved app behavior",
+      "status": "early",
+      "target": "Same features, interaction and visual quality",
+      "current": "Finite rig correctness; broad app contract open",
+      "evidence": [
+        "docs/OWNED_ANIMATION.md",
+        "docs/MAC_HARDWARE_REPORT.md"
+      ],
+      "issues": [
+        8,
+        11,
+        13
+      ]
+    },
+    {
+      "id": "cost",
+      "title": "Bounded total cost",
+      "status": "open",
+      "target": "Control, startup, download and memory budgets",
+      "current": "Lifecycle and whole-product budgets unqualified",
+      "evidence": [
+        "docs/MAC_HARDWARE_REPORT.md"
+      ],
+      "issues": [
+        12,
+        13
+      ]
+    },
+    {
+      "id": "release",
+      "title": "Repeatable supported release",
+      "status": "early",
+      "target": "Two hardware classes and browser engines",
+      "current": "One Mac experiment; no qualified release yet",
+      "evidence": [
+        "docs/CI.md",
+        "docs/MAC_HARDWARE_REPORT.md"
+      ],
+      "issues": [
+        3,
+        12,
+        14
+      ]
+    }
+  ]
+}
