@@ -91,3 +91,11 @@ test(`${mode}: internal matrix reads preserve snapshots and tracked destinations
  assert.equal(alias[12],7);assert.equal(alias[13],8);assert.equal(alias[14],9);
  T.release(o);
 });
+test(`${mode}: internal backing arrays never escape through overridden consumers`,()=>{
+ const root=new T.Object3D(),child=new T.Object3D();root.add(child);root.updateMatrixWorld();
+ const alias=root.matrixWorld.elements;let observed;
+ const vector=new T.Vector3();vector.fromArray=function(array){observed=array;return this;};
+ vector.setFromMatrixColumn(root.matrixWorld,0);assert.equal(observed,alias);
+ root.matrixAutoUpdate=false;root.matrixWorldAutoUpdate=false;observed[12]=12;child.position.x=1;
+ root.updateMatrixWorld(true);assert.equal(child.matrixWorld.elements[12],13);T.release(root);
+});

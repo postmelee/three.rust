@@ -31,7 +31,10 @@ for(const name of ['Matrix4','Matrix3','Vector3','Vector4']){
   if(ts.isPropertyAccessExpression(node)&&node.name.text==='elements'){
    const input=ts.isIdentifier(node.expression)&&['m','a','b','matrix'].includes(node.expression.text);
    const self=node.expression.kind===ts.SyntaxKind.ThisKeyword&&readonly[name]?.has(method);
-   if(input||self)edits.push([node.getStart(ast),node.end,`matrixElements( ${node.expression.getText(ast)} )`]);
+   // An argument can reach an overridden method (for example Vector3.fromArray).
+   // Keep the public proxy there; a private backing array must never escape.
+   const argument=ts.isCallExpression(node.parent)||ts.isNewExpression(node.parent);
+   if((input||self)&&!argument)edits.push([node.getStart(ast),node.end,`matrixElements( ${node.expression.getText(ast)} )`]);
   }
   ts.forEachChild(node,child=>visit(child,method));
  }

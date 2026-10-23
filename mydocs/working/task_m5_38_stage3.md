@@ -15,3 +15,11 @@ These checks do not establish a performance improvement.
 The same internal barrier exists in the matched JS route. No visibility, model-view,
 normal-matrix, render-list or animation calculation is newly ported by this fix.
 CI also runs the boundary harness as explicitly short diagnostic smoke.
+
+Further review reproduced a callback escape: Vector3.setFromMatrixColumn can pass
+its array to an overridden fromArray method. The first correction exposed the
+private backing array there. Stop that verification chain before any full timing;
+retain its partial correctness outputs in work/. Restrict the optimization to
+local reads, preserve public proxies when passing arrays to overridable methods,
+and add an alias-plus-pending-write regression case on both facade routes. The
+final candidate and its evidence are recorded separately from dbad72e.
