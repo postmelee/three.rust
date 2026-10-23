@@ -1,0 +1,30 @@
+[
+  {
+    "engine": "original",
+    "readyP50Ms": 306.89999999990687,
+    "firstReturnP50Ms": 394.79999999981374,
+    "wasmCompileInstantiateP50Ms": null,
+    "wasmFetchP50Ms": null
+  },
+  {
+    "engine": "js",
+    "readyP50Ms": 307.8000000002794,
+    "firstReturnP50Ms": 403,
+    "wasmCompileInstantiateP50Ms": null,
+    "wasmFetchP50Ms": null
+  },
+  {
+    "engine": "wasm",
+    "readyP50Ms": 280.29999999981374,
+    "firstReturnP50Ms": 381.60000000009313,
+    "wasmCompileInstantiateP50Ms": 1.2000000001862645,
+    "wasmFetchP50Ms": 9.199999999720603
+  },
+  {
+    "engine": "packed-js",
+    "readyP50Ms": 304.89999999990687,
+    "firstReturnP50Ms": 430.90000000037253,
+    "wasmCompileInstantiateP50Ms": null,
+    "wasmFetchP50Ms": null
+  }
+]

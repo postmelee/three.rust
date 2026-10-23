@@ -1,0 +1,30 @@
+{
+  "name": "three-rust-research",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "fixtures": "node scripts/fetch-assets.mjs && node scripts/fixtures.mjs",
+    "test": "cargo test --locked && node --test tests/differential.mjs && tsc -p tests/tsconfig.json",
+    "test:browser": "node tests/browser.mjs",
+    "bench:smoke": "node bench/run.mjs repeats=1 warmup=5 samples=10 engines=original,js,wasm,packed-js out=bench/results/smoke",
+    "bench:full": "node bench/run.mjs repeats=7 warmup=60 samples=180 engines=original,js,wasm,packed-js out=bench/results/m2-full",
+    "dev": "node scripts/server.mjs",
+    "test:package": "node tests/package.mjs",
+    "test:demo": "node tests/demo.mjs",
+    "bench:diagnostic": "node bench/run.mjs repeats=1 warmup=30 samples=60 engines=original,js,wasm,packed-js timings=true gpu=true out=bench/results/m2-diagnostic",
+    "bench:startup": "node bench/startup.mjs",
+    "bench:analyze": "node bench/summarize.mjs bench/results/m2-full && node bench/analyze.mjs bench/results/m2-full"
+  },
+  "devDependencies": {
+    "@types/three": "0.186.0",
+    "esbuild": "0.25.11",
+    "playwright": "1.56.1",
+    "three": "0.186.1",
+    "typescript": "5.9.3"
+  },
+  "workspaces": [
+    "packages/rthree"
+  ]
+}

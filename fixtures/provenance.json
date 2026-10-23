@@ -1,0 +1,54 @@
+{
+  "repository": "https://github.com/mrdoob/three.js",
+  "tag": "r186",
+  "tagObject": "48dd7be01263658aad497fd72e09d1e4c6213461",
+  "commit": "9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8",
+  "npmVersion": "0.186.1",
+  "npmIntegrity": "sha512-blFeqb49wRCSGUGj7gtpfnSGHy2lwDk94RhUmS1c/hTby70kvChbWpkJ4Pm1390LqzzvTmzgXKHPEafJwCb8jA==",
+  "files": [
+    {
+      "path": "fixtures/original/main.css",
+      "sha256": "57bbd270f4befef0dc767537cd803c30cab549f84aac1bbe86c748520bdfc3fe"
+    },
+    {
+      "path": "fixtures/original/webgl_animation_skinning_blending.html",
+      "sha256": "7dddf931d4a6e5c73a369610e4e34b39a6a333a4d56ff65561ecdbf429747397"
+    },
+    {
+      "path": "fixtures/original/webgl_instancing_performance.html",
+      "sha256": "241ca59d6decbeb027fb17a13a89b364c626141bbb18fabda594a832e7514e2d"
+    },
+    {
+      "path": "fixtures/original/webgl_interactive_cubes.html",
+      "sha256": "665b23cfd57c4363ae69d86cfbe9e07b15438f93d875ee48005b36e4a4908390"
+    },
+    {
+      "path": "fixtures/original/webgl_shader.html",
+      "sha256": "18ee0c55d395c7707dbe8f66112b2cfa1d774bfa107f2f7eddfb23c755346b56"
+    },
+    {
+      "path": "node_modules/three/src/core/Object3D.js",
+      "sha256": "09ba0acdf6a5fed399fa6ce9c0d61f9e0c0e6551e2ae43a270c9878a734bdabc"
+    },
+    {
+      "path": "node_modules/three/src/renderers/WebGLRenderer.js",
+      "sha256": "9e8740aad691246b31b3704014e8f3bbd38a8e7bf4b1b4d23868541b023cc63a"
+    },
+    {
+      "path": "node_modules/three/src/renderers/webgl/WebGLRenderLists.js",
+      "sha256": "3139dfcd01675333266c02d853a768913318f353e694de39545aa50747d2011a"
+    },
+    {
+      "path": "node_modules/three/src/animation/AnimationMixer.js",
+      "sha256": "7b05af5507aa4edfe3d6b5debcda23c8f0d9b910928debff7fc50748954d533c"
+    },
+    {
+      "path": "node_modules/three/src/objects/Skeleton.js",
+      "sha256": "37eaa7755b39775411fe32bafbf9a0273bdad6bb7976114ed63f8700f4b4b0e9"
+    },
+    {
+      "path": "work/three-upstream/examples/models/gltf/Soldier.glb",
+      "sha256": "dfb230fc1f942f259dd00281a1186953ad602fc5d69067ce63e24b2aa439736b"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-22T09:50:30.641Z",
+  "commit": "c458d7320a5c017fb83eb4d42bc1119aebc7cde2",
+  "node": "v24.19.0",
+  "os": "6.18.55",
+  "cpu": {
+    "model": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "speed": 0,
+    "times": {
+      "user": 150160,
+      "nice": 0,
+      "sys": 19020,
+      "idle": 867030,
+      "irq": 0
+    }
+  },
+  "cpus": 5,
+  "browser": "154.0.8037.57",
+  "args": [
+    "--no-sandbox",
+    "--use-angle=swiftshader",
+    "--enable-unsafe-swiftshader"
+  ],
+  "warmup": 5,
+  "samples": 10,
+  "repeats": 1,
+  "engines": [
+    "original",
+    "js",
+    "wasm",
+    "packed-js"
+  ],
+  "scenarios": [
+    "cubes",
+    "skinning",
+    "shader",
+    "small",
+    "hierarchy"
+  ],
+  "protocol": "fixed-frame exploratory cloud CPU; not 10s+30s hardware protocol",
+  "profile": false,
+  "runs": [
+    "cubes-original-0.json",
+    "cubes-js-0.json",
+    "cubes-wasm-0.json",
+    "cubes-packed-js-0.json",
+    "skinning-original-0.json",
+    "skinning-js-0.json",
+    "skinning-wasm-0.json",
+    "skinning-packed-js-0.json",
+    "shader-original-0.json",
+    "shader-js-0.json",
+    "shader-wasm-0.json",
+    "shader-packed-js-0.json",
+    "small-original-0.json",
+    "small-js-0.json",
+    "small-wasm-0.json",
+    "small-packed-js-0.json",
+    "hierarchy-original-0.json",
+    "hierarchy-js-0.json",
+    "hierarchy-wasm-0.json",
+    "hierarchy-packed-js-0.json"
+  ]
+}

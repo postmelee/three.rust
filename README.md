@@ -1,27 +1,58 @@
 # three.rust
 
-Three.js의 JavaScript API를 유지하면서, 반복적인 CPU 장면 계산을 Rust/WebAssembly로 옮기는 오픈소스 프로젝트 제안입니다.
+An independent experiment in moving Three.js CPU engine work into persistent
+Rust/WebAssembly state while keeping a bounded JavaScript API. The local ESM
+package is named **rthree** (name availability unverified; not published).
 
-**현재 상태: 저장소 초기 설정. Codex Cloud에서 M0–M2 구현을 진행할 계획이며, 아직 성능 결과는 없습니다.** `rthree`는 npm 패키지명 후보이며 이름 확보 여부는 확인하지 않았습니다.
+**Implemented:** a version-checked Three.js r186 source hook sends eligible
+Object3D transform subtrees to an f64 Rust arena. The original JS composition
+and parent-matrix calculation are skipped for that batch. Public objects and
+matrix arrays keep their identity. The existing WebGL renderer, materials,
+shaders, animation and skeleton palettes are retained. This is not a complete
+Three.js port or a promise that changing an import speeds up a site.
 
-첫 목표는 Three.js **0.186.1**을 기준으로 데스크톱 공개 예제를 우선 측정하고, 이후 [Living Like a Giraffe](https://github.com/livinglikeagiraffe/livinglikeagiraffe.github.io)를 실행하고, 동일한 화면·동작을 유지한 상태에서 CPU 시간과 프레임 안정성의 변화를 재현 가능하게 공개하는 것입니다.
+**Evidence:** fresh M0 public-example profiles and target ADR were committed
+before implementation. Native Rust, upstream differential, real browser
+image/numeric and isolated package installation tests are included. Cloud
+results include regressions and are not hardware desktop GPU/FPS evidence.
+See [the report](docs/REPORT.md), [compatibility](docs/COMPATIBILITY.md),
+[protocol](docs/BENCHMARKS.md) and [revised milestones](docs/PROJECT_PLAN.md).
 
-목표 사용법은 다음과 같습니다. 아직 실행 가능한 패키지는 아닙니다.
+```sh
+npm ci
+npm run fixtures
+npm run build        # requires Rust 1.90.0 + wasm32-unknown-unknown
+npm test
+CHROMIUM=/usr/bin/chromium npm run test:browser
+npm run test:package
+npm run dev          # http://127.0.0.1:4173
+```
+
+[Clean install and real hardware measurement](docs/CLOUD_SETUP.md) includes
+browser setup, exact commands and known omissions. `npm run bench:smoke` is a
+short diagnostic. `npm run bench:full` runs the seven-repeat cloud protocol.
 
 ```js
 import * as THREE from 'rthree';
-
+await THREE.init();
 const scene = new THREE.Scene();
-const renderer = new THREE.WebGLRenderer({ antialias: true });
-// 검증된 API 범위에서는 기존 애플리케이션 코드를 유지한다.
+const mesh = new THREE.Mesh(new THREE.BoxGeometry(), new THREE.MeshNormalMaterial());
+scene.add(mesh);
+mesh.position.x = 2;
+scene.updateMatrixWorld(true); // synchronous after init
+console.log(THREE.diagnostics());
+// Later, when retiring the scene:
+THREE.release(scene);
 ```
 
-- [프로젝트 계획과 마일스톤](docs/PROJECT_PLAN.md)
-- [호환성 계약과 패키지 설계](docs/COMPATIBILITY.md)
-- [실제 프로젝트 성능 비교 방법](docs/BENCHMARKS.md)
+A original, B `rthree/js`, C `rthree`, and D `rthree/packed-js` use the same
+application source through module resolution. Addons exported under
+`rthree/addons/*` and `rthree/examples/jsm/*` share one core; third-party `three`
+imports need an alias. Explicit Wasm initialization is an extra integration
+step. WebGPU/TSL, CommonJS and untested ecosystem compatibility are not promised.
 
-초기 전략은 버전을 고정한 Three.js 소스를 기반으로 WebGL 렌더러·로더·재질을 재사용하고, 프로파일에서 확인한 계산을 Rust로 교체하는 것입니다. 범용 전체 재작성, 자체 WebGPU 렌더러, 네이티브 Rust API는 첫 검증 범위에 포함하지 않습니다.
-
-프로젝트명은 **three.rust**, 패키지명은 **rthree(가칭)**로 구분합니다. 공개 시 Three.js와 독립된 프로젝트임을 표시하고, 재사용 코드와 예제 에셋의 출처·라이선스를 보존합니다.
-
-- [Codex Cloud 초기 설정 및 M0–M2 실행 계약](docs/CLOUD_SETUP.md)
+Repository layout: `crates/scene-core` (Rust), `packages/rthree` (bridge/API),
+`scripts/build.mjs` (hash-checked fork/build), `fixtures` (fixed public examples),
+`tests`, `bench/results` (raw evidence), `demo` and `.github/workflows`.
+MIT for project code; upstream notice retained in vendor/three-examples/LICENSE
+and generated packages. Downloaded Soldier asset is not relicensed/repackaged.

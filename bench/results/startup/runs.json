@@ -1,0 +1,691 @@
+{
+  "method": "fresh browser contexts, shared browser process, no-store; not fully cold cache; first render return is not compositor presentation",
+  "browser": "154.0.8037.57",
+  "args": [
+    "--no-sandbox",
+    "--use-angle=swiftshader",
+    "--enable-unsafe-swiftshader"
+  ],
+  "runs": [
+    {
+      "repeat": 0,
+      "engine": "original",
+      "env": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2002
+      },
+      "readyAt": 610.7000000001863,
+      "firstRenderReturnAt": 688.3999999999069,
+      "firstFrameCpuMs": 77.60000000009313,
+      "wasmCompileInstantiateMs": [],
+      "wasmFetch": [],
+      "path": null
+    },
+    {
+      "repeat": 0,
+      "engine": "js",
+      "env": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2002
+      },
+      "readyAt": 309.39999999990687,
+      "firstRenderReturnAt": 403,
+      "firstFrameCpuMs": 93.20000000018626,
+      "wasmCompileInstantiateMs": [],
+      "wasmFetch": [],
+      "path": {
+        "backend": "js",
+        "wasmActive": false,
+        "batches": 0,
+        "nodes": 0,
+        "fallbackRoots": 0,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 0,
+        "scannedBytes": 0,
+        "materializedBytes": 0,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      }
+    },
+    {
+      "repeat": 0,
+      "engine": "wasm",
+      "env": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2002
+      },
+      "readyAt": 275.10000000009313,
+      "firstRenderReturnAt": 381.60000000009313,
+      "firstFrameCpuMs": 106.20000000018626,
+      "wasmCompileInstantiateMs": [
+        1.2000000001862645
+      ],
+      "wasmFetch": [
+        {
+          "duration": 6.399999999906868,
+          "transferSize": 28487,
+          "encodedBodySize": 28187
+        }
+      ],
+      "path": {
+        "backend": "wasm",
+        "wasmActive": true,
+        "batches": 1,
+        "nodes": 2002,
+        "fallbackRoots": 2,
+        "wasmCalls": 1,
+        "wasmNodes": 2002,
+        "uploadedBytes": 336256,
+        "scannedBytes": 784784,
+        "materializedBytes": 512512,
+        "arenas": 1,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 2228224
+      }
+    },
+    {
+      "repeat": 0,
+      "engine": "packed-js",
+      "env": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2002
+      },
+      "readyAt": 318.39999999990687,
+      "firstRenderReturnAt": 409.29999999981374,
+      "firstFrameCpuMs": 90.79999999981374,
+      "wasmCompileInstantiateMs": [],
+      "wasmFetch": [],
+      "path": {
+        "backend": "packed-js",
+        "wasmActive": false,
+        "batches": 1,
+        "nodes": 2002,
+        "fallbackRoots": 2,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 336256,
+        "scannedBytes": 784784,
+        "materializedBytes": 512512,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      }
+    },
+    {
+      "repeat": 1,
+      "engine": "original",
+      "env": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2002
+      },
+      "readyAt": 306.89999999990687,
+      "firstRenderReturnAt": 394.79999999981374,
+      "firstFrameCpuMs": 87.79999999981374,
+      "wasmCompileInstantiateMs": [],
+      "wasmFetch": [],
+      "path": null
+    },
+    {
+      "repeat": 1,
+      "engine": "js",
+      "env": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2002
+      },
+      "readyAt": 307.8000000002794,
+      "firstRenderReturnAt": 425.5,
+      "firstFrameCpuMs": 117.5,
+      "wasmCompileInstantiateMs": [],
+      "wasmFetch": [],
+      "path": {
+        "backend": "js",
+        "wasmActive": false,
+        "batches": 0,
+        "nodes": 0,
+        "fallbackRoots": 0,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 0,
+        "scannedBytes": 0,
+        "materializedBytes": 0,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      }
+    },
+    {
+      "repeat": 1,
+      "engine": "wasm",
+      "env": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2002
+      },
+      "readyAt": 287.10000000009313,
+      "firstRenderReturnAt": 378.20000000018626,
+      "firstFrameCpuMs": 91,
+      "wasmCompileInstantiateMs": [
+        1.5
+      ],
+      "wasmFetch": [
+        {
+          "duration": 5.099999999627471,
+          "transferSize": 28487,
+          "encodedBodySize": 28187
+        }
+      ],
+      "path": {
+        "backend": "wasm",
+        "wasmActive": true,
+        "batches": 1,
+        "nodes": 2002,
+        "fallbackRoots": 2,
+        "wasmCalls": 1,
+        "wasmNodes": 2002,
+        "uploadedBytes": 336256,
+        "scannedBytes": 784784,
+        "materializedBytes": 512512,
+        "arenas": 1,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 2228224
+      }
+    },
+    {
+      "repeat": 1,
+      "engine": "packed-js",
+      "env": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2002
+      },
+      "readyAt": 295.40000000037253,
+      "firstRenderReturnAt": 430.90000000037253,
+      "firstFrameCpuMs": 135.10000000009313,
+      "wasmCompileInstantiateMs": [],
+      "wasmFetch": [],
+      "path": {
+        "backend": "packed-js",
+        "wasmActive": false,
+        "batches": 1,
+        "nodes": 2002,
+        "fallbackRoots": 2,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 336256,
+        "scannedBytes": 784784,
+        "materializedBytes": 512512,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      }
+    },
+    {
+      "repeat": 2,
+      "engine": "original",
+      "env": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2002
+      },
+      "readyAt": 275.39999999990687,
+      "firstRenderReturnAt": 378.79999999981374,
+      "firstFrameCpuMs": 103.29999999981374,
+      "wasmCompileInstantiateMs": [],
+      "wasmFetch": [],
+      "path": null
+    },
+    {
+      "repeat": 2,
+      "engine": "js",
+      "env": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2002
+      },
+      "readyAt": 451.89999999990687,
+      "firstRenderReturnAt": 595.8999999999069,
+      "firstFrameCpuMs": 143.89999999990687,
+      "wasmCompileInstantiateMs": [],
+      "wasmFetch": [],
+      "path": {
+        "backend": "js",
+        "wasmActive": false,
+        "batches": 0,
+        "nodes": 0,
+        "fallbackRoots": 0,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 0,
+        "scannedBytes": 0,
+        "materializedBytes": 0,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      }
+    },
+    {
+      "repeat": 2,
+      "engine": "wasm",
+      "env": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2002
+      },
+      "readyAt": 323.39999999990687,
+      "firstRenderReturnAt": 459.59999999962747,
+      "firstFrameCpuMs": 135.8000000002794,
+      "wasmCompileInstantiateMs": [
+        1.1000000000931323
+      ],
+      "wasmFetch": [
+        {
+          "duration": 10.5,
+          "transferSize": 28487,
+          "encodedBodySize": 28187
+        }
+      ],
+      "path": {
+        "backend": "wasm",
+        "wasmActive": true,
+        "batches": 1,
+        "nodes": 2002,
+        "fallbackRoots": 2,
+        "wasmCalls": 1,
+        "wasmNodes": 2002,
+        "uploadedBytes": 336256,
+        "scannedBytes": 784784,
+        "materializedBytes": 512512,
+        "arenas": 1,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 2228224
+      }
+    },
+    {
+      "repeat": 2,
+      "engine": "packed-js",
+      "env": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2002
+      },
+      "readyAt": 299.3000000002794,
+      "firstRenderReturnAt": 451.90000000037253,
+      "firstFrameCpuMs": 152.29999999981374,
+      "wasmCompileInstantiateMs": [],
+      "wasmFetch": [],
+      "path": {
+        "backend": "packed-js",
+        "wasmActive": false,
+        "batches": 1,
+        "nodes": 2002,
+        "fallbackRoots": 2,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 336256,
+        "scannedBytes": 784784,
+        "materializedBytes": 512512,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      }
+    },
+    {
+      "repeat": 3,
+      "engine": "original",
+      "env": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2002
+      },
+      "readyAt": 335,
+      "firstRenderReturnAt": 436.29999999981374,
+      "firstFrameCpuMs": 101.29999999981374,
+      "wasmCompileInstantiateMs": [],
+      "wasmFetch": [],
+      "path": null
+    },
+    {
+      "repeat": 3,
+      "engine": "js",
+      "env": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2002
+      },
+      "readyAt": 302.29999999981374,
+      "firstRenderReturnAt": 402,
+      "firstFrameCpuMs": 98.89999999990687,
+      "wasmCompileInstantiateMs": [],
+      "wasmFetch": [],
+      "path": {
+        "backend": "js",
+        "wasmActive": false,
+        "batches": 0,
+        "nodes": 0,
+        "fallbackRoots": 0,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 0,
+        "scannedBytes": 0,
+        "materializedBytes": 0,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      }
+    },
+    {
+      "repeat": 3,
+      "engine": "wasm",
+      "env": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2002
+      },
+      "readyAt": 280.29999999981374,
+      "firstRenderReturnAt": 389.5,
+      "firstFrameCpuMs": 108.89999999990687,
+      "wasmCompileInstantiateMs": [
+        5.899999999906868
+      ],
+      "wasmFetch": [
+        {
+          "duration": 11.199999999720603,
+          "transferSize": 28487,
+          "encodedBodySize": 28187
+        }
+      ],
+      "path": {
+        "backend": "wasm",
+        "wasmActive": true,
+        "batches": 1,
+        "nodes": 2002,
+        "fallbackRoots": 2,
+        "wasmCalls": 1,
+        "wasmNodes": 2002,
+        "uploadedBytes": 336256,
+        "scannedBytes": 784784,
+        "materializedBytes": 512512,
+        "arenas": 1,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 2228224
+      }
+    },
+    {
+      "repeat": 3,
+      "engine": "packed-js",
+      "env": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2002
+      },
+      "readyAt": 304.89999999990687,
+      "firstRenderReturnAt": 412.89999999990687,
+      "firstFrameCpuMs": 107.6999999997206,
+      "wasmCompileInstantiateMs": [],
+      "wasmFetch": [],
+      "path": {
+        "backend": "packed-js",
+        "wasmActive": false,
+        "batches": 1,
+        "nodes": 2002,
+        "fallbackRoots": 2,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 336256,
+        "scannedBytes": 784784,
+        "materializedBytes": 512512,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      }
+    },
+    {
+      "repeat": 4,
+      "engine": "original",
+      "env": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2002
+      },
+      "readyAt": 278.3000000002794,
+      "firstRenderReturnAt": 381.60000000009313,
+      "firstFrameCpuMs": 103.29999999981374,
+      "wasmCompileInstantiateMs": [],
+      "wasmFetch": [],
+      "path": null
+    },
+    {
+      "repeat": 4,
+      "engine": "js",
+      "env": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2002
+      },
+      "readyAt": 300.20000000018626,
+      "firstRenderReturnAt": 378.39999999990687,
+      "firstFrameCpuMs": 78,
+      "wasmCompileInstantiateMs": [],
+      "wasmFetch": [],
+      "path": {
+        "backend": "js",
+        "wasmActive": false,
+        "batches": 0,
+        "nodes": 0,
+        "fallbackRoots": 0,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 0,
+        "scannedBytes": 0,
+        "materializedBytes": 0,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      }
+    },
+    {
+      "repeat": 4,
+      "engine": "wasm",
+      "env": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2002
+      },
+      "readyAt": 269.89999999990687,
+      "firstRenderReturnAt": 358.89999999990687,
+      "firstFrameCpuMs": 88.79999999981374,
+      "wasmCompileInstantiateMs": [
+        1
+      ],
+      "wasmFetch": [
+        {
+          "duration": 9.199999999720603,
+          "transferSize": 28487,
+          "encodedBodySize": 28187
+        }
+      ],
+      "path": {
+        "backend": "wasm",
+        "wasmActive": true,
+        "batches": 1,
+        "nodes": 2002,
+        "fallbackRoots": 2,
+        "wasmCalls": 1,
+        "wasmNodes": 2002,
+        "uploadedBytes": 336256,
+        "scannedBytes": 784784,
+        "materializedBytes": 512512,
+        "arenas": 1,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 2228224
+      }
+    },
+    {
+      "repeat": 4,
+      "engine": "packed-js",
+      "env": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2002
+      },
+      "readyAt": 360.20000000018626,
+      "firstRenderReturnAt": 512.4000000003725,
+      "firstFrameCpuMs": 151.89999999990687,
+      "wasmCompileInstantiateMs": [],
+      "wasmFetch": [],
+      "path": {
+        "backend": "packed-js",
+        "wasmActive": false,
+        "batches": 1,
+        "nodes": 2002,
+        "fallbackRoots": 2,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 336256,
+        "scannedBytes": 784784,
+        "materializedBytes": 512512,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+scenario,engine,runs,cpu_p50_median_ms,cpu_p50_min_ms,cpu_p50_max_ms,cpu_p95_median_ms,cpu_p99_median_ms,interval_p95_median_ms
+cubes,original,5,2.699999999953434,1.7999999999301508,2.800000000046566,4,6,49.900000000000546

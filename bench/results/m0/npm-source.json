@@ -1,0 +1,21 @@
+{
+  "version": "0.186.1",
+  "gitHead": "9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8",
+  "dist": {
+    "shasum": "6d50f70c2c437f844179bbb56d6f5b774e1ca38a",
+    "tarball": "https://registry.npmjs.org/three/-/three-0.186.1.tgz",
+    "fileCount": 1263,
+    "integrity": "sha512-blFeqb49wRCSGUGj7gtpfnSGHy2lwDk94RhUmS1c/hTby70kvChbWpkJ4Pm1390LqzzvTmzgXKHPEafJwCb8jA==",
+    "signatures": [
+      {
+        "sig": "MEUCICldcpbcHhT4cNN5FeIhlbfekATi/CJUpk7mUDtPas5yAiEA/apNIzYS5sOdYRaeAK5Uae2O23E0Hl7Mo5TqNt9GWxA=",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      },
+      {
+        "sig": "MEUCIQCR0d1POSyDcCWApl93klyA2uB9zYBro/9ru2SUGgXSkAIgVdc8c/NKCiqjo3zmTooBB+GimZ+6BwK/1VLTO83itr4=",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      }
+    ],
+    "unpackedSize": 20443256
+  }
+}

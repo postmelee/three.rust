@@ -1,0 +1,17 @@
+{
+  "repository": "postmelee/three.rust",
+  "commit": "26af42f68386c6a3e40c69877abe20a430dc3a15",
+  "run": "https://github.com/postmelee/three.rust/actions/runs/39760603177",
+  "jobId": 119763520918,
+  "conclusion": "success",
+  "runner": "ubuntu-24.04",
+  "node": "22",
+  "rust": "1.90.0",
+  "checks": ["npm ci", "Playwright Chromium installation", "pinned asset download and fixture generation", "cargo fmt --check", "cargo clippy --all-targets -- -D warnings", "release Wasm build", "5 Rust native tests", "9 upstream differential tests", "TypeScript NodeNext", "browser image/numeric/callback tests", "isolated tarball installation and esbuild consumer", "A/B/C/D five-scene diagnostic smoke"],
+  "supersededFailure": {
+    "run": "https://github.com/postmelee/three.rust/actions/runs/39760421580",
+    "reason": "ubuntu-latest selected Ubuntu 26.04, unsupported by pinned Playwright 1.56.1; failed before tests",
+    "fix": "pin ubuntu-24.04 and use a fresh CI artifact output directory"
+  },
+  "scope": "clean installation and correctness; CI smoke is not product performance or hardware GPU validation"
+}

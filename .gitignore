@@ -1,5 +1,12 @@
 node_modules/
 target/
+work/
+*.tgz
+packages/rthree/core.js
+packages/rthree/addons/
+packages/rthree/scene_core.wasm
+packages/rthree/LICENSE
+packages/rthree/THREE-LICENSE
 dist/
 playwright-report/
 test-results/
@@ -8,3 +15,4 @@ test-results/
 .env
 .env.*
 !.env.example
+packages/rthree/THREE-TYPES-LICENSE

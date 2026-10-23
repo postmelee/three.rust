@@ -1,0 +1,36 @@
+name: correctness
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    env:
+      RTHREE_RESULTS_DIR: work/ci-correctness
+      RTHREE_DEMO_RESULTS_DIR: work/ci-demo
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: dtolnay/rust-toolchain@1.90.0
+        with:
+          targets: wasm32-unknown-unknown
+          components: clippy,rustfmt
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: echo "CHROMIUM=$(node --input-type=module -e 'import {chromium} from "playwright"; console.log(chromium.executablePath())')" >> "$GITHUB_ENV"
+      - run: npm run fixtures
+      - run: cargo fmt --check && cargo clippy --all-targets -- -D warnings
+      - run: npm run build && npm test
+      - run: npm run test:browser
+      - run: npm run test:package
+      - run: npm run test:demo
+      - run: npm run bench:smoke
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: correctness-and-diagnostic-only
+          path: |
+            work/ci-correctness
+            work/ci-demo
+            bench/results/smoke

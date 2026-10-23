@@ -1,0 +1,36 @@
+{
+  "measuredCommit": "9c12cba5d884d605debaba97002252b66f274f5f",
+  "allMatch": true,
+  "checks": [
+    {
+      "file": "package-lock.json",
+      "expected": "b938b0b7c45499a8962d4beff96db709ec0caafe2e44d94e1d53754e2666a355",
+      "current": "b938b0b7c45499a8962d4beff96db709ec0caafe2e44d94e1d53754e2666a355"
+    },
+    {
+      "file": "packages/rthree/scene_core.wasm",
+      "expected": "7e70bf336717cd8ffaa70b5374f6f112149396e1bd154a1640e73c36879927ed",
+      "current": "7e70bf336717cd8ffaa70b5374f6f112149396e1bd154a1640e73c36879927ed"
+    },
+    {
+      "file": "packages/rthree/core.js",
+      "expected": "1288ad362561a38831ca4195218e083e061ef270975c27511e3336551064948f",
+      "current": "1288ad362561a38831ca4195218e083e061ef270975c27511e3336551064948f"
+    },
+    {
+      "file": "packages/rthree/runtime.js",
+      "expected": "9475be555e4bec0e89826b46e18123a012d0cd1500f748d012aafc6a3b2c8629",
+      "current": "9475be555e4bec0e89826b46e18123a012d0cd1500f748d012aafc6a3b2c8629"
+    },
+    {
+      "file": "packages/rthree/packed.js",
+      "expected": "2247ef8bd5ffa57692002b37ea718004a099aadf2123bab759928a661883b1c5",
+      "current": "2247ef8bd5ffa57692002b37ea718004a099aadf2123bab759928a661883b1c5"
+    },
+    {
+      "file": "bench/browser.mjs",
+      "expected": "70fe0de5b72b2c51a2a3c5bbdac882105a26872237d02250120ae735c0fbd40f",
+      "current": "70fe0de5b72b2c51a2a3c5bbdac882105a26872237d02250120ae735c0fbd40f"
+    }
+  ]
+}
