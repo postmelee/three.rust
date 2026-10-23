@@ -1,7 +1,7 @@
 name: roadmap synchronization
 on:
   push:
-    branches: [main, codex/ownership-roadmap]
+    branches: [main]
     paths: [docs/roadmap.json, scripts/roadmap-sync.mjs, .github/workflows/roadmap-sync.yml]
   workflow_dispatch:
 permissions:
@@ -12,7 +12,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   sync:
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/codex/ownership-roadmap'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4

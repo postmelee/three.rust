@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>three.rust pipeline preparation</title>
+<style>body{margin:0;background:#17202a;color:#eee;font:16px system-ui}p{padding:0 16px}canvas{display:block}</style>
+<p>Animation → object/bone transforms → bone palette. Synthetic diagnostic; retained Three.js renderer. <span id="status">Loading</span></p>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';import {createRig} from './rig.mjs';
+if(THREE.init)await THREE.init();
+const q=new URLSearchParams(location.search),rig=createRig(THREE,{count:Number(q.get('count')||16),bones:Number(q.get('bones')||24)});
+const renderer=new THREE.WebGLRenderer({antialias:false,preserveDrawingBuffer:true});renderer.setSize(640,480);renderer.setPixelRatio(1);document.body.append(renderer.domElement);
+const gl=renderer.getContext(),ext=gl.getExtension('WEBGL_debug_renderer_info');
+const gpu={vendor:ext?gl.getParameter(ext.UNMASKED_VENDOR_WEBGL):null,renderer:ext?gl.getParameter(ext.UNMASKED_RENDERER_WEBGL):null};
+function renderStep(){rig.animate();renderer.render(rig.scene,rig.camera);}
+window.__pipeline={rig,renderer,gpu,
+ renderStep,
+ pixels(){const a=new Uint8Array(640*480*4);gl.readPixels(0,0,640,480,gl.RGBA,gl.UNSIGNED_BYTE,a);return Array.from(a);},
+ // CPU-only mode intentionally evaluates each stage once, without rendering.
+ // Render mode times the untouched full frame; it does not precompute transforms/palettes.
+ async measure({mode='cpu',warmup=30,samples=60}={}){
+  if(!['cpu','render'].includes(mode))throw Error('Unknown mode');const raw=[];
+  for(let i=-warmup;i<samples;i++){
+   await new Promise(requestAnimationFrame);const start=performance.now();
+   if(mode==='cpu'){rig.animate();const a=performance.now();rig.scene.updateMatrixWorld();const t=performance.now();for(const s of rig.skeletons)s.update();const end=performance.now();if(i>=0)raw.push({start,cpu:end-start,animation:a-start,transforms:t-a,palette:end-t});}
+   else{renderStep();const end=performance.now();if(i>=0)raw.push({start,cpu:end-start});}
+  }
+  return {mode,warmup,samples,raw,volumes:rig.volumes(),gpu,diagnostics:THREE.diagnostics?THREE.diagnostics():null};
+ }
+};document.querySelector('#status').textContent=`${rig.count} characters, ${rig.bones} bones each`;
+if(!q.has('manual')){const loop=()=>{renderStep();requestAnimationFrame(loop);};loop();}
+</script></html>

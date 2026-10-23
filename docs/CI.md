@@ -135,9 +135,18 @@ new data. Browser tests should likewise use `RTHREE_RESULTS_DIR=work/...`.
 `roadmap synchronization` workflow uses a job with `issues:write` to create
 missing milestones and associate **existing, explicitly marked issues**. It
 never closes issues, overwrites bodies or infers implementation completion.
-It runs on relevant pushes to main and the initial adoption branch, or trusted
-manual dispatch. Remove the adoption branch trigger after integration.
+It runs on relevant pushes to main or trusted manual dispatch. The temporary
+adoption-branch trigger has been removed for integration.
 Tests cover idempotency and refusal to adopt unrelated issues. The workflow
 uploads its verified associations. Issue/PR completion remains governed by
 Hyper-Waterfall and task requester approval; milestone progress is not a
 percentage of the Three.js codebase translated.
+
+## Pipeline preparation checks
+
+Correctness CI runs `npm run test:pipeline`: pinned source hashes, seven upstream
+semantic oracles, and A/A plus A/B/C/D rig palette/image comparisons. Screenshots
+and numeric summaries are in the correctness artifact. The portable demo includes
+`/fixtures/pipeline/index.html`; no model download is needed for this synthetic rig.
+The [preparation protocol](PIPELINE_PREPARATION.md) documents separate CPU-only and
+full-render diagnostics. CI correctness does not certify their performance.

@@ -1,0 +1,461 @@
+{
+  "repeat": 2,
+  "count": 1,
+  "engine": "wasm",
+  "mode": "cpu",
+  "warmup": 30,
+  "samples": 60,
+  "raw": [
+    {
+      "start": 766.2999999970198,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0.10000000149011612
+    },
+    {
+      "start": 782.8999999985099,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 799.7000000029802,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 816.3999999985099,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 832.8999999985099,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 849.6000000014901,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 866.2999999970198,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 882.7999999970198,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 899.3999999985099,
+      "cpu": 0.10000000149011612,
+      "animation": 0.10000000149011612,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 916.2999999970198,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 932.8999999985099,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 949.6000000014901,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 966.2000000029802,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 982.7999999970198,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 999.6000000014901,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1016.2000000029802,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1032.8999999985099,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 1049.5,
+      "cpu": 0.10000000149011612,
+      "animation": 0.10000000149011612,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1066.2999999970198,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1082.7999999970198,
+      "cpu": 0.10000000149011612,
+      "animation": 0.10000000149011612,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1099.3999999985099,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1116.2000000029802,
+      "cpu": 0.09999999403953552,
+      "animation": 0,
+      "transforms": 0.09999999403953552,
+      "palette": 0
+    },
+    {
+      "start": 1133.1000000014901,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1149.5,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 1166.2000000029802,
+      "cpu": 0.09999999403953552,
+      "animation": 0.09999999403953552,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1182.8999999985099,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 1199.6000000014901,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1216.2000000029802,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1232.8999999985099,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1249.5,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1266.2000000029802,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1282.8999999985099,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1299.6000000014901,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1316.1000000014901,
+      "cpu": 0.10000000149011612,
+      "animation": 0.10000000149011612,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1332.7999999970198,
+      "cpu": 0.10000000149011612,
+      "animation": 0.10000000149011612,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1349.3999999985099,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1366.3999999985099,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1382.8999999985099,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1399.5,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1416.2000000029802,
+      "cpu": 0.09999999403953552,
+      "animation": 0,
+      "transforms": 0.09999999403953552,
+      "palette": 0
+    },
+    {
+      "start": 1432.8999999985099,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1449.6000000014901,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1466.1000000014901,
+      "cpu": 0.10000000149011612,
+      "animation": 0.10000000149011612,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1482.7999999970198,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1499.5,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1516.2999999970198,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1533.2000000029802,
+      "cpu": 0.09999999403953552,
+      "animation": 0.09999999403953552,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1549.7000000029802,
+      "cpu": 0.09999999403953552,
+      "animation": 0,
+      "transforms": 0.09999999403953552,
+      "palette": 0
+    },
+    {
+      "start": 1566.1000000014901,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 1582.7999999970198,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 1599.5,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1616.2999999970198,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1633,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1649.3999999985099,
+      "cpu": 0.20000000298023224,
+      "animation": 0.10000000149011612,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 1666.2999999970198,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0.10000000149011612
+    },
+    {
+      "start": 1683,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1699.7000000029802,
+      "cpu": 0.09999999403953552,
+      "animation": 0,
+      "transforms": 0.09999999403953552,
+      "palette": 0
+    },
+    {
+      "start": 1716.2000000029802,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1733,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1749.3999999985099,
+      "cpu": 0.10000000149011612,
+      "animation": 0.10000000149011612,
+      "transforms": 0,
+      "palette": 0
+    }
+  ],
+  "volumes": {
+    "characters": 1,
+    "bones": 24,
+    "sceneNodes": 27,
+    "activeTracks": 48,
+    "clipBytes": 4800,
+    "usefulPaletteBytes": 1536,
+    "allocatedPaletteBytes": 1536,
+    "allWorldMatrixReadBytes": 3072
+  },
+  "gpu": {
+    "vendor": "Google Inc. (Google)",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+  },
+  "diagnostics": {
+    "backend": "wasm",
+    "wasmActive": true,
+    "batches": 181,
+    "nodes": 2274,
+    "fallbackRoots": 181,
+    "wasmCalls": 181,
+    "wasmNodes": 2274,
+    "uploadedBytes": 55088,
+    "scannedBytes": 891408,
+    "materializedBytes": 582144,
+    "arenas": 2,
+    "syncMs": 0,
+    "kernelMs": 0,
+    "readMs": 0,
+    "wasmMemoryBytes": 1179648
+  }
+}

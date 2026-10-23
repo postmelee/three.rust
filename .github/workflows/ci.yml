@@ -29,6 +29,7 @@ jobs:
       - run: npm run fixtures
       - run: cargo fmt --check && cargo clippy --all-targets -- -D warnings
       - run: npm run build && npm test
+      - run: npm run test:pipeline
       - run: npm run test:browser && npm run test:gpu-guard
       - run: npm run test:package && npm run test:demo
       - run: npm run bench:smoke
@@ -43,8 +44,10 @@ jobs:
             work/ci-demo
             work/package
             work/gpu-guard
+            work/pipeline-validation
             work/progress-validation
             work/bundle-validation
+            work/bundle-pipeline
             work/bundle-progress
             work/bench-smoke
       - uses: actions/upload-artifact@v4

@@ -1,0 +1,461 @@
+{
+  "repeat": 1,
+  "count": 1,
+  "engine": "wasm",
+  "mode": "cpu",
+  "warmup": 30,
+  "samples": 60,
+  "raw": [
+    {
+      "start": 777.7999999970198,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 794.3999999985099,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 811.2000000029802,
+      "cpu": 0.09999999403953552,
+      "animation": 0,
+      "transforms": 0.09999999403953552,
+      "palette": 0
+    },
+    {
+      "start": 827.6000000014901,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 844.2999999970198,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 860.7999999970198,
+      "cpu": 0.10000000149011612,
+      "animation": 0.10000000149011612,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 877.5,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 894.1000000014901,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 910.7999999970198,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 927.3999999985099,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 944.1000000014901,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 961,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 977.3999999985099,
+      "cpu": 0.20000000298023224,
+      "animation": 0.10000000149011612,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 994,
+      "cpu": 0.20000000298023224,
+      "animation": 0.10000000149011612,
+      "transforms": 0,
+      "palette": 0.10000000149011612
+    },
+    {
+      "start": 1010.7999999970198,
+      "cpu": 0.20000000298023224,
+      "animation": 0,
+      "transforms": 0.20000000298023224,
+      "palette": 0
+    },
+    {
+      "start": 1027.3999999985099,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1044,
+      "cpu": 0.10000000149011612,
+      "animation": 0.10000000149011612,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1060.7999999970198,
+      "cpu": 0.10000000149011612,
+      "animation": 0.10000000149011612,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1077.5,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 1094.1000000014901,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 1110.7000000029802,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1127.3999999985099,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1144.1000000014901,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1160.8999999985099,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1177.3999999985099,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1194.2999999970198,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1211.7000000029802,
+      "cpu": 0.09999999403953552,
+      "animation": 0,
+      "transforms": 0.09999999403953552,
+      "palette": 0
+    },
+    {
+      "start": 1227.3999999985099,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 1244.1000000014901,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1260.8999999985099,
+      "cpu": 0.10000000149011612,
+      "animation": 0.10000000149011612,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1277.3999999985099,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 1294,
+      "cpu": 0.10000000149011612,
+      "animation": 0.10000000149011612,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1310.8999999985099,
+      "cpu": 0.10000000149011612,
+      "animation": 0.10000000149011612,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1327.3999999985099,
+      "cpu": 0.10000000149011612,
+      "animation": 0.10000000149011612,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1344.1000000014901,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1360.8999999985099,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 1377.3999999985099,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 1394.1000000014901,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1410.8999999985099,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1427.3999999985099,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 1444.1000000014901,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1460.8999999985099,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1477.3999999985099,
+      "cpu": 0.10000000149011612,
+      "animation": 0.10000000149011612,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1494.2000000029802,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1511,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1527.3999999985099,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1544.1000000014901,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1560.7000000029802,
+      "cpu": 0.19999999552965164,
+      "animation": 0.09999999403953552,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 1577.3999999985099,
+      "cpu": 0,
+      "animation": 0,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1594.1000000014901,
+      "cpu": 0.10000000149011612,
+      "animation": 0.10000000149011612,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1610.7000000029802,
+      "cpu": 0.09999999403953552,
+      "animation": 0,
+      "transforms": 0.09999999403953552,
+      "palette": 0
+    },
+    {
+      "start": 1627.2999999970198,
+      "cpu": 0.10000000149011612,
+      "animation": 0.10000000149011612,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1644.1000000014901,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 1660.8999999985099,
+      "cpu": 0.10000000149011612,
+      "animation": 0.10000000149011612,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1677.5,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 1694.2999999970198,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 1710.7000000029802,
+      "cpu": 0.09999999403953552,
+      "animation": 0,
+      "transforms": 0.09999999403953552,
+      "palette": 0
+    },
+    {
+      "start": 1727.2999999970198,
+      "cpu": 0.10000000149011612,
+      "animation": 0.10000000149011612,
+      "transforms": 0,
+      "palette": 0
+    },
+    {
+      "start": 1744.1000000014901,
+      "cpu": 0.10000000149011612,
+      "animation": 0,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    },
+    {
+      "start": 1760.7999999970198,
+      "cpu": 0.20000000298023224,
+      "animation": 0.10000000149011612,
+      "transforms": 0.10000000149011612,
+      "palette": 0
+    }
+  ],
+  "volumes": {
+    "characters": 1,
+    "bones": 24,
+    "sceneNodes": 27,
+    "activeTracks": 48,
+    "clipBytes": 4800,
+    "usefulPaletteBytes": 1536,
+    "allocatedPaletteBytes": 1536,
+    "allWorldMatrixReadBytes": 3072
+  },
+  "gpu": {
+    "vendor": "Google Inc. (Google)",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+  },
+  "diagnostics": {
+    "backend": "wasm",
+    "wasmActive": true,
+    "batches": 181,
+    "nodes": 2274,
+    "fallbackRoots": 181,
+    "wasmCalls": 181,
+    "wasmNodes": 2274,
+    "uploadedBytes": 55088,
+    "scannedBytes": 891408,
+    "materializedBytes": 582144,
+    "arenas": 2,
+    "syncMs": 0,
+    "kernelMs": 0,
+    "readMs": 0,
+    "wasmMemoryBytes": 1179648
+  }
+}
