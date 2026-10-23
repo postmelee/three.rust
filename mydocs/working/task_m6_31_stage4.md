@@ -7,3 +7,5 @@ The final generator keeps the original heading/diagram and source-summary tables
 `npm run docs:check` and `npm run test:progress` passed after the correction: two source tests, seven Python tests and both desktop/mobile views. Screenshot inspection confirms the original top composition. The source map, source data, history ledger, history chart and history.html are byte-for-byte unchanged versus parent 8918f7e. Committed-artifact verification is recorded in the final publication update.
 
 This refinement changes presentation only; the prospective adoption goals remain. The user's correction authorizes this stage and publication. No engine or performance acceptance changed.
+
+Final artifact verification: `python3 tools/status_site.py work/status-site-plain && node tests/status-site.mjs work/status-site-plain` passed against committed b3bb230 on desktop and mobile, including deployment subpath and history/current/raw links. The artifact preserves the simple layout and six plain goal-table rows.

@@ -52,3 +52,5 @@ Publish the authorized codex/adoption-goals branch as a stacked draft against co
 
 ## Requester presentation refinement
 After seeing the intermediate card preview, the requester asked to preserve the original simple HTML. The final change removes that new SVG and its styling, restores the existing top diagram and visible README source map, retains source summary tables and Definitions and evidence, and adds only plain goal tables and short links/explanations. The earlier stage-2/3 screenshot reports describe the superseded preview. No new public deployment occurred during either preview.
+
+Final presentation validation: the committed b3bb230 Pages artifact passed both browser widths and all subpath/history links. README and HTML goal tables are generated from the same reviewed inventory. Existing history.html, source/map JSON and SVGs have an empty diff against parent 8918f7e. This is the final interface; the intermediate card SVG was removed.
