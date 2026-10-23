@@ -17,6 +17,10 @@ The facade must preserve observable behavior, not just names and signatures.
 Current `rthree/owned` is an explicit API; it does not replace ordinary AnimationMixer
 semantics through an import change.
 
+The [C1 contract and executable matrix](FACADE_CONTRACT.md) now establish the
+observable baseline for the next facade. C2 still needs to implement and prove
+wider state authority; passing the existing routes does not establish that port.
+
 ## Implementation order
 
 | Unit | Required result |

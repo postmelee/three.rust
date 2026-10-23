@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "scope": "correctness only; no speed claim",
+  "browser": "154.0.8037.57",
+  "hardwareRequested": false,
+  "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "engines": [
+    "original",
+    "js",
+    "wasm",
+    "packed-js"
+  ],
+  "semanticCases": 16,
+  "renderPassesPerRoute": 2,
+  "exactPixels": true
+}

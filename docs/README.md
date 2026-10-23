@@ -9,6 +9,7 @@ results; historical experiments describe their recorded scope and commit.
 |---|---|
 | How do I build and run it? | [Clean installation](CLOUD_SETUP.md) |
 | What API works today? | [Compatibility](COMPATIBILITY.md), [explicit owned animation](OWNED_ANIMATION.md) |
+| Which behaviors must the next facade preserve? | [Observable contract and executable matrix](FACADE_CONTRACT.md) |
 | What runs in Rust? | [Current architecture](ARCHITECTURE.md), [ownership map and definitions](PROGRESS.md) |
 | How fast is it, and under which conditions? | [Performance summary](PERFORMANCE.md), [physical Mac report](MAC_HARDWARE_REPORT.md) |
 | What must it achieve to replace Three.js? | [Product goals](PRODUCT_GOALS.md), [milestones](PROJECT_PLAN.md) |
