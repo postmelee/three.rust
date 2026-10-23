@@ -1,6 +1,6 @@
 # three.rust
 
-A Rust/WebAssembly scene engine with a Three.js-style JavaScript interface.
+An experimental Rust/WebAssembly scene engine with a Three.js-style JavaScript interface.
 The goal is to keep **scene state, animation, object/bone transforms and bone
 palettes inside one persistent Rust pipeline**, then pass final buffers to the
 renderer. The local JavaScript package is `rthree`.

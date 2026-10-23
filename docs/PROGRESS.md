@@ -23,6 +23,10 @@ source files. The right map has one tile per statically declared state field in
 selected scene/animation classes. These are different denominators, not equal
 work estimates. Neither map is a percentage of all Three.js or proof of speedup.
 Some public metadata, controls and callbacks may intentionally remain in JS.
+Tiles identify upstream semantics, not a required one-to-one Rust class or function
+layout. A Rust batch can combine many operations; a claim is added only for its
+verified scope. A green field means Rust owns the corresponding logical state,
+not that Rust happens to allocate another copy with the same name.
 
 `Object3D.updateMatrixWorld` is the sole amber route today. Its eligible subtree
 uses Rust composition/propagation; custom dispatch and other paths retain JS.
