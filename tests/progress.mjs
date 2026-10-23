@@ -16,6 +16,9 @@ try{browser=await chromium.launch({executablePath:process.env.CHROMIUM||'/usr/bi
   await page.locator('#state-state-core-Object3D-js summary').click();assert((await page.locator('#state-state-core-Object3D-js li').count())>20);
   await page.goto('http://127.0.0.1:4173/docs/history.html');assert(await page.locator('body').textContent().then(x=>x.includes('not comparable')));
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert.deepEqual(errors,[]);
+  assert.equal(await page.locator('[data-role=history-chart] [data-panel]').count(),2);
+  await page.locator('[data-detail]').first().focus();assert.match(await page.locator('#history-detail').textContent(),/conditional Rust 1\/1515/);
+  assert.equal(await page.locator('#history-table tbody tr').count(),1);
   await page.screenshot({path:`${out}/${name}-history.png`,fullPage:true});results.push({name,width,passed:true,checks:['actual source tile count','totals match JSON','no overflow','field evidence expands','history distinguishes schemas']});await page.close();
  }
  writeFileSync(`${out}/results.json`,JSON.stringify(results,null,2));console.log('Progress and history desktop/mobile checks passed');
