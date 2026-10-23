@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-23T15:12:43.795Z",
+  "commit": "dabcd69d3c30a9560d36ffc9a52862ef329892d8",
+  "sourceTreeDirty": false,
+  "suite": "boundary",
+  "config": {
+    "out": "work/facade-final2-boundary-diagnostic",
+    "scenarios": [
+      "cubes",
+      "skinning",
+      "shader",
+      "small",
+      "hierarchy"
+    ],
+    "engines": [
+      "original",
+      "js",
+      "wasm",
+      "packed-js",
+      "facade-js",
+      "facade-wasm"
+    ],
+    "repeats": 1,
+    "warmup": 20,
+    "samples": 30,
+    "hardware": false,
+    "headless": true,
+    "args": [
+      "--no-sandbox",
+      "--use-angle=swiftshader",
+      "--enable-unsafe-swiftshader"
+    ],
+    "viewport": {
+      "width": 640,
+      "height": 360
+    },
+    "profile": false,
+    "gpu": false,
+    "timings": true
+  },
+  "node": "v24.19.0",
+  "platform": "linux",
+  "os": "6.18.55",
+  "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+  "logicalCpus": 5,
+  "hashes": {
+    "package-lock.json": "b938b0b7c45499a8962d4beff96db709ec0caafe2e44d94e1d53754e2666a355",
+    "packages/rthree/core.js": "bd84dacdd5ffe5be6ce4e4dbfa9541daadb4442f4c66ed4aa8c1dd0b2a23d617",
+    "packages/rthree/runtime.js": "87dbf2d7a9ac3dbb03e6cfebbc0b57251f8313a4d1fbbcd1cc76942142d5fcce",
+    "packages/rthree/facade-state.js": "ee898d7404ce169efdc42621cd71aaeff3e583d97105709cb8bd34902f8df49a",
+    "packages/rthree/facade-kernel.js": "af0f195ce94549d86e04d820ed2259a9946a8c4990aa91d082449ff14bc48665",
+    "packages/rthree/packed.js": "ac3c983d45578410ee69dc815b11138ca1837980688dfc2863a218fe88c337bd",
+    "packages/rthree/scene_core.wasm": "8bdb2c188ccde2b80637b3e381f1c26547385b802bd701b2d1c897392c1e867c",
+    "crates/scene-core/src/facade.rs": "e2cb8bac58383d03d9efa0b5bf081c8a8cbea1f138ce96273257ff928b2bd830",
+    "bench/facade.mjs": "567e08149adf70f5d61a52e9497eb000832c6a344ba1660529570e24869e01a5",
+    "bench/facade.html": "05ed01ad7a3a38f90ca5f70a8150164605850a255baab3ad02a2842855b5b241",
+    "bench/browser.mjs": "70fe0de5b72b2c51a2a3c5bbdac882105a26872237d02250120ae735c0fbd40f",
+    "bench/config.mjs": "da5b0e01c2ab73f882e3c144c9abad840e545d0189e24c3968b9df9ab586d139",
+    "bench/timing.mjs": "86ed9cd861b454cedeb16732171b7dc42cd71b818807ef04bc7ccacdb78489f8",
+    "fixtures/provenance.json": "8aebb338ec77145c3774e5109ce0a5a3bb356c027a6294eb48dcdd41da64170a",
+    "scripts/server.mjs": "d8726610939441bbc569a36b4741dcae3560ff06b7bdc884501abc03fea20c48"
+  },
+  "status": "complete",
+  "runs": [
+    "boundary-original-0.json",
+    "boundary-js-0.json",
+    "boundary-wasm-0.json",
+    "boundary-packed-js-0.json",
+    "boundary-facade-js-0.json",
+    "boundary-facade-wasm-0.json"
+  ],
+  "meaning": "CPU boundary experiment; no renderer, GPU or FPS conclusion",
+  "browser": "154.0.8037.57",
+  "finishedAt": "2026-10-23T15:12:52.323Z"
+}

@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": [
+    "original autostart",
+    "switch to Wasm",
+    "Wasm executed",
+    "pause stops updates"
+  ],
+  "wasmCalls": 6,
+  "errors": []
+}

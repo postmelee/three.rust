@@ -66,6 +66,10 @@ so a distinct Rust advantage is still unproven. Small scenes showed no gain;
 shader-heavy controls also showed no CPU benefit. Wasm initialization cost more.
 See [conditions, limitations and reproduction](docs/PERFORMANCE.md).
 
+The newer [persistent-facade experiment](docs/FACADE_REPORT.md) remains opt-in:
+in a cloud hierarchy test it used **37.01 ms versus Three.js's 15.13 ms**. It is
+an implementation step, not an additional acceleration result.
+
 ## Usage
 
 Build and install the local package using the [setup guide](docs/CLOUD_SETUP.md).

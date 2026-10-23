@@ -5,6 +5,9 @@ It accepts ordinary Three.js property writes and update methods within the scope
 below. It does not port ordinary animation, visibility, render lists or the renderer.
 The default `rthree` route remains the earlier eager transform bridge.
 
+[Measured result](FACADE_REPORT.md): the facade currently regresses against original
+Three.js in the cloud controls. Select it for evaluation, not an assumed speedup.
+
 ```js
 import * as THREE from 'rthree/facade'; // matched design: rthree/facade-js
 await THREE.init();
@@ -97,6 +100,8 @@ excluding allocator zeroing and internal dirty/generation bookkeeping);
 `materializedBytes` counts observed output copies. `abiCalls` includes native memory
 setup and evaluation exports; `wasmCalls` counts only evaluation batches. Topology
 collection and proxy interception remain paid even when copied bytes are zero.
+`scannedBytes` in C2 counts TRS payload reads, not all eligibility/topology access or
+memory traffic. `readMs` covers snapshot copying, not every proxy access.
 
 Default browser mode deliberately uses cloud SwiftShader. Physical GPU qualification
 requires the [hardware protocol](CI_GPU.md); CPU or kernel wins alone are not product

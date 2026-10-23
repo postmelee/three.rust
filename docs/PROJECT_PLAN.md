@@ -58,6 +58,12 @@ ranking must be rechecked on hardware. See [REPORT](REPORT.md).
 | M2 | Rust f64 transform arena, renderer integration, JS bypass proof, correctness and 140 runs | No general whole-frame gain; no broad state ownership |
 
 M0–M2 are completed experiments, not a completed engine or acceleration claim.
+
+The [C2 facade](PERSISTENT_FACADE.md) now retains evaluated local/world matrices and
+passes the six-route contract, but [loses to original in cloud controls](FACADE_REPORT.md).
+Its next gate is reducing per-frame JS preparation and directly consuming prepared
+engine outputs. Select further native stages from original real-app profiles; do
+not infer product progress from more Rust code or reduced copied bytes alone.
 Their historical work predates Hyper-Waterfall and is not relabeled as following it.
 
 ## Future milestones and exit gates

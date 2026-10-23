@@ -17,9 +17,13 @@ assert.equal(expected.size,0);
 const quant=(a,q)=>{const values=a.slice().sort((a,b)=>a-b);return values[Math.floor((values.length-1)*q)];};
 const median=a=>{const values=a.slice().sort((a,b)=>a-b),m=Math.floor(values.length/2);return values.length%2?values[m]:(values[m-1]+values[m])/2;};
 const qs=values=>Object.fromEntries([['p50',.5],['p95',.95],['p99',.99]].map(([k,q])=>[k,quant(values,q)]));
-const groups=new Map(),clocks=[];
+const groups=new Map(),clocks=[],work=new Map();
 for(const file of manifest.runs){
  const run=read(file);assert.ok(run.clock.crossOriginIsolated);clocks.push(run.clock.minPositiveDeltaMs);
+ if(manifest.suite==='render'){
+  const key=`${run.rep}/${run.scenario}`,description={info:run.info,objects:run.env.objects,width:run.env.width,height:run.env.height,dpr:run.env.dpr};
+  if(work.has(key))assert.deepEqual(description,work.get(key),`Different rendered work: ${file}`);else work.set(key,description);
+ }
  const cases=manifest.suite==='boundary'?run.cases:[{name:run.scenario,rows:run.rows}];
  if(manifest.suite==='boundary')assert.deepEqual(cases.map(x=>x.name),['static-none','sparse-none','dense-none','sparse-sparse','dense-all']);
  for(const item of cases){
@@ -45,4 +49,4 @@ for(const candidate of rows.filter(x=>x.engine==='facade-wasm'))for(const contro
  const differences=candidate.runs.map((r,i)=>reference.runs[i].cpu.p50-r.cpu.p50);
  paired.push({scenario:candidate.scenario,control,candidate:'facade-wasm',positiveMeansSavedMs:true,perRunSavedP50Ms:differences,medianSavedP50Ms:median(differences),fasterRuns:differences.filter(x=>x>0).length,repeats:c.repeats});
 }
-console.log(JSON.stringify({commit:manifest.commit,suite:manifest.suite,protocol:'per-run floor((n - 1) * q) sample quantiles, then arithmetic median of run quantiles; no pooled-frame confidence claim',config:c,clockRangeMs:[Math.min(...clocks),Math.max(...clocks)],rows,paired,limits:'Shared-cloud CPU/software-renderer evidence; no hardware/FPS or product qualification'},null,2));
+console.log(JSON.stringify({commit:manifest.commit,suite:manifest.suite,protocol:'per-run floor((n - 1) * q) sample quantiles, then arithmetic median of run quantiles; no pooled-frame confidence claim',config:c,clockRangeMs:[Math.min(...clocks),Math.max(...clocks)],matchedFinalRenderWork:manifest.suite==='render',rows,paired,limits:'Shared-cloud CPU/software-renderer evidence; no hardware/FPS or product qualification'},null,2));

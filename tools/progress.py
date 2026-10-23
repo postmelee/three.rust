@@ -70,10 +70,10 @@ def svg_text(x, y, text, size=15, extra=''):
 def render_svg(data):
     parts = ['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="710" viewBox="0 0 1200 710" role="img" aria-labelledby="title desc">',
              '<title id="title">three.rust — computation and persistent state ownership</title>',
-             '<desc id="desc">The compatibility facade retains JS authority. The explicit owned rig API retains animation, transforms and palettes in Rust. Fine tiles map scoped computation and logical state to pinned upstream declarations; ordinary JS methods and objects remain JS.</desc>',
+             '<desc id="desc">The legacy bridge retains JS authority. The C2 facade retains evaluated matrices in Rust with JS inputs and hierarchy. The explicit owned rig API retains animation, transforms and palettes. Fine tiles map each declared scope, not complete public APIs.</desc>',
              '<rect width="1200" height="710" fill="#0d1117"/><g font-family="Arial, sans-serif" fill="#f0f6fc">',
              svg_text(16, 27, 'Computation and authority: compatibility facade and owned rig pipeline', 23),
-             svg_text(16, 53, 'COMPATIBILITY FACADE — public objects remain authoritative in JavaScript', 13)]
+             svg_text(16, 53, 'COMPATIBLE API — legacy JS state; opt-in C2 retains evaluated matrices in Rust', 13)]
     for i, stage in enumerate(data['pipeline']):
         x=16+i*236
         color=COLORS['rust-batch'] if i==2 else COLORS['js']
@@ -112,10 +112,10 @@ def render_svg(data):
                 label=group['name'][:max(3,int((w-8)/7))]
                 parts.append(svg_text(x+4,y+15,label,12,'stroke="#0d1117" stroke-width="3" paint-order="stroke"'))
             parts.append('</g>')
-    for x,state,label in [(16,'js','JavaScript execution / state'),(315,'rust-batch','Scoped Rust computation'),(602,'rust','Rust computation'),(802,'rust-owned','Owned API: Rust state')]:
+    for x,state,label in [(16,'js','JavaScript execution / state'),(315,'rust-batch','Scoped Rust computation'),(602,'rust','Rust computation'),(802,'rust-owned','Scoped Rust-owned state')]:
         parts.append(f'<rect x="{x}" y="635" width="12" height="12" fill="{COLORS[state]}"/>')
         parts.append(svg_text(x+20,646,label,14))
-    parts.append(svg_text(16,676,'One cell = one source definition or logical field mapping. Scoped owned API claims are not ordinary JS API ports.',14))
+    parts.append(svg_text(16,676,'One cell = one source definition or logical field mapping. Inspect each API scope; no complete public-method port is implied.',14))
     parts.append(svg_text(16,698,'Counts describe the selected r186 source inventory; they are not speed, effort, or complete Three.js compatibility.',13))
     return '\n'.join(parts+['</g></svg>'])+'\n'
 

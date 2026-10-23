@@ -1,9 +1,10 @@
 # Cloud and local execution plan
 
 Task: [#34](https://github.com/postmelee/three.rust/issues/34). Direction: [ADR 0005](../../docs/adr/0005-wide-engine-investigation.md).
-Status: D0 documentation and the finite [C1 contract/oracle](../../docs/FACADE_CONTRACT.md)
-are delivered for review. C2 and later implementation units remain planned; no wider
-Rust ownership or hardware qualification follows from C1.
+Status: D0, the finite [C1 contract/oracle](../../docs/FACADE_CONTRACT.md) and
+[C2 transform facade](../../docs/PERSISTENT_FACADE.md) are delivered for review.
+C2 retains evaluated matrices but regresses against original Three.js in cloud
+experiments. C3 and later units remain planned; no hardware qualification follows.
 
 ## Ownership and sequence
 
@@ -33,7 +34,7 @@ No full M7/M8 acceptance is inferred from these finite M4/M5 experiments.
 |---|---|---|---|
 | D0 — #34 | Current/historical doc separation, stable entry links, handoff and progress rules | Review the shared measurement protocol and baseline | Docs/link checks; no ownership or product-state change |
 | C1 — #8, #7 | Freeze bounded observable contract and upstream oracles: TRS writes, Euler/quaternion coupling, cached object/array aliases, hierarchy/force flags, synchronous reads, events/callbacks/exceptions, initialization and addon identity | Exercise supported interaction/read patterns; return real-app requirements | Contract matrix with supported/fallback/rejected cases and executable oracles. Update compatibility/design docs; no new Rust mapping yet |
-| C2 — #8, #9, #10, #11 | Implement stable wrappers/handles and ordered writes into an actual Rust-owned domain; selective read/materialization, memory growth/release, explicit fallback. Matched JS reference, native/differential/type/fresh-install/browser tests | Run same-device image/numeric tests and no-read/sparse-read/all-read/callback controls; diagnose facade costs | Same application source with engine resolution changes for the declared subset; synchronous behavior and cached identities pass. Count real Rust calls and displaced JS. Update API, migration example and scoped source/ownership evidence |
+| C2 — #38, contributing to #8–#11 | Implement stable wrappers/handles and ordered writes into an actual Rust-owned domain; selective read/materialization, memory growth/release, explicit fallback. Matched JS reference, native/differential/type/fresh-install/browser tests | Run same-device image/numeric tests and no-read/sparse-read/all-read/callback controls; diagnose facade costs | Same application source with engine resolution changes for the declared subset; synchronous behavior and cached identities pass. Count real Rust calls and displaced JS. Update API, migration example and scoped source/ownership evidence |
 | C3a — #7, #9, #10, #16 | Extend persistent evaluation through conservative bounds, visibility, exact ordering, model-view/normal matrices and dirty spans; numerical/list oracle with matched JS | Identify real scene/pass populations, picking/edit/read demand and baseline cost fractions | CPU-stage correctness and cost report, clearly labeled as not yet end-to-end renderer benefit; narrow unsupported cases explicitly |
 | C3b — #11, #17 | Consume prepared data in pinned WebGL without repeating replaced traversal/math/list work. Add second camera and shadow pass; callback/resource/disposal guards; same shader/material/quality | Complete-path timing and images with identical visual work, negative controls and input replay | Rust executed and replaced JS skipped; multi-pass correctness and full-path report. Update current architecture, renderer contract and scoped map together |
 | R1 — #10, #12 | Compare existing scalar Rust with verified SIMD instructions, first at equivalent f64 precision where possible; match algorithm/layout JS. Keep f32 a separate experiment | Compare release builds on the same Mac, including facade/copies/render/startup; preserve scalar regressions | Emitted-code evidence plus numerical and complete-path results. State SIMD support/precision limits; no claim from kernel-only timing |
@@ -130,7 +131,11 @@ cannot close those gates. Keep product budgets in [PRODUCT_GOALS](../../docs/PRO
 
 ## Next units
 
-Cloud proceeds from the verified C1 contract to C2's bounded compatible Rust facade.
+C2 is implemented and measured in #38; its [negative result](../../docs/FACADE_REPORT.md)
+keeps the default route unchanged. Before C3, budget persistent topology/dirty work
+and direct prepared-output consumption together. Use original real-app profiles to
+choose the next CPU stages; facade-induced overhead alone is not an application
+profile. The finite C2 result does not close the broader #8–#11 or M7 gates.
 Local L0a/L0b use the shared measurement protocol and immutable baseline above;
 their actual execution and results are tracked separately.
 Personal session prompts are delivered in chat. No local session has been created
