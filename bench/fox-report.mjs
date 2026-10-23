@@ -48,6 +48,7 @@ const rows = m.runs.map((file) => {
   );
   return {
     file,
+    ...(r.clock ? { clock: r.clock } : {}),
     scenario: r.scenario,
     variant: r.variant,
     repeat: r.repeat,

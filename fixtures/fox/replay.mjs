@@ -187,13 +187,16 @@ function inputs() {
   updateCamera(t);
   return t;
 }
-function step() {
+function evaluate() {
   if (!isStatic) {
-    inputs();
     if (domain) domain.step(1 / 60);
     else for (const r of rigs) r.mixer.update(1 / 60);
   }
   tick++;
+}
+function step() {
+  if (!isStatic) inputs();
+  evaluate();
 }
 function draw() {
   if (adapter) adapter.render(renderer, camera);
@@ -320,7 +323,9 @@ window.__fox = {
           frame();
           raw.push({ start, raf, cpu: performance.now() - start });
         } else {
-          step();
+          if (!isStatic) inputs();
+          const inputEnd = performance.now();
+          evaluate();
           const evaluated = performance.now();
           if (adapter) adapter.sync();
           else {
@@ -336,7 +341,8 @@ window.__fox = {
             start,
             raf,
             cpu: end - start,
-            evaluate: evaluated - start,
+            inputCommands: inputEnd - start,
+            evaluate: evaluated - inputEnd,
             copy: copied - evaluated,
             read: readEnd - copied,
             render: end - readEnd,

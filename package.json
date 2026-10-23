@@ -31,7 +31,9 @@
     "bench:owned": "node bench/owned.mjs",
     "test:fox": "node scripts/fetch-fox.mjs && node tests/fox-rejections.mjs && node tests/fox-browser.mjs",
     "test:browser-path": "node --test tests/browser-path.mjs",
-    "bench:mac": "bash scripts/mac-validation.sh"
+    "bench:mac": "bash scripts/mac-validation.sh",
+    "test:timing": "node --test tests/timing.mjs",
+    "docs:performance": "node scripts/performance-summary.mjs"
   },
   "devDependencies": {
     "@types/three": "0.186.0",

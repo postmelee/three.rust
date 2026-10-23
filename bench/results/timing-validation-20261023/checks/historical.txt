@@ -1,0 +1,13 @@
+┌─────────┬───────────────┬────────────┬──────────────┬─────────────────────────┬───────────────────────────────┬──────────────────────┐
+│ (index) │ scenario      │ baseline   │ variant      │ savingMs                │ exceedsObservedClockIncrement │ allRepeatPairsFaster │
+├─────────┼───────────────┼────────────┼──────────────┼─────────────────────────┼───────────────────────────────┼──────────────────────┤
+│ 0       │ 'animated-1'  │ 'original' │ 'owned-js'   │ -0.05000000027939677    │ false                         │ false                │
+│ 1       │ 'animated-1'  │ 'original' │ 'owned-wasm' │ -0.05000000004656613    │ false                         │ false                │
+│ 2       │ 'animated-1'  │ 'owned-js' │ 'owned-wasm' │ 2.3283064365386963e-10  │ false                         │ false                │
+│ 3       │ 'animated-16' │ 'original' │ 'owned-js'   │ 0.20000000018626451     │ true                          │ true                 │
+│ 4       │ 'animated-16' │ 'original' │ 'owned-wasm' │ 0.25                    │ true                          │ true                 │
+│ 5       │ 'animated-16' │ 'owned-js' │ 'owned-wasm' │ 0.049999999813735485    │ false                         │ false                │
+│ 6       │ 'static-1'    │ 'original' │ 'owned-js'   │ 4.656612873077393e-10   │ false                         │ false                │
+│ 7       │ 'static-1'    │ 'original' │ 'owned-wasm' │ 2.3283064365386963e-10  │ false                         │ false                │
+│ 8       │ 'static-1'    │ 'owned-js' │ 'owned-wasm' │ -2.3283064365386963e-10 │ false                         │ false                │
+└─────────┴───────────────┴────────────┴──────────────┴─────────────────────────┴───────────────────────────────┴──────────────────────┘

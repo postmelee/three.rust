@@ -1,0 +1,18 @@
+
+> three-rust-research@0.1.0 test:fox
+> node scripts/fetch-fox.mjs && node tests/fox-rejections.mjs && node tests/fox-browser.mjs
+
+Pinned Fox asset and attribution verified
+13 unsupported fixture/API cases rejected
+animated-1 original passed
+animated-1 original passed
+animated-1 owned-js passed
+animated-1 owned-wasm passed
+animated-16 original passed
+animated-16 original passed
+animated-16 owned-js passed
+animated-16 owned-wasm passed
+static-1 original passed
+static-1 original passed
+static-1 owned-js passed
+static-1 owned-wasm passed

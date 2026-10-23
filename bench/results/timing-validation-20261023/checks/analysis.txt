@@ -1,0 +1,16 @@
+✔ accept matching captured phases (139.943309ms)
+✔ reject mixed clock policies (98.690499ms)
+✔ reject a different measured source (153.775944ms)
+✔ reject a browser update (65.531971ms)
+✔ reject different work (46.637795ms)
+✔ reject incomplete phases (67.186756ms)
+✔ historical evidence separates ownership improvement from unresolved Rust benefit (2.756509ms)
+✔ matched-JS A/A is used separately and incomplete calibration rejects (126.416839ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 864.473662

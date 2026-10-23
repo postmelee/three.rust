@@ -1,3 +1,4 @@
+import { observeClock, timingPolicy, validateClock } from "./timing.mjs";
 import { chromium } from "playwright";
 import { serve } from "../scripts/server.mjs";
 import { browserPath } from "../scripts/browser-path.mjs";
@@ -22,11 +23,13 @@ for (const a of process.argv.slice(2)) {
       "stage",
       "mode",
       "headless",
+      "timing",
     ].includes(k)
   )
     throw Error(`Invalid option ${k}`);
   opt[k] = a.slice(i + 1);
 }
+const timing = timingPolicy(opt.timing);
 const cfg = configuration([
   `mode=${opt.mode || "hardware"}`,
   `headless=${opt.headless || "false"}`,
@@ -64,6 +67,7 @@ const paths = [
   "work/assets/Fox.glb",
   "bench/fox.mjs",
   "bench/config.mjs",
+  "bench/timing.mjs",
   "scripts/browser-path.mjs",
   "scripts/server.mjs",
   "package-lock.json",
@@ -96,6 +100,7 @@ const hash = (p) => createHash("sha256").update(readFileSync(p)).digest("hex"),
     sourceCommit: execFileSync("git", ["rev-parse", "HEAD"]).toString().trim(),
     dirty: !!execFileSync("git", ["status", "--porcelain"]).length,
     hashes: Object.fromEntries(paths.map((p) => [p, hash(p)])),
+    timing,
     options: {
       repeats: cfg.repeats,
       warmup: cfg.warmup,
@@ -129,7 +134,7 @@ const save = () =>
     JSON.stringify(manifest, null, 2) + "\n",
   );
 save();
-const server = await serve();
+const server = await serve(4173, { isolated: timing.mode === "isolated" });
 let browser;
 const permutations = [
   [0, 1, 2],
@@ -174,6 +179,8 @@ try {
         const startupMs = performance.now() - start,
           gpu = await page.evaluate(() => window.__fox.gpu);
         if (cfg.hardware) hardwareRenderer(gpu.renderer);
+        const clock = await page.evaluate(observeClock);
+        validateClock(clock, timing);
         const data = await page.evaluate((c) => window.__fox.measure(c), {
           warmup: cfg.warmup,
           samples: cfg.samples,
@@ -183,7 +190,7 @@ try {
         writeFileSync(
           `${out}/${name}`,
           JSON.stringify(
-            { repeat, scenario, variant, order, startupMs, errors, ...data },
+            { repeat, scenario, variant, order, startupMs, errors, clock, ...data },
             null,
             2,
           ) + "\n",
