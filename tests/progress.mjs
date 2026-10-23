@@ -1,3 +1,4 @@
+import { browserPath } from '../scripts/browser-path.mjs';
 import {chromium} from 'playwright';
 import {serve} from '../scripts/server.mjs';
 import {mkdirSync,readFileSync,writeFileSync} from 'node:fs';
@@ -8,7 +9,7 @@ const history=JSON.parse(readFileSync('docs/progress-history.json'));
 const days=new Map();for(const point of history.observations.filter(p=>p.schemaVersion===3).sort((a,b)=>Date.parse(a.recordedAt)-Date.parse(b.recordedAt)))days.set(new Date(point.recordedAt).toISOString().slice(0,10),point);
 const first=[...days.entries()].sort(([a],[b])=>a.localeCompare(b))[0][1];
 const server=await serve();let browser;const results=[];
-try{browser=await chromium.launch({executablePath:process.env.CHROMIUM||'/usr/bin/chromium',headless:true,args:['--no-sandbox']});
+try{browser=await chromium.launch({executablePath:browserPath(),headless:true,args:['--no-sandbox']});
  for(const [name,width,height] of [['desktop',1280,1000],['mobile',390,844]]){
   const page=await browser.newPage({viewport:{width,height}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('http://127.0.0.1:4173/docs/progress.html');

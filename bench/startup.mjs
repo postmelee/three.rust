@@ -1,9 +1,10 @@
+import { browserPath } from '../scripts/browser-path.mjs';
 // Separate diagnostics. Cache-Control:no-store does not erase V8/Wasm process caches.
 import {chromium} from 'playwright';
 import {mkdirSync,writeFileSync} from 'node:fs';
 import {serve} from '../scripts/server.mjs';
 const dir='bench/results/startup';mkdirSync(dir,{recursive:true});const server=await serve();const args=['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader'];
-const browser=await chromium.launch({executablePath:process.env.CHROMIUM||'/usr/bin/chromium',headless:true,args});const runs=[];
+const browser=await chromium.launch({executablePath:browserPath(),headless:true,args});const runs=[];
 try{for(let repeat=0;repeat<5;repeat++)for(const engine of ['original','js','wasm','packed-js']){
  const context=await browser.newContext({viewport:{width:640,height:360}}),page=await context.newPage();
  await page.addInitScript(()=>{window.__wasmCompile=[];const instantiate=WebAssembly.instantiate;WebAssembly.instantiate=async function(...args){const t=performance.now();const result=await instantiate.apply(this,args);window.__wasmCompile.push(performance.now()-t);return result;};});

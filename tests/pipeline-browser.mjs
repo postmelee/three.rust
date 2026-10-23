@@ -1,8 +1,9 @@
+import { browserPath } from '../scripts/browser-path.mjs';
 import {chromium} from 'playwright';import {serve} from '../scripts/server.mjs';import {configuration,hardwareRenderer} from '../bench/config.mjs';import assert from 'node:assert/strict';import {mkdirSync,writeFileSync} from 'node:fs';
 const out=process.env.RTHREE_PIPELINE_RESULTS_DIR||'work/pipeline-validation';mkdirSync(out,{recursive:true});
 const hardware=process.env.RTHREE_BROWSER_MODE==='hardware',cfg=configuration(hardware?['mode=hardware',`headless=${process.env.RTHREE_HEADLESS||'true'}`,...(process.env.RTHREE_ANGLE_BACKEND?[`angle=${process.env.RTHREE_ANGLE_BACKEND}`]:[])]:[]);
 const server=await serve();let browser,reference;const results=[];
-try{browser=await chromium.launch({executablePath:process.env.CHROMIUM||'/usr/bin/chromium',headless:cfg.headless,args:cfg.args});
+try{browser=await chromium.launch({executablePath:browserPath(),headless:cfg.headless,args:cfg.args});
 for(const [i,engine] of ['original','original','js','wasm','packed-js'].entries()){
  const page=await browser.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(`http://127.0.0.1:4173/fixtures/pipeline/index.html?manual&count=2&bones=8&engine=${engine}`);await page.waitForFunction(()=>!!window.__pipeline);
  const snap=await page.evaluate(()=>{const p=window.__pipeline;for(let i=0;i<37;i++)p.renderStep();return {palette:p.rig.snapshot(),pixels:p.pixels(),gpu:p.gpu,volumes:p.rig.volumes(),draws:p.renderer.info.render.calls};});

@@ -1,3 +1,4 @@
+import { browserPath } from '../scripts/browser-path.mjs';
 import { chromium } from "playwright";
 import { serve } from "../scripts/server.mjs";
 import { configuration, hardwareRenderer } from "../bench/config.mjs";
@@ -22,7 +23,7 @@ let browser, reference;
 const results = [];
 try {
   browser = await chromium.launch({
-    executablePath: process.env.CHROMIUM || "/usr/bin/chromium",
+    executablePath: browserPath(),
     headless: cfg.headless,
     args: cfg.args,
   });

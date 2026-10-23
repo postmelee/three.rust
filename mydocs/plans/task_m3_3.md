@@ -27,3 +27,6 @@ Noise rule fixed before measurement: meaningful CPU gain must exceed max(5%, twi
 
 ## Risks
 Timer quantization, background desktop work, display scheduling and uncontrolled thermals can defeat inference. Asset bind transforms, non-bone nodes and track ordering must be mapped without altering visuals. Unsupported events, additive/cubic/morph/material animation, crossfade scheduling, CPU bounds/raycast and ordinary Bone identity remain explicit exclusions.
+
+## Calibration recorded before real-asset timing
+The synthetic hardware run observed median 8.3 ms rAF intervals (approximately 120 Hz). The real-asset main and A/A phases therefore use 1200 warmup / 3600 samples to target approximately 10/30 seconds at this cadence, fixed identically across variants. Actual duration is authoritative; adaptive display or scheduling changes are not a fixed-duration guarantee. Six 600-tick input cycles are measured. Synthetic reproduction retains its predeclared 120/600 protocol and is explicitly short. The requester connected AC power and cannot guarantee absence of background heavy work; noise gates and limitations remain mandatory.
