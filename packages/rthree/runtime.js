@@ -1,11 +1,12 @@
 import { updatePacked } from './packed.js';
-import { configureFacade, trackFacadeObject, facadeUpdate, releaseFacade } from './facade-state.js';
+import { configureFacade, trackFacadeObject, facadeUpdate, releaseFacade, readFacadeElements } from './facade-state.js';
 export { trackFacadeObject };
 let backend = 'uninitialized', wasm, pending;
 const contexts = new WeakMap();
 const counters = { batches:0, nodes:0, fallbackRoots:0, wasmCalls:0, wasmNodes:0, uploadedBytes:0, scannedBytes:0, materializedBytes:0, arenas:0, syncMs:0, kernelMs:0, readMs:0, abiCalls:0, operationBytes:0, matrixReads:0, liveNodes:0 };
 let timing = false;
 const facadeEnabled=()=>backend==='facade-wasm'||backend==='facade-js';
+export function matrixElements(matrix){return facadeEnabled()?readFacadeElements(matrix):matrix.elements;}
 configureFacade({enabled:facadeEnabled,api(){if(backend==='facade-js')return null;if(!wasm)throw Error('rthree: await init() before updating objects');return wasm;},counters,timings:()=>timing});
 const finalizer = new FinalizationRegistry(({id,api})=>{ api.scene_free(id); counters.arenas--; });
 export function setBackend(value) {

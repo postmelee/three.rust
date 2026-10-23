@@ -2,6 +2,7 @@ import {evaluateFacade} from './facade-kernel.js';
 
 // One arena per module graph. No strong references from the arena to public objects.
 const records=new WeakMap();
+const matrixRecords=new WeakMap();
 let config,arena,nextSlot=1,generation=0;
 const freeSlots=[];
 const finalizer=new FinalizationRegistry(token=>retire(token));
@@ -81,12 +82,20 @@ function trackedMatrix(r,matrix,offset){
   deleteProperty(target,key){materialize(r,m);r.supported=false;return Reflect.deleteProperty(target,key);},
   preventExtensions(target){materialize(r,m);r.supported=false;return Reflect.preventExtensions(target);}
  });
+ m.proxy=proxy;matrixRecords.set(matrix,{r,m});
  let elements=proxy;
  Object.defineProperty(matrix,'elements',{configurable:true,enumerable:true,get(){return elements;},set(value){
   if(value===elements)return;
   materialize(r,m);elements=value;r.supported=false;
  }});
  return m;
+}
+// Only pinned read-only core consumers use this private barrier. Never return
+// this backing array through the public elements property or use it as a target.
+export function readFacadeElements(matrix){
+ const elements=matrix.elements,record=matrixRecords.get(matrix);
+ if(record&&elements===record.m.proxy){materialize(record.r,record.m);return record.m.target;}
+ return elements;
 }
 function scalar(r,object,key){
  let value=object[key];

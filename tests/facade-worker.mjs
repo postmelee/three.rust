@@ -78,3 +78,16 @@ test(`${mode}: caller-owned arrays and overrides fall back before evaluation`,()
  root.updateMatrixWorld();assert.equal(calls,1);assert.equal(o.matrixWorld.elements[12],6);
  T.release(root);assert.equal(T.diagnostics().arenas,0);
 });
+test(`${mode}: internal matrix reads preserve snapshots and tracked destinations`,()=>{
+ const o=new T.Object3D(),ref=new O.Object3D(),alias=o.matrixWorld.elements;
+ for(const x of [o,ref]){x.position.set(3,2,1);x.scale.set(2,3,4);x.updateMatrixWorld();}
+ T.resetDiagnostics();
+ near(new T.Vector3(1,2,3).applyMatrix4(o.matrixWorld).toArray(),new O.Vector3(1,2,3).applyMatrix4(ref.matrixWorld).toArray());
+ assert.equal(T.diagnostics().materializedBytes,128);assert.equal(o.matrixWorld.elements,alias);
+ near(new T.Matrix4().multiplyMatrices(o.matrixWorld,o.matrixWorld).elements,new O.Matrix4().multiplyMatrices(ref.matrixWorld,ref.matrixWorld).elements);
+ assert.equal(o.matrixWorld.determinant(),ref.matrixWorld.determinant());assert.equal(o.matrixWorld.getMaxScaleOnAxis(),ref.matrixWorld.getMaxScaleOnAxis());
+ near(o.matrixWorld.clone().elements,ref.matrixWorld.clone().elements);
+ o.matrixAutoUpdate=false;o.matrix.copy(new T.Matrix4().makeTranslation(7,8,9));o.matrixWorldNeedsUpdate=true;o.updateMatrixWorld();
+ assert.equal(alias[12],7);assert.equal(alias[13],8);assert.equal(alias[14],9);
+ T.release(o);
+});

@@ -35,6 +35,12 @@ is implied. The local demo includes both facade choices.
 | Traversal, selection and operation list | JS on every call; not Rust-owned scene topology |
 | Ordinary AnimationMixer, Skeleton and renderer | Existing JS; renderer reads public snapshots and pays their interception/materialization cost |
 
+Pinned Matrix3/Matrix4/Vector3/Vector4 read-only consumers use a private read barrier:
+materialize once, then read the backing array inside the operation. Public arrays
+remain proxies; matrix destinations retain tracked writes. This avoids repeated
+per-element interception in frustum/model-view math without porting that math to
+Rust. The build checks each upstream source hash and selects read sites by syntax.
+
 Initial registration uploads inputs and matrices. Subsequent calls upload changed
 TRS/flags and user-edited matrices, not every cached output. Non-null pivots are
 conservatively scanned because the application can share their Vector3. Unchanged
