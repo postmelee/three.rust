@@ -70,10 +70,10 @@ def svg_text(x, y, text, size=15, extra=''):
 def render_svg(data):
     parts = ['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="710" viewBox="0 0 1200 710" role="img" aria-labelledby="title desc">',
              '<title id="title">three.rust — computation and persistent state ownership</title>',
-             '<desc id="desc">Current: JS owns state and animation, a conditional Rust batch computes transforms, and JS prepares bone palettes. Target: one persistent Rust domain owns scene state, animation, transforms and palettes. Fine tiles below represent pinned upstream callable definitions and declared fields.</desc>',
+             '<desc id="desc">The compatibility facade retains JS authority. The explicit owned rig API retains animation, transforms and palettes in Rust. Fine tiles map scoped computation and logical state to pinned upstream declarations; ordinary JS methods and objects remain JS.</desc>',
              '<rect width="1200" height="710" fill="#0d1117"/><g font-family="Arial, sans-serif" fill="#f0f6fc">',
-             svg_text(16, 27, 'From isolated Rust computation to a persistent Rust-owned pipeline', 23),
-             svg_text(16, 53, 'CURRENT — public state remains in JavaScript', 13)]
+             svg_text(16, 27, 'Computation and authority: compatibility facade and owned rig pipeline', 23),
+             svg_text(16, 53, 'COMPATIBILITY FACADE — public objects remain authoritative in JavaScript', 13)]
     for i, stage in enumerate(data['pipeline']):
         x=16+i*236
         color=COLORS['rust-batch'] if i==2 else COLORS['js']
@@ -81,8 +81,8 @@ def render_svg(data):
         parts += [svg_text(x+8,85,stage['name'],14),svg_text(x+8,103,stage['current'],12)]
         if i<4:
             parts.append(svg_text(x+222,94,'→',16))
-    parts.append(svg_text(16,140,'TARGET — one command batch → persistent Rust state + consecutive CPU stages → final buffers (not implemented)',13))
-    parts.append('<rect x="16" y="151" width="928" height="52" fill="#102019" stroke="#2ea043" stroke-width="2" stroke-dasharray="6 4"/>')
+    parts.append(svg_text(16,140,'EXPLICIT OWNED API — commands → persistent Rust rig state + animation + transforms → final palettes',13))
+    parts.append('<rect x="16" y="151" width="928" height="52" fill="#102019" stroke="#2ea043" stroke-width="2"/>')
     for i,stage in enumerate(data['pipeline']):
         x=16+i*236
         if i==4:
@@ -90,7 +90,7 @@ def render_svg(data):
         parts += [svg_text(x+8,172,stage['name'],14),svg_text(x+8,190,stage['target'],12)]
         if i<4:
             parts.append(svg_text(x+222,181,'→',16))
-    titles={'functions':f'CPU functions: {data["functions"]["counts"]["rust-batch"]} conditional Rust route / {data["functions"]["total"]} tracked',
+    titles={'functions':f'CPU functions: {data["functions"]["counts"]["rust-batch"]} scoped Rust mappings / {data["functions"]["total"]} tracked',
             'state':f'State fields: {data["state"]["counts"]["rust-owned"]} / {data["state"]["total"]} Rust-owned'}
     for panel,left in [('functions',16),('state',612)]:
         parts.append(svg_text(left,240,titles[panel],18))
@@ -112,10 +112,10 @@ def render_svg(data):
                 label=group['name'][:max(3,int((w-8)/7))]
                 parts.append(svg_text(x+4,y+15,label,12,'stroke="#0d1117" stroke-width="3" paint-order="stroke"'))
             parts.append('</g>')
-    for x,state,label in [(16,'js','JavaScript execution / state'),(315,'rust-batch','Rust batch; JS authority'),(602,'rust','Rust function'),(802,'rust-owned','Persistent Rust authority')]:
+    for x,state,label in [(16,'js','JavaScript execution / state'),(315,'rust-batch','Scoped Rust computation'),(602,'rust','Rust computation'),(802,'rust-owned','Owned API: Rust state')]:
         parts.append(f'<rect x="{x}" y="635" width="12" height="12" fill="{COLORS[state]}"/>')
         parts.append(svg_text(x+20,646,label,14))
-    parts.append(svg_text(16,676,'One cell = one known source function or state field. A Rust cache is not authoritative state.',14))
+    parts.append(svg_text(16,676,'One cell = one source definition or logical field mapping. Scoped owned API claims are not ordinary JS API ports.',14))
     parts.append(svg_text(16,698,'Counts describe the selected r186 source inventory; they are not speed, effort, or complete Three.js compatibility.',13))
     return '\n'.join(parts+['</g></svg>'])+'\n'
 
@@ -257,7 +257,7 @@ def history_views(history):
     for p in reversed(daily_history(history)):
         f=p['counts']['functions'];s=p['counts']['state'];commit=p['implementationCommit']
         html+=f'<tr><td>{p["day"]}</td><td>{f["states"]["rust"]}/{f["total"]}</td><td>{f["states"]["rust-batch"]}/{f["total"]}</td><td>{s["states"]["rust-owned"]}/{s["total"]}</td><td><a href="{BASE}commit/{commit}">{commit[:7]}</a></td></tr>'
-    html+='</tbody></table><p>Counts cover the selected source inventory, not equal effort, full Three.js compatibility or performance. Conditional computation keeps JS authority.</p><details><summary>Earlier counting scheme</summary><p>'+intro+'</p><ul>'
+    html+='</tbody></table><p>Counts cover the selected source inventory, not equal effort, full Three.js compatibility or performance. Ownership is tracked separately; explicit owned API mappings do not port ordinary JS objects.</p><details><summary>Earlier counting scheme</summary><p>'+intro+'</p><ul>'
     for date,scheme,commit,values,note in rows:
         if scheme=='2':
             html+=f'<li>{escape(date)}: {escape(values)}. {escape(note)} <a href="{BASE}commit/{commit}">{commit[:7]}</a></li>'

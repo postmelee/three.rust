@@ -63,3 +63,14 @@ absolute/relative tolerances, not a promise of bitwise IEEE equivalence for
 NaN payloads or signed zero. Scalar synchronization uses JS numeric equality:
 a change from +0 to -0 alone is not transferred, so sign-sensitive reciprocal
 observations are outside the supported numeric contract.
+
+
+## Separate explicit owned-rig API
+
+Task #26 adds `rthree/owned` with descriptor acquisition, batched commands, persistent
+animation/pose/world/palette authority and paid snapshots. It does not change the
+ordinary AnimationMixer/Skeleton rows above. The finite [contract](OWNED_ANIMATION.md)
+rejects unsupported bindings/events/tracks rather than silently altering them.
+Its renderer adapter uses dedicated presentation meshes, the supplied core identity,
+opaque materials and prepared palettes. Read/copy, startup, application migration
+and lifecycle costs remain part of its evaluation; this is not full compatibility.

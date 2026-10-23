@@ -81,7 +81,15 @@ try {
         assert(maxPalette < 2e-6);
         assert.equal(maxPixel, 0);
       } else reference = result;
-      let foreground=0;for(let p=0;p<result.pixels.length;p+=4)if(result.pixels[p]!==result.pixels[0]||result.pixels[p+1]!==result.pixels[1]||result.pixels[p+2]!==result.pixels[2])foreground++;assert(foreground>100,"visible foreground required");
+      let foreground = 0;
+      for (let p = 0; p < result.pixels.length; p += 4)
+        if (
+          result.pixels[p] !== result.pixels[0] ||
+          result.pixels[p + 1] !== result.pixels[1] ||
+          result.pixels[p + 2] !== result.pixels[2]
+        )
+          foreground++;
+      assert(foreground > 100, "visible foreground required");
       if (result.adapter) {
         assert.equal(result.adapter.ordinaryBones, 0);
         assert.equal(result.diagnostics.steps, scenario.steps);

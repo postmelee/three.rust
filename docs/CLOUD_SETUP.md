@@ -10,7 +10,7 @@ Linux Chromium 154.0.8037.57; CI downloads the browser matching Playwright
 ```sh
 git clone https://github.com/postmelee/three.rust.git
 cd three.rust
-git checkout codex/ownership-roadmap
+git checkout main
 rustup toolchain install 1.90.0 --profile minimal --component rustfmt,clippy
 rustup target add wasm32-unknown-unknown --toolchain 1.90.0
 npm ci

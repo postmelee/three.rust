@@ -7,7 +7,7 @@ renderer. The local JavaScript package is `rthree`.
 
 [Build & run](docs/CLOUD_SETUP.md) · [Compatibility](docs/COMPATIBILITY.md) ·
 [Architecture](docs/ARCHITECTURE.md) · [Roadmap](docs/PROJECT_PLAN.md) ·
-[Benchmarks](docs/REPORT.md) · [Next experiment](docs/PIPELINE_PREPARATION.md) · [Contributing](AGENTS.md)
+[Benchmarks](docs/REPORT.md) · [Owned animation API](docs/OWNED_ANIMATION.md) · [Contributing](AGENTS.md)
 
 ## Status
 
@@ -19,10 +19,11 @@ renderer. The local JavaScript package is `rthree`.
 [selected Three.js r186 sources](docs/PROGRESS.md), not all Three.js features
 or equal amounts of work. The inventory grows as the supported scope grows.
 
-Eligible transform subtrees currently execute in Rust; their public state is
-still owned by JavaScript. Animation and bone-palette evaluation remain in JS.
-A Rust cache is not authoritative scene state. Whole-frame acceleration has
-not yet been established; [measured results](docs/REPORT.md) include regressions.
+The compatibility facade batches eligible transforms in Rust while JS retains
+public state. The separate [owned rig API](docs/OWNED_ANIMATION.md) keeps bounded
+animation, object/bone transforms and bone palettes in Rust across frames.
+It requires explicit commands and reads; it is not import-only AnimationMixer
+compatibility. Whole-frame hardware acceleration remains unproven.
 
 ## Usage
 

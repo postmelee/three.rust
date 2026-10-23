@@ -30,9 +30,11 @@ jobs:
       - run: npm run fixtures
       - run: cargo fmt --check && cargo clippy --all-targets -- -D warnings
       - run: npm run build && npm test
+      - run: npm run test:owned
       - run: npm run test:pipeline
       - run: npm run test:browser && npm run test:gpu-guard
       - run: npm run test:package && npm run test:demo
+      - run: node bench/owned.mjs repeats=1 warmup=5 samples=10 cases=animated-1,static-1 variants=original,owned-js,owned-wasm out=work/owned-smoke
       - run: npm run bench:smoke
       - run: npm run bundle:demo && npm run test:bundle
       - run: mkdir -p dist/package && npm pack ./packages/rthree --pack-destination dist/package
@@ -45,6 +47,8 @@ jobs:
             work/ci-demo
             work/package
             work/gpu-guard
+            work/owned-validation
+            work/owned-smoke
             work/pipeline-validation
             work/progress-validation
             work/status-site-validation

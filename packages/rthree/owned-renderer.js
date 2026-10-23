@@ -26,7 +26,8 @@ export function createOwnedRenderer(
     !weights ||
     indices.itemSize !== 4 ||
     weights.itemSize !== 4 ||
-    indices.count !== weights.count
+    indices.count !== weights.count ||
+    indices.count !== geometry.getAttribute("position")?.count
   )
     throw Error("owned: skin attributes required");
   for (let i = 0; i < indices.count; i++) {
@@ -132,7 +133,8 @@ export function createOwnedRenderer(
         scene.scale.x !== 1 ||
         scene.scale.y !== 1 ||
         scene.scale.z !== 1 ||
-        !scene.matrixAutoUpdate
+        !scene.matrixAutoUpdate ||
+        !scene.matrixWorldAutoUpdate
       )
         throw Error("owned: identity root scene required");
       sync();

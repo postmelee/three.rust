@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="710" viewBox="0 0 1200 710" role="img" aria-labelledby="title desc">
 <title id="title">three.rust — computation and persistent state ownership</title>
-<desc id="desc">Current: JS owns state and animation, a conditional Rust batch computes transforms, and JS prepares bone palettes. Target: one persistent Rust domain owns scene state, animation, transforms and palettes. Fine tiles below represent pinned upstream callable definitions and declared fields.</desc>
+<desc id="desc">The compatibility facade retains JS authority. The explicit owned rig API retains animation, transforms and palettes in Rust. Fine tiles map scoped computation and logical state to pinned upstream declarations; ordinary JS methods and objects remain JS.</desc>
 <rect width="1200" height="710" fill="#0d1117"/><g font-family="Arial, sans-serif" fill="#f0f6fc">
-<text x="16.00" y="27.00" font-size="23" >From isolated Rust computation to a persistent Rust-owned pipeline</text>
-<text x="16.00" y="53.00" font-size="13" >CURRENT — public state remains in JavaScript</text>
+<text x="16.00" y="27.00" font-size="23" >Computation and authority: compatibility facade and owned rig pipeline</text>
+<text x="16.00" y="53.00" font-size="13" >COMPATIBILITY FACADE — public objects remain authoritative in JavaScript</text>
 <rect x="16" y="65" width="220" height="49" fill="#161b22" stroke="#6e7681"/>
-<text x="24.00" y="85.00" font-size="14" >Scene state</text>
+<text x="24.00" y="85.00" font-size="14" >Scene / rig state</text>
 <text x="24.00" y="103.00" font-size="12" >JS authority</text>
 <text x="238.00" y="94.00" font-size="16" >→</text>
 <rect x="252" y="65" width="220" height="49" fill="#161b22" stroke="#6e7681"/>
@@ -23,10 +23,10 @@
 <rect x="960" y="65" width="220" height="49" fill="#161b22" stroke="#6e7681"/>
 <text x="968.00" y="85.00" font-size="14" >WebGL renderer</text>
 <text x="968.00" y="103.00" font-size="12" >Retained JS + GPU</text>
-<text x="16.00" y="140.00" font-size="13" >TARGET — one command batch → persistent Rust state + consecutive CPU stages → final buffers (not implemented)</text>
-<rect x="16" y="151" width="928" height="52" fill="#102019" stroke="#2ea043" stroke-width="2" stroke-dasharray="6 4"/>
-<text x="24.00" y="172.00" font-size="14" >Scene state</text>
-<text x="24.00" y="190.00" font-size="12" >Rust authority</text>
+<text x="16.00" y="140.00" font-size="13" >EXPLICIT OWNED API — commands → persistent Rust rig state + animation + transforms → final palettes</text>
+<rect x="16" y="151" width="928" height="52" fill="#102019" stroke="#2ea043" stroke-width="2"/>
+<text x="24.00" y="172.00" font-size="14" >Scene / rig state</text>
+<text x="24.00" y="190.00" font-size="12" >Rust rig authority</text>
 <text x="238.00" y="181.00" font-size="16" >→</text>
 <text x="260.00" y="172.00" font-size="14" >Animation</text>
 <text x="260.00" y="190.00" font-size="12" >Rust batch</text>
@@ -40,7 +40,7 @@
 <rect x="960" y="151" width="220" height="52" fill="#161b22" stroke="#6e7681"/>
 <text x="968.00" y="172.00" font-size="14" >WebGL renderer</text>
 <text x="968.00" y="190.00" font-size="12" >Consume final outputs</text>
-<text x="16.00" y="240.00" font-size="18" >CPU functions: 1 conditional Rust route / 1515 tracked</text>
+<text x="16.00" y="240.00" font-size="18" >CPU functions: 3 scoped Rust mappings / 1515 tracked</text>
 <g><title>WebGLRenderer — 78 declared items</title>
 <rect data-item="renderers/WebGLRenderer.js::WebGLRenderer.getTargetPixelRatio" data-panel="functions" x="17.50" y="257.50" width="11.46" height="9.71" fill="#6e7681"><title>WebGLRenderer.getTargetPixelRatio — js; renderers/WebGLRenderer.js:362</title></rect>
 <rect data-item="renderers/WebGLRenderer.js::WebGLRenderer.getContext" data-panel="functions" x="29.61" y="257.50" width="11.46" height="9.71" fill="#6e7681"><title>WebGLRenderer.getContext — js; renderers/WebGLRenderer.js:372</title></rect>
@@ -839,7 +839,7 @@
 <rect data-item="animation/AnimationMixer.js::AnimationMixer.clipAction" data-panel="functions" x="274.87" y="586.16" width="9.43" height="11.02" fill="#6e7681"><title>AnimationMixer.clipAction — js; animation/AnimationMixer.js:557</title></rect>
 <rect data-item="animation/AnimationMixer.js::AnimationMixer.existingAction" data-panel="functions" x="284.95" y="586.16" width="9.43" height="11.02" fill="#6e7681"><title>AnimationMixer.existingAction — js; animation/AnimationMixer.js:625</title></rect>
 <rect data-item="animation/AnimationMixer.js::AnimationMixer.stopAllAction" data-panel="functions" x="214.39" y="597.83" width="10.87" height="11.02" fill="#6e7681"><title>AnimationMixer.stopAllAction — js; animation/AnimationMixer.js:652</title></rect>
-<rect data-item="animation/AnimationMixer.js::AnimationMixer.update" data-panel="functions" x="225.91" y="597.83" width="10.87" height="11.02" fill="#6e7681"><title>AnimationMixer.update — js; animation/AnimationMixer.js:676</title></rect>
+<rect data-item="animation/AnimationMixer.js::AnimationMixer.update" data-panel="functions" x="225.91" y="597.83" width="10.87" height="11.02" fill="#d29922"><title>AnimationMixer.update — rust-batch; animation/AnimationMixer.js:676</title></rect>
 <rect data-item="animation/AnimationMixer.js::AnimationMixer.setTime" data-panel="functions" x="237.43" y="597.83" width="10.87" height="11.02" fill="#6e7681"><title>AnimationMixer.setTime — js; animation/AnimationMixer.js:722</title></rect>
 <rect data-item="animation/AnimationMixer.js::AnimationMixer.getRoot" data-panel="functions" x="248.95" y="597.83" width="10.87" height="11.02" fill="#6e7681"><title>AnimationMixer.getRoot — js; animation/AnimationMixer.js:740</title></rect>
 <rect data-item="animation/AnimationMixer.js::AnimationMixer.uncacheClip" data-panel="functions" x="260.47" y="597.83" width="10.87" height="11.02" fill="#6e7681"><title>AnimationMixer.uncacheClip — js; animation/AnimationMixer.js:752</title></rect>
@@ -1432,7 +1432,7 @@
 <rect data-item="objects/Skeleton.js::Skeleton.init" data-panel="functions" x="298.03" y="524.21" width="7.71" height="10.61" fill="#6e7681"><title>Skeleton.init — js; objects/Skeleton.js:91</title></rect>
 <rect data-item="objects/Skeleton.js::Skeleton.calculateInverses" data-panel="functions" x="306.38" y="524.21" width="7.71" height="10.61" fill="#6e7681"><title>Skeleton.calculateInverses — js; objects/Skeleton.js:130</title></rect>
 <rect data-item="objects/Skeleton.js::Skeleton.pose" data-panel="functions" x="314.74" y="524.21" width="7.71" height="10.61" fill="#6e7681"><title>Skeleton.pose — js; objects/Skeleton.js:153</title></rect>
-<rect data-item="objects/Skeleton.js::Skeleton.update" data-panel="functions" x="323.10" y="524.21" width="7.71" height="10.61" fill="#6e7681"><title>Skeleton.update — js; objects/Skeleton.js:199</title></rect>
+<rect data-item="objects/Skeleton.js::Skeleton.update" data-panel="functions" x="323.10" y="524.21" width="7.71" height="10.61" fill="#d29922"><title>Skeleton.update — rust-batch; objects/Skeleton.js:199</title></rect>
 <rect data-item="objects/Skeleton.js::Skeleton.clone" data-panel="functions" x="298.03" y="535.48" width="10.50" height="10.61" fill="#6e7681"><title>Skeleton.clone — js; objects/Skeleton.js:232</title></rect>
 <rect data-item="objects/Skeleton.js::Skeleton.computeBoneTexture" data-panel="functions" x="309.17" y="535.48" width="10.50" height="10.61" fill="#6e7681"><title>Skeleton.computeBoneTexture — js; objects/Skeleton.js:243</title></rect>
 <rect data-item="objects/Skeleton.js::Skeleton.getBoneByName" data-panel="functions" x="320.32" y="535.48" width="10.50" height="10.61" fill="#6e7681"><title>Skeleton.getBoneByName — js; objects/Skeleton.js:276</title></rect>
@@ -1890,24 +1890,24 @@
 <rect data-item="renderers/webgl/WebGLShader.js::WebGLShader" data-panel="functions" x="579.88" y="598.57" width="5.97" height="10.28" fill="#6e7681"><title>WebGLShader — js; renderers/webgl/WebGLShader.js:1</title></rect>
 <rect x="578.38" y="597.07" width="9.62" height="13.93" fill="none" stroke="#0d1117" stroke-width="2"/>
 </g>
-<text x="612.00" y="240.00" font-size="18" >State fields: 0 / 115 Rust-owned</text>
+<text x="612.00" y="240.00" font-size="18" >State fields: 12 / 115 Rust-owned</text>
 <g><title>Object3D — 31 declared items</title>
 <rect data-item="core/Object3D.js::Object3D.isObject3D" data-panel="state" x="613.50" y="257.50" width="39.42" height="37.36" fill="#6e7681"><title>Object3D.isObject3D — js; core/Object3D.js:80</title></rect>
 <rect data-item="core/Object3D.js::Object3D.id" data-panel="state" x="653.57" y="257.50" width="39.42" height="37.36" fill="#6e7681"><title>Object3D.id — js; core/Object3D.js:89</title></rect>
 <rect data-item="core/Object3D.js::Object3D.uuid" data-panel="state" x="693.65" y="257.50" width="39.42" height="37.36" fill="#6e7681"><title>Object3D.uuid — js; core/Object3D.js:97</title></rect>
 <rect data-item="core/Object3D.js::Object3D.name" data-panel="state" x="733.72" y="257.50" width="39.42" height="37.36" fill="#6e7681"><title>Object3D.name — js; core/Object3D.js:104</title></rect>
 <rect data-item="core/Object3D.js::Object3D.type" data-panel="state" x="773.79" y="257.50" width="39.42" height="37.36" fill="#6e7681"><title>Object3D.type — js; core/Object3D.js:113</title></rect>
-<rect data-item="core/Object3D.js::Object3D.parent" data-panel="state" x="813.87" y="257.50" width="39.42" height="37.36" fill="#6e7681"><title>Object3D.parent — js; core/Object3D.js:121</title></rect>
+<rect data-item="core/Object3D.js::Object3D.parent" data-panel="state" x="813.87" y="257.50" width="39.42" height="37.36" fill="#2ea043"><title>Object3D.parent — rust-owned; core/Object3D.js:121</title></rect>
 <rect data-item="core/Object3D.js::Object3D.children" data-panel="state" x="853.94" y="257.50" width="39.42" height="37.36" fill="#6e7681"><title>Object3D.children — js; core/Object3D.js:128</title></rect>
 <rect data-item="core/Object3D.js::Object3D.up" data-panel="state" x="613.50" y="295.51" width="46.10" height="37.36" fill="#6e7681"><title>Object3D.up — js; core/Object3D.js:138</title></rect>
-<rect data-item="core/Object3D.js::Object3D.position" data-panel="state" x="660.25" y="295.51" width="46.10" height="37.36" fill="#6e7681"><title>Object3D.position — js; core/Object3D.js:168</title></rect>
+<rect data-item="core/Object3D.js::Object3D.position" data-panel="state" x="660.25" y="295.51" width="46.10" height="37.36" fill="#2ea043"><title>Object3D.position — rust-owned; core/Object3D.js:168</title></rect>
 <rect data-item="core/Object3D.js::Object3D.rotation" data-panel="state" x="707.00" y="295.51" width="46.10" height="37.36" fill="#6e7681"><title>Object3D.rotation — js; core/Object3D.js:180</title></rect>
-<rect data-item="core/Object3D.js::Object3D.quaternion" data-panel="state" x="753.76" y="295.51" width="46.10" height="37.36" fill="#6e7681"><title>Object3D.quaternion — js; core/Object3D.js:191</title></rect>
-<rect data-item="core/Object3D.js::Object3D.scale" data-panel="state" x="800.51" y="295.51" width="46.10" height="37.36" fill="#6e7681"><title>Object3D.scale — js; core/Object3D.js:203</title></rect>
+<rect data-item="core/Object3D.js::Object3D.quaternion" data-panel="state" x="753.76" y="295.51" width="46.10" height="37.36" fill="#2ea043"><title>Object3D.quaternion — rust-owned; core/Object3D.js:191</title></rect>
+<rect data-item="core/Object3D.js::Object3D.scale" data-panel="state" x="800.51" y="295.51" width="46.10" height="37.36" fill="#2ea043"><title>Object3D.scale — rust-owned; core/Object3D.js:203</title></rect>
 <rect data-item="core/Object3D.js::Object3D.modelViewMatrix" data-panel="state" x="847.26" y="295.51" width="46.10" height="37.36" fill="#6e7681"><title>Object3D.modelViewMatrix — js; core/Object3D.js:214</title></rect>
 <rect data-item="core/Object3D.js::Object3D.normalMatrix" data-panel="state" x="613.50" y="333.53" width="46.10" height="37.36" fill="#6e7681"><title>Object3D.normalMatrix — js; core/Object3D.js:223</title></rect>
 <rect data-item="core/Object3D.js::Object3D.matrix" data-panel="state" x="660.25" y="333.53" width="46.10" height="37.36" fill="#6e7681"><title>Object3D.matrix — js; core/Object3D.js:233</title></rect>
-<rect data-item="core/Object3D.js::Object3D.matrixWorld" data-panel="state" x="707.00" y="333.53" width="46.10" height="37.36" fill="#6e7681"><title>Object3D.matrixWorld — js; core/Object3D.js:241</title></rect>
+<rect data-item="core/Object3D.js::Object3D.matrixWorld" data-panel="state" x="707.00" y="333.53" width="46.10" height="37.36" fill="#2ea043"><title>Object3D.matrixWorld — rust-owned; core/Object3D.js:241</title></rect>
 <rect data-item="core/Object3D.js::Object3D.matrixAutoUpdate" data-panel="state" x="753.76" y="333.53" width="46.10" height="37.36" fill="#6e7681"><title>Object3D.matrixAutoUpdate — js; core/Object3D.js:253</title></rect>
 <rect data-item="core/Object3D.js::Object3D.matrixWorldAutoUpdate" data-panel="state" x="800.51" y="333.53" width="46.10" height="37.36" fill="#6e7681"><title>Object3D.matrixWorldAutoUpdate — js; core/Object3D.js:265</title></rect>
 <rect data-item="core/Object3D.js::Object3D.matrixWorldNeedsUpdate" data-panel="state" x="847.26" y="333.53" width="46.10" height="37.36" fill="#6e7681"><title>Object3D.matrixWorldNeedsUpdate — js; core/Object3D.js:274</title></rect>
@@ -1939,16 +1939,16 @@
 <rect data-item="animation/AnimationAction.js::AnimationAction._timeScaleInterpolant" data-panel="state" x="693.65" y="490.30" width="39.42" height="39.08" fill="#6e7681"><title>AnimationAction._timeScaleInterpolant — js; animation/AnimationAction.js:58</title></rect>
 <rect data-item="animation/AnimationAction.js::AnimationAction._restoreTimeScale" data-panel="state" x="733.72" y="490.30" width="39.42" height="39.08" fill="#6e7681"><title>AnimationAction._restoreTimeScale — js; animation/AnimationAction.js:59</title></rect>
 <rect data-item="animation/AnimationAction.js::AnimationAction._weightInterpolant" data-panel="state" x="773.79" y="490.30" width="39.42" height="39.08" fill="#6e7681"><title>AnimationAction._weightInterpolant — js; animation/AnimationAction.js:60</title></rect>
-<rect data-item="animation/AnimationAction.js::AnimationAction.loop" data-panel="state" x="813.87" y="490.30" width="39.42" height="39.08" fill="#6e7681"><title>AnimationAction.loop — js; animation/AnimationAction.js:68</title></rect>
+<rect data-item="animation/AnimationAction.js::AnimationAction.loop" data-panel="state" x="813.87" y="490.30" width="39.42" height="39.08" fill="#2ea043"><title>AnimationAction.loop — rust-owned; animation/AnimationAction.js:68</title></rect>
 <rect data-item="animation/AnimationAction.js::AnimationAction._loopCount" data-panel="state" x="853.94" y="490.30" width="39.42" height="39.08" fill="#6e7681"><title>AnimationAction._loopCount — js; animation/AnimationAction.js:69</title></rect>
 <rect data-item="animation/AnimationAction.js::AnimationAction._startTime" data-panel="state" x="613.50" y="530.04" width="46.10" height="39.08" fill="#6e7681"><title>AnimationAction._startTime — js; animation/AnimationAction.js:73</title></rect>
-<rect data-item="animation/AnimationAction.js::AnimationAction.time" data-panel="state" x="660.25" y="530.04" width="46.10" height="39.08" fill="#6e7681"><title>AnimationAction.time — js; animation/AnimationAction.js:84</title></rect>
-<rect data-item="animation/AnimationAction.js::AnimationAction.timeScale" data-panel="state" x="707.00" y="530.04" width="46.10" height="39.08" fill="#6e7681"><title>AnimationAction.timeScale — js; animation/AnimationAction.js:93</title></rect>
+<rect data-item="animation/AnimationAction.js::AnimationAction.time" data-panel="state" x="660.25" y="530.04" width="46.10" height="39.08" fill="#2ea043"><title>AnimationAction.time — rust-owned; animation/AnimationAction.js:84</title></rect>
+<rect data-item="animation/AnimationAction.js::AnimationAction.timeScale" data-panel="state" x="707.00" y="530.04" width="46.10" height="39.08" fill="#2ea043"><title>AnimationAction.timeScale — rust-owned; animation/AnimationAction.js:93</title></rect>
 <rect data-item="animation/AnimationAction.js::AnimationAction._effectiveTimeScale" data-panel="state" x="753.76" y="530.04" width="46.10" height="39.08" fill="#6e7681"><title>AnimationAction._effectiveTimeScale — js; animation/AnimationAction.js:94</title></rect>
-<rect data-item="animation/AnimationAction.js::AnimationAction.weight" data-panel="state" x="800.51" y="530.04" width="46.10" height="39.08" fill="#6e7681"><title>AnimationAction.weight — js; animation/AnimationAction.js:104</title></rect>
+<rect data-item="animation/AnimationAction.js::AnimationAction.weight" data-panel="state" x="800.51" y="530.04" width="46.10" height="39.08" fill="#2ea043"><title>AnimationAction.weight — rust-owned; animation/AnimationAction.js:104</title></rect>
 <rect data-item="animation/AnimationAction.js::AnimationAction._effectiveWeight" data-panel="state" x="847.26" y="530.04" width="46.10" height="39.08" fill="#6e7681"><title>AnimationAction._effectiveWeight — js; animation/AnimationAction.js:105</title></rect>
 <rect data-item="animation/AnimationAction.js::AnimationAction.repetitions" data-panel="state" x="613.50" y="569.77" width="46.10" height="39.08" fill="#6e7681"><title>AnimationAction.repetitions — js; animation/AnimationAction.js:117</title></rect>
-<rect data-item="animation/AnimationAction.js::AnimationAction.paused" data-panel="state" x="660.25" y="569.77" width="46.10" height="39.08" fill="#6e7681"><title>AnimationAction.paused — js; animation/AnimationAction.js:125</title></rect>
+<rect data-item="animation/AnimationAction.js::AnimationAction.paused" data-panel="state" x="660.25" y="569.77" width="46.10" height="39.08" fill="#2ea043"><title>AnimationAction.paused — rust-owned; animation/AnimationAction.js:125</title></rect>
 <rect data-item="animation/AnimationAction.js::AnimationAction.enabled" data-panel="state" x="707.00" y="569.77" width="46.10" height="39.08" fill="#6e7681"><title>AnimationAction.enabled — js; animation/AnimationAction.js:136</title></rect>
 <rect data-item="animation/AnimationAction.js::AnimationAction.clampWhenFinished" data-panel="state" x="753.76" y="569.77" width="46.10" height="39.08" fill="#6e7681"><title>AnimationAction.clampWhenFinished — js; animation/AnimationAction.js:151</title></rect>
 <rect data-item="animation/AnimationAction.js::AnimationAction.zeroSlopeAtStart" data-panel="state" x="800.51" y="569.77" width="46.10" height="39.08" fill="#6e7681"><title>AnimationAction.zeroSlopeAtStart — js; animation/AnimationAction.js:159</title></rect>
@@ -2032,8 +2032,8 @@
 <g><title>Skeleton — 5 declared items</title>
 <rect data-item="objects/Skeleton.js::Skeleton.uuid" data-panel="state" x="1110.37" y="494.98" width="35.41" height="37.52" fill="#6e7681"><title>Skeleton.uuid — js; objects/Skeleton.js:48</title></rect>
 <rect data-item="objects/Skeleton.js::Skeleton.bones" data-panel="state" x="1146.44" y="494.98" width="35.41" height="37.52" fill="#6e7681"><title>Skeleton.bones — js; objects/Skeleton.js:55</title></rect>
-<rect data-item="objects/Skeleton.js::Skeleton.boneInverses" data-panel="state" x="1110.37" y="533.16" width="35.41" height="37.52" fill="#6e7681"><title>Skeleton.boneInverses — js; objects/Skeleton.js:62</title></rect>
-<rect data-item="objects/Skeleton.js::Skeleton.boneMatrices" data-panel="state" x="1146.44" y="533.16" width="35.41" height="37.52" fill="#6e7681"><title>Skeleton.boneMatrices — js; objects/Skeleton.js:71</title></rect>
+<rect data-item="objects/Skeleton.js::Skeleton.boneInverses" data-panel="state" x="1110.37" y="533.16" width="35.41" height="37.52" fill="#2ea043"><title>Skeleton.boneInverses — rust-owned; objects/Skeleton.js:62</title></rect>
+<rect data-item="objects/Skeleton.js::Skeleton.boneMatrices" data-panel="state" x="1146.44" y="533.16" width="35.41" height="37.52" fill="#2ea043"><title>Skeleton.boneMatrices — rust-owned; objects/Skeleton.js:71</title></rect>
 <rect data-item="objects/Skeleton.js::Skeleton.boneTexture" data-panel="state" x="1110.37" y="571.33" width="71.48" height="37.52" fill="#6e7681"><title>Skeleton.boneTexture — js; objects/Skeleton.js:80</title></rect>
 <rect x="1108.87" y="493.48" width="75.13" height="117.52" fill="none" stroke="#0d1117" stroke-width="2"/>
 <text x="1112.87" y="508.48" font-size="12" stroke="#0d1117" stroke-width="3" paint-order="stroke">Skeleton</text>
@@ -2041,11 +2041,11 @@
 <rect x="16" y="635" width="12" height="12" fill="#6e7681"/>
 <text x="36.00" y="646.00" font-size="14" >JavaScript execution / state</text>
 <rect x="315" y="635" width="12" height="12" fill="#d29922"/>
-<text x="335.00" y="646.00" font-size="14" >Rust batch; JS authority</text>
+<text x="335.00" y="646.00" font-size="14" >Scoped Rust computation</text>
 <rect x="602" y="635" width="12" height="12" fill="#58a6ff"/>
-<text x="622.00" y="646.00" font-size="14" >Rust function</text>
+<text x="622.00" y="646.00" font-size="14" >Rust computation</text>
 <rect x="802" y="635" width="12" height="12" fill="#2ea043"/>
-<text x="822.00" y="646.00" font-size="14" >Persistent Rust authority</text>
-<text x="16.00" y="676.00" font-size="14" >One cell = one known source function or state field. A Rust cache is not authoritative state.</text>
+<text x="822.00" y="646.00" font-size="14" >Owned API: Rust state</text>
+<text x="16.00" y="676.00" font-size="14" >One cell = one source definition or logical field mapping. Scoped owned API claims are not ordinary JS API ports.</text>
 <text x="16.00" y="698.00" font-size="13" >Counts describe the selected r186 source inventory; they are not speed, effort, or complete Three.js compatibility.</text>
 </g></svg>

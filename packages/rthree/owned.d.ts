@@ -44,6 +44,7 @@ export interface OwnedDiagnostics {
   steps: number;
   wasmCalls: number;
   wasmMemoryBytes: number;
+  initialBytes: number;
   commandBatches: number;
   commandBytes: number;
   readBytes: number;
