@@ -24,7 +24,7 @@ for phase in aa-before aa-js-before main aa-js-after aa-after; do
   node bench/fox.mjs timing="$timing" mode=hardware headless=false variants="$variants" repeats="$repeats" warmup=1200 samples=3600 out="$out/$phase"
   node bench/fox-report.mjs "$out/$phase"
 done
-node bench/fox.mjs timing="$timing" mode=hardware headless=false stage=diagnostic repeats=5 warmup=60 samples=120 out="$out/diagnostic"
+node bench/fox.mjs timing="$timing" mode=hardware headless=false stage=diagnostic repeats=5 warmup=600 samples=600 out="$out/diagnostic"
 node bench/fox-report.mjs "$out/diagnostic"
 node bench/fox-compare.mjs "$out"
 node bench/fox-evidence.mjs "$out" "$out/evidence.json"

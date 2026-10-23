@@ -91,7 +91,9 @@ needs these new hardware measurements, repeated sessions and representative asse
 The initial browser preflight and separate legacy controls use ordinary timing;
 Fox's own per-page clock records describe its actual measurement policy.
 
-Separate diagnostic runs now split **input construction/command validation and
+Separate diagnostic runs now warm up for 600 ticks and sample a complete
+600-tick interaction cycle (five repeats), rather than only the first walk phase.
+They split **input construction/command validation and
 delivery**, **evaluation**, **presentation copy**, **paid snapshot**, and **render**.
 The new evaluation bucket is not comparable to the historical combined bucket.
 Diagnostics request extra reads and may repeat upstream traversal; do not subtract
