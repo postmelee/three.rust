@@ -1,8 +1,8 @@
 # Product readiness and implementation progress
 
 [Adoption goals](PRODUCT_GOALS.md) define when an application has a reason to migrate.
-README and the standalone page lead with a separate gate overview from
-product-goals.json. Early evidence does not mean qualification; there is no overall
+README and the standalone page keep the existing ownership diagram and add
+a simple product-goal table from product-goals.json. Early evidence does not mean qualification; there is no overall
 completion percentage. The existing fine-grained map below remains implementation
 evidence, and its historical counts retain their original meaning.
 

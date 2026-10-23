@@ -13,3 +13,6 @@ Public product goals belong in docs/PRODUCT_GOALS.md with a decision in docs/adr
 1. Record goal rationale, evidence boundary, staged adoption targets and prospective qualification budgets; reconcile PROJECT_PLAN and GitHub links.
 2. Add deterministic readiness overview from the gate inventory to README and progress page, preserving source tiles/history. No overall percentage; evidence-backed gate status with explicit meanings. Keep status Pages self-contained.
 3. Verify generation/check drift, refuse unsupported qualification claims, inspect desktop/mobile status output, commit/push stacked draft PR. Document outstanding hardware/app acceptance and remote CI independently.
+
+## Requester refinement before final publication
+The requester wants the existing progress.html presentation preserved: the current diagram, simple tables, Definitions and evidence and history. Supersede the new card/SVG presentation with a plain goal table. README keeps the existing map visible and uses a Markdown goal table. No new dashboard elements or interactive controls. Add a fourth verification stage for this refinement; product goals themselves remain unchanged.

@@ -20,9 +20,10 @@ cost and replicated hardware/browser evidence. The initial 20%/1 ms original and
 Record their fixed workload and noise context before qualification; version any
 later budget changes with rationale.
 
-README Status leads with six declared adoption gates, each with current evidence,
-next requirement and an honest status. Keep source tiles and historical counts as
-a separate implementation view. Do not create a percentage of product completion,
+README Status connects the existing ownership map to six declared adoption gates,
+each with current evidence, next requirement and an honest status. Use plain HTML
+and Markdown tables. Preserve the existing diagram, source tables, Definitions and
+evidence section and history; do not introduce a card dashboard. Do not create a percentage of product completion,
 retroactively reinterpret history, or qualify a gate from an existing file alone.
 
 ## Alternatives and consequences

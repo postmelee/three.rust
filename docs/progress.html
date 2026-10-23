@@ -1,64 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>three.rust adoption and ownership progress</title><style>body{background:#0d1117;color:#f0f6fc;font:16px/1.5 system-ui,sans-serif;max-width:1200px;margin:auto;padding:24px}a{color:#58a6ff}h1{border-bottom:1px solid #30363d;padding-bottom:12px}svg{width:100%;height:auto}table{width:100%;border-collapse:collapse;margin:18px 0}th,td{border:1px solid #30363d;padding:5px 8px;text-align:left;overflow-wrap:anywhere}caption{text-align:left;font-weight:bold}details{margin:10px 0}summary{cursor:pointer}li{overflow-wrap:anywhere}.muted{color:#b1bac4}@media(max-width:600px){.readiness-image{display:none}body{padding:12px;font-size:13px}th,td{padding:4px}}</style></head><body><section aria-labelledby="adoption-heading"><h1 id="adoption-heading">Replacement readiness</h1>
-<p><strong>Research prototype — Not yet qualified as a Three.js replacement</strong></p>
-<div class="readiness-image"><svg xmlns="http://www.w3.org/2000/svg" width="1200" height="610" viewBox="0 0 1200 610" role="img" aria-labelledby="readiness-title readiness-desc">
-<title id="readiness-title">Readiness to replace Three.js in real applications</title>
-<desc id="readiness-desc">Six prospective adoption gates. Early evidence is not qualification. The current project is a research prototype, not a qualified replacement. Source translation counts are separate.</desc>
-<rect width="1200" height="610" fill="#0d1117"/><g font-family="Arial, sans-serif" fill="#f0f6fc">
-<text x="20.00" y="34.00" font-size="25" >Goal: worthwhile performance with little application change</text>
-<text x="20.00" y="61.00" font-size="19" >Research prototype — Not yet qualified as a Three.js replacement</text>
-<rect x="20" y="78" width="1160" height="32" fill="#161b22"/>
-<text x="32.00" y="100.00" font-size="18" >NOW: Prototype     →     NEXT: Useful accelerator     →     GOAL: Application replacement</text>
-<rect x="20" y="128" width="570" height="124" rx="4" fill="#161b22" stroke="#30363d"/>
-<rect x="20" y="128" width="5" height="124" fill="#d29922"/>
-<text x="36.00" y="157.00" font-size="21" >Useful app-level speed</text>
-<text x="570.00" y="157.00" font-size="16" text-anchor="end" fill="#d29922">Early evidence</text>
-<text x="36.00" y="186.00" font-size="17" >20% and 1 ms less CPU time at p50 and p95</text>
-<text x="36.00" y="234.00" font-size="15" fill="#b1bac4">One scaled asset; no app qualification yet</text>
-<rect x="610" y="128" width="570" height="124" rx="4" fill="#161b22" stroke="#30363d"/>
-<rect x="610" y="128" width="5" height="124" fill="#6e7681"/>
-<text x="626.00" y="157.00" font-size="21" >A reason to choose Rust</text>
-<text x="1160.00" y="157.00" font-size="16" text-anchor="end" fill="#b1bac4">Not yet</text>
-<text x="626.00" y="186.00" font-size="17" >10% and 0.5 ms beyond the matched JS design</text>
-<text x="626.00" y="234.00" font-size="15" fill="#b1bac4">Independent Rust benefit remains unproven</text>
-<rect x="20" y="268" width="570" height="124" rx="4" fill="#161b22" stroke="#30363d"/>
-<rect x="20" y="268" width="5" height="124" fill="#d29922"/>
-<text x="36.00" y="297.00" font-size="21" >Low migration cost</text>
-<text x="570.00" y="297.00" font-size="16" text-anchor="end" fill="#d29922">Early evidence</text>
-<text x="36.00" y="326.00" font-size="17" >Import, preparation and resolution changes only</text>
-<text x="36.00" y="374.00" font-size="15" fill="#b1bac4">Owned animation still needs explicit migration</text>
-<rect x="610" y="268" width="570" height="124" rx="4" fill="#161b22" stroke="#30363d"/>
-<rect x="610" y="268" width="5" height="124" fill="#d29922"/>
-<text x="626.00" y="297.00" font-size="21" >Preserved app behavior</text>
-<text x="1160.00" y="297.00" font-size="16" text-anchor="end" fill="#d29922">Early evidence</text>
-<text x="626.00" y="326.00" font-size="17" >Same features, interaction and visual quality</text>
-<text x="626.00" y="374.00" font-size="15" fill="#b1bac4">Finite rig correctness; broad app contract open</text>
-<rect x="20" y="408" width="570" height="124" rx="4" fill="#161b22" stroke="#30363d"/>
-<rect x="20" y="408" width="5" height="124" fill="#6e7681"/>
-<text x="36.00" y="437.00" font-size="21" >Bounded total cost</text>
-<text x="570.00" y="437.00" font-size="16" text-anchor="end" fill="#b1bac4">Not yet</text>
-<text x="36.00" y="466.00" font-size="17" >Control, startup, download and memory budgets</text>
-<text x="36.00" y="514.00" font-size="15" fill="#b1bac4">Lifecycle and whole-product budgets unqualified</text>
-<rect x="610" y="408" width="570" height="124" rx="4" fill="#161b22" stroke="#30363d"/>
-<rect x="610" y="408" width="5" height="124" fill="#d29922"/>
-<text x="626.00" y="437.00" font-size="21" >Repeatable supported release</text>
-<text x="1160.00" y="437.00" font-size="16" text-anchor="end" fill="#d29922">Early evidence</text>
-<text x="626.00" y="466.00" font-size="17" >Two hardware classes and browser engines</text>
-<text x="626.00" y="514.00" font-size="15" fill="#b1bac4">One Mac experiment; no qualified release yet</text>
-<text x="20.00" y="572.00" font-size="18" >Early evidence ≠ gate met. Qualified requires a reviewed application-level report.</text>
-<text x="20.00" y="598.00" font-size="16" fill="#b1bac4">Targets for future qualification — not measured promises, API coverage or a completion percentage.</text>
-</g></svg>
-</div>
-<p><a href="https://github.com/postmelee/three.rust/blob/main/docs/PRODUCT_GOALS.md">Product goals and qualification budgets</a> · <a href="https://github.com/postmelee/three.rust/blob/main/docs/product-goals.json">Declared gates</a></p>
-<p>Early evidence is not qualification. These gates describe application replacement; an explicit accelerator has a separate migration contract. Source ownership below is implementation evidence, not product completion.</p>
-<table id="adoption-gates"><caption>Application replacement: prospective targets and current evidence</caption><thead><tr><th>Gate / target</th><th>Status / current evidence</th></tr></thead><tbody>
-<tr><th>Useful app-level speed<br><small>20% and 1 ms less CPU time at p50 and p95</small></th><td><strong>Early evidence</strong><br>One scaled asset; no app qualification yet<br><a href="https://github.com/postmelee/three.rust/blob/main/docs/MAC_HARDWARE_REPORT.md">Evidence 1</a></td></tr>
-<tr><th>A reason to choose Rust<br><small>10% and 0.5 ms beyond the matched JS design</small></th><td><strong>Not yet</strong><br>Independent Rust benefit remains unproven<br><a href="https://github.com/postmelee/three.rust/blob/main/docs/MAC_HARDWARE_REPORT.md">Evidence 1</a> · <a href="https://github.com/postmelee/three.rust/blob/main/docs/PERFORMANCE.md">Evidence 2</a></td></tr>
-<tr><th>Low migration cost<br><small>Import, preparation and resolution changes only</small></th><td><strong>Early evidence</strong><br>Owned animation still needs explicit migration<br><a href="https://github.com/postmelee/three.rust/blob/main/docs/COMPATIBILITY.md">Evidence 1</a> · <a href="https://github.com/postmelee/three.rust/blob/main/docs/OWNED_ANIMATION.md">Evidence 2</a></td></tr>
-<tr><th>Preserved app behavior<br><small>Same features, interaction and visual quality</small></th><td><strong>Early evidence</strong><br>Finite rig correctness; broad app contract open<br><a href="https://github.com/postmelee/three.rust/blob/main/docs/OWNED_ANIMATION.md">Evidence 1</a> · <a href="https://github.com/postmelee/three.rust/blob/main/docs/MAC_HARDWARE_REPORT.md">Evidence 2</a></td></tr>
-<tr><th>Bounded total cost<br><small>Control, startup, download and memory budgets</small></th><td><strong>Not yet</strong><br>Lifecycle and whole-product budgets unqualified<br><a href="https://github.com/postmelee/three.rust/blob/main/docs/MAC_HARDWARE_REPORT.md">Evidence 1</a></td></tr>
-<tr><th>Repeatable supported release<br><small>Two hardware classes and browser engines</small></th><td><strong>Early evidence</strong><br>One Mac experiment; no qualified release yet<br><a href="https://github.com/postmelee/three.rust/blob/main/docs/CI.md">Evidence 1</a> · <a href="https://github.com/postmelee/three.rust/blob/main/docs/MAC_HARDWARE_REPORT.md">Evidence 2</a></td></tr>
-</tbody></table></section>
-<h2>Implementation: computation and ownership</h2>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>three.rust ownership progress</title><style>body{background:#0d1117;color:#f0f6fc;font:16px/1.5 system-ui,sans-serif;max-width:1200px;margin:auto;padding:24px}a{color:#58a6ff}h1{border-bottom:1px solid #30363d;padding-bottom:12px}svg{width:100%;height:auto}table{width:100%;border-collapse:collapse;margin:18px 0}th,td{border:1px solid #30363d;padding:5px 8px;text-align:left;overflow-wrap:anywhere}caption{text-align:left;font-weight:bold}details{margin:10px 0}summary{cursor:pointer}li{overflow-wrap:anywhere}.muted{color:#b1bac4}@media(max-width:600px){body{padding:12px;font-size:13px}th,td{padding:4px}}</style></head><body><h1>Ownership progress</h1>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="710" viewBox="0 0 1200 710" role="img" aria-labelledby="title desc">
 <title id="title">three.rust — computation and persistent state ownership</title>
 <desc id="desc">The compatibility facade retains JS authority. The explicit owned rig API retains animation, transforms and palettes in Rust. Fine tiles map scoped computation and logical state to pinned upstream declarations; ordinary JS methods and objects remain JS.</desc>
@@ -2112,6 +2052,7 @@
 </g></svg>
 
 <p><a href="history.html">Progress history</a> · <a href="progress.json">Raw data</a> · <a href="https://github.com/postmelee/three.rust/blob/main/docs/PROGRESS.md">Counting rules</a></p>
+<p>The goal is a useful Three.js replacement with little application change. This map tracks implementation; <a href="#adoption-heading">product goals and current evidence</a> are listed separately below.</p>
 <table id="functions"><caption>Known CPU callable definitions</caption><thead><tr><th>Source group</th><th>js</th><th>rust-batch</th><th>rust</th><th>Total</th></tr></thead><tbody>
 <tr><th><a href="#functions-animation-AnimationAction-js">AnimationAction</a></th><td>30</td><td>0</td><td>0</td><td>30</td></tr>
 <tr><th><a href="#functions-animation-AnimationClip-js">AnimationClip</a></th><td>13</td><td>0</td><td>0</td><td>13</td></tr>
@@ -2225,6 +2166,18 @@
 <tr><th><a href="#state-state-objects-Skeleton-js">Skeleton</a></th><td>3</td><td>2</td><td>5</td></tr>
 <tr><th><a href="#state-state-objects-SkinnedMesh-js">SkinnedMesh</a></th><td>8</td><td>0</td><td>8</td></tr>
 </tbody><tfoot><tr><th>Total</th><td>103</td><td>12</td><td>115</td></tr></tfoot></table>
+<section aria-labelledby="adoption-heading"><h2 id="adoption-heading">Product goals</h2>
+<p><strong>Research prototype — Not yet qualified as a Three.js replacement</strong></p>
+<p><a href="https://github.com/postmelee/three.rust/blob/main/docs/PRODUCT_GOALS.md">Product goals and qualification budgets</a> · <a href="https://github.com/postmelee/three.rust/blob/main/docs/product-goals.json">Declared gates</a></p>
+<p>Early evidence is not qualification. These gates describe application replacement; an explicit accelerator has a separate migration contract. Source ownership is implementation evidence, not product completion.</p>
+<table id="adoption-gates"><caption>Application replacement: prospective targets and current evidence</caption><thead><tr><th>Gate / target</th><th>Status / current evidence</th></tr></thead><tbody>
+<tr><th>Useful app-level speed<br><small>20% and 1 ms less CPU time at p50 and p95</small></th><td><strong>Early evidence</strong><br>One scaled asset; no app qualification yet<br><a href="https://github.com/postmelee/three.rust/blob/main/docs/MAC_HARDWARE_REPORT.md">Evidence 1</a></td></tr>
+<tr><th>A reason to choose Rust<br><small>10% and 0.5 ms beyond the matched JS design</small></th><td><strong>Not yet</strong><br>Independent Rust benefit remains unproven<br><a href="https://github.com/postmelee/three.rust/blob/main/docs/MAC_HARDWARE_REPORT.md">Evidence 1</a> · <a href="https://github.com/postmelee/three.rust/blob/main/docs/PERFORMANCE.md">Evidence 2</a></td></tr>
+<tr><th>Low migration cost<br><small>Import, preparation and resolution changes only</small></th><td><strong>Early evidence</strong><br>Owned animation still needs explicit migration<br><a href="https://github.com/postmelee/three.rust/blob/main/docs/COMPATIBILITY.md">Evidence 1</a> · <a href="https://github.com/postmelee/three.rust/blob/main/docs/OWNED_ANIMATION.md">Evidence 2</a></td></tr>
+<tr><th>Preserved app behavior<br><small>Same features, interaction and visual quality</small></th><td><strong>Early evidence</strong><br>Finite rig correctness; broad app contract open<br><a href="https://github.com/postmelee/three.rust/blob/main/docs/OWNED_ANIMATION.md">Evidence 1</a> · <a href="https://github.com/postmelee/three.rust/blob/main/docs/MAC_HARDWARE_REPORT.md">Evidence 2</a></td></tr>
+<tr><th>Bounded total cost<br><small>Control, startup, download and memory budgets</small></th><td><strong>Not yet</strong><br>Lifecycle and whole-product budgets unqualified<br><a href="https://github.com/postmelee/three.rust/blob/main/docs/MAC_HARDWARE_REPORT.md">Evidence 1</a></td></tr>
+<tr><th>Repeatable supported release<br><small>Two hardware classes and browser engines</small></th><td><strong>Early evidence</strong><br>One Mac experiment; no qualified release yet<br><a href="https://github.com/postmelee/three.rust/blob/main/docs/CI.md">Evidence 1</a> · <a href="https://github.com/postmelee/three.rust/blob/main/docs/MAC_HARDWARE_REPORT.md">Evidence 2</a></td></tr>
+</tbody></table></section>
 <p>State fields are inventoried independently of computation. Public metadata and callbacks may remain in JS by design. No 100% Rust target is implied for every declaration. Unsupported custom transform dispatch retains the documented JS path.</p><h2>Definitions and evidence</h2>
 <details id="functions-animation-AnimationAction-js"><summary>AnimationAction — 30 functions</summary><ul>
 <li><a href="https://github.com/mrdoob/three.js/blob/9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8/src/animation/AnimationAction.js#L176">AnimationAction.play</a>: <strong>js</strong>  </li>

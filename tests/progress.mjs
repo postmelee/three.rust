@@ -14,7 +14,9 @@ try{browser=await chromium.launch({executablePath:browserPath(),headless:true,ar
   const page=await browser.newPage({viewport:{width,height}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('http://127.0.0.1:4173/docs/progress.html');
   assert.equal(await page.locator('#adoption-gates tbody tr').count(),6);
-  assert.match(await page.locator('#adoption-heading').textContent(),/Replacement readiness/);
+  assert.match(await page.locator('#adoption-heading').textContent(),/Product goals/);
+  assert.equal(await page.locator('h1').textContent(),'Ownership progress');
+  assert.equal(await page.locator('#adoption-gates svg').count(),0);
   assert.equal(await page.locator('rect[data-item]').count(),data.functions.total+data.state.total);
   for(const key of ['functions','state'])assert.equal(await page.locator(`#${key} tfoot td`).last().textContent(),String(data[key].total));
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
