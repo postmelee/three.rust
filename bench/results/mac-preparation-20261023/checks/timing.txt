@@ -1,0 +1,14 @@
+
+> three-rust-research@0.1.0 test:timing
+> node --test tests/timing.mjs
+
+✔ invalid timing policy and missing/stalled clock reject (0.403042ms)
+✔ browser observes requested isolation; diagnostic split preserves Fox outputs (125403.697333ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 125576.144792
