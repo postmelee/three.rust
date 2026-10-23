@@ -72,6 +72,12 @@ Read docs/PROJECT_PLAN.md, docs/COMPATIBILITY.md, docs/BENCHMARKS.md and docs/CL
 - Never fabricate metrics or claim a milestone merely because a file exists. Correctness includes hierarchy semantics, synchronous reads, explicit force updates and numerical outputs.
 - Preserve third-party license notices. Do not copy giraffe photographs or uncertain-license models into this repository.
 
+### Documentation and progress
+
+- Follow [the documentation guide](docs/README.md#editing-and-verified-unit-updates). Keep public contracts/evidence in docs/ and task research/coordination in mydocs/.
+- Update affected docs and evidence-backed progress in each verified implementation PR. Preserve historical data and the simple progress UI; documentation preparation alone does not advance ownership or qualification.
+- For coordinated cloud/Mac work, follow [the execution plan](mydocs/plans/task_m3_34_execution.md); use separate worktrees and an immutable candidate SHA for measurements.
+
 ### Workflow
 
 - Use codex/ branch names for implementation. Keep package and toolchain versions reproducible with lockfiles.

@@ -1,5 +1,11 @@
 # Animation → transforms → bone palette: experiment preparation
 
+> Historical preparation before the owned-animation implementation. The status
+> statements below describe that earlier stage. For the implemented API, use
+> [Owned animation](OWNED_ANIMATION.md); for current work, use the
+> [engine direction](RUST_ENGINE_STRATEGY.md).
+
+
 Status: runnable preparation, **not a new Rust port or an accepted M4 target ADR**.
 The existing C path still evaluates animation and palettes in JS. The proposed
 pipeline is promising because intermediate poses and world matrices can stay in

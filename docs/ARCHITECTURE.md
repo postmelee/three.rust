@@ -1,4 +1,15 @@
-# The implemented boundary
+# Architecture
+
+The implemented runtime has two distinct API paths. The planned broader engine is
+not yet a replacement for either path.
+
+| Path | State authority and work | Contract |
+|---|---|---|
+| Compatible transform bridge | Public JS objects own mutable values; a Rust arena computes eligible transform batches | [Compatibility](COMPATIBILITY.md) |
+| Explicit owned animation | Rust owns finite clips/actions, poses, hierarchy, world transforms and palettes; JS consumes final presentation data | [Owned API](OWNED_ANIMATION.md) |
+| Wider compatible CPU engine | Planned facade and prepared-pass boundary through visibility/order/upload preparation | [Direction](RUST_ENGINE_STRATEGY.md) |
+
+## Transform bridge
 
 Public objects remain the r186 JavaScript implementation. They are the public
 mutation surface. Each eligible `updateMatrixWorld` call collects the subtree in

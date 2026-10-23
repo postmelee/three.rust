@@ -90,6 +90,10 @@ flowchart LR
   M7 --> M8["M8: Residual backend costs + support decision"]
 ```
 
+The [cloud/local execution plan](../mydocs/plans/task_m3_34_execution.md) divides
+the next experiments into verified units with one implementation owner and a
+pinned hardware handoff. Update documentation and scoped progress in each unit.
+
 ## Two API tracks
 
 1. **Compatibility facade:** ordinary JS objects, identity, direct mutation and

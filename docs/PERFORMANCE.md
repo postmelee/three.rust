@@ -59,8 +59,8 @@ for numerical/image correctness, unfavorable tails and raw evidence.
 
 ## Next physical Mac run
 
-We are resolving the current Rust-versus-JS difference before choosing another
-port. The new optional isolation mode may expose finer browser timers; it records
+This follow-up resolves the current Rust-versus-JS difference. Wider engine
+experiments may proceed alongside it under [ADR 0005](adr/0005-wide-engine-investigation.md). The new optional isolation mode may expose finer browser timers; it records
 the actual increment rather than assuming precision. This changes the hosting
 policy for every Fox path equally. It is a measurement condition, not an engine
 requirement or an engine optimization. Do not compare a new isolated result with
