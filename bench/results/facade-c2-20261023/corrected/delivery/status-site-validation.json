@@ -1,0 +1,14 @@
+[
+  {
+    "width": 1280,
+    "passed": true,
+    "dailyPoints": 1,
+    "commit": "dabcd69d3c30a9560d36ffc9a52862ef329892d8"
+  },
+  {
+    "width": 390,
+    "passed": true,
+    "dailyPoints": 1,
+    "commit": "dabcd69d3c30a9560d36ffc9a52862ef329892d8"
+  }
+]

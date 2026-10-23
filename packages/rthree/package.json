@@ -23,6 +23,14 @@
     "./owned": {
       "types": "./owned.d.ts",
       "import": "./owned.js"
+    },
+    "./facade": {
+      "types": "./index.d.ts",
+      "import": "./facade.js"
+    },
+    "./facade-js": {
+      "types": "./index.d.ts",
+      "import": "./facade-js.js"
     }
   },
   "files": [

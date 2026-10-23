@@ -51,3 +51,8 @@ longer hardware reproduction. See REPORT.md for actual evidence and omissions.
 
 The new opt-in hardware Actions protocol is specified separately in [CI.md](CI.md).
 It does not replace these historical M0–M2 settings or establish a hardware result.
+
+The separate [C2 facade protocol](PERSISTENT_FACADE.md#verification-and-measurement)
+adds dirty-only payloads, operation-buffer bytes and demand-driven matrix reads.
+Its `bench/facade.mjs` runner uses ephemeral ports and records boundary-only and
+actual rendered paths separately. These settings do not rewrite M0–M2 results.

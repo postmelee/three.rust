@@ -49,6 +49,19 @@ product speed claims. See repository docs/REPORT.md and docs/COMPATIBILITY.md.
 Project MIT, upstream THREE-LICENSE and copied declaration THREE-TYPES-LICENSE notices are included.
 
 
+## Optional persistent facade
+
+Use `rthree/facade` (Rust) or `rthree/facade-js` (matched JS) for the bounded C2
+experiment. The root import above still selects the legacy eager bridge. C2 keeps
+evaluated local/world matrices in the engine, tracks TRS writes and materializes
+stable proxy arrays on read. All three Object3D update methods can batch; ordinary
+animation and renderer work remain upstream JS. Cached arrays survive growth and
+release, but reflective descriptors differ and structuredClone of the proxy array
+is unsupported (use Array.from for an explicit snapshot). Replaced arrays retain
+the caller's exact reference and use JS fallback. See docs/PERSISTENT_FACADE.md.
+Reduced copies do not guarantee faster rendered frames; read-heavy proxy costs
+and negative results remain part of the experiment.
+
 ## Explicit owned animation API
 
 `rthree/owned` adds a separate experimental descriptor/command API. Await

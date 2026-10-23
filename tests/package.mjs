@@ -36,4 +36,31 @@ execFileSync('node',[path.join(root,'node_modules/typescript/bin/tsc'),'-p','tsc
 writeFileSync(`${dir}/app.js`,"import * as T from 'rthree'; import {GLTFLoader} from 'rthree/addons/loaders/GLTFLoader.js'; await T.init({wasmURL:'/assets/scene_core.wasm'}); window.test = {scene:new T.Scene(),loader:new GLTFLoader()};");
 execFileSync(path.join(root,'node_modules/.bin/esbuild'),['app.js','--bundle','--format=esm','--outfile=app.bundle.js','--metafile=meta.json'],{cwd:dir,stdio:'inherit'});
 const meta=JSON.parse(readFileSync(`${dir}/meta.json`));assert.equal(Object.keys(meta.inputs).filter(x=>x.endsWith('/core.js')).length,1);
+for(const entry of ['facade','facade-js']){
+ const facadeSource=`import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as T from 'rthree/${entry}';
+import {GLTFLoader} from 'rthree/addons/loaders/GLTFLoader.js';
+import {GLTFLoader as Alias} from 'rthree/examples/jsm/loaders/GLTFLoader.js';
+assert.equal(GLTFLoader,Alias);
+const scene=new T.Scene(),world=scene.matrixWorld.elements;
+if('${entry}'==='facade'){
+ assert.throws(()=>scene.updateMatrixWorld(),/await init/);
+ await assert.rejects(()=>T.init({wasmBytes:new Uint8Array([1])}));
+}
+const bytes=readFileSync(new URL(import.meta.resolve('rthree/scene_core.wasm')));
+await Promise.all([T.init({wasmBytes:bytes}),T.init({wasmBytes:bytes})]);
+await assert.rejects(()=>import('rthree/js'),/choose one engine/);
+scene.position.x=3;scene.updateMatrixWorld();assert.equal(world,scene.matrixWorld.elements);assert.equal(world[12],3);
+const gltf=await new GLTFLoader().parseAsync(JSON.stringify({asset:{version:'2.0'},scenes:[{nodes:[0]}],nodes:[{}],scene:0}),'');
+assert.ok(gltf.scene instanceof T.Object3D);gltf.scene.updateMatrixWorld();
+assert.equal(T.diagnostics().wasmActive,'${entry}'==='facade');
+assert.throws(()=>import.meta.resolve('three'));T.release(scene);T.release(gltf.scene);assert.equal(T.diagnostics().arenas,0);`;
+ writeFileSync(`${dir}/test-${entry}.mjs`,facadeSource);execFileSync('node',[`test-${entry}.mjs`],{cwd:dir,stdio:'inherit'});
+ writeFileSync(`${dir}/typecheck.ts`,readFileSync('tests/types.ts','utf8').replace("from 'rthree'",`from 'rthree/${entry}'`));
+ for(const config of ['tsconfig.json','tsconfig.bundler.json'])execFileSync('node',[path.join(root,'node_modules/typescript/bin/tsc'),'-p',config],{cwd:dir,stdio:'inherit'});
+ writeFileSync(`${dir}/app.js`,`import * as T from 'rthree/${entry}'; import {GLTFLoader} from 'rthree/addons/loaders/GLTFLoader.js'; await T.init({wasmURL:'/assets/scene_core.wasm'}); window.test={scene:new T.Scene(),loader:new GLTFLoader()};`);
+ execFileSync(path.join(root,'node_modules/.bin/esbuild'),['app.js','--bundle','--format=esm',`--outfile=${entry}.bundle.js`,`--metafile=${entry}.meta.json`],{cwd:dir,stdio:'inherit'});
+ assert.equal(Object.keys(JSON.parse(readFileSync(`${dir}/${entry}.meta.json`)).inputs).filter(x=>x.endsWith('/core.js')).length,1);
+}
 const out=process.env.RTHREE_PACKAGE_RESULTS_DIR||'work/package';mkdirSync(out,{recursive:true});writeFileSync(`${out}/result.json`,JSON.stringify({pack:{filename:pack.filename,size:pack.size,unpackedSize:pack.unpackedSize,shasum:pack.shasum,integrity:pack.integrity},passed:true,checks:['fresh tarball install','Node ESM','no-init error','init reject/concurrent retry','mixed-mode rejection','addon identity','no runtime three','TypeScript NodeNext and Bundler','esbuild single core'],sourceBaseCommit:execFileSync('git',['rev-parse','HEAD']).toString().trim(),sourceTreeDirty:execFileSync('git',['status','--porcelain']).toString().trim().length>0},null,2));

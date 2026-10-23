@@ -30,7 +30,9 @@ jobs:
       - run: npm run fixtures
       - run: cargo fmt --check && cargo clippy --all-targets -- -D warnings
       - run: npm run build && npm test
+      - run: npm run test:facade
       - run: npm run test:compatibility
+      - run: node bench/facade.mjs suite=boundary repeats=1 warmup=2 samples=3 engines=original,js,wasm,packed-js,facade-js,facade-wasm out=work/facade-smoke
       - run: npm run test:owned
       - run: npm run test:browser-path && npm run test:fox
       - run: npm run test:timing
@@ -48,6 +50,7 @@ jobs:
           path: |
             work/ci-correctness
             work/ci-demo
+            work/facade-smoke
             work/compatibility-node
             work/compatibility-browser
             work/package

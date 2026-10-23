@@ -17,9 +17,9 @@
 <circle data-series="rust" cx="495.00" cy="218.00" r="4" fill="#58a6ff" stroke="#0d1117"/>
 <line x1="940" x2="966" y1="114" y2="114" stroke="#58a6ff" stroke-width="2"/>
 <text x="974.00" y="118.00" font-size="13" >Rust computation: 0</text>
-<circle data-series="rust-batch" cx="495.00" cy="217.77" r="4" fill="#d29922" stroke="#0d1117"/>
+<circle data-series="rust-batch" cx="495.00" cy="217.62" r="4" fill="#d29922" stroke="#0d1117"/>
 <line x1="940" x2="966" y1="140" y2="140" stroke="#d29922" stroke-width="2"/>
-<text x="974.00" y="144.00" font-size="13" >Conditional Rust: 3</text>
+<text x="974.00" y="144.00" font-size="13" >Conditional Rust: 5</text>
 <text x="495.00" y="241.00" font-size="12" text-anchor="middle" fill="#b1bac4">2026-10-23</text>
 </g>
 <g data-panel="state">
@@ -34,10 +34,10 @@
 <circle data-series="total" cx="495.00" cy="389.45" r="4" fill="#b1bac4" stroke="#0d1117"/>
 <line x1="940" x2="966" y1="348" y2="348" stroke="#b1bac4" stroke-width="2" stroke-dasharray="7 5"/>
 <text x="974.00" y="352.00" font-size="13" >Declared: 115</text>
-<circle data-series="rust-owned" cx="495.00" cy="468.76" r="4" fill="#2ea043" stroke="#0d1117"/>
+<circle data-series="rust-owned" cx="495.00" cy="467.99" r="4" fill="#2ea043" stroke="#0d1117"/>
 <line x1="940" x2="966" y1="374" y2="374" stroke="#2ea043" stroke-width="2"/>
-<text x="974.00" y="378.00" font-size="13" >Rust authority: 12</text>
+<text x="974.00" y="378.00" font-size="13" >Rust authority: 13</text>
 <text x="495.00" y="501.00" font-size="12" text-anchor="middle" fill="#b1bac4">2026-10-23</text>
 </g>
-<g tabindex="0" role="button" aria-label="2026-10-23: Rust computation 0/1515; conditional Rust 3/1515; Rust authority 12/115. Commit 8160e0a." data-detail="2026-10-23: Rust computation 0/1515; conditional Rust 3/1515; Rust authority 12/115. Commit 8160e0a."><title>2026-10-23: Rust computation 0/1515; conditional Rust 3/1515; Rust authority 12/115. Commit 8160e0a.</title><rect x="70.00" y="55" width="850.00" height="430" fill="#ffffff" fill-opacity="0"/></g>
+<g tabindex="0" role="button" aria-label="2026-10-23: Rust computation 0/1515; conditional Rust 5/1515; Rust authority 13/115. Commit dabcd69." data-detail="2026-10-23: Rust computation 0/1515; conditional Rust 5/1515; Rust authority 13/115. Commit dabcd69."><title>2026-10-23: Rust computation 0/1515; conditional Rust 5/1515; Rust authority 13/115. Commit dabcd69.</title><rect x="70.00" y="55" width="850.00" height="430" fill="#ffffff" fill-opacity="0"/></g>
 </g></svg>

@@ -34,7 +34,9 @@
     "bench:mac": "bash scripts/mac-validation.sh",
     "test:timing": "node --test tests/timing.mjs",
     "test:compatibility": "node tests/compatibility.mjs && node tests/compatibility-browser.mjs",
-    "docs:performance": "node scripts/performance-summary.mjs"
+    "docs:performance": "node scripts/performance-summary.mjs",
+    "test:facade": "node tests/facade.mjs",
+    "bench:facade": "node bench/facade.mjs"
   },
   "devDependencies": {
     "@types/three": "0.186.0",

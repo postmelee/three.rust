@@ -1,0 +1,36 @@
+
+> three-rust-research@0.1.0 test:facade
+> node tests/facade.mjs
+
+✔ facade-js: preparation failure/retry and pre-update aliases (2.659706ms)
+✔ facade-js: dirty inputs and demand-only materialization (6.884874ms)
+✔ facade-js: randomized partial updates, hierarchy and dirty flags (73.149213ms)
+✔ facade-js: skips displaced JS math and retains stale observations (0.60856ms)
+✔ facade-js: cached arrays across growth, release, slot reuse and pivot removal (72.491666ms)
+✔ facade-js: caller-owned arrays and overrides fall back before evaluation (1.173561ms)
+✔ facade-js: internal matrix reads preserve snapshots and tracked destinations (1.173774ms)
+✔ facade-js: internal backing arrays never escape through overridden consumers (0.691127ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 307.026705
+✔ facade-wasm: preparation failure/retry and pre-update aliases (7.087046ms)
+✔ facade-wasm: dirty inputs and demand-only materialization (6.909851ms)
+✔ facade-wasm: randomized partial updates, hierarchy and dirty flags (73.067938ms)
+✔ facade-wasm: skips displaced JS math and retains stale observations (0.516302ms)
+✔ facade-wasm: cached arrays across growth, release, slot reuse and pivot removal (72.776915ms)
+✔ facade-wasm: caller-owned arrays and overrides fall back before evaluation (1.247727ms)
+✔ facade-wasm: internal matrix reads preserve snapshots and tracked destinations (0.897788ms)
+✔ facade-wasm: internal backing arrays never escape through overridden consumers (0.628006ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 305.411951

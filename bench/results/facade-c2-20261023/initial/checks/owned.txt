@@ -1,0 +1,16 @@
+✔ js: upstream blended poses/world/palette, repeat/reverse/pause/once and root/reparent (130.863473ms)
+✔ js: rejection is atomic, snapshot isolated, forced reads and lifetime (8.887323ms)
+✔ js: randomized vector/quaternion clips and normalized overweight blending (254.492614ms)
+✔ wasm: upstream blended poses/world/palette, repeat/reverse/pause/once and root/reparent (141.690508ms)
+✔ wasm: rejection is atomic, snapshot isolated, forced reads and lifetime (2.160477ms)
+✔ wasm: randomized vector/quaternion clips and normalized overweight blending (338.162328ms)
+✔ unsupported acquisition fails without changing caller descriptors (2.955242ms)
+✔ Wasm ABI growth, invalid native batches and module retry (3.689421ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1027.585625

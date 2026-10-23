@@ -8,6 +8,10 @@ saving does not meet the future 1 ms application gate. The [README table](../REA
 is generated directly from the preserved hardware summary with
 `npm run docs:performance`; CI checks that it stays in sync.
 
+The separate [C2 persistent-facade experiment](FACADE_REPORT.md) currently regresses:
+its corrected cloud hierarchy result is 37.01 ms versus original Three.js's 15.13 ms.
+That software-renderer experiment adds no hardware acceleration claim to this report.
+
 ## The useful result
 
 On an Apple M4 Pro MacBook Pro, the 16-Fox replay took **0.45 ms in Three.js,
