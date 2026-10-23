@@ -35,7 +35,8 @@ export function evidence(manifest, summary, comparison, legacyClock = null) {
       comparisons.push({
         scenario, baseline, variant,
         baselineP50Ms: a.metrics.cpu.p50.median, candidateP50Ms: b.metrics.cpu.p50.median,
-        savingMs: saving, observedReduction: 1 - b.metrics.cpu.p50.median / a.metrics.cpu.p50.median,
+        savingMs: saving, observedReduction: a.metrics.cpu.p50.median > 0 ? 1 - b.metrics.cpu.p50.median / a.metrics.cpu.p50.median : null,
+        baselineAtOrBelowClockIncrement: a.metrics.cpu.p50.median <= resolution,
         exceedsObservedClockIncrement: saving > resolution,
         allRepeatPairsFaster: completePairs && pairs.ratios.every(r => r < 1),
         omittedZeroBaselinePairs: manifest.options.repeats - pairs.ratios.length,
