@@ -1,0 +1,40 @@
+{
+  "threeVersion": "0.186.1",
+  "threeCommit": "9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8",
+  "files": {
+    "node_modules/three/src/core/Object3D.js": "09ba0acdf6a5fed399fa6ce9c0d61f9e0c0e6551e2ae43a270c9878a734bdabc",
+    "node_modules/three/src/math/Matrix4.js": "d942c20d95e0864246aa6794934656f6a2871a6e863ce7b096581837810fb555",
+    "node_modules/three/src/animation/AnimationMixer.js": "7b05af5507aa4edfe3d6b5debcda23c8f0d9b910928debff7fc50748954d533c",
+    "node_modules/three/src/animation/AnimationAction.js": "9d99b25c1e9d81bf45e6ee4502f934b839eabe0d7e62e850a2fad8a62bc190a3",
+    "node_modules/three/src/renderers/WebGLRenderer.js": "9e8740aad691246b31b3704014e8f3bbd38a8e7bf4b1b4d23868541b023cc63a",
+    "node_modules/three/src/renderers/webgl/WebGLRenderLists.js": "3139dfcd01675333266c02d853a768913318f353e694de39545aa50747d2011a",
+    "node_modules/three/src/renderers/webgl/WebGLShadowMap.js": "88669e97ab02b2132a175eb94f9bfeea2a705d5f6c59e677bcb6421f258ff696",
+    "node_modules/three/src/objects/BatchedMesh.js": "09fad33f00a14c7319f1cfd41f19ff757f4c4e69403d45d6c0ff1ac32e3bda36",
+    "node_modules/three/src/objects/InstancedMesh.js": "572ee1e4b09bb145ebf6b2398824b3b0d24d4c04ed41656aed2a442e61e8174e",
+    "packages/rthree/owned.js": "1e870a4cbca4e85b68e579927e238ac1938e9623b421826bdb943467eacdd77a",
+    "packages/rthree/owned-layout.js": "bf13651d0a3d5116367bb5b99af2e480054e336cfb756abbd2dbb5874d58699e",
+    "packages/rthree/owned-wasm.js": "fa84190d0b3be2eacb70c5c2340dc75a8a58e84109b43a49b7e5912d836200ec",
+    "packages/rthree/owned-renderer.js": "f028170077823ce847706bfdc1fc0487add7cd53f53299302802a658ca0d4357",
+    "crates/scene-core/src/owned.rs": "5506e83a3e69328e9e2dbdbaaf23a81607f5f48fb64f8f18e49a6a6a6c5d9d97"
+  },
+  "externalSources": [
+    {
+      "repository": "gfx-rs/wgpu",
+      "commit": "63e505290e82708a53b53eb8a16aec731683be63",
+      "path": "wgpu/src/backend/webgpu.rs",
+      "blob": "c0c67bc7a691c5262cb1922b5f829fcd956cbf11"
+    },
+    {
+      "repository": "RReverser/wasm-bindgen-rayon",
+      "commit": "4eea1fa55a965ad516ef9f9e9449704c7eac91c5",
+      "path": "README.md",
+      "blob": "8aa4fd0f6a9ef3062e7b8282a5363444517ab26a"
+    },
+    {
+      "repository": "bitshifter/glam-rs",
+      "commit": "f0396ebdb5ce214fef80cfef03899de9b752bc54",
+      "path": "README.md",
+      "blob": "cb8883d7897dd2605d56ed5f64c5d21ea1592922"
+    }
+  ]
+}

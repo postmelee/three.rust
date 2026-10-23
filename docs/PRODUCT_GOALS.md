@@ -80,10 +80,12 @@ name their API tier separately.
    experiment; it alone does not qualify the product portfolio.
 2. Identify and pin the real application cohort and feature contracts. Profile
    representative interactions, including reads, scene edits and lifecycle work.
-3. Optimize the largest measured costs within the current ownership boundary.
-   Apply shared data-layout/command improvements to the JS control too. Extend
-   animation → transforms → palettes into bounds/visibility/render-list preparation
-   only when whole-path costs and required app features justify that boundary.
+3. Investigate a wider CPU engine as described in [ADR 0005](adr/0005-wide-engine-investigation.md):
+   a compatible facade and prepared-pass experiment through visibility, ordering
+   and upload preparation. Run finite prototypes alongside real-app profiling;
+   the small Fox result need not pass product gates before this research starts.
+   Apply shared data-layout/algorithm improvements to JS controls too. Whole-path
+   costs and required app features still decide what becomes a supported product.
 4. Run G1–G6 for an explicit accelerator, then reduce migration costs and rerun
    them for application replacement. Publish a narrow, negative or backend-change
    verdict when the evidence calls for it.
@@ -97,6 +99,6 @@ API tier, cost budget and ownership contract ([#7](https://github.com/postmelee/
 one justified pipeline. M6 evaluates G1–G6 and publishes the adoption verdict
 ([#12](https://github.com/postmelee/three.rust/issues/12),
 [#13](https://github.com/postmelee/three.rust/issues/13),
-[#14](https://github.com/postmelee/three.rust/issues/14)). M7/M8 expand only where
+[#14](https://github.com/postmelee/three.rust/issues/14)). M7/M8 supported delivery expands only where
 that verdict and residual profiles justify it. The gate list does not close any
 of these issues or replace their detailed acceptance work.
