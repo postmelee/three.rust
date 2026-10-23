@@ -1,0 +1,7 @@
+
+> three-rust-research@0.1.0 build
+> node scripts/build.mjs
+
+   Compiling rthree-scene-core v0.1.0 (<checkout>/crates/scene-core)
+    Finished `release` profile [optimized] target(s) in 1.13s
+Built local ESM package with one core and Rust Wasm

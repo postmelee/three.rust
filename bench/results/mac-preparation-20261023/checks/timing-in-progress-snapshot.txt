@@ -1,0 +1,5 @@
+
+> three-rust-research@0.1.0 test:timing
+> node --test tests/timing.mjs
+
+✔ invalid timing policy and missing/stalled clock reject (0.403042ms)

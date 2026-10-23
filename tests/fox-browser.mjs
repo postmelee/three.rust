@@ -1,6 +1,6 @@
 import { chromium } from "playwright";
 import { browserPath } from "../scripts/browser-path.mjs";
-import { serve } from "../scripts/server.mjs";
+import { serve, serverOrigin } from "../scripts/server.mjs";
 import { hardwareRenderer, configuration } from "../bench/config.mjs";
 import { mkdirSync, writeFileSync } from "node:fs";
 import assert from "node:assert/strict";
@@ -46,7 +46,7 @@ try {
         errors = [];
       page.on("pageerror", (e) => errors.push(String(e)));
       await page.goto(
-        `http://127.0.0.1:4173/fixtures/fox/index.html?manual&count=${count}&variant=${variant}${kind === "static" ? "&static" : ""}`,
+        `${serverOrigin}/fixtures/fox/index.html?manual&count=${count}&variant=${variant}${kind === "static" ? "&static" : ""}`,
       );
       await page.waitForFunction(() => !!window.__fox);
       await page.bringToFront();

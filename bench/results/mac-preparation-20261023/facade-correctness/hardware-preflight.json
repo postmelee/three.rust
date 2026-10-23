@@ -1,0 +1,10 @@
+{
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+  "vendor": "Google Inc. (Apple)",
+  "gpuTimer": true,
+  "width": 640,
+  "height": 360,
+  "dpr": 1,
+  "objects": 11002
+}

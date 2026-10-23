@@ -1,13 +1,13 @@
 import { chromium } from 'playwright';
 import { browserPath } from '../scripts/browser-path.mjs';
-import { serve } from '../scripts/server.mjs';
+import { serve, serverOrigin } from '../scripts/server.mjs';
 import { configuration, hardwareRenderer } from '../bench/config.mjs';
 import assert from 'node:assert/strict';
 import { mkdirSync, writeFileSync } from 'node:fs';
 const out=process.env.RTHREE_FOX_REJECTION_DIR||'work/fox-rejections';mkdirSync(out,{recursive:true});
 const cfg=configuration(process.env.RTHREE_BROWSER_MODE==='hardware'?['mode=hardware','headless=false']:[]),server=await serve();
 const browser=await chromium.launch({executablePath:browserPath(),headless:cfg.headless,args:cfg.args});
-try{const page=await browser.newPage();await page.goto('http://127.0.0.1:4173/fixtures/fox/index.html?manual&variant=original');await page.waitForFunction(()=>window.__fox);const gpu=await page.evaluate(()=>window.__fox.gpu);if(cfg.hardware)hardwareRenderer(gpu.renderer);
+try{const page=await browser.newPage();await page.goto(`${serverOrigin}/fixtures/fox/index.html?manual&variant=original`);await page.waitForFunction(()=>window.__fox);const gpu=await page.evaluate(()=>window.__fox.gpu);if(cfg.hardware)hardwareRenderer(gpu.renderer);
 const results=await page.evaluate(async()=>{
  const THREE=await import('three'),{GLTFLoader}=await import('three/addons/loaders/GLTFLoader.js'),{descriptorFromFox}=await import('./descriptor.mjs'),{createOwnedAnimation}=await import('/packages/rthree/owned.js');
  const gltf=await new GLTFLoader().loadAsync('/work/assets/Fox.glb'),roots=[new THREE.Matrix4().toArray()],errors={};

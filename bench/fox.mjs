@@ -1,6 +1,6 @@
 import { observeClock, timingPolicy, validateClock } from "./timing.mjs";
 import { chromium } from "playwright";
-import { serve } from "../scripts/server.mjs";
+import { serve, serverOrigin } from "../scripts/server.mjs";
 import { browserPath } from "../scripts/browser-path.mjs";
 import { configuration, hardwareRenderer } from "./config.mjs";
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
@@ -134,7 +134,7 @@ const save = () =>
     JSON.stringify(manifest, null, 2) + "\n",
   );
 save();
-const server = await serve(4173, { isolated: timing.mode === "isolated" });
+const server = await serve(undefined, { isolated: timing.mode === "isolated" });
 let browser;
 const permutations = [
   [0, 1, 2],
@@ -172,7 +172,7 @@ try {
         const start = performance.now(),
           [kind, count] = scenario.split("-");
         await page.goto(
-          `http://127.0.0.1:4173/fixtures/fox/index.html?manual&count=${count}&variant=${variant}${kind === "static" ? "&static" : ""}`,
+          `${serverOrigin}/fixtures/fox/index.html?manual&count=${count}&variant=${variant}${kind === "static" ? "&static" : ""}`,
         );
         await page.waitForFunction(() => !!window.__fox);
         await page.bringToFront();
