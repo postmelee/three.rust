@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="610" viewBox="0 0 1200 610" role="img" aria-labelledby="readiness-title readiness-desc">
+<title id="readiness-title">Readiness to replace Three.js in real applications</title>
+<desc id="readiness-desc">Six prospective adoption gates. Early evidence is not qualification. The current project is a research prototype, not a qualified replacement. Source translation counts are separate.</desc>
+<rect width="1200" height="610" fill="#0d1117"/><g font-family="Arial, sans-serif" fill="#f0f6fc">
+<text x="20.00" y="34.00" font-size="25" >Goal: worthwhile performance with little application change</text>
+<text x="20.00" y="61.00" font-size="19" >Research prototype — Not yet qualified as a Three.js replacement</text>
+<rect x="20" y="78" width="1160" height="32" fill="#161b22"/>
+<text x="32.00" y="100.00" font-size="18" >NOW: Prototype     →     NEXT: Useful accelerator     →     GOAL: Application replacement</text>
+<rect x="20" y="128" width="570" height="124" rx="4" fill="#161b22" stroke="#30363d"/>
+<rect x="20" y="128" width="5" height="124" fill="#d29922"/>
+<text x="36.00" y="157.00" font-size="21" >Useful app-level speed</text>
+<text x="570.00" y="157.00" font-size="16" text-anchor="end" fill="#d29922">Early evidence</text>
+<text x="36.00" y="186.00" font-size="17" >20% and 1 ms less CPU time at p50 and p95</text>
+<text x="36.00" y="234.00" font-size="15" fill="#b1bac4">One scaled asset; no app qualification yet</text>
+<rect x="610" y="128" width="570" height="124" rx="4" fill="#161b22" stroke="#30363d"/>
+<rect x="610" y="128" width="5" height="124" fill="#6e7681"/>
+<text x="626.00" y="157.00" font-size="21" >A reason to choose Rust</text>
+<text x="1160.00" y="157.00" font-size="16" text-anchor="end" fill="#b1bac4">Not yet</text>
+<text x="626.00" y="186.00" font-size="17" >10% and 0.5 ms beyond the matched JS design</text>
+<text x="626.00" y="234.00" font-size="15" fill="#b1bac4">Independent Rust benefit remains unproven</text>
+<rect x="20" y="268" width="570" height="124" rx="4" fill="#161b22" stroke="#30363d"/>
+<rect x="20" y="268" width="5" height="124" fill="#d29922"/>
+<text x="36.00" y="297.00" font-size="21" >Low migration cost</text>
+<text x="570.00" y="297.00" font-size="16" text-anchor="end" fill="#d29922">Early evidence</text>
+<text x="36.00" y="326.00" font-size="17" >Import, preparation and resolution changes only</text>
+<text x="36.00" y="374.00" font-size="15" fill="#b1bac4">Owned animation still needs explicit migration</text>
+<rect x="610" y="268" width="570" height="124" rx="4" fill="#161b22" stroke="#30363d"/>
+<rect x="610" y="268" width="5" height="124" fill="#d29922"/>
+<text x="626.00" y="297.00" font-size="21" >Preserved app behavior</text>
+<text x="1160.00" y="297.00" font-size="16" text-anchor="end" fill="#d29922">Early evidence</text>
+<text x="626.00" y="326.00" font-size="17" >Same features, interaction and visual quality</text>
+<text x="626.00" y="374.00" font-size="15" fill="#b1bac4">Finite rig correctness; broad app contract open</text>
+<rect x="20" y="408" width="570" height="124" rx="4" fill="#161b22" stroke="#30363d"/>
+<rect x="20" y="408" width="5" height="124" fill="#6e7681"/>
+<text x="36.00" y="437.00" font-size="21" >Bounded total cost</text>
+<text x="570.00" y="437.00" font-size="16" text-anchor="end" fill="#b1bac4">Not yet</text>
+<text x="36.00" y="466.00" font-size="17" >Control, startup, download and memory budgets</text>
+<text x="36.00" y="514.00" font-size="15" fill="#b1bac4">Lifecycle and whole-product budgets unqualified</text>
+<rect x="610" y="408" width="570" height="124" rx="4" fill="#161b22" stroke="#30363d"/>
+<rect x="610" y="408" width="5" height="124" fill="#d29922"/>
+<text x="626.00" y="437.00" font-size="21" >Repeatable supported release</text>
+<text x="1160.00" y="437.00" font-size="16" text-anchor="end" fill="#d29922">Early evidence</text>
+<text x="626.00" y="466.00" font-size="17" >Two hardware classes and browser engines</text>
+<text x="626.00" y="514.00" font-size="15" fill="#b1bac4">One Mac experiment; no qualified release yet</text>
+<text x="20.00" y="572.00" font-size="18" >Early evidence ≠ gate met. Qualified requires a reviewed application-level report.</text>
+<text x="20.00" y="598.00" font-size="16" fill="#b1bac4">Targets for future qualification — not measured promises, API coverage or a completion percentage.</text>
+</g></svg>

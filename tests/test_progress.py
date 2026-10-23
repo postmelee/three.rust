@@ -31,6 +31,25 @@ class ProgressTests(unittest.TestCase):
         for text in [progress.render_svg(data),progress.render_html(data)]:
             self.assertNotIn('<unsafe & name>',text)
             self.assertIn('&lt;unsafe',text)
+    def test_adoption_gates_are_separate_and_qualification_needs_traceability(self):
+        goals=progress.read_goals()
+        self.assertEqual(len(goals['gates']),6)
+        self.assertFalse(any(g['status']=='qualified' for g in goals['gates']))
+        svg=ET.fromstring(progress.readiness_svg(goals))
+        self.assertFalse(any('data-item' in e.attrib for e in svg.iter()))
+        bad=copy.deepcopy(goals);bad['gates'][0]['status']='qualified'
+        with self.assertRaises(ValueError):progress.validate_goals(bad)
+        bad=copy.deepcopy(goals);bad['gates'][0]['evidence']=['missing-report.md']
+        with self.assertRaises(ValueError):progress.validate_goals(bad)
+        bad=copy.deepcopy(goals);bad['gates'][1]['id']=bad['gates'][0]['id']
+        with self.assertRaises(ValueError):progress.validate_goals(bad)
+        bad=copy.deepcopy(goals);bad['apiTier']='explicit-accelerator'
+        with self.assertRaises(ValueError):progress.validate_goals(bad)
+        # Rendering escapes public text; declared evidence remains data, not HTML.
+        bad=copy.deepcopy(goals);bad['gates'][0]['title']='<untrusted>'
+        self.assertIn('&lt;untrusted&gt;',progress.readiness_html(bad,'/'))
+        self.assertNotIn('<untrusted>',progress.readiness_svg(bad))
+
     def test_history_does_not_equate_denominators_and_record_is_idempotent(self):
         h=json.loads((ROOT/'docs/progress-history.json').read_text());progress.validate_history(h)
         data=progress.summarize(self.rules,self.source);commit='a'*40

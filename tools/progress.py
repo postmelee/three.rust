@@ -12,7 +12,7 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 COLORS = {'js': '#6e7681', 'rust-batch': '#d29922', 'rust': '#58a6ff', 'rust-owned': '#2ea043'}
 BASE = 'https://github.com/postmelee/three.rust/'
-STYLE = 'body{background:#0d1117;color:#f0f6fc;font:16px/1.5 system-ui,sans-serif;max-width:1200px;margin:auto;padding:24px}a{color:#58a6ff}h1{border-bottom:1px solid #30363d;padding-bottom:12px}svg{width:100%;height:auto}table{width:100%;border-collapse:collapse;margin:18px 0}th,td{border:1px solid #30363d;padding:5px 8px;text-align:left;overflow-wrap:anywhere}caption{text-align:left;font-weight:bold}details{margin:10px 0}summary{cursor:pointer}li{overflow-wrap:anywhere}.muted{color:#b1bac4}@media(max-width:600px){body{padding:12px;font-size:13px}th,td{padding:4px}}'
+STYLE = 'body{background:#0d1117;color:#f0f6fc;font:16px/1.5 system-ui,sans-serif;max-width:1200px;margin:auto;padding:24px}a{color:#58a6ff}h1{border-bottom:1px solid #30363d;padding-bottom:12px}svg{width:100%;height:auto}table{width:100%;border-collapse:collapse;margin:18px 0}th,td{border:1px solid #30363d;padding:5px 8px;text-align:left;overflow-wrap:anywhere}caption{text-align:left;font-weight:bold}details{margin:10px 0}summary{cursor:pointer}li{overflow-wrap:anywhere}.muted{color:#b1bac4}@media(max-width:600px){.readiness-image{display:none}body{padding:12px;font-size:13px}th,td{padding:4px}}'
 
 
 def summarize(rules, source=None):
@@ -124,9 +124,84 @@ def shell(title,body):
     return f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{escape(title)}</title><style>{STYLE}</style></head><body>{body}</body></html>\n'
 
 
+GATE_STATES = {'open': ('Not yet', '#6e7681'), 'early': ('Early evidence', '#d29922'), 'qualified': ('Qualified', '#2ea043')}
+
+
+def validate_goals(goals):
+    if goals['schemaVersion'] != 1 or goals['apiTier'] != 'application-replacement':
+        raise ValueError('Unknown adoption schema or API tier')
+    ids = set()
+    for gate in goals['gates']:
+        if gate['id'] in ids or gate['status'] not in GATE_STATES:
+            raise ValueError('Duplicate gate or unknown state')
+        ids.add(gate['id'])
+        for evidence in gate['evidence']:
+            p = (ROOT / evidence).resolve()
+            if not p.is_relative_to(ROOT) or not p.is_file():
+                raise ValueError('Missing adoption evidence')
+        if gate['status'] == 'qualified':
+            q = gate.get('qualification', {})
+            if (q.get('profile') != goals['profile'] or q.get('apiTier') != goals['apiTier']
+                or q.get('report') not in gate['evidence']
+                or not re.fullmatch('[a-f0-9]{40}', q.get('implementationCommit', ''))):
+                raise ValueError('Qualified gate requires matching profile/tier, report and pinned implementation')
+    if len(ids) != 6:
+        raise ValueError('Adoption profile must declare six gates')
+    return goals
+
+
+def read_goals():
+    return validate_goals(json.loads((ROOT/'docs/product-goals.json').read_text()))
+
+
+def readiness_svg(goals):
+    from textwrap import wrap
+    parts = ['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="610" viewBox="0 0 1200 610" role="img" aria-labelledby="readiness-title readiness-desc">',
+             '<title id="readiness-title">Readiness to replace Three.js in real applications</title>',
+             '<desc id="readiness-desc">Six prospective adoption gates. Early evidence is not qualification. The current project is a research prototype, not a qualified replacement. Source translation counts are separate.</desc>',
+             '<rect width="1200" height="610" fill="#0d1117"/><g font-family="Arial, sans-serif" fill="#f0f6fc">',
+             svg_text(20,34,'Goal: worthwhile performance with little application change',25),
+             svg_text(20,61,goals['stage']+' — '+goals['claim'],19),
+             '<rect x="20" y="78" width="1160" height="32" fill="#161b22"/>',
+             svg_text(32,100,'NOW: Prototype     →     NEXT: Useful accelerator     →     GOAL: Application replacement',18)]
+    for i, gate in enumerate(goals['gates']):
+        x, y = 20 + (i % 2)*590, 128 + (i // 2)*140
+        label, color = GATE_STATES[gate['status']]
+        parts.append(f'<rect x="{x}" y="{y}" width="570" height="124" rx="4" fill="#161b22" stroke="#30363d"/>')
+        parts.append(f'<rect x="{x}" y="{y}" width="5" height="124" fill="{color}"/>')
+        parts.append(svg_text(x+16,y+29,gate['title'],21))
+        text_color = '#b1bac4' if gate['status'] == 'open' else color
+        parts.append(svg_text(x+550,y+29,label,16,f'text-anchor="end" fill="{text_color}"'))
+        lines = wrap(gate['target'], 55)
+        if len(lines)>2:
+            raise ValueError('Keep the gate image target to two short lines')
+        for n,line in enumerate(lines):
+            parts.append(svg_text(x+16,y+58+n*21,line,17))
+        parts.append(svg_text(x+16,y+106,gate['current'],15,'fill="#b1bac4"'))
+    parts.append(svg_text(20,572,'Early evidence ≠ gate met. Qualified requires a reviewed application-level report.',18))
+    parts.append(svg_text(20,598,'Targets for future qualification — not measured promises, API coverage or a completion percentage.',16,'fill="#b1bac4"'))
+    parts.append('</g></svg>')
+    return '\n'.join(parts)+'\n'
+
+
+def readiness_html(goals, base):
+    parts = ['<section aria-labelledby="adoption-heading"><h1 id="adoption-heading">Replacement readiness</h1>',
+             '<p><strong>'+escape(goals['stage'])+' — '+escape(goals['claim'])+'</strong></p>',
+             '<div class="readiness-image">'+readiness_svg(goals)+'</div>',
+             '<p><a href="'+base+goals['contract']+'">Product goals and qualification budgets</a> · <a href="'+base+'docs/product-goals.json">Declared gates</a></p>',
+             '<p>Early evidence is not qualification. These gates describe application replacement; an explicit accelerator has a separate migration contract. Source ownership below is implementation evidence, not product completion.</p>',
+             '<table id="adoption-gates"><caption>Application replacement: prospective targets and current evidence</caption><thead><tr><th>Gate / target</th><th>Status / current evidence</th></tr></thead><tbody>']
+    for gate in goals['gates']:
+        label, _ = GATE_STATES[gate['status']]
+        links = ' · '.join('<a href="'+base+escape(e)+'">Evidence '+str(i+1)+'</a>' for i,e in enumerate(gate['evidence']))
+        parts.append('<tr><th>'+escape(gate['title'])+'<br><small>'+escape(gate['target'])+'</small></th><td><strong>'+label+'</strong><br>'+escape(gate['current'])+'<br>'+links+'</td></tr>')
+    parts.append('</tbody></table></section>')
+    return '\n'.join(parts)
+
+
 def render_html(data):
     base=BASE+'blob/'+data['sourceRef']+'/'
-    parts=['<h1>Ownership progress</h1>',render_svg(data),'<p><a href="history.html">Progress history</a> · <a href="progress.json">Raw data</a> · <a href="'+base+'docs/PROGRESS.md">Counting rules</a></p>']
+    parts=[readiness_html(read_goals(),base),'<h2>Implementation: computation and ownership</h2>',render_svg(data),'<p><a href="history.html">Progress history</a> · <a href="progress.json">Raw data</a> · <a href="'+base+'docs/PROGRESS.md">Counting rules</a></p>']
     for panel,title,statuses in [('functions','Known CPU callable definitions',['js','rust-batch','rust']),('state','Known scene and animation state fields',['js','rust-owned'])]:
         p=data[panel]
         parts.append(f'<table id="{panel}"><caption>{title}</caption><thead><tr><th>Source group</th>'+''.join(f'<th>{s}</th>' for s in statuses)+'<th>Total</th></tr></thead><tbody>')
@@ -142,7 +217,7 @@ def render_html(data):
                 links='; '.join(f'<a href="{base}{escape(e)}">{escape(e)}</a>' for e in item.get('evidence',[]))
                 parts.append(f'<li><a href="{src}">{escape(item["name"])}</a>: <strong>{item["status"]}</strong> {escape(item.get("note",""))} {links}</li>')
             parts.append('</ul></details>')
-    return shell('three.rust ownership progress','\n'.join(parts))
+    return shell('three.rust adoption and ownership progress','\n'.join(parts))
 
 
 def validate_history(history):
@@ -278,7 +353,7 @@ def main():
         record(history,data,args.record);validate_history(history)
         (ROOT/'docs/progress-history.json').write_text(json.dumps(history,indent=2)+'\n')
     md,html=history_views(history)
-    outputs={'docs/progress.json':json.dumps(data,indent=2)+'\n','docs/progress.html':render_html(data),'docs/assets/progress.svg':render_svg(data),'docs/HISTORY.md':md,'docs/history.html':html,'docs/assets/history.svg':history_chart(history)+'\n'}
+    outputs={'docs/assets/readiness.svg':readiness_svg(read_goals()),'docs/progress.json':json.dumps(data,indent=2)+'\n','docs/progress.html':render_html(data),'docs/assets/progress.svg':render_svg(data),'docs/HISTORY.md':md,'docs/history.html':html,'docs/assets/history.svg':history_chart(history)+'\n'}
     for name,content in outputs.items():
         p=ROOT/name
         if args.check:
