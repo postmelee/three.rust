@@ -4,7 +4,7 @@ import {mkdirSync,writeFileSync,readFileSync,existsSync} from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import os from 'node:os';
 import {createHash} from 'node:crypto';
-import {serve} from '../scripts/server.mjs';
+import {serve, serverOrigin} from '../scripts/server.mjs';
 import {configuration,hardwareRenderer} from './config.mjs';
 const c=configuration(process.argv.slice(2));
 const {out,scenarios,engines,repeats,warmup,samples,hardware,headless,args,viewport}=c;
@@ -19,7 +19,7 @@ try{
  server=await serve();browser=await chromium.launch({executablePath:browserPath(),headless,args});manifest.browser=browser.version();save();
  for(let rep=0;rep<repeats;rep++)for(const scenario of scenarios)for(const engine of [...engines.slice(rep%engines.length),...engines.slice(0,rep%engines.length)]){
   const page=await browser.newPage({viewport,deviceScaleFactor:1});const errors=[];page.on('pageerror',e=>errors.push(e.message));const start=Date.now();
-  await page.goto(`http://127.0.0.1:4173/fixtures/generated/${scenario}.html?engine=${engine}`);await page.waitForFunction(()=>!!window.__bench,{},{timeout:60000});
+  await page.goto(`${serverOrigin}/fixtures/generated/${scenario}.html?engine=${engine}`);await page.waitForFunction(()=>!!window.__bench,{},{timeout:60000});
   const env=await page.evaluate(()=>window.__bench.ready());manifest.lastObservedEnvironment=env;save();
   const startupMs=Date.now()-start;if(hardware)hardwareRenderer(env.renderer);
   await page.evaluate(t=>window.__bench.THREE.configureDiagnostics?.({timings:t}),c.timings);

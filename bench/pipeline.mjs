@@ -1,6 +1,6 @@
 import { browserPath } from '../scripts/browser-path.mjs';
 // Preparation diagnostic; not the M5 Rust-owned pipeline or a product speedup study.
-import {chromium} from 'playwright';import {serve} from '../scripts/server.mjs';import {configuration,hardwareRenderer} from './config.mjs';
+import {chromium} from 'playwright';import {serve, serverOrigin} from '../scripts/server.mjs';import {configuration,hardwareRenderer} from './config.mjs';
 import {mkdirSync,writeFileSync,readFileSync,existsSync} from 'node:fs';import {execFileSync} from 'node:child_process';import {createHash} from 'node:crypto';import os from 'node:os';
 const opt={};for(const s of process.argv.slice(2)){const i=s.indexOf('=');const key=s.slice(0,i);if(i<1||!['out','counts','bones','engines','repeats','warmup','samples','stage','mode','headless','angle'].includes(key)||key in opt)throw Error(`Invalid option: ${s}`);opt[key]=s.slice(i+1);}
 const cfg=configuration(['scenarios=skinning',`repeats=${opt.repeats||3}`,`warmup=${opt.warmup||30}`,`samples=${opt.samples||60}`,`engines=${opt.engines||'original'}`,...['mode','headless','angle'].filter(k=>k in opt).map(k=>`${k}=${opt[k]}`)]);
@@ -15,7 +15,7 @@ const manifest={classification:stage==='cpu'?'CPU-only preparation diagnostic; n
 const save=()=>writeFileSync(`${out}/manifest.json`,JSON.stringify(manifest,null,2)+'\n');save();const server=await serve();let browser;
 try{browser=await chromium.launch({executablePath:browserPath(),headless:cfg.headless,args:cfg.args});manifest.browser=browser.version();
 for(let repeat=0;repeat<cfg.repeats;repeat++)for(const count of (repeat%2?[...counts].reverse():counts))for(const engine of (repeat%2?[...cfg.engines].reverse():cfg.engines)){
- const page=await browser.newPage({viewport:cfg.viewport,deviceScaleFactor:1});const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(`http://127.0.0.1:4173/fixtures/pipeline/index.html?manual&count=${count}&bones=${bones}&engine=${engine}`);await page.waitForFunction(()=>!!window.__pipeline);
+ const page=await browser.newPage({viewport:cfg.viewport,deviceScaleFactor:1});const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(`${serverOrigin}/fixtures/pipeline/index.html?manual&count=${count}&bones=${bones}&engine=${engine}`);await page.waitForFunction(()=>!!window.__pipeline);
  const gpu=await page.evaluate(()=>window.__pipeline.gpu);if(cfg.hardware)hardwareRenderer(gpu.renderer);
  const data=await page.evaluate(async c=>window.__pipeline.measure(c),{mode:stage,warmup:cfg.warmup,samples:cfg.samples});if(errors.length)throw Error(errors.join('\n'));
  if(data.raw.length!==cfg.samples||data.raw.some(r=>!Number.isFinite(r.cpu)||r.cpu<0))throw Error('Incomplete samples');
