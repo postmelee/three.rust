@@ -13,7 +13,7 @@ bypassing repository administration or exposing private data.
 ## Document locations
 
 Keep public counting/deployment instructions and generated HTML/SVG/JSON in docs/,
-Python generation in tools/, static artifact building in scripts/, browser/unit
+Python generation and static artifact building in tools/, browser/unit
 checks in tests/, and the deploy workflow in .github/workflows/. Keep task records
 in mydocs/. This follows the existing approved documentation root.
 

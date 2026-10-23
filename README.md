@@ -11,9 +11,9 @@ renderer. The local JavaScript package is `rthree`.
 
 ## Status
 
-[![Computation and persistent state ownership](docs/assets/progress.svg)](docs/PROGRESS.md)
+[![Computation and persistent state ownership](docs/assets/progress.svg)](https://postmelee.github.io/three.rust/progress.html)
 
-[Progress history](docs/HISTORY.md) · [Detailed inventory](docs/progress.html)
+[Progress history](https://postmelee.github.io/three.rust/history.html) · [Detailed inventory](https://postmelee.github.io/three.rust/progress.html)
 
 \* Cells represent known callable definitions and state declarations in the
 [selected Three.js r186 sources](docs/PROGRESS.md), not all Three.js features
