@@ -1,0 +1,8 @@
+import {cpSync,mkdirSync,writeFileSync,existsSync} from 'node:fs';
+const out=process.argv[2]||'dist/demo';if(existsSync(out))throw Error('Choose a fresh demo output directory');
+mkdirSync(out,{recursive:true});
+const paths=['docs/progress.html','docs/progress.json','docs/assets/progress.svg','docs/PROGRESS.md','demo','fixtures/generated','fixtures/original/main.css','fixtures/provenance.json','fixtures/README.md','bench/browser.mjs','scripts/server.mjs','scripts/fetch-assets.mjs','packages/rthree','node_modules/three/build','node_modules/three/examples/jsm','node_modules/three/LICENSE','vendor/three-examples/LICENSE','LICENSE'];
+for(const p of paths){mkdirSync(`${out}/${p.split('/').slice(0,-1).join('/')}`,{recursive:true});cpSync(p,`${out}/${p}`,{recursive:true});}
+writeFileSync(`${out}/package.json`,JSON.stringify({name:'three-rust-portable-demo',private:true,type:'module',scripts:{start:'node scripts/server.mjs','fetch-assets':'node scripts/fetch-assets.mjs'}},null,2));
+writeFileSync(`${out}/README.md`,'# three.rust portable demo\n\nRequires Node 22+; no Rust build or npm install is needed to run the included demo.\nRun `npm start` and open http://127.0.0.1:4173.\n\nFor the Soldier scene first run `npm run fetch-assets` (requires curl/network).\nThe asset is intentionally excluded: its separate redistribution rights were not\nverified. All other included scenes work without that download. Open /docs/progress.html for the standalone status table and tile image. Three.js and\nproject license notices are included. This artifact is not an npm publication or\na performance report; live demo timings are diagnostic.\n');
+console.log(out);

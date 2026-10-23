@@ -1,0 +1,339 @@
+{
+  "schemaVersion": 1,
+  "milestones": [
+    {
+      "key": "m3",
+      "title": "M3 — Evidence and project infrastructure",
+      "description": "Establish traceable governance, reproducible correctness/artifact delivery, qualify a real GPU runner and collect matched hardware baselines plus fresh workload profiles. Configuration alone does not satisfy hardware evidence gates."
+    },
+    {
+      "key": "m4",
+      "title": "M4 — Rust ownership and compatibility contract",
+      "description": "Select a measured end-to-end CPU pipeline and define authoritative state, command/batch boundaries, read barriers, renderer consumption and API tiers before implementation. Decide from data whether to proceed."
+    },
+    {
+      "key": "m5",
+      "title": "M5 — Integrated persistent CPU pipeline",
+      "description": "Implement an optimized JS reference and equivalent persistent Rust pipeline, connected to the retained WebGL renderer, without duplicate JS work or unnecessary intermediate materialization."
+    },
+    {
+      "key": "m6",
+      "title": "M6 — Product performance and release decision",
+      "description": "Evaluate the first integrated pipeline's full-path performance, regressions and compatibility across hardware/browser environments. Publish a bounded verdict before broader scene-engine expansion; this is not full-engine completion or automatic npm publication."
+    },
+    {
+      "key": "m7",
+      "title": "M7 — Complete scene evaluation core",
+      "description": "Conditional on M6 evidence: extend persistent ownership through visibility, LOD, camera/pass-specific render lists and upload preparation. Preserve shadows, transparency, callbacks and renderer semantics; consume prepared outputs without JS recomputation."
+    },
+    {
+      "key": "m8",
+      "title": "M8 — Backend scope and sustainable release decision",
+      "description": "After scene evaluation, profile residual JS resource/shader/backend costs and compare retained-adapter versus existing Rust renderer reuse. Expand only where evidence and compatibility justify it; decide supported release scope and maintenance strategy."
+    }
+  ],
+  "tasks": [
+    {
+      "key": "governance",
+      "milestone": "m3",
+      "issue": 2,
+      "title": "Establish ownership-driven roadmap, Hyper-Waterfall governance and benchmark delivery",
+      "dependsOn": [],
+      "criteria": [
+        "See issue #2"
+      ],
+      "verification": "Fresh CI and roadmap synchronization",
+      "excluded": "Future engine implementation"
+    },
+    {
+      "key": "gpu-runner",
+      "milestone": "m3",
+      "title": "Qualify a real GPU runner for browser benchmarks",
+      "dependsOn": [
+        "governance"
+      ],
+      "criteria": [
+        "Select a self-hosted GPU machine or separately authorized hosted T4 runner and record cost/ownership.",
+        "Record GPU model, driver, CPU, OS, browser, display/headless mode and actual unmasked WebGL renderer.",
+        "Reject software, unavailable and unknown renderers; prove the normal workflow uses hardware.",
+        "Record whether frame intervals describe a physical display or headless scheduling; do not present T4 as a consumer GPU."
+      ],
+      "verification": "Successful hardware preflight and browser render smoke, recorded runner manifest; negative SwiftShader rejection test.",
+      "excluded": "Paid runner provisioning without explicit authorization; FPS product claims from smoke.",
+      "issue": 3
+    },
+    {
+      "key": "hardware-baseline",
+      "milestone": "m3",
+      "title": "Collect repeated A/A and A/B/C/D hardware baselines",
+      "dependsOn": [
+        "gpu-runner"
+      ],
+      "criteria": [
+        "Predeclare workloads, fixed simulation sequence, viewport/DPR, warmup, sample count, repeat count and noise acceptance rule.",
+        "Run A/A calibration separately and balanced A/B/C/D sequences on the same runner.",
+        "Preserve all frame samples, CPU p50/p95/p99, intervals, actual duration and environment/artifact hashes.",
+        "Separate profiling/GPU queries/startup from primary timing and preserve regressions."
+      ],
+      "verification": "Complete manifests with matched render work, real Wasm counters, per-run analysis and repeated-session stability.",
+      "excluded": "Interpreting historical SwiftShader numbers as hardware results.",
+      "issue": 4
+    },
+    {
+      "key": "pipeline-profile",
+      "milestone": "m3",
+      "title": "Profile representative workloads and rank complete CPU pipeline candidates",
+      "dependsOn": [
+        "hardware-baseline"
+      ],
+      "criteria": [
+        "Pin public example sources/assets and distinguish originals from scaled or animated variants.",
+        "Profile object transforms, animation/property binding, bone palettes, visibility, sorting and upload preparation where applicable.",
+        "Compare many-animated-object/character workloads with original, small/static and GPU-oriented controls.",
+        "Estimate useful CPU fraction, expected input/output volume, synchronous read frequency and maximum attainable whole-frame improvement."
+      ],
+      "verification": "Fresh profiles, attribution method and cost table; select a candidate only after recording rejected alternatives.",
+      "excluded": "Preselecting animation or another port solely because it sounds Rust-friendly.",
+      "issue": 5
+    },
+    {
+      "key": "bridge-control",
+      "milestone": "m3",
+      "title": "Bound the transform bridge overhead with matched JavaScript controls",
+      "dependsOn": [
+        "hardware-baseline"
+      ],
+      "criteria": [
+        "Test reusable traversal storage and semantically safe elimination of overwritten-matrix scans.",
+        "Apply identical algorithm/layout improvements to the JS control.",
+        "Retain direct mutation, manual matrices, hierarchy changes, force and synchronous read tests.",
+        "Timebox by a predefined experiment scope and record a stop decision if full-frame benefit is absent; this is a control, not the long-term architecture."
+      ],
+      "verification": "Upstream differential/browser checks and repeated full-path comparison including synchronization/materialization.",
+      "excluded": "Unbounded micro-optimization or kernel-only success claims.",
+      "issue": 6
+    },
+    {
+      "key": "ownership-adr",
+      "milestone": "m4",
+      "title": "Specify the measured Rust-owned pipeline and batch cost budget",
+      "dependsOn": [
+        "pipeline-profile",
+        "reuse-assessment"
+      ],
+      "criteria": [
+        "Use the reconciled initial conversation in docs/INITIAL_DISCUSSION.md; distinguish user requirements, hypotheses and measured facts.",
+        "Choose one complete pipeline from fresh costs, with a finite state owner and minimal boundary crossings.",
+        "Define command inputs, stable IDs, intermediate state, output buffers, synchronization points and renderer integration.",
+        "Predeclare compatibility tier, useful speedup/noise threshold, regression budgets and stop/pivot criteria before porting."
+      ],
+      "verification": "Reviewed ADR with cost model, alternatives and explicit go/no-go gate.",
+      "excluded": "A fixed commitment to a complete renderer rewrite or one-to-one source translation.",
+      "issue": 7
+    },
+    {
+      "key": "facade-contract",
+      "milestone": "m4",
+      "title": "Define compatibility tiers, mutation authority and synchronous read barriers",
+      "dependsOn": [
+        "ownership-adr"
+      ],
+      "criteria": [
+        "Separate import-compatible facade from explicit opt-in ownership API; never silently freeze direct JS writes.",
+        "Specify property/matrix identity, direct writes, reparent/attach/remove, updateMatrixWorld/updateWorldMatrix, force and callbacks.",
+        "Specify animation events, skeleton reads, object destruction, memory growth, addon core identity, Wasm initialization and TypeScript resolution.",
+        "Publish supported/fallback/unsupported behavior and acceptance tests before implementing the new boundary."
+      ],
+      "verification": "Contract examples and executable test plan against pinned Three.js semantics.",
+      "excluded": "Blanket Three.js/addon compatibility claims.",
+      "issue": 8
+    },
+    {
+      "key": "js-pipeline",
+      "milestone": "m5",
+      "title": "Build the optimized JavaScript reference for the selected pipeline",
+      "dependsOn": [
+        "ownership-adr",
+        "facade-contract"
+      ],
+      "criteria": [
+        "Implement the selected state layout, batch API and algorithms in JS with the same inputs/outputs planned for Rust.",
+        "Connect it to the same renderer and application workload.",
+        "Preserve output/callback correctness and instrument boundary volumes.",
+        "Compare it with original Three.js so data-structure gains are not attributed to language."
+      ],
+      "verification": "Differential/browser correctness plus complete-path baseline and source hashes.",
+      "excluded": "A deliberately weak JS reference.",
+      "issue": 9
+    },
+    {
+      "key": "rust-pipeline",
+      "milestone": "m5",
+      "title": "Implement persistent Rust ownership for the selected complete CPU pipeline",
+      "dependsOn": [
+        "js-pipeline"
+      ],
+      "criteria": [
+        "Keep authoritative intermediate scene/animation data in Rust across frames.",
+        "Execute the chosen stages in a batch without JS math callbacks or repeated intermediate JS materialization.",
+        "Implement the approved command/read/lifetime contract and numerical precision.",
+        "Provide counters proving Rust execution and tests proving replaced JS work is skipped."
+      ],
+      "verification": "Native Rust tests, randomized upstream/reference differential tests, allocation/memory-growth/lifetime checks.",
+      "excluded": "A Rust wrapper that calls the original JS calculation.",
+      "issue": 10
+    },
+    {
+      "key": "renderer-boundary",
+      "milestone": "m5",
+      "title": "Connect pipeline outputs to real rendering and validate ownership boundaries",
+      "dependsOn": [
+        "rust-pipeline"
+      ],
+      "criteria": [
+        "Prefer the retained WebGL renderer/materials/shaders and document any necessary integration changes.",
+        "Consume output buffers without recomputing the same CPU work in JS; include all upload preparation and copies in timing.",
+        "Test callbacks, multiple renders, reads between updates and fallback paths.",
+        "Pass numerical and image checks on actual browser rendering."
+      ],
+      "verification": "End-to-end tests, measured copy/read costs, matched draw work, bypass proof and screenshots.",
+      "excluded": "Inferring GPU shader savings from CPU language changes.",
+      "issue": 11
+    },
+    {
+      "key": "hardware-matrix",
+      "milestone": "m6",
+      "title": "Evaluate full-path performance across hardware and browsers",
+      "dependsOn": [
+        "renderer-boundary"
+      ],
+      "criteria": [
+        "Use fixed benchmark versions and at least a second distinct hardware class for generalization.",
+        "Repeat paired full-path measurements, report uncertainty and retain unfavorable workloads.",
+        "Measure CPU, frame intervals, GPU diagnostics, startup, memory/GC and sustained behavior separately.",
+        "Run correctness before performance on every supported environment and report missing browser/device coverage."
+      ],
+      "verification": "Raw reproducible datasets and per-environment verdicts; no pooled unrelated machines.",
+      "excluded": "One universal speedup number inferred from a kernel or a single cloud GPU.",
+      "issue": 12
+    },
+    {
+      "key": "compatibility-hardening",
+      "milestone": "m6",
+      "title": "Audit compatibility, addon identity and long-running lifecycle behavior",
+      "dependsOn": [
+        "renderer-boundary"
+      ],
+      "criteria": [
+        "Expand the pinned API inventory and upstream differential suite for implemented behavior.",
+        "Exercise supported addons, package consumers, hosting/Wasm initialization and TypeScript resolution.",
+        "Stress create/remove/reparent/release cycles, memory growth, callbacks and relevant context-loss behavior.",
+        "Document failures and fallback cost; keep unsupported ecosystem combinations explicit."
+      ],
+      "verification": "Published compatibility matrix and long-run results with exact versions.",
+      "excluded": "Marking untouched APIs as ported merely because JS forwarding works.",
+      "issue": 13
+    },
+    {
+      "key": "product-verdict",
+      "milestone": "m6",
+      "title": "Publish the product verdict and bounded release-readiness decision",
+      "dependsOn": [
+        "hardware-matrix",
+        "compatibility-hardening"
+      ],
+      "criteria": [
+        "Evaluate the predeclared improvement and regression budgets against complete-path results.",
+        "Separate compatibility-facade and explicit ownership API outcomes, and JS structure gains from Rust gains.",
+        "Choose continue, narrow scope, pivot or stop with evidence; negative findings are valid completion.",
+        "Prepare versioned local artifacts and release notes only for verified scope; npm publication requires a separate decision."
+      ],
+      "verification": "Reproducible report, source/data links, open limitations and explicit release/no-release rationale.",
+      "excluded": "Automatic npm publication or full Three.js compatibility claims.",
+      "issue": 14
+    },
+    {
+      "key": "reuse-assessment",
+      "milestone": "m4",
+      "title": "Validate reusable Rust engines, compatibility layers and renderer strategies",
+      "dependsOn": [
+        "pipeline-profile"
+      ],
+      "criteria": [
+        "Pin fresh revisions and inspect WAMR3D, oneilltomhq/three-rs and eugenehp/threers; review three-rs/three and issue 19339 as design history.",
+        "Verify licenses and actual build/browser paths before considering code reuse; reproduce any performance claim used in a decision.",
+        "Compare state ownership, arbitrary JS property animation, numerical precision, callbacks, duplicate JS/Rust work and image/test infrastructure.",
+        "Compare a modified Three.js renderer adapter, an existing Rust scene/renderer core and a fresh bounded core; record integration/maintenance/compatibility costs."
+      ],
+      "verification": "Source/license matrix, attempted builds/tests with blockers, representative measurements and reuse-versus-build decision before target architecture.",
+      "excluded": "Importing old session implementations or treating pasted conversation performance numbers as reproduced evidence.",
+      "issue": 15
+    },
+    {
+      "key": "scene-evaluation",
+      "milestone": "m7",
+      "title": "Extend Rust ownership through visibility, LOD and per-pass render lists",
+      "dependsOn": [
+        "product-verdict"
+      ],
+      "criteria": [
+        "Proceed only if the M6 verdict supports expansion and fresh profiles justify this slice.",
+        "Keep camera, bounds, visibility and hierarchy in persistent state; produce opaque/transmissive/transparent lists with correct ordering.",
+        "Cover shadow passes, multiple cameras, LOD, layer masks and custom sorting/fallback contracts.",
+        "Retain optimized JS and upstream controls with matched visual quality."
+      ],
+      "verification": "Numerical visibility/list oracle, multi-pass images, callbacks and repeated full-path hardware performance.",
+      "excluded": "Claiming one main-camera visible list is a complete scene evaluator.",
+      "issue": 16
+    },
+    {
+      "key": "prepared-rendering",
+      "milestone": "m7",
+      "title": "Consume prepared render plans and dirty buffers without scene recomputation",
+      "dependsOn": [
+        "scene-evaluation"
+      ],
+      "criteria": [
+        "Define versioned handles/buffers for geometry, material, texture, draw/instance ranges and dirty uploads; avoid per-frame scene JSON.",
+        "Integrate a reviewed renderer input boundary that bypasses replaced traversal/culling/sorting/transform work.",
+        "Maintain material/shader behavior and public read/callback semantics or explicitly bounded fallbacks.",
+        "Prove replaced JS work is absent and include final upload/materialization costs in product timing."
+      ],
+      "verification": "Bypass instrumentation, semantic and image differential tests, resource lifetime checks and whole-frame hardware comparison.",
+      "excluded": "Assuming unmodified renderer.render(scene,camera) accepts an external prepared list.",
+      "issue": 17
+    },
+    {
+      "key": "backend-decision",
+      "milestone": "m8",
+      "title": "Decide backend expansion and sustainable release scope from residual costs",
+      "dependsOn": [
+        "prepared-rendering",
+        "compatibility-hardening"
+      ],
+      "criteria": [
+        "Profile residual resource management, bindings, shader/TSL generation and command submission separately from GPU shader work.",
+        "Revisit adapter versus reusable Rust renderer strategy with licenses, supported ecosystem and upstream maintenance costs.",
+        "Move backend work only if useful costs justify the compatibility burden; preserve a documented stop option.",
+        "Publish release/support boundaries, upstream update strategy and reproducibility; keep npm publication a separate explicit decision."
+      ],
+      "verification": "Cost-based ADR, compatibility matrix, cross-hardware evidence and maintainability/release checklist.",
+      "excluded": "Automatic full renderer rewrite, unsupported ecosystem promises or npm publication.",
+      "issue": 18
+    },
+    {
+      "key": "progress-page",
+      "milestone": "m3",
+      "issue": 19,
+      "title": "Generate a standalone progress page and subsystem tile image from a bounded inventory",
+      "dependsOn": [],
+      "criteria": [
+        "Deterministic HTML, JSON and SVG from one explicit inventory",
+        "Simple table, dark grouped tiles, evidence links and precise counting rules",
+        "Desktop/mobile inspection and CI freshness check"
+      ],
+      "verification": "Generator unit/freshness tests and browser inspection",
+      "excluded": "Full Three.js percentage, copied GPL code, public deployment"
+    }
+  ]
+}

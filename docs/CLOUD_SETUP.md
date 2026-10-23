@@ -2,6 +2,7 @@
 
 Start from this branch in a new checkout; do not reuse generated package files.
 Dependencies: Linux/macOS/Windows with Node 22+ (observed 24.19.0), npm, curl,
+Python 3.10+ for progress generation/checks,
 Rust/rustup 1.90.0 including wasm32-unknown-unknown, and Chromium. This work used
 Linux Chromium 154.0.8037.57; CI downloads the browser matching Playwright
 1.56.1. A different browser is a new environment, not the same performance run.
@@ -9,7 +10,7 @@ Linux Chromium 154.0.8037.57; CI downloads the browser matching Playwright
 ```sh
 git clone https://github.com/postmelee/three.rust.git
 cd three.rust
-git checkout codex/independent-m0-m2
+git checkout codex/ownership-roadmap
 rustup toolchain install 1.90.0 --profile minimal --component rustfmt,clippy
 rustup target add wasm32-unknown-unknown --toolchain 1.90.0
 npm ci
@@ -39,7 +40,8 @@ Alternatively `CHROMIUM=/usr/bin/chromium` uses an installed system browser.
 Smoke is 5 warm-up + 10 sampled frames and **not** a performance conclusion.
 `npm run bench:full` performs the longer predeclared cloud experiment, not
 foreground hardware validation. The scripts use headless SwiftShader explicitly
-for reproducible cloud correctness. Do not interpret them as GPU acceleration.
+for reproducible cloud correctness. New measurements go to ignored work/ paths;
+explicitly choose another output directory when repeating a convenience script. Do not interpret them as GPU acceleration.
 
 For this managed cloud instance only, provisioned tools are available through
 `source /workspace/.cloud-setup/env.sh`. This is an environment-specific optional
@@ -80,9 +82,12 @@ were not run on a real hardware GPU during this cloud task.
 ```sh
 CHROMIUM=/path/to/chrome node bench/run.mjs mode=hardware \
   engines=original,js,wasm,packed-js repeats=7 warmup=600 samples=1800 \
-  out=bench/results/my-desktop
-node bench/summarize.mjs bench/results/my-desktop
+  out=work/my-desktop-001
+node bench/analyze.mjs work/my-desktop-001
 ```
+
+Choose a fresh output directory for each run; existing manifests cannot be overwritten.
+For the Actions protocol and artifact delivery, see [CI.md](CI.md).
 
 Hardware mode defaults to 1920×1080 DPR1 (override with width=640 height=360
 for the exact cloud viewport); cloud mode remains 640×360. Hardware mode runs headed, does not force SwiftShader and rejects a detected

@@ -1,24 +1,140 @@
-# three.rust — revised milestones
+# three.rust — ownership-driven project plan
 
-Updated 2026-10-22. The goal is honest browser product performance evidence for
-Rust-owned persistent CPU engine state, while preserving a bounded JS API.
-The original bootstrap architecture was a hypothesis. New measurements and
-ADR 0001 chose transform subtrees; animation, skeleton, culling and render lists
-remain future candidates, not completed work.
+The goal is a **Rust-owned scene evaluation engine**, exposed through a bounded
+Three.js-style JavaScript interface and compiled to Wasm. It should keep useful
+state and consecutive CPU computations inside Rust, then deliver compact results
+to the renderer. One-to-one source translation and ported line counts are not
+success criteria. The local package is `rthree`; complete compatibility and
+whole-frame acceleration remain unproven.
 
-| Milestone | Implemented scope / evidence |
-|---|---|
-| M0 | Fresh fixed upstream examples/source hashes, five-repeat profiling, A/A noise check, V8 sampling, source/reuse review, target-selection ADR committed as c458d73 before port implementation |
-| M1 | Local ESM package, A original / B JS compatibility / C Wasm / D packed-JS, explicit init, one core/addon graph, NodeNext + packed consumer verification, executable demo |
-| M2 | Persistent Rust f64 transform arena, actual Object3D/WebGL integration, original JS math bypass proof, native + upstream differential + browser image/numeric checks, repeat-controlled measurements and preserved regressions |
-| M3 (not started) | Decide from full frame evidence whether to reduce bridge scans, move broader CPU ownership, or stop expansion. Do not expand merely because a kernel is faster |
-| Hardware validation (outstanding) | Foreground desktop GPU, longer duration, browser cross-checks, mobile, startup cache control and memory/GC instrumentation |
+## Requirements, hypothesis and measured facts
 
-Read docs/REPORT.md for actual results and outstanding checks. M0–M2 completion
-means the bounded experiment is implemented and measured, not that the 20%
-product speedup hypothesis succeeded or Three.js compatibility is complete.
+**Requirements:** real browser rendering, explicit Wasm initialization, documented
+synchronous semantics and identity, usable addon/package/type resolution, exact
+scope claims and reproducible comparisons. Preserve unfavorable workloads and
+an optimized equivalent JS control. No automatic npm publication.
 
-Long-term candidates: animation/property binding, object/bone transforms,
-visibility, list sorting, upload buffers. The GPU shader workload remains.
-Small/static, GPU-oriented and unfavorable variants must continue in the suite.
-No publication to npm or unverified package-name availability claim.
+**Hypothesis:** persistent scene state → animation evaluation → object/bone
+transforms → visibility/LOD → per-pass lists/sorting → upload preparation can
+amortize the JS/Wasm boundary. JS may retain small public values, UI and controls;
+its public class layout need not match Rust storage. A large boundary is useful
+only if it contains enough work and avoids intermediate round trips.
+
+**M2 observation:** JS public properties remain authoritative. Each batch scans
+those objects into a persistent Rust arena, computes transforms and writes public
+matrices back. Persistence alone does not establish Rust state authority. This
+narrow experiment does not test the full ownership hypothesis.
+
+For the enlarged hierarchy, original/Wasm main CPU p50 was 16.5/20.8 ms (medians
+of per-run quantiles). Separate diagnostic means were 3.566 ms synchronization,
+1.154 ms Rust call and 1.192 ms materialization. Do not subtract these means from
+main-run quantiles. All measurements used shared CPU/SwiftShader; next-target
+ranking must be rechecked on hardware. See [REPORT](REPORT.md).
+
+## Historical milestones
+
+| Milestone | Completed bounded research scope | Limit |
+|---|---|---|
+| M0 | Fresh pinned public examples, profiles and target ADR committed before port | Cloud evidence, not hardware target ranking |
+| M1 | Local ESM package, A/B/C/D resolution, explicit init, addon identity, types and demo | Tested subset only; no npm publication |
+| M2 | Rust f64 transform arena, renderer integration, JS bypass proof, correctness and 140 runs | No general whole-frame gain; no broad state ownership |
+
+M0–M2 are completed experiments, not a completed engine or acceleration claim.
+Their historical work predates Hyper-Waterfall and is not relabeled as following it.
+
+## Future milestones and exit gates
+
+| Milestone | Deliverable | Exit gate |
+|---|---|---|
+| M3 — Evidence and project infrastructure | Governance, CI/artifacts, qualified GPU runner, A/A and A/B/C/D baselines, workload profiles | Actual hardware evidence and a full-pipeline cost model; YAML alone is insufficient |
+| M4 — Rust ownership and compatibility contract | Reuse/renderer assessment, selected pipeline, state/read/write contract and cost budget | Source/license/build validation; measured useful CPU slice; contract and thresholds recorded before porting |
+| M5 — Integrated persistent CPU pipeline | Equivalent optimized JS reference, Rust implementation and renderer consumption | Correct outputs/events; actual Rust execution; replaced JS work and intermediate duplication absent |
+| M6 — Product performance and release decision | First-pipeline hardware/browser evaluation, lifecycle/compatibility audit, bounded verdict | Predeclared full-path improvement/regression criteria assessed; continue, narrow, pivot or stop |
+| M7 — Complete scene evaluation core | Conditional expansion through visibility, LOD, multi-pass lists and dirty upload buffers | Renderer consumes prepared outputs without repeated scene evaluation; full semantic/performance evidence |
+| M8 — Backend scope and sustainable release decision | Residual-cost assessment, adapter/reuse decision and support strategy | Expand resource/shader/backend work only if justified; documented release scope or stop decision |
+
+M6's verdict covers the first pipeline, not the entire engine. M7/M8 are gated
+future work. Exact GitHub issues and dependencies live in [roadmap.json](roadmap.json).
+Milestone association is synchronized by Actions; open work is not marked complete
+merely because code, a diagram or an issue exists.
+
+```mermaid
+flowchart LR
+  M3["M3: Hardware evidence"] --> M4["M4: Reuse + ownership contract"]
+  M4 --> JS["M5: Optimized JS reference"]
+  JS --> R["M5: Rust + renderer boundary"]
+  R --> V{"M6: Full-path verdict"}
+  V -->|Supported by evidence| M7["M7: Full scene evaluation"]
+  V -->|Not supported| P["Narrow / pivot / stop"]
+  M7 --> M8["M8: Residual backend costs + support decision"]
+```
+
+## Two API tracks
+
+1. **Compatibility facade:** ordinary JS objects, identity, direct mutation and
+   synchronous methods. All reconciliation and fallback costs remain in timing.
+2. **Explicit ownership API:** applications intentionally hand a supported scene
+   domain to Rust and submit commands/batches. Reads have specified barriers or
+   snapshots. Application migration cost is reported separately; a win here is
+   not an import-only speedup.
+
+The contract must address direct `position.x` and `matrix.elements` writes,
+Euler/quaternion synchronization, hierarchy edits, destruction, forced updates,
+callbacks/custom sorting, synchronous reads and arbitrary JS property animation.
+Standard engine-owned animation tracks can stay in Rust; arbitrary JS bindings
+may need a slower compatibility path. Do not silently alter semantics to win.
+Keep comparable precision: f32/SIMD/parallel modes are separate experiments.
+
+## First vertical slice and reuse decisions
+
+Animation time → interpolation → blending → local/world transforms → bone palette
+or upload preparation is the original discussion's preferred coherent first unit.
+It remains the leading hypothesis, **not an already measured target selection**.
+Fresh representative many-character/object profiles must compare its useful CPU
+fraction and data volume with spatial/render-list candidates and controls.
+
+Before new engine code, validate pinned WAMR3D, oneilltomhq/three-rs and
+eugenehp/threers sources, licenses, build paths and reusable tests. Reproduce any
+performance number used in a decision. The prior discussion's third-party claims
+are historical context, not current evidence. Review three-rs/three and issue
+19339 for API/ownership history. See [RELATED_WORK](RELATED_WORK.md).
+
+Compare a modified Three.js renderer adapter, reuse of an existing Rust core or
+renderer, and a fresh bounded core. Prefer retaining current materials/shaders and
+WebGL initially, but do not assume this is always the cheapest integration. Normal
+`renderer.render(scene, camera)` does not accept an arbitrary prepared render plan.
+M7 needs a real input boundary with geometry/material handles, draw/instance ranges,
+per-pass ordering and dirty buffer spans. It must handle shadows, multiple cameras,
+transparency and callbacks. A frame plan is not a browser GPUCommandBuffer.
+
+A bounded M3 transform-bridge optimization is a control, not the primary roadmap.
+Reuse traversal storage and omit semantically unnecessary scans only with matching
+JS changes and correctness tests. Stop it when the declared experiment is complete.
+GPU shader work does not disappear when CPU code changes language.
+
+## Acceptance and delivery
+
+M4 must predeclare workload-specific meaningful improvements and regression budgets
+using M3 A/A noise and cost fractions. The bootstrap's 20% aspiration is not a
+universal promise. Measure complete application-to-render-return CPU time, tails
+and intervals; diagnose GPU, startup, memory and GC separately. Preserve A original,
+B facade JS, C Rust and D algorithm/layout-matched JS. Name explicit-API variants
+separately. Use run-level repetition, matching visual work and raw evidence.
+
+A negative verdict is valid research. Do not expand solely because a kernel wins.
+Keep hardware/software datasets separate and verify a second hardware class before
+broad claims. [CI and delivery](CI.md) separates correctness, GPU experiments and
+portable demo/package artifacts. Paid runner provisioning, merge and npm publication
+remain separate decisions.
+
+## Provenance and language
+
+The user supplied the initial conversation as text; all 948 lines were read. Its
+reconciliation is recorded in [INITIAL_DISCUSSION.md](INITIAL_DISCUSSION.md).
+It establishes intent and design hypotheses, not third-party performance proof.
+The current repository's M0–M2 source and raw data remain the measurement authority;
+previous abandoned implementation sessions remain excluded.
+
+Public documents and GitHub work artifacts are English. Conversation with the task
+requester is Korean. Public project contracts stay in docs/ and task memory in
+mydocs/. See [ownership ADR](adr/0002-ownership-roadmap.md).

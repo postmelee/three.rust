@@ -16,3 +16,5 @@ test-results/
 .env.*
 !.env.example
 packages/rthree/THREE-TYPES-LICENSE
+
+__pycache__/

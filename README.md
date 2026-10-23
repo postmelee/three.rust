@@ -18,6 +18,30 @@ results include regressions and are not hardware desktop GPU/FPS evidence.
 See [the report](docs/REPORT.md), [compatibility](docs/COMPATIBILITY.md),
 [protocol](docs/BENCHMARKS.md) and [revised milestones](docs/PROJECT_PLAN.md).
 
+## Project status and direction
+
+[![Engine ownership and evidence status](docs/assets/progress.svg)](docs/progress.html)
+
+This map separates Rust implementation, verification and whole-frame evidence.
+It does not count translated lines or claim a percentage of all Three.js APIs.
+The [standalone HTML table](docs/progress.html), [raw JSON](docs/progress.json) and
+SVG are generated together by `python3 tools/progress.py` (or `npm run docs:generate`).
+Edit the [bounded inventory](docs/progress-inventory.json); see [counting rules](docs/PROGRESS.md).
+Open `http://127.0.0.1:4173/docs/progress.html` with the local demo running.
+Hardware results remain outstanding.
+
+The long-term goal is a **Rust-owned scene evaluation engine**: scene state,
+animation, object/bone transforms, visibility, per-pass render lists and upload
+preparation. M2 only tests the transform bridge. Next: hardware baselines and
+profiles (M3), reuse/ownership contracts (M4), an equivalent JS reference and
+integrated Rust pipeline (M5), a full-path verdict (M6), then gated scene-core
+and backend expansion (M7–M8). See [the roadmap](docs/PROJECT_PLAN.md) and
+[GitHub work items](https://github.com/postmelee/three.rust/issues).
+
+[CI and GPU runner setup](docs/CI.md) distinguishes automatic correctness,
+opt-in hardware experiments and portable demo/local-package artifacts. Public
+project documents are English; work follows the pinned Hyper-Waterfall workflow.
+
 ```sh
 npm ci
 npm run fixtures

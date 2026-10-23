@@ -43,3 +43,21 @@ JS immediately; C executes Rust; D executes the same packed calculation in JS.
 A remains the official upstream module build. D measures this particular batched
 JS implementation, not the best achievable JS engine. Every mode retains the
 same public APIs and assets in the tested fixture set.
+
+## Intended ownership boundary (not implemented)
+
+```mermaid
+flowchart LR
+  JS["JS facade / application"] -->|"Changes / commands"| R["Persistent Rust scene state"]
+  R --> A["Animation + transforms + bones"]
+  A --> V["Visibility + per-pass render lists"]
+  V --> B["Handles + dirty output buffers"]
+  B --> GL["Prepared renderer adapter"]
+  GL --> GPU["Browser graphics API / GPU"]
+  R -->|"Specified synchronous read barrier"| JS
+```
+
+This is the long-term hypothesis, not the current architecture. It needs an
+ownership contract, actual renderer bypass and a complete-path comparison with
+an equivalent optimized JS pipeline. Ordinary renderer.render(scene,camera) is
+not a generic prepared-list input. See PROJECT_PLAN.md and ADR 0002 for gates.
