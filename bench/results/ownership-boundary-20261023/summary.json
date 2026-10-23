@@ -1,0 +1,1062 @@
+{
+  "meaning": "Median across run medians of 16-tick block averages. Not frame percentiles, independent tick samples or an application benchmark.",
+  "sourceCommit": "6c6486c5496aa2ac16360b69c98795e1e5b8ee81",
+  "rows": [
+    {
+      "count": 1,
+      "bones": 24,
+      "mode": "retained",
+      "backend": "js",
+      "medianBlockAverageTickMs": 0.013593750074505806,
+      "minRunMedianMs": 0.012812499888241291,
+      "maxRunMedianMs": 0.023281250149011612,
+      "perRunMediansMs": [
+        0.01343749975785613,
+        0.013437500223517418,
+        0.013749999925494194,
+        0.012812499888241291,
+        0.023281250149011612,
+        0.014531250111758709,
+        0.013437500223517418,
+        0.02156250039115548
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 0,
+        "commandBatches": 0,
+        "commandBytes": 0,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 1,
+      "bones": 24,
+      "mode": "retained",
+      "backend": "wasm",
+      "medianBlockAverageTickMs": 0.010468750027939677,
+      "minRunMedianMs": 0.006562499329447746,
+      "maxRunMedianMs": 0.01328125037252903,
+      "perRunMediansMs": [
+        0.011874999850988388,
+        0.009999999776482582,
+        0.011406250298023224,
+        0.01328125037252903,
+        0.006562500260770321,
+        0.0078125,
+        0.006562499329447746,
+        0.010937500279396772
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 1,
+        "commandBatches": 0,
+        "commandBytes": 0,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 1,
+      "bones": 24,
+      "mode": "batch",
+      "backend": "js",
+      "medianBlockAverageTickMs": 0.018671875121071935,
+      "minRunMedianMs": 0.01500000013038516,
+      "maxRunMedianMs": 0.037187499925494194,
+      "perRunMediansMs": [
+        0.017656249925494194,
+        0.017343750223517418,
+        0.037187499925494194,
+        0.02453124988824129,
+        0.023125000298023224,
+        0.019687500316649675,
+        0.01500000013038516,
+        0.015781249850988388
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 0,
+        "commandBatches": 1,
+        "commandBytes": 160,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 1,
+      "bones": 24,
+      "mode": "batch",
+      "backend": "wasm",
+      "medianBlockAverageTickMs": 0.013828125083819032,
+      "minRunMedianMs": 0.01015624962747097,
+      "maxRunMedianMs": 0.020312499720603228,
+      "perRunMediansMs": [
+        0.01328125037252903,
+        0.01015624962747097,
+        0.020312499720603228,
+        0.01500000013038516,
+        0.01890625013038516,
+        0.010625000111758709,
+        0.011406249832361937,
+        0.014374999795109034
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 2,
+        "commandBatches": 1,
+        "commandBytes": 160,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 1,
+      "bones": 24,
+      "mode": "fragmented",
+      "backend": "js",
+      "medianBlockAverageTickMs": 0.0218750003259629,
+      "minRunMedianMs": 0.01593750063329935,
+      "maxRunMedianMs": 0.03015624964609742,
+      "perRunMediansMs": [
+        0.01593750063329935,
+        0.03015624964609742,
+        0.026406249962747097,
+        0.01671874988824129,
+        0.024218750186264515,
+        0.021875000093132257,
+        0.02171875024214387,
+        0.021875000558793545
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 0,
+        "commandBatches": 1,
+        "commandBytes": 160,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 1,
+      "bones": 24,
+      "mode": "fragmented",
+      "backend": "wasm",
+      "medianBlockAverageTickMs": 0.013671874767169356,
+      "minRunMedianMs": 0.008281250018626451,
+      "maxRunMedianMs": 0.017968750558793545,
+      "perRunMediansMs": [
+        0.017968750558793545,
+        0.00937500037252903,
+        0.017656249925494194,
+        0.01343749975785613,
+        0.008281250018626451,
+        0.013593749608844519,
+        0.013749999925494194,
+        0.014218749944120646
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 2,
+        "commandBatches": 1,
+        "commandBytes": 160,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 1,
+      "bones": 24,
+      "mode": "snapshot",
+      "backend": "js",
+      "medianBlockAverageTickMs": 0.03242187504656613,
+      "minRunMedianMs": 0.021875000093132257,
+      "maxRunMedianMs": 0.037656249944120646,
+      "perRunMediansMs": [
+        0.03624999988824129,
+        0.021875000093132257,
+        0.037656249944120646,
+        0.03437500027939677,
+        0.031406250316649675,
+        0.024843750055879354,
+        0.03343749977648258,
+        0.023125000298023224
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 0,
+        "commandBatches": 1,
+        "commandBytes": 160,
+        "readBytes": 6736
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 1,
+      "bones": 24,
+      "mode": "snapshot",
+      "backend": "wasm",
+      "medianBlockAverageTickMs": 0.01765625039115548,
+      "minRunMedianMs": 0.01406249962747097,
+      "maxRunMedianMs": 0.025312500074505806,
+      "perRunMediansMs": [
+        0.015312499832361937,
+        0.02515624975785613,
+        0.01406249962747097,
+        0.021562499459832907,
+        0.01671875035390258,
+        0.018593750428408384,
+        0.025312500074505806,
+        0.016562500037252903
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 2,
+        "commandBatches": 1,
+        "commandBytes": 160,
+        "readBytes": 6736
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 16,
+      "bones": 24,
+      "mode": "retained",
+      "backend": "js",
+      "medianBlockAverageTickMs": 0.1610937500372529,
+      "minRunMedianMs": 0.15515625057742,
+      "maxRunMedianMs": 0.18046874972060323,
+      "perRunMediansMs": [
+        0.15875000040978193,
+        0.16187499975785613,
+        0.18046874972060323,
+        0.15937500027939677,
+        0.16031250031664968,
+        0.16328124981373549,
+        0.15515625057742,
+        0.1746875001117587
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 0,
+        "commandBatches": 0,
+        "commandBytes": 0,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 16,
+      "bones": 24,
+      "mode": "retained",
+      "backend": "wasm",
+      "medianBlockAverageTickMs": 0.07625000015832484,
+      "minRunMedianMs": 0.0743749993853271,
+      "maxRunMedianMs": 0.08828125009313226,
+      "perRunMediansMs": [
+        0.0743749993853271,
+        0.07671875040978193,
+        0.07437499985098839,
+        0.07515624957159162,
+        0.08828125009313226,
+        0.07796875014901161,
+        0.07937499973922968,
+        0.07578124990686774
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 1,
+        "commandBatches": 0,
+        "commandBytes": 0,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 16,
+      "bones": 24,
+      "mode": "batch",
+      "backend": "js",
+      "medianBlockAverageTickMs": 0.17445312533527613,
+      "minRunMedianMs": 0.1642187498509884,
+      "maxRunMedianMs": 0.2674999996088445,
+      "perRunMediansMs": [
+        0.1737500005401671,
+        0.17265624972060323,
+        0.1895312499254942,
+        0.17515625013038516,
+        0.18718749983236194,
+        0.1699999999254942,
+        0.2674999996088445,
+        0.1642187498509884
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 0,
+        "commandBatches": 1,
+        "commandBytes": 2560,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 16,
+      "bones": 24,
+      "mode": "batch",
+      "backend": "wasm",
+      "medianBlockAverageTickMs": 0.08515625004656613,
+      "minRunMedianMs": 0.08046875009313226,
+      "maxRunMedianMs": 0.1045312499627471,
+      "perRunMediansMs": [
+        0.08296874957159162,
+        0.0859375,
+        0.1045312499627471,
+        0.08062499994412065,
+        0.08046875009313226,
+        0.08437500009313226,
+        0.1034375000745058,
+        0.08703124988824129
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 2,
+        "commandBatches": 1,
+        "commandBytes": 2560,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 16,
+      "bones": 24,
+      "mode": "fragmented",
+      "backend": "js",
+      "medianBlockAverageTickMs": 0.1817187499254942,
+      "minRunMedianMs": 0.16953125037252903,
+      "maxRunMedianMs": 0.25390625,
+      "perRunMediansMs": [
+        0.17812500009313226,
+        0.18531249975785613,
+        0.18828124972060323,
+        0.25390625,
+        0.17046874994412065,
+        0.18765625031664968,
+        0.16953125037252903,
+        0.17109374981373549
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 0,
+        "commandBatches": 16,
+        "commandBytes": 2560,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 16,
+      "bones": 24,
+      "mode": "fragmented",
+      "backend": "wasm",
+      "medianBlockAverageTickMs": 0.09585937508381903,
+      "minRunMedianMs": 0.09218750009313226,
+      "maxRunMedianMs": 0.14109374955296516,
+      "perRunMediansMs": [
+        0.09593750024214387,
+        0.09437499986961484,
+        0.10281249973922968,
+        0.10234375018626451,
+        0.09265624964609742,
+        0.14109374955296516,
+        0.0957812499254942,
+        0.09218750009313226
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 17,
+        "commandBatches": 16,
+        "commandBytes": 2560,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 16,
+      "bones": 24,
+      "mode": "snapshot",
+      "backend": "js",
+      "medianBlockAverageTickMs": 0.2406249998603016,
+      "minRunMedianMs": 0.22203124966472387,
+      "maxRunMedianMs": 0.4032812500372529,
+      "perRunMediansMs": [
+        0.39984375005587935,
+        0.24281249986961484,
+        0.2364062499254942,
+        0.2384374998509884,
+        0.23781249951571226,
+        0.2450000001117587,
+        0.22203124966472387,
+        0.4032812500372529
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 0,
+        "commandBatches": 1,
+        "commandBytes": 2560,
+        "readBytes": 107776
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 16,
+      "bones": 24,
+      "mode": "snapshot",
+      "backend": "wasm",
+      "medianBlockAverageTickMs": 0.18023437494412065,
+      "minRunMedianMs": 0.1446874998509884,
+      "maxRunMedianMs": 0.3756250003352761,
+      "perRunMediansMs": [
+        0.3756250003352761,
+        0.19484374998137355,
+        0.2774999998509884,
+        0.1446874998509884,
+        0.19375000009313226,
+        0.16671874979510903,
+        0.14937499957159162,
+        0.1564062498509884
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 2,
+        "commandBatches": 1,
+        "commandBytes": 2560,
+        "readBytes": 107776
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 64,
+      "bones": 24,
+      "mode": "retained",
+      "backend": "js",
+      "medianBlockAverageTickMs": 0.6167968749068677,
+      "minRunMedianMs": 0.6093750004656613,
+      "maxRunMedianMs": 0.6729687503539026,
+      "perRunMediansMs": [
+        0.6537500000558794,
+        0.6465624999254942,
+        0.6093750004656613,
+        0.6146875000558794,
+        0.6173437493853271,
+        0.6729687503539026,
+        0.6162500004284084,
+        0.615937499795109
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 0,
+        "commandBatches": 0,
+        "commandBytes": 0,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 64,
+      "bones": 24,
+      "mode": "retained",
+      "backend": "wasm",
+      "medianBlockAverageTickMs": 0.30359374987892807,
+      "minRunMedianMs": 0.29359374986961484,
+      "maxRunMedianMs": 0.3290625000372529,
+      "perRunMediansMs": [
+        0.3290625000372529,
+        0.3145312503911555,
+        0.30312499962747097,
+        0.3045312496833503,
+        0.29562499979510903,
+        0.29546874994412065,
+        0.29359374986961484,
+        0.30406250013038516
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 1,
+        "commandBatches": 0,
+        "commandBytes": 0,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 64,
+      "bones": 24,
+      "mode": "batch",
+      "backend": "js",
+      "medianBlockAverageTickMs": 0.6437500000465661,
+      "minRunMedianMs": 0.6368750003166497,
+      "maxRunMedianMs": 1.3184374999254942,
+      "perRunMediansMs": [
+        1.3184374999254942,
+        0.6759374998509884,
+        0.6437500002793968,
+        0.6437499998137355,
+        0.6435937504284084,
+        0.6368750003166497,
+        0.6531249997206032,
+        0.642187500372529
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 0,
+        "commandBatches": 1,
+        "commandBytes": 10240,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 64,
+      "bones": 24,
+      "mode": "batch",
+      "backend": "wasm",
+      "medianBlockAverageTickMs": 0.32273437501862645,
+      "minRunMedianMs": 0.31312499986961484,
+      "maxRunMedianMs": 0.4910937501117587,
+      "perRunMediansMs": [
+        0.3349999999627471,
+        0.31984375044703484,
+        0.3212500000372529,
+        0.3346875002607703,
+        0.31312499986961484,
+        0.32421875,
+        0.31312499986961484,
+        0.4910937501117587
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 2,
+        "commandBatches": 1,
+        "commandBytes": 10240,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 64,
+      "bones": 24,
+      "mode": "fragmented",
+      "backend": "js",
+      "medianBlockAverageTickMs": 0.6982031250372529,
+      "minRunMedianMs": 0.6729687498882413,
+      "maxRunMedianMs": 0.7243750002235174,
+      "perRunMediansMs": [
+        0.6943749999627471,
+        0.6946874996647239,
+        0.7099999999627471,
+        0.6729687498882413,
+        0.7132812500931323,
+        0.7243750002235174,
+        0.7017187504097819,
+        0.6770312497392297
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 0,
+        "commandBatches": 64,
+        "commandBytes": 10240,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 64,
+      "bones": 24,
+      "mode": "fragmented",
+      "backend": "wasm",
+      "medianBlockAverageTickMs": 0.3685156248975545,
+      "minRunMedianMs": 0.3585937498137355,
+      "maxRunMedianMs": 0.3914062501862645,
+      "perRunMediansMs": [
+        0.3914062501862645,
+        0.3689062502235174,
+        0.3585937498137355,
+        0.38921874994412065,
+        0.3590625002980232,
+        0.3898437502793968,
+        0.3681249995715916,
+        0.3612499996088445
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 65,
+        "commandBatches": 64,
+        "commandBytes": 10240,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 64,
+      "bones": 24,
+      "mode": "snapshot",
+      "backend": "js",
+      "medianBlockAverageTickMs": 0.8956250001210719,
+      "minRunMedianMs": 0.8524999995715916,
+      "maxRunMedianMs": 1.0376562494784594,
+      "perRunMediansMs": [
+        1.0376562494784594,
+        0.9651562501676381,
+        0.8668749998323619,
+        0.8524999995715916,
+        0.8592187501490116,
+        0.9060937501490116,
+        0.8851562500931323,
+        0.9189062500372529
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 0,
+        "commandBatches": 1,
+        "commandBytes": 10240,
+        "readBytes": 431104
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 64,
+      "bones": 24,
+      "mode": "snapshot",
+      "backend": "wasm",
+      "medianBlockAverageTickMs": 0.5648437498603016,
+      "minRunMedianMs": 0.52734375,
+      "maxRunMedianMs": 0.5818750001490116,
+      "perRunMediansMs": [
+        0.5656249998137355,
+        0.567656250204891,
+        0.5640624999068677,
+        0.576562499627471,
+        0.5395312500186265,
+        0.5535937496460974,
+        0.52734375,
+        0.5818750001490116
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 2,
+        "commandBatches": 1,
+        "commandBytes": 10240,
+        "readBytes": 431104
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 64,
+      "bones": 96,
+      "mode": "retained",
+      "backend": "js",
+      "medianBlockAverageTickMs": 2.480859375325963,
+      "minRunMedianMs": 2.411874999757856,
+      "maxRunMedianMs": 2.747656250372529,
+      "perRunMediansMs": [
+        2.4842187501490116,
+        2.747656250372529,
+        2.677187499590218,
+        2.427968750242144,
+        2.4648437495343387,
+        2.4945312500931323,
+        2.477500000502914,
+        2.411874999757856
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 0,
+        "commandBatches": 0,
+        "commandBytes": 0,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 64,
+      "bones": 96,
+      "mode": "retained",
+      "backend": "wasm",
+      "medianBlockAverageTickMs": 1.234062499832362,
+      "minRunMedianMs": 1.1999999997206032,
+      "maxRunMedianMs": 1.309531250037253,
+      "perRunMediansMs": [
+        1.2859375001862645,
+        1.2531250002793968,
+        1.1999999997206032,
+        1.309531250037253,
+        1.207343750167638,
+        1.2384374998509884,
+        1.2296874998137355,
+        1.2292187502607703
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 1,
+        "commandBatches": 0,
+        "commandBytes": 0,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 64,
+      "bones": 96,
+      "mode": "batch",
+      "backend": "js",
+      "medianBlockAverageTickMs": 2.4937499999068677,
+      "minRunMedianMs": 2.479062500409782,
+      "maxRunMedianMs": 2.6398437498137355,
+      "perRunMediansMs": [
+        2.624062499962747,
+        2.5809374996460974,
+        2.6398437498137355,
+        2.4829687494784594,
+        2.4793750001117587,
+        2.488906249869615,
+        2.4985937499441206,
+        2.479062500409782
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 0,
+        "commandBatches": 1,
+        "commandBytes": 10240,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 64,
+      "bones": 96,
+      "mode": "batch",
+      "backend": "wasm",
+      "medianBlockAverageTickMs": 1.2965625002980232,
+      "minRunMedianMs": 1.2367187500931323,
+      "maxRunMedianMs": 1.4823437496088445,
+      "perRunMediansMs": [
+        1.3639062503352761,
+        1.3443750003352761,
+        1.2367187500931323,
+        1.2621875000186265,
+        1.33093750057742,
+        1.4823437496088445,
+        1.2515624999068677,
+        1.2521874997764826
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 2,
+        "commandBatches": 1,
+        "commandBytes": 10240,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 64,
+      "bones": 96,
+      "mode": "fragmented",
+      "backend": "js",
+      "medianBlockAverageTickMs": 2.561640625121072,
+      "minRunMedianMs": 2.5112499999813735,
+      "maxRunMedianMs": 2.8032812499441206,
+      "perRunMediansMs": [
+        2.7114062500186265,
+        2.5749999997206032,
+        2.5112499999813735,
+        2.5217187497764826,
+        2.8032812499441206,
+        2.518593749962747,
+        2.802031250204891,
+        2.5482812505215406
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 0,
+        "commandBatches": 64,
+        "commandBytes": 10240,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 64,
+      "bones": 96,
+      "mode": "fragmented",
+      "backend": "wasm",
+      "medianBlockAverageTickMs": 1.3390625000465661,
+      "minRunMedianMs": 1.2940624998882413,
+      "maxRunMedianMs": 1.3806249997578561,
+      "perRunMediansMs": [
+        1.3806249997578561,
+        1.3560937503352761,
+        1.324531250167638,
+        1.2940624998882413,
+        1.296562499832362,
+        1.3546875002793968,
+        1.3418749999254942,
+        1.336250000167638
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 65,
+        "commandBatches": 64,
+        "commandBytes": 10240,
+        "readBytes": 0
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 64,
+      "bones": 96,
+      "mode": "snapshot",
+      "backend": "js",
+      "medianBlockAverageTickMs": 3.469375000335276,
+      "minRunMedianMs": 3.3445312501862645,
+      "maxRunMedianMs": 3.5268749999813735,
+      "perRunMediansMs": [
+        3.4795312504284084,
+        3.4992187502793968,
+        3.353593749925494,
+        3.5035937502980232,
+        3.455781249795109,
+        3.5268749999813735,
+        3.3445312501862645,
+        3.459218750242144
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 0,
+        "commandBatches": 1,
+        "commandBytes": 10240,
+        "readBytes": 1684480
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    },
+    {
+      "count": 64,
+      "bones": 96,
+      "mode": "snapshot",
+      "backend": "wasm",
+      "medianBlockAverageTickMs": 2.202656250214204,
+      "minRunMedianMs": 2.0867187501862645,
+      "maxRunMedianMs": 2.4098437502980232,
+      "perRunMediansMs": [
+        2.229843750130385,
+        2.1754687502980232,
+        2.4098437502980232,
+        2.1121875001117587,
+        2.103281249757856,
+        2.3345312499441206,
+        2.0867187501862645,
+        2.269999999552965
+      ],
+      "countersPerTick": {
+        "steps": 1,
+        "wasmCalls": 2,
+        "commandBatches": 1,
+        "commandBytes": 10240,
+        "readBytes": 1684480
+      },
+      "maxErrors": {
+        "pose": 0,
+        "world": 0,
+        "roots": 0,
+        "actions": 0,
+        "palette": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "cpuQuota": "400000 100000",
+  "memoryLimit": "17179869184",
+  "note": "Supplemental host limits observed after the run; CPU-only diagnostic created no GPU context. No /dev/dri. Driver performance was not measured."
+}

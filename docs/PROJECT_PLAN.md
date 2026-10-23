@@ -7,6 +7,12 @@ to the renderer. One-to-one source translation and ported line counts are not
 success criteria. The local package is `rthree`; complete compatibility and
 whole-frame acceleration remain unproven.
 
+The requester has authorized a more aggressive investigation of a complete Rust
+engine behind the public API. [Strategy and source audit](RUST_ENGINE_STRATEGY.md)
+and [ADR 0005](adr/0005-wide-engine-investigation.md) prioritize a compatible facade
+and a wider prepared-pass experiment. The existing renderer is a comparison control,
+not a permanent constraint; a full Rust backend remains an evaluated alternative.
+
 ## Product destination and release gates
 
 The destination is a useful replacement for declared real Three.js applications:
@@ -65,8 +71,11 @@ Their historical work predates Hyper-Waterfall and is not relabeled as following
 | M7 — Complete scene evaluation core | Conditional expansion through visibility, LOD, multi-pass lists and dirty upload buffers | Renderer consumes prepared outputs without repeated scene evaluation; full semantic/performance evidence |
 | M8 — Backend scope and sustainable release decision | Residual-cost assessment, adapter/reuse decision and support strategy | Expand resource/shader/backend work only if justified; documented release scope or stop decision |
 
-M6's verdict covers the first pipeline, not the entire engine. M7/M8 are gated
-future work. Exact GitHub issues and dependencies live in [roadmap.json](roadmap.json).
+M6's verdict covers the first pipeline, not the entire engine. M7/M8 delivery and
+release acceptance remain gated. Under ADR 0005, finite wider-boundary experiments
+may run within M4/M5 while representative profiling continues; they need not wait
+for the small Fox slice to qualify as a replacement. This does not close M7/M8 or
+waive their evidence gates. Exact GitHub issues and dependencies live in [roadmap.json](roadmap.json).
 Milestone association is synchronized by Actions; open work is not marked complete
 merely because code, a diagram or an issue exists.
 
