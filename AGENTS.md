@@ -75,6 +75,7 @@ Read docs/PROJECT_PLAN.md, docs/COMPATIBILITY.md, docs/BENCHMARKS.md and docs/CL
 ### Documentation and progress
 
 - Follow [the documentation guide](docs/README.md#editing-and-verified-unit-updates). Keep public contracts/evidence in docs/ and task research/coordination in mydocs/.
+- Keep requester-specific session prompts and model/UI instructions in chat unless explicitly asked to publish them. `mydocs/` is public too; reusable project plans and measurement protocols may remain in the repository.
 - Update affected docs and evidence-backed progress in each verified implementation PR. Preserve historical data and the simple progress UI; documentation preparation alone does not advance ownership or qualification.
 - For coordinated cloud/Mac work, follow [the execution plan](mydocs/plans/task_m3_34_execution.md); use separate worktrees and an immutable candidate SHA for measurements.
 

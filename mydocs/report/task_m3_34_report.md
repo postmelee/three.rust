@@ -1,7 +1,7 @@
 # Task #34 — concise documentation and cloud/Mac handoffs
 
 Issue: https://github.com/postmelee/three.rust/issues/34
-Milestone: M3. Three preparation stages completed; review/merge tracked separately.
+Milestone: M3. Documentation preparation and publication correction; review/merge tracked separately.
 
 ## Outcome
 
@@ -16,8 +16,10 @@ The execution plan allocates C1/C2 compatibility, C3 evaluation/render consumpti
 R1 SIMD, conditional R2 workers and B1 backend decision to existing issues. Cloud
 owns source changes initially; local owns L0 Mac/cohort evidence and later L1 candidate
 validation. Every unit has acceptance, handoff and documentation/progress requirements.
-The copy-ready local brief names baseline 9527a04 and the exact setup, smoke, full
-measurement and return procedure. Model/effort selection is a local UI action.
+The personal session brief is removed from the current tree at the requester's
+direction. Those instructions are delivered in chat; shared project plans and
+measurement protocols remain public. AGENTS and the documentation guide make this
+publication boundary explicit. Active repository, issue and PR links are updated.
 
 ## Verification
 
@@ -26,7 +28,6 @@ measurement and return procedure. Model/effort selection is a local UI action.
 | Current docs and generated claims | npm run docs:check | Passed: English, generated README tables, source inventory and roadmap |
 | Paths and continuity | Relative Markdown links/anchors; old CI commands/section anchors | Passed |
 | Research preservation | Compare archived prose to 9527a04 after normalizing link destinations | Passed; only paths/prefaces changed |
-| Local command shape | bash -n for five local brief shell blocks; inspect target scripts | Passed syntax; not Mac execution |
 | No runtime/progress promotion | Diff engine/scripts/workflows/raw data/generated inventories and UI | Unchanged |
 | Prior baseline CI | Query exact heads for #30/#32/#33 | Completed/success on all three; still unmerged |
 
@@ -42,3 +43,6 @@ cloud implementation unit. A newer candidate requires a new immutable handoff.
 Existing pending PRs and this stacked draft need review/integration before main
 contains these references. No automatic npm publication, paid runner provisioning,
 main merge or issue/milestone closure occurs here.
+
+The removal is a forward commit. Earlier Git commits retain their historical content;
+this correction does not rewrite repository history or claim historical erasure.

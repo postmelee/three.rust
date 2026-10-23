@@ -12,5 +12,6 @@ none was merged by this task. This documentation PR is stacked on #33. Its own
 remote CI and review remain separate from successful local checks.
 
 No new native/runtime/browser-image test or Mac measurement was required/performed
-for documentation-only changes. The local instructions are prepared, not executed.
+for documentation-only changes. No local session was created. Stage 4 removes the
+personal session brief and delivers those instructions in chat.
 Issue work units stay planned until their implementations and evidence exist.

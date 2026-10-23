@@ -29,7 +29,7 @@ No full M7/M8 acceptance is inferred from these finite M4/M5 experiments.
 
 | Unit / existing issues | Cloud implementation and checks | Local Mac work | Exit evidence and documentation |
 |---|---|---|---|
-| D0 — #34 | Current/historical doc separation, stable entry links, handoff and progress rules | Read the brief; verify checkout/model configuration | Docs/link checks; no ownership or product-state change |
+| D0 — #34 | Current/historical doc separation, stable entry links, handoff and progress rules | Review the shared measurement protocol and baseline | Docs/link checks; no ownership or product-state change |
 | C1 — #8, #7 | Freeze bounded observable contract and upstream oracles: TRS writes, Euler/quaternion coupling, cached object/array aliases, hierarchy/force flags, synchronous reads, events/callbacks/exceptions, initialization and addon identity | Exercise supported interaction/read patterns; return real-app requirements | Contract matrix with supported/fallback/rejected cases and executable oracles. Update compatibility/design docs; no new Rust mapping yet |
 | C2 — #8, #9, #10, #11 | Implement stable wrappers/handles and ordered writes into an actual Rust-owned domain; selective read/materialization, memory growth/release, explicit fallback. Matched JS reference, native/differential/type/fresh-install/browser tests | Run same-device image/numeric tests and no-read/sparse-read/all-read/callback controls; diagnose facade costs | Same application source with engine resolution changes for the declared subset; synchronous behavior and cached identities pass. Count real Rust calls and displaced JS. Update API, migration example and scoped source/ownership evidence |
 | C3a — #7, #9, #10, #16 | Extend persistent evaluation through conservative bounds, visibility, exact ordering, model-view/normal matrices and dirty spans; numerical/list oracle with matched JS | Identify real scene/pass populations, picking/edit/read demand and baseline cost fractions | CPU-stage correctness and cost report, clearly labeled as not yet end-to-end renderer benefit; narrow unsupported cases explicitly |
@@ -48,7 +48,7 @@ upstream lazy versus forced reads. A wrapper must not compute the same pose twic
 
 | Package | Start condition | Deliverable |
 |---|---|---|
-| L0a — #3/#4: current hardware baseline | Now, after D0 brief is available; immutable initial code pin below | GPU/browser preflight, correctness, smoke, full original/matched-JS A/A and three-path Fox comparison, raw tails and failed attempts |
+| L0a — #3/#4: current hardware baseline | Immutable initial code pin below and [Mac protocol](../../docs/CI_MAC.md) available | GPU/browser preflight, correctness, smoke, full original/matched-JS A/A and three-path Fox comparison, raw tails and failed attempts |
 | L0b — #5: real-app cohort | Can start with source/license inspection while cloud develops C1/C2; do not profile during full timing | Candidate table, source/asset pins and rights, required features/interactions, original CPU/GPU/read/callback profiles; retain rejected and GPU-heavy/static controls |
 | L1 — #12/#13: candidate validation | Cloud supplies a clean candidate SHA, passing relevant checks, exact API scope and run commands | Candidate/baseline evidence under matching conditions, numerical/images, regression and lifecycle results, explicit hardware/software classification |
 
@@ -129,5 +129,6 @@ cannot close those gates. Keep product budgets in [PRODUCT_GOALS](../../docs/PRO
 ## First assignment
 
 Cloud starts C1 after this documentation foundation is reviewed. Local starts L0a
-and L0b using the [copy-ready brief](task_m3_34_local.md). No local session has been
-created or hardware experiment executed by writing this plan.
+and L0b using the shared measurement protocol and immutable baseline above.
+Personal session prompts are delivered in chat. No local session has been created
+or hardware experiment executed by writing this plan.

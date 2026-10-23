@@ -42,8 +42,9 @@ claims must link to their conditions, limitations and raw evidence.
 
 This follows the [Hyper-Waterfall location rules](../mydocs/manual/document_structure_guide.md).
 Task coordination lives in the [execution plan](../mydocs/plans/task_m3_34_execution.md)
-and [local Mac brief](../mydocs/plans/task_m3_34_local.md); these are work instructions,
-not new public API or performance claims.
+and does not establish new public API or performance claims. All tracked directories,
+including `mydocs/`, are public. Requester-specific session prompts and model/UI
+instructions stay in chat unless publication is explicitly requested.
 
 ## Editing and verified-unit updates
 
