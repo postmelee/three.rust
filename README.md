@@ -5,7 +5,7 @@ The goal is to keep **scene state, animation, object/bone transforms and bone
 palettes inside one persistent Rust pipeline**, then pass final buffers to the
 renderer. The local JavaScript package is `rthree`.
 
-[Build & run](docs/CLOUD_SETUP.md) · [Compatibility](docs/COMPATIBILITY.md) ·
+[Documentation](docs/README.md) · [Build & run](docs/CLOUD_SETUP.md) · [Compatibility](docs/COMPATIBILITY.md) ·
 [Architecture](docs/ARCHITECTURE.md) · [Roadmap](docs/PROJECT_PLAN.md) ·
 [Performance](docs/PERFORMANCE.md) · [Owned animation API](docs/OWNED_ANIMATION.md) · [Contributing](AGENTS.md)
 

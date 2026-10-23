@@ -1,5 +1,10 @@
 # Fresh related-work review (2026-10-22)
 
+> Historical initial review. A later [pinned build/reuse audit](../bench/results/owned-reuse-20261023/README.md)
+> adds compile attempts and limitations; neither review establishes candidate
+> full-browser compatibility or performance.
+
+
 This review reads pinned upstream README/manifests; no project was built or
 benchmarked here. All advertised speedups and parity counts are unverified.
 No implementation code from these projects is reused.
