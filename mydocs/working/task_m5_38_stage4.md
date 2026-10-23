@@ -60,3 +60,7 @@ physical hardware, other browser engines and broader release budgets remain open
 The requester has authorized continuing this implementation unit and draft
 publication. Publish on codex/persistent-facade, stacked on C1, with the final
 report. Merge and broader issue closure remain separate.
+
+Publication review corrected the new history note: the C2 observation retains the
+same denominators. Historical scheme-change notes remain unchanged; future records
+use neutral observation wording. Generated-content and seven Python checks pass.

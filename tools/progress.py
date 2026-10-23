@@ -232,7 +232,7 @@ def record(history,data,commit):
         raise ValueError('Use the full observed implementation commit')
     if any(o.get('inventoryHash')==data['inventoryHash'] and o['implementationCommit']==commit for o in history['observations']):
         return
-    history['observations'].append({'schemaVersion':3,'recordedAt':datetime.now(timezone.utc).isoformat(),'implementationCommit':commit,'label':'Source-derived computation and authority inventory','inventoryHash':data['inventoryHash'],'upstreamCommit':data['upstream']['commit'],'counts':{p:{'total':data[p]['total'],'states':data[p]['counts']} for p in ['functions','state']},'note':'New counting scheme; no engine port is implied by the denominator change.'})
+    history['observations'].append({'schemaVersion':3,'recordedAt':datetime.now(timezone.utc).isoformat(),'implementationCommit':commit,'label':'Source-derived computation and authority inventory','inventoryHash':data['inventoryHash'],'upstreamCommit':data['upstream']['commit'],'counts':{p:{'total':data[p]['total'],'states':data[p]['counts']} for p in ['functions','state']},'note':'Observed scoped computation and state mappings; counts do not imply complete APIs or performance.'})
 
 
 def daily_history(history):
