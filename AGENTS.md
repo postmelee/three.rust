@@ -40,6 +40,7 @@ This project uses the **Hyper-Waterfall** methodology. Read these rules carefull
 ## Mandatory Rules Before Changes
 
 Repository-specific precedence (explicit task requester instructions):
+- Task #21 explicitly authorizes integration of the M0–M2, ownership-roadmap and current status/preparation work into main after verification. This supersedes the completed adoption task's no-merge restriction below. Preserve historical commits, branches and raw data.
 - Write public documentation, Issues, PRs and repository work artifacts in English. Communicate with the task requester in Korean.
 - Keep the requested `codex/` branch prefix for work and publication; this overrides the generic `local/taskN` and `publish/taskN` naming examples below and in manuals.
 - Preserve the existing M0–M2 branch, draft PR #1, commits and raw measurements. Do not retrospectively claim they followed Hyper-Waterfall.

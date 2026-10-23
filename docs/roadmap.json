@@ -3,32 +3,32 @@
   "milestones": [
     {
       "key": "m3",
-      "title": "M3 — Evidence and project infrastructure",
+      "title": "M3 \u2014 Evidence and project infrastructure",
       "description": "Establish traceable governance, reproducible correctness/artifact delivery, qualify a real GPU runner and collect matched hardware baselines plus fresh workload profiles. Configuration alone does not satisfy hardware evidence gates."
     },
     {
       "key": "m4",
-      "title": "M4 — Rust ownership and compatibility contract",
+      "title": "M4 \u2014 Rust ownership and compatibility contract",
       "description": "Select a measured end-to-end CPU pipeline and define authoritative state, command/batch boundaries, read barriers, renderer consumption and API tiers before implementation. Decide from data whether to proceed."
     },
     {
       "key": "m5",
-      "title": "M5 — Integrated persistent CPU pipeline",
+      "title": "M5 \u2014 Integrated persistent CPU pipeline",
       "description": "Implement an optimized JS reference and equivalent persistent Rust pipeline, connected to the retained WebGL renderer, without duplicate JS work or unnecessary intermediate materialization."
     },
     {
       "key": "m6",
-      "title": "M6 — Product performance and release decision",
+      "title": "M6 \u2014 Product performance and release decision",
       "description": "Evaluate the first integrated pipeline's full-path performance, regressions and compatibility across hardware/browser environments. Publish a bounded verdict before broader scene-engine expansion; this is not full-engine completion or automatic npm publication."
     },
     {
       "key": "m7",
-      "title": "M7 — Complete scene evaluation core",
+      "title": "M7 \u2014 Complete scene evaluation core",
       "description": "Conditional on M6 evidence: extend persistent ownership through visibility, LOD, camera/pass-specific render lists and upload preparation. Preserve shadows, transparency, callbacks and renderer semantics; consume prepared outputs without JS recomputation."
     },
     {
       "key": "m8",
-      "title": "M8 — Backend scope and sustainable release decision",
+      "title": "M8 \u2014 Backend scope and sustainable release decision",
       "description": "After scene evaluation, profile residual JS resource/shader/backend costs and compare retained-adapter versus existing Rust renderer reuse. Expand only where evidence and compatibility justify it; decide supported release scope and maintenance strategy."
     }
   ],
@@ -334,6 +334,23 @@
       ],
       "verification": "Generator unit/freshness tests and browser inspection",
       "excluded": "Full Three.js percentage, copied GPL code, public deployment"
+    },
+    {
+      "key": "ownership-progress-preparation",
+      "milestone": "m3",
+      "issue": 21,
+      "title": "Make ownership progress source-derived, simplify the README and prepare the animation pipeline",
+      "dependsOn": [
+        "progress-page"
+      ],
+      "criteria": [
+        "Extract actual pinned callable and field definitions with separate computation/authority status.",
+        "Publish a concise README and genuine progress history without incompatible trend claims.",
+        "Prepare repeatable animation/transform/palette workload, semantic oracle, cost diagnostics and a provisional boundary contract.",
+        "Verify and integrate the authorized dependency and current PRs into main; preserve open hardware/reuse/port gates."
+      ],
+      "verification": "Source inventory/history tests, browser visuals, upstream oracle, raw diagnostics and exact-head main CI.",
+      "excluded": "New Rust animation implementation, physical-GPU claims or paid runner provisioning."
     }
   ]
 }

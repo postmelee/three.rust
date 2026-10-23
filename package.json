@@ -22,7 +22,9 @@
     "test:bundle": "node tests/bundle.mjs",
     "docs:generate": "node scripts/progress.mjs",
     "docs:check": "node scripts/docs-check.mjs",
-    "test:progress": "python3 -m unittest discover -s tests -p test_progress.py && node tests/progress.mjs"
+    "test:progress": "node --test tests/progress-source.mjs && python3 -m unittest discover -s tests -p test_progress.py && node tests/progress.mjs",
+    "test:pipeline": "node scripts/pipeline-audit.mjs --check && node --test tests/pipeline-oracle.mjs && node tests/pipeline-browser.mjs",
+    "bench:pipeline": "node bench/pipeline.mjs"
   },
   "devDependencies": {
     "@types/three": "0.186.0",

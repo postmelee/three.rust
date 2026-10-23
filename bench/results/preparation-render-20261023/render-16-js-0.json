@@ -1,0 +1,161 @@
+{
+  "repeat": 0,
+  "count": 16,
+  "engine": "js",
+  "mode": "render",
+  "warmup": 10,
+  "samples": 30,
+  "raw": [
+    {
+      "start": 602.2000000029802,
+      "cpu": 1
+    },
+    {
+      "start": 618.8000000044703,
+      "cpu": 1.6000000014901161
+    },
+    {
+      "start": 635.4000000059605,
+      "cpu": 1.7999999970197678
+    },
+    {
+      "start": 652.1000000014901,
+      "cpu": 4.200000002980232
+    },
+    {
+      "start": 668.8000000044703,
+      "cpu": 0.7999999970197678
+    },
+    {
+      "start": 685.5,
+      "cpu": 2
+    },
+    {
+      "start": 702.2000000029802,
+      "cpu": 2
+    },
+    {
+      "start": 718.8000000044703,
+      "cpu": 1.8999999985098839
+    },
+    {
+      "start": 735.4000000059605,
+      "cpu": 2.0999999940395355
+    },
+    {
+      "start": 752.2000000029802,
+      "cpu": 2.7000000029802322
+    },
+    {
+      "start": 768.8000000044703,
+      "cpu": 0.8999999985098839
+    },
+    {
+      "start": 785.5,
+      "cpu": 2.7000000029802322
+    },
+    {
+      "start": 802.1000000014901,
+      "cpu": 2.5
+    },
+    {
+      "start": 818.9000000059605,
+      "cpu": 2.5
+    },
+    {
+      "start": 835.6000000014901,
+      "cpu": 1
+    },
+    {
+      "start": 862.1000000014901,
+      "cpu": 1
+    },
+    {
+      "start": 869,
+      "cpu": 2.4000000059604645
+    },
+    {
+      "start": 892.6000000014901,
+      "cpu": 0.8000000044703484
+    },
+    {
+      "start": 902.9000000059605,
+      "cpu": 3.1999999955296516
+    },
+    {
+      "start": 928.1000000014901,
+      "cpu": 1.7000000029802322
+    },
+    {
+      "start": 935.5,
+      "cpu": 1.1000000014901161
+    },
+    {
+      "start": 971.6000000014901,
+      "cpu": 1.3999999985098839
+    },
+    {
+      "start": 1003.6000000014901,
+      "cpu": 2.5
+    },
+    {
+      "start": 1019,
+      "cpu": 1.8000000044703484
+    },
+    {
+      "start": 1035.5,
+      "cpu": 0.4000000059604645
+    },
+    {
+      "start": 1052.4000000059605,
+      "cpu": 0.7999999970197678
+    },
+    {
+      "start": 1068.9000000059605,
+      "cpu": 0.5
+    },
+    {
+      "start": 1085.4000000059605,
+      "cpu": 0.5999999940395355
+    },
+    {
+      "start": 1102.1000000014901,
+      "cpu": 0.5
+    },
+    {
+      "start": 1119.1000000014901,
+      "cpu": 1.5
+    }
+  ],
+  "volumes": {
+    "characters": 16,
+    "bones": 384,
+    "sceneNodes": 402,
+    "activeTracks": 768,
+    "clipBytes": 4800,
+    "usefulPaletteBytes": 24576,
+    "allocatedPaletteBytes": 36864,
+    "allWorldMatrixReadBytes": 49152
+  },
+  "gpu": {
+    "vendor": "Google Inc. (Google)",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+  },
+  "diagnostics": {
+    "backend": "js",
+    "wasmActive": false,
+    "batches": 0,
+    "nodes": 0,
+    "fallbackRoots": 0,
+    "wasmCalls": 0,
+    "wasmNodes": 0,
+    "uploadedBytes": 0,
+    "scannedBytes": 0,
+    "materializedBytes": 0,
+    "arenas": 0,
+    "syncMs": 0,
+    "kernelMs": 0,
+    "readMs": 0,
+    "wasmMemoryBytes": 0
+  }
+}

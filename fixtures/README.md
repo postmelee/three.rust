@@ -31,3 +31,12 @@ These are deterministic replays, not unmodified original runtime timing.
 webgl_instancing_performance is source-reviewed only: its default is 1,000
 instances with camera motion, not 1,000 independently animated Object3Ds.
 It is not the transform baseline and was not executed in this experiment.
+
+## Pipeline preparation fixture
+
+`pipeline/` is a new synthetic articulated-cylinder workload using pinned Three.js
+animation/skinning APIs. It is not an adaptation claimed as the original Soldier
+example, uses no external asset, and is MIT project code. See
+[the preparation protocol](../docs/PIPELINE_PREPARATION.md) for stage timing,
+source hashes, ownership constraints and scope. The original examples above remain
+unchanged.

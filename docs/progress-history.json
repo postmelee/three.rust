@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "observations": [
+    {
+      "schemaVersion": 2,
+      "recordedAt": "2026-10-22T13:34:49Z",
+      "implementationCommit": "37a8e7c3bd767aee8fd83370488ff9743da4b17a",
+      "label": "Original curated capability inventory",
+      "counts": {
+        "cpu": {
+          "done": 6,
+          "total": 29
+        },
+        "evidence": {
+          "done": 7,
+          "total": 12
+        }
+      },
+      "note": "Legacy 29-capability scheme; not comparable with source-derived function/state counts."
+    },
+    {
+      "schemaVersion": 3,
+      "recordedAt": "2026-10-23T01:21:11.433084+00:00",
+      "implementationCommit": "37a8e7c3bd767aee8fd83370488ff9743da4b17a",
+      "label": "Source-derived computation and authority inventory",
+      "inventoryHash": "dfa10057a47013ffc228add6d0358e859df4a3d23f26490127aac1f9a25f282f",
+      "upstreamCommit": "9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8",
+      "counts": {
+        "functions": {
+          "total": 1515,
+          "states": {
+            "js": 1514,
+            "rust": 0,
+            "rust-batch": 1
+          }
+        },
+        "state": {
+          "total": 115,
+          "states": {
+            "js": 115,
+            "rust-owned": 0
+          }
+        }
+      },
+      "note": "New counting scheme; no engine port is implied by the denominator change."
+    }
+  ]
+}

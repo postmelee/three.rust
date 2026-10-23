@@ -97,7 +97,7 @@ Before new engine code, validate pinned WAMR3D, oneilltomhq/three-rs and
 eugenehp/threers sources, licenses, build paths and reusable tests. Reproduce any
 performance number used in a decision. The prior discussion's third-party claims
 are historical context, not current evidence. Review three-rs/three and issue
-19339 for API/ownership history. See [RELATED_WORK](RELATED_WORK.md).
+19339 for API/ownership history. See [RELATED_WORK](RELATED_WORK.md). The runnable [pipeline preparation](PIPELINE_PREPARATION.md) supplies a synthetic rig, semantic oracle, source audit and cloud stage diagnostics; it does not close the hardware/reuse/target-selection gates.
 
 Compare a modified Three.js renderer adapter, reuse of an existing Rust core or
 renderer, and a fresh bounded core. Prefer retaining current materials/shaders and
@@ -124,8 +124,8 @@ separately. Use run-level repetition, matching visual work and raw evidence.
 A negative verdict is valid research. Do not expand solely because a kernel wins.
 Keep hardware/software datasets separate and verify a second hardware class before
 broad claims. [CI and delivery](CI.md) separates correctness, GPU experiments and
-portable demo/package artifacts. Paid runner provisioning, merge and npm publication
-remain separate decisions.
+portable demo/package artifacts. Task #21 authorizes integration of the verified existing work into main. Paid
+runner provisioning and npm publication remain separate decisions.
 
 ## Provenance and language
 

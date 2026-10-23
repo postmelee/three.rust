@@ -1,0 +1,336 @@
+{
+  "classification": "CPU-only preparation diagnostic; no render timing",
+  "note": "Descriptive diagnostics only; pooled tails and median of run medians; no confidence interval or speedup verdict",
+  "groups": {
+    "cpu/1/original": {
+      "runs": 3,
+      "samplesPerRun": 60,
+      "volumes": {
+        "characters": 1,
+        "bones": 24,
+        "sceneNodes": 27,
+        "activeTracks": 48,
+        "clipBytes": 4800,
+        "usefulPaletteBytes": 1536,
+        "allocatedPaletteBytes": 1536,
+        "allWorldMatrixReadBytes": 3072
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "metrics": {
+        "cpu": {
+          "meanMs": 0.04111111093726423,
+          "p50Ms": 0,
+          "p95Ms": 0.10000000149011612,
+          "p99Ms": 0.10000000149011612,
+          "medianRunP50Ms": 0
+        },
+        "animation": {
+          "meanMs": 0.024444444353381792,
+          "p50Ms": 0,
+          "p95Ms": 0.10000000149011612,
+          "p99Ms": 0.10000000149011612,
+          "medianRunP50Ms": 0
+        },
+        "transforms": {
+          "meanMs": 0.012222222197386954,
+          "p50Ms": 0,
+          "p95Ms": 0.10000000149011612,
+          "p99Ms": 0.10000000149011612,
+          "medianRunP50Ms": 0
+        },
+        "palette": {
+          "meanMs": 0.004444444386495485,
+          "p50Ms": 0,
+          "p95Ms": 0,
+          "p99Ms": 0.10000000149011612,
+          "medianRunP50Ms": 0
+        },
+        "interval": {
+          "meanMs": 16.666101694906835,
+          "p50Ms": 16.69999999552965,
+          "p95Ms": 17,
+          "p99Ms": 17.799999997019768,
+          "medianRunP50Ms": 16.69999999552965
+        }
+      }
+    },
+    "cpu/1/wasm": {
+      "runs": 3,
+      "samplesPerRun": 60,
+      "volumes": {
+        "characters": 1,
+        "bones": 24,
+        "sceneNodes": 27,
+        "activeTracks": 48,
+        "clipBytes": 4800,
+        "usefulPaletteBytes": 1536,
+        "allocatedPaletteBytes": 1536,
+        "allWorldMatrixReadBytes": 3072
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "metrics": {
+        "cpu": {
+          "meanMs": 0.05388888886405362,
+          "p50Ms": 0,
+          "p95Ms": 0.10000000149011612,
+          "p99Ms": 0.20000000298023224,
+          "medianRunP50Ms": 0
+        },
+        "animation": {
+          "meanMs": 0.021111111094554266,
+          "p50Ms": 0,
+          "p95Ms": 0.10000000149011612,
+          "p99Ms": 0.10000000149011612,
+          "medianRunP50Ms": 0
+        },
+        "transforms": {
+          "meanMs": 0.030555555514163443,
+          "p50Ms": 0,
+          "p95Ms": 0.10000000149011612,
+          "p99Ms": 0.10000000149011612,
+          "medianRunP50Ms": 0
+        },
+        "palette": {
+          "meanMs": 0.0022222222553359137,
+          "p50Ms": 0,
+          "p95Ms": 0,
+          "p99Ms": 0.10000000149011612,
+          "medianRunP50Ms": 0
+        },
+        "interval": {
+          "meanMs": 16.663276836191866,
+          "p50Ms": 16.69999999552965,
+          "p95Ms": 16.899999998509884,
+          "p99Ms": 17,
+          "medianRunP50Ms": 16.69999999552965
+        }
+      }
+    },
+    "cpu/16/original": {
+      "runs": 3,
+      "samplesPerRun": 60,
+      "volumes": {
+        "characters": 16,
+        "bones": 384,
+        "sceneNodes": 402,
+        "activeTracks": 768,
+        "clipBytes": 4800,
+        "usefulPaletteBytes": 24576,
+        "allocatedPaletteBytes": 24576,
+        "allWorldMatrixReadBytes": 49152
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "metrics": {
+        "cpu": {
+          "meanMs": 0.1777777778191699,
+          "p50Ms": 0.19999999552965164,
+          "p95Ms": 0.29999999701976776,
+          "p99Ms": 0.30000000447034836,
+          "medianRunP50Ms": 0.19999999552965164
+        },
+        "animation": {
+          "meanMs": 0.1194444446100129,
+          "p50Ms": 0.10000000149011612,
+          "p95Ms": 0.20000000298023224,
+          "p99Ms": 0.20000000298023224,
+          "medianRunP50Ms": 0.10000000149011612
+        },
+        "transforms": {
+          "meanMs": 0.03722222194903427,
+          "p50Ms": 0,
+          "p95Ms": 0.10000000149011612,
+          "p99Ms": 0.10000000149011612,
+          "medianRunP50Ms": 0
+        },
+        "palette": {
+          "meanMs": 0.021111111260122724,
+          "p50Ms": 0,
+          "p95Ms": 0.10000000149011612,
+          "p99Ms": 0.10000000149011612,
+          "medianRunP50Ms": 0
+        },
+        "interval": {
+          "meanMs": 16.667796610144237,
+          "p50Ms": 16.69999999552965,
+          "p95Ms": 16.900000005960464,
+          "p99Ms": 17.100000001490116,
+          "medianRunP50Ms": 16.69999999552965
+        }
+      }
+    },
+    "cpu/16/wasm": {
+      "runs": 3,
+      "samplesPerRun": 60,
+      "volumes": {
+        "characters": 16,
+        "bones": 384,
+        "sceneNodes": 402,
+        "activeTracks": 768,
+        "clipBytes": 4800,
+        "usefulPaletteBytes": 24576,
+        "allocatedPaletteBytes": 24576,
+        "allWorldMatrixReadBytes": 49152
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "metrics": {
+        "cpu": {
+          "meanMs": 0.2683333332753844,
+          "p50Ms": 0.29999999701976776,
+          "p95Ms": 0.3999999985098839,
+          "p99Ms": 0.6000000014901161,
+          "medianRunP50Ms": 0.20000000298023224
+        },
+        "animation": {
+          "meanMs": 0.1294444447176324,
+          "p50Ms": 0.10000000149011612,
+          "p95Ms": 0.20000000298023224,
+          "p99Ms": 0.30000000447034836,
+          "medianRunP50Ms": 0.10000000149011612
+        },
+        "transforms": {
+          "meanMs": 0.11222222199042638,
+          "p50Ms": 0.10000000149011612,
+          "p95Ms": 0.20000000298023224,
+          "p99Ms": 0.3999999985098839,
+          "medianRunP50Ms": 0.10000000149011612
+        },
+        "palette": {
+          "meanMs": 0.02666666656732559,
+          "p50Ms": 0,
+          "p95Ms": 0.10000000149011612,
+          "p99Ms": 0.10000000149011612,
+          "medianRunP50Ms": 0
+        },
+        "interval": {
+          "meanMs": 16.664406779669434,
+          "p50Ms": 16.69999999552965,
+          "p95Ms": 17,
+          "p99Ms": 17,
+          "medianRunP50Ms": 16.69999999552965
+        }
+      }
+    },
+    "cpu/64/original": {
+      "runs": 3,
+      "samplesPerRun": 60,
+      "volumes": {
+        "characters": 64,
+        "bones": 1536,
+        "sceneNodes": 1602,
+        "activeTracks": 3072,
+        "clipBytes": 4800,
+        "usefulPaletteBytes": 98304,
+        "allocatedPaletteBytes": 98304,
+        "allWorldMatrixReadBytes": 196608
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "metrics": {
+        "cpu": {
+          "meanMs": 0.6672222223132849,
+          "p50Ms": 0.6999999955296516,
+          "p95Ms": 0.8000000044703484,
+          "p99Ms": 0.8999999985098839,
+          "medianRunP50Ms": 0.6999999955296516
+        },
+        "animation": {
+          "meanMs": 0.4311111110366053,
+          "p50Ms": 0.3999999985098839,
+          "p95Ms": 0.5999999940395355,
+          "p99Ms": 0.6000000014901161,
+          "medianRunP50Ms": 0.3999999985098839
+        },
+        "transforms": {
+          "meanMs": 0.1322222222884496,
+          "p50Ms": 0.10000000149011612,
+          "p95Ms": 0.20000000298023224,
+          "p99Ms": 0.20000000298023224,
+          "medianRunP50Ms": 0.10000000149011612
+        },
+        "palette": {
+          "meanMs": 0.10388888898822997,
+          "p50Ms": 0.10000000149011612,
+          "p95Ms": 0.20000000298023224,
+          "p99Ms": 0.29999999701976776,
+          "medianRunP50Ms": 0.10000000149011612
+        },
+        "interval": {
+          "meanMs": 16.667231638426497,
+          "p50Ms": 16.69999999552965,
+          "p95Ms": 16.900000005960464,
+          "p99Ms": 17.200000002980232,
+          "medianRunP50Ms": 16.69999999552965
+        }
+      }
+    },
+    "cpu/64/wasm": {
+      "runs": 3,
+      "samplesPerRun": 60,
+      "volumes": {
+        "characters": 64,
+        "bones": 1536,
+        "sceneNodes": 1602,
+        "activeTracks": 3072,
+        "clipBytes": 4800,
+        "usefulPaletteBytes": 98304,
+        "allocatedPaletteBytes": 98304,
+        "allWorldMatrixReadBytes": 196608
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "metrics": {
+        "cpu": {
+          "meanMs": 1.039999999644028,
+          "p50Ms": 1,
+          "p95Ms": 1.2999999970197678,
+          "p99Ms": 1.5,
+          "medianRunP50Ms": 1
+        },
+        "animation": {
+          "meanMs": 0.4994444442705976,
+          "p50Ms": 0.5,
+          "p95Ms": 0.6000000014901161,
+          "p99Ms": 0.8999999985098839,
+          "medianRunP50Ms": 0.5
+        },
+        "transforms": {
+          "meanMs": 0.43444444429543283,
+          "p50Ms": 0.3999999985098839,
+          "p95Ms": 0.6000000014901161,
+          "p99Ms": 0.7000000029802322,
+          "medianRunP50Ms": 0.3999999985098839
+        },
+        "palette": {
+          "meanMs": 0.10611111107799742,
+          "p50Ms": 0.10000000149011612,
+          "p95Ms": 0.20000000298023224,
+          "p99Ms": 0.20000000298023224,
+          "medianRunP50Ms": 0.10000000149011612
+        },
+        "interval": {
+          "meanMs": 16.663841807909606,
+          "p50Ms": 16.600000001490116,
+          "p95Ms": 17,
+          "p99Ms": 17.19999999552965,
+          "medianRunP50Ms": 16.600000001490116
+        }
+      }
+    }
+  }
+}

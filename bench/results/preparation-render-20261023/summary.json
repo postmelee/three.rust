@@ -1,0 +1,278 @@
+{
+  "classification": "Full-frame preparation diagnostic; not a speedup study",
+  "note": "Descriptive diagnostics only; pooled tails and median of run medians; no confidence interval or speedup verdict",
+  "groups": {
+    "render/1/original": {
+      "runs": 3,
+      "samplesPerRun": 30,
+      "volumes": {
+        "characters": 1,
+        "bones": 24,
+        "sceneNodes": 27,
+        "activeTracks": 48,
+        "clipBytes": 4800,
+        "usefulPaletteBytes": 1536,
+        "allocatedPaletteBytes": 2304,
+        "allWorldMatrixReadBytes": 3072
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "metrics": {
+        "cpu": {
+          "meanMs": 0.2544444446762403,
+          "p50Ms": 0.20000000298023224,
+          "p95Ms": 0.6999999955296516,
+          "p99Ms": 1.0999999940395355,
+          "medianRunP50Ms": 0.19999999552965164
+        },
+        "interval": {
+          "meanMs": 16.61379310343115,
+          "p50Ms": 16.600000001490116,
+          "p95Ms": 17.100000001490116,
+          "p99Ms": 17.600000001490116,
+          "medianRunP50Ms": 16.600000001490116
+        }
+      }
+    },
+    "render/1/js": {
+      "runs": 3,
+      "samplesPerRun": 30,
+      "volumes": {
+        "characters": 1,
+        "bones": 24,
+        "sceneNodes": 27,
+        "activeTracks": 48,
+        "clipBytes": 4800,
+        "usefulPaletteBytes": 1536,
+        "allocatedPaletteBytes": 2304,
+        "allWorldMatrixReadBytes": 3072
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "metrics": {
+        "cpu": {
+          "meanMs": 0.19777777799301677,
+          "p50Ms": 0.19999999552965164,
+          "p95Ms": 0.30000000447034836,
+          "p99Ms": 0.5,
+          "medianRunP50Ms": 0.20000000298023224
+        },
+        "interval": {
+          "meanMs": 16.66206896544873,
+          "p50Ms": 16.69999999552965,
+          "p95Ms": 17,
+          "p99Ms": 17.899999998509884,
+          "medianRunP50Ms": 16.600000001490116
+        }
+      }
+    },
+    "render/1/wasm": {
+      "runs": 3,
+      "samplesPerRun": 30,
+      "volumes": {
+        "characters": 1,
+        "bones": 24,
+        "sceneNodes": 27,
+        "activeTracks": 48,
+        "clipBytes": 4800,
+        "usefulPaletteBytes": 1536,
+        "allocatedPaletteBytes": 2304,
+        "allWorldMatrixReadBytes": 3072
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "metrics": {
+        "cpu": {
+          "meanMs": 0.30000000033113694,
+          "p50Ms": 0.20000000298023224,
+          "p95Ms": 0.5,
+          "p99Ms": 1.8999999985098839,
+          "medianRunP50Ms": 0.20000000298023224
+        },
+        "interval": {
+          "meanMs": 17.242528735563674,
+          "p50Ms": 16.69999999552965,
+          "p95Ms": 18.80000000447035,
+          "p99Ms": 46.19999999552965,
+          "medianRunP50Ms": 16.69999999552965
+        }
+      }
+    },
+    "render/1/packed-js": {
+      "runs": 3,
+      "samplesPerRun": 30,
+      "volumes": {
+        "characters": 1,
+        "bones": 24,
+        "sceneNodes": 27,
+        "activeTracks": 48,
+        "clipBytes": 4800,
+        "usefulPaletteBytes": 1536,
+        "allocatedPaletteBytes": 2304,
+        "allWorldMatrixReadBytes": 3072
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "metrics": {
+        "cpu": {
+          "meanMs": 0.3422222215268347,
+          "p50Ms": 0.29999999701976776,
+          "p95Ms": 0.8999999985098839,
+          "p99Ms": 1.2000000029802322,
+          "medianRunP50Ms": 0.29999999701976776
+        },
+        "interval": {
+          "meanMs": 16.663218390838853,
+          "p50Ms": 16.69999999552965,
+          "p95Ms": 17.19999999552965,
+          "p99Ms": 18.600000001490116,
+          "medianRunP50Ms": 16.69999999552965
+        }
+      }
+    },
+    "render/16/original": {
+      "runs": 3,
+      "samplesPerRun": 30,
+      "volumes": {
+        "characters": 16,
+        "bones": 384,
+        "sceneNodes": 402,
+        "activeTracks": 768,
+        "clipBytes": 4800,
+        "usefulPaletteBytes": 24576,
+        "allocatedPaletteBytes": 36864,
+        "allWorldMatrixReadBytes": 49152
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "metrics": {
+        "cpu": {
+          "meanMs": 1.7044444446762403,
+          "p50Ms": 0.8999999985098839,
+          "p95Ms": 4.100000001490116,
+          "p99Ms": 15.899999998509884,
+          "medianRunP50Ms": 1
+        },
+        "interval": {
+          "meanMs": 24.74482758625828,
+          "p50Ms": 16.700000002980232,
+          "p95Ms": 74,
+          "p99Ms": 100.20000000298023,
+          "medianRunP50Ms": 16.69999999552965
+        }
+      }
+    },
+    "render/16/js": {
+      "runs": 3,
+      "samplesPerRun": 30,
+      "volumes": {
+        "characters": 16,
+        "bones": 384,
+        "sceneNodes": 402,
+        "activeTracks": 768,
+        "clipBytes": 4800,
+        "usefulPaletteBytes": 24576,
+        "allocatedPaletteBytes": 36864,
+        "allWorldMatrixReadBytes": 49152
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "metrics": {
+        "cpu": {
+          "meanMs": 1.334444444378217,
+          "p50Ms": 1,
+          "p95Ms": 3,
+          "p99Ms": 4,
+          "medianRunP50Ms": 1.1000000014901161
+        },
+        "interval": {
+          "meanMs": 17.051724137931036,
+          "p50Ms": 16.69999999552965,
+          "p95Ms": 17.799999997019768,
+          "p99Ms": 32,
+          "medianRunP50Ms": 16.69999999552965
+        }
+      }
+    },
+    "render/16/wasm": {
+      "runs": 3,
+      "samplesPerRun": 30,
+      "volumes": {
+        "characters": 16,
+        "bones": 384,
+        "sceneNodes": 402,
+        "activeTracks": 768,
+        "clipBytes": 4800,
+        "usefulPaletteBytes": 24576,
+        "allocatedPaletteBytes": 36864,
+        "allWorldMatrixReadBytes": 49152
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "metrics": {
+        "cpu": {
+          "meanMs": 1.3933333333995608,
+          "p50Ms": 1,
+          "p95Ms": 3.399999998509884,
+          "p99Ms": 5.299999997019768,
+          "medianRunP50Ms": 1
+        },
+        "interval": {
+          "meanMs": 16.666666666752306,
+          "p50Ms": 16.69999999552965,
+          "p95Ms": 17,
+          "p99Ms": 17.400000005960464,
+          "medianRunP50Ms": 16.69999999552965
+        }
+      }
+    },
+    "render/16/packed-js": {
+      "runs": 3,
+      "samplesPerRun": 30,
+      "volumes": {
+        "characters": 16,
+        "bones": 384,
+        "sceneNodes": 402,
+        "activeTracks": 768,
+        "clipBytes": 4800,
+        "usefulPaletteBytes": 24576,
+        "allocatedPaletteBytes": 36864,
+        "allWorldMatrixReadBytes": 49152
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "metrics": {
+        "cpu": {
+          "meanMs": 1.216666666418314,
+          "p50Ms": 1.0999999940395355,
+          "p95Ms": 2,
+          "p99Ms": 2.899999998509884,
+          "medianRunP50Ms": 1.1000000014901161
+        },
+        "interval": {
+          "meanMs": 20.81379310341402,
+          "p50Ms": 16.700000002980232,
+          "p95Ms": 33.899999998509884,
+          "p99Ms": 50,
+          "medianRunP50Ms": 16.69999999552965
+        }
+      }
+    }
+  }
+}

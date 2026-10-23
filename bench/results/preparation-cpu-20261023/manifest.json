@@ -1,0 +1,131 @@
+{
+  "classification": "CPU-only preparation diagnostic; no render timing",
+  "status": "complete",
+  "startedAt": "2026-10-23T01:31:19.250Z",
+  "sourceCommit": "4603b0019f62400e224405ab6f1d1cac5f8a0dda",
+  "dirty": true,
+  "fileHashes": {
+    "fixtures/pipeline/rig.mjs": "f6fec5ac7dba4d00c5398059d9140f2c4b5109c6122fc61233b87d8719b45220",
+    "fixtures/pipeline/index.html": "86f95c9f549cb036eb7eceb6581cf7e8f177ed924e78c48a1cb974d830e6830b",
+    "fixtures/pipeline/source-audit.json": "e06314e80597cfe2d2535c1bc15fb0245718d8a22545fbaefe1e50f4ff8ca47f",
+    "bench/pipeline.mjs": "e71832362abea2c194b22843bc92e47eac1017ead99b2bdb4caac6d1ad7a8545",
+    "package-lock.json": "b938b0b7c45499a8962d4beff96db709ec0caafe2e44d94e1d53754e2666a355",
+    "packages/rthree/core.js": "1288ad362561a38831ca4195218e083e061ef270975c27511e3336551064948f",
+    "packages/rthree/runtime.js": "9475be555e4bec0e89826b46e18123a012d0cd1500f748d012aafc6a3b2c8629",
+    "packages/rthree/scene_core.wasm": "7e70bf336717cd8ffaa70b5374f6f112149396e1bd154a1640e73c36879927ed"
+  },
+  "sourceAudit": {
+    "version": "0.186.1",
+    "upstreamCommit": "9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8",
+    "files": [
+      {
+        "path": "animation/AnimationMixer.js",
+        "sha256": "7b05af5507aa4edfe3d6b5debcda23c8f0d9b910928debff7fc50748954d533c"
+      },
+      {
+        "path": "animation/AnimationAction.js",
+        "sha256": "9d99b25c1e9d81bf45e6ee4502f934b839eabe0d7e62e850a2fad8a62bc190a3"
+      },
+      {
+        "path": "animation/PropertyBinding.js",
+        "sha256": "2130038f275f69a5be6e9654a44f65f239c5cceab71af1ac8e3490721733e81a"
+      },
+      {
+        "path": "animation/PropertyMixer.js",
+        "sha256": "c76a791999a707e39d231ead8cca86492e63f230971fa7d7970b5342b06e771b"
+      },
+      {
+        "path": "math/Interpolant.js",
+        "sha256": "2eb2f374fd85baf1f59f84b8f786c9def614c8f60777cb7e697fadd5c3464704"
+      },
+      {
+        "path": "objects/Skeleton.js",
+        "sha256": "37eaa7755b39775411fe32bafbf9a0273bdad6bb7976114ed63f8700f4b4b0e9"
+      },
+      {
+        "path": "objects/SkinnedMesh.js",
+        "sha256": "b01477c050eff4c32bb4ae6792cb2948e5908adc09bd13335104e68966f6690f"
+      },
+      {
+        "path": "renderers/webgl/WebGLObjects.js",
+        "sha256": "60829abba98579b02a84177ce86b3eea127a7decac487b69c70f0e3e83a1d923"
+      },
+      {
+        "path": "renderers/WebGLRenderer.js",
+        "sha256": "9e8740aad691246b31b3704014e8f3bbd38a8e7bf4b1b4d23868541b023cc63a"
+      }
+    ]
+  },
+  "options": {
+    "out": "bench/results/preparation-cpu-20261023",
+    "scenarios": [
+      "skinning"
+    ],
+    "engines": [
+      "original",
+      "wasm"
+    ],
+    "repeats": 3,
+    "warmup": 30,
+    "samples": 60,
+    "hardware": false,
+    "headless": true,
+    "args": [
+      "--no-sandbox",
+      "--use-angle=swiftshader",
+      "--enable-unsafe-swiftshader"
+    ],
+    "viewport": {
+      "width": 640,
+      "height": 360
+    },
+    "profile": false,
+    "gpu": false,
+    "timings": false,
+    "counts": [
+      1,
+      16,
+      64
+    ],
+    "bones": 24,
+    "stage": "cpu"
+  },
+  "host": {
+    "platform": "linux",
+    "release": "6.18.55",
+    "cpus": [
+      "INTEL(R) XEON(R) PLATINUM 8573C",
+      "INTEL(R) XEON(R) PLATINUM 8573C",
+      "INTEL(R) XEON(R) PLATINUM 8573C",
+      "INTEL(R) XEON(R) PLATINUM 8573C",
+      "INTEL(R) XEON(R) PLATINUM 8573C"
+    ],
+    "memory": 18882674688,
+    "cpuQuota": "400000 100000",
+    "memoryLimit": "17179869184",
+    "gpuDeviceDirectory": false,
+    "node": "v24.19.0"
+  },
+  "runs": [
+    "cpu-1-original-0.json",
+    "cpu-1-wasm-0.json",
+    "cpu-16-original-0.json",
+    "cpu-16-wasm-0.json",
+    "cpu-64-original-0.json",
+    "cpu-64-wasm-0.json",
+    "cpu-64-wasm-1.json",
+    "cpu-64-original-1.json",
+    "cpu-16-wasm-1.json",
+    "cpu-16-original-1.json",
+    "cpu-1-wasm-1.json",
+    "cpu-1-original-1.json",
+    "cpu-1-original-2.json",
+    "cpu-1-wasm-2.json",
+    "cpu-16-original-2.json",
+    "cpu-16-wasm-2.json",
+    "cpu-64-original-2.json",
+    "cpu-64-wasm-2.json"
+  ],
+  "browser": "154.0.8037.57",
+  "finishedAt": "2026-10-23T01:31:56.196Z"
+}
