@@ -1,7 +1,9 @@
 # Cloud and local execution plan
 
 Task: [#34](https://github.com/postmelee/three.rust/issues/34). Direction: [ADR 0005](../../docs/adr/0005-wide-engine-investigation.md).
-Status: work allocation and acceptance criteria; future units below are not implemented.
+Status: D0 documentation and the finite [C1 contract/oracle](../../docs/FACADE_CONTRACT.md)
+are delivered for review. C2 and later implementation units remain planned; no wider
+Rust ownership or hardware qualification follows from C1.
 
 ## Ownership and sequence
 
@@ -126,9 +128,10 @@ cannot close those gates. Keep product budgets in [PRODUCT_GOALS](../../docs/PRO
    simple HTML and Definitions and evidence. Close only the finite verified task;
    broad issue/milestone gates remain open until their own criteria pass.
 
-## First assignment
+## Next units
 
-Cloud starts C1 after this documentation foundation is reviewed. Local starts L0a
-and L0b using the shared measurement protocol and immutable baseline above.
+Cloud proceeds from the verified C1 contract to C2's bounded compatible Rust facade.
+Local L0a/L0b use the shared measurement protocol and immutable baseline above;
+their actual execution and results are tracked separately.
 Personal session prompts are delivered in chat. No local session has been created
 or hardware experiment executed by writing this plan.
