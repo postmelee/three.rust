@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "gpu": {
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "vendor": "Google Inc. (Google)",
+    "timerQuery": true
+  },
+  "results": {
+    "transparent": "Error: Unsupported Fox morph/multiple/transparent material",
+    "morph": "Error: Unsupported Fox morph/multiple/transparent material",
+    "bind-transform": "Error: Unsupported Fox mesh/bind transform",
+    "non-joint-parent": "Error: Unsupported non-joint parent transform",
+    "discrete-track": "Error: Unsupported Fox track: b_Head_05.quaternion",
+    "arbitrary-binding": "Error: Unsupported Fox track: fox.material.opacity",
+    "additive": "Error: Unsupported additive animation",
+    "js-events": "Error: owned: unsupported field events",
+    "js-crossfade": "Error: owned: unsupported field crossfade",
+    "js-morphTargets": "Error: owned: unsupported field morphTargets",
+    "wasm-events": "Error: owned: unsupported field events",
+    "wasm-crossfade": "Error: owned: unsupported field crossfade",
+    "wasm-morphTargets": "Error: owned: unsupported field morphTargets"
+  }
+}

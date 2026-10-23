@@ -1,0 +1,3 @@
+diagnostic-animated-1-original-0.json
+diagnostic-animated-1-owned-js-0.json
+diagnostic-animated-1-owned-wasm-0.json

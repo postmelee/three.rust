@@ -1,0 +1,159 @@
+{
+  "status": "complete",
+  "classification": "Smoke/short diagnostic only; not a performance conclusion",
+  "startedAt": "2026-10-23T08:56:58.320Z",
+  "sourceCommit": "1080c215904be39aa988265479e8a964f950ad6f",
+  "dirty": false,
+  "hashes": {
+    "fixtures/fox/index.html": "05972ac3977c8fb2ebd0a5596cedad7b9ea56ac328673bb144486e8abae1ceb1",
+    "fixtures/fox/replay.mjs": "78e5d45d5883c91bcfc39f1dbe5ee9846d8333dc0a34bc7201a007fd68b84a3d",
+    "fixtures/fox/descriptor.mjs": "c60b80cc43511854e4abf847022a5e0dadfa5974673bad378529e57d853ef560",
+    "fixtures/fox/provenance.json": "1be586fac7f03ddc1c5190223bee5b3d4d96672bcb074a5e919960d08ff8600d",
+    "fixtures/fox/LICENSE.md": "9ddaa2edd6a8f72117eec9709d38cd7d284f61f77752d342c32c828e61f78eae",
+    "work/assets/Fox.glb": "d97044e701822bac5a62696459b27d7b375aada5de8574ed4362edbba94771f7",
+    "bench/fox.mjs": "c74a19ef8838952379c034c3bf9c95c4f2b4efb1656bfb6a039197cbdf74e603",
+    "bench/config.mjs": "4da0d73896022a326c747db8838a62510d71edab1e9b7c48c5ba0459abb242e3",
+    "bench/timing.mjs": "86ed9cd861b454cedeb16732171b7dc42cd71b818807ef04bc7ccacdb78489f8",
+    "scripts/browser-path.mjs": "0a469944255f1128bcd293118fe84082f97fbd84dafba5f358da231dd3f6a168",
+    "scripts/server.mjs": "4ee85142f3c1894ac470a58690ec897e3b1ed36b374eca8f9d9a4c724ab7dd15",
+    "package-lock.json": "b938b0b7c45499a8962d4beff96db709ec0caafe2e44d94e1d53754e2666a355",
+    "rust-toolchain.toml": "1f3258105f794e14e3472b2d262c358c62d8ed12d5d13b07c92d18f8fb75e338",
+    "node_modules/three/build/three.module.js": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea",
+    "node_modules/three/build/three.core.js": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6",
+    "node_modules/three/examples/jsm/loaders/GLTFLoader.js": "131c0f78c01d19368ae495caa65b3adaa10487810a36a05bb5901b769a35ac16",
+    "node_modules/three/examples/jsm/utils/SkeletonUtils.js": "b1632a703206c3d830de9fcbe515696770d04b71a15ee6b50afa6d2c3298c86f",
+    "crates/scene-core/src/owned.rs": "5506e83a3e69328e9e2dbdbaaf23a81607f5f48fb64f8f18e49a6a6a6c5d9d97",
+    "packages/rthree/owned.js": "1e870a4cbca4e85b68e579927e238ac1938e9623b421826bdb943467eacdd77a",
+    "packages/rthree/owned-layout.js": "bf13651d0a3d5116367bb5b99af2e480054e336cfb756abbd2dbb5874d58699e",
+    "packages/rthree/owned-js.js": "30be8cc69039f5257643de0fb14ac15513beee243d1482a149b234a295875b52",
+    "packages/rthree/owned-wasm.js": "fa84190d0b3be2eacb70c5c2340dc75a8a58e84109b43a49b7e5912d836200ec",
+    "packages/rthree/owned-renderer.js": "f028170077823ce847706bfdc1fc0487add7cd53f53299302802a658ca0d4357",
+    "packages/rthree/owned-state.js": "bafeaf358a3d9b6c5d7f47a32482f51b66a04aa72f80f0ba329c80ede061de87",
+    "packages/rthree/scene_core.wasm": "edfe1c9ae78e2e4ea76db9515fb17e4ae91a8231fb097dd30388147b3f75fcec"
+  },
+  "timing": {
+    "mode": "isolated",
+    "probeVersion": 1
+  },
+  "options": {
+    "repeats": 1,
+    "warmup": 3,
+    "samples": 6,
+    "hardware": false,
+    "headless": true,
+    "args": [
+      "--no-sandbox",
+      "--use-angle=swiftshader",
+      "--enable-unsafe-swiftshader"
+    ],
+    "viewport": {
+      "width": 640,
+      "height": 540
+    },
+    "variants": [
+      "original",
+      "owned-js",
+      "owned-wasm"
+    ],
+    "cases": [
+      "animated-1",
+      "animated-16",
+      "static-1"
+    ],
+    "stage": "render"
+  },
+  "renderTarget": {
+    "width": 640,
+    "height": 480,
+    "dpr": 1,
+    "antialias": false,
+    "shadows": false,
+    "preserveDrawingBuffer": true
+  },
+  "runs": [
+    "render-animated-1-original-0.json",
+    "render-animated-1-owned-js-0.json",
+    "render-animated-1-owned-wasm-0.json",
+    "render-animated-16-original-0.json",
+    "render-animated-16-owned-js-0.json",
+    "render-animated-16-owned-wasm-0.json",
+    "render-static-1-original-0.json",
+    "render-static-1-owned-js-0.json",
+    "render-static-1-owned-wasm-0.json"
+  ],
+  "executablePath": "/usr/bin/chromium",
+  "backgroundWork": "Requester cannot guarantee absence of other heavy work; no process names collected. Retain all samples; qualify with A/A.",
+  "cache": "Fresh page/context per run; shared browser/code/OS caches; startup is not cold-cache.",
+  "browser": "154.0.8037.57",
+  "gpuSystem": {
+    "devices": [
+      {
+        "vendorId": 65535,
+        "deviceId": 65535,
+        "vendorString": "Google Inc. (Google)",
+        "deviceString": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver-5.0.0)",
+        "driverVendor": "SwANGLE",
+        "driverVersion": "5.0.0"
+      }
+    ],
+    "auxAttributes": {
+      "amdSwitchable": false,
+      "canSupportThreadedTextureMailbox": false,
+      "directRenderingVersion": "",
+      "displayType": "ANGLE_SWIFTSHADER",
+      "glExtensions": "GL_AMD_performance_monitor GL_ANGLE_base_vertex_base_instance_shader_builtin GL_ANGLE_blob_cache GL_ANGLE_client_arrays GL_ANGLE_clip_cull_distance GL_ANGLE_compressed_texture_etc GL_ANGLE_copy_texture_3d GL_ANGLE_depth_texture GL_ANGLE_framebuffer_blit GL_ANGLE_framebuffer_multisample GL_ANGLE_get_image GL_ANGLE_get_serialized_context_string GL_ANGLE_get_tex_level_parameter GL_ANGLE_instanced_arrays GL_ANGLE_memory_object_flags GL_ANGLE_memory_size GL_ANGLE_multi_draw GL_ANGLE_pack_reverse_row_order GL_ANGLE_polygon_mode GL_ANGLE_program_binary_readiness_query GL_ANGLE_program_cache_control GL_ANGLE_read_only_depth_stencil_feedback_loops GL_ANGLE_relaxed_vertex_attribute_type GL_ANGLE_renderability_validation GL_ANGLE_request_extension GL_ANGLE_rgbx_internal_format GL_ANGLE_robust_client_memory GL_ANGLE_robust_fragment_shader_output GL_ANGLE_robust_resource_initialization GL_ANGLE_shader_pixel_local_storage GL_ANGLE_shader_pixel_local_storage_coherent GL_ANGLE_stencil_texturing GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_ANGLE_texture_multisample GL_ANGLE_texture_usage GL_ANGLE_translated_shader_source GL_ANGLE_vulkan_image GL_ANGLE_yuv_internal_format GL_APPLE_clip_distance GL_ARM_rgba8 GL_ARM_shader_framebuffer_fetch GL_CHROMIUM_bind_generates_resource GL_CHROMIUM_bind_uniform_location GL_CHROMIUM_copy_compressed_texture GL_CHROMIUM_copy_texture GL_CHROMIUM_lose_context GL_EXT_EGL_image_array GL_EXT_EGL_image_external_wrap_modes GL_EXT_EGL_image_storage GL_EXT_base_instance GL_EXT_blend_minmax GL_EXT_buffer_storage GL_EXT_clear_texture GL_EXT_clip_control GL_EXT_clip_cull_distance GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_compressed_ETC1_RGB8_sub_texture GL_EXT_conservative_depth GL_EXT_copy_image GL_EXT_debug_label GL_EXT_debug_marker GL_EXT_depth_clamp GL_EXT_discard_framebuffer GL_EXT_disjoint_timer_query GL_EXT_draw_buffers GL_EXT_draw_buffers_indexed GL_EXT_draw_elements_base_vertex GL_EXT_float_blend GL_EXT_frag_depth GL_EXT_instanced_arrays GL_EXT_map_buffer_range GL_EXT_memory_object GL_EXT_memory_object_fd GL_EXT_occlusion_query_boolean GL_EXT_polygon_offset_clamp GL_EXT_read_format_bgra GL_EXT_robustness GL_EXT_sRGB GL_EXT_sRGB_write_control GL_EXT_semaphore GL_EXT_semaphore_fd GL_EXT_separate_shader_objects GL_EXT_shader_framebuffer_fetch GL_EXT_shader_framebuffer_fetch_non_coherent GL_EXT_shader_non_constant_global_initializers GL_EXT_shader_texture_lod GL_EXT_shadow_samplers GL_EXT_texture_border_clamp GL_EXT_texture_compression_bptc GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc_srgb GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_EXT_texture_lod_bias GL_EXT_texture_mirror_clamp_to_edge GL_EXT_texture_rg GL_EXT_texture_sRGB_R8 GL_EXT_texture_sRGB_RG8 GL_EXT_texture_sRGB_decode GL_EXT_texture_shadow_lod GL_EXT_texture_storage GL_EXT_texture_type_2_10_10_10_REV GL_EXT_unpack_subimage GL_KHR_blend_equation_advanced GL_KHR_debug GL_KHR_robust_buffer_access_behavior GL_KHR_robustness GL_KHR_texture_compression_astc_ldr GL_NV_fence GL_NV_framebuffer_blit GL_NV_pack_subimage GL_NV_pixel_buffer_object GL_NV_polygon_mode GL_NV_read_depth GL_NV_read_depth_stencil GL_NV_read_stencil GL_NV_shader_noperspective_interpolation GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_image_external_essl3 GL_OES_EGL_sync GL_OES_compressed_ETC1_RGB8_texture GL_OES_compressed_paletted_texture GL_OES_copy_image GL_OES_depth24 GL_OES_depth32 GL_OES_depth_texture GL_OES_depth_texture_cube_map GL_OES_draw_buffers_indexed GL_OES_draw_elements_base_vertex GL_OES_element_index_uint GL_OES_fbo_render_mipmap GL_OES_get_program_binary GL_OES_mapbuffer GL_OES_packed_depth_stencil GL_OES_required_internalformat GL_OES_rgb8_rgba8 GL_OES_sample_shading GL_OES_sample_variables GL_OES_shader_multisample_interpolation GL_OES_standard_derivatives GL_OES_surfaceless_context GL_OES_texture_3D GL_OES_texture_border_clamp GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_texture_stencil8 GL_OES_texture_storage_multisample_2d_array GL_OES_vertex_array_object GL_OES_vertex_half_float GL_OES_vertex_type_10_10_10_2 GL_OVR_multiview GL_OVR_multiview2 GL_QCOM_texture_lod_bias ",
+      "glImplementationParts": "(gl=egl-angle,angle=swiftshader)",
+      "glRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver-5.0.0)",
+      "glResetNotificationStrategy": 33362,
+      "glVendor": "Google Inc. (Google)",
+      "glVersion": "OpenGL ES 3.0 (ANGLE 2.1 git hash: unknown hash)",
+      "glWsExtensions": "EGL_EXT_create_context_robustness EGL_ANGLE_surface_orientation EGL_KHR_create_context EGL_KHR_image EGL_KHR_image_base EGL_EXT_image_gl_colorspace EGL_KHR_gl_colorspace EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_gl_renderbuffer_image EGL_KHR_get_all_proc_addresses EGL_KHR_fence_sync EGL_KHR_wait_sync EGL_ANGLE_create_context_webgl_compatibility EGL_CHROMIUM_create_context_bind_generates_resource EGL_KHR_swap_buffers_with_damage EGL_EXT_pixel_format_float EGL_KHR_surfaceless_context EGL_ANGLE_display_texture_share_group EGL_ANGLE_display_semaphore_share_group EGL_ANGLE_create_context_client_arrays EGL_ANGLE_program_cache_control EGL_ANGLE_robust_resource_initialization EGL_ANGLE_create_context_extensions_enabled EGL_ANDROID_blob_cache EGL_ANDROID_recordable EGL_ANGLE_create_context_backwards_compatible EGL_KHR_no_config_context EGL_IMG_context_priority EGL_KHR_create_context_no_error EGL_KHR_reusable_sync EGL_EXT_buffer_age EGL_ANGLE_create_surface_swap_interval EGL_ANGLE_vulkan_image EGL_KHR_partial_update EGL_ANGLE_global_fence_sync EGL_ANGLE_memory_usage_report ",
+      "glWsVendor": "Google Inc. (Google)",
+      "glWsVersion": "1.5 (ANGLE 2.1 git hash: unknown hash)",
+      "hardwareSupportsVulkan": false,
+      "inProcessGpu": false,
+      "initializationTime": 0.027608,
+      "isAsan": false,
+      "isClangCoverage": false,
+      "jpegDecodeAcceleratorSupported": false,
+      "maxMsaaSamples": "4",
+      "optimus": false,
+      "passthroughCmdDecoder": true,
+      "pixelShaderVersion": "3.00",
+      "processCrashCount": 0,
+      "sandboxed": false,
+      "skiaBackendType": "GaneshGL",
+      "subpixelFontRendering": true,
+      "targetCpuBits": 64,
+      "vertexShaderVersion": "3.00",
+      "visibilityCallbackCallCount": 0
+    },
+    "featureStatus": {
+      "2d_canvas": "enabled",
+      "direct_rendering_display_compositor": "disabled_off_ok",
+      "gpu_compositing": "enabled",
+      "multiple_raster_threads": "enabled_on",
+      "opengl": "enabled_on",
+      "rasterization": "enabled_force",
+      "raw_draw": "disabled_off_ok",
+      "skia_graphite": "disabled_off",
+      "trees_in_viz": "disabled_off",
+      "video_decode": "enabled",
+      "video_encode": "disabled_software",
+      "vulkan": "disabled_off",
+      "webgl": "enabled",
+      "webgpu": "unavailable_software",
+      "webgpu_on_vk_via_gl_interop": "disabled_off",
+      "webnn": "disabled_off"
+    },
+    "driverBugWorkarounds": [
+      "enable_webgl_timer_query_extensions",
+      "exit_on_context_lost",
+      "disabled_extension_GL_KHR_blend_equation_advanced",
+      "disabled_extension_GL_KHR_blend_equation_advanced_coherent"
+    ],
+    "videoDecoding": [],
+    "videoEncoding": []
+  },
+  "finishedAt": "2026-10-23T08:57:07.374Z"
+}
