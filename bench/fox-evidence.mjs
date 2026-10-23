@@ -9,11 +9,12 @@ export function evidence(manifest, summary, comparison, legacyClock = null) {
   const rows = summary.rows;
   assert.equal(rows.length, manifest.runs.length, 'Missing summary rows');
   const modern = !!manifest.timing;
-  const clockSource = modern ? 'Every measured page before warmup' : 'Explicit legacy external preflight (not every page)';
+  const clockSource = modern ? 'All main and A/A pages before warmup' : 'Explicit legacy external preflight (not every page)';
   let resolution;
   if (modern) {
     for (const row of rows) validateClock(row.clock ?? {}, manifest.timing);
-    resolution = Math.max(...rows.map(r => r.clock.minPositiveDeltaMs));
+    assert(comparison.clockResolutionMs > 0 && Number.isFinite(comparison.clockResolutionMs), 'Missing phase clock evidence');
+    resolution = Math.max(comparison.clockResolutionMs, ...rows.map(r => r.clock.minPositiveDeltaMs));
   } else {
     assert(legacyClock > 0 && Number.isFinite(legacyClock), 'Supply explicit legacy clock evidence');
     resolution = legacyClock;
