@@ -40,3 +40,23 @@ remain in JS, so this is bounded derived-state authority, not the whole scene co
 Array interception, topology collection and read barriers can cost more than the
 math saved. Compare the same design in JS, retain regressions, and keep the default
 engine unchanged. Hardware and application qualification remain separate gates.
+
+## Measured correction: trusted internal reads
+
+At b1b8790, six repeated cloud runs found a severe regression: hierarchy CPU p50
+16.64 ms original, 172.61 ms matched facade JS, 169.23 ms facade Wasm. The separate
+sampling profile concentrates in frustum/matrix consumers and proxy element reads;
+the instrumented native call averages about 1.03 ms. Raw evidence is retained in
+[the initial archive](../../bench/results/facade-c2-20261023/initial/).
+
+Before accepting this facade implementation, add one internal read barrier to
+pinned math consumers. Read-only matrix inputs can materialize once and use the
+backing snapshot array inside the method. Public `.elements` still returns the
+same proxy; destinations must keep tracked writes. Caller-owned replacement arrays
+and unknown matrices retain their ordinary getter behavior. Guard upstream source
+hashes and use syntax-aware input/read-only selection; do not replace all elements
+accesses indiscriminately. This changes neither public output nor state authority.
+
+Repeat correctness and all timing paths on a new clean commit. Preserve the
+initial regression and distinguish this bridge correction from moving visibility
+or renderer computation into Rust. Reduced copying alone was not sufficient.

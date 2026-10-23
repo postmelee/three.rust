@@ -1,0 +1,15 @@
+{
+  "kind": "separate diagnostic CPU sampling; not primary timing",
+  "commit": "b1b8790bbcdb26d2dca39c29fcc85441c5265a69",
+  "trackedSourceDirty": false,
+  "browser": "154.0.8037.57",
+  "warmupFrames": 22,
+  "sampledFrames": 30,
+  "intervalMicroseconds": 1000,
+  "hashes": {
+    "packages/rthree/core.js": "2a361cc70e4a7fa2c40418a0f24ecbfde204eb344cdc454a6c36711bf4de21ae",
+    "packages/rthree/facade-state.js": "eb0a186c1e96b12a92dda483e3474fa6fdb3ccc4cc4fc038b4edc6c094d9bc9e",
+    "packages/rthree/scene_core.wasm": "8bdb2c188ccde2b80637b3e381f1c26547385b802bd701b2d1c897392c1e867c",
+    "work/facade-profile.mjs": "ef1e18de67687e0e92df1423a9ae26d17aabac03e551e5aba87b6c9ef9ba648c"
+  }
+}
