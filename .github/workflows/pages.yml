@@ -43,3 +43,40 @@ jobs:
       - name: Deploy reviewed status artifact
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Verify public pages and deployed commit
+        env:
+          STATUS_SITE_URL: ${{ steps.deployment.outputs.page_url }}
+          STATUS_SITE_COMMIT: ${{ github.sha }}
+        run: |
+          python3 - <<'PYTHON'
+          import json, os, time, urllib.request
+          base = os.environ['STATUS_SITE_URL'].rstrip('/') + '/'
+          expected = os.environ['STATUS_SITE_COMMIT']
+          if base != 'https://postmelee.github.io/three.rust/':
+              raise SystemExit('Unexpected Pages deployment URL')
+          for attempt in range(12):
+              try:
+                  documents = {}
+                  for name in ['site-build.json', 'history.json', 'history.html', 'progress.html']:
+                      with urllib.request.urlopen(base + name + '?commit=' + expected, timeout=20) as response:
+                          if response.status != 200:
+                              raise ValueError('Unexpected HTTP status')
+                          documents[name] = response.read().decode()
+                  build = json.loads(documents['site-build.json'])
+                  history = json.loads(documents['history.json'])
+                  if build['commit'] != expected or history['head'] != expected:
+                      raise ValueError('Public files do not match the deployed commit yet')
+                  if build['source'] != 'main-commits' or build['dailyPoints'] < 1:
+                      raise ValueError('Missing genuine main history')
+                  if '<h1>Progress history</h1>' not in documents['history.html'] or expected[:7] not in documents['history.html']:
+                      raise ValueError('History HTML does not show the deployed observation')
+                  if 'data-item=' not in documents['progress.html']:
+                      raise ValueError('Current progress HTML has no source tiles')
+                  print('Public HTML and JSON verified:', base, expected, 'daily points:', build['dailyPoints'])
+                  break
+              except Exception as error:
+                  if attempt == 11:
+                      raise
+                  print('Waiting for public Pages propagation:', str(error))
+                  time.sleep(5)
+          PYTHON
