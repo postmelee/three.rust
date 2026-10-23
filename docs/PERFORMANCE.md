@@ -12,7 +12,7 @@ On an Apple M4 Pro MacBook Pro, the 16-Fox replay took **0.45 ms in Three.js,
 0.25 ms in the matched JavaScript design, and 0.20 ms in Rust/Wasm** per typical
 frame. The Rust path saved 0.25 ms (about 56%) versus Three.js in this test.
 The slower-frame CPU p95 was 1.25 / 0.65 / 0.50 ms respectively. Each figure is
-the median of six independent run quantiles, not a pooled-frame statistic.
+the median of six per-run quantiles, not a pooled-frame statistic.
 
 This creates CPU headroom; it does not mean 56% more FPS. All paths already fit
 comfortably within the observed approximately 8.3 ms frame interval, and cadence

@@ -23,7 +23,7 @@ The compatibility facade batches eligible transforms in Rust while JS retains
 public state. The separate [owned rig API](docs/OWNED_ANIMATION.md) keeps bounded
 animation, object/bone transforms and bone palettes in Rust across frames.
 It requires explicit commands and reads; it is not import-only AnimationMixer
-compatibility. Whole-frame hardware acceleration remains unproven.
+compatibility. General application and FPS gains remain unproven.
 
 ## How much faster is it?
 

@@ -13,6 +13,7 @@ test('invalid timing policy and missing/stalled clock reject', () => {
 
 test('browser observes requested isolation; diagnostic split preserves Fox outputs', async () => {
   const browser = await chromium.launch({executablePath: browserPath(), headless: true, args: ['--no-sandbox', '--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader']});
+  const ordinary = new Map();
   try {
     for (const mode of ['ordinary', 'isolated']) {
       const server = await serve(0, {isolated: mode === 'isolated'});
@@ -30,8 +31,11 @@ test('browser observes requested isolation; diagnostic split preserves Fox outpu
           const results = await page.evaluate(async () => {
             const a = await window.__fox.measure({warmup: 0, samples: 600, mode:'render'});
             const b = await window.__fox.measure({warmup: 0, samples: 600, mode:'diagnostic'});
-            return {a: a.final, b: b.final, invalid: [...a.invalid, ...b.invalid], buckets: Object.keys(b.raw[0])};
+            const image = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', new Uint8Array(window.__fox.pixels()))));
+            return {image, a: a.final, b: b.final, invalid: [...a.invalid, ...b.invalid], buckets: Object.keys(b.raw[0])};
           });
+          if (mode === 'ordinary') ordinary.set(variant, results);
+          else assert.deepEqual(results, ordinary.get(variant), 'Isolation changed numeric/pixel results');
           assert.deepEqual(results.a, results.b);
           assert.deepEqual(results.invalid, []);
           assert(results.buckets.includes('inputCommands'));
