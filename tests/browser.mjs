@@ -1,3 +1,4 @@
+import { browserPath } from '../scripts/browser-path.mjs';
 import assert from 'node:assert/strict';
 import {chromium} from 'playwright';
 import {mkdirSync,writeFileSync} from 'node:fs';
@@ -7,7 +8,7 @@ const hardware=process.env.RTHREE_BROWSER_MODE==='hardware';
 const config=configuration(hardware?['mode=hardware',`headless=${process.env.RTHREE_HEADLESS||'true'}`,...(process.env.RTHREE_ANGLE_BACKEND?[`angle=${process.env.RTHREE_ANGLE_BACKEND}`]:[])]:[]);
 const out=process.env.RTHREE_RESULTS_DIR||'work/browser-correctness';mkdirSync(out,{recursive:true});const server=await serve();
 let browser;const results=[];
-try{browser=await chromium.launch({executablePath:process.env.CHROMIUM||'/usr/bin/chromium',headless:config.headless,args:config.args});for(const scenario of ['cubes','skinning','shader','small','hierarchy']){
+try{browser=await chromium.launch({executablePath:browserPath(),headless:config.headless,args:config.args});for(const scenario of ['cubes','skinning','shader','small','hierarchy']){
  let ref;
  for(const engine of ['original','original','js','wasm','packed-js']){
   const page=await browser.newPage({viewport:{width:640,height:360},deviceScaleFactor:1});const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(`http://127.0.0.1:4173/fixtures/generated/${scenario}.html?engine=${engine}`);await page.waitForFunction(()=>!!window.__bench);const env=await page.evaluate(()=>window.__bench.ready());if(hardware){writeFileSync(`${out}/hardware-preflight.json`,JSON.stringify(env,null,2));hardwareRenderer(env.renderer);}

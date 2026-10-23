@@ -1,0 +1,74 @@
+Executed in the separate worktree on codex/mac-hardware-validation.
+Baseline: e66e067844b75559bea251a7bd381d42210ab3ce (PR #27).
+
+npm ci
+rustup toolchain install 1.90.0 --profile minimal --component rustfmt,clippy
+rustup target add wasm32-unknown-unknown --toolchain 1.90.0
+npm run fixtures
+npm run build
+npm test
+RTHREE_BROWSER_MODE=hardware RTHREE_HEADLESS=false RTHREE_OWNED_RESULTS_DIR=work/mac/synthetic-correctness npm run test:owned
+npm run test:gpu-guard
+node bench/owned.mjs mode=hardware headless=false variants=original,owned-js,owned-wasm repeats=6 warmup=120 samples=600 out=work/mac/synthetic-baseline
+# Failed after 11 complete runs; preserved. Fresh rerun:
+node bench/owned.mjs mode=hardware headless=false variants=original,owned-js,owned-wasm repeats=6 warmup=120 samples=600 out=work/mac/synthetic-baseline-02
+node bench/owned-report.mjs work/mac/synthetic-baseline-02
+node scripts/fetch-fox.mjs
+RTHREE_BROWSER_MODE=hardware RTHREE_FOX_RESULTS_DIR=work/mac/fox-correctness node tests/fox-browser.mjs
+# Initial component-wise quaternion test failed; preserved. Rotation-aware rerun:
+RTHREE_BROWSER_MODE=hardware RTHREE_FOX_RESULTS_DIR=work/mac/fox-correctness-02 node tests/fox-browser.mjs
+RTHREE_BROWSER_MODE=hardware RTHREE_FOX_REJECTION_DIR=work/mac/fox-rejections node tests/fox-rejections.mjs
+node scripts/mac-preflight.mjs work/mac/preflight-ac
+node bench/fox.mjs mode=hardware headless=false repeats=1 warmup=5 samples=10 cases=animated-1,static-1 out=work/mac/fox-smoke
+node bench/fox-report.mjs work/mac/fox-smoke
+npm run docs:check
+npm run test:infra
+node --test tests/browser-path.mjs
+
+Full Fox phase commands (under temporary caffeinate -di, with no concurrent local build/tests):
+node bench/fox.mjs mode=hardware headless=false variants=original repeats=5 warmup=1200 samples=3600 out=work/mac/aa-before
+node bench/fox-report.mjs work/mac/aa-before
+node bench/fox.mjs mode=hardware headless=false variants=original,owned-js,owned-wasm repeats=6 warmup=1200 samples=3600 out=work/mac/main
+node bench/fox-report.mjs work/mac/main
+node bench/fox.mjs mode=hardware headless=false variants=original repeats=5 warmup=1200 samples=3600 out=work/mac/aa-after
+node bench/fox-report.mjs work/mac/aa-after
+node bench/fox.mjs mode=hardware headless=false stage=diagnostic repeats=5 warmup=60 samples=120 out=work/mac/diagnostic
+node bench/fox-report.mjs work/mac/diagnostic
+node bench/fox-compare.mjs work/mac
+
+Independent Linux correctness CI on d9fa780:
+https://github.com/postmelee/three.rust/actions/runs/39910823229
+All 27 steps succeeded, including native/differential/types, new Fox, old browser,
+software GPU rejection, package consumer and extracted portable demo tests.
+
+Supplemental controls, in order (under temporary caffeinate -di):
+node bench/run.mjs mode=hardware headless=false scenarios=shader,small engines=original,js,wasm,packed-js repeats=4 warmup=120 samples=600 width=640 height=360 out=work/mac/controls
+node bench/analyze.mjs work/mac/controls
+node bench/run.mjs mode=hardware headless=false scenarios=shader engines=original repeats=3 warmup=120 samples=300 width=640 height=360 gpu=true out=work/mac/gpu-diagnostic
+node bench/run.mjs mode=hardware headless=false scenarios=shader engines=original,js,wasm,packed-js repeats=4 warmup=120 samples=600 width=3840 height=2160 out=work/mac/shader-4k
+node bench/analyze.mjs work/mac/shader-4k
+node bench/run.mjs mode=hardware headless=false scenarios=shader engines=original repeats=3 warmup=120 samples=300 width=3840 height=2160 gpu=true out=work/mac/gpu-4k
+node bench/gpu-summary.mjs work/mac/gpu-diagnostic
+node bench/gpu-summary.mjs work/mac/gpu-4k
+
+Final runner metadata smoke and checks:
+node bench/fox.mjs mode=hardware headless=false repeats=1 warmup=5 samples=10 cases=animated-1,static-1 out=work/mac/fox-smoke-final
+node bench/fox-report.mjs work/mac/fox-smoke-final
+npm run docs:check
+npm run test:infra
+npm run test:browser-path
+bash -n scripts/mac-validation.sh
+node --check bench/fox.mjs
+node --check bench/gpu-summary.mjs
+node bench/fox-report.mjs bench/results/mac-20261023/main
+node bench/fox-report.mjs bench/results/mac-20261023/diagnostic
+node bench/fox-compare.mjs bench/results/mac-20261023
+
+Lossless archive command executed for aa-before, main, aa-after, diagnostic,
+controls, gpu-diagnostic, shader-4k, gpu-4k, fox-smoke-final:
+node scripts/archive-mac.mjs work/mac/PHASE bench/results/mac-20261023/PHASE
+All archive-integrity original-byte SHA-256 values independently verified with
+Python hashlib/gzip, including summaries regenerated from compressed frames.
+
+The full scripts/mac-validation.sh wrapper was syntax checked. This session ran
+its component commands above; it did not run the wrapper as a single invocation.

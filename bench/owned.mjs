@@ -1,3 +1,4 @@
+import { browserPath } from '../scripts/browser-path.mjs';
 import { chromium } from "playwright";
 import { serve } from "../scripts/server.mjs";
 import { configuration, hardwareRenderer } from "./config.mjs";
@@ -141,11 +142,12 @@ const server = await serve();
 let browser;
 try {
   browser = await chromium.launch({
-    executablePath: process.env.CHROMIUM || "/usr/bin/chromium",
+    executablePath: browserPath(),
     headless: cfg.headless,
     args: cfg.args,
   });
   manifest.browser = browser.version();
+  manifest.executablePath = browserPath();
   for (let repeat = 0; repeat < cfg.repeats; repeat++) {
     const order = [
       ...variants.slice(repeat % variants.length),
@@ -168,6 +170,7 @@ try {
           `http://127.0.0.1:4173/fixtures/owned/index.html?manual&count=${count}&bones=24&variant=${variant}&engine=${engine}${scenario.startsWith("static") ? "&static" : ""}`,
         );
         await page.waitForFunction(() => !!window.__owned);
+        await page.bringToFront();
         const startupMs = performance.now() - start,
           gpu = await page.evaluate(() => window.__owned.gpu);
         if (cfg.hardware) hardwareRenderer(gpu.renderer);

@@ -126,3 +126,7 @@ diagnostic charges snapshot reads. Initial fixture conversion and compilation ar
 startup costs, recorded as navigation-to-ready, not cold-cache or portable bandwidth
 claims. Hardware mode uses the existing qualified-runner protocol; cloud software
 GPU results cannot accept a desktop speedup. See the experiment report for results.
+
+## Raw quaternion representation boundary
+
+Snapshots expose the domain's numeric pose representation, not ordinary Bone identity. At zero total action weight, the domain restores its descriptor base quaternion, while upstream r186 PropertyMixer can retain the antipodal quaternion from its accumulator hemisphere. `q` and `-q` encode the same rotation: physical-Mac Fox checks found equal world/palette output and pixels but differing raw quaternion signs. Applications depending on component-sign continuity must retain the ordinary facade. The [Mac report](MAC_HARDWARE_REPORT.md) preserves the failed component-wise check and the rotation-aware oracle; this is an explicit limitation, not bitwise pose compatibility.

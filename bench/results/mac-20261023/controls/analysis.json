@@ -1,0 +1,1919 @@
+{
+  "method": "per-run quantiles; run-paired median percentage, percentile bootstrap 10000 seed2701; exploratory; environment and repeats are specified in manifest.json",
+  "sampleCount": 19200,
+  "table": [
+    {
+      "scenario": "shader",
+      "engine": "original",
+      "cpuP50": 0.09999999962747097,
+      "cpuP95": 0.20000000018626451,
+      "cpuP99": 0.20000000018626451,
+      "intervalP95": 9.299999999999955,
+      "startupMedianMs": 54,
+      "heapMedianBytes": 6176497,
+      "wasmBytes": 0,
+      "info": {
+        "frame": 720,
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      }
+    },
+    {
+      "scenario": "shader",
+      "engine": "js",
+      "cpuP50": 0.09999999962747097,
+      "cpuP95": 0.20000000018626451,
+      "cpuP99": 0.20000000018626451,
+      "intervalP95": 9.299999999999727,
+      "startupMedianMs": 61,
+      "heapMedianBytes": 6442431,
+      "wasmBytes": 0,
+      "info": {
+        "frame": 720,
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      }
+    },
+    {
+      "scenario": "shader",
+      "engine": "wasm",
+      "cpuP50": 0.09999999962747097,
+      "cpuP95": 0.2999999998137355,
+      "cpuP99": 0.30000000074505806,
+      "intervalP95": 9.199999999999818,
+      "startupMedianMs": 55,
+      "heapMedianBytes": 6859949,
+      "wasmBytes": 1179648,
+      "info": {
+        "frame": 720,
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      }
+    },
+    {
+      "scenario": "shader",
+      "engine": "packed-js",
+      "cpuP50": 0.09999999962747097,
+      "cpuP95": 0.20000000018626451,
+      "cpuP99": 0.30000000074505806,
+      "intervalP95": 9.199999999999818,
+      "startupMedianMs": 56,
+      "heapMedianBytes": 7234872,
+      "wasmBytes": 0,
+      "info": {
+        "frame": 720,
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "original",
+      "cpuP50": 0.10000000055879354,
+      "cpuP95": 0.20000000018626451,
+      "cpuP99": 0.39999999944120646,
+      "intervalP95": 9.199999999999818,
+      "startupMedianMs": 65,
+      "heapMedianBytes": 7894112,
+      "wasmBytes": 0,
+      "info": {
+        "frame": 720,
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "js",
+      "cpuP50": 0.19999999925494194,
+      "cpuP95": 0.39999999944120646,
+      "cpuP99": 0.599999999627471,
+      "intervalP95": 9.299999999999727,
+      "startupMedianMs": 60,
+      "heapMedianBytes": 7134821,
+      "wasmBytes": 0,
+      "info": {
+        "frame": 720,
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "wasm",
+      "cpuP50": 0.20000000018626451,
+      "cpuP95": 0.599999999627471,
+      "cpuP99": 0.6000000005587935,
+      "intervalP95": 9.200000000000273,
+      "startupMedianMs": 47,
+      "heapMedianBytes": 7257583,
+      "wasmBytes": 1179648,
+      "info": {
+        "frame": 720,
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "packed-js",
+      "cpuP50": 0.10000000055879354,
+      "cpuP95": 0.5,
+      "cpuP99": 0.5,
+      "intervalP95": 9.299999999999727,
+      "startupMedianMs": 58,
+      "heapMedianBytes": 7985642,
+      "wasmBytes": 0,
+      "info": {
+        "frame": 720,
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "scenario": "shader",
+      "engine": "js",
+      "relativeP50Percent": {
+        "median": 0,
+        "lo": 0,
+        "hi": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "omitted": 1
+      },
+      "relativeP95Percent": {
+        "median": 0,
+        "lo": 0,
+        "hi": 199.99999813735485,
+        "samples": [
+          0,
+          0,
+          0,
+          199.99999813735485
+        ],
+        "omitted": 0
+      }
+    },
+    {
+      "scenario": "shader",
+      "engine": "wasm",
+      "relativeP50Percent": {
+        "median": 0,
+        "lo": 0,
+        "hi": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "omitted": 1
+      },
+      "relativeP95Percent": {
+        "median": 49.999999767169356,
+        "lo": -4.6566128730773926e-7,
+        "hi": 199.99999813735485,
+        "samples": [
+          49.999999767169356,
+          -4.6566128730773926e-7,
+          49.999999767169356,
+          199.99999813735485
+        ],
+        "omitted": 0
+      }
+    },
+    {
+      "scenario": "shader",
+      "engine": "packed-js",
+      "relativeP50Percent": {
+        "median": 0,
+        "lo": 0,
+        "hi": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "omitted": 1
+      },
+      "relativeP95Percent": {
+        "median": 49.999999767169356,
+        "lo": 0,
+        "hi": 99.99999906867743,
+        "samples": [
+          49.999999767169356,
+          0,
+          49.999999767169356,
+          99.99999906867743
+        ],
+        "omitted": 0
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "js",
+      "relativeP50Percent": {
+        "median": 0,
+        "lo": 0,
+        "hi": 99.99999813735485,
+        "samples": [
+          0,
+          0,
+          99.99999813735485,
+          4.6566128730773926e-7
+        ],
+        "omitted": 0
+      },
+      "relativeP95Percent": {
+        "median": 0,
+        "lo": 0,
+        "hi": 99.99999953433871,
+        "samples": [
+          0,
+          99.99999953433871,
+          50.000000232830644,
+          0
+        ],
+        "omitted": 0
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "wasm",
+      "relativeP50Percent": {
+        "median": 0,
+        "lo": 0,
+        "hi": 199.99999813735485,
+        "samples": [
+          0,
+          0,
+          199.99999813735485,
+          4.6566128730773926e-7
+        ],
+        "omitted": 0
+      },
+      "relativeP95Percent": {
+        "median": 19.999999925494194,
+        "lo": 0,
+        "hi": 199.9999995343387,
+        "samples": [
+          19.999999925494194,
+          0,
+          199.9999995343387,
+          19.999999925494194
+        ],
+        "omitted": 0
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "packed-js",
+      "relativeP50Percent": {
+        "median": -9.313225746154785e-7,
+        "lo": -49.99999953433871,
+        "hi": 0,
+        "samples": [
+          0,
+          -9.313225746154785e-7,
+          0,
+          -49.99999953433871
+        ],
+        "omitted": 0
+      },
+      "relativeP95Percent": {
+        "median": 0,
+        "lo": 0,
+        "hi": 149.99999976716936,
+        "samples": [
+          0,
+          0,
+          149.99999976716936,
+          0
+        ],
+        "omitted": 0
+      }
+    }
+  ],
+  "perRun": [
+    {
+      "scenario": "shader",
+      "engine": "original",
+      "rep": 0,
+      "cpu": {
+        "p50": 0.09999999962747097,
+        "p95": 0.20000000018626451,
+        "p99": 0.2999999998137355
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.299999999999727,
+        "p99": 9.400000000000091
+      },
+      "startupMs": 162,
+      "info": {
+        "frame": 720,
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 6184725
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2
+      }
+    },
+    {
+      "scenario": "shader",
+      "engine": "js",
+      "rep": 0,
+      "cpu": {
+        "p50": 0.09999999962747097,
+        "p95": 0.20000000018626451,
+        "p99": 0.20000000018626451
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.299999999999955,
+        "p99": 9.399999999999636
+      },
+      "startupMs": 67,
+      "info": {
+        "frame": 720,
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 6472371
+      },
+      "diagnostics": {
+        "backend": "js",
+        "wasmActive": false,
+        "batches": 0,
+        "nodes": 0,
+        "fallbackRoots": 0,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 0,
+        "scannedBytes": 0,
+        "materializedBytes": 0,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2
+      }
+    },
+    {
+      "scenario": "shader",
+      "engine": "wasm",
+      "rep": 0,
+      "cpu": {
+        "p50": 0.09999999962747097,
+        "p95": 0.2999999998137355,
+        "p99": 0.30000000074505806
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.200000000000728,
+        "p99": 9.300000000000182
+      },
+      "startupMs": 61,
+      "info": {
+        "frame": 720,
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 6859949
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "wasmActive": true,
+        "batches": 720,
+        "nodes": 1440,
+        "fallbackRoots": 720,
+        "wasmCalls": 720,
+        "wasmNodes": 1440,
+        "uploadedBytes": 224,
+        "scannedBytes": 564480,
+        "materializedBytes": 368640,
+        "arenas": 1,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 1179648
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2
+      }
+    },
+    {
+      "scenario": "shader",
+      "engine": "packed-js",
+      "rep": 0,
+      "cpu": {
+        "p50": 0.09999999962747097,
+        "p95": 0.2999999998137355,
+        "p99": 0.30000000074505806
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.200000000000273,
+        "p99": 9.300000000000182
+      },
+      "startupMs": 62,
+      "info": {
+        "frame": 720,
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 7239348
+      },
+      "diagnostics": {
+        "backend": "packed-js",
+        "wasmActive": false,
+        "batches": 720,
+        "nodes": 1440,
+        "fallbackRoots": 720,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 224,
+        "scannedBytes": 564480,
+        "materializedBytes": 368640,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "original",
+      "rep": 0,
+      "cpu": {
+        "p50": 0.20000000018626451,
+        "p95": 0.5,
+        "p99": 0.599999999627471
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.299999999999955,
+        "p99": 9.399999999999636
+      },
+      "startupMs": 65,
+      "info": {
+        "frame": 720,
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 7814636
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 10
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "js",
+      "rep": 0,
+      "cpu": {
+        "p50": 0.20000000018626451,
+        "p95": 0.5,
+        "p99": 0.599999999627471
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.299999999999727,
+        "p99": 9.300000000000182
+      },
+      "startupMs": 57,
+      "info": {
+        "frame": 720,
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 6902101
+      },
+      "diagnostics": {
+        "backend": "js",
+        "wasmActive": false,
+        "batches": 0,
+        "nodes": 0,
+        "fallbackRoots": 0,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 0,
+        "scannedBytes": 0,
+        "materializedBytes": 0,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 10
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "wasm",
+      "rep": 0,
+      "cpu": {
+        "p50": 0.20000000018626451,
+        "p95": 0.599999999627471,
+        "p99": 0.7000000001862645
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.200000000000045,
+        "p99": 9.300000000000182
+      },
+      "startupMs": 59,
+      "info": {
+        "frame": 720,
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 7827915
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "wasmActive": true,
+        "batches": 720,
+        "nodes": 7200,
+        "fallbackRoots": 1440,
+        "wasmCalls": 720,
+        "wasmNodes": 7200,
+        "uploadedBytes": 1600,
+        "scannedBytes": 2822400,
+        "materializedBytes": 1843200,
+        "arenas": 1,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 1179648
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 10
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "packed-js",
+      "rep": 0,
+      "cpu": {
+        "p50": 0.20000000018626451,
+        "p95": 0.5,
+        "p99": 0.5
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.300000000000182,
+        "p99": 9.399999999999636
+      },
+      "startupMs": 58,
+      "info": {
+        "frame": 720,
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 7985642
+      },
+      "diagnostics": {
+        "backend": "packed-js",
+        "wasmActive": false,
+        "batches": 720,
+        "nodes": 7200,
+        "fallbackRoots": 1440,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 1600,
+        "scannedBytes": 2822400,
+        "materializedBytes": 1843200,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 10
+      }
+    },
+    {
+      "scenario": "shader",
+      "engine": "js",
+      "rep": 1,
+      "cpu": {
+        "p50": 0.09999999962747097,
+        "p95": 0.20000000018626451,
+        "p99": 0.20000000018626451
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.299999999999727,
+        "p99": 9.300000000000182
+      },
+      "startupMs": 64,
+      "info": {
+        "frame": 720,
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 6442431
+      },
+      "diagnostics": {
+        "backend": "js",
+        "wasmActive": false,
+        "batches": 0,
+        "nodes": 0,
+        "fallbackRoots": 0,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 0,
+        "scannedBytes": 0,
+        "materializedBytes": 0,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2
+      }
+    },
+    {
+      "scenario": "shader",
+      "engine": "wasm",
+      "rep": 1,
+      "cpu": {
+        "p50": 0.09999999962747097,
+        "p95": 0.19999999925494194,
+        "p99": 0.20000000018626451
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9,
+        "p99": 9.299999999999955
+      },
+      "startupMs": 60,
+      "info": {
+        "frame": 720,
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 6885821
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "wasmActive": true,
+        "batches": 720,
+        "nodes": 1440,
+        "fallbackRoots": 720,
+        "wasmCalls": 720,
+        "wasmNodes": 1440,
+        "uploadedBytes": 224,
+        "scannedBytes": 564480,
+        "materializedBytes": 368640,
+        "arenas": 1,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 1179648
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2
+      }
+    },
+    {
+      "scenario": "shader",
+      "engine": "packed-js",
+      "rep": 1,
+      "cpu": {
+        "p50": 0.09999999962747097,
+        "p95": 0.20000000018626451,
+        "p99": 0.20000000018626451
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.199999999999818,
+        "p99": 9.399999999999636
+      },
+      "startupMs": 56,
+      "info": {
+        "frame": 720,
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 7230012
+      },
+      "diagnostics": {
+        "backend": "packed-js",
+        "wasmActive": false,
+        "batches": 720,
+        "nodes": 1440,
+        "fallbackRoots": 720,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 224,
+        "scannedBytes": 564480,
+        "materializedBytes": 368640,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2
+      }
+    },
+    {
+      "scenario": "shader",
+      "engine": "original",
+      "rep": 1,
+      "cpu": {
+        "p50": 0.09999999962747097,
+        "p95": 0.20000000018626451,
+        "p99": 0.20000000018626451
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.299999999999955,
+        "p99": 9.300000000000182
+      },
+      "startupMs": 54,
+      "info": {
+        "frame": 720,
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 6165013
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "js",
+      "rep": 1,
+      "cpu": {
+        "p50": 0.10000000055879354,
+        "p95": 0.39999999944120646,
+        "p99": 0.599999999627471
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.199999999999818,
+        "p99": 9.300000000000182
+      },
+      "startupMs": 60,
+      "info": {
+        "frame": 720,
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 7189201
+      },
+      "diagnostics": {
+        "backend": "js",
+        "wasmActive": false,
+        "batches": 0,
+        "nodes": 0,
+        "fallbackRoots": 0,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 0,
+        "scannedBytes": 0,
+        "materializedBytes": 0,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 10
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "wasm",
+      "rep": 1,
+      "cpu": {
+        "p50": 0.10000000055879354,
+        "p95": 0.20000000018626451,
+        "p99": 0.2999999998137355
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.299999999999955,
+        "p99": 9.300000000000182
+      },
+      "startupMs": 75,
+      "info": {
+        "frame": 720,
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 7266247
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "wasmActive": true,
+        "batches": 720,
+        "nodes": 7200,
+        "fallbackRoots": 1440,
+        "wasmCalls": 720,
+        "wasmNodes": 7200,
+        "uploadedBytes": 1600,
+        "scannedBytes": 2822400,
+        "materializedBytes": 1843200,
+        "arenas": 1,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 1179648
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 10
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "packed-js",
+      "rep": 1,
+      "cpu": {
+        "p50": 0.09999999962747097,
+        "p95": 0.20000000018626451,
+        "p99": 0.20000000018626451
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.200000000000728,
+        "p99": 9.300000000000182
+      },
+      "startupMs": 61,
+      "info": {
+        "frame": 720,
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 8125018
+      },
+      "diagnostics": {
+        "backend": "packed-js",
+        "wasmActive": false,
+        "batches": 720,
+        "nodes": 7200,
+        "fallbackRoots": 1440,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 1600,
+        "scannedBytes": 2822400,
+        "materializedBytes": 1843200,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 10
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "original",
+      "rep": 1,
+      "cpu": {
+        "p50": 0.10000000055879354,
+        "p95": 0.20000000018626451,
+        "p99": 0.39999999944120646
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.299999999999955,
+        "p99": 9.399999999999636
+      },
+      "startupMs": 61,
+      "info": {
+        "frame": 720,
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 7898892
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 10
+      }
+    },
+    {
+      "scenario": "shader",
+      "engine": "wasm",
+      "rep": 2,
+      "cpu": {
+        "p50": 0.09999999962747097,
+        "p95": 0.2999999998137355,
+        "p99": 0.30000000074505806
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.200000000000045,
+        "p99": 9.300000000000182
+      },
+      "startupMs": 55,
+      "info": {
+        "frame": 720,
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 6900121
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "wasmActive": true,
+        "batches": 720,
+        "nodes": 1440,
+        "fallbackRoots": 720,
+        "wasmCalls": 720,
+        "wasmNodes": 1440,
+        "uploadedBytes": 224,
+        "scannedBytes": 564480,
+        "materializedBytes": 368640,
+        "arenas": 1,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 1179648
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2
+      }
+    },
+    {
+      "scenario": "shader",
+      "engine": "packed-js",
+      "rep": 2,
+      "cpu": {
+        "p50": 0.09999999962747097,
+        "p95": 0.2999999998137355,
+        "p99": 0.30000000074505806
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.199999999999818,
+        "p99": 9.300000000000182
+      },
+      "startupMs": 55,
+      "info": {
+        "frame": 720,
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 7256396
+      },
+      "diagnostics": {
+        "backend": "packed-js",
+        "wasmActive": false,
+        "batches": 720,
+        "nodes": 1440,
+        "fallbackRoots": 720,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 224,
+        "scannedBytes": 564480,
+        "materializedBytes": 368640,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2
+      }
+    },
+    {
+      "scenario": "shader",
+      "engine": "original",
+      "rep": 2,
+      "cpu": {
+        "p50": 0.09999999962747097,
+        "p95": 0.20000000018626451,
+        "p99": 0.30000000074505806
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.300000000000182,
+        "p99": 9.399999999999636
+      },
+      "startupMs": 52,
+      "info": {
+        "frame": 720,
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 6176497
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2
+      }
+    },
+    {
+      "scenario": "shader",
+      "engine": "js",
+      "rep": 2,
+      "cpu": {
+        "p50": 0.09999999962747097,
+        "p95": 0.20000000018626451,
+        "p99": 0.20000000018626451
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.299999999999727,
+        "p99": 9.300000000000182
+      },
+      "startupMs": 56,
+      "info": {
+        "frame": 720,
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 6411111
+      },
+      "diagnostics": {
+        "backend": "js",
+        "wasmActive": false,
+        "batches": 0,
+        "nodes": 0,
+        "fallbackRoots": 0,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 0,
+        "scannedBytes": 0,
+        "materializedBytes": 0,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "wasm",
+      "rep": 2,
+      "cpu": {
+        "p50": 0.2999999998137355,
+        "p95": 0.599999999627471,
+        "p99": 0.7000000001862645
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.200000000000273,
+        "p99": 9.300000000000182
+      },
+      "startupMs": 47,
+      "info": {
+        "frame": 720,
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 7257583
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "wasmActive": true,
+        "batches": 720,
+        "nodes": 7200,
+        "fallbackRoots": 1440,
+        "wasmCalls": 720,
+        "wasmNodes": 7200,
+        "uploadedBytes": 1600,
+        "scannedBytes": 2822400,
+        "materializedBytes": 1843200,
+        "arenas": 1,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 1179648
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 10
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "packed-js",
+      "rep": 2,
+      "cpu": {
+        "p50": 0.10000000055879354,
+        "p95": 0.5,
+        "p99": 0.6000000005587935
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.299999999999727,
+        "p99": 9.300000000000182
+      },
+      "startupMs": 57,
+      "info": {
+        "frame": 720,
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 7985662
+      },
+      "diagnostics": {
+        "backend": "packed-js",
+        "wasmActive": false,
+        "batches": 720,
+        "nodes": 7200,
+        "fallbackRoots": 1440,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 1600,
+        "scannedBytes": 2822400,
+        "materializedBytes": 1843200,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 10
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "original",
+      "rep": 2,
+      "cpu": {
+        "p50": 0.10000000055879354,
+        "p95": 0.20000000018626451,
+        "p99": 0.2999999998137355
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.099999999999454,
+        "p99": 9.300000000000182
+      },
+      "startupMs": 66,
+      "info": {
+        "frame": 720,
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 7894112
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 10
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "js",
+      "rep": 2,
+      "cpu": {
+        "p50": 0.19999999925494194,
+        "p95": 0.30000000074505806,
+        "p99": 0.40000000037252903
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.299999999999955,
+        "p99": 9.399999999999636
+      },
+      "startupMs": 88,
+      "info": {
+        "frame": 720,
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 7134821
+      },
+      "diagnostics": {
+        "backend": "js",
+        "wasmActive": false,
+        "batches": 0,
+        "nodes": 0,
+        "fallbackRoots": 0,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 0,
+        "scannedBytes": 0,
+        "materializedBytes": 0,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 10
+      }
+    },
+    {
+      "scenario": "shader",
+      "engine": "packed-js",
+      "rep": 3,
+      "cpu": {
+        "p50": 0.09999999962747097,
+        "p95": 0.20000000018626451,
+        "p99": 0.30000000074505806
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.300000000000182,
+        "p99": 9.399999999999636
+      },
+      "startupMs": 56,
+      "info": {
+        "frame": 720,
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 7234872
+      },
+      "diagnostics": {
+        "backend": "packed-js",
+        "wasmActive": false,
+        "batches": 720,
+        "nodes": 1440,
+        "fallbackRoots": 720,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 224,
+        "scannedBytes": 564480,
+        "materializedBytes": 368640,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2
+      }
+    },
+    {
+      "scenario": "shader",
+      "engine": "original",
+      "rep": 3,
+      "cpu": {
+        "p50": 0,
+        "p95": 0.10000000055879354,
+        "p99": 0.20000000018626451
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.299999999999955,
+        "p99": 9.399999999999636
+      },
+      "startupMs": 63,
+      "info": {
+        "frame": 720,
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 6183765
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2
+      }
+    },
+    {
+      "scenario": "shader",
+      "engine": "js",
+      "rep": 3,
+      "cpu": {
+        "p50": 0.10000000055879354,
+        "p95": 0.2999999998137355,
+        "p99": 0.30000000074505806
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.300000000000182,
+        "p99": 9.300000000000182
+      },
+      "startupMs": 61,
+      "info": {
+        "frame": 720,
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 6444795
+      },
+      "diagnostics": {
+        "backend": "js",
+        "wasmActive": false,
+        "batches": 0,
+        "nodes": 0,
+        "fallbackRoots": 0,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 0,
+        "scannedBytes": 0,
+        "materializedBytes": 0,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2
+      }
+    },
+    {
+      "scenario": "shader",
+      "engine": "wasm",
+      "rep": 3,
+      "cpu": {
+        "p50": 0.10000000055879354,
+        "p95": 0.2999999998137355,
+        "p99": 0.39999999944120646
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.199999999999818,
+        "p99": 9.300000000000182
+      },
+      "startupMs": 54,
+      "info": {
+        "frame": 720,
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 6858313
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "wasmActive": true,
+        "batches": 720,
+        "nodes": 1440,
+        "fallbackRoots": 720,
+        "wasmCalls": 720,
+        "wasmNodes": 1440,
+        "uploadedBytes": 224,
+        "scannedBytes": 564480,
+        "materializedBytes": 368640,
+        "arenas": 1,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 1179648
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 2
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "packed-js",
+      "rep": 3,
+      "cpu": {
+        "p50": 0.10000000055879354,
+        "p95": 0.5,
+        "p99": 0.599999999627471
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.300000000000182,
+        "p99": 9.300000000000182
+      },
+      "startupMs": 59,
+      "info": {
+        "frame": 720,
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 7946662
+      },
+      "diagnostics": {
+        "backend": "packed-js",
+        "wasmActive": false,
+        "batches": 720,
+        "nodes": 7200,
+        "fallbackRoots": 1440,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 1600,
+        "scannedBytes": 2822400,
+        "materializedBytes": 1843200,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 10
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "original",
+      "rep": 3,
+      "cpu": {
+        "p50": 0.19999999925494194,
+        "p95": 0.5,
+        "p99": 0.6000000005587935
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.199999999999818,
+        "p99": 9.300000000000182
+      },
+      "startupMs": 80,
+      "info": {
+        "frame": 720,
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 7920005
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 10
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "js",
+      "rep": 3,
+      "cpu": {
+        "p50": 0.20000000018626451,
+        "p95": 0.5,
+        "p99": 0.6000000005587935
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.300000000000182,
+        "p99": 9.399999999999636
+      },
+      "startupMs": 69,
+      "info": {
+        "frame": 720,
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 7201977
+      },
+      "diagnostics": {
+        "backend": "js",
+        "wasmActive": false,
+        "batches": 0,
+        "nodes": 0,
+        "fallbackRoots": 0,
+        "wasmCalls": 0,
+        "wasmNodes": 0,
+        "uploadedBytes": 0,
+        "scannedBytes": 0,
+        "materializedBytes": 0,
+        "arenas": 0,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 0
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 10
+      }
+    },
+    {
+      "scenario": "small",
+      "engine": "wasm",
+      "rep": 3,
+      "cpu": {
+        "p50": 0.20000000018626451,
+        "p95": 0.599999999627471,
+        "p99": 0.6000000005587935
+      },
+      "interval": {
+        "p50": 8.300000000000182,
+        "p95": 9.299999999999727,
+        "p99": 9.300000000000182
+      },
+      "startupMs": 47,
+      "info": {
+        "frame": 720,
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0,
+        "programs": 1
+      },
+      "memory": {
+        "usedJSHeapSize": 7247119
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "wasmActive": true,
+        "batches": 720,
+        "nodes": 7200,
+        "fallbackRoots": 1440,
+        "wasmCalls": 720,
+        "wasmNodes": 7200,
+        "uploadedBytes": 1600,
+        "scannedBytes": 2822400,
+        "materializedBytes": 1843200,
+        "arenas": 1,
+        "syncMs": 0,
+        "kernelMs": 0,
+        "readMs": 0,
+        "wasmMemoryBytes": 1179648
+      },
+      "env": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "gpuTimer": true,
+        "width": 640,
+        "height": 360,
+        "dpr": 1,
+        "objects": 10
+      }
+    }
+  ]
+}

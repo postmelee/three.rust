@@ -1,0 +1,16 @@
+shader-original-0.json {"cpu":0.09999999962747097,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-js-0.json {"cpu":0.09999999962747097,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-wasm-0.json {"cpu":0.09999999962747097,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-packed-js-0.json {"cpu":0.09999999962747097,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-js-1.json {"cpu":0.09999999962747097,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-wasm-1.json {"cpu":0.09999999962747097,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-packed-js-1.json {"cpu":0.09999999962747097,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-original-1.json {"cpu":0.10000000055879354,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-wasm-2.json {"cpu":0.09999999962747097,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-packed-js-2.json {"cpu":0.09999999962747097,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-original-2.json {"cpu":0.09999999962747097,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-js-2.json {"cpu":0.09999999962747097,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-packed-js-3.json {"cpu":0.10000000055879354,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-original-3.json {"cpu":0.09999999962747097,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-js-3.json {"cpu":0.09999999962747097,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-wasm-3.json {"cpu":0.09999999962747097,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}

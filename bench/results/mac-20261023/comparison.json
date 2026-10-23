@@ -1,0 +1,155 @@
+{
+  "rule": "Gain > max(5%, twice absolute before/after original p50 drift, twice relative within-session MAD). Timer-resolution and all workload/tail gates still require human interpretation. Single machine with uncontrolled background work.",
+  "decisions": [
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "aaBeforeP50": [
+        0.10000000009313226,
+        0.19999999972060323,
+        0.19999999972060323,
+        0.19999999972060323,
+        0.10000000009313226
+      ],
+      "aaAfterP50": [
+        0.19999999925494194,
+        0.10000000055879354,
+        0.10000000055879354,
+        0.09999999962747097,
+        0.10000000055879354
+      ],
+      "relativeDrift": 0.49999999650754035,
+      "requiredGain": 0.9999999930150807,
+      "observedGain": -0.5000000023283064,
+      "absoluteSavingMs": -0.05000000027939677,
+      "aboveNoise": false,
+      "tail95Ratio": 1.0000000006652303,
+      "interval95Ratio": 1.0054054053852688
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "aaBeforeP50": [
+        0.10000000009313226,
+        0.19999999972060323,
+        0.19999999972060323,
+        0.19999999972060323,
+        0.10000000009313226
+      ],
+      "aaAfterP50": [
+        0.19999999925494194,
+        0.10000000055879354,
+        0.10000000055879354,
+        0.09999999962747097,
+        0.10000000055879354
+      ],
+      "relativeDrift": 0.49999999650754035,
+      "requiredGain": 0.9999999930150807,
+      "observedGain": -0.5,
+      "absoluteSavingMs": -0.05000000004656613,
+      "aboveNoise": false,
+      "tail95Ratio": 1.0000000006652303,
+      "interval95Ratio": 1.0054054053852688
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-js",
+      "aaBeforeP50": [
+        0.3000000002793968,
+        0.2999999998137355,
+        0.39999999990686774,
+        0.40000000037252903,
+        0.39999999990686774
+      ],
+      "aaAfterP50": [
+        0.40000000037252903,
+        0.39999999944120646,
+        0.39999999944120646,
+        0.40000000037252903,
+        0.599999999627471
+      ],
+      "relativeDrift": 1.1641532182693481e-9,
+      "requiredGain": 0.05,
+      "observedGain": 0.4444444446744006,
+      "absoluteSavingMs": 0.20000000018626451,
+      "aboveNoise": true,
+      "tail95Ratio": 0.5199999997578562,
+      "interval95Ratio": 1.010869565176679
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-wasm",
+      "aaBeforeP50": [
+        0.3000000002793968,
+        0.2999999998137355,
+        0.39999999990686774,
+        0.40000000037252903,
+        0.39999999990686774
+      ],
+      "aaAfterP50": [
+        0.40000000037252903,
+        0.39999999944120646,
+        0.39999999944120646,
+        0.40000000037252903,
+        0.599999999627471
+      ],
+      "relativeDrift": 1.1641532182693481e-9,
+      "requiredGain": 0.05,
+      "observedGain": 0.5555555553255993,
+      "absoluteSavingMs": 0.25,
+      "aboveNoise": true,
+      "tail95Ratio": 0.4,
+      "interval95Ratio": 1.010869565176679
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "aaBeforeP50": [
+        0.10000000009313226,
+        0.09999999962747097,
+        0.10000000009313226,
+        0.10000000009313226,
+        0.10000000009313226
+      ],
+      "aaAfterP50": [
+        0.10000000055879354,
+        0.10000000055879354,
+        0.10000000055879354,
+        0.09999999962747097,
+        0.09999999962747097
+      ],
+      "relativeDrift": 4.6566128730773926e-9,
+      "requiredGain": 0.05,
+      "observedGain": 4.6566128730773926e-9,
+      "absoluteSavingMs": 4.656612873077393e-10,
+      "aboveNoise": false,
+      "tail95Ratio": 0.6666666677014695,
+      "interval95Ratio": 1
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "aaBeforeP50": [
+        0.10000000009313226,
+        0.09999999962747097,
+        0.10000000009313226,
+        0.10000000009313226,
+        0.10000000009313226
+      ],
+      "aaAfterP50": [
+        0.10000000055879354,
+        0.10000000055879354,
+        0.10000000055879354,
+        0.09999999962747097,
+        0.09999999962747097
+      ],
+      "relativeDrift": 4.6566128730773926e-9,
+      "requiredGain": 0.05,
+      "observedGain": 2.3283064365386963e-9,
+      "absoluteSavingMs": 2.3283064365386963e-10,
+      "aboveNoise": false,
+      "tail95Ratio": 0.6666666677014695,
+      "interval95Ratio": 1
+    }
+  ]
+}

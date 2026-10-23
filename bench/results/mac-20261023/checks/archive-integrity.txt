@@ -1,0 +1,2 @@
+Verified 229 archived original-byte SHA-256 hashes, including regenerated summaries.
+All four full Fox phases: clean source, complete.

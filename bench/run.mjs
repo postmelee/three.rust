@@ -1,3 +1,4 @@
+import { browserPath } from '../scripts/browser-path.mjs';
 import {chromium} from 'playwright';
 import {mkdirSync,writeFileSync,readFileSync,existsSync} from 'node:fs';
 import {execFileSync} from 'node:child_process';
@@ -15,7 +16,7 @@ const manifest={date:new Date().toISOString(),commit:git('rev-parse','HEAD'),sou
 const save=()=>writeFileSync(`${out}/manifest.json`,JSON.stringify(manifest,null,2));save();
 let server,browser;
 try{
- server=await serve();browser=await chromium.launch({executablePath:process.env.CHROMIUM||'/usr/bin/chromium',headless,args});manifest.browser=browser.version();save();
+ server=await serve();browser=await chromium.launch({executablePath:browserPath(),headless,args});manifest.browser=browser.version();save();
  for(let rep=0;rep<repeats;rep++)for(const scenario of scenarios)for(const engine of [...engines.slice(rep%engines.length),...engines.slice(0,rep%engines.length)]){
   const page=await browser.newPage({viewport,deviceScaleFactor:1});const errors=[];page.on('pageerror',e=>errors.push(e.message));const start=Date.now();
   await page.goto(`http://127.0.0.1:4173/fixtures/generated/${scenario}.html?engine=${engine}`);await page.waitForFunction(()=>!!window.__bench,{},{timeout:60000});

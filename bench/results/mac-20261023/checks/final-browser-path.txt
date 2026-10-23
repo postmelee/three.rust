@@ -1,0 +1,14 @@
+
+> three-rust-research@0.1.0 test:browser-path
+> node --test tests/browser-path.mjs
+
+✔ explicit browser override remains authoritative, including invalid path (0.331125ms)
+✔ platform fallback produces executable path without Linux assumption on Mac (0.10325ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 192.311167

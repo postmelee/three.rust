@@ -11,6 +11,8 @@ FPS or general application speedup established. This is an explicit command/read
 not import-only AnimationMixer compatibility or completion of M5/M6. Read the
 [finite contract](OWNED_ANIMATION.md) and [pre-port ADR](adr/0003-owned-animation-experiment.md).
 
+A later [physical Mac and licensed Fox validation](MAC_HARDWARE_REPORT.md) adds Apple Metal evidence with pre/post A/A and real-asset replay. The measurements below remain the original synthetic software-renderer session; do not combine their numbers or scope with the Mac dataset.
+
 ## Main-path measurements
 
 Each cell is the median of six per-run quantiles in milliseconds. Linear quantiles

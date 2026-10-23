@@ -1,0 +1,18 @@
+{
+  "repository": "https://github.com/KhronosGroup/glTF-Sample-Assets",
+  "commit": "15cd02d304e54cb42a4db4eefe719f76190f4b68",
+  "source": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/15cd02d304e54cb42a4db4eefe719f76190f4b68/Models/Fox/README.md",
+  "attribution": "Model: PixelMannen (CC0-1.0); rigging/animation: tomkranis (CC-BY-4.0); glTF conversion: AsoboStudio and scurest (CC-BY-4.0). Embedded GLB copyright retained.",
+  "files": [
+    {
+      "path": "work/assets/Fox.glb",
+      "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/15cd02d304e54cb42a4db4eefe719f76190f4b68/Models/Fox/glTF-Binary/Fox.glb",
+      "sha256": "d97044e701822bac5a62696459b27d7b375aada5de8574ed4362edbba94771f7"
+    },
+    {
+      "path": "fixtures/fox/LICENSE.md",
+      "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/15cd02d304e54cb42a4db4eefe719f76190f4b68/Models/Fox/LICENSE.md",
+      "sha256": "9ddaa2edd6a8f72117eec9709d38cd7d284f61f77752d342c32c828e61f78eae"
+    }
+  ]
+}

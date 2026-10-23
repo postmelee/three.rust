@@ -1,0 +1,274 @@
+diff --git a/bench/fox-compare.mjs b/bench/fox-compare.mjs
+index aa4904a..4281a8b 100644
+--- a/bench/fox-compare.mjs
++++ b/bench/fox-compare.mjs
+@@ -1,3 +1,4 @@
++import assert from "node:assert/strict";
+ import { readFileSync, writeFileSync } from "node:fs";
+ const dir = process.argv[2];
+ if (!dir) throw Error("Usage: node bench/fox-compare.mjs SESSION");
+@@ -5,6 +6,33 @@ const read = (p) => JSON.parse(readFileSync(`${dir}/${p}/summary.json`)),
+   before = read("aa-before"),
+   after = read("aa-after"),
+   main = read("main");
++const manifests = ["aa-before", "main", "aa-after"].map((p) =>
++  JSON.parse(readFileSync(`${dir}/${p}/manifest.json`)),
++);
++for (const manifest of manifests) {
++  assert.equal(manifest.status, "complete", "Incomplete phase");
++  assert.deepEqual(
++    manifest.hashes,
++    manifests[1].hashes,
++    "Different measured source hashes",
++  );
++  assert.equal(
++    manifest.browser,
++    manifests[1].browser,
++    "Different browser versions",
++  );
++  assert.deepEqual(
++    manifest.renderTarget,
++    manifests[1].renderTarget,
++    "Different render targets",
++  );
++  for (const key of ["samples", "warmup", "hardware", "headless", "cases"])
++    assert.deepEqual(
++      manifest.options[key],
++      manifests[1].options[key],
++      `Different ${key}`,
++    );
++}
+ const median = (a) => {
+   a = [...a].sort((x, y) => x - y);
+   return a.length % 2
+diff --git a/bench/fox.mjs b/bench/fox.mjs
+index dfca93d..313080f 100644
+--- a/bench/fox.mjs
++++ b/bench/fox.mjs
+@@ -34,6 +34,8 @@ const cfg = configuration([
+   `warmup=${opt.warmup || 600}`,
+   `samples=${opt.samples || 1800}`,
+ ]);
++// The actual page viewport, independent of the legacy M0 defaults.
++cfg.viewport = { width: 640, height: 540 };
+ const variants = (opt.variants || "original,owned-js,owned-wasm").split(","),
+   cases = (opt.cases || "animated-1,animated-16,static-1").split(","),
+   stage = opt.stage || "render",
+@@ -87,14 +89,25 @@ const hash = (p) => createHash("sha256").update(readFileSync(p)).digest("hex"),
+     classification:
+       stage === "render"
+         ? cfg.repeats < 5 || cfg.warmup < 1200 || cfg.samples < 3600
+-      ? "Smoke/short hardware diagnostic only; not a performance conclusion"
+-      : "Hardware fixed-frame real-asset experiment; explicit API; no automatic product verdict"
++          ? "Smoke/short diagnostic only; not a performance conclusion"
++          : `${cfg.hardware ? "Hardware" : "Software-renderer"} fixed-frame real-asset experiment; explicit API; no automatic product verdict`
+         : "Separate instrumented copy/read diagnostic",
+     startedAt: new Date().toISOString(),
+     sourceCommit: execFileSync("git", ["rev-parse", "HEAD"]).toString().trim(),
+     dirty: !!execFileSync("git", ["status", "--porcelain"]).length,
+     hashes: Object.fromEntries(paths.map((p) => [p, hash(p)])),
+-    options: { ...cfg, variants, cases, stage },
++    options: {
++      repeats: cfg.repeats,
++      warmup: cfg.warmup,
++      samples: cfg.samples,
++      hardware: cfg.hardware,
++      headless: cfg.headless,
++      args: cfg.args,
++      viewport: cfg.viewport,
++      variants,
++      cases,
++      stage,
++    },
+     renderTarget: {
+       width: 640,
+       height: 480,
+@@ -146,7 +159,7 @@ try {
+         manifest.activeRun = { repeat, scenario, variant };
+         save();
+         const page = await browser.newPage({
+-            viewport: { width: 640, height: 540 },
++            viewport: cfg.viewport,
+             deviceScaleFactor: 1,
+           }),
+           errors = [];
+diff --git a/bench/gpu-summary.mjs b/bench/gpu-summary.mjs
+new file mode 100644
+index 0000000..c2ec5e7
+--- /dev/null
++++ b/bench/gpu-summary.mjs
+@@ -0,0 +1,56 @@
++// Separate asynchronous GPU-query diagnostics; never substitute CPU/FPS timing.
++import assert from "node:assert/strict";
++import { readFileSync, writeFileSync } from "node:fs";
++const dir = process.argv[2];
++if (!dir) throw Error("Usage: node bench/gpu-summary.mjs DIRECTORY");
++const read = (name) => JSON.parse(readFileSync(`${dir}/${name}`));
++const manifest = read("manifest.json");
++assert.equal(manifest.status, "complete");
++assert.equal(manifest.gpuQuery, true);
++assert.equal(
++  manifest.runs.length,
++  manifest.repeats * manifest.scenarios.length * manifest.engines.length,
++);
++assert.equal(new Set(manifest.runs).size, manifest.runs.length);
++const q = (values, p) => {
++  if (!values.length) return null;
++  values = [...values].sort((a, b) => a - b);
++  return values[Math.floor((values.length - 1) * p)];
++};
++const rows = manifest.runs.map((file) => {
++  const run = read(file),
++    statuses = {};
++  assert.equal(run.rows.length, manifest.samples);
++  const values = [];
++  for (const row of run.rows) {
++    statuses[row.gpuStatus] = (statuses[row.gpuStatus] || 0) + 1;
++    if (row.gpuStatus === "available") {
++      assert(Number.isFinite(row.gpuMs) && row.gpuMs >= 0);
++      values.push(row.gpuMs);
++    } else assert.equal(row.gpuMs, null);
++  }
++  return {
++    file,
++    scenario: run.scenario,
++    engine: run.engine,
++    rep: run.rep,
++    statuses,
++    gpuMs: { p50: q(values, 0.5), p95: q(values, 0.95), p99: q(values, 0.99) },
++    env: run.env,
++  };
++});
++writeFileSync(
++  `${dir}/gpu-summary.json`,
++  JSON.stringify(
++    {
++      method:
++        "Per-run nearest-rank (floor index) quantiles of available asynchronous query ranges only. Missing/disjoint/pending values stay null in raw data. Separate instrumented workload; not Fox GPU time or display latency.",
++      rows,
++    },
++    null,
++    2,
++  ) + "\n",
++);
++console.table(
++  rows.map(({ file, gpuMs, statuses }) => ({ file, ...gpuMs, ...statuses })),
++);
+diff --git a/package.json b/package.json
+index f9043a5..a722c16 100644
+--- a/package.json
++++ b/package.json
+@@ -16,7 +16,7 @@
+     "bench:diagnostic": "node bench/run.mjs repeats=1 warmup=30 samples=60 engines=original,js,wasm,packed-js timings=true gpu=true out=work/bench-diagnostic",
+     "bench:startup": "node bench/startup.mjs",
+     "bench:analyze": "node bench/summarize.mjs bench/results/m2-full && node bench/analyze.mjs bench/results/m2-full",
+-    "test:infra": "node --test tests/infra.mjs",
++    "test:infra": "node --test tests/infra.mjs tests/fox-analysis.mjs",
+     "test:gpu-guard": "node tests/gpu-guard.mjs",
+     "bundle:demo": "node scripts/bundle-demo.mjs",
+     "test:bundle": "node tests/bundle.mjs",
+diff --git a/scripts/mac-validation.sh b/scripts/mac-validation.sh
+index a95066e..c30e397 100755
+--- a/scripts/mac-validation.sh
++++ b/scripts/mac-validation.sh
+@@ -10,6 +10,7 @@ RTHREE_BROWSER_MODE=hardware RTHREE_HEADLESS=false RTHREE_OWNED_RESULTS_DIR="$ou
+ npm run test:gpu-guard > "$out/checks/gpu-guard.txt" 2>&1
+ node bench/owned.mjs mode=hardware headless=false variants=original,owned-js,owned-wasm repeats=6 warmup=120 samples=600 out="$out/synthetic"
+ node bench/owned-report.mjs "$out/synthetic"
++RTHREE_BROWSER_MODE=hardware RTHREE_FOX_REJECTION_DIR="$out/fox-rejections" node tests/fox-rejections.mjs > "$out/checks/fox-rejections.txt" 2>&1
+ RTHREE_BROWSER_MODE=hardware RTHREE_FOX_RESULTS_DIR="$out/fox-correctness" node tests/fox-browser.mjs > "$out/checks/fox.txt" 2>&1
+ # 1200/3600 targets ~10/30 seconds at the observed 120 Hz; record actual duration.
+ for phase in aa-before main aa-after; do
+@@ -20,3 +21,10 @@ done
+ node bench/fox.mjs mode=hardware headless=false stage=diagnostic repeats=5 warmup=60 samples=120 out="$out/diagnostic"
+ node bench/fox-report.mjs "$out/diagnostic"
+ node bench/fox-compare.mjs "$out"
++# Existing M2 facade controls are separate from the explicit-owned Fox comparison.
++node bench/run.mjs mode=hardware headless=false scenarios=shader,small engines=original,js,wasm,packed-js repeats=4 warmup=120 samples=600 width=640 height=360 out="$out/controls"
++node bench/analyze.mjs "$out/controls"
++node bench/run.mjs mode=hardware headless=false scenarios=shader engines=original,js,wasm,packed-js repeats=4 warmup=120 samples=600 width=3840 height=2160 out="$out/shader-4k"
++node bench/analyze.mjs "$out/shader-4k"
++node bench/run.mjs mode=hardware headless=false scenarios=shader engines=original repeats=3 warmup=120 samples=300 width=3840 height=2160 gpu=true out="$out/gpu-4k"
++node bench/gpu-summary.mjs "$out/gpu-4k"
+diff --git a/tests/fox-analysis.mjs b/tests/fox-analysis.mjs
+new file mode 100644
+index 0000000..41313cd
+--- /dev/null
++++ b/tests/fox-analysis.mjs
+@@ -0,0 +1,76 @@
++import { test } from "node:test";
++import assert from "node:assert/strict";
++import {
++  mkdtempSync,
++  mkdirSync,
++  copyFileSync,
++  readFileSync,
++  writeFileSync,
++  rmSync,
++} from "node:fs";
++import { tmpdir } from "node:os";
++import { join } from "node:path";
++import { spawnSync } from "node:child_process";
++const archive = "bench/results/mac-20261023";
++for (const [label, mutation, error] of [
++  ["accept matching captured phases", () => {}, null],
++  [
++    "reject a different measured source",
++    (m) => {
++      m.hashes["fixtures/fox/replay.mjs"] = "changed";
++    },
++    "Different measured source hashes",
++  ],
++  [
++    "reject a browser update",
++    (m) => {
++      m.browser = "changed";
++    },
++    "Different browser versions",
++  ],
++  [
++    "reject different work",
++    (m) => {
++      m.options.samples++;
++    },
++    "Different samples",
++  ],
++  [
++    "reject incomplete phases",
++    (m) => {
++      m.status = "failed";
++    },
++    "Incomplete phase",
++  ],
++])
++  test(label, () => {
++    const dir = mkdtempSync(join(tmpdir(), "fox-analysis-"));
++    try {
++      for (const phase of ["aa-before", "main", "aa-after"]) {
++        mkdirSync(join(dir, phase));
++        for (const file of ["manifest.json", "summary.json"])
++          copyFileSync(`${archive}/${phase}/${file}`, join(dir, phase, file));
++      }
++      const path = join(dir, "aa-after", "manifest.json"),
++        manifest = JSON.parse(readFileSync(path));
++      mutation(manifest);
++      writeFileSync(path, JSON.stringify(manifest));
++      const result = spawnSync(
++        process.execPath,
++        ["bench/fox-compare.mjs", dir],
++        { encoding: "utf8" },
++      );
++      if (error) {
++        assert.notEqual(result.status, 0);
++        assert(result.stderr.includes(error), result.stderr);
++      } else {
++        assert.equal(result.status, 0, result.stderr);
++        assert.deepEqual(
++          JSON.parse(readFileSync(join(dir, "comparison.json"))),
++          JSON.parse(readFileSync(`${archive}/comparison.json`)),
++        );
++      }
++    } finally {
++      rmSync(dir, { recursive: true, force: true });
++    }
++  });

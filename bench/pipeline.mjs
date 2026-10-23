@@ -1,3 +1,4 @@
+import { browserPath } from '../scripts/browser-path.mjs';
 // Preparation diagnostic; not the M5 Rust-owned pipeline or a product speedup study.
 import {chromium} from 'playwright';import {serve} from '../scripts/server.mjs';import {configuration,hardwareRenderer} from './config.mjs';
 import {mkdirSync,writeFileSync,readFileSync,existsSync} from 'node:fs';import {execFileSync} from 'node:child_process';import {createHash} from 'node:crypto';import os from 'node:os';
@@ -12,7 +13,7 @@ const fileHashes=Object.fromEntries(paths.map(p=>[p,createHash('sha256').update(
 const read=p=>{try{return readFileSync(p,'utf8').trim();}catch{return null;}};
 const manifest={classification:stage==='cpu'?'CPU-only preparation diagnostic; no render timing':'Full-frame preparation diagnostic; not a speedup study',status:'running',startedAt:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD']).toString().trim(),dirty:!!execFileSync('git',['status','--porcelain']).length,fileHashes,sourceAudit:JSON.parse(readFileSync('fixtures/pipeline/source-audit.json')),options:{...cfg,counts,bones,stage,out},renderTarget:{width:640,height:480,devicePixelRatio:1},host:{platform:os.platform(),release:os.release(),cpus:os.cpus().map(c=>c.model),memory:os.totalmem(),cpuQuota:read('/sys/fs/cgroup/cpu.max'),memoryLimit:read('/sys/fs/cgroup/memory.max'),gpuDeviceDirectory:existsSync('/dev/dri'),node:process.version},runs:[]};
 const save=()=>writeFileSync(`${out}/manifest.json`,JSON.stringify(manifest,null,2)+'\n');save();const server=await serve();let browser;
-try{browser=await chromium.launch({executablePath:process.env.CHROMIUM||'/usr/bin/chromium',headless:cfg.headless,args:cfg.args});manifest.browser=browser.version();
+try{browser=await chromium.launch({executablePath:browserPath(),headless:cfg.headless,args:cfg.args});manifest.browser=browser.version();
 for(let repeat=0;repeat<cfg.repeats;repeat++)for(const count of (repeat%2?[...counts].reverse():counts))for(const engine of (repeat%2?[...cfg.engines].reverse():cfg.engines)){
  const page=await browser.newPage({viewport:cfg.viewport,deviceScaleFactor:1});const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(`http://127.0.0.1:4173/fixtures/pipeline/index.html?manual&count=${count}&bones=${bones}&engine=${engine}`);await page.waitForFunction(()=>!!window.__pipeline);
  const gpu=await page.evaluate(()=>window.__pipeline.gpu);if(cfg.hardware)hardwareRenderer(gpu.renderer);

@@ -1,0 +1,81 @@
+{
+  "method": "Lossless gzip; SHA-256 of original file bytes; manifests retain original logical run filenames. Reports transparently read .json.gz.",
+  "files": {
+    "analysis.json": {
+      "sha256": "5e0cafdb4a7f2fa63263c66f3a6ac39a65e3a9247c60da63951003f4a0b18ae1",
+      "archivedAs": "analysis.json"
+    },
+    "manifest.json": {
+      "sha256": "bc0a887fe0e8151dff2c1e546bcb6d0ccf6304a54ee531be6eabb5062790e702",
+      "archivedAs": "manifest.json"
+    },
+    "shader-js-0.json": {
+      "sha256": "5f9842720a50e5456aa0f5feb3b7a5aa4715ff0d522dd781f53fb79ff36204fc",
+      "archivedAs": "shader-js-0.json"
+    },
+    "shader-js-1.json": {
+      "sha256": "5cb151bb359e5fc265e57c03f478fbe0e4b47ff2ac62dd6800ee82c23c7dae20",
+      "archivedAs": "shader-js-1.json"
+    },
+    "shader-js-2.json": {
+      "sha256": "ae5c80f48664e4a6e1f08317e056a4401b43ea43158e08481a84e3a3620e285f",
+      "archivedAs": "shader-js-2.json"
+    },
+    "shader-js-3.json": {
+      "sha256": "f70e4d8fb4b6bc11788f156da93d4c00877bc6546f166c92c7f01e4504165d08",
+      "archivedAs": "shader-js-3.json"
+    },
+    "shader-original-0.json": {
+      "sha256": "53caa4e9b022c1574e35323706056d182341c709c18fc88d9040fbff89cf30b7",
+      "archivedAs": "shader-original-0.json"
+    },
+    "shader-original-1.json": {
+      "sha256": "a7f5533697c3113f47a1c3d1508fc54636ee8c13a578427bceb4eea8f6b0b60f",
+      "archivedAs": "shader-original-1.json"
+    },
+    "shader-original-2.json": {
+      "sha256": "ca5dbd039e62d064c8365979b75bd4967e1c84220f65b54d8458565eeafd45c1",
+      "archivedAs": "shader-original-2.json"
+    },
+    "shader-original-3.json": {
+      "sha256": "508b3eb3e2860065bb6d193a7e86dc41ac2548642c5df4ddd91d30901ed0cb57",
+      "archivedAs": "shader-original-3.json"
+    },
+    "shader-packed-js-0.json": {
+      "sha256": "85298903bc1f1e5ab2f75234d072ba35edbbbaa6e258db0cdc83eb707cbab320",
+      "archivedAs": "shader-packed-js-0.json"
+    },
+    "shader-packed-js-1.json": {
+      "sha256": "0fc576740d0bea27d22eb669cfcce21225f16a1e66e488a9fae55118c7bad62a",
+      "archivedAs": "shader-packed-js-1.json"
+    },
+    "shader-packed-js-2.json": {
+      "sha256": "4a558e95b16aff465173a0dd7f7cd366d6a3aaca63ba429e5d12dcb858e37499",
+      "archivedAs": "shader-packed-js-2.json"
+    },
+    "shader-packed-js-3.json": {
+      "sha256": "b7fd2c069a5d5ffb6c3c2339a20b905b25edf6a06a2b53405d6fc812706a25b4",
+      "archivedAs": "shader-packed-js-3.json"
+    },
+    "shader-wasm-0.json": {
+      "sha256": "49e28acdccafcf83e8b29529a7070e57f3ce2788d9c488a96abf9ba1b07b390b",
+      "archivedAs": "shader-wasm-0.json"
+    },
+    "shader-wasm-1.json": {
+      "sha256": "0a2a6c3f8c5cb12f0f1d0ad55eee15432e91163eae954cce963de5f1961ad422",
+      "archivedAs": "shader-wasm-1.json"
+    },
+    "shader-wasm-2.json": {
+      "sha256": "564204ecd63751fbc9c49464f9204f5b149e9ff145b1cc85706645b9d2f232be",
+      "archivedAs": "shader-wasm-2.json"
+    },
+    "shader-wasm-3.json": {
+      "sha256": "0b3c5e92be92708c5c7a0341fb607dd424c68bf1d4e506edfd98de6d116fcb15",
+      "archivedAs": "shader-wasm-3.json"
+    },
+    "table.md": {
+      "sha256": "80c3d5412a9e68e1eb67c4599960d335126d92e31f13313696af0dcd03c984e1",
+      "archivedAs": "table.md"
+    }
+  }
+}

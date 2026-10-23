@@ -1,0 +1,22 @@
+
+> three-rust-research@0.1.0 test:infra
+> node --test tests/infra.mjs tests/fox-analysis.mjs
+
+✔ accept matching captured phases (39.004709ms)
+✔ reject a different measured source (35.820458ms)
+✔ reject a browser update (34.235042ms)
+✔ reject different work (34.4475ms)
+✔ reject incomplete phases (33.567209ms)
+✔ hardware measurement rejects software, missing and masked renderers (0.537958ms)
+✔ hardware configuration never forces software; options are explicit and validated (0.492792ms)
+✔ roadmap sync is idempotent and only assigns milestones (0.63425ms)
+✔ roadmap sync refuses unmarked issues and closed milestones (0.175208ms)
+✔ analysis refuses false confidence from one run or zero reference timings (63.221792ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 218.471625
