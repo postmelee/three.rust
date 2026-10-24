@@ -1,0 +1,19 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert(morph.some(n=>Math.abs(n-0.65)<1e-12))
+
+    at viewer (file://<checkout>/scripts/apps/check.mjs:61:247)
+    at async file://<checkout>/scripts/apps/check.mjs:153:38 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.15.0

@@ -1,0 +1,15 @@
+V1 native GUI clip/speed/pause/resume/morph/orbit 0
+E1 pointer picking and shift selection 0
+E1 command transforms/undo/redo/synchronous reads 0
+E1 idle render suppression 0
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.waitForFunction: Timeout 20000ms exceeded.
+    at editorAnimated (<checkout>/scripts/apps/check.mjs:119:15)
+    at async file://<checkout>/scripts/apps/check.mjs:145:86 {
+  name: 'TimeoutError'
+}
+
+Node.js v24.15.0

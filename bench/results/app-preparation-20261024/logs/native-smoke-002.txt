@@ -1,0 +1,20 @@
+navigate
+wait ready
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.evaluate: Error: strict mode violation: locator('.viewer canvas') resolved to 5 elements:
+    1) <canvas width="1280" height="656" data-engine="three.js r176"></canvas> aka locator('canvas').first()
+    2) <canvas width="100" height="100" data-engine="three.js r176"></canvas> aka locator('canvas').nth(1)
+    3) <canvas width="80" height="48"></canvas> aka locator('canvas').nth(2)
+    4) <canvas width="80" height="48"></canvas> aka locator('canvas').nth(3)
+    5) <canvas width="80" height="48"></canvas> aka locator('canvas').nth(4)
+
+Call log:
+[2m  - waiting for locator('.viewer canvas')[22m
+
+    at gpu (<checkout>/scripts/apps/browser.mjs:40:32)
+    at <checkout>/scripts/apps/inspect.mjs:7:39
+
+Node.js v24.15.0
