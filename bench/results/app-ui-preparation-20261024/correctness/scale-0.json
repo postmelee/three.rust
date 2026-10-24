@@ -1,0 +1,389 @@
+{
+  "hit": {
+    "x": 480.33804230535196,
+    "y": 346.3838960722141,
+    "score": 0.007691852580023806,
+    "center": {
+      "x": 415.33804230535196,
+      "y": 347.3838960722141
+    }
+  },
+  "before": {
+    "objects": [
+      {
+        "name": "Left cube",
+        "position": [
+          -1,
+          0.4,
+          0
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "matrix": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          -1,
+          0.4,
+          0,
+          1
+        ]
+      },
+      {
+        "name": "Right cube",
+        "position": [
+          1,
+          0.4,
+          0
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "matrix": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0.4,
+          0,
+          1
+        ]
+      }
+    ],
+    "selected": "Left cube",
+    "selection": [
+      "Left cube"
+    ],
+    "history": [
+      "AddObjectCommand",
+      "AddObjectCommand",
+      "AddObjectCommand",
+      "AddObjectCommand",
+      "AddObjectCommand"
+    ],
+    "camera": [
+      6,
+      4,
+      8
+    ]
+  },
+  "after": {
+    "objects": [
+      {
+        "name": "Left cube",
+        "position": [
+          -1,
+          0.4,
+          0
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1.4560694601804978,
+          1,
+          1
+        ],
+        "matrix": [
+          1.4560694601804978,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          -1,
+          0.4,
+          0,
+          1
+        ]
+      },
+      {
+        "name": "Right cube",
+        "position": [
+          1,
+          0.4,
+          0
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "matrix": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0.4,
+          0,
+          1
+        ]
+      }
+    ],
+    "selected": "Left cube",
+    "selection": [
+      "Left cube"
+    ],
+    "history": [
+      "AddObjectCommand",
+      "AddObjectCommand",
+      "AddObjectCommand",
+      "AddObjectCommand",
+      "AddObjectCommand",
+      "SetScaleCommand"
+    ],
+    "camera": [
+      6,
+      4,
+      8
+    ]
+  },
+  "undone": {
+    "objects": [
+      {
+        "name": "Left cube",
+        "position": [
+          -1,
+          0.4,
+          0
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "matrix": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          -1,
+          0.4,
+          0,
+          1
+        ]
+      },
+      {
+        "name": "Right cube",
+        "position": [
+          1,
+          0.4,
+          0
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "matrix": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0.4,
+          0,
+          1
+        ]
+      }
+    ],
+    "selected": "Left cube",
+    "selection": [
+      "Left cube"
+    ],
+    "history": [
+      "AddObjectCommand",
+      "AddObjectCommand",
+      "AddObjectCommand",
+      "AddObjectCommand",
+      "AddObjectCommand"
+    ],
+    "camera": [
+      6,
+      4,
+      8
+    ]
+  },
+  "redone": {
+    "objects": [
+      {
+        "name": "Left cube",
+        "position": [
+          -1,
+          0.4,
+          0
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1.4560694601804978,
+          1,
+          1
+        ],
+        "matrix": [
+          1.4560694601804978,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          -1,
+          0.4,
+          0,
+          1
+        ]
+      },
+      {
+        "name": "Right cube",
+        "position": [
+          1,
+          0.4,
+          0
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "matrix": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0.4,
+          0,
+          1
+        ]
+      }
+    ],
+    "selected": "Left cube",
+    "selection": [
+      "Left cube"
+    ],
+    "history": [
+      "AddObjectCommand",
+      "AddObjectCommand",
+      "AddObjectCommand",
+      "AddObjectCommand",
+      "AddObjectCommand",
+      "SetScaleCommand"
+    ],
+    "camera": [
+      6,
+      4,
+      8
+    ]
+  }
+}

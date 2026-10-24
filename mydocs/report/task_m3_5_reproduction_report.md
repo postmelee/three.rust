@@ -81,6 +81,8 @@ The setup runs `yarn install --frozen-lockfile --non-interactive` and `yarn buil
 
 ## Scope and next validation boundary
 
+Subsequent [native UI completion report](task_m3_5_ui_report.md) closes the gizmo/focus/timeline/light-GUI gap below for its explicitly bounded cases. This initial run and its raw evidence remain historical.
+
 - Full native gizmo drag, focus, timeline and light-GUI replay are still unautomated. The corresponding application features remain present; command/API exercise is not described as complete UI interaction coverage.
 - Optional EXR environments, non-glTF formats, compressed-asset decoding, path tracing, WebGPU, Safari/Firefox and mobile are not exercised. Decoder bytes are pinned, not decoder correctness-certified. Offline closure applies only to the executed paths; unknown remote requests fail.
 - No r176→r186 migration or C2/C3 engine injection was done. Viewer needs an explicit version adaptation and its own oracle before comparing a candidate built for r186. New candidates require full source SHA and separate outputs.
