@@ -98,6 +98,24 @@ fn update(d: &mut [f64], ops: &[u32], count: usize) -> bool {
     true
 }
 
+// C3 revisions avoid a JS post-evaluation walk while preserving lazy snapshots.
+pub(crate) fn update_versions(d: &mut [f64], ops: &[u32], count: usize) -> bool {
+    if !update(d, ops, count) {
+        return false;
+    }
+    for i in 0..count {
+        let b = ops[i * 7] as usize * STRIDE;
+        let mask = d[b + 51] as u32;
+        if mask & 1 != 0 {
+            d[b + 55] += 1.0;
+        }
+        if mask & 2 != 0 {
+            d[b + 56] += 1.0;
+        }
+    }
+    true
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

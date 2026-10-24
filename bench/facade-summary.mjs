@@ -44,9 +44,9 @@ for(const g of groups.values()){
  rows.push(g);
 }
 const paired=[];
-for(const candidate of rows.filter(x=>x.engine==='facade-wasm'))for(const control of ['original','facade-js','wasm']){
+for(const candidate of rows.filter(x=>['facade-wasm','prepared-wasm'].includes(x.engine)))for(const control of ['original','facade-js','wasm','prepared-js']){
  const reference=rows.find(x=>x.scenario===candidate.scenario&&x.engine===control);if(!reference)continue;
  const differences=candidate.runs.map((r,i)=>reference.runs[i].cpu.p50-r.cpu.p50);
- paired.push({scenario:candidate.scenario,control,candidate:'facade-wasm',positiveMeansSavedMs:true,perRunSavedP50Ms:differences,medianSavedP50Ms:median(differences),fasterRuns:differences.filter(x=>x>0).length,repeats:c.repeats});
+ paired.push({scenario:candidate.scenario,control,candidate:candidate.engine,positiveMeansSavedMs:true,perRunSavedP50Ms:differences,medianSavedP50Ms:median(differences),fasterRuns:differences.filter(x=>x>0).length,repeats:c.repeats});
 }
 console.log(JSON.stringify({commit:manifest.commit,suite:manifest.suite,protocol:'per-run floor((n - 1) * q) sample quantiles, then arithmetic median of run quantiles; no pooled-frame confidence claim',config:c,clockRangeMs:[Math.min(...clocks),Math.max(...clocks)],matchedFinalRenderWork:manifest.suite==='render',rows,paired,limits:'Shared-cloud CPU/software-renderer evidence; no hardware/FPS or product qualification'},null,2));

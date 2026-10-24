@@ -10,7 +10,7 @@ const out=process.env.RTHREE_RESULTS_DIR||'work/browser-correctness';mkdirSync(o
 let browser;const results=[];
 try{browser=await chromium.launch({executablePath:browserPath(),headless:config.headless,args:config.args});for(const scenario of ['cubes','skinning','shader','small','hierarchy']){
  let ref;
- for(const engine of ['original','original','js','wasm','packed-js','facade-js','facade-wasm']){
+ for(const engine of ['original','original','js','wasm','packed-js','facade-js','facade-wasm','prepared-js','prepared-wasm']){
   const page=await browser.newPage({viewport:{width:640,height:360},deviceScaleFactor:1});const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(`http://127.0.0.1:4173/fixtures/generated/${scenario}.html?engine=${engine}`);await page.waitForFunction(()=>!!window.__bench);const env=await page.evaluate(()=>window.__bench.ready());if(hardware){writeFileSync(`${out}/hardware-preflight.json`,JSON.stringify(env,null,2));hardwareRenderer(env.renderer);}
   await page.evaluate(()=>{for(let i=0;i<12;i++)window.__bench.step()});
   const snap=await page.evaluate(()=>window.__bench.snapshot());const diag=await page.evaluate(()=>window.__bench.THREE.diagnostics?.()??null);
@@ -21,7 +21,7 @@ try{browser=await chromium.launch({executablePath:browserPath(),headless:config.
    const diffPng=await page.evaluate(({diff,w,h})=>{const c=document.createElement('canvas');c.width=w;c.height=h;c.getContext('2d').putImageData(new ImageData(Uint8ClampedArray.from(diff),w,h),0,0);return c.toDataURL();},{diff,w:snap.width,h:snap.height});writeFileSync(`${out}/${file.replace('.png','-diff.png')}`,Buffer.from(diffPng.split(',')[1],'base64'));
    results.push({scenario,engine,file,maxMatrix,maxPixel,changed,total,diag,env});
   }else ref=snap;
-  if(engine==='wasm'||engine==='facade-wasm')assert.ok(diag.wasmActive&&diag.wasmCalls>0&&diag.wasmNodes>0);
+  if(engine==='wasm'||engine==='facade-wasm'||engine==='prepared-wasm')assert.ok(diag.wasmActive&&diag.wasmCalls>0&&diag.wasmNodes>0);
   await page.close();console.log(scenario,engine,'ok');
  }
 }

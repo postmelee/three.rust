@@ -1,0 +1,11 @@
+{
+  "upstream": "three@0.186.1",
+  "sha256": {
+    "renderers/WebGLRenderer.js": "9e8740aad691246b31b3704014e8f3bbd38a8e7bf4b1b4d23868541b023cc63a",
+    "renderers/webgl/WebGLRenderLists.js": "3139dfcd01675333266c02d853a768913318f353e694de39545aa50747d2011a",
+    "core/Object3D.js": "09ba0acdf6a5fed399fa6ce9c0d61f9e0c0e6551e2ae43a270c9878a734bdabc",
+    "objects/Mesh.js": "21b8ace87b42eef8d791b539788bce8911b24912ba82bdfa7d9944b27a6d0c93",
+    "materials/Material.js": "79a2574f1ee57fec5f73acccb2fb0053c134a663446074930b8989193fb40377",
+    "core/BufferAttribute.js": "d2ef1016597e2c03cb78003cb76243375f42540fba4af0b49d116671ccafc835"
+  }
+}

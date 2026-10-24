@@ -2,12 +2,14 @@
 //! Layout is shared with packages/rthree/runtime.js; slot 0 is external parent.
 mod facade;
 mod owned;
+mod prepared;
 use std::cell::RefCell;
 const STRIDE: usize = 64;
 #[derive(Default)]
 struct Scene {
     data: Vec<f64>,
     ops: Vec<u32>,
+    plans: Vec<Option<prepared::Plan>>,
     calls: u32,
     nodes: u32,
 }

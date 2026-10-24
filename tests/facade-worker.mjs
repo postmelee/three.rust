@@ -3,13 +3,13 @@ import test from 'node:test';
 import {readFileSync} from 'node:fs';
 import * as O from 'three';
 const mode=process.env.RTHREE_FACADE_ENGINE;
-const T=await import(`../packages/rthree/${mode==='facade-wasm'?'facade':'facade-js'}.js`);
+const T=await import(`../packages/rthree/${mode==='facade-wasm'?'facade':mode==='prepared-wasm'?'prepared':mode}.js`);
 const bytes=readFileSync('packages/rthree/scene_core.wasm');
 const near=(a,b)=>{assert.equal(a.length,b.length);for(let i=0;i<a.length;i++)assert.ok(Math.abs(a[i]-b[i])<=1e-10+1e-12*Math.abs(b[i]),`index ${i}: ${a[i]} != ${b[i]}`);};
 
 test(`${mode}: preparation failure/retry and pre-update aliases`,async()=>{
  const o=new T.Object3D(),alias=o.matrixWorld.elements;
- if(mode==='facade-wasm'){
+ if(mode.endsWith('-wasm')){
   assert.throws(()=>o.updateMatrixWorld(),/await init/);
   await assert.rejects(()=>T.init({wasmBytes:new Uint8Array([0])}));
  }
@@ -56,7 +56,7 @@ test(`${mode}: skips displaced JS math and retains stale observations`,()=>{
   c.position.x=8;assert.equal(c.matrixWorld.elements[12],5);
   c.updateMatrix();assert.equal(c.matrix.elements[12],8);assert.equal(c.matrixWorld.elements[12],5);
   c.updateWorldMatrix(true,false);assert.equal(c.matrixWorld.elements[12],10);
-  if(mode==='facade-wasm')assert.ok(T.diagnostics().wasmCalls>0);
+  if(mode.endsWith('-wasm'))assert.ok(T.diagnostics().wasmCalls>0);
  }finally{T.Matrix4.prototype.compose=compose;T.Matrix4.prototype.multiplyMatrices=multiply;T.release(r);}
 });
 test(`${mode}: cached arrays across growth, release, slot reuse and pivot removal`,()=>{

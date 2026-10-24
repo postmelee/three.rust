@@ -15,8 +15,21 @@ const hooks=[
  ['updateWorldMatrix( updateParents, updateChildren, force = false ) {','\n\t\tif ( facadeSelective( this, updateParents, updateChildren, force, Object3D.prototype ) ) return;']
 ];
 for(const [needle,hook] of hooks){if(s.split(needle).length!==2)throw Error(`Unexpected hook count: ${needle}`);s=s.replace(needle,needle+hook);}
-s="import { batchUpdate, trackFacadeObject, facadeLocal, facadeSelective } from '../../../packages/rthree/runtime.js';\n"+s;
+s="import { batchUpdate, trackFacadeObject, facadeLocal, facadeSelective, invalidatePrepared } from '../../../packages/rthree/runtime.js';\n"+s;
+// Invalidate after committed hierarchy mutation and before synchronous events.
+for(const needle of ['this.children.push( object );','this.children.splice( index, 1 );'])s=s.replaceAll(needle,needle+'\n\t\t\tinvalidatePrepared();');
 writeFileSync('work/build/src/core/Object3D.js',s);
+const preparedSources=JSON.parse(readFileSync('docs/prepared-source.json'));
+for(const [file,hash] of Object.entries(preparedSources.sha256))if(createHash('sha256').update(readFileSync('node_modules/three/src/'+file)).digest('hex')!==hash)throw Error('Prepared hook hash mismatch: '+file);
+let renderer=readFileSync('node_modules/three/src/renderers/WebGLRenderer.js','utf8');
+const replacements=[
+ ['projectObject( scene, camera, 0, _this.sortObjects );', 'const preparedList = prepareScene( scene, camera, _this, currentRenderList, currentRenderState, objects, _frustum, _projScreenMatrix, _opaqueSort, _transparentSort, { Object3D: RthreeObject3D, Mesh: RthreeMesh, Material: RthreeMaterial, BufferAttribute: RthreeBufferAttribute }, xr.isPresenting || _nodesHandler !== null || camera.isArrayCamera );\n\t\t\tif ( ! preparedList ) projectObject( scene, camera, 0, _this.sortObjects );'],
+ ['if ( _this.sortObjects === true ) {','if ( _this.sortObjects === true && ! preparedList ) {'],
+ ['object.modelViewMatrix.multiplyMatrices( camera.matrixWorldInverse, object.matrixWorld );\n\t\t\tobject.normalMatrix.getNormalMatrix( object.modelViewMatrix );','if ( ! consumePreparedMatrices( object, camera ) ) {\n\t\t\t\tobject.modelViewMatrix.multiplyMatrices( camera.matrixWorldInverse, object.matrixWorld );\n\t\t\t\tobject.normalMatrix.getNormalMatrix( object.modelViewMatrix );\n\t\t\t}']
+];
+for(const [needle,replacement] of replacements){if(renderer.split(needle).length!==2)throw Error('Prepared renderer hook mismatch: '+needle);renderer=renderer.replace(needle,replacement);}
+renderer="import { prepareScene, consumePreparedMatrices } from '../../../packages/rthree/runtime.js';\nimport { Object3D as RthreeObject3D } from '../core/Object3D.js';\nimport { Mesh as RthreeMesh } from '../objects/Mesh.js';\nimport { Material as RthreeMaterial } from '../materials/Material.js';\nimport { BufferAttribute as RthreeBufferAttribute } from '../core/BufferAttribute.js';\n"+renderer;
+writeFileSync('work/build/src/renderers/WebGLRenderer.js',renderer);
 // Read-only math inputs synchronize once, then read a plain snapshot. Destinations
 // keep their public tracked array so mutations cannot bypass the dirty barrier.
 const inventory=JSON.parse(readFileSync('docs/progress-source.json'));
