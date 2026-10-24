@@ -1,4 +1,4 @@
-export const ENGINE_NAMES=['original','js','wasm','packed-js','facade-js','facade-wasm'];
+export const ENGINE_NAMES=['original','js','wasm','packed-js','facade-js','facade-wasm','prepared-js','prepared-wasm'];
 export const SCENE_NAMES=['cubes','skinning','shader','small','hierarchy'];
 export function hardwareRenderer(renderer){
  if(typeof renderer!=='string'||!renderer.trim())throw Error('Hardware renderer unavailable');

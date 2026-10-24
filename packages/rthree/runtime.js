@@ -1,20 +1,22 @@
 import { updatePacked } from './packed.js';
-import { configureFacade, trackFacadeObject, facadeUpdate, releaseFacade, readFacadeElements } from './facade-state.js';
-export { trackFacadeObject };
+import { configureFacade, trackFacadeObject, facadeUpdate, releaseFacade, readFacadeElements, invalidatePrepared, prepareScene, consumePreparedMatrices } from './facade-state.js';
+export { trackFacadeObject, invalidatePrepared, prepareScene, consumePreparedMatrices };
 let backend = 'uninitialized', wasm, pending;
 const contexts = new WeakMap();
-const counters = { batches:0, nodes:0, fallbackRoots:0, wasmCalls:0, wasmNodes:0, uploadedBytes:0, scannedBytes:0, materializedBytes:0, arenas:0, syncMs:0, kernelMs:0, readMs:0, abiCalls:0, operationBytes:0, matrixReads:0, liveNodes:0 };
+const counters = { batches:0, nodes:0, fallbackRoots:0, wasmCalls:0, wasmNodes:0, uploadedBytes:0, scannedBytes:0, materializedBytes:0, arenas:0, syncMs:0, kernelMs:0, readMs:0, abiCalls:0, operationBytes:0, matrixReads:0, liveNodes:0, topologyBuilds:0, dirtyRecords:0, retainedUpdates:0, preparedInputBytes:0, preparedFallbacks:0, preparedWasmCalls:0, prepareKernelMs:0, prepareMs:0, preparedReadMs:0, preparedPasses:0, preparedDraws:0, preparedMatrixBytes:0, preparedMatrixReads:0 };
 let timing = false;
-const facadeEnabled=()=>backend==='facade-wasm'||backend==='facade-js';
+const preparedEnabled=()=>backend==='prepared-wasm'||backend==='prepared-js';
+const facadeEnabled=()=>backend==='facade-wasm'||backend==='facade-js'||preparedEnabled();
+export function preparedUploadElements(matrix){return preparedEnabled()?readFacadeElements(matrix):matrix.elements;}
 export function matrixElements(matrix){return facadeEnabled()?readFacadeElements(matrix):matrix.elements;}
-configureFacade({enabled:facadeEnabled,api(){if(backend==='facade-js')return null;if(!wasm)throw Error('rthree: await init() before updating objects');return wasm;},counters,timings:()=>timing});
+configureFacade({enabled:facadeEnabled,prepared:preparedEnabled,api(){if(backend==='facade-js'||backend==='prepared-js')return null;if(!wasm)throw Error('rthree: await init() before updating objects');return wasm;},counters,timings:()=>timing});
 const finalizer = new FinalizationRegistry(({id,api})=>{ api.scene_free(id); counters.arenas--; });
 export function setBackend(value) {
  if (backend !== 'uninitialized' && backend !== value) throw Error('rthree: choose one engine per module graph');
  backend=value;
 }
 export async function init(options={}) {
- if(backend==='js'||backend==='packed-js'||backend==='facade-js') return;
+ if(backend==='js'||backend==='packed-js'||backend==='facade-js'||backend==='prepared-js') return;
  if(wasm) return;
  if(pending) return pending;
  const requested=backend;
@@ -22,11 +24,11 @@ export async function init(options={}) {
   const bytes=options.wasmBytes ?? await (async()=>{const r=await fetch(options.wasmURL ?? new URL('./scene_core.wasm',import.meta.url));if(!r.ok)throw Error(`rthree Wasm HTTP ${r.status}`);return r.arrayBuffer()})();
   const result=await WebAssembly.instantiate(bytes,{});
   if(backend!==requested)throw Error('rthree: backend changed during init');
-  wasm=result.instance.exports;backend=requested==='facade-wasm'?'facade-wasm':'wasm';
+  wasm=result.instance.exports;backend=['facade-wasm','prepared-wasm'].includes(requested)?requested:'wasm';
  })();
  try {await pending;} catch(e){pending=undefined;throw e;}
 }
-export function diagnostics(){return {backend,wasmActive:backend==='wasm'||(backend==='facade-wasm'&&!!wasm),...counters,wasmMemoryBytes:wasm?.memory.buffer.byteLength??0};}
+export function diagnostics(){return {backend,wasmActive:backend==='wasm'||(['facade-wasm','prepared-wasm'].includes(backend)&&!!wasm),...counters,wasmMemoryBytes:wasm?.memory.buffer.byteLength??0};}
 export function configureDiagnostics({timings=false}={}){timing=timings;}
 export function resetDiagnostics(){for(const k of Object.keys(counters))if(k!=='arenas'&&k!=='liveNodes')counters[k]=0;}
 export function release(root){if(facadeEnabled())return releaseFacade(root);const c=contexts.get(root);if(c){if(c.id){wasm.scene_free(c.id);finalizer.unregister(c);counters.arenas--;}contexts.delete(root);}for(const child of root.children)release(child);}

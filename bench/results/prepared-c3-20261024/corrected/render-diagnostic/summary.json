@@ -1,0 +1,1274 @@
+{
+  "kind": "separate diagnostic evidence, not primary performance",
+  "candidate": "066ddbaa3d538e95126a46c9203b550613bf3d3d",
+  "counterMethod": "(last - first) / measured transitions; excludes first sample. prepareKernelMs is nested inside prepareMs; do not add. Setter and general renderer costs are not fully attributed.",
+  "profilesMethod": "1 ms browser CPU sampling, 22 warmup / 30 frames. Attributed timeDeltas are sampling approximations, including idle/native waits, not exact function CPU durations.",
+  "rows": [
+    {
+      "scene": "cubes",
+      "engine": "js",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 0.0,
+        "wasmCalls": 0.0,
+        "preparedWasmCalls": 0.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 0.0,
+        "uploadedBytes": 0.0,
+        "materializedBytes": 0.0,
+        "matrixReads": 0.0,
+        "preparedInputBytes": 0.0,
+        "preparedMatrixBytes": 0.0,
+        "preparedMatrixReads": 0.0,
+        "preparedPasses": 0.0,
+        "preparedDraws": 0.0,
+        "preparedFallbacks": 0.0,
+        "syncMs": 0.0,
+        "kernelMs": 0.0,
+        "readMs": 0.0,
+        "prepareMs": 0.0,
+        "prepareKernelMs": 0.0,
+        "preparedReadMs": 0.0
+      }
+    },
+    {
+      "scene": "cubes",
+      "engine": "facade-js",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 0.0,
+        "wasmCalls": 0.0,
+        "preparedWasmCalls": 0.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 56140.0,
+        "uploadedBytes": 632.0,
+        "materializedBytes": 256384.0,
+        "matrixReads": 2003.0,
+        "preparedInputBytes": 0.0,
+        "preparedMatrixBytes": 0.0,
+        "preparedMatrixReads": 0.0,
+        "preparedPasses": 0.0,
+        "preparedDraws": 0.0,
+        "preparedFallbacks": 0.0,
+        "syncMs": 5.0039473787734385,
+        "kernelMs": 0.21236841615877652,
+        "readMs": 0.5521052526800256,
+        "prepareMs": 0.0,
+        "prepareKernelMs": 0.0,
+        "preparedReadMs": 0.0
+      }
+    },
+    {
+      "scene": "cubes",
+      "engine": "facade-wasm",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 4.0,
+        "wasmCalls": 4.0,
+        "preparedWasmCalls": 0.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 56140.0,
+        "uploadedBytes": 632.0,
+        "materializedBytes": 256384.0,
+        "matrixReads": 2003.0,
+        "preparedInputBytes": 0.0,
+        "preparedMatrixBytes": 0.0,
+        "preparedMatrixReads": 0.0,
+        "preparedPasses": 0.0,
+        "preparedDraws": 0.0,
+        "preparedFallbacks": 0.0,
+        "syncMs": 1.411052633272974,
+        "kernelMs": 0.13289473558727063,
+        "readMs": 0.7442104816436768,
+        "prepareMs": 0.0,
+        "prepareKernelMs": 0.0,
+        "preparedReadMs": 0.0
+      }
+    },
+    {
+      "scene": "cubes",
+      "engine": "prepared-js",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 0.0,
+        "wasmCalls": 0.0,
+        "preparedWasmCalls": 0.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 84.0,
+        "uploadedBytes": 632.0,
+        "materializedBytes": 256404.2105263158,
+        "matrixReads": 2003.157894736842,
+        "preparedInputBytes": 472.0,
+        "preparedMatrixBytes": 109568.42105263157,
+        "preparedMatrixReads": 547.8421052631579,
+        "preparedPasses": 1.0,
+        "preparedDraws": 547.8421052631579,
+        "preparedFallbacks": 0.0,
+        "syncMs": 0.03289473527356198,
+        "kernelMs": 0.19263157719059995,
+        "readMs": 0.5655263081977242,
+        "prepareMs": 0.9542105244962793,
+        "prepareKernelMs": 0.34421052901368393,
+        "preparedReadMs": 0.6997368445521907
+      }
+    },
+    {
+      "scene": "cubes",
+      "engine": "prepared-wasm",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 5.0,
+        "wasmCalls": 4.0,
+        "preparedWasmCalls": 1.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 84.0,
+        "uploadedBytes": 632.0,
+        "materializedBytes": 256404.2105263158,
+        "matrixReads": 2003.157894736842,
+        "preparedInputBytes": 472.0,
+        "preparedMatrixBytes": 109568.42105263157,
+        "preparedMatrixReads": 547.8421052631579,
+        "preparedPasses": 1.0,
+        "preparedDraws": 547.8421052631579,
+        "preparedFallbacks": 0.0,
+        "syncMs": 0.060789481589668674,
+        "kernelMs": 0.23052631396996348,
+        "readMs": 1.3618420864406384,
+        "prepareMs": 2.4718421070199263,
+        "prepareKernelMs": 0.2950000041409543,
+        "preparedReadMs": 1.573947333975842
+      }
+    },
+    {
+      "scene": "skinning",
+      "engine": "js",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 0.0,
+        "wasmCalls": 0.0,
+        "preparedWasmCalls": 0.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 0.0,
+        "uploadedBytes": 0.0,
+        "materializedBytes": 0.0,
+        "matrixReads": 0.0,
+        "preparedInputBytes": 0.0,
+        "preparedMatrixBytes": 0.0,
+        "preparedMatrixReads": 0.0,
+        "preparedPasses": 0.0,
+        "preparedDraws": 0.0,
+        "preparedFallbacks": 0.0,
+        "syncMs": 0.0,
+        "kernelMs": 0.0,
+        "readMs": 0.0,
+        "prepareMs": 0.0,
+        "prepareKernelMs": 0.0,
+        "preparedReadMs": 0.0
+      }
+    },
+    {
+      "scene": "skinning",
+      "engine": "facade-js",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 0.0,
+        "wasmCalls": 0.0,
+        "preparedWasmCalls": 0.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 2128.0,
+        "uploadedBytes": 8064.0,
+        "materializedBytes": 6912.0,
+        "matrixReads": 54.0,
+        "preparedInputBytes": 0.0,
+        "preparedMatrixBytes": 0.0,
+        "preparedMatrixReads": 0.0,
+        "preparedPasses": 0.0,
+        "preparedDraws": 0.0,
+        "preparedFallbacks": 0.0,
+        "syncMs": 0.27684210319268077,
+        "kernelMs": 0.04473684649718435,
+        "readMs": 0.0318421062670256,
+        "prepareMs": 0.0,
+        "prepareKernelMs": 0.0,
+        "preparedReadMs": 0.0
+      }
+    },
+    {
+      "scene": "skinning",
+      "engine": "facade-wasm",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 12.0,
+        "wasmCalls": 12.0,
+        "preparedWasmCalls": 0.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 2128.0,
+        "uploadedBytes": 8064.0,
+        "materializedBytes": 6912.0,
+        "matrixReads": 54.0,
+        "preparedInputBytes": 0.0,
+        "preparedMatrixBytes": 0.0,
+        "preparedMatrixReads": 0.0,
+        "preparedPasses": 0.0,
+        "preparedDraws": 0.0,
+        "preparedFallbacks": 0.0,
+        "syncMs": 0.24289473106986598,
+        "kernelMs": 0.03026315726731953,
+        "readMs": 0.03342105526673166,
+        "prepareMs": 0.0,
+        "prepareKernelMs": 0.0,
+        "preparedReadMs": 0.0
+      }
+    },
+    {
+      "scene": "skinning",
+      "engine": "prepared-js",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 0.0,
+        "wasmCalls": 0.0,
+        "preparedWasmCalls": 0.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 2128.0,
+        "uploadedBytes": 8064.0,
+        "materializedBytes": 6912.0,
+        "matrixReads": 54.0,
+        "preparedInputBytes": 0.0,
+        "preparedMatrixBytes": 0.0,
+        "preparedMatrixReads": 0.0,
+        "preparedPasses": 0.0,
+        "preparedDraws": 0.0,
+        "preparedFallbacks": 1.0,
+        "syncMs": 0.32894735744124964,
+        "kernelMs": 0.6892105325272209,
+        "readMs": 0.02631578476805436,
+        "prepareMs": 0.0,
+        "prepareKernelMs": 0.0,
+        "preparedReadMs": 0.0
+      }
+    },
+    {
+      "scene": "skinning",
+      "engine": "prepared-wasm",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 12.0,
+        "wasmCalls": 12.0,
+        "preparedWasmCalls": 0.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 2128.0,
+        "uploadedBytes": 8064.0,
+        "materializedBytes": 6912.0,
+        "matrixReads": 54.0,
+        "preparedInputBytes": 0.0,
+        "preparedMatrixBytes": 0.0,
+        "preparedMatrixReads": 0.0,
+        "preparedPasses": 0.0,
+        "preparedDraws": 0.0,
+        "preparedFallbacks": 1.0,
+        "syncMs": 0.36210525976984126,
+        "kernelMs": 0.04342105200416163,
+        "readMs": 0.03973684185429623,
+        "prepareMs": 0.0,
+        "prepareKernelMs": 0.0,
+        "preparedReadMs": 0.0
+      }
+    },
+    {
+      "scene": "shader",
+      "engine": "js",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 0.0,
+        "wasmCalls": 0.0,
+        "preparedWasmCalls": 0.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 0.0,
+        "uploadedBytes": 0.0,
+        "materializedBytes": 0.0,
+        "matrixReads": 0.0,
+        "preparedInputBytes": 0.0,
+        "preparedMatrixBytes": 0.0,
+        "preparedMatrixReads": 0.0,
+        "preparedPasses": 0.0,
+        "preparedDraws": 0.0,
+        "preparedFallbacks": 0.0,
+        "syncMs": 0.0,
+        "kernelMs": 0.0,
+        "readMs": 0.0,
+        "prepareMs": 0.0,
+        "prepareKernelMs": 0.0,
+        "preparedReadMs": 0.0
+      }
+    },
+    {
+      "scene": "shader",
+      "engine": "facade-js",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 0.0,
+        "wasmCalls": 0.0,
+        "preparedWasmCalls": 0.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 84.0,
+        "uploadedBytes": 136.0,
+        "materializedBytes": 128.0,
+        "matrixReads": 1.0,
+        "preparedInputBytes": 0.0,
+        "preparedMatrixBytes": 0.0,
+        "preparedMatrixReads": 0.0,
+        "preparedPasses": 0.0,
+        "preparedDraws": 0.0,
+        "preparedFallbacks": 0.0,
+        "syncMs": 0.02526315733006126,
+        "kernelMs": 0.007631579512044003,
+        "readMs": 0.0013157897873928672,
+        "prepareMs": 0.0,
+        "prepareKernelMs": 0.0,
+        "preparedReadMs": 0.0
+      }
+    },
+    {
+      "scene": "shader",
+      "engine": "facade-wasm",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 2.0,
+        "wasmCalls": 2.0,
+        "preparedWasmCalls": 0.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 84.0,
+        "uploadedBytes": 136.0,
+        "materializedBytes": 128.0,
+        "matrixReads": 1.0,
+        "preparedInputBytes": 0.0,
+        "preparedMatrixBytes": 0.0,
+        "preparedMatrixReads": 0.0,
+        "preparedPasses": 0.0,
+        "preparedDraws": 0.0,
+        "preparedFallbacks": 0.0,
+        "syncMs": 0.03657894542342738,
+        "kernelMs": 0.006052630512337936,
+        "readMs": 0.001842103506389417,
+        "prepareMs": 0.0,
+        "prepareKernelMs": 0.0,
+        "preparedReadMs": 0.0
+      }
+    },
+    {
+      "scene": "shader",
+      "engine": "prepared-js",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 0.0,
+        "wasmCalls": 0.0,
+        "preparedWasmCalls": 0.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 28.0,
+        "uploadedBytes": 136.0,
+        "materializedBytes": 128.0,
+        "matrixReads": 1.0,
+        "preparedInputBytes": 472.0,
+        "preparedMatrixBytes": 200.0,
+        "preparedMatrixReads": 1.0,
+        "preparedPasses": 1.0,
+        "preparedDraws": 1.0,
+        "preparedFallbacks": 0.0,
+        "syncMs": 0.020263157392802992,
+        "kernelMs": 0.01526315588700144,
+        "readMs": 0.001052630575079667,
+        "prepareMs": 0.0371052622795105,
+        "prepareKernelMs": 0.013947367668151855,
+        "preparedReadMs": 0.001578947431162784
+      }
+    },
+    {
+      "scene": "shader",
+      "engine": "prepared-wasm",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 3.0,
+        "wasmCalls": 2.0,
+        "preparedWasmCalls": 1.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 28.0,
+        "uploadedBytes": 136.0,
+        "materializedBytes": 128.0,
+        "matrixReads": 1.0,
+        "preparedInputBytes": 472.0,
+        "preparedMatrixBytes": 200.0,
+        "preparedMatrixReads": 1.0,
+        "preparedPasses": 1.0,
+        "preparedDraws": 1.0,
+        "preparedFallbacks": 0.0,
+        "syncMs": 0.02842105689801668,
+        "kernelMs": 0.011578945737136038,
+        "readMs": 0.001578947431162784,
+        "prepareMs": 0.02789473533630371,
+        "prepareKernelMs": 0.005263157581028186,
+        "preparedReadMs": 0.001842103506389417
+      }
+    },
+    {
+      "scene": "small",
+      "engine": "js",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 0.0,
+        "wasmCalls": 0.0,
+        "preparedWasmCalls": 0.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 0.0,
+        "uploadedBytes": 0.0,
+        "materializedBytes": 0.0,
+        "matrixReads": 0.0,
+        "preparedInputBytes": 0.0,
+        "preparedMatrixBytes": 0.0,
+        "preparedMatrixReads": 0.0,
+        "preparedPasses": 0.0,
+        "preparedDraws": 0.0,
+        "preparedFallbacks": 0.0,
+        "syncMs": 0.0,
+        "kernelMs": 0.0,
+        "readMs": 0.0,
+        "prepareMs": 0.0,
+        "prepareKernelMs": 0.0,
+        "preparedReadMs": 0.0
+      }
+    },
+    {
+      "scene": "small",
+      "engine": "facade-js",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 0.0,
+        "wasmCalls": 0.0,
+        "preparedWasmCalls": 0.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 364.0,
+        "uploadedBytes": 632.0,
+        "materializedBytes": 1408.0,
+        "matrixReads": 11.0,
+        "preparedInputBytes": 0.0,
+        "preparedMatrixBytes": 0.0,
+        "preparedMatrixReads": 0.0,
+        "preparedPasses": 0.0,
+        "preparedDraws": 0.0,
+        "preparedFallbacks": 0.0,
+        "syncMs": 0.061578949815348574,
+        "kernelMs": 0.01315789630538539,
+        "readMs": 0.006315792861737703,
+        "prepareMs": 0.0,
+        "prepareKernelMs": 0.0,
+        "preparedReadMs": 0.0
+      }
+    },
+    {
+      "scene": "small",
+      "engine": "facade-wasm",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 4.0,
+        "wasmCalls": 4.0,
+        "preparedWasmCalls": 0.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 364.0,
+        "uploadedBytes": 632.0,
+        "materializedBytes": 1408.0,
+        "matrixReads": 11.0,
+        "preparedInputBytes": 0.0,
+        "preparedMatrixBytes": 0.0,
+        "preparedMatrixReads": 0.0,
+        "preparedPasses": 0.0,
+        "preparedDraws": 0.0,
+        "preparedFallbacks": 0.0,
+        "syncMs": 0.06789473797145643,
+        "kernelMs": 0.011578945737136038,
+        "readMs": 0.006842103443647686,
+        "prepareMs": 0.0,
+        "prepareKernelMs": 0.0,
+        "preparedReadMs": 0.0
+      }
+    },
+    {
+      "scene": "small",
+      "engine": "prepared-js",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 0.0,
+        "wasmCalls": 0.0,
+        "preparedWasmCalls": 0.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 84.0,
+        "uploadedBytes": 632.0,
+        "materializedBytes": 1408.0,
+        "matrixReads": 11.0,
+        "preparedInputBytes": 472.0,
+        "preparedMatrixBytes": 400.0,
+        "preparedMatrixReads": 2.0,
+        "preparedPasses": 1.0,
+        "preparedDraws": 2.0,
+        "preparedFallbacks": 0.0,
+        "syncMs": 0.046052626873317515,
+        "kernelMs": 0.008947370867980154,
+        "readMs": 0.008684213224210237,
+        "prepareMs": 0.062368425883744895,
+        "prepareKernelMs": 0.03289473527356198,
+        "preparedReadMs": 0.006052628943794652
+      }
+    },
+    {
+      "scene": "small",
+      "engine": "prepared-wasm",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 5.0,
+        "wasmCalls": 4.0,
+        "preparedWasmCalls": 1.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 84.0,
+        "uploadedBytes": 632.0,
+        "materializedBytes": 1408.0,
+        "matrixReads": 11.0,
+        "preparedInputBytes": 472.0,
+        "preparedMatrixBytes": 400.0,
+        "preparedMatrixReads": 2.0,
+        "preparedPasses": 1.0,
+        "preparedDraws": 2.0,
+        "preparedFallbacks": 0.0,
+        "syncMs": 0.045000002572410984,
+        "kernelMs": 0.016842098612534374,
+        "readMs": 0.007631576374957436,
+        "prepareMs": 0.04973684172881277,
+        "prepareKernelMs": 0.007894738724357203,
+        "preparedReadMs": 0.006052635217967786
+      }
+    },
+    {
+      "scene": "hierarchy",
+      "engine": "js",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 0.0,
+        "wasmCalls": 0.0,
+        "preparedWasmCalls": 0.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 0.0,
+        "uploadedBytes": 0.0,
+        "materializedBytes": 0.0,
+        "matrixReads": 0.0,
+        "preparedInputBytes": 0.0,
+        "preparedMatrixBytes": 0.0,
+        "preparedMatrixReads": 0.0,
+        "preparedPasses": 0.0,
+        "preparedDraws": 0.0,
+        "preparedFallbacks": 0.0,
+        "syncMs": 0.0,
+        "kernelMs": 0.0,
+        "readMs": 0.0,
+        "prepareMs": 0.0,
+        "prepareKernelMs": 0.0,
+        "preparedReadMs": 0.0
+      }
+    },
+    {
+      "scene": "hierarchy",
+      "engine": "facade-js",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 0.0,
+        "wasmCalls": 0.0,
+        "preparedWasmCalls": 0.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 308140.0,
+        "uploadedBytes": 112632.0,
+        "materializedBytes": 1280384.0,
+        "matrixReads": 10003.0,
+        "preparedInputBytes": 0.0,
+        "preparedMatrixBytes": 0.0,
+        "preparedMatrixReads": 0.0,
+        "preparedPasses": 0.0,
+        "preparedDraws": 0.0,
+        "preparedFallbacks": 0.0,
+        "syncMs": 21.89394736289978,
+        "kernelMs": 2.0710526344023252,
+        "readMs": 6.396842142469005,
+        "prepareMs": 0.0,
+        "prepareKernelMs": 0.0,
+        "preparedReadMs": 0.0
+      }
+    },
+    {
+      "scene": "hierarchy",
+      "engine": "facade-wasm",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 4.0,
+        "wasmCalls": 4.0,
+        "preparedWasmCalls": 0.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 0.0,
+        "operationBytes": 308140.0,
+        "uploadedBytes": 112632.0,
+        "materializedBytes": 1280384.0,
+        "matrixReads": 10003.0,
+        "preparedInputBytes": 0.0,
+        "preparedMatrixBytes": 0.0,
+        "preparedMatrixReads": 0.0,
+        "preparedPasses": 0.0,
+        "preparedDraws": 0.0,
+        "preparedFallbacks": 0.0,
+        "syncMs": 21.216052627877186,
+        "kernelMs": 1.1257894744998531,
+        "readMs": 7.073157925354807,
+        "prepareMs": 0.0,
+        "prepareKernelMs": 0.0,
+        "preparedReadMs": 0.0
+      }
+    },
+    {
+      "scene": "hierarchy",
+      "engine": "prepared-js",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 0.0,
+        "wasmCalls": 0.0,
+        "preparedWasmCalls": 0.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 1000.0,
+        "operationBytes": 84.0,
+        "uploadedBytes": 112632.0,
+        "materializedBytes": 355018.1052631579,
+        "matrixReads": 2773.5789473684213,
+        "preparedInputBytes": 472.0,
+        "preparedMatrixBytes": 554115.7894736842,
+        "preparedMatrixReads": 2770.5789473684213,
+        "preparedPasses": 1.0,
+        "preparedDraws": 2770.5789473684213,
+        "preparedFallbacks": 0.0,
+        "syncMs": 6.815263161533757,
+        "kernelMs": 2.563157900383598,
+        "readMs": 1.5136842445323342,
+        "prepareMs": 10.822368422621174,
+        "prepareKernelMs": 3.1368421002438196,
+        "preparedReadMs": 3.110789402535087
+      }
+    },
+    {
+      "scene": "hierarchy",
+      "engine": "prepared-wasm",
+      "transitions": 19,
+      "perFrame": {
+        "abiCalls": 5.0,
+        "wasmCalls": 4.0,
+        "preparedWasmCalls": 1.0,
+        "topologyBuilds": 0.0,
+        "dirtyRecords": 1000.0,
+        "operationBytes": 84.0,
+        "uploadedBytes": 112632.0,
+        "materializedBytes": 355018.1052631579,
+        "matrixReads": 2773.5789473684213,
+        "preparedInputBytes": 472.0,
+        "preparedMatrixBytes": 554115.7894736842,
+        "preparedMatrixReads": 2770.5789473684213,
+        "preparedPasses": 1.0,
+        "preparedDraws": 2770.5789473684213,
+        "preparedFallbacks": 0.0,
+        "syncMs": 2.8847368469363763,
+        "kernelMs": 1.552894739728225,
+        "readMs": 2.3228947332030847,
+        "prepareMs": 7.468157896870061,
+        "prepareKernelMs": 1.7510526290065365,
+        "preparedReadMs": 3.7599999622294775
+      }
+    }
+  ],
+  "profiles": [
+    {
+      "engine": "original",
+      "samples": 3249,
+      "elapsedMs": 5153.862,
+      "topSelf": [
+        {
+          "function": "(idle)",
+          "url": "",
+          "samples": 2699,
+          "attributedMs": 3858.5469999999964
+        },
+        {
+          "function": "setProgram",
+          "url": "http://127.0.0.1:37975/node_modules/three/build/three.module.js",
+          "samples": 100,
+          "attributedMs": 226.153
+        },
+        {
+          "function": "getParameter",
+          "url": "",
+          "samples": 132,
+          "attributedMs": 192.30700000000007
+        },
+        {
+          "function": "(program)",
+          "url": "",
+          "samples": 15,
+          "attributedMs": 155.29299999999998
+        },
+        {
+          "function": "setValueV3f",
+          "url": "http://127.0.0.1:37975/node_modules/three/build/three.module.js",
+          "samples": 10,
+          "attributedMs": 110.96100000000001
+        },
+        {
+          "function": "uniformMatrix4fv",
+          "url": "",
+          "samples": 21,
+          "attributedMs": 67.529
+        },
+        {
+          "function": "updateMatrixWorld",
+          "url": "http://127.0.0.1:37975/node_modules/three/build/three.core.js",
+          "samples": 43,
+          "attributedMs": 65.39
+        },
+        {
+          "function": "intersectsObject",
+          "url": "http://127.0.0.1:37975/node_modules/three/build/three.core.js",
+          "samples": 36,
+          "attributedMs": 55.329000000000015
+        },
+        {
+          "function": "refreshUniformsCommon",
+          "url": "http://127.0.0.1:37975/node_modules/three/build/three.module.js",
+          "samples": 17,
+          "attributedMs": 45.542
+        },
+        {
+          "function": "multiplyMatrices",
+          "url": "http://127.0.0.1:37975/node_modules/three/build/three.core.js",
+          "samples": 20,
+          "attributedMs": 43.793
+        },
+        {
+          "function": "renderObjects",
+          "url": "http://127.0.0.1:37975/node_modules/three/build/three.module.js",
+          "samples": 14,
+          "attributedMs": 39.147
+        },
+        {
+          "function": "projectObject",
+          "url": "http://127.0.0.1:37975/node_modules/three/build/three.module.js",
+          "samples": 24,
+          "attributedMs": 37.581
+        },
+        {
+          "function": "uniform3f",
+          "url": "",
+          "samples": 15,
+          "attributedMs": 37.218
+        },
+        {
+          "function": "fillText",
+          "url": "",
+          "samples": 5,
+          "attributedMs": 29.036
+        },
+        {
+          "function": "WebGLRenderer.renderBufferDirect",
+          "url": "http://127.0.0.1:37975/node_modules/three/build/three.module.js",
+          "samples": 17,
+          "attributedMs": 22.898999999999997
+        },
+        {
+          "function": "drawImage",
+          "url": "",
+          "samples": 5,
+          "attributedMs": 20.720000000000002
+        },
+        {
+          "function": "setValueM3",
+          "url": "http://127.0.0.1:37975/node_modules/three/build/three.module.js",
+          "samples": 16,
+          "attributedMs": 18.300000000000004
+        },
+        {
+          "function": "render",
+          "url": "http://127.0.0.1:37975/fixtures/generated/hierarchy.html?engine=original",
+          "samples": 6,
+          "attributedMs": 17.829
+        },
+        {
+          "function": "setMaterial",
+          "url": "http://127.0.0.1:37975/node_modules/three/build/three.module.js",
+          "samples": 3,
+          "attributedMs": 16.798
+        },
+        {
+          "function": "copyArray",
+          "url": "http://127.0.0.1:37975/node_modules/three/build/three.module.js",
+          "samples": 4,
+          "attributedMs": 11.712
+        },
+        {
+          "function": "get",
+          "url": "http://127.0.0.1:37975/node_modules/three/build/three.module.js",
+          "samples": 1,
+          "attributedMs": 10.581
+        },
+        {
+          "function": "setup",
+          "url": "http://127.0.0.1:37975/node_modules/three/build/three.module.js",
+          "samples": 5,
+          "attributedMs": 9.421
+        },
+        {
+          "function": "drawElements",
+          "url": "",
+          "samples": 7,
+          "attributedMs": 9.117
+        },
+        {
+          "function": "setValueM4",
+          "url": "http://127.0.0.1:37975/node_modules/three/build/three.module.js",
+          "samples": 5,
+          "attributedMs": 8.526
+        },
+        {
+          "function": "divideScalar",
+          "url": "http://127.0.0.1:37975/node_modules/three/build/three.core.js",
+          "samples": 1,
+          "attributedMs": 6.949
+        },
+        {
+          "function": "cloneUniforms",
+          "url": "http://127.0.0.1:37975/node_modules/three/build/three.core.js",
+          "samples": 2,
+          "attributedMs": 6.186999999999999
+        },
+        {
+          "function": "",
+          "url": "",
+          "samples": 1,
+          "attributedMs": 4.486
+        },
+        {
+          "function": "uniformMatrix3fv",
+          "url": "",
+          "samples": 3,
+          "attributedMs": 3.354
+        },
+        {
+          "function": "update",
+          "url": "http://127.0.0.1:37975/node_modules/three/examples/jsm/libs/stats.module.js",
+          "samples": 2,
+          "attributedMs": 3.234
+        },
+        {
+          "function": "run",
+          "url": "http://127.0.0.1:37975/bench/browser.mjs",
+          "samples": 2,
+          "attributedMs": 2.2
+        }
+      ],
+      "wasmSamples": 0
+    },
+    {
+      "engine": "prepared-js",
+      "samples": 2143,
+      "elapsedMs": 3161.957,
+      "topSelf": [
+        {
+          "function": "(idle)",
+          "url": "",
+          "samples": 1297,
+          "attributedMs": 1546.807999999998
+        },
+        {
+          "function": "(program)",
+          "url": "",
+          "samples": 16,
+          "attributedMs": 338.7669999999999
+        },
+        {
+          "function": "setProgram",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 119,
+          "attributedMs": 172.69599999999997
+        },
+        {
+          "function": "renderObjects",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 94,
+          "attributedMs": 124.307
+        },
+        {
+          "function": "evaluateFacade",
+          "url": "http://127.0.0.1:37975/packages/rthree/facade-kernel.js",
+          "samples": 46,
+          "attributedMs": 98.54400000000004
+        },
+        {
+          "function": "get",
+          "url": "http://127.0.0.1:37975/packages/rthree/facade-state.js",
+          "samples": 56,
+          "attributedMs": 97.87600000000002
+        },
+        {
+          "function": "evaluatePass",
+          "url": "http://127.0.0.1:37975/packages/rthree/prepared-kernel.js",
+          "samples": 48,
+          "attributedMs": 86.74300000000002
+        },
+        {
+          "function": "WebGLRenderer.renderBufferDirect",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 38,
+          "attributedMs": 63.719
+        },
+        {
+          "function": "renderScene",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 21,
+          "attributedMs": 46.659
+        },
+        {
+          "function": "drawElements",
+          "url": "",
+          "samples": 12,
+          "attributedMs": 42.16
+        },
+        {
+          "function": "refreshUniformsCommon",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 19,
+          "attributedMs": 37.403000000000006
+        },
+        {
+          "function": "requestAnimationFrame",
+          "url": "",
+          "samples": 4,
+          "attributedMs": 36.907
+        },
+        {
+          "function": "refreshPassInputs",
+          "url": "http://127.0.0.1:37975/packages/rthree/facade-state.js",
+          "samples": 31,
+          "attributedMs": 34.365
+        },
+        {
+          "function": "upload",
+          "url": "http://127.0.0.1:37975/packages/rthree/facade-state.js",
+          "samples": 25,
+          "attributedMs": 33.38699999999999
+        },
+        {
+          "function": "uniformMatrix3fv",
+          "url": "",
+          "samples": 10,
+          "attributedMs": 29.586999999999996
+        },
+        {
+          "function": "intersect",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 13,
+          "attributedMs": 24.814
+        },
+        {
+          "function": "uniform3f",
+          "url": "",
+          "samples": 12,
+          "attributedMs": 22.851
+        },
+        {
+          "function": "push",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 17,
+          "attributedMs": 21.945999999999998
+        },
+        {
+          "function": "prepareScene",
+          "url": "http://127.0.0.1:37975/packages/rthree/facade-state.js",
+          "samples": 16,
+          "attributedMs": 21.218
+        },
+        {
+          "function": "set",
+          "url": "http://127.0.0.1:37975/packages/rthree/facade-state.js",
+          "samples": 17,
+          "attributedMs": 20.685
+        },
+        {
+          "function": "update",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 17,
+          "attributedMs": 19.03
+        },
+        {
+          "function": "readFacadeElements",
+          "url": "http://127.0.0.1:37975/packages/rthree/facade-state.js",
+          "samples": 17,
+          "attributedMs": 18.605999999999998
+        },
+        {
+          "function": "setFromEuler",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 16,
+          "attributedMs": 17.14
+        },
+        {
+          "function": "setMaterial",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 14,
+          "attributedMs": 15.359
+        },
+        {
+          "function": "syncInputs",
+          "url": "http://127.0.0.1:37975/packages/rthree/facade-state.js",
+          "samples": 14,
+          "attributedMs": 14.780000000000001
+        },
+        {
+          "function": "uniformMatrix4fv",
+          "url": "",
+          "samples": 12,
+          "attributedMs": 13.538
+        },
+        {
+          "function": "render",
+          "url": "http://127.0.0.1:37975/fixtures/generated/hierarchy.html?engine=prepared-js",
+          "samples": 12,
+          "attributedMs": 13.32
+        },
+        {
+          "function": "getParameter",
+          "url": "",
+          "samples": 12,
+          "attributedMs": 13.127999999999998
+        },
+        {
+          "function": "setValueV3f",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 10,
+          "attributedMs": 11.664000000000001
+        },
+        {
+          "function": "(garbage collector)",
+          "url": "",
+          "samples": 8,
+          "attributedMs": 10.48
+        }
+      ],
+      "wasmSamples": 0
+    },
+    {
+      "engine": "prepared-wasm",
+      "samples": 2376,
+      "elapsedMs": 3437.812,
+      "topSelf": [
+        {
+          "function": "(idle)",
+          "url": "",
+          "samples": 1156,
+          "attributedMs": 1462.0899999999974
+        },
+        {
+          "function": "(program)",
+          "url": "",
+          "samples": 19,
+          "attributedMs": 330.87700000000007
+        },
+        {
+          "function": "setProgram",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 168,
+          "attributedMs": 243.80199999999996
+        },
+        {
+          "function": "renderObjects",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 169,
+          "attributedMs": 217.71400000000006
+        },
+        {
+          "function": "WebGLRenderer.renderBufferDirect",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 67,
+          "attributedMs": 105.18699999999997
+        },
+        {
+          "function": "get",
+          "url": "http://127.0.0.1:37975/packages/rthree/facade-state.js",
+          "samples": 87,
+          "attributedMs": 104.797
+        },
+        {
+          "function": "prepared_pass",
+          "url": "wasm://wasm/rthree_scene_core.wasm-0004e68a",
+          "samples": 45,
+          "attributedMs": 79.01799999999999
+        },
+        {
+          "function": "refreshPassInputs",
+          "url": "http://127.0.0.1:37975/packages/rthree/facade-state.js",
+          "samples": 49,
+          "attributedMs": 70.598
+        },
+        {
+          "function": "materialize",
+          "url": "http://127.0.0.1:37975/packages/rthree/facade-state.js",
+          "samples": 22,
+          "attributedMs": 54.315000000000005
+        },
+        {
+          "function": "intersect",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 29,
+          "attributedMs": 53.09199999999999
+        },
+        {
+          "function": "upload",
+          "url": "http://127.0.0.1:37975/packages/rthree/facade-state.js",
+          "samples": 40,
+          "attributedMs": 50.88500000000001
+        },
+        {
+          "function": "renderScene",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 26,
+          "attributedMs": 47.016000000000005
+        },
+        {
+          "function": "uniformMatrix3fv",
+          "url": "",
+          "samples": 39,
+          "attributedMs": 45.91
+        },
+        {
+          "function": "refreshUniformsCommon",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 29,
+          "attributedMs": 45.00999999999999
+        },
+        {
+          "function": "_ZN17rthree_scene_core6facade6update17h922873f5a33eb83fE",
+          "url": "wasm://wasm/rthree_scene_core.wasm-0004e68a",
+          "samples": 37,
+          "attributedMs": 41.231
+        },
+        {
+          "function": "prepareScene",
+          "url": "http://127.0.0.1:37975/packages/rthree/facade-state.js",
+          "samples": 22,
+          "attributedMs": 40.533
+        },
+        {
+          "function": "setFromEuler",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 28,
+          "attributedMs": 35.358
+        },
+        {
+          "function": "push",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 28,
+          "attributedMs": 31.909999999999993
+        },
+        {
+          "function": "update",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 28,
+          "attributedMs": 31.543000000000003
+        },
+        {
+          "function": "syncInputs",
+          "url": "http://127.0.0.1:37975/packages/rthree/facade-state.js",
+          "samples": 28,
+          "attributedMs": 31.386
+        },
+        {
+          "function": "readFacadeElements",
+          "url": "http://127.0.0.1:37975/packages/rthree/facade-state.js",
+          "samples": 25,
+          "attributedMs": 27.490000000000006
+        },
+        {
+          "function": "set",
+          "url": "http://127.0.0.1:37975/packages/rthree/facade-state.js",
+          "samples": 24,
+          "attributedMs": 25.947
+        },
+        {
+          "function": "setValueM4",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 11,
+          "attributedMs": 24.271
+        },
+        {
+          "function": "uniform3f",
+          "url": "",
+          "samples": 9,
+          "attributedMs": 23.919999999999998
+        },
+        {
+          "function": "render",
+          "url": "http://127.0.0.1:37975/fixtures/generated/hierarchy.html?engine=prepared-wasm",
+          "samples": 19,
+          "attributedMs": 21.365000000000002
+        },
+        {
+          "function": "setMaterial",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 15,
+          "attributedMs": 15.621999999999998
+        },
+        {
+          "function": "setValueV3f",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 13,
+          "attributedMs": 14.751000000000001
+        },
+        {
+          "function": "drawElements",
+          "url": "",
+          "samples": 11,
+          "attributedMs": 12.040999999999999
+        },
+        {
+          "function": "copyArray",
+          "url": "http://127.0.0.1:37975/packages/rthree/core.js",
+          "samples": 9,
+          "attributedMs": 10.154
+        },
+        {
+          "function": "_ZN17rthree_scene_core6facade15update_versions17had423d82f9c7d36cE",
+          "url": "wasm://wasm/rthree_scene_core.wasm-0004e68a",
+          "samples": 7,
+          "attributedMs": 8.229
+        }
+      ],
+      "wasmSamples": 98
+    }
+  ]
+}

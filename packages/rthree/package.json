@@ -31,6 +31,14 @@
     "./facade-js": {
       "types": "./index.d.ts",
       "import": "./facade-js.js"
+    },
+    "./prepared": {
+      "types": "./index.d.ts",
+      "import": "./prepared.js"
+    },
+    "./prepared-js": {
+      "types": "./index.d.ts",
+      "import": "./prepared-js.js"
     }
   },
   "files": [

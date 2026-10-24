@@ -2,7 +2,8 @@
 
 An experimental Rust/WebAssembly scene engine with a Three.js-style JavaScript interface.
 The goal is to keep **scene state, animation, object/bone transforms and bone
-palettes inside one persistent Rust pipeline**, then pass final buffers to the
+palettes, visibility and render preparation inside persistent Rust pipelines**,
+then pass final buffers to the
 renderer. The local JavaScript package is `rthree`.
 
 [Documentation](docs/README.md) · [Build & run](docs/CLOUD_SETUP.md) · [Compatibility](docs/COMPATIBILITY.md) ·
@@ -66,9 +67,11 @@ so a distinct Rust advantage is still unproven. Small scenes showed no gain;
 shader-heavy controls also showed no CPU benefit. Wasm initialization cost more.
 See [conditions, limitations and reproduction](docs/PERFORMANCE.md).
 
-The newer [persistent-facade experiment](docs/FACADE_REPORT.md) remains opt-in:
-in a cloud hierarchy test it used **37.01 ms versus Three.js's 15.13 ms**. It is
-an implementation step, not an additional acceleration result.
+The newer [C3 compatible-path experiment](docs/PREPARED_REPORT.md) is still slower
+than Three.js. With 10,000 cubes in a shared-cloud test, CPU p50 was **17.87 ms for
+Three.js and 37.78 ms for C3** (C2: 47.76 ms in the same comparison). Smaller scenes
+also showed regressions. C3 remains optional; these are software-GPU CPU results,
+not desktop GPU/FPS evidence.
 
 ## Usage
 

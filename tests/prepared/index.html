@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>C3 prepared renderer oracle</title><script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js"}}</script><script type="module">
+import * as T from 'three';
+await T.init?.();
+const scene=new T.Scene();scene.background=new T.Color(0x152030);
+const camera=new T.PerspectiveCamera(45,1.4,.1,70);camera.position.set(0,3,12);camera.lookAt(0,0,0);
+const other=new T.OrthographicCamera(-6,6,4,-4,.1,70);other.position.set(7,4,10);other.lookAt(0,0,0);
+const renderer=new T.WebGLRenderer({antialias:false,preserveDrawingBuffer:true});renderer.setSize(280,200);document.body.append(renderer.domElement);
+const geometry=new T.BoxGeometry(.8,.8,.8),opaque=new T.MeshStandardMaterial({color:0x55aa88}),transparent=new T.MeshStandardMaterial({color:0xcc8855,transparent:true,opacity:.45});
+const group=new T.Group();group.renderOrder=2;scene.add(group);const meshes=[];
+for(let i=0;i<18;i++){const o=new T.Mesh(geometry,i%4===0?transparent:opaque);o.position.set((i%6-2.5)*1.2,Math.floor(i/6)-1,-i*.1);o.rotation.set(i*.1,i*.05,0);o.castShadow=true;o.receiveShadow=true;group.add(o);meshes.push(o);}
+const ground=new T.Mesh(new T.BoxGeometry(14,.1,12),opaque);ground.position.y=-2;ground.receiveShadow=true;scene.add(ground);
+scene.add(new T.HemisphereLight(0xffffff,0x334455,2));const light=new T.DirectionalLight(0xffffff,3);light.position.set(2,6,4);light.castShadow=true;light.shadow.mapSize.set(256,256);scene.add(light);
+const events=[];let saved;
+function snapshot(){const gl=renderer.getContext(),pixels=new Uint8Array(280*200*4);gl.readPixels(0,0,280,200,gl.RGBA,gl.UNSIGNED_BYTE,pixels);return {pixels:Array.from(pixels),world:meshes.flatMap(o=>o.matrixWorld.toArray()),view:meshes.flatMap(o=>o.modelViewMatrix.toArray()),normal:meshes.flatMap(o=>o.normalMatrix.toArray()),info:{...renderer.info.render},diag:T.diagnostics?.(),events:events.slice()};}
+window.__prepared={T,scene,renderer,camera,meshes,async frame(step){
+ if(step===0){renderer.render(scene,camera);T.resetDiagnostics?.();}
+ if(step===1){group.position.x=.3;meshes[4].position.y=2;meshes[7].visible=false;meshes[11].layers.set(1);}
+ if(step===2){group.remove(meshes[2]);scene.add(meshes[2]);meshes[2].renderOrder=-2;meshes[7].visible=true;transparent.opacity=.6;}
+ if(step===3){renderer.shadowMap.enabled=true;}
+ if(step===4){meshes[1].onBeforeRender=()=>{events.push(['before',meshes[1].matrixWorld.elements[12]]);meshes[1].position.x+=.01;meshes[1].updateMatrixWorld();};meshes[1].onAfterRender=()=>events.push(['after']);}
+ if(step===5){meshes[1].onBeforeRender=T.Object3D.prototype.onBeforeRender;meshes[1].onAfterRender=T.Object3D.prototype.onAfterRender;renderer.shadowMap.enabled=false;renderer.setOpaqueSort((a,b)=>a.id-b.id);}
+ if(step===6){renderer.setOpaqueSort(null);meshes[3].material=[opaque,transparent];}
+ if(step===7){meshes[3].material=opaque;meshes[5].matrixAutoUpdate=false;meshes[5].matrix.makeScale(0,1,-2);meshes[5].matrixWorldNeedsUpdate=true;}
+ if(step===8){scene.onBeforeRender=()=>{meshes[0].visible=false;};}
+ if(step===9){scene.onBeforeRender=T.Object3D.prototype.onBeforeRender;scene.matrixWorldAutoUpdate=false;meshes[6].matrixWorld.elements[12]=3;meshes[9].position.x=100;}
+ if(step===10){geometry.dispose();opaque.dispose();}
+ if(step===11){scene.matrixWorldAutoUpdate=true;renderer.shadowMap.enabled=true;meshes[1].onBeforeShadow=()=>events.push(['shadow']);}
+ renderer.render(scene,step===2||step===7?other:camera);return snapshot();
+},proof(){
+ for(const o of meshes)o.onBeforeShadow=T.Object3D.prototype.onBeforeShadow;scene.onBeforeRender=T.Object3D.prototype.onBeforeRender;scene.matrixWorldAutoUpdate=true;renderer.shadowMap.enabled=false;renderer.render(scene,camera);T.resetDiagnostics?.();
+ const oldX=group.position.x;const c=T.Frustum.prototype.intersectsObject;T.Frustum.prototype.intersectsObject=()=>{throw Error('repeated JS culling');};
+ const gl=renderer.getContext(),upload=gl.uniformMatrix4fv;let uploads=0;gl.uniformMatrix4fv=function(location,transpose,values){if(!(values instanceof Float32Array))throw Error('private backing array escaped to WebGL');uploads++;return upload.call(this,location,transpose,values);};
+ const originals=meshes.map(o=>[o.modelViewMatrix.multiplyMatrices,o.normalMatrix.getNormalMatrix,o.matrix.compose]);
+ for(const o of meshes){o.modelViewMatrix.multiplyMatrices=()=>{throw Error('repeated JS model-view');};o.normalMatrix.getNormalMatrix=()=>{throw Error('repeated JS normal');};o.matrix.compose=()=>{throw Error('repeated JS local transform');};}
+ try{group.position.x+=.1;renderer.render(scene,camera);if(!uploads)throw Error('expected matrix uploads');return {...T.diagnostics?.(),typedMatrixUploads:uploads};}finally{gl.uniformMatrix4fv=upload;group.position.x=oldX;T.Frustum.prototype.intersectsObject=c;meshes.forEach((o,i)=>{[o.modelViewMatrix.multiplyMatrices,o.normalMatrix.getNormalMatrix,o.matrix.compose]=originals[i];});}
+},fallbacks(){
+ renderer.shadowMap.enabled=false;for(const o of meshes)o.onBeforeShadow=T.Object3D.prototype.onBeforeShadow;
+ let inside=false;meshes[1].onBeforeRender=()=>{events.push(['nested',inside]);if(!inside){inside=true;renderer.render(scene,other);inside=false;}};
+ renderer.render(scene,camera);const nested=snapshot();
+ meshes[1].onBeforeRender=()=>{throw Error('render sentinel');};let error;try{renderer.render(scene,camera);}catch(e){error=e.message;}
+ meshes[1].onBeforeRender=T.Object3D.prototype.onBeforeRender;renderer.render(scene,camera);const recovered=snapshot();
+ geometry.attributes.position.onUploadCallback=()=>{events.push(['upload']);meshes[7].visible=false;};geometry.attributes.position.needsUpdate=true;renderer.render(scene,camera);const uploaded=snapshot();
+ geometry.attributes.position.onUploadCallback=T.BufferAttribute.prototype.onUploadCallback;
+ return {error,nested,recovered,uploaded};
+},dispose(){T.release?.(scene);T.release?.(camera);T.release?.(other);renderer.dispose();}};
+</script></html>

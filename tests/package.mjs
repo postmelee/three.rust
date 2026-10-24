@@ -36,7 +36,7 @@ execFileSync('node',[path.join(root,'node_modules/typescript/bin/tsc'),'-p','tsc
 writeFileSync(`${dir}/app.js`,"import * as T from 'rthree'; import {GLTFLoader} from 'rthree/addons/loaders/GLTFLoader.js'; await T.init({wasmURL:'/assets/scene_core.wasm'}); window.test = {scene:new T.Scene(),loader:new GLTFLoader()};");
 execFileSync(path.join(root,'node_modules/.bin/esbuild'),['app.js','--bundle','--format=esm','--outfile=app.bundle.js','--metafile=meta.json'],{cwd:dir,stdio:'inherit'});
 const meta=JSON.parse(readFileSync(`${dir}/meta.json`));assert.equal(Object.keys(meta.inputs).filter(x=>x.endsWith('/core.js')).length,1);
-for(const entry of ['facade','facade-js']){
+for(const entry of ['facade','facade-js','prepared','prepared-js']){
  const facadeSource=`import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import * as T from 'rthree/${entry}';
@@ -44,7 +44,7 @@ import {GLTFLoader} from 'rthree/addons/loaders/GLTFLoader.js';
 import {GLTFLoader as Alias} from 'rthree/examples/jsm/loaders/GLTFLoader.js';
 assert.equal(GLTFLoader,Alias);
 const scene=new T.Scene(),world=scene.matrixWorld.elements;
-if('${entry}'==='facade'){
+if(['facade','prepared'].includes('${entry}')){
  assert.throws(()=>scene.updateMatrixWorld(),/await init/);
  await assert.rejects(()=>T.init({wasmBytes:new Uint8Array([1])}));
 }
@@ -54,7 +54,7 @@ await assert.rejects(()=>import('rthree/js'),/choose one engine/);
 scene.position.x=3;scene.updateMatrixWorld();assert.equal(world,scene.matrixWorld.elements);assert.equal(world[12],3);
 const gltf=await new GLTFLoader().parseAsync(JSON.stringify({asset:{version:'2.0'},scenes:[{nodes:[0]}],nodes:[{}],scene:0}),'');
 assert.ok(gltf.scene instanceof T.Object3D);gltf.scene.updateMatrixWorld();
-assert.equal(T.diagnostics().wasmActive,'${entry}'==='facade');
+assert.equal(T.diagnostics().wasmActive,['facade','prepared'].includes('${entry}'));
 assert.throws(()=>import.meta.resolve('three'));T.release(scene);T.release(gltf.scene);assert.equal(T.diagnostics().arenas,0);`;
  writeFileSync(`${dir}/test-${entry}.mjs`,facadeSource);execFileSync('node',[`test-${entry}.mjs`],{cwd:dir,stdio:'inherit'});
  writeFileSync(`${dir}/typecheck.ts`,readFileSync('tests/types.ts','utf8').replace("from 'rthree'",`from 'rthree/${entry}'`));

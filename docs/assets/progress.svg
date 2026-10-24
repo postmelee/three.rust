@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="710" viewBox="0 0 1200 710" role="img" aria-labelledby="title desc">
 <title id="title">three.rust — computation and persistent state ownership</title>
-<desc id="desc">The legacy bridge retains JS authority. The C2 facade retains evaluated matrices in Rust with JS inputs and hierarchy. The explicit owned rig API retains animation, transforms and palettes. Fine tiles map each declared scope, not complete public APIs.</desc>
+<desc id="desc">The legacy bridge retains JS authority. The C3 facade retains topology and evaluated transforms, visibility, ordering and draw matrices in Rust with JS public inputs and hierarchy. The explicit owned rig API retains animation, transforms and palettes. Fine tiles map each declared scope, not complete public APIs.</desc>
 <rect width="1200" height="710" fill="#0d1117"/><g font-family="Arial, sans-serif" fill="#f0f6fc">
 <text x="16.00" y="27.00" font-size="23" >Computation and authority: compatibility facade and owned rig pipeline</text>
-<text x="16.00" y="53.00" font-size="13" >COMPATIBLE API — legacy JS state; opt-in C2 retains evaluated matrices in Rust</text>
+<text x="16.00" y="53.00" font-size="13" >OPT-IN COMPATIBLE API — C3 retains transforms → visibility → ordering → per-draw matrices</text>
 <rect x="16" y="65" width="220" height="49" fill="#161b22" stroke="#6e7681"/>
 <text x="24.00" y="85.00" font-size="14" >Scene / rig state</text>
 <text x="24.00" y="103.00" font-size="12" >JS inputs + hierarchy</text>
@@ -14,15 +14,15 @@
 <text x="474.00" y="94.00" font-size="16" >→</text>
 <rect x="488" y="65" width="220" height="49" fill="#161b22" stroke="#d29922"/>
 <text x="496.00" y="85.00" font-size="14" >Object / bone transforms</text>
-<text x="496.00" y="103.00" font-size="12" >C2: Rust matrix state</text>
+<text x="496.00" y="103.00" font-size="12" >C3: Rust matrix state</text>
 <text x="710.00" y="94.00" font-size="16" >→</text>
-<rect x="724" y="65" width="220" height="49" fill="#161b22" stroke="#6e7681"/>
-<text x="732.00" y="85.00" font-size="14" >Bone palette</text>
-<text x="732.00" y="103.00" font-size="12" >JS computation</text>
+<rect x="724" y="65" width="220" height="49" fill="#161b22" stroke="#d29922"/>
+<text x="732.00" y="85.00" font-size="14" >Visibility / ordering</text>
+<text x="732.00" y="103.00" font-size="12" >C3: prepared main pass</text>
 <text x="946.00" y="94.00" font-size="16" >→</text>
 <rect x="960" y="65" width="220" height="49" fill="#161b22" stroke="#6e7681"/>
 <text x="968.00" y="85.00" font-size="14" >WebGL renderer</text>
-<text x="968.00" y="103.00" font-size="12" >Retained JS + GPU</text>
+<text x="968.00" y="103.00" font-size="12" >JS resources + GPU calls</text>
 <text x="16.00" y="140.00" font-size="13" >EXPLICIT OWNED API — commands → persistent Rust rig state + animation + transforms → final palettes</text>
 <rect x="16" y="151" width="928" height="52" fill="#102019" stroke="#2ea043" stroke-width="2"/>
 <text x="24.00" y="172.00" font-size="14" >Scene / rig state</text>
@@ -40,7 +40,7 @@
 <rect x="960" y="151" width="220" height="52" fill="#161b22" stroke="#6e7681"/>
 <text x="968.00" y="172.00" font-size="14" >WebGL renderer</text>
 <text x="968.00" y="190.00" font-size="12" >Consume final outputs</text>
-<text x="16.00" y="240.00" font-size="18" >CPU functions: 5 scoped Rust mappings / 1515 tracked</text>
+<text x="16.00" y="240.00" font-size="18" >CPU functions: 7 scoped Rust mappings / 1515 tracked</text>
 <g><title>WebGLRenderer — 78 declared items</title>
 <rect data-item="renderers/WebGLRenderer.js::WebGLRenderer.getTargetPixelRatio" data-panel="functions" x="17.50" y="257.50" width="11.46" height="9.71" fill="#6e7681"><title>WebGLRenderer.getTargetPixelRatio — js; renderers/WebGLRenderer.js:362</title></rect>
 <rect data-item="renderers/WebGLRenderer.js::WebGLRenderer.getContext" data-panel="functions" x="29.61" y="257.50" width="11.46" height="9.71" fill="#6e7681"><title>WebGLRenderer.getContext — js; renderers/WebGLRenderer.js:372</title></rect>
@@ -91,7 +91,7 @@
 <rect data-item="renderers/WebGLRenderer.js::WebGLRenderer.onXRSessionEnd" data-panel="functions" x="102.26" y="288.59" width="11.46" height="9.71" fill="#6e7681"><title>WebGLRenderer.onXRSessionEnd — js; renderers/WebGLRenderer.js:1591</title></rect>
 <rect data-item="renderers/WebGLRenderer.js::WebGLRenderer.setAnimationLoop" data-panel="functions" x="114.37" y="288.59" width="11.46" height="9.71" fill="#6e7681"><title>WebGLRenderer.setAnimationLoop — js; renderers/WebGLRenderer.js:1609</title></rect>
 <rect data-item="renderers/WebGLRenderer.js::WebGLRenderer.render" data-panel="functions" x="126.48" y="288.59" width="11.46" height="9.71" fill="#6e7681"><title>WebGLRenderer.render — js; renderers/WebGLRenderer.js:1637</title></rect>
-<rect data-item="renderers/WebGLRenderer.js::WebGLRenderer.projectObject" data-panel="functions" x="138.59" y="288.59" width="11.46" height="9.71" fill="#6e7681"><title>WebGLRenderer.projectObject — js; renderers/WebGLRenderer.js:1860</title></rect>
+<rect data-item="renderers/WebGLRenderer.js::WebGLRenderer.projectObject" data-panel="functions" x="138.59" y="288.59" width="11.46" height="9.71" fill="#d29922"><title>WebGLRenderer.projectObject — rust-batch; renderers/WebGLRenderer.js:1860</title></rect>
 <rect data-item="renderers/WebGLRenderer.js::WebGLRenderer.renderScene" data-panel="functions" x="150.69" y="288.59" width="11.46" height="9.71" fill="#6e7681"><title>WebGLRenderer.renderScene — js; renderers/WebGLRenderer.js:1978</title></rect>
 <rect data-item="renderers/WebGLRenderer.js::WebGLRenderer.renderTransmissionPass" data-panel="functions" x="162.80" y="288.59" width="11.46" height="9.71" fill="#6e7681"><title>WebGLRenderer.renderTransmissionPass — js; renderers/WebGLRenderer.js:2002</title></rect>
 <rect data-item="renderers/WebGLRenderer.js::WebGLRenderer.renderObjects" data-panel="functions" x="17.50" y="298.95" width="11.46" height="9.71" fill="#6e7681"><title>WebGLRenderer.renderObjects — js; renderers/WebGLRenderer.js:2128</title></rect>
@@ -1333,7 +1333,7 @@
 <rect data-item="renderers/webgl/WebGLRenderLists.js::WebGLRenderList.getNextRenderItem" data-panel="functions" x="349.18" y="447.23" width="11.39" height="9.74" fill="#6e7681"><title>WebGLRenderList.getNextRenderItem — js; renderers/webgl/WebGLRenderLists.js:82</title></rect>
 <rect data-item="renderers/webgl/WebGLRenderLists.js::WebGLRenderList.push" data-panel="functions" x="361.22" y="447.23" width="11.39" height="9.74" fill="#6e7681"><title>WebGLRenderList.push — js; renderers/webgl/WebGLRenderLists.js:122</title></rect>
 <rect data-item="renderers/webgl/WebGLRenderLists.js::WebGLRenderList.unshift" data-panel="functions" x="337.14" y="457.61" width="11.39" height="9.74" fill="#6e7681"><title>WebGLRenderList.unshift — js; renderers/webgl/WebGLRenderLists.js:146</title></rect>
-<rect data-item="renderers/webgl/WebGLRenderLists.js::WebGLRenderList.sort" data-panel="functions" x="349.18" y="457.61" width="11.39" height="9.74" fill="#6e7681"><title>WebGLRenderList.sort — js; renderers/webgl/WebGLRenderLists.js:166</title></rect>
+<rect data-item="renderers/webgl/WebGLRenderLists.js::WebGLRenderList.sort" data-panel="functions" x="349.18" y="457.61" width="11.39" height="9.74" fill="#d29922"><title>WebGLRenderList.sort — rust-batch; renderers/webgl/WebGLRenderLists.js:166</title></rect>
 <rect data-item="renderers/webgl/WebGLRenderLists.js::WebGLRenderList.finish" data-panel="functions" x="361.22" y="457.61" width="11.39" height="9.74" fill="#6e7681"><title>WebGLRenderList.finish — js; renderers/webgl/WebGLRenderLists.js:174</title></rect>
 <rect data-item="renderers/webgl/WebGLRenderLists.js::WebGLRenderLists" data-panel="functions" x="337.14" y="468.00" width="11.39" height="9.74" fill="#6e7681"><title>WebGLRenderLists — js; renderers/webgl/WebGLRenderLists.js:210</title></rect>
 <rect data-item="renderers/webgl/WebGLRenderLists.js::WebGLRenderLists.get" data-panel="functions" x="349.18" y="468.00" width="11.39" height="9.74" fill="#6e7681"><title>WebGLRenderLists.get — js; renderers/webgl/WebGLRenderLists.js:214</title></rect>
@@ -1890,7 +1890,7 @@
 <rect data-item="renderers/webgl/WebGLShader.js::WebGLShader" data-panel="functions" x="579.88" y="598.57" width="5.97" height="10.28" fill="#6e7681"><title>WebGLShader — js; renderers/webgl/WebGLShader.js:1</title></rect>
 <rect x="578.38" y="597.07" width="9.62" height="13.93" fill="none" stroke="#0d1117" stroke-width="2"/>
 </g>
-<text x="612.00" y="240.00" font-size="18" >State fields: 13 / 115 Rust-owned</text>
+<text x="612.00" y="240.00" font-size="18" >State fields: 15 / 115 Rust-owned</text>
 <g><title>Object3D — 31 declared items</title>
 <rect data-item="core/Object3D.js::Object3D.isObject3D" data-panel="state" x="613.50" y="257.50" width="39.42" height="37.36" fill="#6e7681"><title>Object3D.isObject3D — js; core/Object3D.js:80</title></rect>
 <rect data-item="core/Object3D.js::Object3D.id" data-panel="state" x="653.57" y="257.50" width="39.42" height="37.36" fill="#6e7681"><title>Object3D.id — js; core/Object3D.js:89</title></rect>
@@ -1904,8 +1904,8 @@
 <rect data-item="core/Object3D.js::Object3D.rotation" data-panel="state" x="707.00" y="295.51" width="46.10" height="37.36" fill="#6e7681"><title>Object3D.rotation — js; core/Object3D.js:180</title></rect>
 <rect data-item="core/Object3D.js::Object3D.quaternion" data-panel="state" x="753.76" y="295.51" width="46.10" height="37.36" fill="#2ea043"><title>Object3D.quaternion — rust-owned; core/Object3D.js:191</title></rect>
 <rect data-item="core/Object3D.js::Object3D.scale" data-panel="state" x="800.51" y="295.51" width="46.10" height="37.36" fill="#2ea043"><title>Object3D.scale — rust-owned; core/Object3D.js:203</title></rect>
-<rect data-item="core/Object3D.js::Object3D.modelViewMatrix" data-panel="state" x="847.26" y="295.51" width="46.10" height="37.36" fill="#6e7681"><title>Object3D.modelViewMatrix — js; core/Object3D.js:214</title></rect>
-<rect data-item="core/Object3D.js::Object3D.normalMatrix" data-panel="state" x="613.50" y="333.53" width="46.10" height="37.36" fill="#6e7681"><title>Object3D.normalMatrix — js; core/Object3D.js:223</title></rect>
+<rect data-item="core/Object3D.js::Object3D.modelViewMatrix" data-panel="state" x="847.26" y="295.51" width="46.10" height="37.36" fill="#2ea043"><title>Object3D.modelViewMatrix — rust-owned; core/Object3D.js:214</title></rect>
+<rect data-item="core/Object3D.js::Object3D.normalMatrix" data-panel="state" x="613.50" y="333.53" width="46.10" height="37.36" fill="#2ea043"><title>Object3D.normalMatrix — rust-owned; core/Object3D.js:223</title></rect>
 <rect data-item="core/Object3D.js::Object3D.matrix" data-panel="state" x="660.25" y="333.53" width="46.10" height="37.36" fill="#2ea043"><title>Object3D.matrix — rust-owned; core/Object3D.js:233</title></rect>
 <rect data-item="core/Object3D.js::Object3D.matrixWorld" data-panel="state" x="707.00" y="333.53" width="46.10" height="37.36" fill="#2ea043"><title>Object3D.matrixWorld — rust-owned; core/Object3D.js:241</title></rect>
 <rect data-item="core/Object3D.js::Object3D.matrixAutoUpdate" data-panel="state" x="753.76" y="333.53" width="46.10" height="37.36" fill="#6e7681"><title>Object3D.matrixAutoUpdate — js; core/Object3D.js:253</title></rect>

@@ -7,6 +7,10 @@ The [observable contract](FACADE_CONTRACT.md) adds executable identity, mutation
 read/event and lifecycle requirements. The table below describes the default legacy
 bridge. The optional [persistent facade](PERSISTENT_FACADE.md) adds lazy proxy arrays
 and Rust evaluation of all three transform-update methods, with separate restrictions.
+[C3 prepared entries](PREPARED_PASS.md) retain topology and evaluate ordinary-Mesh
+main-pass visibility, ordering and draw matrices in Rust or matched JS. Unsupported
+passes use the upstream path. The table below is not a claim about these optional
+entries; their contracts and measured costs are separate.
 
 | Path/API | Implementation and verification |
 |---|---|

@@ -4,7 +4,7 @@ import {createHash} from 'node:crypto';
 import {readFileSync,writeFileSync,mkdirSync,existsSync} from 'node:fs';
 import {cases,compareTrace} from './compatibility/cases.mjs';
 
-export const engines=['original','js','wasm','packed-js','facade-js','facade-wasm'];
+export const engines=['original','js','wasm','packed-js','facade-js','facade-wasm','prepared-js','prepared-wasm'];
 export function verifyRuns(runs){
   assert.deepEqual(runs.map(r=>r.engine),engines);
   for(const run of runs){
@@ -14,7 +14,7 @@ export function verifyRuns(runs){
       const reference=runs[0].results.find(r=>r.id===result.id);
       compareTrace(result.trace,reference.trace,`${run.engine}/${result.id}`);
     }
-    if((run.engine==='wasm'||run.engine==='facade-wasm')){
+    if((run.engine==='wasm'||run.engine==='facade-wasm'||run.engine==='prepared-wasm')){
       assert.ok(run.results.find(r=>r.id==='identity').wasmCalls>0,'eligible contract must execute Wasm');
       assert.equal(run.diagnostics.arenas,0,'contract objects must release their arenas');
     }else if(run.diagnostics)assert.equal(run.diagnostics.wasmCalls,0);
@@ -39,5 +39,5 @@ if(process.argv[1]===new URL(import.meta.url).pathname){
   }
   verifyRuns(runs);
   writeFileSync(`${out}/summary.json`,JSON.stringify({passed:true,engines,cases:cases.length,comparisons:cases.length*(engines.length-1),scope:'C1 semantics including bounded C2 facade routes'},null,2));
-  console.log(`${cases.length} semantic cases: original expectations and five candidate traces passed`);
+  console.log(`${cases.length} semantic cases: original expectations and seven candidate traces passed`);
 }

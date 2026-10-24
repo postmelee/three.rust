@@ -1,8 +1,9 @@
 # Rust engine direction
 
 Status: research direction under [ADR 0005](adr/0005-wide-engine-investigation.md).
-A finite explicit animation-to-palette domain exists. A compatible full CPU engine,
-prepared-pass consumer, SIMD/worker variants and replacement renderer remain work.
+A finite explicit animation-to-palette domain and a bounded [C3 prepared Mesh
+consumer](PREPARED_PASS.md) exist. A compatible full CPU engine, SIMD/worker
+variants and replacement renderer remain work.
 
 ## Target boundary
 
@@ -18,8 +19,10 @@ Current `rthree/owned` is an explicit API; it does not replace ordinary Animatio
 semantics through an import change.
 
 The [C1 contract and executable matrix](FACADE_CONTRACT.md) now establish the
-observable baseline for the next facade. C2 still needs to implement and prove
-wider state authority; passing the existing routes does not establish that port.
+observable baseline for the facade. C2 retains evaluated transform matrices; C3
+adds retained topology and prepared main-pass computation. Their [complete-path
+results](PREPARED_REPORT.md), rather than the amount of ported code, govern the next
+experiment. Public inputs/hierarchy and ordinary animation remain JS-owned.
 
 ## Implementation order
 
@@ -33,6 +36,10 @@ wider state authority; passing the existing routes does not establish that port.
 Finite wider experiments may proceed alongside real-app profiling. They do not need
 Fox to qualify as a replacement first. Product acceptance still uses the unchanged
 [adoption goals](PRODUCT_GOALS.md); the [project plan](PROJECT_PLAN.md) defines milestones.
+
+The [C3 result](PREPARED_REPORT.md) is negative against original Three.js. Keep it
+optional; obtain original real-app profiles and test facade/consumer costs before
+automatically proceeding to SIMD, workers or a complete backend rewrite.
 
 ## Evidence and limits
 

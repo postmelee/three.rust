@@ -17,8 +17,8 @@ class ProgressTests(unittest.TestCase):
         svg=ET.fromstring(progress.render_svg(data))
         tiles=[x for x in svg.iter() if 'data-item' in x.attrib]
         self.assertEqual(len(tiles),sum(data[p]['total'] for p in ['functions','state']))
-        self.assertEqual(data['functions']['counts']['rust-batch'],5)
-        self.assertEqual(data['state']['counts']['rust-owned'],13)
+        self.assertEqual(data['functions']['counts']['rust-batch'],7)
+        self.assertEqual(data['state']['counts']['rust-owned'],15)
         self.assertTrue(all(float(x.attrib['width'])>0 and float(x.attrib['height'])>0 for x in tiles))
     def test_missing_mapping_and_unsubstantiated_authority_fail(self):
         self.rules['stateOverrides']['missing']={'status':'rust-owned'}

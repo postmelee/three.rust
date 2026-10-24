@@ -70,13 +70,13 @@ def svg_text(x, y, text, size=15, extra=''):
 def render_svg(data):
     parts = ['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="710" viewBox="0 0 1200 710" role="img" aria-labelledby="title desc">',
              '<title id="title">three.rust — computation and persistent state ownership</title>',
-             '<desc id="desc">The legacy bridge retains JS authority. The C2 facade retains evaluated matrices in Rust with JS inputs and hierarchy. The explicit owned rig API retains animation, transforms and palettes. Fine tiles map each declared scope, not complete public APIs.</desc>',
+             '<desc id="desc">The legacy bridge retains JS authority. The C3 facade retains topology and evaluated transforms, visibility, ordering and draw matrices in Rust with JS public inputs and hierarchy. The explicit owned rig API retains animation, transforms and palettes. Fine tiles map each declared scope, not complete public APIs.</desc>',
              '<rect width="1200" height="710" fill="#0d1117"/><g font-family="Arial, sans-serif" fill="#f0f6fc">',
              svg_text(16, 27, 'Computation and authority: compatibility facade and owned rig pipeline', 23),
-             svg_text(16, 53, 'COMPATIBLE API — legacy JS state; opt-in C2 retains evaluated matrices in Rust', 13)]
+             svg_text(16, 53, 'OPT-IN COMPATIBLE API — C3 retains transforms → visibility → ordering → per-draw matrices', 13)]
     for i, stage in enumerate(data['pipeline']):
         x=16+i*236
-        color=COLORS['rust-batch'] if i==2 else COLORS['js']
+        color=COLORS['rust-batch'] if i in (2,3) else COLORS['js']
         parts.append(f'<rect x="{x}" y="65" width="220" height="49" fill="#161b22" stroke="{color}"/>')
         parts += [svg_text(x+8,85,stage['name'],14),svg_text(x+8,103,stage['current'],12)]
         if i<4:
@@ -87,7 +87,7 @@ def render_svg(data):
         x=16+i*236
         if i==4:
             parts.append(f'<rect x="{x}" y="151" width="220" height="52" fill="#161b22" stroke="#6e7681"/>')
-        parts += [svg_text(x+8,172,stage['name'],14),svg_text(x+8,190,stage['target'],12)]
+        parts += [svg_text(x+8,172,stage.get('ownedName',stage['name']),14),svg_text(x+8,190,stage['target'],12)]
         if i<4:
             parts.append(svg_text(x+222,181,'→',16))
     titles={'functions':f'CPU functions: {data["functions"]["counts"]["rust-batch"]} scoped Rust mappings / {data["functions"]["total"]} tracked',

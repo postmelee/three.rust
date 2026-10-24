@@ -1,0 +1,20 @@
+
+> three-rust-research@0.1.0 test:progress
+> node --test tests/progress-source.mjs && python3 -m unittest discover -s tests -p test_progress.py && node tests/progress.mjs
+
+✔ source inventory distinguishes declarations, callbacks, fields and this scopes (11.562731ms)
+✔ pinned source includes pose declarations, palette and the conditional route exactly once (296.995597ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 626.929988
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.105s
+
+OK
+Progress and history desktop/mobile checks passed

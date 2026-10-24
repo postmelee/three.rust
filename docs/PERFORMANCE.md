@@ -8,9 +8,12 @@ saving does not meet the future 1 ms application gate. The [README table](../REA
 is generated directly from the preserved hardware summary with
 `npm run docs:performance`; CI checks that it stays in sync.
 
-The separate [C2 persistent-facade experiment](FACADE_REPORT.md) currently regresses:
-its corrected cloud hierarchy result is 37.01 ms versus original Three.js's 15.13 ms.
-That software-renderer experiment adds no hardware acceleration claim to this report.
+The newer [C3 prepared-main-pass experiment](PREPARED_REPORT.md) also regresses
+against original: 10,000 cubes measured **17.87 ms original / 47.76 ms C2 Wasm /
+37.78 ms C3 Wasm** CPU p50 in the same cloud comparison. C3 improves on C2 but
+remains about 2.1 times original CPU time; smaller controls retain regressions.
+[The earlier C2 report](FACADE_REPORT.md) is preserved separately. Neither cloud
+software-renderer experiment adds a hardware acceleration claim to this report.
 
 ## The useful result
 

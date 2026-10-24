@@ -1,0 +1,18 @@
+{
+  "rustc": "rustc 1.90.0 (1159e78c4 2025-09-14)\nbinary: rustc\ncommit-hash: 1159e78c4747b02ef996e55082b704c09b970588\ncommit-date: 2025-09-14\nhost: x86_64-unknown-linux-gnu\nrelease: 1.90.0\nLLVM version: 20.1.8",
+  "cargo": "cargo 1.90.0 (840b83a10 2025-07-30)",
+  "node": "v24.19.0",
+  "npm": "11.9.0",
+  "buildCommand": "cargo build --release --locked --target wasm32-unknown-unknown",
+  "compilerFlagOverridesPresent": {
+    "RUSTFLAGS": false,
+    "CARGO_ENCODED_RUSTFLAGS": false,
+    "CARGO_PROFILE_RELEASE_OPT_LEVEL": false
+  },
+  "sourceFiles": {
+    "Cargo.toml": "7a22b9141523656ac66ef96d20d3ae492cba727e8c5e8e0d2bd0ffe676dc0d73",
+    "Cargo.lock": "1ae70b2933f80075aa0058dc053d4e23695d9e9ccbde1801d5963598e380c89e",
+    "crates/scene-core/Cargo.toml": "8d694c3f76bc1835aeb646070bd4c69f2d5e60c92785f89c81bbd24af57e1f95",
+    "package-lock.json": "b938b0b7c45499a8962d4beff96db709ec0caafe2e44d94e1d53754e2666a355"
+  }
+}
