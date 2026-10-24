@@ -5,7 +5,7 @@ import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { chromium } from 'playwright';
 export const hash=b=>createHash('sha256').update(b).digest('hex');
-export async function openRun(rootArg,outArg){
+export async function openRun(rootArg,outArg,options={}){
  const root=path.resolve(rootArg),out=path.resolve(outArg);
  await fs.mkdir(out,{recursive:false}); // Refuse overwriting any prior run.
  const resources=JSON.parse(await fs.readFile(new URL('./resources.json',import.meta.url)));
@@ -38,7 +38,7 @@ export async function openRun(rootArg,outArg){
  });
  context.setDefaultTimeout(20000);const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(`HTTP ${r.status()} ${r.url().replace(origin,'<origin>')}`);});
  const save=async(name,data)=>fs.writeFile(path.join(out,name),typeof data==='string'?data:JSON.stringify(data,null,2)+'\n');
- await save('environment.json',{browser:browser.version(),executablePath,toolingSha:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),toolingDirty:!!execFileSync('git',['status','--porcelain','--untracked-files=normal'],{encoding:'utf8'}).trim(),headed:true,viewport:{width:1280,height:720},dpr:1,mode:'correctness only; no profiles, timers or frame samples'});
+ await save('environment.json',{browser:browser.version(),executablePath,toolingSha:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),toolingDirty:!!execFileSync('git',['status','--porcelain','--untracked-files=normal'],{encoding:'utf8'}).trim(),headed:true,viewport:{width:1280,height:720},dpr:1,mode:options.mode||'correctness only; no profiles, timers or frame samples'});
  return {root,out,origin,page,context,save,requests,errors,async close(){await save('served-files.json',[...served.values()].sort((a,b)=>a.file.localeCompare(b.file)));await save('network.json',requests);await save('errors.json',errors);await browser.close();await new Promise(r=>server.close(r));}};
 }
 export async function gpu(page,selector){
