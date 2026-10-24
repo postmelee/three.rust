@@ -1,0 +1,12 @@
+navigate
+wait ready
+navigate
+wait ready
+file://<checkout>/scripts/apps/inspect.mjs:15
+ if(r.errors.length||r.requests.some(r=>r.blocked))throw Error('Resource or page errors');
+                                                         ^
+
+Error: Resource or page errors
+    at file://<checkout>/scripts/apps/inspect.mjs:15:58
+
+Node.js v24.15.0

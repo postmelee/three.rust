@@ -1,0 +1,742 @@
+[
+  {
+    "file": "editor/build/three.core.js",
+    "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6",
+    "bytes": 1458113
+  },
+  {
+    "file": "editor/build/three.module.js",
+    "sha256": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea",
+    "bytes": 662772
+  },
+  {
+    "file": "editor/build/three.webgpu.js",
+    "sha256": "15cfce5c653541704fd9a3463c39d3e8b854bb6265ccd854d7cfe74090625cc6",
+    "bytes": 2284850
+  },
+  {
+    "file": "editor/editor/css/main.css",
+    "sha256": "13f14276613cd6f7834cade32e74968ad0b84de6c2108bd29d23e57f86091fdc",
+    "bytes": 14486
+  },
+  {
+    "file": "editor/editor/images/rotate.svg",
+    "sha256": "a277ca507781d73f86ad530ddd4d4cd9705e62bfd11f3a8a6d4e53515122b81e",
+    "bytes": 1294
+  },
+  {
+    "file": "editor/editor/images/scale.svg",
+    "sha256": "d25ce50c6ae9e9fbcb39d0d8ffda68043dba38c8947a0e012af35d062803c72d",
+    "bytes": 2695
+  },
+  {
+    "file": "editor/editor/images/translate.svg",
+    "sha256": "d930c96a43fd37ccbab3929dc10647c6b94c2e54bd643bb6abde0fc0a598f1b2",
+    "bytes": 4512
+  },
+  {
+    "file": "editor/editor/index.html",
+    "sha256": "1e186dca4fd7f15d3fea1f137406e250786b5fcd2451cf8677c65a77946aad36",
+    "bytes": 7720
+  },
+  {
+    "file": "editor/editor/js/Animation.js",
+    "sha256": "1d47972dd3b92c1c28a44f0699b6b0e770a5cfcddc8959db87f2d9ef4d982983",
+    "bytes": 15417
+  },
+  {
+    "file": "editor/editor/js/AnimationResizer.js",
+    "sha256": "c00ed55040734a1d22f4db6616f077ea4ac43e8d340918d0974f1f5ba9fbc1d3",
+    "bytes": 1570
+  },
+  {
+    "file": "editor/editor/js/Command.js",
+    "sha256": "bf433ed17d9a0e6cae32b27f37baa31c0c8ade2812447ecc948c9dd78440b921",
+    "bytes": 618
+  },
+  {
+    "file": "editor/editor/js/commands/AddObjectCommand.js",
+    "sha256": "b84c4e5fa1731216b55889c7ab1cf23d011e8910bf3bba015eb7ee64dc7df733",
+    "bytes": 1043
+  },
+  {
+    "file": "editor/editor/js/commands/AddScriptCommand.js",
+    "sha256": "0994dc0f1f40f4aa4750450a5879e5711f1b9efedbff458692e16e594ea85333",
+    "bytes": 1349
+  },
+  {
+    "file": "editor/editor/js/commands/Commands.js",
+    "sha256": "ae242a9c660d4b3bf0cea90a42030f523294c3f840d17c562bc8a8e1d2f3ba8a",
+    "bytes": 1534
+  },
+  {
+    "file": "editor/editor/js/commands/MoveObjectCommand.js",
+    "sha256": "eefffbbeb7bc5ac892aad2d2d451eb199ad68277c67f902e909c5a6a0e32ff73",
+    "bytes": 2831
+  },
+  {
+    "file": "editor/editor/js/commands/MultiCmdsCommand.js",
+    "sha256": "6eacfdde05f8353169a8d9cb0ee97af8bad9354c1becf3b6d7279d724d9f8051",
+    "bytes": 1458
+  },
+  {
+    "file": "editor/editor/js/commands/RemoveObjectCommand.js",
+    "sha256": "a34c834f42995353aa7015138f9553f507e959d911c3ae8569fad94c7d5d76d9",
+    "bytes": 1480
+  },
+  {
+    "file": "editor/editor/js/commands/RemoveScriptCommand.js",
+    "sha256": "0c7c5333c2b0659f751bb0efa219474cfb231db509460012d2469d8022085928",
+    "bytes": 1504
+  },
+  {
+    "file": "editor/editor/js/commands/SetColorCommand.js",
+    "sha256": "62e736e745a6afde24956764b629e40f7ad4602d7c1ce2e7c696dcf7f614011e",
+    "bytes": 1538
+  },
+  {
+    "file": "editor/editor/js/commands/SetGeometryCommand.js",
+    "sha256": "706590f7e00ac128288ec6b9dbb74724f4b958f7a8816a48cebf2e07632be676",
+    "bytes": 1806
+  },
+  {
+    "file": "editor/editor/js/commands/SetGeometryValueCommand.js",
+    "sha256": "69d8547ba1fd38e81c14a0b9bf9e804095e7fd17d920636bf0ed57758436c9e5",
+    "bytes": 1678
+  },
+  {
+    "file": "editor/editor/js/commands/SetMaterialColorCommand.js",
+    "sha256": "d0fe7f05dd4775e9343d8e59b4e8d512ce203e6c155737caa8feb00435fbb18b",
+    "bytes": 2051
+  },
+  {
+    "file": "editor/editor/js/commands/SetMaterialCommand.js",
+    "sha256": "77fc3541d14f0cff5555509a60efd0cec1e39cb29300a4167afccd2d8558036f",
+    "bytes": 1932
+  },
+  {
+    "file": "editor/editor/js/commands/SetMaterialMapCommand.js",
+    "sha256": "5b996bceefafc1eec38d360d5ce9dde4845d5dece4b716f7c459a05b48f99045",
+    "bytes": 3206
+  },
+  {
+    "file": "editor/editor/js/commands/SetMaterialRangeCommand.js",
+    "sha256": "48dedfd94508f44c76c9adf61a33a20031e3cc14535f29f4b29cac5a3c02734f",
+    "bytes": 2379
+  },
+  {
+    "file": "editor/editor/js/commands/SetMaterialValueCommand.js",
+    "sha256": "4755d152cb200b9d19064ab75d77f15c80993fa240a2d7a5bc5dabf4fdb6e517",
+    "bytes": 2202
+  },
+  {
+    "file": "editor/editor/js/commands/SetMaterialVectorCommand.js",
+    "sha256": "041e73c64e6bf2727b7428fb11f294e8642c2782863fd7e45dfcbe7cb0f5d8b7",
+    "bytes": 2071
+  },
+  {
+    "file": "editor/editor/js/commands/SetPositionCommand.js",
+    "sha256": "2c5812855e0109d09c724f1c63444604161c8e8fe1e690b88aa61b7c4e0ee2be",
+    "bytes": 1727
+  },
+  {
+    "file": "editor/editor/js/commands/SetRotationCommand.js",
+    "sha256": "530bf35ef3b3c037e6b4ba37f62643332bb0e841f6cc159e563d50f5cf5ec710",
+    "bytes": 1717
+  },
+  {
+    "file": "editor/editor/js/commands/SetScaleCommand.js",
+    "sha256": "7263ce59626fa91d2279477be821f4c5a13522471a77b80269cf9b8acd108476",
+    "bytes": 1637
+  },
+  {
+    "file": "editor/editor/js/commands/SetSceneCommand.js",
+    "sha256": "4a1c4c511509366d0795424dbd613cc3975c5e22723ba6d78f6f35e0868528c5",
+    "bytes": 2251
+  },
+  {
+    "file": "editor/editor/js/commands/SetScriptValueCommand.js",
+    "sha256": "bdc8c511454cea5a6b4dd7658c5e065f74cc29bae213ec8981078c29cc8fa6ae",
+    "bytes": 1694
+  },
+  {
+    "file": "editor/editor/js/commands/SetShadowValueCommand.js",
+    "sha256": "cb5678e169aeb865050175ff4425df722082c8ef73d2185a74756198336422ff",
+    "bytes": 1521
+  },
+  {
+    "file": "editor/editor/js/commands/SetTextureParametersCommand.js",
+    "sha256": "790b388aac11e4376fa1a86506ccb2fc895bad507a40dd97dc95945df296d354",
+    "bytes": 2434
+  },
+  {
+    "file": "editor/editor/js/commands/SetUuidCommand.js",
+    "sha256": "3ac89671213e6fc232000e1d47caa1d53821645cc40331e83ee34fd66c35ff34",
+    "bytes": 1271
+  },
+  {
+    "file": "editor/editor/js/commands/SetValueCommand.js",
+    "sha256": "8ff548c4e083a848c5a72a8b02749c01bb95b281b4c2a2731823e2995b0294d0",
+    "bytes": 1586
+  },
+  {
+    "file": "editor/editor/js/Config.js",
+    "sha256": "eba1a1feec65c8399819b30de569414ba589ed69de6dbb0d863e69ee01adc911",
+    "bytes": 1788
+  },
+  {
+    "file": "editor/editor/js/Editor.js",
+    "sha256": "124ac8bff971ec89f0eed5c1e0a9d1e9a178e66e35d4c5c4b02953f4e91a9fe3",
+    "bytes": 18198
+  },
+  {
+    "file": "editor/editor/js/EditorControls.js",
+    "sha256": "a20fd28bedbafdcd43df55f40a890c0adae3a0fcd03e51adc116c107a6ad2d02",
+    "bytes": 9949
+  },
+  {
+    "file": "editor/editor/js/GLTFImportDialog.js",
+    "sha256": "c1e8172f9f71c53b3a0283ece57887ed04d2b20459c6a097c8d485799fef3cae",
+    "bytes": 2309
+  },
+  {
+    "file": "editor/editor/js/History.js",
+    "sha256": "13671b7af827bc01327b7b9c64573ffbea9ccc34ec8153f42bcf78760b0fd3fe",
+    "bytes": 6013
+  },
+  {
+    "file": "editor/editor/js/libs/acorn/acorn_loose.js",
+    "sha256": "f33b1b1e8ba02c7f78656bb66f7ee70d702cd1c94195511430866f41edb9d02d",
+    "bytes": 42267
+  },
+  {
+    "file": "editor/editor/js/libs/acorn/acorn.js",
+    "sha256": "5adfb18b15c5eb96a51e7e49fdc888ce5a99dd18b305f87a244aeaea4d5aa629",
+    "bytes": 112170
+  },
+  {
+    "file": "editor/editor/js/libs/acorn/walk.js",
+    "sha256": "6f6175a2a24ca586bc81438df7035bb3863ad82694833ee449a164f99c059e72",
+    "bytes": 11758
+  },
+  {
+    "file": "editor/editor/js/libs/app.js",
+    "sha256": "96983dc7ac039e32f2d57a6347186b3034ea394540dfb07613c7cae5038c1c16",
+    "bytes": 5880
+  },
+  {
+    "file": "editor/editor/js/libs/codemirror/addon/dialog.css",
+    "sha256": "5df690d771f12118348562dd2a90060433ae2edeccd0908abcaa4480b1e3e468",
+    "bytes": 507
+  },
+  {
+    "file": "editor/editor/js/libs/codemirror/addon/dialog.js",
+    "sha256": "f823db8445973fc7be842dbe5278211e8971e7ab9ffd8ce9c403c68171fbe31d",
+    "bytes": 5250
+  },
+  {
+    "file": "editor/editor/js/libs/codemirror/addon/show-hint.css",
+    "sha256": "f4f8c8d48c155dcbf8e04dfb29b0d500974460d08204adfe0dda3be7bb3a2fc8",
+    "bytes": 623
+  },
+  {
+    "file": "editor/editor/js/libs/codemirror/addon/show-hint.js",
+    "sha256": "be880d5b21820a163127e5adfe008582fad272c413bd260ea019157726799d32",
+    "bytes": 19981
+  },
+  {
+    "file": "editor/editor/js/libs/codemirror/addon/tern.css",
+    "sha256": "107542ab314a1db5eb9ee84f7f2543f9fcf7e03e472a35edef2c5fd84fa308f7",
+    "bytes": 1872
+  },
+  {
+    "file": "editor/editor/js/libs/codemirror/addon/tern.js",
+    "sha256": "bb690874b56764c6c65b13e35d78a5d97cfee5d3e5814622449bb5d3cc5498aa",
+    "bytes": 26219
+  },
+  {
+    "file": "editor/editor/js/libs/codemirror/codemirror.css",
+    "sha256": "eb494ea972d2661ef86f7f6ac656dd6786d721e49c9c1b46e1eb967e4b6f9bf3",
+    "bytes": 8720
+  },
+  {
+    "file": "editor/editor/js/libs/codemirror/codemirror.js",
+    "sha256": "d03e9fa93fd33399bb99b98e2956cd2e799a56775663796a42b74af4ee1119b0",
+    "bytes": 400208
+  },
+  {
+    "file": "editor/editor/js/libs/codemirror/mode/glsl.js",
+    "sha256": "4183b8ea409ea5b52b2f22121d2e95db3bdc8bd23020e975ab10a7c055ac3d55",
+    "bytes": 8508
+  },
+  {
+    "file": "editor/editor/js/libs/codemirror/mode/javascript.js",
+    "sha256": "ea968e9ea578b68526edd3c113391c6558886ec5942cedb67305fb5cb9456bdf",
+    "bytes": 38844
+  },
+  {
+    "file": "editor/editor/js/libs/codemirror/theme/monokai.css",
+    "sha256": "2463dc6fd92019a0c7ca2aaa01d03116b280fa7c6ae01bf21df7c107d9b683e8",
+    "bytes": 2179
+  },
+  {
+    "file": "editor/editor/js/libs/esprima.js",
+    "sha256": "0d3811557704a646fd2012b3c3a463881997dd24e3a0049647862fbf38a489a3",
+    "bytes": 265580
+  },
+  {
+    "file": "editor/editor/js/libs/jsonlint.js",
+    "sha256": "ce94081be12d9294917590c5cbfab3204141d293573ed1baeb0ad587132509dd",
+    "bytes": 17290
+  },
+  {
+    "file": "editor/editor/js/libs/signals.min.js",
+    "sha256": "ee17ae5ef0aa629eaa4a728ba672f3fe59706eb8ae640e5cb3ede7ffe5da6e60",
+    "bytes": 3230
+  },
+  {
+    "file": "editor/editor/js/libs/tern-threejs/build-defs.js",
+    "sha256": "f16f9f3f2ce9ef33ebcb6f0c6d252a25607bd1bfeeb690aa811721e5a2783021",
+    "bytes": 6490
+  },
+  {
+    "file": "editor/editor/js/libs/ternjs/comment.js",
+    "sha256": "c8d1b69fad77e17ff7b4779f3a68ba82069558c3f675aa31a4b10351598d188d",
+    "bytes": 2891
+  },
+  {
+    "file": "editor/editor/js/libs/ternjs/def.js",
+    "sha256": "267ecef7d1754d54898e65db32d4f9353303f5f9d8bfa1e39e37e8ebf325c142",
+    "bytes": 20576
+  },
+  {
+    "file": "editor/editor/js/libs/ternjs/doc_comment.js",
+    "sha256": "16b0ae32d53c149330c16408423e30611dca1ae149ad525e153643ae989723b8",
+    "bytes": 14301
+  },
+  {
+    "file": "editor/editor/js/libs/ternjs/infer.js",
+    "sha256": "507ac3b413203d0970ca12dfcee3ee906bdce0d3ffb5c2bd7b6b66964ce133ef",
+    "bytes": 56644
+  },
+  {
+    "file": "editor/editor/js/libs/ternjs/polyfill.js",
+    "sha256": "901346fec4db7bdda8f7bfea57292ec16b43b299fbfd6de73290f2b14a4fc1a7",
+    "bytes": 9440
+  },
+  {
+    "file": "editor/editor/js/libs/ternjs/signal.js",
+    "sha256": "758cee05964007c5294c14226105806888182d25e39fefbd923357f12e691032",
+    "bytes": 963
+  },
+  {
+    "file": "editor/editor/js/libs/ternjs/tern.js",
+    "sha256": "acc6634f628164b829b962e6ab0f2491fd09eda6ed184dbe4d1aa7836ba038bb",
+    "bytes": 34845
+  },
+  {
+    "file": "editor/editor/js/libs/ui.js",
+    "sha256": "54326d613088f938889cffa30e7dcb0072af71c6c9ae2fa232c8b3f303b4402e",
+    "bytes": 19664
+  },
+  {
+    "file": "editor/editor/js/libs/ui.three.js",
+    "sha256": "e06c55fc08277fa7ee999b36784e416122c5d6da3265bb98d5c70cbaacf88062",
+    "bytes": 16763
+  },
+  {
+    "file": "editor/editor/js/Loader.js",
+    "sha256": "5d84b086b9d3aed7c2956a2d9660afcce2466fa94cd74ef1e75610a308765143",
+    "bytes": 23354
+  },
+  {
+    "file": "editor/editor/js/LoaderUtils.js",
+    "sha256": "fff49dcaafa3f83bd528a4c2e3a33ad55c1d56ca54358d15091c9e48d7d05796",
+    "bytes": 1257
+  },
+  {
+    "file": "editor/editor/js/Menubar.Add.js",
+    "sha256": "fda0ad05ccdf68b7b97a281766221f8eeb3b8a0c4fd3bd7d2e2d6bea01f7533e",
+    "bytes": 15170
+  },
+  {
+    "file": "editor/editor/js/Menubar.Edit.js",
+    "sha256": "b323b39f13618962f961a636634a297627d201e92d179c34ad6e7edd94663cf6",
+    "bytes": 3560
+  },
+  {
+    "file": "editor/editor/js/Menubar.File.js",
+    "sha256": "e34a84adce8d494d7d624e3a55deb5f321a6993d7628dccb77005a9141e23e84",
+    "bytes": 13182
+  },
+  {
+    "file": "editor/editor/js/Menubar.Help.js",
+    "sha256": "30fb716a73c3be7d33e353b03abc385fd0fa17d6ca845c97578ceb33452705ed",
+    "bytes": 1561
+  },
+  {
+    "file": "editor/editor/js/Menubar.js",
+    "sha256": "ca21850db2267b00a7db037f10a559a95b334807f97470d508f81b011dc69fa9",
+    "bytes": 850
+  },
+  {
+    "file": "editor/editor/js/Menubar.Render.js",
+    "sha256": "09675ca46f9758c8cee510b88a45838d7ed53654b5415b9ab181455cded321c4",
+    "bytes": 22049
+  },
+  {
+    "file": "editor/editor/js/Menubar.Status.js",
+    "sha256": "ceaceb7138b34052b7087d0b29afbed3ec6fc886763bf799c907868822f7395a",
+    "bytes": 1054
+  },
+  {
+    "file": "editor/editor/js/Menubar.View.js",
+    "sha256": "e57118214cf24e12e227963f36621168cd12a8397792bb5fbe81b6bbb297dd8e",
+    "bytes": 4201
+  },
+  {
+    "file": "editor/editor/js/Player.js",
+    "sha256": "df48a234fe92142bc0fc87bdee5b6d29e66756d75791d6a440b3b99b232143b8",
+    "bytes": 998
+  },
+  {
+    "file": "editor/editor/js/Resizer.js",
+    "sha256": "b4cb77f5da37436d36daa6ff493ed6ff69236c680336321d83183041ac63b010",
+    "bytes": 1760
+  },
+  {
+    "file": "editor/editor/js/Script.js",
+    "sha256": "67e7edec0a59338402c41cb9328472223a3318f7e0099dade4d8e6ec397239e1",
+    "bytes": 10456
+  },
+  {
+    "file": "editor/editor/js/Selector.js",
+    "sha256": "9443dcdeb7efae1d05c8e896c528fef9273b5e30d7c200c1ba3e7ee217199e57",
+    "bytes": 5969
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Geometry.BoxGeometry.js",
+    "sha256": "36fcab719c13bb42914410584e557efb11fbea2d9d22abb6a1c2b924d1cad674",
+    "bytes": 3235
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Geometry.BufferGeometry.js",
+    "sha256": "d8c51c619928b25098d34c523249e0e7104580720067e7e3f90811e431880417",
+    "bytes": 3473
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Geometry.js",
+    "sha256": "5621849528ac288916f4969b2b21d03865a4fee7b352c6032bd604e31404dd34",
+    "bytes": 10655
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Geometry.Modifiers.js",
+    "sha256": "7fc5c75fd0c4c2c6e4add139f720f9dec936b712e9c41439ca483201e1e87edd",
+    "bytes": 1863
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Geometry.PlaneGeometry.js",
+    "sha256": "4c21801ae98160b1b7f9ffcda26e34fbb21ea2e917a57da0646b56cc92e8978d",
+    "bytes": 2388
+  },
+  {
+    "file": "editor/editor/js/Sidebar.js",
+    "sha256": "d5988f9df4ab30d01625ef2af260952b63916f70aaeeaf52e9033ed0bf33f9f2",
+    "bytes": 1199
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Material.BooleanProperty.js",
+    "sha256": "53ab07f857e63835be84ad41796cf623a76011a719e967715ff5e88bb104dc7c",
+    "bytes": 1298
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Material.ColorProperty.js",
+    "sha256": "ecf7686b2c599bb4cc23a8f30ba860abe022160010a8f580a36101c7b4b1f564",
+    "bytes": 1929
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Material.ConstantProperty.js",
+    "sha256": "dbf3f6dc154ede00ed6f85821fd415638b5ff719f861325d19dac273c666a0fe",
+    "bytes": 1335
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Material.js",
+    "sha256": "6d58f01eaaa1e822c11b523f011e5bdd1c28dbf12ea51189b5bfa2f099f691fc",
+    "bytes": 23393
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Material.MapProperty.js",
+    "sha256": "6b6808bd5bdd03416340f05f9ccaba83b5019d267171f2427530fb5e80f4f663",
+    "bytes": 6951
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Material.NumberProperty.js",
+    "sha256": "32ae67e15463ec75a021630f6bf4133d444b0902ffebf0157ae2eca8dfceb6ac",
+    "bytes": 1397
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Material.Program.js",
+    "sha256": "438906ce458aad4b10cdb773560c762055ceb20f95bb241866f2ddef7d9db521",
+    "bytes": 1700
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Material.RangeValueProperty.js",
+    "sha256": "9e1f45bbeff704cfcd7ff9a63b1a7934473175c53a28aa2c8abf1c3cd68de16d",
+    "bytes": 1683
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Object.js",
+    "sha256": "ce7f9e5b9220aec100d94fd2fd136a6cd9f20a264e6ebe1c5ad46fa115fd7743",
+    "bytes": 24458
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Project.App.js",
+    "sha256": "cc8455098b97c6aa392bca1723fc897d492bafe2e8aaa90127e9e87c34b5ddac",
+    "bytes": 5223
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Project.js",
+    "sha256": "c160df449d9b73e42de3c36a3965a56153f43ba5cb9d7b95ed118b46587fa5e0",
+    "bytes": 537
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Project.Renderer.js",
+    "sha256": "4cb47b0cf6e0a55955667a35a8b1e796d325e68970a8f2e3dc57b2f1a6801427",
+    "bytes": 6153
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Project.Resources.js",
+    "sha256": "a76d0cf0c9721bc55867e62aaefc3fc82ee1fee002de78ca893cb407ec8ee6bf",
+    "bytes": 6605
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Properties.js",
+    "sha256": "b423bde0346347c685cdf6e9abb6efb9a6ac90d2241549310768c25a8ee71f97",
+    "bytes": 2048
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Scene.js",
+    "sha256": "eaa90aae0f01067ec30a9af8a55babe41fea0e11c644e2a0905d8a701b02bcc9",
+    "bytes": 14849
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Script.js",
+    "sha256": "b7193c06678fa64db5c71ba01f3cc3b8affb61e5eff5134ab4c5b5e0c0fbce13",
+    "bytes": 2815
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Settings.History.js",
+    "sha256": "5d501370a086c7e0c5bf231ba71869fe3e6bb2f528ec7ebbabda23f5c4d1d972",
+    "bytes": 2896
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Settings.js",
+    "sha256": "d7b406a92a663afa6e4b6b2f79df964a94b356d31c7ac997119626469bb65f57",
+    "bytes": 1383
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Settings.Shortcuts.js",
+    "sha256": "60c2baee4416138d5784b9f5507fb8fc72677a480006bc75abf1d7addcbcd435",
+    "bytes": 5278
+  },
+  {
+    "file": "editor/editor/js/Storage.js",
+    "sha256": "df0d4757404c7c346c1ef3b254cfeb5706502d2c49e2980e728ef5b7d8956eb8",
+    "bytes": 2005
+  },
+  {
+    "file": "editor/editor/js/Strings.js",
+    "sha256": "8e0f33aa9778034b3d93c096f243ba565d24072d2f027b56a418a3d1c3cc4d4a",
+    "bytes": 123604
+  },
+  {
+    "file": "editor/editor/js/TextureParametersDialog.js",
+    "sha256": "c25d07bed016a28cba926555b2191eb8f9b8a9d2907fc97d7fb06834d267b386",
+    "bytes": 9627
+  },
+  {
+    "file": "editor/editor/js/Toolbar.js",
+    "sha256": "249cc64b50c06e6f0d2391a6e64cc06428ffa8b40e19031b174b42ab67ca3779",
+    "bytes": 1806
+  },
+  {
+    "file": "editor/editor/js/Viewport.Controls.js",
+    "sha256": "81da786c2a9217bee95df5ddc1b5775b48b76dfd0cf4c14b1d6fae9030444533",
+    "bytes": 1870
+  },
+  {
+    "file": "editor/editor/js/Viewport.Info.js",
+    "sha256": "cf0c3121a84acd23cbe8c96a2f9818ebd66fca200f20a50311178325e4ba217f",
+    "bytes": 4570
+  },
+  {
+    "file": "editor/editor/js/Viewport.js",
+    "sha256": "597f323c2b9c8c7e6f87bc92192baf5ecd940edb9533198b0c8dcbdcf706e196",
+    "bytes": 20181
+  },
+  {
+    "file": "editor/editor/js/Viewport.Pathtracer.js",
+    "sha256": "fb6db5372b2ddff88e86289aeb3c27c76ac0dfca14edd58acd923ecfd6b83965",
+    "bytes": 1476
+  },
+  {
+    "file": "editor/editor/js/Viewport.ViewHelper.js",
+    "sha256": "506e713f9d128090303cc8d078d686ffdbe0a31c58d0492f170887947fa1ea21",
+    "bytes": 777
+  },
+  {
+    "file": "editor/editor/js/Viewport.XR.js",
+    "sha256": "af5f857e56d9c9e55e99efd1ed8011ce4d8c163e8d3523093870be586311e800",
+    "bytes": 5536
+  },
+  {
+    "file": "editor/examples/jsm/controls/TransformControls.js",
+    "sha256": "151befe25bb0d68626f9a6b033625b7b0cf6848e39ba71623b7bed8e3df565d6",
+    "bytes": 51706
+  },
+  {
+    "file": "editor/examples/jsm/environments/ColorEnvironment.js",
+    "sha256": "f17a9824d3deadd199bbfc17672636ddc79bb9cc0940a8942ca77c8239576e0a",
+    "bytes": 1401
+  },
+  {
+    "file": "editor/examples/jsm/environments/RoomEnvironment.js",
+    "sha256": "55f466192cc84298755a424c5e040345006b2ee1455589b3b54126c2ea4123f4",
+    "bytes": 4960
+  },
+  {
+    "file": "editor/examples/jsm/geometries/TextGeometry.js",
+    "sha256": "edf69c1cd6087c84d020156d1adbb29b40b098e4cbe8da4c0c36bbadc58dceac",
+    "bytes": 3312
+  },
+  {
+    "file": "editor/examples/jsm/helpers/AnimationPathHelper.js",
+    "sha256": "c881341e6231e41f965b300536453cb02b4499a20a6f9f063726628b7e2701b7",
+    "bytes": 6400
+  },
+  {
+    "file": "editor/examples/jsm/helpers/VertexNormalsHelper.js",
+    "sha256": "666a1219d95010e4d5d290f08774af2c327b7bcd368ebdec29a111805c8b7ecc",
+    "bytes": 3458
+  },
+  {
+    "file": "editor/examples/jsm/helpers/ViewHelper.js",
+    "sha256": "3572685243e0e532c09bb7498d5802459ddabf2d8ef41450f4013e78faba1ddf",
+    "bytes": 12826
+  },
+  {
+    "file": "editor/examples/jsm/interactive/HTMLMesh.js",
+    "sha256": "a339c0e28d65ab54da4369b8d760c8260e6461b12cbe78a58be36d90088ad7b1",
+    "bytes": 14543
+  },
+  {
+    "file": "editor/examples/jsm/interactive/InteractiveGroup.js",
+    "sha256": "94a817946503e646e743dfa45203ae09fc1f917bbf7a1e3636b08ac3ecb2493f",
+    "bytes": 5806
+  },
+  {
+    "file": "editor/examples/jsm/libs/fflate.module.js",
+    "sha256": "209a4412eb48ce609edb4391992a792ffcc3983d30ee7e2b0b89a8c470f3cd8a",
+    "bytes": 89384
+  },
+  {
+    "file": "editor/examples/jsm/libs/ktx-parse.module.js",
+    "sha256": "f40c491f6c44dde511268121f778a0050e73b1a15fd844c1ae2c78c73213eafc",
+    "bytes": 19932
+  },
+  {
+    "file": "editor/examples/jsm/libs/meshopt_decoder.module.js",
+    "sha256": "d428e73a000057c6c94bfcedc3412d0c2dc14ca8800e88553aab05113ad2bf19",
+    "bytes": 29256
+  },
+  {
+    "file": "editor/examples/jsm/libs/mikktspace.module.js",
+    "sha256": "f415ebd2f7bbe4ac06439be40d2ca4a11bb17123009bb33582176b1b21a14dac",
+    "bytes": 48841
+  },
+  {
+    "file": "editor/examples/jsm/libs/motion-controllers.module.js",
+    "sha256": "4bf534b98dbb0f3e90b1332ac4d49c7d7747253768970abc7e4133b7700b75b1",
+    "bytes": 13492
+  },
+  {
+    "file": "editor/examples/jsm/libs/zstddec.module.js",
+    "sha256": "5cbf818e842628a4464e748594a6deae18ceddda3c2f541e7b3a0ff5fc7611e2",
+    "bytes": 39754
+  },
+  {
+    "file": "editor/examples/jsm/loaders/DRACOLoader.js",
+    "sha256": "fdafdf4aa11bbc65d89adb338efd844bedf94073702f9049240ff1f1ea48ad5f",
+    "bytes": 19030
+  },
+  {
+    "file": "editor/examples/jsm/loaders/FontLoader.js",
+    "sha256": "a8d78ab85e596ef6c274023ee165520000f010011553dbfafe5c966387aca3d8",
+    "bytes": 5292
+  },
+  {
+    "file": "editor/examples/jsm/loaders/GLTFLoader.js",
+    "sha256": "131c0f78c01d19368ae495caa65b3adaa10487810a36a05bb5901b769a35ac16",
+    "bytes": 117570
+  },
+  {
+    "file": "editor/examples/jsm/loaders/KTX2Loader.js",
+    "sha256": "3a3233ce3409443076d3414b78832e1405fcfac5ecb34d367365fd0781127d6c",
+    "bytes": 36567
+  },
+  {
+    "file": "editor/examples/jsm/loaders/TGALoader.js",
+    "sha256": "da4cfa0c050b8076a63596f36f6e5a54a4a8271774a5301482996be030505c43",
+    "bytes": 11792
+  },
+  {
+    "file": "editor/examples/jsm/math/ColorSpaces.js",
+    "sha256": "cc35c01c793cd17ccded7bc8142abffd3ce0d60dd6de8d5d216983bd05aee262",
+    "bytes": 4290
+  },
+  {
+    "file": "editor/examples/jsm/postprocessing/Pass.js",
+    "sha256": "444b409c235ead986893c472e720da1b779a56985c7d10b279c7944b52bd61c5",
+    "bytes": 4218
+  },
+  {
+    "file": "editor/examples/jsm/utils/BufferGeometryUtils.js",
+    "sha256": "9fb63427ce6641fa14fd0baff9cc4d1b5f9c3d85fd084bf2e90e803c44ec1797",
+    "bytes": 37712
+  },
+  {
+    "file": "editor/examples/jsm/utils/SkeletonUtils.js",
+    "sha256": "b1632a703206c3d830de9fcbe515696770d04b71a15ee6b50afa6d2c3298c86f",
+    "bytes": 11535
+  },
+  {
+    "file": "editor/examples/jsm/utils/WorkerPool.js",
+    "sha256": "5ac7095fd566bc9ae48376055fd66edf27cb9ebbf9e1269dc206bfd4933ae9eb",
+    "bytes": 3110
+  },
+  {
+    "file": "editor/examples/jsm/webxr/XRControllerModelFactory.js",
+    "sha256": "401dcb638ca3de94dd0a7744dd7a1c0d20374c73695b3d4e890eac6100e56877",
+    "bytes": 10185
+  },
+  {
+    "file": "editor/examples/models/gltf/RobotExpressive/RobotExpressive.glb",
+    "sha256": "047f5e5fb3bb6d378bd1df16ca6137f2a596c99b3a1b5690b4020c05aaf6f319",
+    "bytes": 463988
+  },
+  {
+    "file": "viewer/dist/assets/index-_rZ_swZ7.js",
+    "sha256": "43144acbb09639128575cce83468fb1cebd815d2709ee11b2fb7e1136bd36ae6",
+    "bytes": 1310940
+  },
+  {
+    "file": "viewer/dist/assets/index-Ba43DX0S.css",
+    "sha256": "586ec53c27bdd543af2d1129c2004dbfc30ce4ea383f3c29019939eee340119a",
+    "bytes": 3418
+  },
+  {
+    "file": "viewer/dist/index.html",
+    "sha256": "d5b2611e9cba87432947bd82f5bd6a5cee870e48094df24f4b73b969a6beb224",
+    "bytes": 1610
+  }
+]

@@ -1,0 +1,16 @@
+V1 native GUI clip/speed/pause/resume/morph/orbit 0
+E1 pointer picking and shift selection 0
+E1 command transforms/undo/redo/synchronous reads 0
+E1 idle render suppression 0
+E2 native loader/playback/selected bounds/shadows/visibility 0
+V1-static-manual-morph exact fixed-state A/A
+V1 native GUI clip/speed/pause/resume/morph/orbit 1
+V1-walking-morph exact fixed-state A/A
+E1 pointer picking and shift selection 1
+E1 command transforms/undo/redo/synchronous reads 1
+E1-small-static exact fixed-state A/A
+E1 idle render suppression 1
+E2-animated-selected-shadow exact fixed-state A/A
+E2-shadow-disabled-control exact fixed-state A/A
+E2-hidden-control exact fixed-state A/A
+E2 native loader/playback/selected bounds/shadows/visibility 1

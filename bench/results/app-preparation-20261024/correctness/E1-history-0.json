@@ -1,0 +1,71 @@
+{
+  "moved": [
+    -1,
+    1.2,
+    0
+  ],
+  "undone": [
+    -1,
+    0.4,
+    0
+  ],
+  "redone": [
+    -1,
+    1.2,
+    0
+  ],
+  "rotated": 0.7853981633974483,
+  "undoRotation": 0,
+  "redoRotation": 0.7853981633974483,
+  "events": [
+    {
+      "position": [
+        -1,
+        1.2,
+        0
+      ],
+      "worldX": -1
+    },
+    {
+      "position": [
+        -1,
+        0.4,
+        0
+      ],
+      "worldX": -1
+    },
+    {
+      "position": [
+        -1,
+        1.2,
+        0
+      ],
+      "worldX": -1
+    },
+    {
+      "position": [
+        -1,
+        1.2,
+        0
+      ],
+      "worldX": -1
+    },
+    {
+      "position": [
+        -1,
+        1.2,
+        0
+      ],
+      "worldX": -1
+    },
+    {
+      "position": [
+        -1,
+        1.2,
+        0
+      ],
+      "worldX": -1
+    }
+  ],
+  "identity": true
+}

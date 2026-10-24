@@ -1,0 +1,19 @@
+{
+  "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+  "vendor": "Google Inc. (Apple)",
+  "attributes": {
+    "alpha": true,
+    "antialias": true,
+    "depth": true,
+    "desynchronized": false,
+    "failIfMajorPerformanceCaveat": false,
+    "powerPreference": "default",
+    "premultipliedAlpha": true,
+    "preserveDrawingBuffer": false,
+    "stencil": false,
+    "xrCompatible": false
+  },
+  "width": 1280,
+  "height": 656,
+  "dpr": 1
+}

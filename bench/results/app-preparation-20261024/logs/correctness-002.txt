@@ -1,0 +1,33 @@
+V1 native GUI clip/speed/pause/resume/morph/orbit 0
+E1 pointer picking and shift selection 0
+E1 command transforms/undo/redo/synchronous reads 0
+E1 idle render suppression 0
+E2 native loader/playback/selected bounds/shadows/visibility 0
+V1 native GUI clip/speed/pause/resume/morph/orbit 1
+V1-walking-morph exact fixed-state A/A
+E1 pointer picking and shift selection 1
+E1 command transforms/undo/redo/synchronous reads 1
+E1-small-static exact fixed-state A/A
+E1 idle render suppression 1
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: E2-animated-selected-shadow: pixel A/A mismatch
++ actual - expected
+
++ 'a11e79b5fc5aa312784f2ae01b24ef23cf3ed6c7879bb035cd6b16760016255c'
+- '85fe9e1721a73d27aeff83beb67ce51fa09697f76b235544b66c674e4906bfa7'
+
+    at capture (file://<checkout>/scripts/apps/check.mjs:29:225)
+    at async editorAnimated (file://<checkout>/scripts/apps/check.mjs:135:16)
+    at async file://<checkout>/scripts/apps/check.mjs:146:86 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'a11e79b5fc5aa312784f2ae01b24ef23cf3ed6c7879bb035cd6b16760016255c',
+  expected: '85fe9e1721a73d27aeff83beb67ce51fa09697f76b235544b66c674e4906bfa7',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.15.0
