@@ -31,3 +31,20 @@ test(`${mode}: release preserves the lazily cleared public dirty flag`,()=>{
  root.updateMatrixWorld();assert.equal(child.matrixWorldNeedsUpdate,false);T.release(root);
  assert.equal(child.matrixWorldNeedsUpdate,false);root.updateMatrixWorld();assert.equal(child.matrixWorldNeedsUpdate,false);T.release(root);
 });
+
+test(`${mode}: dirty queues do not retain an abandoned detached record`,async()=>{
+ assert.equal(typeof global.gc,'function','Run via test:prepared or node --expose-gc');
+ const root=new T.Scene();
+ const weak=(()=>{
+  const child=new T.Object3D();root.add(child);root.updateMatrixWorld();
+  child.visible=false;child.position.x=1;
+  root.remove(child);root.updateMatrixWorld(); // Retire the old topology's reference.
+  return new WeakRef(child);
+ })();
+ for(let i=0;i<100&&T.diagnostics().liveNodes!==1;i++){
+  await new Promise(setImmediate);global.gc();await new Promise(setImmediate);
+ }
+ assert.equal(weak.deref(),undefined,'The public detached object can be collected');
+ assert.equal(T.diagnostics().liveNodes,1,'Dirty metadata/input queues must not keep its native slot alive');
+ root.updateMatrixWorld();T.release(root);assert.equal(T.diagnostics().liveNodes,0);
+});

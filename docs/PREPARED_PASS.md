@@ -65,6 +65,11 @@ snapshots and dirty flags. Plans/slots are retired; linear memory and monotonic
 handle tombstones retain their high-water allocation. Lifecycle qualification is
 not implied by bounded release tests.
 
+Dirty queues hold weak record references, so abandoned detached objects do not
+stay alive solely because they have pending input/metadata. A forced-GC regression
+test checks native slot retirement. This does not guarantee when browser GC runs;
+explicit release is still the deterministic lifecycle operation.
+
 ## Diagnostics and verification
 
 - `topologyBuilds`: full topology rebuilds, not per-frame updates.

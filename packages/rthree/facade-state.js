@@ -10,8 +10,8 @@ const planCache=new WeakMap(),dirtyInputs=new Set(),dirtyMeta=new Set();
 let topologyEpoch=0,mutationEpoch=0,activePass;
 const prepared=()=>!!config?.prepared();
 export function invalidatePrepared(){if(prepared()){topologyEpoch++;mutationEpoch++;activePass=undefined;}}
-function markInput(r){if(prepared()){mutationEpoch++;if(r.slot)dirtyInputs.add(r);}}
-function markMeta(r){if(prepared()){mutationEpoch++;if(r.slot)dirtyMeta.add(r);}}
+function markInput(r){if(prepared()){mutationEpoch++;if(r.slot)dirtyInputs.add(r.queueRef);}}
+function markMeta(r){if(prepared()){mutationEpoch++;if(r.slot)dirtyMeta.add(r.queueRef);}}
 
 const finalizer=new FinalizationRegistry(token=>retire(token));
 const numeric=key=>typeof key==='string'&&/^(?:[0-9]|1[0-5])$/.test(key);
@@ -116,6 +116,8 @@ function scalar(r,object,key){
 export function trackFacadeObject(object){
  if(!enabled())return;
  const r={slot:0,inputs:true,flags:true,supported:true,matrices:[],ref:new WeakRef(object)};records.set(object,r);
+ // Dirty work must not keep abandoned records (and their native slots) alive.
+ if(prepared())r.queueRef=new WeakRef(r);
  for(const vector of [object.position,object.scale])for(const k of ['x','y','z'])scalar(r,vector,k);
  for(const k of ['_x','_y','_z','_w'])scalar(r,object.quaternion,k);
  scalar(r,object,'pivot');
@@ -155,7 +157,7 @@ function upload(o,r,d){
   for(let j=0;j<16;j++)d[b+m.offset+j]=m.target[j];
   m.dirty=false;c.uploadedBytes+=128;
  }
- dirtyInputs.delete(r);
+ dirtyInputs.delete(r.queueRef);
  const hasParent=o.parent?1:0;
  if(d[b+49]!==hasParent){d[b+49]=hasParent;c.uploadedBytes+=8;}
 }
@@ -219,7 +221,7 @@ export function releaseFacade(root){
  if(!enabled())return;
  if(prepared()){dropPlan(root);invalidatePrepared();}
  const r=records.get(root);
- if(r?.slot){if(prepared()&&!r.flags)r.flagValues.matrixWorldNeedsUpdate=!!(view()[r.slot*64+15]&4);for(const m of r.matrices)materialize(r,m);finalizer.unregister(r);dirtyInputs.delete(r);dirtyMeta.delete(r);retire(r.token);r.slot=0;}
+ if(r?.slot){if(prepared()&&!r.flags)r.flagValues.matrixWorldNeedsUpdate=!!(view()[r.slot*64+15]&4);for(const m of r.matrices)materialize(r,m);finalizer.unregister(r);dirtyInputs.delete(r.queueRef);dirtyMeta.delete(r.queueRef);retire(r.token);r.slot=0;}
  for(const child of root.children)releaseFacade(child);
 }
 
@@ -270,7 +272,7 @@ function ensurePlan(root,base){
 }
 function syncInputs(p){
  const d=view();let synced=0;
- for(const r of dirtyInputs){const o=r.ref.deref();if(!o||!r.slot){dirtyInputs.delete(r);continue;}
+ for(const ref of dirtyInputs){const r=ref.deref(),o=r?.ref.deref();if(!o||!r.slot){dirtyInputs.delete(ref);continue;}
   if(!p.indices.has(r))continue;upload(o,r,d);r.flags=false;synced++;
  }
  config.counters.dirtyRecords+=synced;
@@ -288,7 +290,7 @@ function updatePlan(p,force){
 function objectMeta(p,o,r,i){
  const m=p.meta,b=i*16;
  m[b+3]=o.visible===false?0:1;m[b+4]=o.layers.mask>>>0;m[b+5]=o.isMesh?2:o.isGroup?1:o.isLight?3:0;
- m[b+6]=o.renderOrder;m[b+7]=o.id;m[b+15]=o.frustumCulled?1:0;dirtyMeta.delete(r);
+ m[b+6]=o.renderOrder;m[b+7]=o.id;m[b+15]=o.frustumCulled?1:0;dirtyMeta.delete(r.queueRef);
  config.counters.preparedInputBytes+=8*6;
 }
 function eligiblePass(p,bases){
@@ -310,7 +312,10 @@ function eligiblePass(p,bases){
  return true;
 }
 function refreshPassInputs(p,bases){
- for(const r of dirtyMeta){if(p.indices.has(r)){const o=r.ref.deref();if(o)objectMeta(p,o,r,p.indices.get(r));}}
+ for(const ref of dirtyMeta){const r=ref.deref(),o=r?.ref.deref();
+  if(!o||!r.slot){dirtyMeta.delete(ref);continue;}
+  if(p.indices.has(r))objectMeta(p,o,r,p.indices.get(r));
+ }
  for(const [material,state] of p.materials){
   if(material.transmission>0||material.isNodeMaterial||material.onBeforeRender!==bases.Material.prototype.onBeforeRender)return false;
   const values=[material.id,material.transparent===true?1:0,material.visible?1:0];

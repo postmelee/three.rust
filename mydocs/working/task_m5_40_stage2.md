@@ -45,3 +45,20 @@ predeclared six-route/five-scene protocol; no favorable results have been select
 
 Public contract/source provenance stays in `docs/`, task records in `mydocs/` as
 planned. Continue under the requester's C3 authorization; main merge is separate.
+
+## Stage 2.1 — lifetime correction after the first freeze
+
+Review during the first clean-source experiment found that strong dirty-record
+queues could retain a native slot after a detached public object was collected.
+The new forced-GC regression reproduced two live slots instead of one on source
+7710808. Both input and metadata queues now hold weak record references. The same
+test passes for JS and Wasm; native/differential, legacy facade, full C3 and contract
+checks also pass on the correction. Browser/package/demo rechecks precede timing.
+
+The first experiment was explicitly stopped before editing runtime: 36 boundary
+runs completed and 40 render runs were saved, but the render series is incomplete.
+All files and its original running manifest remain intact under the first-attempt
+archive; a separate interruption record explains SIGTERM and the regression test.
+These results are superseded, never pooled with the corrected candidate. The new
+source uses fresh directories and the unchanged predeclared protocol/thresholds.
+No timing assertion was relaxed or unfavorable sample removed.
