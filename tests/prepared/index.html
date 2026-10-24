@@ -29,9 +29,10 @@ window.__prepared={T,scene,renderer,camera,meshes,async frame(step){
 },proof(){
  for(const o of meshes)o.onBeforeShadow=T.Object3D.prototype.onBeforeShadow;scene.onBeforeRender=T.Object3D.prototype.onBeforeRender;scene.matrixWorldAutoUpdate=true;renderer.shadowMap.enabled=false;renderer.render(scene,camera);T.resetDiagnostics?.();
  const oldX=group.position.x;const c=T.Frustum.prototype.intersectsObject;T.Frustum.prototype.intersectsObject=()=>{throw Error('repeated JS culling');};
+ const gl=renderer.getContext(),upload=gl.uniformMatrix4fv;let uploads=0;gl.uniformMatrix4fv=function(location,transpose,values){if(!(values instanceof Float32Array))throw Error('private backing array escaped to WebGL');uploads++;return upload.call(this,location,transpose,values);};
  const originals=meshes.map(o=>[o.modelViewMatrix.multiplyMatrices,o.normalMatrix.getNormalMatrix,o.matrix.compose]);
  for(const o of meshes){o.modelViewMatrix.multiplyMatrices=()=>{throw Error('repeated JS model-view');};o.normalMatrix.getNormalMatrix=()=>{throw Error('repeated JS normal');};o.matrix.compose=()=>{throw Error('repeated JS local transform');};}
- try{group.position.x+=.1;renderer.render(scene,camera);return T.diagnostics?.();}finally{group.position.x=oldX;T.Frustum.prototype.intersectsObject=c;meshes.forEach((o,i)=>{[o.modelViewMatrix.multiplyMatrices,o.normalMatrix.getNormalMatrix,o.matrix.compose]=originals[i];});}
+ try{group.position.x+=.1;renderer.render(scene,camera);if(!uploads)throw Error('expected matrix uploads');return {...T.diagnostics?.(),typedMatrixUploads:uploads};}finally{gl.uniformMatrix4fv=upload;group.position.x=oldX;T.Frustum.prototype.intersectsObject=c;meshes.forEach((o,i)=>{[o.modelViewMatrix.multiplyMatrices,o.normalMatrix.getNormalMatrix,o.matrix.compose]=originals[i];});}
 },fallbacks(){
  renderer.shadowMap.enabled=false;for(const o of meshes)o.onBeforeShadow=T.Object3D.prototype.onBeforeShadow;
  let inside=false;meshes[1].onBeforeRender=()=>{events.push(['nested',inside]);if(!inside){inside=true;renderer.render(scene,other);inside=false;}};

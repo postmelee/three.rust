@@ -7,6 +7,7 @@ const counters = { batches:0, nodes:0, fallbackRoots:0, wasmCalls:0, wasmNodes:0
 let timing = false;
 const preparedEnabled=()=>backend==='prepared-wasm'||backend==='prepared-js';
 const facadeEnabled=()=>backend==='facade-wasm'||backend==='facade-js'||preparedEnabled();
+export function preparedUploadElements(matrix){return preparedEnabled()?readFacadeElements(matrix):matrix.elements;}
 export function matrixElements(matrix){return facadeEnabled()?readFacadeElements(matrix):matrix.elements;}
 configureFacade({enabled:facadeEnabled,prepared:preparedEnabled,api(){if(backend==='facade-js'||backend==='prepared-js')return null;if(!wasm)throw Error('rthree: await init() before updating objects');return wasm;},counters,timings:()=>timing});
 const finalizer = new FinalizationRegistry(({id,api})=>{ api.scene_free(id); counters.arenas--; });

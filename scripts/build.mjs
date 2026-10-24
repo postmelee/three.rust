@@ -30,6 +30,13 @@ const replacements=[
 for(const [needle,replacement] of replacements){if(renderer.split(needle).length!==2)throw Error('Prepared renderer hook mismatch: '+needle);renderer=renderer.replace(needle,replacement);}
 renderer="import { prepareScene, consumePreparedMatrices } from '../../../packages/rthree/runtime.js';\nimport { Object3D as RthreeObject3D } from '../core/Object3D.js';\nimport { Mesh as RthreeMesh } from '../objects/Mesh.js';\nimport { Material as RthreeMaterial } from '../materials/Material.js';\nimport { BufferAttribute as RthreeBufferAttribute } from '../core/BufferAttribute.js';\n"+renderer;
 writeFileSync('work/build/src/renderers/WebGLRenderer.js',renderer);
+// Uniform caches and Float32 upload arrays consume snapshots privately. Unlike
+// overridable math calls, these local helpers cannot expose the backing array.
+let uniforms=readFileSync('node_modules/three/src/renderers/webgl/WebGLUniforms.js','utf8');
+if(uniforms.split('const elements = v.elements;').length!==4)throw Error('Uniform read hook mismatch');
+uniforms=uniforms.replaceAll('const elements = v.elements;','const elements = preparedUploadElements( v );');
+writeFileSync('work/build/src/renderers/webgl/WebGLUniforms.js',"import { preparedUploadElements } from '../../../../packages/rthree/runtime.js';\n"+uniforms);
+
 // Read-only math inputs synchronize once, then read a plain snapshot. Destinations
 // keep their public tracked array so mutations cannot bypass the dirty barrier.
 const inventory=JSON.parse(readFileSync('docs/progress-source.json'));

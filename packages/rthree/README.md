@@ -77,3 +77,13 @@ repeat and clamped-once playback form the finite contract. Event listeners,
 arbitrary bindings, additive/cubic tracks, transparent rendering and CPU raycasts
 are unsupported. This requires application migration and is not an import-only
 AnimationMixer acceleration claim. See docs/OWNED_ANIMATION.md in the repository.
+
+## Optional prepared main pass
+
+Use `rthree/prepared` or `rthree/prepared-js` to evaluate the bounded C3 design.
+It retains topology, tracks writes and prepares ordinary-Mesh visibility, ordering
+and per-draw matrices for the existing WebGL renderer. Unsupported object/pass or
+callback contracts use upstream rendering; shadows remain JS. Public inputs and
+hierarchy methods stay synchronous. Use add/remove/attach rather than direct
+children-array edits. See docs/PREPARED_PASS.md for scope, read/copy costs and tests.
+No acceleration or full compatibility is implied; the root entry is unchanged.

@@ -51,7 +51,10 @@ separate. Public prose is English.
 ## Predeclared decision
 
 Compare original, C2 and prepared JS/Wasm on hierarchy, small/static and shader
-controls with equal simulation/work. Six rotating repeats, 30 warmup/90 samples;
+controls with equal simulation/work. Before primary timing, also include original-size
+interactive cubes and the one-Soldier fallback scene; this prevents a favorable
+hierarchy-only interpretation. Use original, compatibility JS, C2 JS/Wasm and C3
+prepared JS/Wasm (six routes). Six rotating repeats, 30 warmup/90 samples;
 separate 10/20 diagnostics. Boundary tests use 40/100 and six repeats. Primary
 timing excludes diagnostics and profiling; preserve run-level p50/p95/p99 and
 intervals, source/binary hashes and all attempts. Fresh paths only.

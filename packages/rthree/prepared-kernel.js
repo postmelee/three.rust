@@ -24,7 +24,7 @@ export function evaluatePass(d,p){
   for(let col=0;col<4;col++)for(let row=0;row<4;row++)o[q+col*4+row]=c[row]*d[b+col*4]+c[4+row]*d[b+col*4+1]+c[8+row]*d[b+col*4+2]+c[12+row]*d[b+col*4+3];
   const a=o[q],b1=o[q+1],cc=o[q+2],e=o[q+4],f=o[q+5],g=o[q+6],h=o[q+8],ii=o[q+9],j=o[q+10];
   const t11=j*f-g*ii,t12=g*h-j*e,t13=ii*e-f*h,det=a*t11+b1*t12+cc*t13;
-  if(det===0)o.fill(0,q+16,q+25);else {const inv=1/det;o.set([t11*inv,t12*inv,t13*inv,(cc*ii-j*b1)*inv,(j*a-cc*h)*inv,(b1*h-ii*a)*inv,(g*b1-cc*f)*inv,(cc*e-g*a)*inv,(f*a-b1*e)*inv],q+16);}
+  if(det===0)o.fill(0,q+16,q+25);else {const inv=1/det;o[q+16]=t11*inv;o[q+17]=t12*inv;o[q+18]=t13*inv;o[q+19]=(cc*ii-j*b1)*inv;o[q+20]=(j*a-cc*h)*inv;o[q+21]=(b1*h-ii*a)*inv;o[q+22]=(g*b1-cc*f)*inv;o[q+23]=(cc*e-g*a)*inv;o[q+24]=(f*a-b1*e)*inv;}
   order[count++]=i;
  }
  if(c[57])order.subarray(0,count).sort((a,b)=>{

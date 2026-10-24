@@ -29,7 +29,10 @@ scene.add(mesh);
 
 The JS control has the same state layout, arithmetic and sorting keys. Both still
 perform dirty synchronization, shared geometry/material checks, visible resource
-updates, draw-list handoff and final matrix copies in JS. Native topology reflects
+updates, draw-list handoff and final matrix copies in JS. Uniform caches use a pinned private read barrier;
+only the normal Float32 upload arrays reach WebGL. Transform evaluation and pass
+evaluation are separate calls around the required scene/camera callback boundary;
+intermediate world matrices remain in native state. Native topology reflects
 public JS hierarchy commands; this is not sole authority over arbitrary JS objects.
 
 ## Supported path and fallback
@@ -85,3 +88,9 @@ The versioned [hook hashes](prepared-source.json) guard WebGL integration;
 [experiment plan](../mydocs/plans/task_m5_40.md) define scope and decision thresholds.
 Physical-hardware results, representative-app profiles, other browser engines,
 context recovery and product qualification remain outstanding.
+
+The arithmetic and ordering follow pinned Three.js r186 Matrix4, Matrix3, Sphere,
+Frustum and WebGLRenderLists semantics. The native and matched JS implementations
+retain that provenance; the [Three.js MIT notice](../vendor/three-examples/LICENSE)
+ships with the local package. Source extraction hashes cover these math files in
+[progress-source.json](progress-source.json); renderer hook hashes are listed above.
