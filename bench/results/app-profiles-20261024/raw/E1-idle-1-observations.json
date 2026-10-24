@@ -1,0 +1,606 @@
+{
+  "before": {
+    "before": {
+      "now": 2244.5,
+      "renderPasses": 142,
+      "mixerTime": 0,
+      "objects": 6,
+      "meshes": 3,
+      "skins": 0,
+      "morphs": 0,
+      "skeletons": 0,
+      "bonesPerSkeleton": [],
+      "selectedVertices": 0,
+      "finite": true,
+      "visibility": "visible",
+      "focus": true,
+      "selected": null,
+      "drawsLastPass": {
+        "frame": 142,
+        "calls": 9,
+        "triangles": 72,
+        "points": 0,
+        "lines": 0
+      },
+      "programs": 16,
+      "canvas": {
+        "width": 930,
+        "height": 648
+      },
+      "quality": {
+        "pixelRatio": 1,
+        "toneMapping": 7,
+        "exposure": 1,
+        "shadowType": 1
+      }
+    },
+    "after": {
+      "now": 4249.79999999702,
+      "renderPasses": 142,
+      "mixerTime": 0,
+      "objects": 6,
+      "meshes": 3,
+      "skins": 0,
+      "morphs": 0,
+      "skeletons": 0,
+      "bonesPerSkeleton": [],
+      "selectedVertices": 0,
+      "finite": true,
+      "visibility": "visible",
+      "focus": true,
+      "selected": null,
+      "drawsLastPass": {
+        "frame": 142,
+        "calls": 9,
+        "triangles": 72,
+        "points": 0,
+        "lines": 0
+      },
+      "programs": 16,
+      "canvas": {
+        "width": 930,
+        "height": 648
+      },
+      "quality": {
+        "pixelRatio": 1,
+        "toneMapping": 7,
+        "exposure": 1,
+        "shadowType": 1
+      }
+    }
+  },
+  "during": {
+    "before": {
+      "now": 4283.70000000298,
+      "renderPasses": 142,
+      "mixerTime": 0,
+      "objects": 6,
+      "meshes": 3,
+      "skins": 0,
+      "morphs": 0,
+      "skeletons": 0,
+      "bonesPerSkeleton": [],
+      "selectedVertices": 0,
+      "finite": true,
+      "visibility": "visible",
+      "focus": true,
+      "selected": null,
+      "drawsLastPass": {
+        "frame": 142,
+        "calls": 9,
+        "triangles": 72,
+        "points": 0,
+        "lines": 0
+      },
+      "programs": 16,
+      "canvas": {
+        "width": 930,
+        "height": 648
+      },
+      "quality": {
+        "pixelRatio": 1,
+        "toneMapping": 7,
+        "exposure": 1,
+        "shadowType": 1
+      }
+    },
+    "after": {
+      "now": 16285.60000000149,
+      "renderPasses": 142,
+      "mixerTime": 0,
+      "objects": 6,
+      "meshes": 3,
+      "skins": 0,
+      "morphs": 0,
+      "skeletons": 0,
+      "bonesPerSkeleton": [],
+      "selectedVertices": 0,
+      "finite": true,
+      "visibility": "visible",
+      "focus": true,
+      "selected": null,
+      "drawsLastPass": {
+        "frame": 142,
+        "calls": 9,
+        "triangles": 72,
+        "points": 0,
+        "lines": 0
+      },
+      "programs": 16,
+      "canvas": {
+        "width": 930,
+        "height": 648
+      },
+      "quality": {
+        "pixelRatio": 1,
+        "toneMapping": 7,
+        "exposure": 1,
+        "shadowType": 1
+      }
+    }
+  },
+  "after": {
+    "before": {
+      "now": 16292.79999999702,
+      "renderPasses": 142,
+      "mixerTime": 0,
+      "objects": 6,
+      "meshes": 3,
+      "skins": 0,
+      "morphs": 0,
+      "skeletons": 0,
+      "bonesPerSkeleton": [],
+      "selectedVertices": 0,
+      "finite": true,
+      "visibility": "visible",
+      "focus": true,
+      "selected": null,
+      "drawsLastPass": {
+        "frame": 142,
+        "calls": 9,
+        "triangles": 72,
+        "points": 0,
+        "lines": 0
+      },
+      "programs": 16,
+      "canvas": {
+        "width": 930,
+        "height": 648
+      },
+      "quality": {
+        "pixelRatio": 1,
+        "toneMapping": 7,
+        "exposure": 1,
+        "shadowType": 1
+      }
+    },
+    "after": {
+      "now": 18295.20000000298,
+      "renderPasses": 142,
+      "mixerTime": 0,
+      "objects": 6,
+      "meshes": 3,
+      "skins": 0,
+      "morphs": 0,
+      "skeletons": 0,
+      "bonesPerSkeleton": [],
+      "selectedVertices": 0,
+      "finite": true,
+      "visibility": "visible",
+      "focus": true,
+      "selected": null,
+      "drawsLastPass": {
+        "frame": 142,
+        "calls": 9,
+        "triangles": 72,
+        "points": 0,
+        "lines": 0
+      },
+      "programs": 16,
+      "canvas": {
+        "width": 930,
+        "height": 648
+      },
+      "quality": {
+        "pixelRatio": 1,
+        "toneMapping": 7,
+        "exposure": 1,
+        "shadowType": 1
+      }
+    }
+  },
+  "diagnostics": [
+    {
+      "mode": "boundaries",
+      "hooks": 7,
+      "targets": [
+        {
+          "label": "renderer.render",
+          "type": "WebGLRenderer",
+          "name": null
+        },
+        {
+          "label": "renderer.renderBufferDirect",
+          "type": "WebGLRenderer",
+          "name": null
+        },
+        {
+          "label": "mixer.update",
+          "type": "AnimationMixer",
+          "name": null
+        },
+        {
+          "label": "scene.updateMatrixWorld",
+          "type": "Scene",
+          "name": "Scene"
+        },
+        {
+          "label": "selectionBox.setFromObject",
+          "type": "Box3",
+          "name": null
+        },
+        {
+          "label": "signals.objectChanged",
+          "type": "Object",
+          "name": null
+        },
+        {
+          "label": "signals.morphTargetsUpdated",
+          "type": "Object",
+          "name": null
+        }
+      ],
+      "records": {},
+      "counts": {},
+      "restored": true,
+      "observations": {
+        "before": {
+          "now": 18296.89999999851,
+          "renderPasses": 142,
+          "mixerTime": 0,
+          "objects": 6,
+          "meshes": 3,
+          "skins": 0,
+          "morphs": 0,
+          "skeletons": 0,
+          "bonesPerSkeleton": [],
+          "selectedVertices": 0,
+          "finite": true,
+          "visibility": "visible",
+          "focus": true,
+          "selected": null,
+          "drawsLastPass": {
+            "frame": 142,
+            "calls": 9,
+            "triangles": 72,
+            "points": 0,
+            "lines": 0
+          },
+          "programs": 16,
+          "canvas": {
+            "width": 930,
+            "height": 648
+          },
+          "quality": {
+            "pixelRatio": 1,
+            "toneMapping": 7,
+            "exposure": 1,
+            "shadowType": 1
+          }
+        },
+        "after": {
+          "now": 21298.89999999851,
+          "renderPasses": 142,
+          "mixerTime": 0,
+          "objects": 6,
+          "meshes": 3,
+          "skins": 0,
+          "morphs": 0,
+          "skeletons": 0,
+          "bonesPerSkeleton": [],
+          "selectedVertices": 0,
+          "finite": true,
+          "visibility": "visible",
+          "focus": true,
+          "selected": null,
+          "drawsLastPass": {
+            "frame": 142,
+            "calls": 9,
+            "triangles": 72,
+            "points": 0,
+            "lines": 0
+          },
+          "programs": 16,
+          "canvas": {
+            "width": 930,
+            "height": 648
+          },
+          "quality": {
+            "pixelRatio": 1,
+            "toneMapping": 7,
+            "exposure": 1,
+            "shadowType": 1
+          }
+        }
+      }
+    },
+    {
+      "mode": "gl",
+      "hooks": 10,
+      "targets": [
+        {
+          "label": "uniformMatrix4fv",
+          "type": "WebGL2RenderingContext",
+          "name": null
+        },
+        {
+          "label": "uniformMatrix3fv",
+          "type": "WebGL2RenderingContext",
+          "name": null
+        },
+        {
+          "label": "bufferData",
+          "type": "WebGL2RenderingContext",
+          "name": null
+        },
+        {
+          "label": "bufferSubData",
+          "type": "WebGL2RenderingContext",
+          "name": null
+        },
+        {
+          "label": "texImage2D",
+          "type": "WebGL2RenderingContext",
+          "name": null
+        },
+        {
+          "label": "texSubImage2D",
+          "type": "WebGL2RenderingContext",
+          "name": null
+        },
+        {
+          "label": "drawElements",
+          "type": "WebGL2RenderingContext",
+          "name": null
+        },
+        {
+          "label": "drawArrays",
+          "type": "WebGL2RenderingContext",
+          "name": null
+        },
+        {
+          "label": "drawElementsInstanced",
+          "type": "WebGL2RenderingContext",
+          "name": null
+        },
+        {
+          "label": "drawArraysInstanced",
+          "type": "WebGL2RenderingContext",
+          "name": null
+        }
+      ],
+      "records": {},
+      "counts": {},
+      "restored": true,
+      "observations": {
+        "before": {
+          "now": 21301.70000000298,
+          "renderPasses": 142,
+          "mixerTime": 0,
+          "objects": 6,
+          "meshes": 3,
+          "skins": 0,
+          "morphs": 0,
+          "skeletons": 0,
+          "bonesPerSkeleton": [],
+          "selectedVertices": 0,
+          "finite": true,
+          "visibility": "visible",
+          "focus": true,
+          "selected": null,
+          "drawsLastPass": {
+            "frame": 142,
+            "calls": 9,
+            "triangles": 72,
+            "points": 0,
+            "lines": 0
+          },
+          "programs": 16,
+          "canvas": {
+            "width": 930,
+            "height": 648
+          },
+          "quality": {
+            "pixelRatio": 1,
+            "toneMapping": 7,
+            "exposure": 1,
+            "shadowType": 1
+          }
+        },
+        "after": {
+          "now": 23304.70000000298,
+          "renderPasses": 142,
+          "mixerTime": 0,
+          "objects": 6,
+          "meshes": 3,
+          "skins": 0,
+          "morphs": 0,
+          "skeletons": 0,
+          "bonesPerSkeleton": [],
+          "selectedVertices": 0,
+          "finite": true,
+          "visibility": "visible",
+          "focus": true,
+          "selected": null,
+          "drawsLastPass": {
+            "frame": 142,
+            "calls": 9,
+            "triangles": 72,
+            "points": 0,
+            "lines": 0
+          },
+          "programs": 16,
+          "canvas": {
+            "width": 930,
+            "height": 648
+          },
+          "quality": {
+            "pixelRatio": 1,
+            "toneMapping": 7,
+            "exposure": 1,
+            "shadowType": 1
+          }
+        }
+      }
+    }
+  ],
+  "final": {
+    "now": 23306.79999999702,
+    "renderPasses": 142,
+    "mixerTime": 0,
+    "objects": 6,
+    "meshes": 3,
+    "skins": 0,
+    "morphs": 0,
+    "skeletons": 0,
+    "bonesPerSkeleton": [],
+    "selectedVertices": 0,
+    "finite": true,
+    "visibility": "visible",
+    "focus": true,
+    "selected": null,
+    "drawsLastPass": {
+      "frame": 142,
+      "calls": 9,
+      "triangles": 72,
+      "points": 0,
+      "lines": 0
+    },
+    "programs": 16,
+    "canvas": {
+      "width": 930,
+      "height": 648
+    },
+    "quality": {
+      "pixelRatio": 1,
+      "toneMapping": 7,
+      "exposure": 1,
+      "shadowType": 1
+    }
+  },
+  "oracle": {
+    "checks": [
+      {
+        "mode": "boundaries",
+        "restored": true,
+        "pixelSha256": "33793410cfd0d5beecf84b401dede5f79c208b3f53cb1e549867b49f7f3c58d4",
+        "numericValues": 96
+      },
+      {
+        "mode": "gl",
+        "restored": true,
+        "pixelSha256": "33793410cfd0d5beecf84b401dede5f79c208b3f53cb1e549867b49f7f3c58d4",
+        "numericValues": 96
+      }
+    ],
+    "numeric": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      -1,
+      0.4,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0.4,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      2.220446049250313e-16,
+      -1,
+      0,
+      0,
+      1,
+      2.220446049250313e-16,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      4,
+      8,
+      5,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "pixelSha256": "33793410cfd0d5beecf84b401dede5f79c208b3f53cb1e549867b49f7f3c58d4"
+  }
+}

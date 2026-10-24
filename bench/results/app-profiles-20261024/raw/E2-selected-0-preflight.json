@@ -1,0 +1,58 @@
+{
+  "gpu": {
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+    "vendor": "Google Inc. (Apple)",
+    "attributes": {
+      "alpha": true,
+      "antialias": true,
+      "depth": true,
+      "desynchronized": false,
+      "failIfMajorPerformanceCaveat": false,
+      "powerPreference": "default",
+      "premultipliedAlpha": true,
+      "preserveDrawingBuffer": false,
+      "stencil": false,
+      "xrCompatible": false
+    },
+    "width": 930,
+    "height": 648,
+    "dpr": 1
+  },
+  "state": {
+    "now": 2444.39999999851,
+    "renderPasses": 1230,
+    "mixerTime": 2.0805,
+    "objects": 88,
+    "meshes": 20,
+    "skins": 4,
+    "morphs": 3,
+    "skeletons": 2,
+    "bonesPerSkeleton": [
+      43,
+      43
+    ],
+    "selectedVertices": 256,
+    "finite": true,
+    "visibility": "visible",
+    "focus": true,
+    "selected": "SkinnedMesh",
+    "drawsLastPass": {
+      "frame": 1230,
+      "calls": 9,
+      "triangles": 72,
+      "points": 0,
+      "lines": 0
+    },
+    "programs": 26,
+    "canvas": {
+      "width": 930,
+      "height": 648
+    },
+    "quality": {
+      "pixelRatio": 1,
+      "toneMapping": 7,
+      "exposure": 1,
+      "shadowType": 1
+    }
+  }
+}

@@ -1,0 +1,130 @@
+[
+  {
+    "name": "E1-edit-0",
+    "samples": 9791,
+    "requestedIntervalUs": 1000,
+    "medianObservedIntervalUs": 1258,
+    "maxObservedIntervalUs": 126637,
+    "durationMs": 12347.133
+  },
+  {
+    "name": "E1-edit-1",
+    "samples": 9781,
+    "requestedIntervalUs": 1000,
+    "medianObservedIntervalUs": 1260,
+    "maxObservedIntervalUs": 23212,
+    "durationMs": 12260.027
+  },
+  {
+    "name": "E1-idle-0",
+    "samples": 9576,
+    "requestedIntervalUs": 1000,
+    "medianObservedIntervalUs": 1259.0,
+    "maxObservedIntervalUs": 27664,
+    "durationMs": 12031.543
+  },
+  {
+    "name": "E1-idle-1",
+    "samples": 9201,
+    "requestedIntervalUs": 1000,
+    "medianObservedIntervalUs": 1265,
+    "maxObservedIntervalUs": 30619,
+    "durationMs": 12034.508
+  },
+  {
+    "name": "E2-highres-0",
+    "samples": 9444,
+    "requestedIntervalUs": 1000,
+    "medianObservedIntervalUs": 1259.0,
+    "maxObservedIntervalUs": 33350,
+    "durationMs": 12037.653
+  },
+  {
+    "name": "E2-highres-1",
+    "samples": 9110,
+    "requestedIntervalUs": 1000,
+    "medianObservedIntervalUs": 1259.0,
+    "maxObservedIntervalUs": 35950,
+    "durationMs": 12047.37
+  },
+  {
+    "name": "E2-no-shadow-0",
+    "samples": 9367,
+    "requestedIntervalUs": 1000,
+    "medianObservedIntervalUs": 1258,
+    "maxObservedIntervalUs": 45633,
+    "durationMs": 12050.605
+  },
+  {
+    "name": "E2-no-shadow-1",
+    "samples": 9538,
+    "requestedIntervalUs": 1000,
+    "medianObservedIntervalUs": 1261.0,
+    "maxObservedIntervalUs": 37671,
+    "durationMs": 12042.619
+  },
+  {
+    "name": "E2-selected-0",
+    "samples": 9168,
+    "requestedIntervalUs": 1000,
+    "medianObservedIntervalUs": 1258.0,
+    "maxObservedIntervalUs": 33434,
+    "durationMs": 12042.941
+  },
+  {
+    "name": "E2-selected-1",
+    "samples": 9541,
+    "requestedIntervalUs": 1000,
+    "medianObservedIntervalUs": 1260,
+    "maxObservedIntervalUs": 49533,
+    "durationMs": 12053.576
+  },
+  {
+    "name": "E2-unselected-0",
+    "samples": 9515,
+    "requestedIntervalUs": 1000,
+    "medianObservedIntervalUs": 1259,
+    "maxObservedIntervalUs": 33796,
+    "durationMs": 12037.886
+  },
+  {
+    "name": "E2-unselected-1",
+    "samples": 9532,
+    "requestedIntervalUs": 1000,
+    "medianObservedIntervalUs": 1260.0,
+    "maxObservedIntervalUs": 52062,
+    "durationMs": 12057.61
+  },
+  {
+    "name": "V1-paused-0",
+    "samples": 9495,
+    "requestedIntervalUs": 1000,
+    "medianObservedIntervalUs": 1259,
+    "maxObservedIntervalUs": 13819,
+    "durationMs": 12021.412
+  },
+  {
+    "name": "V1-paused-1",
+    "samples": 9444,
+    "requestedIntervalUs": 1000,
+    "medianObservedIntervalUs": 1262.0,
+    "maxObservedIntervalUs": 63576,
+    "durationMs": 12066.87
+  },
+  {
+    "name": "V1-play-0",
+    "samples": 9539,
+    "requestedIntervalUs": 1000,
+    "medianObservedIntervalUs": 1259,
+    "maxObservedIntervalUs": 71331,
+    "durationMs": 12075.754
+  },
+  {
+    "name": "V1-play-1",
+    "samples": 9288,
+    "requestedIntervalUs": 1000,
+    "medianObservedIntervalUs": 1263.0,
+    "maxObservedIntervalUs": 35250,
+    "durationMs": 12038.989
+  }
+]

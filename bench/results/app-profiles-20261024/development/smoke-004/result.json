@@ -1,0 +1,1065 @@
+{
+  "status": "passed",
+  "completed": [
+    "E1-edit-0",
+    "E2-no-shadow-0"
+  ],
+  "inputs": [
+    {
+      "label": "warmup",
+      "pick": {
+        "x": 406.6553528650664,
+        "y": 345.8711906789052
+      },
+      "drag": {
+        "from": {
+          "x": 339.6553528650664,
+          "y": 302.8711906789052
+        },
+        "to": {
+          "x": 364.6553528650664,
+          "y": 290.8711906789052
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-before",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-before",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-before",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-before",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-before",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-before",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-before",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-sample",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-sample",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-sample",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-sample",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-sample",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-sample",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-sample",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-sample",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-sample",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-after",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-after",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-after",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-after",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-after",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-after",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-after",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-after",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-after",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-boundaries",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-boundaries",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-boundaries",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-boundaries",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-boundaries",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-boundaries",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-boundaries",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-boundaries",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-boundaries",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-boundaries",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-boundaries",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-boundaries",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-boundaries",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-gl",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-gl",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-gl",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-gl",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-gl",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-gl",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-gl",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-gl",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    },
+    {
+      "label": "E1-edit-0-gl",
+      "pick": {
+        "x": 465,
+        "y": 360
+      },
+      "drag": {
+        "from": {
+          "x": 395,
+          "y": 317
+        },
+        "to": {
+          "x": 420,
+          "y": 305
+        },
+        "steps": 6
+      },
+      "keys": [
+        "Meta+z",
+        "f"
+      ]
+    }
+  ]
+}

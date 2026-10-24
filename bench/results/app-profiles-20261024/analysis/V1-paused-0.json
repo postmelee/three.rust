@@ -1,0 +1,1406 @@
+{
+  "name": "V1-paused-0",
+  "sensitivity": {
+    "method": "Post-capture sensitivity only: unweighted sample counts and time weighting excluding gaps >5ms. Original samples and default weighting remain unchanged.",
+    "activeSamples": 355,
+    "countBuckets": {
+      "program/native-unresolved": 115,
+      "idle": 9025,
+      "render preparation/submission": 177,
+      "other/unresolved": 78,
+      "animation/binding": 2,
+      "visibility/sort": 30,
+      "transform/math residual": 29,
+      "render residual": 28,
+      "GC": 3,
+      "automation/observation": 1,
+      "skeleton/palette": 7
+    },
+    "shortGapActiveMs": 452.8769999999999,
+    "shortGapBuckets": {
+      "idle": 11403.754999999992,
+      "render preparation/submission": 226.62599999999995,
+      "other/unresolved": 97.67100000000002,
+      "program/native-unresolved": 144.63699999999992,
+      "animation/binding": 2.498,
+      "visibility/sort": 38.045,
+      "transform/math residual": 36.349999999999994,
+      "render residual": 36.76299999999999,
+      "GC": 3.846,
+      "automation/observation": 1.268,
+      "skeleton/palette": 9.81
+    },
+    "longGaps": [
+      {
+        "sample": 0,
+        "node": 2,
+        "ms": 13.819,
+        "bucket": "program/native-unresolved"
+      },
+      {
+        "sample": 9061,
+        "node": 3,
+        "ms": 5.175,
+        "bucket": "idle"
+      }
+    ]
+  },
+  "profileDurationMs": 12021.412,
+  "weightedMs": 12020.26300000002,
+  "activeMs": 452.87700000002974,
+  "samples": 9495,
+  "intervalUs": 1000,
+  "buckets": {
+    "program/native-unresolved": {
+      "sampledMs": 158.4559999999999,
+      "percentOfActive": null
+    },
+    "idle": {
+      "sampledMs": 11408.929999999991,
+      "percentOfActive": null
+    },
+    "render preparation/submission": {
+      "sampledMs": 226.62599999999995,
+      "percentOfActive": 50.041401970068044
+    },
+    "other/unresolved": {
+      "sampledMs": 97.67100000000002,
+      "percentOfActive": 21.56678303380247
+    },
+    "animation/binding": {
+      "sampledMs": 2.498,
+      "percentOfActive": 0.5515846466037878
+    },
+    "visibility/sort": {
+      "sampledMs": 38.045,
+      "percentOfActive": 8.40073574060893
+    },
+    "transform/math residual": {
+      "sampledMs": 36.349999999999994,
+      "percentOfActive": 8.026461931164004
+    },
+    "render residual": {
+      "sampledMs": 36.76299999999999,
+      "percentOfActive": 8.117656670574478
+    },
+    "GC": {
+      "sampledMs": 3.846,
+      "percentOfActive": 0.8492372101033497
+    },
+    "automation/observation": {
+      "sampledMs": 1.268,
+      "percentOfActive": 0.2799877229357898
+    },
+    "skeleton/palette": {
+      "sampledMs": 9.81,
+      "percentOfActive": 2.1661510741325696
+    }
+  },
+  "exclusive": [
+    {
+      "id": 3,
+      "label": "(idle)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 11408.929999999991,
+      "inclusiveMs": 11408.929999999991,
+      "hits": 9025
+    },
+    {
+      "id": 2,
+      "label": "(program)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 158.4559999999999,
+      "inclusiveMs": 158.4559999999999,
+      "hits": 115
+    },
+    {
+      "id": 23,
+      "label": "w",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3775,
+      "column": 2370,
+      "selfMs": 43.931999999999995,
+      "inclusiveMs": 45.193,
+      "hits": 34
+    },
+    {
+      "id": 27,
+      "label": "drawImage",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 27.698999999999998,
+      "inclusiveMs": 27.698999999999998,
+      "hits": 22
+    },
+    {
+      "id": 17,
+      "label": "fh.Hr",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 33673,
+      "selfMs": 23.108,
+      "inclusiveMs": 93.41699999999999,
+      "hits": 18
+    },
+    {
+      "id": 18,
+      "label": "E",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3775,
+      "column": 8421,
+      "selfMs": 20.128000000000004,
+      "inclusiveMs": 22.574000000000005,
+      "hits": 16
+    },
+    {
+      "id": 42,
+      "label": "texSubImage2D",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 13.85,
+      "inclusiveMs": 13.85,
+      "hits": 11
+    },
+    {
+      "id": 16,
+      "label": "fh.Fc",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 36286,
+      "selfMs": 11.352999999999998,
+      "inclusiveMs": 187.25999999999996,
+      "hits": 9
+    },
+    {
+      "id": 10,
+      "label": "fh.renderBufferDirect",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 24849,
+      "selfMs": 11.291,
+      "inclusiveMs": 222.84499999999994,
+      "hits": 9
+    },
+    {
+      "id": 26,
+      "label": "value",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3834,
+      "column": 39013,
+      "selfMs": 9.951,
+      "inclusiveMs": 9.951,
+      "hits": 8
+    },
+    {
+      "id": 156,
+      "label": "bindVertexArray",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 9.093,
+      "inclusiveMs": 9.093,
+      "hits": 6
+    },
+    {
+      "id": 62,
+      "label": "uniformMatrix4fv preparation [signature]",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3724,
+      "column": 8871,
+      "selfMs": 8.972,
+      "inclusiveMs": 14.052999999999997,
+      "hits": 7
+    },
+    {
+      "id": 52,
+      "label": "fh.projectObject [signature]",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 30013,
+      "selfMs": 7.616999999999999,
+      "inclusiveMs": 40.287000000000006,
+      "hits": 6
+    },
+    {
+      "id": 76,
+      "label": "clear",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 7.498,
+      "inclusiveMs": 7.498,
+      "hits": 6
+    },
+    {
+      "id": 35,
+      "label": "fillRect",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 7.496,
+      "inclusiveMs": 7.496,
+      "hits": 6
+    },
+    {
+      "id": 58,
+      "label": "requestAnimationFrame",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 7.441000000000001,
+      "inclusiveMs": 7.441000000000001,
+      "hits": 6
+    },
+    {
+      "id": 13,
+      "label": "end",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 61390,
+      "selfMs": 7.382,
+      "inclusiveMs": 49.955000000000005,
+      "hits": 6
+    },
+    {
+      "id": 21,
+      "label": "(anonymous)",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3855,
+      "column": 14943,
+      "selfMs": 6.3020000000000005,
+      "inclusiveMs": 32.689,
+      "hits": 5
+    },
+    {
+      "id": 118,
+      "label": "Matrix4.multiplyMatrices",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 5,
+      "column": 56672,
+      "selfMs": 6.047,
+      "inclusiveMs": 6.047,
+      "hits": 4
+    },
+    {
+      "id": 126,
+      "label": "fh.projectObject [signature]",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 30013,
+      "selfMs": 5.069,
+      "inclusiveMs": 7.587,
+      "hits": 4
+    },
+    {
+      "id": 163,
+      "label": "uniformMatrix3fv",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 4.535,
+      "inclusiveMs": 4.535,
+      "hits": 3
+    },
+    {
+      "id": 8,
+      "label": "fh.zr",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 32896,
+      "selfMs": 4.072,
+      "inclusiveMs": 230.69799999999995,
+      "hits": 2
+    },
+    {
+      "id": 6,
+      "label": "fh.render",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 28257,
+      "selfMs": 3.8829999999999996,
+      "inclusiveMs": 340.3529999999998,
+      "hits": 3
+    },
+    {
+      "id": 81,
+      "label": "(garbage collector)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 3.846,
+      "inclusiveMs": 3.846,
+      "hits": 3
+    },
+    {
+      "id": 68,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 5,
+      "column": 70797,
+      "selfMs": 3.839,
+      "inclusiveMs": 24.058999999999997,
+      "hits": 3
+    },
+    {
+      "id": 87,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 5,
+      "column": 70797,
+      "selfMs": 3.809,
+      "inclusiveMs": 7.585,
+      "hits": 3
+    },
+    {
+      "id": 74,
+      "label": "uniform3f",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 3.7899999999999996,
+      "inclusiveMs": 3.7899999999999996,
+      "hits": 3
+    },
+    {
+      "id": 97,
+      "label": "setAttribute",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 3.779,
+      "inclusiveMs": 3.779,
+      "hits": 3
+    },
+    {
+      "id": 144,
+      "label": "_",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3775,
+      "column": 13154,
+      "selfMs": 3.777,
+      "inclusiveMs": 3.777,
+      "hits": 3
+    },
+    {
+      "id": 89,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 5,
+      "column": 70797,
+      "selfMs": 3.776,
+      "inclusiveMs": 3.776,
+      "hits": 3
+    },
+    {
+      "id": 98,
+      "label": "Frustum.setFromProjectionMatrix",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 44,
+      "column": 25807,
+      "selfMs": 3.776,
+      "inclusiveMs": 3.776,
+      "hits": 3
+    },
+    {
+      "id": 128,
+      "label": "drawElements",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 3.768,
+      "inclusiveMs": 3.768,
+      "hits": 3
+    },
+    {
+      "id": 151,
+      "label": "d",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3775,
+      "column": 15508,
+      "selfMs": 3.7649999999999997,
+      "inclusiveMs": 4.895,
+      "hits": 3
+    },
+    {
+      "id": 162,
+      "label": "Matrix4.toArray",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 5,
+      "column": 62109,
+      "selfMs": 3.763,
+      "inclusiveMs": 3.763,
+      "hits": 3
+    },
+    {
+      "id": 19,
+      "label": "(anonymous)",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3855,
+      "column": 14914,
+      "selfMs": 3.758,
+      "inclusiveMs": 46.452,
+      "hits": 3
+    },
+    {
+      "id": 73,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 5,
+      "column": 70797,
+      "selfMs": 3.7409999999999997,
+      "inclusiveMs": 12.586999999999998,
+      "hits": 3
+    },
+    {
+      "id": 15,
+      "label": "fillText",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 3.537,
+      "inclusiveMs": 3.537,
+      "hits": 3
+    },
+    {
+      "id": 53,
+      "label": "fh.projectObject [signature]",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 30013,
+      "selfMs": 3.051,
+      "inclusiveMs": 20.314,
+      "hits": 2
+    },
+    {
+      "id": 70,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 5,
+      "column": 70797,
+      "selfMs": 2.6310000000000002,
+      "inclusiveMs": 17.59,
+      "hits": 2
+    },
+    {
+      "id": 20,
+      "label": "each",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3834,
+      "column": 31172,
+      "selfMs": 2.564,
+      "inclusiveMs": 35.25299999999999,
+      "hits": 2
+    },
+    {
+      "id": 105,
+      "label": "Kt",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3724,
+      "column": 7437,
+      "selfMs": 2.549,
+      "inclusiveMs": 2.549,
+      "hits": 2
+    },
+    {
+      "id": 104,
+      "label": "fh.Ws",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 35705,
+      "selfMs": 2.542,
+      "inclusiveMs": 2.542,
+      "hits": 2
+    },
+    {
+      "id": 124,
+      "label": "now",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 2.5380000000000003,
+      "inclusiveMs": 2.5380000000000003,
+      "hits": 2
+    },
+    {
+      "id": 49,
+      "label": "fh.projectObject [signature]",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 30013,
+      "selfMs": 2.537,
+      "inclusiveMs": 44.07900000000001,
+      "hits": 2
+    },
+    {
+      "id": 148,
+      "label": "uniformMatrix4fv",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 2.532,
+      "inclusiveMs": 2.532,
+      "hits": 2
+    },
+    {
+      "id": 129,
+      "label": "o",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3775,
+      "column": 20035,
+      "selfMs": 2.532,
+      "inclusiveMs": 2.532,
+      "hits": 2
+    },
+    {
+      "id": 37,
+      "label": "v1",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3724,
+      "column": 9154,
+      "selfMs": 2.5309999999999997,
+      "inclusiveMs": 3.793,
+      "hits": 2
+    },
+    {
+      "id": 57,
+      "label": "l",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3834,
+      "column": 35827,
+      "selfMs": 2.5309999999999997,
+      "inclusiveMs": 2.5309999999999997,
+      "hits": 2
+    },
+    {
+      "id": 32,
+      "label": "i",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3803,
+      "column": 23662,
+      "selfMs": 2.5300000000000002,
+      "inclusiveMs": 3.8070000000000004,
+      "hits": 2
+    },
+    {
+      "id": 55,
+      "label": "_1",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3724,
+      "column": 8668,
+      "selfMs": 2.527,
+      "inclusiveMs": 2.527,
+      "hits": 2
+    },
+    {
+      "id": 40,
+      "label": "uniform1fv",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 2.526,
+      "inclusiveMs": 2.526,
+      "hits": 2
+    },
+    {
+      "id": 9,
+      "label": "fh.renderObject [signature]",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 33170,
+      "selfMs": 2.525,
+      "inclusiveMs": 226.62599999999995,
+      "hits": 2
+    },
+    {
+      "id": 132,
+      "label": "texParameteri",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 2.525,
+      "inclusiveMs": 2.525,
+      "hits": 2
+    },
+    {
+      "id": 64,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 5,
+      "column": 70797,
+      "selfMs": 2.522,
+      "inclusiveMs": 26.581,
+      "hits": 2
+    },
+    {
+      "id": 113,
+      "label": "bindTexture",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 2.521,
+      "inclusiveMs": 2.521,
+      "hits": 2
+    },
+    {
+      "id": 82,
+      "label": "value",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3834,
+      "column": 39013,
+      "selfMs": 2.521,
+      "inclusiveMs": 2.521,
+      "hits": 2
+    },
+    {
+      "id": 159,
+      "label": "fh.projectObject [signature]",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 30013,
+      "selfMs": 2.518,
+      "inclusiveMs": 2.518,
+      "hits": 2
+    },
+    {
+      "id": 154,
+      "label": "sn.applyMatrix4",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 5,
+      "column": 49075,
+      "selfMs": 2.511,
+      "inclusiveMs": 2.511,
+      "hits": 2
+    },
+    {
+      "id": 133,
+      "label": "A1",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3724,
+      "column": 7893,
+      "selfMs": 2.4989999999999997,
+      "inclusiveMs": 2.4989999999999997,
+      "hits": 2
+    },
+    {
+      "id": 36,
+      "label": "u",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3724,
+      "column": 4624,
+      "selfMs": 2.375,
+      "inclusiveMs": 12.472,
+      "hits": 2
+    }
+  ],
+  "inclusive": [
+    {
+      "id": 1,
+      "label": "(root)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 0,
+      "inclusiveMs": 12020.26300000002,
+      "hits": 0
+    },
+    {
+      "id": 3,
+      "label": "(idle)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 11408.929999999991,
+      "inclusiveMs": 11408.929999999991,
+      "hits": 9025
+    },
+    {
+      "id": 4,
+      "label": "Viewer.animate",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3855,
+      "column": 17438,
+      "selfMs": 0,
+      "inclusiveMs": 402.57899999999967,
+      "hits": 0
+    },
+    {
+      "id": 5,
+      "label": "Viewer.render",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3855,
+      "column": 17620,
+      "selfMs": 0,
+      "inclusiveMs": 341.6099999999998,
+      "hits": 0
+    },
+    {
+      "id": 6,
+      "label": "fh.render",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 28257,
+      "selfMs": 3.8829999999999996,
+      "inclusiveMs": 340.3529999999998,
+      "hits": 3
+    },
+    {
+      "id": 7,
+      "label": "fh.qs",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 31089,
+      "selfMs": 1.259,
+      "inclusiveMs": 233.23899999999995,
+      "hits": 1
+    },
+    {
+      "id": 8,
+      "label": "fh.zr",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 32896,
+      "selfMs": 4.072,
+      "inclusiveMs": 230.69799999999995,
+      "hits": 2
+    },
+    {
+      "id": 9,
+      "label": "fh.renderObject [signature]",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 33170,
+      "selfMs": 2.525,
+      "inclusiveMs": 226.62599999999995,
+      "hits": 2
+    },
+    {
+      "id": 10,
+      "label": "fh.renderBufferDirect",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 24849,
+      "selfMs": 11.291,
+      "inclusiveMs": 222.84499999999994,
+      "hits": 9
+    },
+    {
+      "id": 16,
+      "label": "fh.Fc",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 36286,
+      "selfMs": 11.352999999999998,
+      "inclusiveMs": 187.25999999999996,
+      "hits": 9
+    },
+    {
+      "id": 2,
+      "label": "(program)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 158.4559999999999,
+      "inclusiveMs": 158.4559999999999,
+      "hits": 115
+    },
+    {
+      "id": 17,
+      "label": "fh.Hr",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 33673,
+      "selfMs": 23.108,
+      "inclusiveMs": 93.41699999999999,
+      "hits": 18
+    },
+    {
+      "id": 13,
+      "label": "end",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 61390,
+      "selfMs": 7.382,
+      "inclusiveMs": 49.955000000000005,
+      "hits": 6
+    },
+    {
+      "id": 28,
+      "label": "pl.setValue",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3724,
+      "column": 14741,
+      "selfMs": 1.268,
+      "inclusiveMs": 48.88,
+      "hits": 1
+    },
+    {
+      "id": 19,
+      "label": "(anonymous)",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3855,
+      "column": 14914,
+      "selfMs": 3.758,
+      "inclusiveMs": 46.452,
+      "hits": 3
+    },
+    {
+      "id": 23,
+      "label": "w",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3775,
+      "column": 2370,
+      "selfMs": 43.931999999999995,
+      "inclusiveMs": 45.193,
+      "hits": 34
+    },
+    {
+      "id": 48,
+      "label": "fh.projectObject [signature]",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 30013,
+      "selfMs": 0,
+      "inclusiveMs": 44.07900000000001,
+      "hits": 0
+    },
+    {
+      "id": 49,
+      "label": "fh.projectObject [signature]",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 30013,
+      "selfMs": 2.537,
+      "inclusiveMs": 44.07900000000001,
+      "hits": 2
+    },
+    {
+      "id": 50,
+      "label": "fh.projectObject [signature]",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 30013,
+      "selfMs": 0,
+      "inclusiveMs": 41.54200000000001,
+      "hits": 0
+    },
+    {
+      "id": 51,
+      "label": "fh.projectObject [signature]",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 30013,
+      "selfMs": 0,
+      "inclusiveMs": 40.287000000000006,
+      "hits": 0
+    },
+    {
+      "id": 52,
+      "label": "fh.projectObject [signature]",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 30013,
+      "selfMs": 7.616999999999999,
+      "inclusiveMs": 40.287000000000006,
+      "hits": 6
+    },
+    {
+      "id": 14,
+      "label": "update",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 62149,
+      "selfMs": 1.303,
+      "inclusiveMs": 40.035,
+      "hits": 1
+    },
+    {
+      "id": 20,
+      "label": "each",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3834,
+      "column": 31172,
+      "selfMs": 2.564,
+      "inclusiveMs": 35.25299999999999,
+      "hits": 2
+    },
+    {
+      "id": 21,
+      "label": "(anonymous)",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3855,
+      "column": 14943,
+      "selfMs": 6.3020000000000005,
+      "inclusiveMs": 32.689,
+      "hits": 5
+    },
+    {
+      "id": 60,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 5,
+      "column": 70797,
+      "selfMs": 1.26,
+      "inclusiveMs": 29.102999999999998,
+      "hits": 1
+    },
+    {
+      "id": 27,
+      "label": "drawImage",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 27.698999999999998,
+      "inclusiveMs": 27.698999999999998,
+      "hits": 22
+    },
+    {
+      "id": 64,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 5,
+      "column": 70797,
+      "selfMs": 2.522,
+      "inclusiveMs": 26.581,
+      "hits": 2
+    },
+    {
+      "id": 29,
+      "label": "M1",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3724,
+      "column": 10513,
+      "selfMs": 0,
+      "inclusiveMs": 26.512,
+      "hits": 0
+    },
+    {
+      "id": 30,
+      "label": "q",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3803,
+      "column": 21199,
+      "selfMs": 0,
+      "inclusiveMs": 26.512,
+      "hits": 0
+    },
+    {
+      "id": 31,
+      "label": "a",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3803,
+      "column": 24130,
+      "selfMs": 0,
+      "inclusiveMs": 26.512,
+      "hits": 0
+    },
+    {
+      "id": 65,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 5,
+      "column": 70797,
+      "selfMs": 0,
+      "inclusiveMs": 24.058999999999997,
+      "hits": 0
+    },
+    {
+      "id": 66,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 5,
+      "column": 70797,
+      "selfMs": 0,
+      "inclusiveMs": 24.058999999999997,
+      "hits": 0
+    },
+    {
+      "id": 67,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 5,
+      "column": 70797,
+      "selfMs": 0,
+      "inclusiveMs": 24.058999999999997,
+      "hits": 0
+    },
+    {
+      "id": 68,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 5,
+      "column": 70797,
+      "selfMs": 3.839,
+      "inclusiveMs": 24.058999999999997,
+      "hits": 3
+    },
+    {
+      "id": 18,
+      "label": "E",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3775,
+      "column": 8421,
+      "selfMs": 20.128000000000004,
+      "inclusiveMs": 22.574000000000005,
+      "hits": 16
+    },
+    {
+      "id": 53,
+      "label": "fh.projectObject [signature]",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 30013,
+      "selfMs": 3.051,
+      "inclusiveMs": 20.314,
+      "hits": 2
+    },
+    {
+      "id": 69,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 5,
+      "column": 70797,
+      "selfMs": 0,
+      "inclusiveMs": 20.22,
+      "hits": 0
+    },
+    {
+      "id": 70,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 5,
+      "column": 70797,
+      "selfMs": 2.6310000000000002,
+      "inclusiveMs": 17.59,
+      "hits": 2
+    },
+    {
+      "id": 24,
+      "label": "t.<computed>.s.<computed>",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3855,
+      "column": 9313,
+      "selfMs": 0,
+      "inclusiveMs": 17.554,
+      "hits": 0
+    },
+    {
+      "id": 54,
+      "label": "fh.projectObject [signature]",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 30013,
+      "selfMs": 1.257,
+      "inclusiveMs": 17.262999999999998,
+      "hits": 1
+    },
+    {
+      "id": 43,
+      "label": "d",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3574,
+      "column": 13967,
+      "selfMs": 1.291,
+      "inclusiveMs": 15.425999999999998,
+      "hits": 1
+    },
+    {
+      "id": 41,
+      "label": "oe",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3803,
+      "column": 12274,
+      "selfMs": 1.253,
+      "inclusiveMs": 15.103,
+      "hits": 1
+    },
+    {
+      "id": 62,
+      "label": "uniformMatrix4fv preparation [signature]",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3724,
+      "column": 8871,
+      "selfMs": 8.972,
+      "inclusiveMs": 14.052999999999997,
+      "hits": 7
+    },
+    {
+      "id": 42,
+      "label": "texSubImage2D",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 13.85,
+      "inclusiveMs": 13.85,
+      "hits": 11
+    },
+    {
+      "id": 25,
+      "label": "value",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3834,
+      "column": 46767,
+      "selfMs": 1.256,
+      "inclusiveMs": 13.737999999999998,
+      "hits": 1
+    },
+    {
+      "id": 71,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 5,
+      "column": 70797,
+      "selfMs": 0,
+      "inclusiveMs": 13.622999999999998,
+      "hits": 0
+    },
+    {
+      "id": 72,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 5,
+      "column": 70797,
+      "selfMs": 0,
+      "inclusiveMs": 12.586999999999998,
+      "hits": 0
+    },
+    {
+      "id": 73,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 5,
+      "column": 70797,
+      "selfMs": 3.7409999999999997,
+      "inclusiveMs": 12.586999999999998,
+      "hits": 3
+    },
+    {
+      "id": 63,
+      "label": "R",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3574,
+      "column": 10941,
+      "selfMs": 1.261,
+      "inclusiveMs": 12.552999999999999,
+      "hits": 1
+    },
+    {
+      "id": 36,
+      "label": "u",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3724,
+      "column": 4624,
+      "selfMs": 2.375,
+      "inclusiveMs": 12.472,
+      "hits": 2
+    },
+    {
+      "id": 33,
+      "label": "pl.upload",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3724,
+      "column": 14879,
+      "selfMs": 0,
+      "inclusiveMs": 12.398000000000001,
+      "hits": 0
+    },
+    {
+      "id": 116,
+      "label": "u",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3724,
+      "column": 6365,
+      "selfMs": 1.285,
+      "inclusiveMs": 11.095,
+      "hits": 1
+    },
+    {
+      "id": 155,
+      "label": "_",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3574,
+      "column": 14253,
+      "selfMs": 1.244,
+      "inclusiveMs": 10.337,
+      "hits": 1
+    },
+    {
+      "id": 26,
+      "label": "value",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3834,
+      "column": 39013,
+      "selfMs": 9.951,
+      "inclusiveMs": 9.951,
+      "hits": 8
+    },
+    {
+      "id": 117,
+      "label": "Skeleton.update",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 44,
+      "column": 19262,
+      "selfMs": 0,
+      "inclusiveMs": 9.81,
+      "hits": 0
+    },
+    {
+      "id": 156,
+      "label": "bindVertexArray",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 9.093,
+      "inclusiveMs": 9.093,
+      "hits": 6
+    },
+    {
+      "id": 86,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 5,
+      "column": 70797,
+      "selfMs": 0,
+      "inclusiveMs": 8.846,
+      "hits": 0
+    },
+    {
+      "id": 22,
+      "label": "value",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3834,
+      "column": 42639,
+      "selfMs": 1.269,
+      "inclusiveMs": 8.833,
+      "hits": 1
+    },
+    {
+      "id": 92,
+      "label": "fh.projectObject [signature]",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 30013,
+      "selfMs": 0,
+      "inclusiveMs": 8.616,
+      "hits": 0
+    },
+    {
+      "id": 93,
+      "label": "fh.projectObject [signature]",
+      "url": "<origin>/assets/index-_rZ_swZ7.js",
+      "line": 3827,
+      "column": 30013,
+      "selfMs": 0,
+      "inclusiveMs": 8.616,
+      "hits": 0
+    }
+  ],
+  "observations": {
+    "before": {
+      "elapsedMs": 2001.0999999940395,
+      "renderPasses": 240,
+      "passesPerSecond": 119.9340362804032,
+      "focusBefore": true,
+      "focusAfter": true,
+      "programsBefore": 8,
+      "programsAfter": 8
+    },
+    "during": {
+      "elapsedMs": 12002.89999999851,
+      "renderPasses": 1440,
+      "passesPerSecond": 119.97100700665496,
+      "focusBefore": true,
+      "focusAfter": true,
+      "programsBefore": 8,
+      "programsAfter": 8
+    },
+    "after": {
+      "elapsedMs": 2002.6000000014901,
+      "renderPasses": 240,
+      "passesPerSecond": 119.84420253661311,
+      "focusBefore": true,
+      "focusAfter": true,
+      "programsBefore": 8,
+      "programsAfter": 8
+    }
+  },
+  "boundaries": {
+    "controls.update": {
+      "calls": 361,
+      "totalMs": 10.600000008940697,
+      "meanMs": 0.029362880911193066,
+      "maxMs": 0.5999999940395355
+    },
+    "mixer.update": {
+      "calls": 361,
+      "totalMs": 2.8000000193715096,
+      "meanMs": 0.007756232740641301,
+      "maxMs": 0.10000000149011612
+    },
+    "scene.updateMatrixWorld": {
+      "calls": 361,
+      "totalMs": 15.899999998509884,
+      "meanMs": 0.04404432132551214,
+      "maxMs": 0.30000000447034836
+    },
+    "skeleton.update": {
+      "calls": 722,
+      "totalMs": 3.7999999821186066,
+      "meanMs": 0.005263157869970369,
+      "maxMs": 0.10000000149011612
+    },
+    "renderer.renderBufferDirect": {
+      "calls": 6859,
+      "totalMs": 79.89999996125698,
+      "meanMs": 0.011648928409572384,
+      "maxMs": 0.29999999701976776
+    },
+    "renderer.render": {
+      "calls": 361,
+      "totalMs": 124.99999995529652,
+      "meanMs": 0.346260387687802,
+      "maxMs": 1.1000000014901161
+    }
+  },
+  "boundaryWindow": {
+    "elapsedMs": 3003,
+    "renderPasses": 361,
+    "passesPerSecond": 120.21312021312022,
+    "focusBefore": true,
+    "focusAfter": true,
+    "programsBefore": 8,
+    "programsAfter": 8
+  },
+  "glCounts": {
+    "drawElements": {
+      "calls": 4579,
+      "arrayArgumentBytes": 0
+    },
+    "texSubImage2D": {
+      "calls": 482,
+      "arrayArgumentBytes": 1974272
+    },
+    "uniformMatrix4fv": {
+      "calls": 5784,
+      "arrayArgumentBytes": 370176
+    },
+    "uniformMatrix3fv": {
+      "calls": 2892,
+      "arrayArgumentBytes": 104112
+    }
+  },
+  "glWindow": {
+    "elapsedMs": 2003.1999999955297,
+    "renderPasses": 240,
+    "passesPerSecond": 119.80830670953254,
+    "focusBefore": true,
+    "focusAfter": true,
+    "programsBefore": 8,
+    "programsAfter": 8
+  }
+}

@@ -1,0 +1,6 @@
+start V1-paused-0
+done V1-paused-0
+start E1-idle-0
+done E1-idle-0
+start E2-highres-0
+done E2-highres-0

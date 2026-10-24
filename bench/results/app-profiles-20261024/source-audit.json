@@ -1,0 +1,89 @@
+[
+  {
+    "file": "editor/editor/js/Viewport.js",
+    "sha256": "597f323c2b9c8c7e6f87bc92192baf5ecd940edb9533198b0c8dcbdcf706e196",
+    "lines": [
+      84,
+      493,
+      856,
+      878,
+      879,
+      883,
+      964,
+      971,
+      976,
+      977,
+      978
+    ],
+    "role": "Synchronous editing callbacks; animated selected-world update and precise bounds; scene/grid/helpers/view helper render passes"
+  },
+  {
+    "file": "editor/editor/js/Viewport.Info.js",
+    "sha256": "cf0c3121a84acd23cbe8c96a2f9818ebd66fca200f20a50311178325e4ba217f",
+    "lines": [
+      36,
+      46,
+      93,
+      110
+    ],
+    "role": "Synchronous statistics traversal, formatting, DOM and native frame-time display"
+  },
+  {
+    "file": "editor/editor/js/Sidebar.Object.js",
+    "sha256": "ce7f9e5b9220aec100d94fd2fd136a6cd9f20a264e6ebe1c5ad46fa115fd7743",
+    "lines": [
+      727,
+      743
+    ],
+    "role": "Synchronous objectChanged to sidebar update"
+  },
+  {
+    "file": "editor/build/three.core.js",
+    "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6",
+    "lines": [
+      16206,
+      16228,
+      16236,
+      24775,
+      24805,
+      25135,
+      25148,
+      25151
+    ],
+    "role": "Precise bounds, per-vertex skinning/public world reads, palette flattening"
+  },
+  {
+    "file": "editor/build/three.module.js",
+    "sha256": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea",
+    "lines": [
+      4612,
+      4659,
+      5284,
+      5301,
+      9143,
+      9581,
+      17746,
+      17766,
+      17774,
+      17897,
+      18192,
+      18197,
+      18198,
+      18224,
+      18407
+    ],
+    "role": "Skeleton cache by renderer frame, matrix uniform arrays, shadows, frame increment, render lists/material program setup and model-view/normal matrices"
+  },
+  {
+    "file": "viewer/src/viewer.js",
+    "sha256": "506b3246b0f7e994e448e708abb64d01c4262964198c195de7cef73e173264cb",
+    "lines": [
+      143,
+      148,
+      149,
+      150,
+      156
+    ],
+    "role": "Original controls/stats/mixer/render loop continues when playbackSpeed is zero"
+  }
+]
