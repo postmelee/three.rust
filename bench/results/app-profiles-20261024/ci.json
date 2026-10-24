@@ -1,0 +1,8 @@
+{
+  "preparationHead": "f339a46c006be788d885fb7c3bff2fcbff72d758",
+  "runId": 40066043963,
+  "workflow": "correctness",
+  "conclusion": "success",
+  "url": "https://github.com/postmelee/three.rust/actions/runs/40066043963",
+  "scope": "Prior preparation CI, not physical GPU/performance qualification or this new PR head"
+}

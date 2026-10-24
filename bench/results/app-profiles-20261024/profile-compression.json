@@ -1,0 +1,98 @@
+[
+  {
+    "file": "E1-edit-0.cpuprofile.gz",
+    "uncompressedFile": "E1-edit-0.cpuprofile",
+    "uncompressedBytes": 379514,
+    "uncompressedSha256": "9bf5f83147a154f3d87c977c7407e91c4934d554274389015754c54f458b2b69"
+  },
+  {
+    "file": "E1-edit-1.cpuprofile.gz",
+    "uncompressedFile": "E1-edit-1.cpuprofile",
+    "uncompressedBytes": 392556,
+    "uncompressedSha256": "24065072f309f7aad868b8a370974a26d22d3f09feee50baf38807dac163ca31"
+  },
+  {
+    "file": "E1-idle-0.cpuprofile.gz",
+    "uncompressedFile": "E1-idle-0.cpuprofile",
+    "uncompressedBytes": 165858,
+    "uncompressedSha256": "2d97e10aa41e3f96ad5baf4e857e78bd9ae9d8cab449c7c2f0e125675800ee69"
+  },
+  {
+    "file": "E1-idle-1.cpuprofile.gz",
+    "uncompressedFile": "E1-idle-1.cpuprofile",
+    "uncompressedBytes": 159437,
+    "uncompressedSha256": "1c9e5c8e6326bbb4c30ada49d8aa2c4c788fb5b4d7933c8fedfcbebc93800a7f"
+  },
+  {
+    "file": "E2-highres-0.cpuprofile.gz",
+    "uncompressedFile": "E2-highres-0.cpuprofile",
+    "uncompressedBytes": 314436,
+    "uncompressedSha256": "9ac60d8f0edde99fd5e4a7338571649f211d107df8e21d9b5d70d8a203787cae"
+  },
+  {
+    "file": "E2-highres-1.cpuprofile.gz",
+    "uncompressedFile": "E2-highres-1.cpuprofile",
+    "uncompressedBytes": 308677,
+    "uncompressedSha256": "a832b59f5f0b06f830fc768e37c23e7642232d2a8be0c526a01844c17a40245f"
+  },
+  {
+    "file": "E2-no-shadow-0.cpuprofile.gz",
+    "uncompressedFile": "E2-no-shadow-0.cpuprofile",
+    "uncompressedBytes": 255848,
+    "uncompressedSha256": "13306bdec145bf0ca48e7093eabc4bd69945639e9efc1fc720766db8ce3864d1"
+  },
+  {
+    "file": "E2-no-shadow-1.cpuprofile.gz",
+    "uncompressedFile": "E2-no-shadow-1.cpuprofile",
+    "uncompressedBytes": 270875,
+    "uncompressedSha256": "cdc43f6937f5eb6d0db337d638a2f2f3a78153e397c68ca6759f7ccbbf5454bf"
+  },
+  {
+    "file": "E2-selected-0.cpuprofile.gz",
+    "uncompressedFile": "E2-selected-0.cpuprofile",
+    "uncompressedBytes": 305556,
+    "uncompressedSha256": "b92ff8ed229e6e2880923dd88b7325c3b208a07f1df7fe51a0f2212f89aa7ce8"
+  },
+  {
+    "file": "E2-selected-1.cpuprofile.gz",
+    "uncompressedFile": "E2-selected-1.cpuprofile",
+    "uncompressedBytes": 308158,
+    "uncompressedSha256": "e2e58bc017da4d7cfde405e300c0265bd68448c82dc83f080fbac8d5b7c0f284"
+  },
+  {
+    "file": "E2-unselected-0.cpuprofile.gz",
+    "uncompressedFile": "E2-unselected-0.cpuprofile",
+    "uncompressedBytes": 301606,
+    "uncompressedSha256": "7a6acb2583cdcb71af4ac6179111c4689c5e39f02924d4593bdce030337f7058"
+  },
+  {
+    "file": "E2-unselected-1.cpuprofile.gz",
+    "uncompressedFile": "E2-unselected-1.cpuprofile",
+    "uncompressedBytes": 314073,
+    "uncompressedSha256": "d5095e039053b15681c3e0c7c570d053cc9063a112deb6e5267c962d6cb847b1"
+  },
+  {
+    "file": "V1-paused-0.cpuprofile.gz",
+    "uncompressedFile": "V1-paused-0.cpuprofile",
+    "uncompressedBytes": 226294,
+    "uncompressedSha256": "1fdbbe1f9f65e17da181feca84ecd8b9d58bb001273635d223ed3823fab05f08"
+  },
+  {
+    "file": "V1-paused-1.cpuprofile.gz",
+    "uncompressedFile": "V1-paused-1.cpuprofile",
+    "uncompressedBytes": 235470,
+    "uncompressedSha256": "45453527419f83ccb4bfc35cbd2a9c21523c968630ac7eb8698ad682b72646d9"
+  },
+  {
+    "file": "V1-play-0.cpuprofile.gz",
+    "uncompressedFile": "V1-play-0.cpuprofile",
+    "uncompressedBytes": 232886,
+    "uncompressedSha256": "693098820328060b2afe3a8f656648351bbe8d20a66778667f5d333b6009f14f"
+  },
+  {
+    "file": "V1-play-1.cpuprofile.gz",
+    "uncompressedFile": "V1-play-1.cpuprofile",
+    "uncompressedBytes": 229470,
+    "uncompressedSha256": "edc86bfd66d274c65f2bc12097fa284f1be6d7e8f5bcc98c917ba6b4d08b88f3"
+  }
+]

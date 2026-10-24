@@ -1,0 +1,15 @@
+start V1-play-0
+done V1-play-0
+start E1-edit-0
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.waitForFunction: Timeout 20000ms exceeded.
+    at editCycle (<checkout>/scripts/apps/profile.mjs:48:57)
+    at async windowRun (<checkout>/scripts/apps/profile.mjs:52:133)
+    at async file://<checkout>/scripts/apps/profile.mjs:70:16 {
+  name: 'TimeoutError'
+}
+
+Node.js v24.15.0

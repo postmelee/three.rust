@@ -1,0 +1,22 @@
+{
+  "cases": [
+    "V1-play",
+    "V1-paused",
+    "E1-edit",
+    "E1-idle",
+    "E2-selected",
+    "E2-unselected",
+    "E2-no-shadow",
+    "E2-highres"
+  ],
+  "repeats": 2,
+  "seconds": 12,
+  "samplingIntervalUs": 1000,
+  "warmupSeconds": 2,
+  "observationSeconds": 2,
+  "boundarySeconds": 3,
+  "glCounterSeconds": 2,
+  "power": "Now drawing from 'AC Power'",
+  "scope": "Sampling profiles and diagnostic observations only. No primary timing or GPU elapsed measurement.",
+  "externalActivity": "Not controlled; no other builds or heavy agent work run during capture."
+}
