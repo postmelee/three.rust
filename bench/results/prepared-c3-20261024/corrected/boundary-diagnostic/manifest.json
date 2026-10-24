@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-24T04:30:31.397Z",
+  "commit": "066ddbaa3d538e95126a46c9203b550613bf3d3d",
+  "sourceTreeDirty": false,
+  "suite": "boundary",
+  "config": {
+    "out": "work/c3-corrected-boundary-diagnostic",
+    "scenarios": [
+      "cubes",
+      "skinning",
+      "shader",
+      "small",
+      "hierarchy"
+    ],
+    "engines": [
+      "original",
+      "js",
+      "facade-js",
+      "facade-wasm",
+      "prepared-js",
+      "prepared-wasm"
+    ],
+    "repeats": 1,
+    "warmup": 20,
+    "samples": 30,
+    "hardware": false,
+    "headless": true,
+    "args": [
+      "--no-sandbox",
+      "--use-angle=swiftshader",
+      "--enable-unsafe-swiftshader"
+    ],
+    "viewport": {
+      "width": 640,
+      "height": 360
+    },
+    "profile": false,
+    "gpu": false,
+    "timings": true
+  },
+  "node": "v24.19.0",
+  "platform": "linux",
+  "os": "6.18.55",
+  "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+  "logicalCpus": 5,
+  "hashes": {
+    "packages/rthree/prepared-kernel.js": "52c7fbee67a4fa2ca2f7cc48322b844029d037229be7caf5714c3540ab6a2f5f",
+    "crates/scene-core/src/prepared.rs": "8ad971add72430cf2e4860d089036bdff58b9a54e8e60cd4d23da72040c9ca06",
+    "scripts/build.mjs": "a6d6d30ad9d29b8ef3404d78df9a94f017a7a041e8e165f686bbbc24137878bc",
+    "docs/prepared-source.json": "1027730e2ed22303ea695b5d4f2bb3de78fd35bebf4cc30e7530816ef2351937",
+    "package-lock.json": "b938b0b7c45499a8962d4beff96db709ec0caafe2e44d94e1d53754e2666a355",
+    "packages/rthree/core.js": "38047dc221ea8b3d029c33bb413e0fe602a160aa714462dc1c6bd3316a3cd777",
+    "packages/rthree/runtime.js": "ec39c3e313d45dd9b7c672b2f4f4844dc14bb1ac2c442480aba9a2af560d7814",
+    "packages/rthree/facade-state.js": "54393ff30097aa3aeaa22cba60d76d6db6276a641e69b13b0eae90a73427aea5",
+    "packages/rthree/facade-kernel.js": "af0f195ce94549d86e04d820ed2259a9946a8c4990aa91d082449ff14bc48665",
+    "packages/rthree/packed.js": "ac3c983d45578410ee69dc815b11138ca1837980688dfc2863a218fe88c337bd",
+    "packages/rthree/scene_core.wasm": "95f7aa7a807bd0bd4c9b45f0a855d2305c262cf5b7fef35a2d9dd9dfa889cdd9",
+    "crates/scene-core/src/facade.rs": "94819582b2474044e3c0f1880ec8049543d5ddf2fba9ac795a2153f198623bad",
+    "bench/facade.mjs": "f29dedddf931c0cd2dbe21d347ef9f6fa17decb898ca1e81d72b8e241310dbc2",
+    "bench/facade.html": "05ed01ad7a3a38f90ca5f70a8150164605850a255baab3ad02a2842855b5b241",
+    "bench/browser.mjs": "70fe0de5b72b2c51a2a3c5bbdac882105a26872237d02250120ae735c0fbd40f",
+    "bench/config.mjs": "6df03f6b5bf2b8b57a9e0e06ae001d1461d9189efbe8e3655a37265f96acc6dc",
+    "bench/timing.mjs": "86ed9cd861b454cedeb16732171b7dc42cd71b818807ef04bc7ccacdb78489f8",
+    "fixtures/provenance.json": "8aebb338ec77145c3774e5109ce0a5a3bb356c027a6294eb48dcdd41da64170a",
+    "scripts/server.mjs": "af9e6ebf38186ebc1c2bc498a31ec500e2642fb92d73b293735fed4dc282a254"
+  },
+  "status": "complete",
+  "runs": [
+    "boundary-original-0.json",
+    "boundary-js-0.json",
+    "boundary-facade-js-0.json",
+    "boundary-facade-wasm-0.json",
+    "boundary-prepared-js-0.json",
+    "boundary-prepared-wasm-0.json"
+  ],
+  "meaning": "CPU boundary experiment; no renderer, GPU or FPS conclusion",
+  "browser": "154.0.8037.57",
+  "finishedAt": "2026-10-24T04:30:42.868Z"
+}

@@ -1,0 +1,6 @@
+
+> three-rust-research@0.1.0 build
+> node scripts/build.mjs
+
+    Finished `release` profile [optimized] target(s) in 0.03s
+Built local ESM package with one core and Rust Wasm

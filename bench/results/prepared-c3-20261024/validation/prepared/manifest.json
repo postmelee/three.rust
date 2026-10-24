@@ -1,0 +1,16 @@
+{
+  "kind": "correctness-only",
+  "commit": "771080873b1f329ee91df895ec1afff87b4b2b63",
+  "sourceTreeDirty": true,
+  "browser": "154.0.8037.57",
+  "status": "complete",
+  "hashes": {
+    "packages/rthree/core.js": "38047dc221ea8b3d029c33bb413e0fe602a160aa714462dc1c6bd3316a3cd777",
+    "packages/rthree/runtime.js": "ec39c3e313d45dd9b7c672b2f4f4844dc14bb1ac2c442480aba9a2af560d7814",
+    "packages/rthree/facade-state.js": "54393ff30097aa3aeaa22cba60d76d6db6276a641e69b13b0eae90a73427aea5",
+    "packages/rthree/prepared-kernel.js": "52c7fbee67a4fa2ca2f7cc48322b844029d037229be7caf5714c3540ab6a2f5f",
+    "packages/rthree/scene_core.wasm": "95f7aa7a807bd0bd4c9b45f0a855d2305c262cf5b7fef35a2d9dd9dfa889cdd9",
+    "tests/prepared/index.html": "8c28ee1dd0a3eb768d0684a1c573a444631ef81a20529b55ca4e3e55d81a7c65",
+    "tests/prepared-browser.mjs": "094a2a202f0989298c6f6aa803bd4d057c4b4f93d065ce353aa0ba38fd1b83e6"
+  }
+}

@@ -60,10 +60,13 @@ ranking must be rechecked on hardware. See [REPORT](REPORT.md).
 M0–M2 are completed experiments, not a completed engine or acceleration claim.
 
 The [C2 facade](PERSISTENT_FACADE.md) now retains evaluated local/world matrices and
-passes the six-route contract, but [loses to original in cloud controls](FACADE_REPORT.md).
-Its next gate is reducing per-frame JS preparation and directly consuming prepared
-engine outputs. Select further native stages from original real-app profiles; do
-not infer product progress from more Rust code or reduced copied bytes alone.
+passes its contract, but [loses to original in cloud controls](FACADE_REPORT.md).
+The bounded [C3 prepared main pass](PREPARED_PASS.md) now retains topology and
+consumes native visibility/order/matrices without repeating displaced JS work.
+Its [six-route complete-path report](PREPARED_REPORT.md) preserves the controls and
+regressions. The contract suite now covers eight routes. Select further stages
+from original real-app and residual profiles; implementation counts do not qualify
+product performance.
 Their historical work predates Hyper-Waterfall and is not relabeled as following it.
 
 ## Future milestones and exit gates

@@ -1,0 +1,10 @@
+{
+  "kind": "superseded incomplete attempt; never pool with the corrected candidate",
+  "commit": "771080873b1f329ee91df895ec1afff87b4b2b63",
+  "stoppedAt": "2026-10-24T04:02:52.261311+00:00",
+  "reason": "Code review found strong dirty-queue references retaining abandoned native records. New forced-GC test reproduced liveNodes=2 instead of 1. Stopped own render process with SIGTERM before editing runtime; original manifests/raw files unchanged.",
+  "boundary": "complete 36 runs; superseded",
+  "renderRunsSaved": 40,
+  "render": "incomplete; manifest intentionally retains running status because termination interrupted the process",
+  "followup": "Weak record queues, regression red/green logs, fresh candidate and output paths"
+}

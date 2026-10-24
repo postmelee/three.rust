@@ -12,9 +12,14 @@
         "crates/scene-core/src/facade.rs",
         "packages/rthree/facade-state.js",
         "tests/facade-worker.mjs",
-        "tests/compatibility/cases.mjs"
+        "tests/compatibility/cases.mjs",
+        "docs/PREPARED_PASS.md",
+        "crates/scene-core/src/prepared.rs",
+        "tests/prepared-pass.mjs",
+        "tests/prepared-browser.mjs",
+        "docs/PREPARED_REPORT.md"
       ],
-      "note": "Legacy route scans JS state and eagerly copies matrices. C2 opt-in facade retains evaluated matrices in Rust, uploads dirty inputs and materializes observed snapshots. Both retain scoped fallback; public inputs and topology remain JS-owned."
+      "note": "Legacy route scans JS state and eagerly copies matrices. C2 opt-in facade retains evaluated matrices in Rust, uploads dirty inputs and materializes observed snapshots. Both retain scoped fallback; public inputs and topology remain JS-owned. C3 additionally retains eligible root topology and uses dirty records/revisions; selective updates retain their original selection. Public inputs and hierarchy remain JS-owned."
     },
     "animation/AnimationMixer.js::AnimationMixer.update": {
       "status": "rust-batch",
@@ -43,9 +48,14 @@
         "crates/scene-core/src/facade.rs",
         "packages/rthree/facade-state.js",
         "tests/facade-worker.mjs",
-        "tests/compatibility/cases.mjs"
+        "tests/compatibility/cases.mjs",
+        "docs/PREPARED_PASS.md",
+        "crates/scene-core/src/prepared.rs",
+        "tests/prepared-pass.mjs",
+        "tests/prepared-browser.mjs",
+        "docs/PREPARED_REPORT.md"
       ],
-      "note": "C2 opt-in facade only: indexed f64 evaluation with tracked inputs, persistent evaluated matrices and selective stable snapshots. Overrides and replaced arrays use JS fallback. Ordinary animation and renderer remain JS."
+      "note": "C2 opt-in facade only: indexed f64 evaluation with tracked inputs, persistent evaluated matrices and selective stable snapshots. Overrides and replaced arrays use JS fallback. Ordinary animation and renderer remain JS. C3 additionally retains eligible root topology and uses dirty records/revisions; selective updates retain their original selection. Public inputs and hierarchy remain JS-owned."
     },
     "core/Object3D.js::Object3D.updateWorldMatrix": {
       "status": "rust-batch",
@@ -54,9 +64,38 @@
         "crates/scene-core/src/facade.rs",
         "packages/rthree/facade-state.js",
         "tests/facade-worker.mjs",
-        "tests/compatibility/cases.mjs"
+        "tests/compatibility/cases.mjs",
+        "docs/PREPARED_PASS.md",
+        "crates/scene-core/src/prepared.rs",
+        "tests/prepared-pass.mjs",
+        "tests/prepared-browser.mjs",
+        "docs/PREPARED_REPORT.md"
       ],
-      "note": "C2 opt-in facade only: indexed f64 evaluation with tracked inputs, persistent evaluated matrices and selective stable snapshots. Overrides and replaced arrays use JS fallback. Ordinary animation and renderer remain JS."
+      "note": "C2 opt-in facade only: indexed f64 evaluation with tracked inputs, persistent evaluated matrices and selective stable snapshots. Overrides and replaced arrays use JS fallback. Ordinary animation and renderer remain JS. C3 additionally retains eligible root topology and uses dirty records/revisions; selective updates retain their original selection. Public inputs and hierarchy remain JS-owned."
+    },
+    "renderers/WebGLRenderer.js::WebGLRenderer.projectObject": {
+      "status": "rust-batch",
+      "evidence": [
+        "docs/PREPARED_PASS.md",
+        "crates/scene-core/src/prepared.rs",
+        "packages/rthree/facade-state.js",
+        "tests/prepared-pass.mjs",
+        "tests/prepared-browser.mjs",
+        "docs/PREPARED_REPORT.md"
+      ],
+      "note": "C3 ordinary-Mesh prepared main pass only: Rust evaluates inherited visibility/layers/group order, sphere culling and depth. JS consumes compact resource/draw records; displaced JS traversal/culling is skipped. Lights/resources, shadows and unsupported passes remain JS. This is a scoped algorithm mapping, not a complete renderer-method port."
+    },
+    "renderers/webgl/WebGLRenderLists.js::WebGLRenderList.sort": {
+      "status": "rust-batch",
+      "evidence": [
+        "docs/PREPARED_PASS.md",
+        "crates/scene-core/src/prepared.rs",
+        "packages/rthree/facade-state.js",
+        "tests/prepared-pass.mjs",
+        "tests/prepared-browser.mjs",
+        "docs/PREPARED_REPORT.md"
+      ],
+      "note": "C3 eligible ordinary-Mesh main pass: native opaque/transparent ordering uses upstream group/render/material/depth/id keys. The prepared renderer skips JS list sorting. Custom sorting, transmission and unsupported passes use upstream JS."
     }
   },
   "stateOverrides": {
@@ -111,9 +150,14 @@
         "crates/scene-core/src/facade.rs",
         "packages/rthree/facade-state.js",
         "tests/facade-worker.mjs",
-        "tests/compatibility/cases.mjs"
+        "tests/compatibility/cases.mjs",
+        "docs/PREPARED_PASS.md",
+        "crates/scene-core/src/prepared.rs",
+        "tests/prepared-pass.mjs",
+        "tests/prepared-browser.mjs",
+        "docs/PREPARED_REPORT.md"
       ],
-      "note": "Explicit owned rigs retain logical world matrices. C2 also retains evaluated world matrices for eligible facade objects, with stable selective snapshots and JS mutation/override fallback. The default legacy bridge still has authoritative JS properties."
+      "note": "Explicit owned rigs retain logical world matrices. C2 also retains evaluated world matrices for eligible facade objects, with stable selective snapshots and JS mutation/override fallback. The default legacy bridge still has authoritative JS properties. C3 preserves this derived-state authority with retained topology and revision-based snapshots; topology is a command-maintained projection of public JS hierarchy."
     },
     "animation/AnimationAction.js::AnimationAction.time": {
       "status": "rust-owned",
@@ -192,9 +236,38 @@
         "crates/scene-core/src/facade.rs",
         "packages/rthree/facade-state.js",
         "tests/facade-worker.mjs",
-        "tests/compatibility/cases.mjs"
+        "tests/compatibility/cases.mjs",
+        "docs/PREPARED_PASS.md",
+        "crates/scene-core/src/prepared.rs",
+        "tests/prepared-pass.mjs",
+        "tests/prepared-browser.mjs",
+        "docs/PREPARED_REPORT.md"
       ],
-      "note": "C2 opt-in facade only: Rust retains the evaluated local matrix; public proxy arrays are demand-driven snapshots. User matrix/TRS edits are pending JS inputs and caller-owned replacement arrays fall back. This is derived-state authority, not whole-scene ownership."
+      "note": "C2 opt-in facade only: Rust retains the evaluated local matrix; public proxy arrays are demand-driven snapshots. User matrix/TRS edits are pending JS inputs and caller-owned replacement arrays fall back. This is derived-state authority, not whole-scene ownership. C3 preserves this derived-state authority with retained topology and revision-based snapshots; topology is a command-maintained projection of public JS hierarchy."
+    },
+    "core/Object3D.js::Object3D.modelViewMatrix": {
+      "status": "rust-owned",
+      "evidence": [
+        "docs/PREPARED_PASS.md",
+        "crates/scene-core/src/prepared.rs",
+        "packages/rthree/facade-state.js",
+        "tests/prepared-pass.mjs",
+        "tests/prepared-browser.mjs",
+        "docs/PREPARED_REPORT.md"
+      ],
+      "note": "C3 eligible prepared main pass only: Rust produces and retains the per-pass model-view matrix. The renderer copies final values into the existing public last-draw array at consumption; hidden objects retain previous public snapshots. A fallback pass computes in JS. This is bounded derived-state authority, not ownership of every public object or graphics resource."
+    },
+    "core/Object3D.js::Object3D.normalMatrix": {
+      "status": "rust-owned",
+      "evidence": [
+        "docs/PREPARED_PASS.md",
+        "crates/scene-core/src/prepared.rs",
+        "packages/rthree/facade-state.js",
+        "tests/prepared-pass.mjs",
+        "tests/prepared-browser.mjs",
+        "docs/PREPARED_REPORT.md"
+      ],
+      "note": "C3 eligible prepared main pass only: Rust produces and retains the per-pass inverse-transpose normal matrix. The renderer copies final values into the existing public last-draw array at consumption; hidden objects retain previous public snapshots. A fallback pass computes in JS. This is bounded derived-state authority, not ownership of every public object or graphics resource."
     }
   },
   "pipeline": [
@@ -210,17 +283,18 @@
     },
     {
       "name": "Object / bone transforms",
-      "current": "C2: Rust matrix state",
+      "current": "C3: Rust matrix state",
       "target": "Rust batch"
     },
     {
-      "name": "Bone palette",
-      "current": "JS computation",
-      "target": "Rust output buffer"
+      "name": "Visibility / ordering",
+      "current": "C3: prepared main pass",
+      "target": "Rust output buffer",
+      "ownedName": "Bone palette"
     },
     {
       "name": "WebGL renderer",
-      "current": "Retained JS + GPU",
+      "current": "JS resources + GPU calls",
       "target": "Consume final outputs"
     }
   ]

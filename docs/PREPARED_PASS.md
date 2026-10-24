@@ -3,7 +3,8 @@
 C3 extends the optional C2 facade through retained topology, visibility, ordering
 and per-draw matrices. Select `rthree/prepared` for Rust or `rthree/prepared-js` for
 the same design in JS. This is a bounded experiment; the default `rthree` entry is
-unchanged. No speedup or full Three.js replacement follows from selecting it.
+unchanged. Selecting it does not establish a full Three.js replacement. See the
+[measured full-path result and regressions](PREPARED_REPORT.md).
 
 ```js
 import * as THREE from 'rthree/prepared';
@@ -43,6 +44,8 @@ single perspective/orthographic WebGL camera per call. Opaque and transparent
 materials, visibility/layers, group/render order, mutable bounds, standard draw
 ranges, negative/nonuniform scales and singular normal matrices are covered.
 Separate successive cameras are supported; a single ArrayCamera pass is not.
+A camera parented into the scene prevents the retained whole-scene plan: upstream
+traversal preserves its inverse-matrix post-update. Keep this fallback in timings.
 
 | Condition | Behavior |
 |---|---|

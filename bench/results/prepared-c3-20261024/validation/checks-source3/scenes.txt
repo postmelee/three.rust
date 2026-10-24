@@ -1,0 +1,24 @@
+
+> three-rust-research@0.1.0 test:browser
+> node tests/browser.mjs
+
+cubes original ok
+cubes original ok
+cubes prepared-js ok
+cubes prepared-wasm ok
+skinning original ok
+skinning original ok
+skinning prepared-js ok
+skinning prepared-wasm ok
+shader original ok
+shader original ok
+shader prepared-js ok
+shader prepared-wasm ok
+small original ok
+small original ok
+small prepared-js ok
+small prepared-wasm ok
+hierarchy original ok
+hierarchy original ok
+hierarchy prepared-js ok
+hierarchy prepared-wasm ok

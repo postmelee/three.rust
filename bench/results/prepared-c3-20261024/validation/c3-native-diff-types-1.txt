@@ -1,0 +1,50 @@
+
+> three-rust-research@0.1.0 test
+> cargo test --locked && node --test tests/differential.mjs && tsc -p tests/tsconfig.json
+
+   Compiling rthree-scene-core v0.1.0 (/workspace/work/three-rust-prepared/crates/scene-core)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.65s
+     Running unittests src/lib.rs (target/debug/deps/rthree_scene_core-4b1f54f598c77e28)
+
+running 14 tests
+test facade::tests::indexed_state_survives_reordering_and_partial_updates ... ok
+test facade::tests::local_only_and_force_preserve_upstream_flags ... ok
+test owned::tests::invalid_commands_are_atomic ... ok
+test owned::tests::malformed_descriptor_and_stale_handle ... ok
+test prepared::tests::invalid_plan_does_not_touch_output ... ok
+test prepared::tests::ordering_matches_material_and_transparent_depth ... ok
+test owned::tests::persistent_clock_world_palette ... ok
+test prepared::tests::singular_and_normal_matrix ... ok
+test tests::manual_world_and_force ... ok
+test tests::hierarchy_and_persistence ... ok
+test tests::rejects_bad_topology ... ok
+test facade::tests::generations_and_invalid_commands_are_atomic ... ok
+test tests::pivot_and_negative_scale ... ok
+test tests::stale_handles_and_growth ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests rthree_scene_core
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+✔ persistent random hierarchy, direct mutation, flags and reparent (160.661922ms)
+✔ synchronous reads and stale direct reads follow upstream (2.013981ms)
+✔ external parent, attach, remove, clone and callbacks (13.011882ms)
+✔ camera and skinned overrides retain post-update behavior (2.095528ms)
+✔ custom updateMatrix / updateMatrixWorld dispatch (5.236147ms)
+✔ eligible path skips original JS compose/multiply and executes Wasm (0.959833ms)
+✔ growth in another arena refreshes views, release/recreate (112.924866ms)
+✔ addon loader identity and independent clone (39.991573ms)
+✔ AnimationMixer events observe the same pose and bone palette (27.875051ms)
+{"maxAbsoluteMatrixError":0,"diagnostics":{"backend":"wasm","wasmActive":true,"batches":266,"nodes":14454,"fallbackRoots":10,"wasmCalls":266,"wasmNodes":14454,"uploadedBytes":875040,"scannedBytes":5665968,"materializedBytes":3700224,"arenas":0,"syncMs":0,"kernelMs":0,"readMs":0,"abiCalls":0,"operationBytes":0,"matrixReads":0,"liveNodes":0,"topologyBuilds":0,"dirtyRecords":0,"retainedUpdates":0,"preparedInputBytes":0,"preparedFallbacks":0,"preparedWasmCalls":0,"prepareKernelMs":0,"preparedPasses":0,"preparedDraws":0,"preparedMatrixBytes":0,"preparedMatrixReads":0,"wasmMemoryBytes":3276800}}
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 811.819887

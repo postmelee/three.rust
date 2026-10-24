@@ -1,0 +1,13 @@
+✔ prepared-js: unchanged topology has no JS command reconstruction (21.17014ms)
+✔ prepared-js: committed hierarchy is visible inside synchronous events (2.324398ms)
+✔ prepared-js: cached plans observe replaced matrices and layer objects (1.188657ms)
+✔ prepared-js: release preserves the lazily cleared public dirty flag (0.387391ms)
+✔ prepared-js: dirty queues do not retain an abandoned detached record (9.259161ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 160.294376

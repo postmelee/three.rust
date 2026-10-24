@@ -1,0 +1,30 @@
+
+> three-rust-research@0.1.0 bundle:demo
+> node scripts/bundle-demo.mjs
+
+dist/demo
+
+> three-rust-research@0.1.0 test:bundle
+> node tests/bundle.mjs
+
+Demo original, legacy and prepared routes with pause passed
+Progress and history desktop/mobile checks passed
+pipeline original ok
+pipeline original ok
+pipeline js ok
+pipeline wasm ok
+pipeline packed-js ok
+owned browser original passed
+owned browser original passed
+owned browser js passed
+owned browser wasm passed
+owned browser packed-js passed
+owned browser owned-js passed
+owned browser owned-wasm passed
+owned browser original passed
+owned browser original passed
+owned browser js passed
+owned browser wasm passed
+owned browser packed-js passed
+owned browser owned-js passed
+owned browser owned-wasm passed

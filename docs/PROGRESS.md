@@ -14,12 +14,16 @@ evidence, and its historical counts retain their original meaning.
 The upper bands distinguish compatible transforms from the explicit owned-rig API.
 The default legacy bridge remains a cache of authoritative JS values. The optional
 [C2 facade](PERSISTENT_FACADE.md) retains evaluated local/world matrices in Rust;
-public inputs and hierarchy stay in JS. The explicit owned rig separately owns its
-animation/pose/world/palette state. Broader scene-core ownership is still planned.
+public inputs and hierarchy stay in JS. [C3](PREPARED_PASS.md) additionally retains
+topology and prepares ordinary-Mesh visibility, ordering and draw matrices for the
+WebGL consumer. The explicit owned rig separately owns animation/pose/world/palette
+state. Broader scene-core ownership is still planned.
 
 The [observable contract](FACADE_CONTRACT.md) and facade-specific tests support C2's
-bounded claims. Its [measured regression](FACADE_REPORT.md) does not qualify a product
-gate; implementation progress and useful performance remain separate.
+bounded claims. The [C3 pass oracles](../tests/prepared.mjs) support its narrower
+renderer mappings. [C2](FACADE_REPORT.md) and [C3](PREPARED_REPORT.md) cloud results
+do not qualify a product gate; implementation progress and useful performance
+remain separate.
 
 ## Units and legend
 
@@ -40,16 +44,19 @@ layout. A Rust batch can combine many operations; a claim is added only for its
 verified scope. A green field means Rust owns the corresponding logical state,
 not that Rust happens to allocate another copy with the same name.
 
-Five source mappings are amber: three eligible Object3D update methods, plus
-AnimationMixer.update and Skeleton.update algorithms in the explicit owned API.
-Those ordinary animation/skeleton methods still run in JS. Thirteen green fields
-map finite owned-rig state and C2's evaluated local matrix. The world-matrix mapping
-now includes C2 as well as owned rigs. JS public inputs/topology and the default
-bridge retain their existing authority. Each mapping links its contract and tests.
+Seven source mappings are amber: three eligible Object3D update methods,
+AnimationMixer.update and Skeleton.update algorithms in the explicit owned API,
+and the C3 prepared-main-pass projection/order algorithms. Ordinary animation and
+skeleton methods still run in JS. Fifteen green fields map finite owned-rig state,
+C2/C3 evaluated transform matrices and C3's per-pass model-view/normal results.
+Public last-draw arrays remain copies; unsupported passes compute in JS. Public
+inputs/hierarchy and the default bridge retain their existing authority. Each
+mapping links its exact contract and tests.
 
 This extends the original conditional-computation legend to distinguish API tiers;
 it does not count helper arithmetic as globally ported public math methods. Scalar
-Matrix4/Quaternion APIs remain JS. Renderer/shader work is not counted as removed.
+Matrix4/Quaternion APIs remain JS. Only the declared C3 projection/order/matrix
+work is displaced; resource submission, shadow rendering and shaders remain.
 Full event/binding/facade semantics are outside these finite mappings. See
 [owned API](OWNED_ANIMATION.md) and its [experimental ADR](adr/0003-owned-animation-experiment.md).
 
