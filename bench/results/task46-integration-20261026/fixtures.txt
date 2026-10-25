@@ -1,0 +1,3 @@
+
+> three-rust-research@0.1.0 fixtures
+> node scripts/fetch-assets.mjs && node scripts/fixtures.mjs

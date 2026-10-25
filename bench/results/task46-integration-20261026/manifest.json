@@ -1,0 +1,66 @@
+{
+  "kind": "integration correctness; not performance",
+  "files": [
+    {
+      "path": "browser.txt",
+      "sha256": "ca7d60d8b6cd2537b90c0db918e752b0532f0710beb56d5a58dcffd1c8290fcc",
+      "originalSha256": "ca7d60d8b6cd2537b90c0db918e752b0532f0710beb56d5a58dcffd1c8290fcc"
+    },
+    {
+      "path": "build.txt",
+      "sha256": "2a26acf6cabc0c0c2e44faf0b4edb4821b883fcc1ebe2a2412621a6162a46ae3",
+      "originalSha256": "908dd8f44b5eed65c0800e745e79adbb075d4c7e6052ae7c32b2058fbc8c37dc"
+    },
+    {
+      "path": "compatibility.txt",
+      "sha256": "a9f6d161768971f3b08f970b355d401fe7de3b0a59ff9843fe7e9d3940851e9c",
+      "originalSha256": "a9f6d161768971f3b08f970b355d401fe7de3b0a59ff9843fe7e9d3940851e9c"
+    },
+    {
+      "path": "demo.txt",
+      "sha256": "334b19df51141a6c9e2ff9964d8af52ef39138fcaa597bce9aa8424ad3a928a8",
+      "originalSha256": "334b19df51141a6c9e2ff9964d8af52ef39138fcaa597bce9aa8424ad3a928a8"
+    },
+    {
+      "path": "docs.txt",
+      "sha256": "8c12ce6415719d465d170447f5ae72d8fdf002ff8d7bffa96d242c48b5ec581c",
+      "originalSha256": "8c12ce6415719d465d170447f5ae72d8fdf002ff8d7bffa96d242c48b5ec581c"
+    },
+    {
+      "path": "facade.txt",
+      "sha256": "23a72c94c41e8be180db6db81003cbda7c3558d545ba78bb3cee83b936a7f426",
+      "originalSha256": "23a72c94c41e8be180db6db81003cbda7c3558d545ba78bb3cee83b936a7f426"
+    },
+    {
+      "path": "fixtures.txt",
+      "sha256": "ccba9621d75dcaa4b22895d6d489a55d6da4b0214873a384c55569c0221aade2",
+      "originalSha256": "2c21044897e768c7eab0ca88d83a86d4a028f4125feb3be30ac27c0b8588688c"
+    },
+    {
+      "path": "infra.txt",
+      "sha256": "f7ca37d92c939ce04acb28653cc911ea0678b1789ed098f836b5635a36255ac6",
+      "originalSha256": "f7ca37d92c939ce04acb28653cc911ea0678b1789ed098f836b5635a36255ac6"
+    },
+    {
+      "path": "install.txt",
+      "sha256": "50f7000eec92ad2cc97ada087fcb24d78ddf15582504db13235abbcfacbf7acd",
+      "originalSha256": "50f7000eec92ad2cc97ada087fcb24d78ddf15582504db13235abbcfacbf7acd"
+    },
+    {
+      "path": "package.txt",
+      "sha256": "d338a733eb56cf605c0cab043064a97cf19f7a46c578e5e6243221d79c348309",
+      "originalSha256": "d338a733eb56cf605c0cab043064a97cf19f7a46c578e5e6243221d79c348309"
+    },
+    {
+      "path": "prepared.txt",
+      "sha256": "9be149bd4da2bdbfa178b3517dded2d1eec816f41c4ad2ccf2d47f582cc76679",
+      "originalSha256": "9be149bd4da2bdbfa178b3517dded2d1eec816f41c4ad2ccf2d47f582cc76679"
+    },
+    {
+      "path": "test.txt",
+      "sha256": "1a037ea7aaa8e6abcec14caa99bffdbb6bee7cefe17099c6f6aa9645915faede",
+      "originalSha256": "8b1622b3540018e78c49c48ff77fe8b11c49f6d12eda71297dd2fbc8a9f15467"
+    }
+  ],
+  "normalization": "Absolute checkout paths replaced; trailing blank lines removed. Original local logs retained."
+}

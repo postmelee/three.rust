@@ -1,0 +1,27 @@
+
+> three-rust-research@0.1.0 test:package
+> node tests/package.mjs
+
+
+added 8 packages in 1s
+Fresh tarball consumer: init failure/concurrent retry, mixed-mode rejection, root/addon identity, Wasm execution, no runtime three dependency OK
+
+  app.bundle.js  1.0mb ⚠️
+
+⚡ Done in 39ms
+
+  facade.bundle.js  1.0mb ⚠️
+
+⚡ Done in 33ms
+
+  facade-js.bundle.js  1.0mb ⚠️
+
+⚡ Done in 33ms
+
+  prepared.bundle.js  1.0mb ⚠️
+
+⚡ Done in 33ms
+
+  prepared-js.bundle.js  1.0mb ⚠️
+
+⚡ Done in 33ms
