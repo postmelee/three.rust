@@ -16,3 +16,7 @@ Exact RGBA/numeric checks and successful native UI replay from PR #41 are prereq
 
 ## Document location judgment
 Profiling scripts belong in scripts/apps, raw evidence in a new bench/results/app-profiles-20261024 archive, and the research report in mydocs/report/task_m3_5_profiles_report.md. These extend the established task evidence locations and avoid product documentation. Assets/checkouts stay in ignored work; public artifacts exclude private session context and local identity paths.
+
+## Review continuation — 2026-10-26
+
+Review PR #43 at 7142d3334280db6b4bf4b33105c84ac48d4605af. Verify archived payloads and served-source hashes. Add a fail-closed captured-source check to the analyzer and correct the classification description, preserving original samples and analysis. Verification includes changed/missing/uncaptured-source failures and unchanged real-profile summary reproduction. The existing script/test and task-report locations remain appropriate. No engine change is part of this review correction.
