@@ -1,0 +1,17 @@
+{
+  "browser": "155.0.8059.86",
+  "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "toolingSha": "cadc5edd694b3aa778dd049251d15e5f6dd75c87",
+  "toolingDirty": false,
+  "helperSha256": "cb4c490650b3ca2a8c0860e744a892bee102383d5a153ae41698fed209ad0cc6",
+  "engine": "prepared-js",
+  "app": "editor",
+  "candidateSha": "6990fd92f61a031c8c2ba7a8282cfb63684e6dfb",
+  "headed": true,
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "dpr": 1,
+  "mode": "Candidate-aware correctness only; no profiles, timers or frame samples"
+}

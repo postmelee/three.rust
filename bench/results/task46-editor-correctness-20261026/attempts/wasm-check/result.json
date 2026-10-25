@@ -1,0 +1,9 @@
+{
+  "status": "failed",
+  "engine": "prepared-wasm",
+  "app": "editor",
+  "candidateSha": "6990fd92f61a031c8c2ba7a8282cfb63684e6dfb",
+  "error": "TimeoutError: page.waitForFunction: Timeout 20000ms exceeded.",
+  "checks": [],
+  "actions": []
+}
