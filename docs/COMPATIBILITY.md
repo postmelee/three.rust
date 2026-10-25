@@ -34,6 +34,14 @@ fetch/compile rejects; no silent JS fallback. `{wasmBytes}` works in Node and
 A mixed graph importing JS and Wasm modes is unsupported: select once per graph,
 reload to change. Calling init concurrently is supported; failure can be retried.
 
+Initialization must also precede module evaluation when an application module
+calls update methods at top level. The [pinned Editor integration](MAC_APP_SCREEN.md#two-application-requirements-and-coverage)
+required awaiting init before dynamically importing its original app entries;
+placing init only before `new Editor()` was insufficient. Its tested original,
+prepared-JS and prepared-Wasm interactions preserve fixed images/numerics with
+unsupported renderer paths retained as fallback. This is bounded WebGL coverage,
+not complete compatibility or a performance qualification.
+
 A import change alone cannot repair third-party internal `three` imports,
 direct `node_modules/three/build/...` URLs, or duplicate package versions.
 Alias both `three` and `rthree` to the same entry and both addon prefixes to the

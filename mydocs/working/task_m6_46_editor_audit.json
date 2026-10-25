@@ -1,0 +1,5932 @@
+{
+  "status": "passed",
+  "errors": [],
+  "method": "Independent Python recalculation from every raw callback file, linear-interpolated quantiles, independent modulo phase checks; no browser or benchmark rerun. Absolute differences are observations, not stable speedup percentages.",
+  "toolingSha": "a1aad46f2bf8d74176b2b5e2836cbdd1ff34678a",
+  "candidateSha": "6990fd92f61a031c8c2ba7a8282cfb63684e6dfb",
+  "appPins": {
+    "editor": {
+      "sha": "9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8",
+      "dirty": false
+    },
+    "viewer": {
+      "sha": "b5ee5dafe27f953ae1b55f42b5fa3697fef08683",
+      "dirty": false
+    }
+  },
+  "runCount": 70,
+  "oracleCount": 24,
+  "continuousRuns": 54,
+  "idleRuns": 16,
+  "scenarios": [
+    {
+      "scenario": "E3-root-selected-shadow",
+      "engines": {
+        "original": {
+          "runs": 8,
+          "medianRunCpuMs": {
+            "p50": 1.3300000056624413,
+            "p95": 1.5450000017881393,
+            "p99": 1.6325999929755926
+          },
+          "medianRunRafIntervalMs": {
+            "p50": 8.330000000000837,
+            "p95": 10.099999999999545,
+            "p99": 10.319999999999709
+          },
+          "medianRunCallbackStartIntervalMs": {
+            "p50": 8.325000002980232,
+            "p95": 10.193250001966952,
+            "p99": 10.395049995929003
+          },
+          "p50RangeMs": [
+            1.3199999928474426,
+            1.3550000041723251
+          ],
+          "ownBlockFailingRuns": 2,
+          "ownFailingBlocks": 3,
+          "counterDeltaRanges": null,
+          "renderFrameDeltaRange": [
+            4800,
+            4800
+          ],
+          "viewportP50Median": 1.2149999998509884,
+          "timelineP50Median": 0.11499999463558197
+        },
+        "prepared-js": {
+          "runs": 4,
+          "medianRunCpuMs": {
+            "p50": 2.9424999952316284,
+            "p95": 3.214999996125698,
+            "p99": 3.3350000009685754
+          },
+          "medianRunRafIntervalMs": {
+            "p50": 8.329999999999927,
+            "p95": 9.906500000001413,
+            "p99": 10.305000000000291
+          },
+          "medianRunCallbackStartIntervalMs": {
+            "p50": 8.325000002980232,
+            "p95": 9.938250000029802,
+            "p99": 10.305149999856948
+          },
+          "p50RangeMs": [
+            2.9049999937415123,
+            3.110000006854534
+          ],
+          "ownBlockFailingRuns": 0,
+          "ownFailingBlocks": 0,
+          "counterDeltaRanges": {
+            "wasmCalls": [
+              0,
+              0
+            ],
+            "preparedPasses": [
+              0,
+              0
+            ],
+            "preparedWasmCalls": [
+              0,
+              0
+            ],
+            "preparedFallbacks": [
+              4800,
+              4800
+            ],
+            "preparedMatrixReads": [
+              0,
+              0
+            ],
+            "matrixReads": [
+              246000,
+              246000
+            ]
+          },
+          "renderFrameDeltaRange": [
+            4800,
+            4800
+          ],
+          "viewportP50Median": 2.842500001192093,
+          "timelineP50Median": 0.09749999642372131
+        },
+        "prepared-wasm": {
+          "runs": 4,
+          "medianRunCpuMs": {
+            "p50": 2.980000004172325,
+            "p95": 3.250000000372529,
+            "p99": 3.3875750029832123
+          },
+          "medianRunRafIntervalMs": {
+            "p50": 8.330000000000837,
+            "p95": 10.01499999999973,
+            "p99": 10.31500000000051
+          },
+          "medianRunCallbackStartIntervalMs": {
+            "p50": 8.32999999821186,
+            "p95": 10.088749998807906,
+            "p99": 10.337499998658895
+          },
+          "p50RangeMs": [
+            2.9149999916553497,
+            3.0049999952316284
+          ],
+          "ownBlockFailingRuns": 0,
+          "ownFailingBlocks": 0,
+          "counterDeltaRanges": {
+            "wasmCalls": [
+              162000,
+              162000
+            ],
+            "preparedPasses": [
+              0,
+              0
+            ],
+            "preparedWasmCalls": [
+              0,
+              0
+            ],
+            "preparedFallbacks": [
+              4800,
+              4800
+            ],
+            "preparedMatrixReads": [
+              0,
+              0
+            ],
+            "matrixReads": [
+              246000,
+              246000
+            ]
+          },
+          "renderFrameDeltaRange": [
+            4800,
+            4800
+          ],
+          "viewportP50Median": 2.8799999989569187,
+          "timelineP50Median": 0.0949999988079071
+        }
+      },
+      "aa": {
+        "originalRunsIncludingBookends": 10,
+        "allOriginalMedianP50Ms": 1.332500010728836,
+        "sceneToleranceMs": 0.06662500053644181,
+        "runFailures": 0,
+        "blockFailingRuns": 2,
+        "failingBlocks": 3,
+        "totalBlocks": 40,
+        "details": [
+          {
+            "directory": "runs/001-E3-root-selected-shadow-bookend-before-original-pre",
+            "purpose": "bookend-before",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/002-E3-root-selected-shadow-balanced-original-A",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/004-E3-root-selected-shadow-balanced-original-B",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/008-E3-root-selected-shadow-balanced-original-A",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 2
+          },
+          {
+            "directory": "runs/009-E3-root-selected-shadow-balanced-original-B",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/011-E3-root-selected-shadow-balanced-original-B",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/013-E3-root-selected-shadow-balanced-original-A",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/014-E3-root-selected-shadow-balanced-original-B",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/015-E3-root-selected-shadow-balanced-original-A",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 1
+          },
+          {
+            "directory": "runs/018-E3-root-selected-shadow-bookend-after-original-post",
+            "purpose": "bookend-after",
+            "runFailure": false,
+            "blockFailures": 0
+          }
+        ]
+      },
+      "observedAbsoluteDeltasMs": {
+        "js-original": {
+          "p50": 1.6124999895691872,
+          "p95": 1.6699999943375587,
+          "p99": 1.7024000079929829
+        },
+        "wasm-original": {
+          "p50": 1.6499999985098839,
+          "p95": 1.7049999985843898,
+          "p99": 1.7549750100076198
+        },
+        "wasm-js": {
+          "p50": 0.037500008940696716,
+          "p95": 0.03500000424683103,
+          "p99": 0.05257500201463694
+        }
+      }
+    },
+    {
+      "scenario": "E3-root-selected-no-shadow",
+      "engines": {
+        "original": {
+          "runs": 8,
+          "medianRunCpuMs": {
+            "p50": 1.2625000029802322,
+            "p95": 1.4676250007003544,
+            "p99": 1.5600500024110078
+          },
+          "medianRunRafIntervalMs": {
+            "p50": 8.334999999999127,
+            "p95": 9.99025000000065,
+            "p99": 10.31750000000011
+          },
+          "medianRunCallbackStartIntervalMs": {
+            "p50": 8.325000002980232,
+            "p95": 10.145500003546477,
+            "p99": 10.395099995881319
+          },
+          "p50RangeMs": [
+            1.2250000089406967,
+            1.2799999862909317
+          ],
+          "ownBlockFailingRuns": 3,
+          "ownFailingBlocks": 4,
+          "counterDeltaRanges": null,
+          "renderFrameDeltaRange": [
+            4800,
+            4800
+          ],
+          "viewportP50Median": 1.1400000005960464,
+          "timelineP50Median": 0.11500000953674316
+        },
+        "prepared-js": {
+          "runs": 4,
+          "medianRunCpuMs": {
+            "p50": 2.7850000113248825,
+            "p95": 3.027625010535121,
+            "p99": 3.135025005415082
+          },
+          "medianRunRafIntervalMs": {
+            "p50": 8.329999999999927,
+            "p95": 10.100500000000373,
+            "p99": 10.317550000000992
+          },
+          "medianRunCallbackStartIntervalMs": {
+            "p50": 8.325000002980232,
+            "p95": 10.150249998271466,
+            "p99": 10.372800002247095
+          },
+          "p50RangeMs": [
+            2.679999992251396,
+            2.794999986886978
+          ],
+          "ownBlockFailingRuns": 0,
+          "ownFailingBlocks": 0,
+          "counterDeltaRanges": {
+            "wasmCalls": [
+              0,
+              0
+            ],
+            "preparedPasses": [
+              0,
+              0
+            ],
+            "preparedWasmCalls": [
+              0,
+              0
+            ],
+            "preparedFallbacks": [
+              4800,
+              4800
+            ],
+            "preparedMatrixReads": [
+              0,
+              0
+            ],
+            "matrixReads": [
+              243600,
+              243600
+            ]
+          },
+          "renderFrameDeltaRange": [
+            4800,
+            4800
+          ],
+          "viewportP50Median": 2.686250001192093,
+          "timelineP50Median": 0.09750000387430191
+        },
+        "prepared-wasm": {
+          "runs": 4,
+          "medianRunCpuMs": {
+            "p50": 2.8275000005960464,
+            "p95": 3.0900000035762787,
+            "p99": 3.2200249914079904
+          },
+          "medianRunRafIntervalMs": {
+            "p50": 8.329999999999927,
+            "p95": 9.980249999999522,
+            "p99": 10.3149999999996
+          },
+          "medianRunCallbackStartIntervalMs": {
+            "p50": 8.32999999821186,
+            "p95": 10.065749997645616,
+            "p99": 10.360099999308586
+          },
+          "p50RangeMs": [
+            2.814999997615814,
+            2.875
+          ],
+          "ownBlockFailingRuns": 0,
+          "ownFailingBlocks": 0,
+          "counterDeltaRanges": {
+            "wasmCalls": [
+              159600,
+              159600
+            ],
+            "preparedPasses": [
+              0,
+              0
+            ],
+            "preparedWasmCalls": [
+              0,
+              0
+            ],
+            "preparedFallbacks": [
+              4800,
+              4800
+            ],
+            "preparedMatrixReads": [
+              0,
+              0
+            ],
+            "matrixReads": [
+              243600,
+              243600
+            ]
+          },
+          "renderFrameDeltaRange": [
+            4800,
+            4800
+          ],
+          "viewportP50Median": 2.7224999964237213,
+          "timelineP50Median": 0.09625000134110451
+        }
+      },
+      "aa": {
+        "originalRunsIncludingBookends": 10,
+        "allOriginalMedianP50Ms": 1.257499996572733,
+        "sceneToleranceMs": 0.06287499982863665,
+        "runFailures": 0,
+        "blockFailingRuns": 4,
+        "failingBlocks": 5,
+        "totalBlocks": 40,
+        "details": [
+          {
+            "directory": "runs/019-E3-root-selected-no-shadow-bookend-before-original-pre",
+            "purpose": "bookend-before",
+            "runFailure": false,
+            "blockFailures": 1
+          },
+          {
+            "directory": "runs/020-E3-root-selected-no-shadow-balanced-original-A",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 1
+          },
+          {
+            "directory": "runs/022-E3-root-selected-no-shadow-balanced-original-B",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 2
+          },
+          {
+            "directory": "runs/026-E3-root-selected-no-shadow-balanced-original-A",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/027-E3-root-selected-no-shadow-balanced-original-B",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/029-E3-root-selected-no-shadow-balanced-original-B",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/031-E3-root-selected-no-shadow-balanced-original-A",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 1
+          },
+          {
+            "directory": "runs/032-E3-root-selected-no-shadow-balanced-original-B",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/033-E3-root-selected-no-shadow-balanced-original-A",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/036-E3-root-selected-no-shadow-bookend-after-original-post",
+            "purpose": "bookend-after",
+            "runFailure": false,
+            "blockFailures": 0
+          }
+        ]
+      },
+      "observedAbsoluteDeltasMs": {
+        "js-original": {
+          "p50": 1.5225000083446503,
+          "p95": 1.5600000098347664,
+          "p99": 1.5749750030040741
+        },
+        "wasm-original": {
+          "p50": 1.5649999976158142,
+          "p95": 1.6223750028759243,
+          "p99": 1.6599749889969826
+        },
+        "wasm-js": {
+          "p50": 0.04249998927116394,
+          "p95": 0.0623749930411579,
+          "p99": 0.08499998599290848
+        }
+      }
+    },
+    {
+      "scenario": "E3-root-selected-high-resolution",
+      "engines": {
+        "original": {
+          "runs": 8,
+          "medianRunCpuMs": {
+            "p50": 1.3424999937415123,
+            "p95": 1.5451249938458202,
+            "p99": 1.6350250052660704
+          },
+          "medianRunRafIntervalMs": {
+            "p50": 8.330000000000837,
+            "p95": 9.980250000000343,
+            "p99": 10.324999999998909
+          },
+          "medianRunCallbackStartIntervalMs": {
+            "p50": 8.322500005364418,
+            "p95": 10.078249993920327,
+            "p99": 10.37999999538064
+          },
+          "p50RangeMs": [
+            1.1549999937415123,
+            1.364999994635582
+          ],
+          "ownBlockFailingRuns": 2,
+          "ownFailingBlocks": 4,
+          "counterDeltaRanges": null,
+          "renderFrameDeltaRange": [
+            4800,
+            4800
+          ],
+          "viewportP50Median": 1.2225000001490116,
+          "timelineP50Median": 0.11499999463558197
+        },
+        "prepared-js": {
+          "runs": 4,
+          "medianRunCpuMs": {
+            "p50": 2.9500000029802322,
+            "p95": 3.214999996125698,
+            "p99": 3.352550013884902
+          },
+          "medianRunRafIntervalMs": {
+            "p50": 8.330000000000382,
+            "p95": 9.992500000001291,
+            "p99": 10.319999999999709
+          },
+          "medianRunCallbackStartIntervalMs": {
+            "p50": 8.332499995827675,
+            "p95": 10.095249992609023,
+            "p99": 10.360149991959332
+          },
+          "p50RangeMs": [
+            2.9299999848008156,
+            3.0049999952316284
+          ],
+          "ownBlockFailingRuns": 0,
+          "ownFailingBlocks": 0,
+          "counterDeltaRanges": {
+            "wasmCalls": [
+              0,
+              0
+            ],
+            "preparedPasses": [
+              0,
+              0
+            ],
+            "preparedWasmCalls": [
+              0,
+              0
+            ],
+            "preparedFallbacks": [
+              4800,
+              4800
+            ],
+            "preparedMatrixReads": [
+              0,
+              0
+            ],
+            "matrixReads": [
+              246000,
+              246000
+            ]
+          },
+          "renderFrameDeltaRange": [
+            4800,
+            4800
+          ],
+          "viewportP50Median": 2.850000001490116,
+          "timelineP50Median": 0.0949999988079071
+        },
+        "prepared-wasm": {
+          "runs": 4,
+          "medianRunCpuMs": {
+            "p50": 2.9749999940395355,
+            "p95": 3.2375000048428775,
+            "p99": 3.3599999921023844
+          },
+          "medianRunRafIntervalMs": {
+            "p50": 8.330000000000837,
+            "p95": 9.928249999999842,
+            "p99": 10.320050000001501
+          },
+          "medianRunCallbackStartIntervalMs": {
+            "p50": 8.327500000596046,
+            "p95": 9.98974999785423,
+            "p99": 10.345299998819828
+          },
+          "p50RangeMs": [
+            2.9549999982118607,
+            3.010000005364418
+          ],
+          "ownBlockFailingRuns": 0,
+          "ownFailingBlocks": 0,
+          "counterDeltaRanges": {
+            "wasmCalls": [
+              162000,
+              162000
+            ],
+            "preparedPasses": [
+              0,
+              0
+            ],
+            "preparedWasmCalls": [
+              0,
+              0
+            ],
+            "preparedFallbacks": [
+              4800,
+              4800
+            ],
+            "preparedMatrixReads": [
+              0,
+              0
+            ],
+            "matrixReads": [
+              246000,
+              246000
+            ]
+          },
+          "renderFrameDeltaRange": [
+            4800,
+            4800
+          ],
+          "viewportP50Median": 2.8749999925494194,
+          "timelineP50Median": 0.0950000062584877
+        }
+      },
+      "aa": {
+        "originalRunsIncludingBookends": 10,
+        "allOriginalMedianP50Ms": 1.3424999937415123,
+        "sceneToleranceMs": 0.06712499968707562,
+        "runFailures": 1,
+        "blockFailingRuns": 3,
+        "failingBlocks": 5,
+        "totalBlocks": 40,
+        "details": [
+          {
+            "directory": "runs/037-E3-root-selected-high-resolution-bookend-before-original-pre",
+            "purpose": "bookend-before",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/038-E3-root-selected-high-resolution-balanced-original-A",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 1
+          },
+          {
+            "directory": "runs/040-E3-root-selected-high-resolution-balanced-original-B",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/044-E3-root-selected-high-resolution-balanced-original-A",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/045-E3-root-selected-high-resolution-balanced-original-B",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/047-E3-root-selected-high-resolution-balanced-original-B",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/049-E3-root-selected-high-resolution-balanced-original-A",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/050-E3-root-selected-high-resolution-balanced-original-B",
+            "purpose": "balanced",
+            "runFailure": true,
+            "blockFailures": 3
+          },
+          {
+            "directory": "runs/051-E3-root-selected-high-resolution-balanced-original-A",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/054-E3-root-selected-high-resolution-bookend-after-original-post",
+            "purpose": "bookend-after",
+            "runFailure": false,
+            "blockFailures": 1
+          }
+        ]
+      },
+      "observedAbsoluteDeltasMs": {
+        "js-original": {
+          "p50": 1.60750000923872,
+          "p95": 1.6698750022798778,
+          "p99": 1.7175250086188316
+        },
+        "wasm-original": {
+          "p50": 1.6325000002980232,
+          "p95": 1.6923750109970572,
+          "p99": 1.724974986836314
+        },
+        "wasm-js": {
+          "p50": 0.024999991059303284,
+          "p95": 0.022500008717179387,
+          "p99": 0.007449978217482389
+        }
+      }
+    },
+    {
+      "scenario": "E1-idle",
+      "engines": {
+        "original": {
+          "runs": 8,
+          "medianRunCpuMs": {
+            "p50": 0.015000000596046448,
+            "p95": 0.0299999862909317,
+            "p99": 0.03804999351501458
+          },
+          "medianRunRafIntervalMs": {
+            "p50": 8.330000000000382,
+            "p95": 10.056000000000154,
+            "p99": 10.314049999999861
+          },
+          "medianRunCallbackStartIntervalMs": {
+            "p50": 8.344999998807907,
+            "p95": 10.26550000682473,
+            "p99": 10.353949996680022
+          },
+          "p50RangeMs": [
+            0.015000000596046448,
+            0.015000000596046448
+          ],
+          "ownBlockFailingRuns": 0,
+          "ownFailingBlocks": 0,
+          "counterDeltaRanges": null,
+          "renderFrameDeltaRange": [
+            0,
+            0
+          ],
+          "viewportP50Median": 0.004999995231628418,
+          "timelineP50Median": 0.01000000536441803
+        },
+        "prepared-js": {
+          "runs": 4,
+          "medianRunCpuMs": {
+            "p50": 0.015000000596046448,
+            "p95": 0.027625003084540325,
+            "p99": 0.04555000580847256
+          },
+          "medianRunRafIntervalMs": {
+            "p50": 8.329999999999927,
+            "p95": 10.094249999999851,
+            "p99": 10.312150000000024
+          },
+          "medianRunCallbackStartIntervalMs": {
+            "p50": 8.342500001192093,
+            "p95": 10.316249997913838,
+            "p99": 10.385850001722574
+          },
+          "p50RangeMs": [
+            0.014999985694885254,
+            0.015000015497207642
+          ],
+          "ownBlockFailingRuns": 0,
+          "ownFailingBlocks": 0,
+          "counterDeltaRanges": {
+            "wasmCalls": [
+              0,
+              0
+            ],
+            "preparedPasses": [
+              0,
+              0
+            ],
+            "preparedWasmCalls": [
+              0,
+              0
+            ],
+            "preparedFallbacks": [
+              0,
+              0
+            ],
+            "preparedMatrixReads": [
+              0,
+              0
+            ],
+            "matrixReads": [
+              0,
+              0
+            ]
+          },
+          "renderFrameDeltaRange": [
+            0,
+            0
+          ],
+          "viewportP50Median": 0.004999995231628418,
+          "timelineP50Median": 0.01000000536441803
+        },
+        "prepared-wasm": {
+          "runs": 4,
+          "medianRunCpuMs": {
+            "p50": 0.015000000596046448,
+            "p95": 0.027499996498227118,
+            "p99": 0.03652500405907627
+          },
+          "medianRunRafIntervalMs": {
+            "p50": 8.334999999999809,
+            "p95": 9.798500000000127,
+            "p99": 10.165499999999962
+          },
+          "medianRunCallbackStartIntervalMs": {
+            "p50": 8.337499998509884,
+            "p95": 10.137250007689,
+            "p99": 10.349300003945828
+          },
+          "p50RangeMs": [
+            0.015000000596046448,
+            0.015000000596046448
+          ],
+          "ownBlockFailingRuns": 0,
+          "ownFailingBlocks": 0,
+          "counterDeltaRanges": {
+            "wasmCalls": [
+              0,
+              0
+            ],
+            "preparedPasses": [
+              0,
+              0
+            ],
+            "preparedWasmCalls": [
+              0,
+              0
+            ],
+            "preparedFallbacks": [
+              0,
+              0
+            ],
+            "preparedMatrixReads": [
+              0,
+              0
+            ],
+            "matrixReads": [
+              0,
+              0
+            ]
+          },
+          "renderFrameDeltaRange": [
+            0,
+            0
+          ],
+          "viewportP50Median": 0.004999995231628418,
+          "timelineP50Median": 0.01000000536441803
+        }
+      },
+      "aa": {
+        "originalRunsIncludingBookends": 8,
+        "allOriginalMedianP50Ms": 0.015000000596046448,
+        "sceneToleranceMs": 0.019999980926513672,
+        "runFailures": 0,
+        "blockFailingRuns": 0,
+        "failingBlocks": 0,
+        "totalBlocks": 32,
+        "details": [
+          {
+            "directory": "runs/055-E1-idle-balanced-original-A",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/057-E1-idle-balanced-original-B",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/061-E1-idle-balanced-original-A",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/062-E1-idle-balanced-original-B",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/064-E1-idle-balanced-original-B",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/066-E1-idle-balanced-original-A",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/067-E1-idle-balanced-original-B",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          },
+          {
+            "directory": "runs/068-E1-idle-balanced-original-A",
+            "purpose": "balanced",
+            "runFailure": false,
+            "blockFailures": 0
+          }
+        ]
+      },
+      "observedAbsoluteDeltasMs": {
+        "js-original": {
+          "p50": 0.0,
+          "p95": -0.002374983206391377,
+          "p99": 0.0075000122934579805
+        },
+        "wasm-original": {
+          "p50": 0.0,
+          "p95": -0.0024999897927045836,
+          "p99": -0.0015249894559383054
+        },
+        "wasm-js": {
+          "p50": 0.0,
+          "p95": -0.00012500658631320674,
+          "p99": -0.009025001749396286
+        }
+      }
+    }
+  ],
+  "environment": {
+    "before": {
+      "date": "2026-10-25T23:12:03.513Z",
+      "platform": "darwin",
+      "release": "25.5.0",
+      "arch": "arm64",
+      "cpuModel": "Apple M4 Pro",
+      "logicalCpus": 12,
+      "totalMemory": 25769803776,
+      "browserPath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "node": "v24.15.0",
+      "macos": {
+        "available": true,
+        "output": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.2\nBuildVersion:\t\t25F84"
+      },
+      "hardware": {
+        "machine_name": "MacBook Pro",
+        "machine_model": "Mac16,8",
+        "chip_type": "Apple M4 Pro",
+        "number_processors": "proc 12:8:4:0",
+        "physical_memory": "24 GB"
+      },
+      "graphics": [
+        {
+          "model": "Apple M4 Pro",
+          "cores": "16",
+          "metal": "spdisplays_metal4",
+          "displays": [
+            {
+              "_name": "Color LCD",
+              "_spdisplays_pixels": "3024 x 1964",
+              "_spdisplays_resolution": "1512 x 982 @ 120.00Hz",
+              "spdisplays_pixelresolution": "spdisplays_3024x1964Retina",
+              "spdisplays_main": "spdisplays_yes",
+              "spdisplays_online": "spdisplays_yes",
+              "spdisplays_connection_type": "spdisplays_internal"
+            }
+          ]
+        }
+      ],
+      "power": {
+        "available": true,
+        "output": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=<redacted>)\t100%; charged; 0:00 remaining present: true"
+      },
+      "powerSettings": {
+        "available": true,
+        "output": "Battery Power:\n Sleep On Power Button 1\n powermode            0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             0\n hibernatefile        /var/vm/sleepimage\n displaysleep         1\n womp                 0\n networkoversleep     0\n sleep                1\n lessbright           1\n tcpkeepalive         1\n disksleep            10\nAC Power:\n Sleep On Power Button 1\n powermode            0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             1\n hibernatefile        /var/vm/sleepimage\n displaysleep         10\n womp                 1\n networkoversleep     0\n sleep                0\n tcpkeepalive         1\n disksleep            10"
+      },
+      "thermal": {
+        "available": true,
+        "output": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded"
+      },
+      "driver": "Apple GPU driver ships with the recorded macOS build; no separate driver version queried."
+    },
+    "after": {
+      "date": "2026-10-25T23:33:41.417Z",
+      "platform": "darwin",
+      "release": "25.5.0",
+      "arch": "arm64",
+      "cpuModel": "Apple M4 Pro",
+      "logicalCpus": 12,
+      "totalMemory": 25769803776,
+      "browserPath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "node": "v24.15.0",
+      "macos": {
+        "available": true,
+        "output": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.2\nBuildVersion:\t\t25F84"
+      },
+      "hardware": {
+        "machine_name": "MacBook Pro",
+        "machine_model": "Mac16,8",
+        "chip_type": "Apple M4 Pro",
+        "number_processors": "proc 12:8:4:0",
+        "physical_memory": "24 GB"
+      },
+      "graphics": [
+        {
+          "model": "Apple M4 Pro",
+          "cores": "16",
+          "metal": "spdisplays_metal4",
+          "displays": [
+            {
+              "_name": "Color LCD",
+              "_spdisplays_pixels": "3024 x 1964",
+              "_spdisplays_resolution": "1512 x 982 @ 120.00Hz",
+              "spdisplays_pixelresolution": "spdisplays_3024x1964Retina",
+              "spdisplays_main": "spdisplays_yes",
+              "spdisplays_online": "spdisplays_yes",
+              "spdisplays_connection_type": "spdisplays_internal"
+            }
+          ]
+        }
+      ],
+      "power": {
+        "available": true,
+        "output": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=<redacted>)\t100%; charged; 0:00 remaining present: true"
+      },
+      "powerSettings": {
+        "available": true,
+        "output": "Battery Power:\n Sleep On Power Button 1\n powermode            0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             0\n hibernatefile        /var/vm/sleepimage\n displaysleep         1\n womp                 0\n networkoversleep     0\n sleep                1\n lessbright           1\n tcpkeepalive         1\n disksleep            10\nAC Power:\n Sleep On Power Button 1\n powermode            0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             1\n hibernatefile        /var/vm/sleepimage\n displaysleep         10\n womp                 1\n networkoversleep     0\n sleep                0\n tcpkeepalive         1\n disksleep            10"
+      },
+      "thermal": {
+        "available": true,
+        "output": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded"
+      },
+      "driver": "Apple GPU driver ships with the recorded macOS build; no separate driver version queried."
+    },
+    "browserVersion": "155.0.8059.86",
+    "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "actualGpu": [
+      {
+        "vendorId": 4203,
+        "deviceId": 0,
+        "vendorString": "Google Inc. (Apple)",
+        "deviceString": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Version 26.5.2 (Build 25F84))",
+        "driverVendor": "Apple",
+        "driverVersion": "26.5.2"
+      }
+    ],
+    "browserLaunchHasSwiftShaderPermissionFlag": true,
+    "actualWebGLHardwareInEveryRun": true,
+    "scopeNote": "Chrome launch permits SwiftShader fallback, but the per-run observed renderer and browser GPU are Apple M4 Pro ANGLE Metal. The permission flag is not the measured backend."
+  },
+  "runs": [
+    {
+      "scenario": "E3-root-selected-shadow",
+      "label": "original-pre",
+      "engine": "original",
+      "round": null,
+      "purpose": "bookend-before",
+      "directory": "runs/001-E3-root-selected-shadow-bookend-before-original-pre",
+      "cpu": {
+        "p50": 1.3799999952316284,
+        "p95": 1.5899999894201755,
+        "p99": 1.6750499971210957
+      },
+      "rafIntervals": {
+        "p50": 8.334999999999127,
+        "p95": 9.270500000000538,
+        "p99": 10.265699999999415
+      },
+      "callbackStartIntervals": {
+        "p50": 8.325000002980232,
+        "p95": 9.327500002086161,
+        "p99": 10.315599997639655
+      },
+      "blocksP50": [
+        1.375,
+        1.3824999928474426,
+        1.3700000047683716,
+        1.3899999856948853
+      ],
+      "ownToleranceMs": 0.06899999976158143,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 9.769962616701378e-15,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991609999999397
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.120000004768,
+      "viewportCpu": {
+        "p50": 1.260000005364418,
+        "p95": 1.4650000035762787,
+        "p99": 1.5450000017881393
+      },
+      "timelineCpu": {
+        "p50": 0.11499999463558197,
+        "p95": 0.1550000011920929,
+        "p99": 0.1850000023841858
+      }
+    },
+    {
+      "scenario": "E3-root-selected-shadow",
+      "label": "original-A",
+      "engine": "original",
+      "round": 0,
+      "purpose": "balanced",
+      "directory": "runs/002-E3-root-selected-shadow-balanced-original-A",
+      "cpu": {
+        "p50": 1.3350000083446503,
+        "p95": 1.5399999916553497,
+        "p99": 1.6301999953389166
+      },
+      "rafIntervals": {
+        "p50": 8.334999999999127,
+        "p95": 10.284999999999854,
+        "p99": 10.315100000000493
+      },
+      "callbackStartIntervals": {
+        "p50": 8.320000007748604,
+        "p95": 10.265500000119209,
+        "p99": 10.400000005960464
+      },
+      "blocksP50": [
+        1.3500000089406967,
+        1.3249999955296516,
+        1.307499997317791,
+        1.3825000077486038
+      ],
+      "ownToleranceMs": 0.06675000041723252,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 2.3092638912203256e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991655000001193
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.384999990463,
+      "viewportCpu": {
+        "p50": 1.219999998807907,
+        "p95": 1.415000006556511,
+        "p99": 1.5
+      },
+      "timelineCpu": {
+        "p50": 0.11000001430511475,
+        "p95": 0.15000000596046448,
+        "p99": 0.180050006955862
+      }
+    },
+    {
+      "scenario": "E3-root-selected-shadow",
+      "label": "prepared-JS",
+      "engine": "prepared-js",
+      "round": 0,
+      "purpose": "balanced",
+      "directory": "runs/003-E3-root-selected-shadow-balanced-prepared-JS",
+      "cpu": {
+        "p50": 2.9049999937415123,
+        "p95": 3.1700000017881393,
+        "p99": 3.304999992251396
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 9.822500000003126,
+        "p99": 10.295000000000073
+      },
+      "callbackStartIntervals": {
+        "p50": 8.32999999821186,
+        "p95": 9.84549999833107,
+        "p99": 10.28020000129938
+      },
+      "blocksP50": [
+        2.8750000074505806,
+        2.952500008046627,
+        2.9099999964237213,
+        2.8799999952316284
+      ],
+      "ownToleranceMs": 0.1452499996870756,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 2.1316282072803006e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991495000004786
+      },
+      "counterDeltas": {
+        "wasmCalls": 0,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 246000
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.454999998212,
+      "viewportCpu": {
+        "p50": 2.804999992251396,
+        "p95": 3.060000002384186,
+        "p99": 3.190049997717142
+      },
+      "timelineCpu": {
+        "p50": 0.09999999403953552,
+        "p95": 0.13500000536441803,
+        "p99": 0.17504999712109562
+      }
+    },
+    {
+      "scenario": "E3-root-selected-shadow",
+      "label": "original-B",
+      "engine": "original",
+      "round": 0,
+      "purpose": "balanced",
+      "directory": "runs/004-E3-root-selected-shadow-balanced-original-B",
+      "cpu": {
+        "p50": 1.3550000041723251,
+        "p95": 1.590250002592802,
+        "p99": 1.69505000770092
+      },
+      "rafIntervals": {
+        "p50": 8.334999999999127,
+        "p95": 9.979999999999654,
+        "p99": 10.305000000000291
+      },
+      "callbackStartIntervals": {
+        "p50": 8.32999999821186,
+        "p95": 10.069999994337559,
+        "p99": 10.375
+      },
+      "blocksP50": [
+        1.3375000059604645,
+        1.3250000029802322,
+        1.4149999916553497,
+        1.3650000020861626
+      ],
+      "ownToleranceMs": 0.06775000020861625,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 2.1316282072803006e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991185000002394
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10002.159999996424,
+      "viewportCpu": {
+        "p50": 1.2349999994039536,
+        "p95": 1.4602500073611735,
+        "p99": 1.5600000023841858
+      },
+      "timelineCpu": {
+        "p50": 0.11499999463558197,
+        "p95": 0.15025000572204567,
+        "p99": 0.19004999771714207
+      }
+    },
+    {
+      "scenario": "E3-root-selected-shadow",
+      "label": "prepared-Wasm",
+      "engine": "prepared-wasm",
+      "round": 0,
+      "purpose": "balanced",
+      "directory": "runs/005-E3-root-selected-shadow-balanced-prepared-Wasm",
+      "cpu": {
+        "p50": 2.980000004172325,
+        "p95": 3.25,
+        "p99": 3.385099990516901
+      },
+      "rafIntervals": {
+        "p50": 8.334999999999127,
+        "p95": 9.970500000000083,
+        "p99": 10.319999999999709
+      },
+      "callbackStartIntervals": {
+        "p50": 8.32999999821186,
+        "p95": 10.006999994814395,
+        "p99": 10.334999993741512
+      },
+      "blocksP50": [
+        2.964999996125698,
+        2.967500001192093,
+        3.0200000032782555,
+        2.9549999982118607
+      ],
+      "ownToleranceMs": 0.14900000020861626,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 3.375077994860476e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991750000000021
+      },
+      "counterDeltas": {
+        "wasmCalls": 162000,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 246000
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.164999991655,
+      "viewportCpu": {
+        "p50": 2.877499997615814,
+        "p95": 3.1400000005960464,
+        "p99": 3.280050001144409
+      },
+      "timelineCpu": {
+        "p50": 0.0949999988079071,
+        "p95": 0.14000000059604645,
+        "p99": 0.17000000178813934
+      }
+    },
+    {
+      "scenario": "E3-root-selected-shadow",
+      "label": "prepared-JS",
+      "engine": "prepared-js",
+      "round": 1,
+      "purpose": "balanced",
+      "directory": "runs/006-E3-root-selected-shadow-balanced-prepared-JS",
+      "cpu": {
+        "p50": 2.9549999982118607,
+        "p95": 3.230000004172325,
+        "p99": 3.3400000035762787
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 9.9904999999997,
+        "p99": 10.319999999999727
+      },
+      "callbackStartIntervals": {
+        "p50": 8.325000002980232,
+        "p95": 10.031000001728534,
+        "p99": 10.330099998414516
+      },
+      "blocksP50": [
+        3.0349999964237213,
+        2.917500004172325,
+        2.932500012218952,
+        2.9375000074505806
+      ],
+      "ownToleranceMs": 0.14774999991059304,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 4.085620730620576e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.99186499999466
+      },
+      "counterDeltas": {
+        "wasmCalls": 0,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 246000
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.59999999404,
+      "viewportCpu": {
+        "p50": 2.855000004172325,
+        "p95": 3.120250004529953,
+        "p99": 3.2349999994039536
+      },
+      "timelineCpu": {
+        "p50": 0.0949999988079071,
+        "p95": 0.14000000059604645,
+        "p99": 0.1799999924004078
+      }
+    },
+    {
+      "scenario": "E3-root-selected-shadow",
+      "label": "prepared-Wasm",
+      "engine": "prepared-wasm",
+      "round": 1,
+      "purpose": "balanced",
+      "directory": "runs/007-E3-root-selected-shadow-balanced-prepared-Wasm",
+      "cpu": {
+        "p50": 2.980000004172325,
+        "p95": 3.2500000007450582,
+        "p99": 3.390050015449524
+      },
+      "rafIntervals": {
+        "p50": 8.330000000001746,
+        "p95": 9.351499999998667,
+        "p99": 10.270000000000437
+      },
+      "callbackStartIntervals": {
+        "p50": 8.32999999821186,
+        "p95": 9.405000001192093,
+        "p99": 10.245200004577637
+      },
+      "blocksP50": [
+        2.942500002682209,
+        2.9650000110268593,
+        2.980000004172325,
+        3.0350000113248825
+      ],
+      "ownToleranceMs": 0.14900000020861626,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 1.0658141036401503e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.99317499999702
+      },
+      "counterDeltas": {
+        "wasmCalls": 162000,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 246000
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9999.84999999404,
+      "viewportCpu": {
+        "p50": 2.8825000002980232,
+        "p95": 3.1502500057220457,
+        "p99": 3.2650000005960464
+      },
+      "timelineCpu": {
+        "p50": 0.0949999988079071,
+        "p95": 0.13500000536441803,
+        "p99": 0.16500000655651093
+      }
+    },
+    {
+      "scenario": "E3-root-selected-shadow",
+      "label": "original-A",
+      "engine": "original",
+      "round": 1,
+      "purpose": "balanced",
+      "directory": "runs/008-E3-root-selected-shadow-balanced-original-A",
+      "cpu": {
+        "p50": 1.3224999979138374,
+        "p95": 1.5799999982118607,
+        "p99": 1.6700500017404556
+      },
+      "rafIntervals": {
+        "p50": 8.334999999999127,
+        "p95": 9.994999999999163,
+        "p99": 10.310100000001258
+      },
+      "callbackStartIntervals": {
+        "p50": 8.325000002980232,
+        "p95": 10.18600000143051,
+        "p99": 10.37530000001192
+      },
+      "blocksP50": [
+        1.1850000098347664,
+        1.3100000023841858,
+        1.4025000035762787,
+        1.3700000047683716
+      ],
+      "ownToleranceMs": 0.06612499989569187,
+      "ownBlockFailures": 2,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 1.9539925233402755e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.990570000007757
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9999.20000000298,
+      "viewportCpu": {
+        "p50": 1.2049999982118607,
+        "p95": 1.4500000029802322,
+        "p99": 1.5301000010967254
+      },
+      "timelineCpu": {
+        "p50": 0.11499999463558197,
+        "p95": 0.15525000095367408,
+        "p99": 0.20000000298023224
+      }
+    },
+    {
+      "scenario": "E3-root-selected-shadow",
+      "label": "original-B",
+      "engine": "original",
+      "round": 1,
+      "purpose": "balanced",
+      "directory": "runs/009-E3-root-selected-shadow-balanced-original-B",
+      "cpu": {
+        "p50": 1.3300000131130219,
+        "p95": 1.5399999916553497,
+        "p99": 1.6349999906122685
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 10.261500000000158,
+        "p99": 10.319999999999709
+      },
+      "callbackStartIntervals": {
+        "p50": 8.32999999821186,
+        "p95": 10.260500003397464,
+        "p99": 10.394999996125698
+      },
+      "blocksP50": [
+        1.3474999964237213,
+        1.3299999982118607,
+        1.3149999976158142,
+        1.334999993443489
+      ],
+      "ownToleranceMs": 0.06650000065565109,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 2.1316282072803006e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991795000001783
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.155000001192,
+      "viewportCpu": {
+        "p50": 1.214999996125698,
+        "p95": 1.4052500009536741,
+        "p99": 1.5001000000536442
+      },
+      "timelineCpu": {
+        "p50": 0.11499999463558197,
+        "p95": 0.1550000011920929,
+        "p99": 0.1799999924004078
+      }
+    },
+    {
+      "scenario": "E3-root-selected-shadow",
+      "label": "prepared-Wasm",
+      "engine": "prepared-wasm",
+      "round": 2,
+      "purpose": "balanced",
+      "directory": "runs/010-E3-root-selected-shadow-balanced-prepared-Wasm",
+      "cpu": {
+        "p50": 2.9149999916553497,
+        "p95": 3.1599999964237213,
+        "p99": 3.275049991160631
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 10.245499999999083,
+        "p99": 10.31500000000051
+      },
+      "callbackStartIntervals": {
+        "p50": 8.32999999821186,
+        "p95": 10.205500011146068,
+        "p99": 10.340000003576279
+      },
+      "blocksP50": [
+        2.9000000059604645,
+        2.9300000071525574,
+        2.885000005364418,
+        2.9375000074505806
+      ],
+      "ownToleranceMs": 0.1457499995827675,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 1.865174681370263e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.993495000004764
+      },
+      "counterDeltas": {
+        "wasmCalls": 162000,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 246000
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9999.910000011325,
+      "viewportCpu": {
+        "p50": 2.814999997615814,
+        "p95": 3.0499999970197678,
+        "p99": 3.1500500059127807
+      },
+      "timelineCpu": {
+        "p50": 0.09999999403953552,
+        "p95": 0.14000000059604645,
+        "p99": 0.19004999756813046
+      }
+    },
+    {
+      "scenario": "E3-root-selected-shadow",
+      "label": "original-B",
+      "engine": "original",
+      "round": 2,
+      "purpose": "balanced",
+      "directory": "runs/011-E3-root-selected-shadow-balanced-original-B",
+      "cpu": {
+        "p50": 1.3199999928474426,
+        "p95": 1.5249999918043613,
+        "p99": 1.6150000096857549
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 9.989999999999782,
+        "p99": 10.319999999999709
+      },
+      "callbackStartIntervals": {
+        "p50": 8.324999988079071,
+        "p95": 10.07050000578165,
+        "p99": 10.420200001597404
+      },
+      "blocksP50": [
+        1.3449999913573265,
+        1.3250000029802322,
+        1.3000000044703484,
+        1.3049999997019768
+      ],
+      "ownToleranceMs": 0.06599999964237213,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 3.197442310920451e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.992140000000607
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.890000000596,
+      "viewportCpu": {
+        "p50": 1.2025000005960464,
+        "p95": 1.3999999910593033,
+        "p99": 1.4700500136613845
+      },
+      "timelineCpu": {
+        "p50": 0.10999999940395355,
+        "p95": 0.1550000011920929,
+        "p99": 0.18005000710487362
+      }
+    },
+    {
+      "scenario": "E3-root-selected-shadow",
+      "label": "prepared-JS",
+      "engine": "prepared-js",
+      "round": 2,
+      "purpose": "balanced",
+      "directory": "runs/012-E3-root-selected-shadow-balanced-prepared-JS",
+      "cpu": {
+        "p50": 2.929999992251396,
+        "p95": 3.199999988079071,
+        "p99": 3.329999998360872
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 10.085000000000946,
+        "p99": 10.31500000000051
+      },
+      "callbackStartIntervals": {
+        "p50": 8.325000002980232,
+        "p95": 10.164999993145466,
+        "p99": 10.355100004076958
+      },
+      "blocksP50": [
+        2.990000009536743,
+        2.894999995827675,
+        2.9200000017881393,
+        2.9200000017881393
+      ],
+      "ownToleranceMs": 0.14649999961256982,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 3.730349362740526e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991550000011886
+      },
+      "counterDeltas": {
+        "wasmCalls": 0,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 246000
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9999.704999998212,
+      "viewportCpu": {
+        "p50": 2.8299999982118607,
+        "p95": 3.0900000035762787,
+        "p99": 3.210049993544817
+      },
+      "timelineCpu": {
+        "p50": 0.09999999403953552,
+        "p95": 0.14499999582767487,
+        "p99": 0.17499999716877937
+      }
+    },
+    {
+      "scenario": "E3-root-selected-shadow",
+      "label": "original-A",
+      "engine": "original",
+      "round": 2,
+      "purpose": "balanced",
+      "directory": "runs/013-E3-root-selected-shadow-balanced-original-A",
+      "cpu": {
+        "p50": 1.3200000077486038,
+        "p95": 1.5102500051259993,
+        "p99": 1.5900500182807444
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 10.29050000000061,
+        "p99": 10.319999999999709
+      },
+      "callbackStartIntervals": {
+        "p50": 8.325000002980232,
+        "p95": 10.245500004291534,
+        "p99": 10.410100010931492
+      },
+      "blocksP50": [
+        1.3424999937415123,
+        1.3000000044703484,
+        1.3200000002980232,
+        1.32999999076128
+      ],
+      "ownToleranceMs": 0.06600000038743019,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 3.019806626980426e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.99089500001075
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9999.180000007153,
+      "viewportCpu": {
+        "p50": 1.2049999982118607,
+        "p95": 1.3799999959766864,
+        "p99": 1.4599999935925008
+      },
+      "timelineCpu": {
+        "p50": 0.11499999463558197,
+        "p95": 0.15000000596046448,
+        "p99": 0.17500001192092896
+      }
+    },
+    {
+      "scenario": "E3-root-selected-shadow",
+      "label": "original-B",
+      "engine": "original",
+      "round": 3,
+      "purpose": "balanced",
+      "directory": "runs/014-E3-root-selected-shadow-balanced-original-B",
+      "cpu": {
+        "p50": 1.3400000035762787,
+        "p95": 1.550000011920929,
+        "p99": 1.614999994635582
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 9.782000000000696,
+        "p99": 10.324999999998944
+      },
+      "callbackStartIntervals": {
+        "p50": 8.314999997615814,
+        "p95": 9.842500004172322,
+        "p99": 10.360099999308586
+      },
+      "blocksP50": [
+        1.354999989271164,
+        1.3800000101327896,
+        1.3199999928474426,
+        1.3125000074505806
+      ],
+      "ownToleranceMs": 0.06700000017881394,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 2.398081733190338e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.98987499999999
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9998.209999993443,
+      "viewportCpu": {
+        "p50": 1.219999998807907,
+        "p95": 1.4202500015497206,
+        "p99": 1.4950000047683716
+      },
+      "timelineCpu": {
+        "p50": 0.10999999940395355,
+        "p95": 0.1550000011920929,
+        "p99": 0.19505000770092007
+      }
+    },
+    {
+      "scenario": "E3-root-selected-shadow",
+      "label": "original-A",
+      "engine": "original",
+      "round": 3,
+      "purpose": "balanced",
+      "directory": "runs/015-E3-root-selected-shadow-balanced-original-A",
+      "cpu": {
+        "p50": 1.3299999982118607,
+        "p95": 1.5899999886751175,
+        "p99": 1.6750499971210957
+      },
+      "rafIntervals": {
+        "p50": 8.330000000001746,
+        "p95": 10.204999999999927,
+        "p99": 10.325000000000728
+      },
+      "callbackStartIntervals": {
+        "p50": 8.325000002980232,
+        "p95": 10.200500002503395,
+        "p99": 10.395099995732307
+      },
+      "blocksP50": [
+        1.3499999940395355,
+        1.3824999928474426,
+        1.3350000008940697,
+        1.239999994635582
+      ],
+      "ownToleranceMs": 0.06649999991059304,
+      "ownBlockFailures": 1,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 3.552713678800501e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991634999990485
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.120000004768,
+      "viewportCpu": {
+        "p50": 1.2150000035762787,
+        "p95": 1.4549999982118607,
+        "p99": 1.5349999964237213
+      },
+      "timelineCpu": {
+        "p50": 0.11499999463558197,
+        "p95": 0.1550000011920929,
+        "p99": 0.1899999976158142
+      }
+    },
+    {
+      "scenario": "E3-root-selected-shadow",
+      "label": "prepared-Wasm",
+      "engine": "prepared-wasm",
+      "round": 3,
+      "purpose": "balanced",
+      "directory": "runs/016-E3-root-selected-shadow-balanced-prepared-Wasm",
+      "cpu": {
+        "p50": 3.0049999952316284,
+        "p95": 3.270000010728836,
+        "p99": 3.4000500059127807
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 10.05949999999938,
+        "p99": 10.31500000000051
+      },
+      "callbackStartIntervals": {
+        "p50": 8.325000002980232,
+        "p95": 10.170500002801418,
+        "p99": 10.365100009441376
+      },
+      "blocksP50": [
+        3.042500004172325,
+        3.0099999979138374,
+        2.980000004172325,
+        2.9675000086426735
+      ],
+      "ownToleranceMs": 0.15024999976158143,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 2.842170943040401e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991489999994656
+      },
+      "counterDeltas": {
+        "wasmCalls": 162000,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 246000
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9999.77500000596,
+      "viewportCpu": {
+        "p50": 2.905000001192093,
+        "p95": 3.155000001192093,
+        "p99": 3.2950500017404556
+      },
+      "timelineCpu": {
+        "p50": 0.0949999988079071,
+        "p95": 0.14025000035762764,
+        "p99": 0.1700500017404556
+      }
+    },
+    {
+      "scenario": "E3-root-selected-shadow",
+      "label": "prepared-JS",
+      "engine": "prepared-js",
+      "round": 3,
+      "purpose": "balanced",
+      "directory": "runs/017-E3-root-selected-shadow-balanced-prepared-JS",
+      "cpu": {
+        "p50": 3.110000006854534,
+        "p95": 3.3599999994039536,
+        "p99": 3.4749999940395355
+      },
+      "rafIntervals": {
+        "p50": 8.330000000001746,
+        "p95": 9.187999999999553,
+        "p99": 10.235500000000574
+      },
+      "callbackStartIntervals": {
+        "p50": 8.325000002980232,
+        "p95": 9.241499999165528,
+        "p99": 10.239999994933605
+      },
+      "blocksP50": [
+        3.1200000047683716,
+        3.0999999940395355,
+        3.1200000047683716,
+        3.10750000923872
+      ],
+      "ownToleranceMs": 0.1555000003427267,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 2.3092638912203256e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.99175499999525
+      },
+      "counterDeltas": {
+        "wasmCalls": 0,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 246000
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.27500000596,
+      "viewportCpu": {
+        "p50": 3.019999995827675,
+        "p95": 3.269999995827675,
+        "p99": 3.3650500094890594
+      },
+      "timelineCpu": {
+        "p50": 0.08999998867511749,
+        "p95": 0.13025000914931276,
+        "p99": 0.17499999701976776
+      }
+    },
+    {
+      "scenario": "E3-root-selected-shadow",
+      "label": "original-post",
+      "engine": "original",
+      "round": null,
+      "purpose": "bookend-after",
+      "directory": "runs/018-E3-root-selected-shadow-bookend-after-original-post",
+      "cpu": {
+        "p50": 1.3399999886751175,
+        "p95": 1.5450000017881393,
+        "p99": 1.625
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 9.985500000000684,
+        "p99": 10.319999999999709
+      },
+      "callbackStartIntervals": {
+        "p50": 8.325000002980232,
+        "p95": 10.146500009298324,
+        "p99": 10.400100005865097
+      },
+      "blocksP50": [
+        1.3400000035762787,
+        1.3199999928474426,
+        1.3674999997019768,
+        1.339999996125698
+      ],
+      "ownToleranceMs": 0.06699999943375588,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 3.907985046680551e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991625000000033
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9999.989999994636,
+      "viewportCpu": {
+        "p50": 1.219999998807907,
+        "p95": 1.4100000113248825,
+        "p99": 1.4900000095367432
+      },
+      "timelineCpu": {
+        "p50": 0.11499999463558197,
+        "p95": 0.1550000011920929,
+        "p99": 0.20999999344348907
+      }
+    },
+    {
+      "scenario": "E3-root-selected-no-shadow",
+      "label": "original-pre",
+      "engine": "original",
+      "round": null,
+      "purpose": "bookend-before",
+      "directory": "runs/019-E3-root-selected-no-shadow-bookend-before-original-pre",
+      "cpu": {
+        "p50": 1.255000002682209,
+        "p95": 1.479999990016222,
+        "p99": 1.5750000029802322
+      },
+      "rafIntervals": {
+        "p50": 8.334999999999127,
+        "p95": 9.870499999999083,
+        "p99": 10.299999999999308
+      },
+      "callbackStartIntervals": {
+        "p50": 8.32999999821186,
+        "p95": 9.88099999576807,
+        "p99": 10.325100002884865
+      },
+      "blocksP50": [
+        1.1775000020861626,
+        1.2550000101327896,
+        1.2949999868869781,
+        1.2999999895691872
+      ],
+      "ownToleranceMs": 0.06275000013411046,
+      "ownBlockFailures": 1,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 4.973799150320701e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.99160999999945
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10001.630000010133,
+      "viewportCpu": {
+        "p50": 1.1400000005960464,
+        "p95": 1.3499999940395355,
+        "p99": 1.4500500029325485
+      },
+      "timelineCpu": {
+        "p50": 0.11499999463558197,
+        "p95": 0.15525000095367408,
+        "p99": 0.20999999344348907
+      }
+    },
+    {
+      "scenario": "E3-root-selected-no-shadow",
+      "label": "original-A",
+      "engine": "original",
+      "round": 0,
+      "purpose": "balanced",
+      "directory": "runs/020-E3-root-selected-no-shadow-balanced-original-A",
+      "cpu": {
+        "p50": 1.2650000154972076,
+        "p95": 1.479999989271164,
+        "p99": 1.580049998164177
+      },
+      "rafIntervals": {
+        "p50": 8.334999999999127,
+        "p95": 9.985500000000501,
+        "p99": 10.305000000000291
+      },
+      "callbackStartIntervals": {
+        "p50": 8.32999999821186,
+        "p95": 10.150000005960464,
+        "p99": 10.39509999603033
+      },
+      "blocksP50": [
+        1.2499999850988388,
+        1.2099999859929085,
+        1.2749999910593033,
+        1.3350000083446503
+      ],
+      "ownToleranceMs": 0.06325000077486038,
+      "ownBlockFailures": 1,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 1.4210854715202004e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991659999996429
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.415000006557,
+      "viewportCpu": {
+        "p50": 1.1449999958276749,
+        "p95": 1.3400000035762787,
+        "p99": 1.4399999976158142
+      },
+      "timelineCpu": {
+        "p50": 0.11500000953674316,
+        "p95": 0.15999999716877938,
+        "p99": 0.19005001232028004
+      }
+    },
+    {
+      "scenario": "E3-root-selected-no-shadow",
+      "label": "prepared-JS",
+      "engine": "prepared-js",
+      "round": 0,
+      "purpose": "balanced",
+      "directory": "runs/021-E3-root-selected-no-shadow-balanced-prepared-JS",
+      "cpu": {
+        "p50": 2.679999992251396,
+        "p95": 2.9099999964237213,
+        "p99": 3.0249999912083148
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 10.300000000001091,
+        "p99": 10.319999999999709
+      },
+      "callbackStartIntervals": {
+        "p50": 8.325000002980232,
+        "p95": 10.275000005960464,
+        "p99": 10.390100000500679
+      },
+      "blocksP50": [
+        2.6949999928474426,
+        2.6649999916553497,
+        2.652499996125698,
+        2.7150000035762787
+      ],
+      "ownToleranceMs": 0.1339999996125698,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 1.4210854715202004e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.993245000004752
+      },
+      "counterDeltas": {
+        "wasmCalls": 0,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 243600
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9999.990000009537,
+      "viewportCpu": {
+        "p50": 2.574999988079071,
+        "p95": 2.7950000017881393,
+        "p99": 2.9101499964296815
+      },
+      "timelineCpu": {
+        "p50": 0.10500000417232513,
+        "p95": 0.14499999582767487,
+        "p99": 0.17000000178813934
+      }
+    },
+    {
+      "scenario": "E3-root-selected-no-shadow",
+      "label": "original-B",
+      "engine": "original",
+      "round": 0,
+      "purpose": "balanced",
+      "directory": "runs/022-E3-root-selected-no-shadow-balanced-original-B",
+      "cpu": {
+        "p50": 1.270000010728836,
+        "p95": 1.5752500168979167,
+        "p99": 1.8251500029861927
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 9.984999999998763,
+        "p99": 10.30999999999949
+      },
+      "callbackStartIntervals": {
+        "p50": 8.325000002980232,
+        "p95": 10.159999996423721,
+        "p99": 10.40520000129938
+      },
+      "blocksP50": [
+        1.1799999922513962,
+        1.2300000116229057,
+        1.2925000041723251,
+        1.3400000035762787
+      ],
+      "ownToleranceMs": 0.06350000053644181,
+      "ownBlockFailures": 2,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 2.3092638912203256e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991775000005948
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.435000002384,
+      "viewportCpu": {
+        "p50": 1.155000001192093,
+        "p95": 1.4302500061690806,
+        "p99": 1.6601499964296818
+      },
+      "timelineCpu": {
+        "p50": 0.11499999463558197,
+        "p95": 0.17000000178813934,
+        "p99": 0.2199999988079071
+      }
+    },
+    {
+      "scenario": "E3-root-selected-no-shadow",
+      "label": "prepared-Wasm",
+      "engine": "prepared-wasm",
+      "round": 0,
+      "purpose": "balanced",
+      "directory": "runs/023-E3-root-selected-no-shadow-balanced-prepared-Wasm",
+      "cpu": {
+        "p50": 2.8299999982118607,
+        "p95": 3.094999998807907,
+        "p99": 3.2200499987602234
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 9.965500000000064,
+        "p99": 10.305000000000291
+      },
+      "callbackStartIntervals": {
+        "p50": 8.314999997615814,
+        "p95": 10.036499996483325,
+        "p99": 10.34509999871254
+      },
+      "blocksP50": [
+        2.8149999901652336,
+        2.8350000083446503,
+        2.8400000110268593,
+        2.8300000056624413
+      ],
+      "ownToleranceMs": 0.14149999991059303,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 2.4424906541753444e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.993385000005375
+      },
+      "counterDeltas": {
+        "wasmCalls": 159600,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 243600
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.435000002384,
+      "viewportCpu": {
+        "p50": 2.729999989271164,
+        "p95": 2.9950000047683716,
+        "p99": 3.1050500041246414
+      },
+      "timelineCpu": {
+        "p50": 0.09750000387430191,
+        "p95": 0.14000000059604645,
+        "p99": 0.17499999701976776
+      }
+    },
+    {
+      "scenario": "E3-root-selected-no-shadow",
+      "label": "prepared-JS",
+      "engine": "prepared-js",
+      "round": 1,
+      "purpose": "balanced",
+      "directory": "runs/024-E3-root-selected-no-shadow-balanced-prepared-JS",
+      "cpu": {
+        "p50": 2.794999986886978,
+        "p95": 3.0152500145137306,
+        "p99": 3.120050004720688
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 9.906000000000494,
+        "p99": 10.299999999999272
+      },
+      "callbackStartIntervals": {
+        "p50": 8.315000012516975,
+        "p95": 9.92000000178814,
+        "p99": 10.33999998897314
+      },
+      "blocksP50": [
+        2.794999986886978,
+        2.7849999964237213,
+        2.804999992251396,
+        2.79500000923872
+      ],
+      "ownToleranceMs": 0.13974999934434892,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 5.861977570020827e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.992400000006015
+      },
+      "counterDeltas": {
+        "wasmCalls": 0,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 243600
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9999.70000000298,
+      "viewportCpu": {
+        "p50": 2.690000005066395,
+        "p95": 2.9200000017881393,
+        "p99": 3.020050010532141
+      },
+      "timelineCpu": {
+        "p50": 0.0950000137090683,
+        "p95": 0.14000000059604645,
+        "p99": 0.16499999180436134
+      }
+    },
+    {
+      "scenario": "E3-root-selected-no-shadow",
+      "label": "prepared-Wasm",
+      "engine": "prepared-wasm",
+      "round": 1,
+      "purpose": "balanced",
+      "directory": "runs/025-E3-root-selected-no-shadow-balanced-prepared-Wasm",
+      "cpu": {
+        "p50": 2.814999997615814,
+        "p95": 3.0850000083446503,
+        "p99": 3.2400500094890594
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 10.196499999999832,
+        "p99": 10.30999999999949
+      },
+      "callbackStartIntervals": {
+        "p50": 8.32999999821186,
+        "p95": 10.20499999821186,
+        "p99": 10.38510000526905
+      },
+      "blocksP50": [
+        2.7924999967217445,
+        2.800000011920929,
+        2.8149999901652336,
+        2.850000001490116
+      ],
+      "ownToleranceMs": 0.1407499998807907,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 2.4868995751603507e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.99179000000655
+      },
+      "counterDeltas": {
+        "wasmCalls": 159600,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 243600
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.27500000596,
+      "viewportCpu": {
+        "p50": 2.7150000035762787,
+        "p95": 2.9752500079572197,
+        "p99": 3.125100000053644
+      },
+      "timelineCpu": {
+        "p50": 0.0949999988079071,
+        "p95": 0.14499999582767487,
+        "p99": 0.1850000023841858
+      }
+    },
+    {
+      "scenario": "E3-root-selected-no-shadow",
+      "label": "original-A",
+      "engine": "original",
+      "round": 1,
+      "purpose": "balanced",
+      "directory": "runs/026-E3-root-selected-no-shadow-balanced-original-A",
+      "cpu": {
+        "p50": 1.2450000047683716,
+        "p95": 1.4300000071525574,
+        "p99": 1.5351500111818313
+      },
+      "rafIntervals": {
+        "p50": 8.334999999999127,
+        "p95": 9.9950000000008,
+        "p99": 10.319999999999709
+      },
+      "callbackStartIntervals": {
+        "p50": 8.324999988079071,
+        "p95": 10.141000001132488,
+        "p99": 10.395099995732307
+      },
+      "blocksP50": [
+        1.2650000005960464,
+        1.25,
+        1.2400000020861626,
+        1.2324999943375587
+      ],
+      "ownToleranceMs": 0.06225000023841858,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 4.618527782440651e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991515000000632
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9999.784999996424,
+      "viewportCpu": {
+        "p50": 1.125,
+        "p95": 1.2999999970197678,
+        "p99": 1.405000001192093
+      },
+      "timelineCpu": {
+        "p50": 0.11499999463558197,
+        "p95": 0.1599999964237213,
+        "p99": 0.1850000023841858
+      }
+    },
+    {
+      "scenario": "E3-root-selected-no-shadow",
+      "label": "original-B",
+      "engine": "original",
+      "round": 1,
+      "purpose": "balanced",
+      "directory": "runs/027-E3-root-selected-no-shadow-balanced-original-B",
+      "cpu": {
+        "p50": 1.2750000059604645,
+        "p95": 1.4849999994039536,
+        "p99": 1.5799999983608723
+      },
+      "rafIntervals": {
+        "p50": 8.334999999999127,
+        "p95": 10.0,
+        "p99": 10.329999999999927
+      },
+      "callbackStartIntervals": {
+        "p50": 8.325000002980232,
+        "p95": 10.090499989688396,
+        "p99": 10.375
+      },
+      "blocksP50": [
+        1.2999999970197678,
+        1.2825000137090683,
+        1.2749999910593033,
+        1.2449999898672104
+      ],
+      "ownToleranceMs": 0.06375000029802323,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 2.6645352591003757e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991659999996436
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.314999997616,
+      "viewportCpu": {
+        "p50": 1.1599999964237213,
+        "p95": 1.3499999940395355,
+        "p99": 1.4400499975681305
+      },
+      "timelineCpu": {
+        "p50": 0.11499999463558197,
+        "p95": 0.1599999964237213,
+        "p99": 0.19004999756813046
+      }
+    },
+    {
+      "scenario": "E3-root-selected-no-shadow",
+      "label": "prepared-Wasm",
+      "engine": "prepared-wasm",
+      "round": 2,
+      "purpose": "balanced",
+      "directory": "runs/028-E3-root-selected-no-shadow-balanced-prepared-Wasm",
+      "cpu": {
+        "p50": 2.875,
+        "p95": 3.104999990016222,
+        "p99": 3.2199999840557574
+      },
+      "rafIntervals": {
+        "p50": 8.334999999999127,
+        "p95": 9.245499999999083,
+        "p99": 10.319999999999709
+      },
+      "callbackStartIntervals": {
+        "p50": 8.32999999821186,
+        "p95": 9.306999993324277,
+        "p99": 10.295100001692772
+      },
+      "blocksP50": [
+        2.837499998509884,
+        2.8900000005960464,
+        2.895000010728836,
+        2.8649999871850014
+      ],
+      "ownToleranceMs": 0.14375000000000002,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 1.4210854715202004e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.993489999994638
+      },
+      "counterDeltas": {
+        "wasmCalls": 159600,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 243600
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9999.995000004768,
+      "viewportCpu": {
+        "p50": 2.7750000059604645,
+        "p95": 3.0,
+        "p99": 3.1050500041246414
+      },
+      "timelineCpu": {
+        "p50": 0.0949999988079071,
+        "p95": 0.13500000536441803,
+        "p99": 0.16500000655651093
+      }
+    },
+    {
+      "scenario": "E3-root-selected-no-shadow",
+      "label": "original-B",
+      "engine": "original",
+      "round": 2,
+      "purpose": "balanced",
+      "directory": "runs/029-E3-root-selected-no-shadow-balanced-original-B",
+      "cpu": {
+        "p50": 1.2250000089406967,
+        "p95": 1.4299999922513962,
+        "p99": 1.5100500053167343
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 10.240500000001338,
+        "p99": 10.31500000000051
+      },
+      "callbackStartIntervals": {
+        "p50": 8.319999992847443,
+        "p95": 10.246500004827976,
+        "p99": 10.400000005960464
+      },
+      "blocksP50": [
+        1.2349999994039536,
+        1.2049999982118607,
+        1.234999991953373,
+        1.2300000041723251
+      ],
+      "ownToleranceMs": 0.06125000044703484,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 1.4210854715202004e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.99096499998868
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9999.859999999404,
+      "viewportCpu": {
+        "p50": 1.1050000041723251,
+        "p95": 1.2949999876320362,
+        "p99": 1.3799999952316284
+      },
+      "timelineCpu": {
+        "p50": 0.11500000953674316,
+        "p95": 0.1599999964237213,
+        "p99": 0.1899999976158142
+      }
+    },
+    {
+      "scenario": "E3-root-selected-no-shadow",
+      "label": "prepared-JS",
+      "engine": "prepared-js",
+      "round": 2,
+      "purpose": "balanced",
+      "directory": "runs/030-E3-root-selected-no-shadow-balanced-prepared-JS",
+      "cpu": {
+        "p50": 2.7850000113248825,
+        "p95": 3.040249991416931,
+        "p99": 3.159999996572733
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 10.19499999999989,
+        "p99": 10.315100000002277
+      },
+      "callbackStartIntervals": {
+        "p50": 8.32999999821186,
+        "p95": 10.185500001907348,
+        "p99": 10.405200001001358
+      },
+      "blocksP50": [
+        2.8450000137090683,
+        2.7924999967217445,
+        2.747499994933605,
+        2.777499996125698
+      ],
+      "ownToleranceMs": 0.13925000056624412,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 1.3322676295501878e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991694999992841
+      },
+      "counterDeltas": {
+        "wasmCalls": 0,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 243600
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9999.989999994636,
+      "viewportCpu": {
+        "p50": 2.685000002384186,
+        "p95": 2.935000002384186,
+        "p99": 3.05510000705719
+      },
+      "timelineCpu": {
+        "p50": 0.09999999403953552,
+        "p95": 0.14499999582767487,
+        "p99": 0.17499999701976776
+      }
+    },
+    {
+      "scenario": "E3-root-selected-no-shadow",
+      "label": "original-A",
+      "engine": "original",
+      "round": 2,
+      "purpose": "balanced",
+      "directory": "runs/031-E3-root-selected-no-shadow-balanced-original-A",
+      "cpu": {
+        "p50": 1.2799999862909317,
+        "p95": 1.4849999994039536,
+        "p99": 1.5900499887764454
+      },
+      "rafIntervals": {
+        "p50": 8.334999999999127,
+        "p95": 9.92550000000101,
+        "p99": 10.325000000000728
+      },
+      "callbackStartIntervals": {
+        "p50": 8.325000002980232,
+        "p95": 10.004999995231628,
+        "p99": 10.370099990069866
+      },
+      "blocksP50": [
+        1.3050000071525574,
+        1.2900000140070915,
+        1.3050000071525574,
+        1.2025000005960464
+      ],
+      "ownToleranceMs": 0.06399999931454659,
+      "ownBlockFailures": 1,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 3.907985046680551e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991674999996983
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9999.945000007749,
+      "viewportCpu": {
+        "p50": 1.155000001192093,
+        "p95": 1.35025000795722,
+        "p99": 1.4450999929010868
+      },
+      "timelineCpu": {
+        "p50": 0.11999998986721039,
+        "p95": 0.1599999964237213,
+        "p99": 0.18000000715255737
+      }
+    },
+    {
+      "scenario": "E3-root-selected-no-shadow",
+      "label": "original-B",
+      "engine": "original",
+      "round": 3,
+      "purpose": "balanced",
+      "directory": "runs/032-E3-root-selected-no-shadow-balanced-original-B",
+      "cpu": {
+        "p50": 1.2500000074505806,
+        "p95": 1.455250012129545,
+        "p99": 1.5350499965250493
+      },
+      "rafIntervals": {
+        "p50": 8.334999999999127,
+        "p95": 10.0,
+        "p99": 10.325000000000728
+      },
+      "callbackStartIntervals": {
+        "p50": 8.325000002980232,
+        "p95": 10.195499992370605,
+        "p99": 10.420099987089634
+      },
+      "blocksP50": [
+        1.2650000005960464,
+        1.244999997317791,
+        1.260000005364418,
+        1.2424999997019768
+      ],
+      "ownToleranceMs": 0.06250000037252904,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 1.7763568394002505e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991594999998814
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9999.765000000596,
+      "viewportCpu": {
+        "p50": 1.1349999904632568,
+        "p95": 1.3152500115334986,
+        "p99": 1.4100500112771988
+      },
+      "timelineCpu": {
+        "p50": 0.11500000953674316,
+        "p95": 0.1550000011920929,
+        "p99": 0.1899999976158142
+      }
+    },
+    {
+      "scenario": "E3-root-selected-no-shadow",
+      "label": "original-A",
+      "engine": "original",
+      "round": 3,
+      "purpose": "balanced",
+      "directory": "runs/033-E3-root-selected-no-shadow-balanced-original-A",
+      "cpu": {
+        "p50": 1.2599999904632568,
+        "p95": 1.4549999840557575,
+        "p99": 1.5401000064611434
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 9.380499999999302,
+        "p99": 10.100500000000356
+      },
+      "callbackStartIntervals": {
+        "p50": 8.314999997615814,
+        "p95": 9.415500006079673,
+        "p99": 10.195300007462501
+      },
+      "blocksP50": [
+        1.2199999913573265,
+        1.2899999842047691,
+        1.280000001192093,
+        1.2499999925494194
+      ],
+      "ownToleranceMs": 0.06299999952316285,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 2.1316282072803006e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.99071999999879
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10001.15000000596,
+      "viewportCpu": {
+        "p50": 1.135000005364418,
+        "p95": 1.3200000077486038,
+        "p99": 1.4100499965250493
+      },
+      "timelineCpu": {
+        "p50": 0.11500000953674316,
+        "p95": 0.1599999964237213,
+        "p99": 0.1899999976158142
+      }
+    },
+    {
+      "scenario": "E3-root-selected-no-shadow",
+      "label": "prepared-Wasm",
+      "engine": "prepared-wasm",
+      "round": 3,
+      "purpose": "balanced",
+      "directory": "runs/034-E3-root-selected-no-shadow-balanced-prepared-Wasm",
+      "cpu": {
+        "p50": 2.8250000029802322,
+        "p95": 3.0499999970197678,
+        "p99": 3.12999999538064
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 9.994999999998981,
+        "p99": 10.319999999999709
+      },
+      "callbackStartIntervals": {
+        "p50": 8.32999999821186,
+        "p95": 10.094999998807907,
+        "p99": 10.375099999904632
+      },
+      "blocksP50": [
+        2.814999997615814,
+        2.8075000047683716,
+        2.8500000089406967,
+        2.814999997615814
+      ],
+      "ownToleranceMs": 0.14125000014901162,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 1.0658141036401503e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.993635000005366
+      },
+      "counterDeltas": {
+        "wasmCalls": 159600,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 243600
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.130000010133,
+      "viewportCpu": {
+        "p50": 2.7150000035762787,
+        "p95": 2.9300000071525574,
+        "p99": 3.015050000697374
+      },
+      "timelineCpu": {
+        "p50": 0.10999999940395355,
+        "p95": 0.15000000596046448,
+        "p99": 0.1849999874830246
+      }
+    },
+    {
+      "scenario": "E3-root-selected-no-shadow",
+      "label": "prepared-JS",
+      "engine": "prepared-js",
+      "round": 3,
+      "purpose": "balanced",
+      "directory": "runs/035-E3-root-selected-no-shadow-balanced-prepared-JS",
+      "cpu": {
+        "p50": 2.7850000113248825,
+        "p95": 3.040000006556511,
+        "p99": 3.150000006109476
+      },
+      "rafIntervals": {
+        "p50": 8.334999999999127,
+        "p95": 10.006000000000858,
+        "p99": 10.319999999999709
+      },
+      "callbackStartIntervals": {
+        "p50": 8.325000002980232,
+        "p95": 10.114999994635582,
+        "p99": 10.35550000399351
+      },
+      "blocksP50": [
+        2.760000005364418,
+        2.794999986886978,
+        2.8299999982118607,
+        2.7575000002980232
+      ],
+      "ownToleranceMs": 0.13925000056624412,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 2.842170943040401e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991419999986864
+      },
+      "counterDeltas": {
+        "wasmCalls": 0,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 243600
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10001.094999998808,
+      "viewportCpu": {
+        "p50": 2.6875,
+        "p95": 2.9302499920129774,
+        "p99": 3.0450000017881393
+      },
+      "timelineCpu": {
+        "p50": 0.0950000137090683,
+        "p95": 0.14000000059604645,
+        "p99": 0.17000000178813934
+      }
+    },
+    {
+      "scenario": "E3-root-selected-no-shadow",
+      "label": "original-post",
+      "engine": "original",
+      "round": null,
+      "purpose": "bookend-after",
+      "directory": "runs/036-E3-root-selected-no-shadow-bookend-after-original-post",
+      "cpu": {
+        "p50": 1.2450000122189522,
+        "p95": 1.4455000072717663,
+        "p99": 1.5500500117242335
+      },
+      "rafIntervals": {
+        "p50": 8.330000000001746,
+        "p95": 10.025999999999657,
+        "p99": 10.325000000000728
+      },
+      "callbackStartIntervals": {
+        "p50": 8.325000002980232,
+        "p95": 10.21600000411272,
+        "p99": 10.389999985992908
+      },
+      "blocksP50": [
+        1.2100000008940697,
+        1.2699999958276749,
+        1.2749999985098839,
+        1.239999994635582
+      ],
+      "ownToleranceMs": 0.06225000061094761,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 1.199040866595169e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991980000004165
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.495000004768,
+      "viewportCpu": {
+        "p50": 1.1299999952316284,
+        "p95": 1.3200000077486038,
+        "p99": 1.4050500011444091
+      },
+      "timelineCpu": {
+        "p50": 0.11499999463558197,
+        "p95": 0.1599999964237213,
+        "p99": 0.2000500029325485
+      }
+    },
+    {
+      "scenario": "E3-root-selected-high-resolution",
+      "label": "original-pre",
+      "engine": "original",
+      "round": null,
+      "purpose": "bookend-before",
+      "directory": "runs/037-E3-root-selected-high-resolution-bookend-before-original-pre",
+      "cpu": {
+        "p50": 1.3600000068545341,
+        "p95": 1.564999984204769,
+        "p99": 1.6651000064611434
+      },
+      "rafIntervals": {
+        "p50": 8.330000000001746,
+        "p95": 9.335999999999329,
+        "p99": 10.295100000000057
+      },
+      "callbackStartIntervals": {
+        "p50": 8.325000002980232,
+        "p95": 9.38550000488758,
+        "p99": 10.314999997615814
+      },
+      "blocksP50": [
+        1.359999991953373,
+        1.3750000074505806,
+        1.3400000184774399,
+        1.3700000047683716
+      ],
+      "ownToleranceMs": 0.06800000034272671,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 1.5987211554602254e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991614999994649
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9998.185000002384,
+      "viewportCpu": {
+        "p50": 1.2450000047683716,
+        "p95": 1.4399999976158142,
+        "p99": 1.540000006556511
+      },
+      "timelineCpu": {
+        "p50": 0.11499999463558197,
+        "p95": 0.15499998703598977,
+        "p99": 0.19004999771714207
+      }
+    },
+    {
+      "scenario": "E3-root-selected-high-resolution",
+      "label": "original-A",
+      "engine": "original",
+      "round": 0,
+      "purpose": "balanced",
+      "directory": "runs/038-E3-root-selected-high-resolution-balanced-original-A",
+      "cpu": {
+        "p50": 1.3299999833106995,
+        "p95": 1.5402500055730342,
+        "p99": 1.650050005763769
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 9.915500000000792,
+        "p99": 10.324999999998909
+      },
+      "callbackStartIntervals": {
+        "p50": 8.320000007748604,
+        "p95": 9.970500011742114,
+        "p99": 10.349999994337558
+      },
+      "blocksP50": [
+        1.3599999994039536,
+        1.3825000002980232,
+        1.3000000044703484,
+        1.2500000074505806
+      ],
+      "ownToleranceMs": 0.06649999916553498,
+      "ownBlockFailures": 1,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 2.3092638912203256e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.992195000007756
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.15000000596,
+      "viewportCpu": {
+        "p50": 1.209999993443489,
+        "p95": 1.4102499969303606,
+        "p99": 1.5200499957799911
+      },
+      "timelineCpu": {
+        "p50": 0.11499999463558197,
+        "p95": 0.1599999964237213,
+        "p99": 0.21505000352859494
+      }
+    },
+    {
+      "scenario": "E3-root-selected-high-resolution",
+      "label": "prepared-JS",
+      "engine": "prepared-js",
+      "round": 0,
+      "purpose": "balanced",
+      "directory": "runs/039-E3-root-selected-high-resolution-balanced-prepared-JS",
+      "cpu": {
+        "p50": 2.959999993443489,
+        "p95": 3.219999998807907,
+        "p99": 3.3250500029325485
+      },
+      "rafIntervals": {
+        "p50": 8.330000000000837,
+        "p95": 9.985000000000582,
+        "p99": 10.315000000000545
+      },
+      "callbackStartIntervals": {
+        "p50": 8.32999999821186,
+        "p95": 10.034999996423721,
+        "p99": 10.315099997520447
+      },
+      "blocksP50": [
+        2.969999998807907,
+        2.989999994635582,
+        2.945000007748604,
+        2.934999994933605
+      ],
+      "ownToleranceMs": 0.14799999967217445,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 1.4210854715202004e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.993335000008337
+      },
+      "counterDeltas": {
+        "wasmCalls": 0,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 246000
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.085000008345,
+      "viewportCpu": {
+        "p50": 2.855000004172325,
+        "p95": 3.1199999898672104,
+        "p99": 3.209999993443489
+      },
+      "timelineCpu": {
+        "p50": 0.09999999403953552,
+        "p95": 0.14000000059604645,
+        "p99": 0.16499999180436134
+      }
+    },
+    {
+      "scenario": "E3-root-selected-high-resolution",
+      "label": "original-B",
+      "engine": "original",
+      "round": 0,
+      "purpose": "balanced",
+      "directory": "runs/040-E3-root-selected-high-resolution-balanced-original-B",
+      "cpu": {
+        "p50": 1.324999988079071,
+        "p95": 1.5399999916553497,
+        "p99": 1.6300500099360942
+      },
+      "rafIntervals": {
+        "p50": 8.330000000001746,
+        "p95": 10.032500000000617,
+        "p99": 10.324999999998944
+      },
+      "callbackStartIntervals": {
+        "p50": 8.325000002980232,
+        "p95": 10.194999992847443,
+        "p99": 10.375
+      },
+      "blocksP50": [
+        1.3400000035762787,
+        1.3450000062584877,
+        1.2949999868869781,
+        1.3150000125169754
+      ],
+      "ownToleranceMs": 0.06624999940395356,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 1.4210854715202004e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.990969999998818
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9999.135000005364,
+      "viewportCpu": {
+        "p50": 1.2049999982118607,
+        "p95": 1.4102500103414057,
+        "p99": 1.4900500094890594
+      },
+      "timelineCpu": {
+        "p50": 0.11499999463558197,
+        "p95": 0.1550000011920929,
+        "p99": 0.1849999876320362
+      }
+    },
+    {
+      "scenario": "E3-root-selected-high-resolution",
+      "label": "prepared-Wasm",
+      "engine": "prepared-wasm",
+      "round": 0,
+      "purpose": "balanced",
+      "directory": "runs/041-E3-root-selected-high-resolution-balanced-prepared-Wasm",
+      "cpu": {
+        "p50": 2.979999989271164,
+        "p95": 3.2300000049173834,
+        "p99": 3.3549999894201754
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 10.005500000000938,
+        "p99": 10.319999999999709
+      },
+      "callbackStartIntervals": {
+        "p50": 8.32999999821186,
+        "p95": 10.155500000715255,
+        "p99": 10.36549999475479
+      },
+      "blocksP50": [
+        3.020000010728836,
+        2.952500008046627,
+        2.9550000056624413,
+        2.9549999982118607
+      ],
+      "ownToleranceMs": 0.1489999994635582,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 3.375077994860476e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991635000005338
+      },
+      "counterDeltas": {
+        "wasmCalls": 162000,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 246000
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9999.879999995232,
+      "viewportCpu": {
+        "p50": 2.8799999952316284,
+        "p95": 3.1200000047683716,
+        "p99": 3.240050009340048
+      },
+      "timelineCpu": {
+        "p50": 0.0949999988079071,
+        "p95": 0.14000000059604645,
+        "p99": 0.17499999701976776
+      }
+    },
+    {
+      "scenario": "E3-root-selected-high-resolution",
+      "label": "prepared-JS",
+      "engine": "prepared-js",
+      "round": 1,
+      "purpose": "balanced",
+      "directory": "runs/042-E3-root-selected-high-resolution-balanced-prepared-JS",
+      "cpu": {
+        "p50": 2.9299999848008156,
+        "p95": 3.195250007510185,
+        "p99": 3.3500500087440015
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 10.300000000001091,
+        "p99": 10.319999999999709
+      },
+      "callbackStartIntervals": {
+        "p50": 8.32999999821186,
+        "p95": 10.240499995648861,
+        "p99": 10.380099995136261
+      },
+      "blocksP50": [
+        2.9950000047683716,
+        2.905000001192093,
+        2.8950000032782555,
+        2.929999992251396
+      ],
+      "ownToleranceMs": 0.14649999924004078,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 1.7763568394002505e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991739999994646
+      },
+      "counterDeltas": {
+        "wasmCalls": 0,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 246000
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9999.59999999404,
+      "viewportCpu": {
+        "p50": 2.8299999982118607,
+        "p95": 3.080249997973442,
+        "p99": 3.2150000035762787
+      },
+      "timelineCpu": {
+        "p50": 0.0949999988079071,
+        "p95": 0.14499999582767487,
+        "p99": 0.19505000770092007
+      }
+    },
+    {
+      "scenario": "E3-root-selected-high-resolution",
+      "label": "prepared-Wasm",
+      "engine": "prepared-wasm",
+      "round": 1,
+      "purpose": "balanced",
+      "directory": "runs/043-E3-root-selected-high-resolution-balanced-prepared-Wasm",
+      "cpu": {
+        "p50": 2.969999998807907,
+        "p95": 3.2450000047683716,
+        "p99": 3.3649999947845934
+      },
+      "rafIntervals": {
+        "p50": 8.330000000001746,
+        "p95": 10.010000000000218,
+        "p99": 10.324999999997162
+      },
+      "callbackStartIntervals": {
+        "p50": 8.325000002980232,
+        "p95": 10.1164999961853,
+        "p99": 10.370000004768372
+      },
+      "blocksP50": [
+        2.990000009536743,
+        3.0175000056624413,
+        2.9200000017881393,
+        2.935000002384186
+      ],
+      "ownToleranceMs": 0.14849999994039537,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 2.3092638912203256e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991379999995237
+      },
+      "counterDeltas": {
+        "wasmCalls": 162000,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 246000
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9999.894999995828,
+      "viewportCpu": {
+        "p50": 2.8699999898672104,
+        "p95": 3.1400000005960464,
+        "p99": 3.2500999999046325
+      },
+      "timelineCpu": {
+        "p50": 0.0950000137090683,
+        "p95": 0.14000000059604645,
+        "p99": 0.18000000715255737
+      }
+    },
+    {
+      "scenario": "E3-root-selected-high-resolution",
+      "label": "original-A",
+      "engine": "original",
+      "round": 1,
+      "purpose": "balanced",
+      "directory": "runs/044-E3-root-selected-high-resolution-balanced-original-A",
+      "cpu": {
+        "p50": 1.334999993443489,
+        "p95": 1.540000007301569,
+        "p99": 1.625
+      },
+      "rafIntervals": {
+        "p50": 8.330000000001746,
+        "p95": 9.995500000002357,
+        "p99": 10.325000000000728
+      },
+      "callbackStartIntervals": {
+        "p50": 8.32999999821186,
+        "p95": 10.140500000119209,
+        "p99": 10.415199991762638
+      },
+      "blocksP50": [
+        1.3650000095367432,
+        1.339999996125698,
+        1.280000001192093,
+        1.3350000083446503
+      ],
+      "ownToleranceMs": 0.06674999967217446,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 4.440892098500626e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991629999995197
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.069999992847,
+      "viewportCpu": {
+        "p50": 1.214999996125698,
+        "p95": 1.405000001192093,
+        "p99": 1.5050499951839447
+      },
+      "timelineCpu": {
+        "p50": 0.11499999463558197,
+        "p95": 0.1550000011920929,
+        "p99": 0.19010001242160787
+      }
+    },
+    {
+      "scenario": "E3-root-selected-high-resolution",
+      "label": "original-B",
+      "engine": "original",
+      "round": 1,
+      "purpose": "balanced",
+      "directory": "runs/045-E3-root-selected-high-resolution-balanced-original-B",
+      "cpu": {
+        "p50": 1.3599999845027924,
+        "p95": 1.5700000077486038,
+        "p99": 1.6400000005960464
+      },
+      "rafIntervals": {
+        "p50": 8.334999999999127,
+        "p95": 9.471499999999468,
+        "p99": 10.324999999998944
+      },
+      "callbackStartIntervals": {
+        "p50": 8.319999992847443,
+        "p95": 9.493499995768067,
+        "p99": 10.379999995231628
+      },
+      "blocksP50": [
+        1.4249999970197678,
+        1.3300000056624413,
+        1.3599999994039536,
+        1.3099999874830246
+      ],
+      "ownToleranceMs": 0.06799999922513962,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 1.9539925233402755e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991555000007137
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.25,
+      "viewportCpu": {
+        "p50": 1.239999994635582,
+        "p95": 1.4399999983608722,
+        "p99": 1.5100500053167343
+      },
+      "timelineCpu": {
+        "p50": 0.11499999463558197,
+        "p95": 0.15000000596046448,
+        "p99": 0.1750500117242336
+      }
+    },
+    {
+      "scenario": "E3-root-selected-high-resolution",
+      "label": "prepared-Wasm",
+      "engine": "prepared-wasm",
+      "round": 2,
+      "purpose": "balanced",
+      "directory": "runs/046-E3-root-selected-high-resolution-balanced-prepared-Wasm",
+      "cpu": {
+        "p50": 2.9549999982118607,
+        "p95": 3.205250012129545,
+        "p99": 3.3350499936938287
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 9.57199999999975,
+        "p99": 10.289999999999981
+      },
+      "callbackStartIntervals": {
+        "p50": 8.320000007748604,
+        "p95": 9.631499995291232,
+        "p99": 10.325100002884865
+      },
+      "blocksP50": [
+        2.9525000005960464,
+        2.9450000002980232,
+        2.959999993443489,
+        2.9699999913573265
+      ],
+      "ownToleranceMs": 0.14774999991059304,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 3.552713678800501e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991369999989885
+      },
+      "counterDeltas": {
+        "wasmCalls": 162000,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 246000
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9999.994999989867,
+      "viewportCpu": {
+        "p50": 2.855000004172325,
+        "p95": 3.0999999947845938,
+        "p99": 3.220100013613701
+      },
+      "timelineCpu": {
+        "p50": 0.09999999403953552,
+        "p95": 0.14000000059604645,
+        "p99": 0.16500000655651093
+      }
+    },
+    {
+      "scenario": "E3-root-selected-high-resolution",
+      "label": "original-B",
+      "engine": "original",
+      "round": 2,
+      "purpose": "balanced",
+      "directory": "runs/047-E3-root-selected-high-resolution-balanced-original-B",
+      "cpu": {
+        "p50": 1.3499999940395355,
+        "p95": 1.5499999821186066,
+        "p99": 1.625
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 9.955499999999846,
+        "p99": 10.300100000001075
+      },
+      "callbackStartIntervals": {
+        "p50": 8.319999992847443,
+        "p95": 10.040499992668629,
+        "p99": 10.38000001013279
+      },
+      "blocksP50": [
+        1.3350000083446503,
+        1.3350000008940697,
+        1.3699999898672104,
+        1.3550000041723251
+      ],
+      "ownToleranceMs": 0.06749999970197677,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 1.7763568394002505e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991030000001185
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10001.540000006557,
+      "viewportCpu": {
+        "p50": 1.2300000041723251,
+        "p95": 1.415000006556511,
+        "p99": 1.4850499993562698
+      },
+      "timelineCpu": {
+        "p50": 0.11499999463558197,
+        "p95": 0.1550000011920929,
+        "p99": 0.18999999776482582
+      }
+    },
+    {
+      "scenario": "E3-root-selected-high-resolution",
+      "label": "prepared-JS",
+      "engine": "prepared-js",
+      "round": 2,
+      "purpose": "balanced",
+      "directory": "runs/048-E3-root-selected-high-resolution-balanced-prepared-JS",
+      "cpu": {
+        "p50": 2.9400000125169754,
+        "p95": 3.209999993443489,
+        "p99": 3.370050004720688
+      },
+      "rafIntervals": {
+        "p50": 8.334999999999127,
+        "p95": 9.995000000000982,
+        "p99": 10.319999999999709
+      },
+      "callbackStartIntervals": {
+        "p50": 8.334999993443489,
+        "p95": 10.105499990284443,
+        "p99": 10.390200000405311
+      },
+      "blocksP50": [
+        2.910000003874302,
+        2.935000002384186,
+        2.9950000047683716,
+        2.939999982714653
+      ],
+      "ownToleranceMs": 0.14700000062584878,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 9.325873406851315e-15,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991449999988085
+      },
+      "counterDeltas": {
+        "wasmCalls": 0,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 246000
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9999.670000001788,
+      "viewportCpu": {
+        "p50": 2.844999998807907,
+        "p95": 3.105000004172325,
+        "p99": 3.285049996525049
+      },
+      "timelineCpu": {
+        "p50": 0.0949999988079071,
+        "p95": 0.14000000059604645,
+        "p99": 0.1700500017404556
+      }
+    },
+    {
+      "scenario": "E3-root-selected-high-resolution",
+      "label": "original-A",
+      "engine": "original",
+      "round": 2,
+      "purpose": "balanced",
+      "directory": "runs/049-E3-root-selected-high-resolution-balanced-original-A",
+      "cpu": {
+        "p50": 1.3500000089406967,
+        "p95": 1.550249996781349,
+        "p99": 1.6450500105321406
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 9.979999999999563,
+        "p99": 10.315099999998711
+      },
+      "callbackStartIntervals": {
+        "p50": 8.320000007748604,
+        "p95": 10.094999998807907,
+        "p99": 10.379999995529651
+      },
+      "blocksP50": [
+        1.3550000041723251,
+        1.3650000095367432,
+        1.3374999985098839,
+        1.3299999982118607
+      ],
+      "ownToleranceMs": 0.06750000044703484,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 3.552713678800501e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991340000003609
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10001.435000002384,
+      "viewportCpu": {
+        "p50": 1.2300000041723251,
+        "p95": 1.4202500015497206,
+        "p99": 1.5101000054180622
+      },
+      "timelineCpu": {
+        "p50": 0.11499999463558197,
+        "p95": 0.1550000011920929,
+        "p99": 0.20499999821186066
+      }
+    },
+    {
+      "scenario": "E3-root-selected-high-resolution",
+      "label": "original-B",
+      "engine": "original",
+      "round": 3,
+      "purpose": "balanced",
+      "directory": "runs/050-E3-root-selected-high-resolution-balanced-original-B",
+      "cpu": {
+        "p50": 1.1549999937415123,
+        "p95": 1.4800000041723251,
+        "p99": 1.609999984651804
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 9.990500000001338,
+        "p99": 10.320000000001528
+      },
+      "callbackStartIntervals": {
+        "p50": 8.32999999821186,
+        "p95": 10.089999990165234,
+        "p99": 10.405000001192093
+      },
+      "blocksP50": [
+        1.084999993443489,
+        1.0800000056624413,
+        1.1900000125169754,
+        1.3125
+      ],
+      "ownToleranceMs": 0.057749999687075615,
+      "ownBlockFailures": 3,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 2.1316282072803006e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.992834999993441
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.489999994636,
+      "viewportCpu": {
+        "p50": 1.0450000017881393,
+        "p95": 1.3550000041723251,
+        "p99": 1.4649999888241292
+      },
+      "timelineCpu": {
+        "p50": 0.10500000417232513,
+        "p95": 0.15000000596046448,
+        "p99": 0.21000000834465027
+      }
+    },
+    {
+      "scenario": "E3-root-selected-high-resolution",
+      "label": "original-A",
+      "engine": "original",
+      "round": 3,
+      "purpose": "balanced",
+      "directory": "runs/051-E3-root-selected-high-resolution-balanced-original-A",
+      "cpu": {
+        "p50": 1.364999994635582,
+        "p95": 1.5900000035762787,
+        "p99": 1.6950500075519084
+      },
+      "rafIntervals": {
+        "p50": 8.330000000001746,
+        "p95": 9.98050000000112,
+        "p99": 10.324999999998909
+      },
+      "callbackStartIntervals": {
+        "p50": 8.325000002980232,
+        "p95": 10.066499997675418,
+        "p99": 10.370400004684925
+      },
+      "blocksP50": [
+        1.3549999967217445,
+        1.4099999964237213,
+        1.3400000035762787,
+        1.344999998807907
+      ],
+      "ownToleranceMs": 0.0682499997317791,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 1.4210854715202004e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991324999988095
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 9999.640000000596,
+      "viewportCpu": {
+        "p50": 1.2400000095367432,
+        "p95": 1.4502500027418135,
+        "p99": 1.5551000070571899
+      },
+      "timelineCpu": {
+        "p50": 0.11499999463558197,
+        "p95": 0.1599999964237213,
+        "p99": 0.2050500129163265
+      }
+    },
+    {
+      "scenario": "E3-root-selected-high-resolution",
+      "label": "prepared-Wasm",
+      "engine": "prepared-wasm",
+      "round": 3,
+      "purpose": "balanced",
+      "directory": "runs/052-E3-root-selected-high-resolution-balanced-prepared-Wasm",
+      "cpu": {
+        "p50": 3.010000005364418,
+        "p95": 3.269999995827675,
+        "p99": 3.369999990016222
+      },
+      "rafIntervals": {
+        "p50": 8.330000000001746,
+        "p95": 9.850999999998747,
+        "p99": 10.320100000003295
+      },
+      "callbackStartIntervals": {
+        "p50": 8.32999999821186,
+        "p95": 9.86299999952316,
+        "p99": 10.310100002586841
+      },
+      "blocksP50": [
+        3.019999995827675,
+        2.9950000047683716,
+        3.030000001192093,
+        2.989999994635582
+      ],
+      "ownToleranceMs": 0.1505000002682209,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 2.930988785010413e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.993689999997624
+      },
+      "counterDeltas": {
+        "wasmCalls": 162000,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 246000
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.484999999404,
+      "viewportCpu": {
+        "p50": 2.910000003874302,
+        "p95": 3.1599999964237213,
+        "p99": 3.2600499905645846
+      },
+      "timelineCpu": {
+        "p50": 0.0949999988079071,
+        "p95": 0.13500000536441803,
+        "p99": 0.17000000178813934
+      }
+    },
+    {
+      "scenario": "E3-root-selected-high-resolution",
+      "label": "prepared-JS",
+      "engine": "prepared-js",
+      "round": 3,
+      "purpose": "balanced",
+      "directory": "runs/053-E3-root-selected-high-resolution-balanced-prepared-JS",
+      "cpu": {
+        "p50": 3.0049999952316284,
+        "p95": 3.2650000154972076,
+        "p99": 3.3550500190258026
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 9.9900000000016,
+        "p99": 10.319999999999709
+      },
+      "callbackStartIntervals": {
+        "p50": 8.334999993443489,
+        "p95": 10.084999994933606,
+        "p99": 10.340199988782405
+      },
+      "blocksP50": [
+        2.985000006854534,
+        3.0324999913573265,
+        3.0299999862909317,
+        2.9825000017881393
+      ],
+      "ownToleranceMs": 0.15024999976158143,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 1.7763568394002505e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991534999996412
+      },
+      "counterDeltas": {
+        "wasmCalls": 0,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 4800,
+        "preparedMatrixReads": 0,
+        "matrixReads": 246000
+      },
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.545000001788,
+      "viewportCpu": {
+        "p50": 2.905000001192093,
+        "p95": 3.165000006556511,
+        "p99": 3.25
+      },
+      "timelineCpu": {
+        "p50": 0.0949999988079071,
+        "p95": 0.14499999582767487,
+        "p99": 0.18000000715255737
+      }
+    },
+    {
+      "scenario": "E3-root-selected-high-resolution",
+      "label": "original-post",
+      "engine": "original",
+      "round": null,
+      "purpose": "bookend-after",
+      "directory": "runs/054-E3-root-selected-high-resolution-bookend-after-original-post",
+      "cpu": {
+        "p50": 1.334999993443489,
+        "p95": 1.5649999983608722,
+        "p99": 1.6500500059127807
+      },
+      "rafIntervals": {
+        "p50": 8.334999999999127,
+        "p95": 10.0,
+        "p99": 10.320099999999693
+      },
+      "callbackStartIntervals": {
+        "p50": 8.32999999821186,
+        "p95": 10.144999997317791,
+        "p99": 10.380099995434284
+      },
+      "blocksP50": [
+        1.3049999997019768,
+        1.4199999868869781,
+        1.339999996125698,
+        1.3000000044703484
+      ],
+      "ownToleranceMs": 0.06674999967217446,
+      "ownBlockFailures": 1,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": {
+        "checkedPairs": 1200,
+        "duration": 0.9583333134651184,
+        "maxCircularErrorSeconds": 2.6645352591003757e-14,
+        "toleranceSeconds": 1e-09,
+        "changedObservations": 1199,
+        "repeatedTimelineObservations": 0,
+        "mixerAdvanceSeconds": 9.991590000003555
+      },
+      "counterDeltas": null,
+      "renderFrameDelta": 4800,
+      "wallCaptureMs": 10000.064999997616,
+      "viewportCpu": {
+        "p50": 1.214999996125698,
+        "p95": 1.4350000023841858,
+        "p99": 1.5199999958276749
+      },
+      "timelineCpu": {
+        "p50": 0.11499999463558197,
+        "p95": 0.1550000011920929,
+        "p99": 0.1850000023841858
+      }
+    },
+    {
+      "scenario": "E1-idle",
+      "label": "original-A",
+      "engine": "original",
+      "round": 0,
+      "purpose": "balanced",
+      "directory": "runs/055-E1-idle-balanced-original-A",
+      "cpu": {
+        "p50": 0.015000000596046448,
+        "p95": 0.0299999862909317,
+        "p99": 0.034999996423721313
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 10.094500000000153,
+        "p99": 10.309999999999945
+      },
+      "callbackStartIntervals": {
+        "p50": 8.344999998807907,
+        "p95": 10.277499993145465,
+        "p99": 10.359300009310246
+      },
+      "blocksP50": [
+        0.015000000596046448,
+        0.015000000596046448,
+        0.015000000596046448,
+        0.01499999314546585
+      ],
+      "ownToleranceMs": 0.019999980926513672,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": null,
+      "counterDeltas": null,
+      "renderFrameDelta": 0,
+      "wallCaptureMs": 2001.1300000101328,
+      "viewportCpu": {
+        "p50": 0.004999995231628418,
+        "p95": 0.01000000536441803,
+        "p99": 0.013050002455711291
+      },
+      "timelineCpu": {
+        "p50": 0.01000000536441803,
+        "p95": 0.02000001072883606,
+        "p99": 0.025000005960464478
+      }
+    },
+    {
+      "scenario": "E1-idle",
+      "label": "prepared-JS",
+      "engine": "prepared-js",
+      "round": 0,
+      "purpose": "balanced",
+      "directory": "runs/056-E1-idle-balanced-prepared-JS",
+      "cpu": {
+        "p50": 0.015000000596046448,
+        "p95": 0.029999987035989762,
+        "p99": 0.06414999842643715
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 10.290499999999975,
+        "p99": 10.313099999999904
+      },
+      "callbackStartIntervals": {
+        "p50": 8.344999998807907,
+        "p95": 10.330499997735023,
+        "p99": 10.403600000441074
+      },
+      "blocksP50": [
+        0.015000000596046448,
+        0.015000000596046448,
+        0.015000000596046448,
+        0.010000012814998627
+      ],
+      "ownToleranceMs": 0.019999980926513672,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": null,
+      "counterDeltas": {
+        "wasmCalls": 0,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 0,
+        "preparedMatrixReads": 0,
+        "matrixReads": 0
+      },
+      "renderFrameDelta": 0,
+      "wallCaptureMs": 2000.0350000113249,
+      "viewportCpu": {
+        "p50": 0.004999995231628418,
+        "p95": 0.01000000536441803,
+        "p99": 0.025000000149011613
+      },
+      "timelineCpu": {
+        "p50": 0.01000000536441803,
+        "p95": 0.019999995827674866,
+        "p99": 0.034999996423721313
+      }
+    },
+    {
+      "scenario": "E1-idle",
+      "label": "original-B",
+      "engine": "original",
+      "round": 0,
+      "purpose": "balanced",
+      "directory": "runs/057-E1-idle-balanced-original-B",
+      "cpu": {
+        "p50": 0.015000000596046448,
+        "p95": 0.025000005960464478,
+        "p99": 0.03804999351501458
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 10.123999999999887,
+        "p99": 10.328099999999885
+      },
+      "callbackStartIntervals": {
+        "p50": 8.345000013709068,
+        "p95": 10.270500008761882,
+        "p99": 10.33810000538826
+      },
+      "blocksP50": [
+        0.015000000596046448,
+        0.015000000596046448,
+        0.010000020265579224,
+        0.010000020265579224
+      ],
+      "ownToleranceMs": 0.019999980926513672,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": null,
+      "counterDeltas": null,
+      "renderFrameDelta": 0,
+      "wallCaptureMs": 2000.5549999922514,
+      "viewportCpu": {
+        "p50": 0.004999995231628418,
+        "p95": 0.01000000536441803,
+        "p99": 0.01000000536441803
+      },
+      "timelineCpu": {
+        "p50": 0.01000000536441803,
+        "p95": 0.019999996572732926,
+        "p99": 0.028050003051757737
+      }
+    },
+    {
+      "scenario": "E1-idle",
+      "label": "prepared-Wasm",
+      "engine": "prepared-wasm",
+      "round": 0,
+      "purpose": "balanced",
+      "directory": "runs/058-E1-idle-balanced-prepared-Wasm",
+      "cpu": {
+        "p50": 0.015000000596046448,
+        "p95": 0.034999996423721313,
+        "p99": 0.040000006556510925
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 9.676000000000112,
+        "p99": 10.147399999999836
+      },
+      "callbackStartIntervals": {
+        "p50": 8.344999998807907,
+        "p95": 10.15750000178814,
+        "p99": 10.349300003945828
+      },
+      "blocksP50": [
+        0.015000000596046448,
+        0.015000015497207642,
+        0.01999998837709427,
+        0.015000000596046448
+      ],
+      "ownToleranceMs": 0.019999980926513672,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": null,
+      "counterDeltas": {
+        "wasmCalls": 0,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 0,
+        "preparedMatrixReads": 0,
+        "matrixReads": 0
+      },
+      "renderFrameDelta": 0,
+      "wallCaptureMs": 2000.2149999886751,
+      "viewportCpu": {
+        "p50": 0.004999995231628418,
+        "p95": 0.01000000536441803,
+        "p99": 0.01000000536441803
+      },
+      "timelineCpu": {
+        "p50": 0.01000000536441803,
+        "p95": 0.025000005960464478,
+        "p99": 0.03304999828338616
+      }
+    },
+    {
+      "scenario": "E1-idle",
+      "label": "prepared-JS",
+      "engine": "prepared-js",
+      "round": 1,
+      "purpose": "balanced",
+      "directory": "runs/059-E1-idle-balanced-prepared-JS",
+      "cpu": {
+        "p50": 0.015000015497207642,
+        "p95": 0.034999996423721313,
+        "p99": 0.05305000320076935
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 9.470499999999902,
+        "p99": 9.942399999999997
+      },
+      "callbackStartIntervals": {
+        "p50": 8.330000013113022,
+        "p95": 9.681999991834164,
+        "p99": 10.331700000166894
+      },
+      "blocksP50": [
+        0.015000015497207642,
+        0.019999995827674866,
+        0.015000000596046448,
+        0.015000000596046448
+      ],
+      "ownToleranceMs": 0.019999980926513672,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": null,
+      "counterDeltas": {
+        "wasmCalls": 0,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 0,
+        "preparedMatrixReads": 0,
+        "matrixReads": 0
+      },
+      "renderFrameDelta": 0,
+      "wallCaptureMs": 1999.0649999976158,
+      "viewportCpu": {
+        "p50": 0.004999995231628418,
+        "p95": 0.01000000536441803,
+        "p99": 0.023049992918968126
+      },
+      "timelineCpu": {
+        "p50": 0.01000000536441803,
+        "p95": 0.02000001072883606,
+        "p99": 0.034999996423721313
+      }
+    },
+    {
+      "scenario": "E1-idle",
+      "label": "prepared-Wasm",
+      "engine": "prepared-wasm",
+      "round": 1,
+      "purpose": "balanced",
+      "directory": "runs/060-E1-idle-balanced-prepared-Wasm",
+      "cpu": {
+        "p50": 0.015000000596046448,
+        "p95": 0.025000005960464478,
+        "p99": 0.03500000551342964
+      },
+      "rafIntervals": {
+        "p50": 8.334999999999582,
+        "p95": 9.881500000000097,
+        "p99": 10.183600000000087
+      },
+      "callbackStartIntervals": {
+        "p50": 8.334999993443489,
+        "p95": 10.117000013589859,
+        "p99": 10.364299995303154
+      },
+      "blocksP50": [
+        0.014999985694885254,
+        0.015000000596046448,
+        0.015000000596046448,
+        0.01000000536441803
+      ],
+      "ownToleranceMs": 0.019999980926513672,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": null,
+      "counterDeltas": {
+        "wasmCalls": 0,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 0,
+        "preparedMatrixReads": 0,
+        "matrixReads": 0
+      },
+      "renderFrameDelta": 0,
+      "wallCaptureMs": 1999.094999998808,
+      "viewportCpu": {
+        "p50": 0.004999995231628418,
+        "p95": 0.01000000536441803,
+        "p99": 0.01000000536441803
+      },
+      "timelineCpu": {
+        "p50": 0.01000000536441803,
+        "p95": 0.019999995827674866,
+        "p99": 0.033050007373094485
+      }
+    },
+    {
+      "scenario": "E1-idle",
+      "label": "original-A",
+      "engine": "original",
+      "round": 1,
+      "purpose": "balanced",
+      "directory": "runs/061-E1-idle-balanced-original-A",
+      "cpu": {
+        "p50": 0.015000000596046448,
+        "p95": 0.0299999862909317,
+        "p99": 0.03500000551342964
+      },
+      "rafIntervals": {
+        "p50": 8.330000000000382,
+        "p95": 10.081499999999822,
+        "p99": 10.324999999999818
+      },
+      "callbackStartIntervals": {
+        "p50": 8.355000004172325,
+        "p95": 10.230500003695488,
+        "p99": 10.359299994409085
+      },
+      "blocksP50": [
+        0.014999985694885254,
+        0.015000000596046448,
+        0.015000015497207642,
+        0.015000000596046448
+      ],
+      "ownToleranceMs": 0.019999980926513672,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": null,
+      "counterDeltas": null,
+      "renderFrameDelta": 0,
+      "wallCaptureMs": 2002.4949999898672,
+      "viewportCpu": {
+        "p50": 0.004999995231628418,
+        "p95": 0.01000000536441803,
+        "p99": 0.015000000596046448
+      },
+      "timelineCpu": {
+        "p50": 0.01000000536441803,
+        "p95": 0.019999996572732926,
+        "p99": 0.025000005960464478
+      }
+    },
+    {
+      "scenario": "E1-idle",
+      "label": "original-B",
+      "engine": "original",
+      "round": 1,
+      "purpose": "balanced",
+      "directory": "runs/062-E1-idle-balanced-original-B",
+      "cpu": {
+        "p50": 0.015000000596046448,
+        "p95": 0.025250004976987754,
+        "p99": 0.04305000036954872
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 10.030500000000483,
+        "p99": 10.314999999999882
+      },
+      "callbackStartIntervals": {
+        "p50": 8.359999999403954,
+        "p95": 10.32999999821186,
+        "p99": 10.412899997234344
+      },
+      "blocksP50": [
+        0.015000000596046448,
+        0.015000000596046448,
+        0.015000000596046448,
+        0.01499999314546585
+      ],
+      "ownToleranceMs": 0.019999980926513672,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": null,
+      "counterDeltas": null,
+      "renderFrameDelta": 0,
+      "wallCaptureMs": 2000.0700000077486,
+      "viewportCpu": {
+        "p50": 0.004999995231628418,
+        "p95": 0.01000000536441803,
+        "p99": 0.01000000536441803
+      },
+      "timelineCpu": {
+        "p50": 0.01000000536441803,
+        "p95": 0.02000001072883606,
+        "p99": 0.033050007373094485
+      }
+    },
+    {
+      "scenario": "E1-idle",
+      "label": "prepared-Wasm",
+      "engine": "prepared-wasm",
+      "round": 2,
+      "purpose": "balanced",
+      "directory": "runs/063-E1-idle-balanced-prepared-Wasm",
+      "cpu": {
+        "p50": 0.015000000596046448,
+        "p95": 0.025000005960464478,
+        "p99": 0.03304999828338616
+      },
+      "rafIntervals": {
+        "p50": 8.335000000000036,
+        "p95": 9.910499999999866,
+        "p99": 10.323599999999788
+      },
+      "callbackStartIntervals": {
+        "p50": 8.340000003576279,
+        "p95": 10.24700000435114,
+        "p99": 10.349300003945828
+      },
+      "blocksP50": [
+        0.015000000596046448,
+        0.015000000596046448,
+        0.015000000596046448,
+        0.014999985694885254
+      ],
+      "ownToleranceMs": 0.019999980926513672,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": null,
+      "counterDeltas": {
+        "wasmCalls": 0,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 0,
+        "preparedMatrixReads": 0,
+        "matrixReads": 0
+      },
+      "renderFrameDelta": 0,
+      "wallCaptureMs": 2000.7450000047684,
+      "viewportCpu": {
+        "p50": 0.004999995231628418,
+        "p95": 0.01000000536441803,
+        "p99": 0.013050002455711291
+      },
+      "timelineCpu": {
+        "p50": 0.01000000536441803,
+        "p95": 0.019999995827674866,
+        "p99": 0.025000000149011613
+      }
+    },
+    {
+      "scenario": "E1-idle",
+      "label": "original-B",
+      "engine": "original",
+      "round": 2,
+      "purpose": "balanced",
+      "directory": "runs/064-E1-idle-balanced-original-B",
+      "cpu": {
+        "p50": 0.015000000596046448,
+        "p95": 0.0299999862909317,
+        "p99": 0.03804999932646744
+      },
+      "rafIntervals": {
+        "p50": 8.330000000000382,
+        "p95": 10.289999999999964,
+        "p99": 10.328100000000232
+      },
+      "callbackStartIntervals": {
+        "p50": 8.32999999821186,
+        "p95": 10.276499991118907,
+        "p99": 10.38549999922514
+      },
+      "blocksP50": [
+        0.015000000596046448,
+        0.015000000596046448,
+        0.015000000596046448,
+        0.015000000596046448
+      ],
+      "ownToleranceMs": 0.019999980926513672,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": null,
+      "counterDeltas": null,
+      "renderFrameDelta": 0,
+      "wallCaptureMs": 2001.8199999928474,
+      "viewportCpu": {
+        "p50": 0.004999995231628418,
+        "p95": 0.01000000536441803,
+        "p99": 0.015000000596046448
+      },
+      "timelineCpu": {
+        "p50": 0.01000000536441803,
+        "p95": 0.019999995827674866,
+        "p99": 0.030000001192092896
+      }
+    },
+    {
+      "scenario": "E1-idle",
+      "label": "prepared-JS",
+      "engine": "prepared-js",
+      "round": 2,
+      "purpose": "balanced",
+      "directory": "runs/065-E1-idle-balanced-prepared-JS",
+      "cpu": {
+        "p50": 0.015000000596046448,
+        "p95": 0.025250019133090888,
+        "p99": 0.03805000841617577
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 10.105999999999586,
+        "p99": 10.311200000000145
+      },
+      "callbackStartIntervals": {
+        "p50": 8.340000003576279,
+        "p95": 10.307000006735326,
+        "p99": 10.391199999451638
+      },
+      "blocksP50": [
+        0.015000000596046448,
+        0.015000015497207642,
+        0.015000000596046448,
+        0.012500002980232239
+      ],
+      "ownToleranceMs": 0.019999980926513672,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": null,
+      "counterDeltas": {
+        "wasmCalls": 0,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 0,
+        "preparedMatrixReads": 0,
+        "matrixReads": 0
+      },
+      "renderFrameDelta": 0,
+      "wallCaptureMs": 2000.0849999934435,
+      "viewportCpu": {
+        "p50": 0.004999995231628418,
+        "p95": 0.01000000536441803,
+        "p99": 0.013050002455711291
+      },
+      "timelineCpu": {
+        "p50": 0.01000000536441803,
+        "p95": 0.019999995827674866,
+        "p99": 0.025000005960464478
+      }
+    },
+    {
+      "scenario": "E1-idle",
+      "label": "original-A",
+      "engine": "original",
+      "round": 2,
+      "purpose": "balanced",
+      "directory": "runs/066-E1-idle-balanced-original-A",
+      "cpu": {
+        "p50": 0.015000000596046448,
+        "p95": 0.025000005960464478,
+        "p99": 0.03304999828338616
+      },
+      "rafIntervals": {
+        "p50": 8.335000000000036,
+        "p95": 9.946500000000151,
+        "p99": 10.29810000000014
+      },
+      "callbackStartIntervals": {
+        "p50": 8.344999998807907,
+        "p95": 10.246000003814697,
+        "p99": 10.323099999129772
+      },
+      "blocksP50": [
+        0.015000000596046448,
+        0.014999985694885254,
+        0.015000000596046448,
+        0.014999985694885254
+      ],
+      "ownToleranceMs": 0.019999980926513672,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": null,
+      "counterDeltas": null,
+      "renderFrameDelta": 0,
+      "wallCaptureMs": 1999.8699999898672,
+      "viewportCpu": {
+        "p50": 0.004999995231628418,
+        "p95": 0.01000000536441803,
+        "p99": 0.015000000596046448
+      },
+      "timelineCpu": {
+        "p50": 0.01000000536441803,
+        "p95": 0.019999995827674866,
+        "p99": 0.02000001072883606
+      }
+    },
+    {
+      "scenario": "E1-idle",
+      "label": "original-B",
+      "engine": "original",
+      "round": 3,
+      "purpose": "balanced",
+      "directory": "runs/067-E1-idle-balanced-original-B",
+      "cpu": {
+        "p50": 0.015000000596046448,
+        "p95": 0.030000001192092896,
+        "p99": 0.03804999351501458
+      },
+      "rafIntervals": {
+        "p50": 8.334999999999127,
+        "p95": 9.985000000000127,
+        "p99": 10.31309999999984
+      },
+      "callbackStartIntervals": {
+        "p50": 8.340000003576279,
+        "p95": 10.187999987602234,
+        "p99": 10.341199996769427
+      },
+      "blocksP50": [
+        0.015000000596046448,
+        0.015000000596046448,
+        0.015000015497207642,
+        0.015000000596046448
+      ],
+      "ownToleranceMs": 0.019999980926513672,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": null,
+      "counterDeltas": null,
+      "renderFrameDelta": 0,
+      "wallCaptureMs": 2000.280000001192,
+      "viewportCpu": {
+        "p50": 0.004999995231628418,
+        "p95": 0.01000000536441803,
+        "p99": 0.015000000596046448
+      },
+      "timelineCpu": {
+        "p50": 0.01000000536441803,
+        "p95": 0.020250009745359336,
+        "p99": 0.030000001192092896
+      }
+    },
+    {
+      "scenario": "E1-idle",
+      "label": "original-A",
+      "engine": "original",
+      "round": 3,
+      "purpose": "balanced",
+      "directory": "runs/068-E1-idle-balanced-original-A",
+      "cpu": {
+        "p50": 0.015000000596046448,
+        "p95": 0.03000001609325409,
+        "p99": 0.05414998725056626
+      },
+      "rafIntervals": {
+        "p50": 8.330000000000382,
+        "p95": 9.759500000000116,
+        "p99": 10.236700000000056
+      },
+      "callbackStartIntervals": {
+        "p50": 8.340000003576279,
+        "p95": 10.26050000488758,
+        "p99": 10.348599998950958
+      },
+      "blocksP50": [
+        0.019999980926513672,
+        0.015000008046627045,
+        0.017499998211860657,
+        0.014999985694885254
+      ],
+      "ownToleranceMs": 0.019999980926513672,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": null,
+      "counterDeltas": null,
+      "renderFrameDelta": 0,
+      "wallCaptureMs": 1999.75,
+      "viewportCpu": {
+        "p50": 0.004999995231628418,
+        "p95": 0.01000000536441803,
+        "p99": 0.015000000596046448
+      },
+      "timelineCpu": {
+        "p50": 0.01000000536441803,
+        "p95": 0.020250009745359336,
+        "p99": 0.030000001192092896
+      }
+    },
+    {
+      "scenario": "E1-idle",
+      "label": "prepared-Wasm",
+      "engine": "prepared-wasm",
+      "round": 3,
+      "purpose": "balanced",
+      "directory": "runs/069-E1-idle-balanced-prepared-Wasm",
+      "cpu": {
+        "p50": 0.015000000596046448,
+        "p95": 0.029999987035989762,
+        "p99": 0.0380500026047229
+      },
+      "rafIntervals": {
+        "p50": 8.335000000000036,
+        "p95": 9.715500000000157,
+        "p99": 10.106700000000227
+      },
+      "callbackStartIntervals": {
+        "p50": 8.32999999821186,
+        "p95": 9.028500001132487,
+        "p99": 10.279299996197224
+      },
+      "blocksP50": [
+        0.015000000596046448,
+        0.015000000596046448,
+        0.015000000596046448,
+        0.01499999314546585
+      ],
+      "ownToleranceMs": 0.019999980926513672,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": null,
+      "counterDeltas": {
+        "wasmCalls": 0,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 0,
+        "preparedMatrixReads": 0,
+        "matrixReads": 0
+      },
+      "renderFrameDelta": 0,
+      "wallCaptureMs": 2000.050000011921,
+      "viewportCpu": {
+        "p50": 0.004999995231628418,
+        "p95": 0.01000000536441803,
+        "p99": 0.015000000596046448
+      },
+      "timelineCpu": {
+        "p50": 0.01000000536441803,
+        "p95": 0.02000001072883606,
+        "p99": 0.025000005960464478
+      }
+    },
+    {
+      "scenario": "E1-idle",
+      "label": "prepared-JS",
+      "engine": "prepared-js",
+      "round": 3,
+      "purpose": "balanced",
+      "directory": "runs/070-E1-idle-balanced-prepared-JS",
+      "cpu": {
+        "p50": 0.014999985694885254,
+        "p95": 0.025000005960464478,
+        "p99": 0.0380500026047229
+      },
+      "rafIntervals": {
+        "p50": 8.329999999999927,
+        "p95": 10.082500000000117,
+        "p99": 10.323099999999776
+      },
+      "callbackStartIntervals": {
+        "p50": 8.344999998807907,
+        "p95": 10.32549998909235,
+        "p99": 10.380500003993511
+      },
+      "blocksP50": [
+        0.01499999314546585,
+        0.012500002980232239,
+        0.015000000596046448,
+        0.014999985694885254
+      ],
+      "ownToleranceMs": 0.019999980926513672,
+      "ownBlockFailures": 0,
+      "clockIncrementMs": 0.004999995231628418,
+      "armingRows": 2,
+      "phase": null,
+      "counterDeltas": {
+        "wasmCalls": 0,
+        "preparedPasses": 0,
+        "preparedWasmCalls": 0,
+        "preparedFallbacks": 0,
+        "preparedMatrixReads": 0,
+        "matrixReads": 0
+      },
+      "renderFrameDelta": 0,
+      "wallCaptureMs": 2001.2849999964237,
+      "viewportCpu": {
+        "p50": 0.004999995231628418,
+        "p95": 0.01000000536441803,
+        "p99": 0.01000000536441803
+      },
+      "timelineCpu": {
+        "p50": 0.01000000536441803,
+        "p95": 0.019999995827674866,
+        "p99": 0.025000000149011613
+      }
+    }
+  ],
+  "inputHashes": {
+    "manifest": "72badbcdff3453e5eb4bf2ace9b6c67d7ef434814ab9fded3ce6e279b3e5cac0",
+    "analysis": "462e35fcd94f64abfaba5f7e3e3b0946feb0a42fc95059a100c32e0d5027401c",
+    "rawFiles": [
+      {
+        "file": "runs/001-E3-root-selected-shadow-bookend-before-original-pre/raw-callbacks.json",
+        "sha256": "938bc1795ebe3f2e41e320221d2a087ad3ca587f41eb5c148355a37ea0568678"
+      },
+      {
+        "file": "runs/002-E3-root-selected-shadow-balanced-original-A/raw-callbacks.json",
+        "sha256": "3574f193f98a618487e8913ed8917f365e4fb040fe9fabb3e6b5bcd4defc7520"
+      },
+      {
+        "file": "runs/003-E3-root-selected-shadow-balanced-prepared-JS/raw-callbacks.json",
+        "sha256": "ae8b963f78dc374aef6a7b66f6d4cbd72582eae4d2f4f52713806096e70059d0"
+      },
+      {
+        "file": "runs/004-E3-root-selected-shadow-balanced-original-B/raw-callbacks.json",
+        "sha256": "185d88acc7fb832faabd560bdf9b972bb9cdd5dc8736ce23386482c9e50b26a0"
+      },
+      {
+        "file": "runs/005-E3-root-selected-shadow-balanced-prepared-Wasm/raw-callbacks.json",
+        "sha256": "6be9a95c2c043ccde0ae8ef41a51bbb11f350e33f32efac56356091021636282"
+      },
+      {
+        "file": "runs/006-E3-root-selected-shadow-balanced-prepared-JS/raw-callbacks.json",
+        "sha256": "4aafaae97b43dec756cb79a05e49198801255936ee7ef1298d9e0698a1c5eea5"
+      },
+      {
+        "file": "runs/007-E3-root-selected-shadow-balanced-prepared-Wasm/raw-callbacks.json",
+        "sha256": "8c603473739d7f1883680e7b7a5aea0b57b81d18cad0b69ddea1ecf4a2de2078"
+      },
+      {
+        "file": "runs/008-E3-root-selected-shadow-balanced-original-A/raw-callbacks.json",
+        "sha256": "b0ab51a9888733779d3522f1633cece4f7d5a7faaa05d9de79bf1b7bb1853b90"
+      },
+      {
+        "file": "runs/009-E3-root-selected-shadow-balanced-original-B/raw-callbacks.json",
+        "sha256": "eec905956ccd9777aed97db85fcd6a6519eb35901af8b8c5f0ac82572d2b1212"
+      },
+      {
+        "file": "runs/010-E3-root-selected-shadow-balanced-prepared-Wasm/raw-callbacks.json",
+        "sha256": "9b76e35bbe4b5f898f28c19f97fa6034d41ed08d30c6322311fe0ab9328bff06"
+      },
+      {
+        "file": "runs/011-E3-root-selected-shadow-balanced-original-B/raw-callbacks.json",
+        "sha256": "eb1c8ee902c40be0a383751e95e1c0c318b9a7ff9a84e307872231d1a4c2c99b"
+      },
+      {
+        "file": "runs/012-E3-root-selected-shadow-balanced-prepared-JS/raw-callbacks.json",
+        "sha256": "b0a6c40a37a38bb0b92019530dbaefa80872777cd54bcc2a4cb815715e858c4c"
+      },
+      {
+        "file": "runs/013-E3-root-selected-shadow-balanced-original-A/raw-callbacks.json",
+        "sha256": "38d09c9c0cedf6df2fc5e16587e52630092c6ac31df01e2135b036770d84b010"
+      },
+      {
+        "file": "runs/014-E3-root-selected-shadow-balanced-original-B/raw-callbacks.json",
+        "sha256": "a409ae823105f1d41c1c0048050239045edb462c23a4a131e37551a5ece09bf4"
+      },
+      {
+        "file": "runs/015-E3-root-selected-shadow-balanced-original-A/raw-callbacks.json",
+        "sha256": "13241562903e9b99b411a47c96db448a4f569d096b29171dd31150de80caff52"
+      },
+      {
+        "file": "runs/016-E3-root-selected-shadow-balanced-prepared-Wasm/raw-callbacks.json",
+        "sha256": "e8073b182269b83501ff739cf3f0e15c8315d2e419a8c63cf7e896ee598df440"
+      },
+      {
+        "file": "runs/017-E3-root-selected-shadow-balanced-prepared-JS/raw-callbacks.json",
+        "sha256": "5e73b15801aa3d1ce943868d090e72d1d382647350e7ecd593971412870c9a39"
+      },
+      {
+        "file": "runs/018-E3-root-selected-shadow-bookend-after-original-post/raw-callbacks.json",
+        "sha256": "d1b8cd849c7eec720f31bed671e336eeb7f98c255b3ac619bfa604df49745310"
+      },
+      {
+        "file": "runs/019-E3-root-selected-no-shadow-bookend-before-original-pre/raw-callbacks.json",
+        "sha256": "44d0dc595531806a12c747f76c3f34b24ae3423234191a207ed286a0cc5da4bf"
+      },
+      {
+        "file": "runs/020-E3-root-selected-no-shadow-balanced-original-A/raw-callbacks.json",
+        "sha256": "7137641f45442e7b9bd08f900ae404f2b14c6277232b0dcae96f1bb7064a97af"
+      },
+      {
+        "file": "runs/021-E3-root-selected-no-shadow-balanced-prepared-JS/raw-callbacks.json",
+        "sha256": "38ecb04f4c9d861700a711d80ef1e78b9d7efc82f05cf86428ad3bb17f3de40d"
+      },
+      {
+        "file": "runs/022-E3-root-selected-no-shadow-balanced-original-B/raw-callbacks.json",
+        "sha256": "daec73283b96ee5f99dee2c2bc983c27a422aca5d4435793790fb42799b17607"
+      },
+      {
+        "file": "runs/023-E3-root-selected-no-shadow-balanced-prepared-Wasm/raw-callbacks.json",
+        "sha256": "48f9385e06a2d6348a162fe05ae0a1c53a46702ae652dee907f24bb4cfe15c79"
+      },
+      {
+        "file": "runs/024-E3-root-selected-no-shadow-balanced-prepared-JS/raw-callbacks.json",
+        "sha256": "936b643cdbc509ef0a2ed0e5746f48056fd6cef5ec8cd4d22ed7300137ee10d9"
+      },
+      {
+        "file": "runs/025-E3-root-selected-no-shadow-balanced-prepared-Wasm/raw-callbacks.json",
+        "sha256": "b9a53c020a5d7ebfe6beccd9c97fea9c9825b81a833b1bfdc41200cda46a390a"
+      },
+      {
+        "file": "runs/026-E3-root-selected-no-shadow-balanced-original-A/raw-callbacks.json",
+        "sha256": "c98bae47e1d8b26d0b43a2bc0a832435decf806dd9b6b07115d1813e1bc0df87"
+      },
+      {
+        "file": "runs/027-E3-root-selected-no-shadow-balanced-original-B/raw-callbacks.json",
+        "sha256": "2790e11331bad40b54967d408d9c1e35035848b8cbaf08ae6cc3467705ea0b3e"
+      },
+      {
+        "file": "runs/028-E3-root-selected-no-shadow-balanced-prepared-Wasm/raw-callbacks.json",
+        "sha256": "5cc1fd5f85a8f9974968298b222c6ae43124153bc4387f5e079d115eb3de507d"
+      },
+      {
+        "file": "runs/029-E3-root-selected-no-shadow-balanced-original-B/raw-callbacks.json",
+        "sha256": "6af64feef1fdd1848ea9207e0cd76eb98a6553d82fba91c46354f4939f6fcc6a"
+      },
+      {
+        "file": "runs/030-E3-root-selected-no-shadow-balanced-prepared-JS/raw-callbacks.json",
+        "sha256": "6013fa588e3d67e03b6177c0f99685d0d2af303be93b89971d4a32cca9a6abb5"
+      },
+      {
+        "file": "runs/031-E3-root-selected-no-shadow-balanced-original-A/raw-callbacks.json",
+        "sha256": "7ee859873843d5f9911aaa146950a4c29ae13df4dc440642de57fffdeafabfdb"
+      },
+      {
+        "file": "runs/032-E3-root-selected-no-shadow-balanced-original-B/raw-callbacks.json",
+        "sha256": "6fbfcd3fa88a7e24d4d35b36ede84b784d85d16f3057ca560550c8c40da4b733"
+      },
+      {
+        "file": "runs/033-E3-root-selected-no-shadow-balanced-original-A/raw-callbacks.json",
+        "sha256": "717dc7a691d2f9151ae0d4cfec616b0ce88744a0a3220a2babaab751cdf9ca8c"
+      },
+      {
+        "file": "runs/034-E3-root-selected-no-shadow-balanced-prepared-Wasm/raw-callbacks.json",
+        "sha256": "ca8c896fc8e1183c6b3e785b9fa731075f7c5ef4fb04690a175567343f8cec75"
+      },
+      {
+        "file": "runs/035-E3-root-selected-no-shadow-balanced-prepared-JS/raw-callbacks.json",
+        "sha256": "8dbc325aa32a974410ab1b16794dfc80ca3b9714fd791967c61e357aaf35e7c6"
+      },
+      {
+        "file": "runs/036-E3-root-selected-no-shadow-bookend-after-original-post/raw-callbacks.json",
+        "sha256": "671b5badd812638dc5f084d57a90138e0764dbf98afadf5875d3d98566a3aa83"
+      },
+      {
+        "file": "runs/037-E3-root-selected-high-resolution-bookend-before-original-pre/raw-callbacks.json",
+        "sha256": "356ad069235ee82f36b5b9d11ff8abc109d3863a8d99b0d6ae559c8f12c5e79b"
+      },
+      {
+        "file": "runs/038-E3-root-selected-high-resolution-balanced-original-A/raw-callbacks.json",
+        "sha256": "560cb039bcfd2bdb0f5a94e3af77933350245a6c3bebbfc33639de8c301e1901"
+      },
+      {
+        "file": "runs/039-E3-root-selected-high-resolution-balanced-prepared-JS/raw-callbacks.json",
+        "sha256": "b9c36319ce7a9c88782a6e3edbdf1d5b199df18074d0f51c447adaea2a348a58"
+      },
+      {
+        "file": "runs/040-E3-root-selected-high-resolution-balanced-original-B/raw-callbacks.json",
+        "sha256": "3c1bf4ac540bb863ae2b6ef2a11a82f469d8a17491f4411b965f335f46627e00"
+      },
+      {
+        "file": "runs/041-E3-root-selected-high-resolution-balanced-prepared-Wasm/raw-callbacks.json",
+        "sha256": "3da5128f723b9a909cd9c1244dddfb3cd6b5b698f5a8932430a582d262c69f86"
+      },
+      {
+        "file": "runs/042-E3-root-selected-high-resolution-balanced-prepared-JS/raw-callbacks.json",
+        "sha256": "df1b65a0ae5158d73191b18d1ddace9d2fe11d28fb1970a1101a1cc6e3070225"
+      },
+      {
+        "file": "runs/043-E3-root-selected-high-resolution-balanced-prepared-Wasm/raw-callbacks.json",
+        "sha256": "337ec9c7ea0b924e3867a20a75dc05d3b4eea8d9fb433657a277beccd9faab31"
+      },
+      {
+        "file": "runs/044-E3-root-selected-high-resolution-balanced-original-A/raw-callbacks.json",
+        "sha256": "9471167a780f055ee866582c7f4e3201aae5081414bb4a80eea327edcc983874"
+      },
+      {
+        "file": "runs/045-E3-root-selected-high-resolution-balanced-original-B/raw-callbacks.json",
+        "sha256": "b6185ced946bcb4b9958e9da74cfd00c5acc64d51861dbb2301435f716a7b86c"
+      },
+      {
+        "file": "runs/046-E3-root-selected-high-resolution-balanced-prepared-Wasm/raw-callbacks.json",
+        "sha256": "e2a9b91848f78fa8501418c43cd6c287fe277d06f1fc168ee7838cdc5795a02e"
+      },
+      {
+        "file": "runs/047-E3-root-selected-high-resolution-balanced-original-B/raw-callbacks.json",
+        "sha256": "478ecb7416df9c08cfdfa92c5c3c7dfeef1e42f7c2c5a68f2e474c5e21c36e41"
+      },
+      {
+        "file": "runs/048-E3-root-selected-high-resolution-balanced-prepared-JS/raw-callbacks.json",
+        "sha256": "aa395c7cffed1d99de20b0c48bbfb7c74fed8988993895492694d33757eac88f"
+      },
+      {
+        "file": "runs/049-E3-root-selected-high-resolution-balanced-original-A/raw-callbacks.json",
+        "sha256": "02e04dd2e7cb2b823a7ad3ee50ce1cbdcff030ef9c6fff787f4984fe321fb298"
+      },
+      {
+        "file": "runs/050-E3-root-selected-high-resolution-balanced-original-B/raw-callbacks.json",
+        "sha256": "7d1d2234e7c6f2ee8f751d32e13d31116c0801fafaf4a3af6c9a821da69ccf42"
+      },
+      {
+        "file": "runs/051-E3-root-selected-high-resolution-balanced-original-A/raw-callbacks.json",
+        "sha256": "f15a87c33f6db288d981146aceb1c8ccb7a20a3db4be990752066e4b4ad52c88"
+      },
+      {
+        "file": "runs/052-E3-root-selected-high-resolution-balanced-prepared-Wasm/raw-callbacks.json",
+        "sha256": "c54bb26916b63a768b4581840bd7ebc3b2d3cac295e67ab00f1263d9918e84b6"
+      },
+      {
+        "file": "runs/053-E3-root-selected-high-resolution-balanced-prepared-JS/raw-callbacks.json",
+        "sha256": "930f911c17c1148c61fbbfd1b56279fe5b32610c94a737183b3048d7694d644d"
+      },
+      {
+        "file": "runs/054-E3-root-selected-high-resolution-bookend-after-original-post/raw-callbacks.json",
+        "sha256": "b1c8b75ca5cafa416470216c80e9ee1c2afab4e20df50942247a8f171308b14d"
+      },
+      {
+        "file": "runs/055-E1-idle-balanced-original-A/raw-callbacks.json",
+        "sha256": "f3ef898a9b2743ee53ad37ce262c6980e5e2204f988fb69d9232745d5bf3266f"
+      },
+      {
+        "file": "runs/056-E1-idle-balanced-prepared-JS/raw-callbacks.json",
+        "sha256": "0ae539ebce4fddbbb9c13be29dc44b72c4190e9ace5ba7f5f56af171fea8db12"
+      },
+      {
+        "file": "runs/057-E1-idle-balanced-original-B/raw-callbacks.json",
+        "sha256": "fb86fd9238528f163c08f8ca8be52234a4ccc80f54b4201ab489fc1253433c68"
+      },
+      {
+        "file": "runs/058-E1-idle-balanced-prepared-Wasm/raw-callbacks.json",
+        "sha256": "37855b5ab67afdbb38f2c12c3b3784149767394a73861dbc7ae01a43e6e1e4d8"
+      },
+      {
+        "file": "runs/059-E1-idle-balanced-prepared-JS/raw-callbacks.json",
+        "sha256": "1ac2634e715cc2fcfe1bc3ca7e7d60695f0bb5f64904839a2c43cc81ac75517f"
+      },
+      {
+        "file": "runs/060-E1-idle-balanced-prepared-Wasm/raw-callbacks.json",
+        "sha256": "2ee8980888556b41e6deff3dde23f6fd32a1311a96872d9d752a2eb89c6ea9c1"
+      },
+      {
+        "file": "runs/061-E1-idle-balanced-original-A/raw-callbacks.json",
+        "sha256": "d9d41ebf02f5b3365bf597da2181d9fe34dc17ae545c38c70e387d63c3570621"
+      },
+      {
+        "file": "runs/062-E1-idle-balanced-original-B/raw-callbacks.json",
+        "sha256": "5532dbfa0f172b53b16894a27477c36ab35cd8c85b2e762390c56b37060a57e5"
+      },
+      {
+        "file": "runs/063-E1-idle-balanced-prepared-Wasm/raw-callbacks.json",
+        "sha256": "d32c9de1050a4a8a04b437cd49fb6989c9fbb9839bedc97853dc56d921553592"
+      },
+      {
+        "file": "runs/064-E1-idle-balanced-original-B/raw-callbacks.json",
+        "sha256": "0da0ba56e3f9bbe271526f583b13dd1e252d8d6f2a04dd7f06c45f3cacbe5eae"
+      },
+      {
+        "file": "runs/065-E1-idle-balanced-prepared-JS/raw-callbacks.json",
+        "sha256": "82405df69c2d60326f5c6777402dcf435bebc41dbfcc7c3bfc4b35a2a2a19760"
+      },
+      {
+        "file": "runs/066-E1-idle-balanced-original-A/raw-callbacks.json",
+        "sha256": "cdf272f402e539f99cc47df74b44db3f0019e8e431f909f4102e70e9e270678c"
+      },
+      {
+        "file": "runs/067-E1-idle-balanced-original-B/raw-callbacks.json",
+        "sha256": "b679f5d9f4470c1a2cbef974d5d840963bab06809996a0d9929048c5541947c3"
+      },
+      {
+        "file": "runs/068-E1-idle-balanced-original-A/raw-callbacks.json",
+        "sha256": "ee73f69c74a64b4215e8541ef64e5b192ff388608205bd532bcb6c8c3da1fa45"
+      },
+      {
+        "file": "runs/069-E1-idle-balanced-prepared-Wasm/raw-callbacks.json",
+        "sha256": "5dfcca8eb819cc977fe9202b02a093281b4e1981891028386510c50b3a3505ad"
+      },
+      {
+        "file": "runs/070-E1-idle-balanced-prepared-JS/raw-callbacks.json",
+        "sha256": "3eb7169b34c705fe257a7b8b63a6077038cb8d97fe464fa0cd57939290928e7e"
+      }
+    ],
+    "environmentBefore": "806f28993460360f5ff811ae93775aaca33101a34da6b47b65fdbd44a6fa955f",
+    "environmentAfter": "4ffcc7c66d737a648d158db1f57b1195d29e46bef005d0c5c11393cf2c1d316f"
+  },
+  "caseConditions": [
+    {
+      "scenario": "E3-root-selected-shadow",
+      "canvas": [
+        930,
+        378
+      ],
+      "css": [
+        930,
+        378
+      ],
+      "rendererDpr": 1,
+      "quality": {
+        "antialias": true,
+        "toneMapping": 7,
+        "exposure": 1,
+        "outputColorSpace": "srgb",
+        "shadows": true,
+        "shadowType": 1
+      },
+      "sceneSetup": {
+        "shape": {
+          "skins": 4,
+          "morphMeshes": 3,
+          "clips": [
+            "Dance",
+            "Death",
+            "Idle",
+            "Jump",
+            "No",
+            "Punch",
+            "Running",
+            "Sitting",
+            "Standing",
+            "ThumbsUp",
+            "Walking",
+            "WalkJump",
+            "Wave",
+            "Yes"
+          ],
+          "vertices": 7214
+        },
+        "camera": [
+          5,
+          3.5,
+          7
+        ],
+        "target": [
+          0.02903489391441072,
+          2.210306801808131,
+          0.07344450557537341
+        ],
+        "shadow": true,
+        "shadowMapSize": [
+          1024,
+          1024
+        ]
+      },
+      "wallCaptureRangeMs": [
+        9998.209999993443,
+        10002.159999996424
+      ],
+      "phaseMaxErrorSeconds": 4.085620730620576e-14,
+      "phaseMixerAdvanceRangeSeconds": [
+        9.98987499999999,
+        9.993495000004764
+      ],
+      "clockIncrementRangeMs": [
+        0.004999995231628418,
+        0.004999995231628418
+      ]
+    },
+    {
+      "scenario": "E3-root-selected-no-shadow",
+      "canvas": [
+        930,
+        378
+      ],
+      "css": [
+        930,
+        378
+      ],
+      "rendererDpr": 1,
+      "quality": {
+        "antialias": true,
+        "toneMapping": 7,
+        "exposure": 1,
+        "outputColorSpace": "srgb",
+        "shadows": true,
+        "shadowType": 1
+      },
+      "sceneSetup": {
+        "shape": {
+          "skins": 4,
+          "morphMeshes": 3,
+          "clips": [
+            "Dance",
+            "Death",
+            "Idle",
+            "Jump",
+            "No",
+            "Punch",
+            "Running",
+            "Sitting",
+            "Standing",
+            "ThumbsUp",
+            "Walking",
+            "WalkJump",
+            "Wave",
+            "Yes"
+          ],
+          "vertices": 7214
+        },
+        "camera": [
+          5,
+          3.5,
+          7
+        ],
+        "target": [
+          0.02903489391441072,
+          2.210306801808131,
+          0.07344450557537341
+        ],
+        "shadow": false,
+        "shadowMapSize": [
+          1024,
+          1024
+        ]
+      },
+      "wallCaptureRangeMs": [
+        9999.70000000298,
+        10001.630000010133
+      ],
+      "phaseMaxErrorSeconds": 5.861977570020827e-14,
+      "phaseMixerAdvanceRangeSeconds": [
+        9.99071999999879,
+        9.993635000005366
+      ],
+      "clockIncrementRangeMs": [
+        0.004999995231628418,
+        0.004999995231628418
+      ]
+    },
+    {
+      "scenario": "E3-root-selected-high-resolution",
+      "canvas": [
+        1860,
+        756
+      ],
+      "css": [
+        930,
+        378
+      ],
+      "rendererDpr": 2,
+      "quality": {
+        "antialias": true,
+        "toneMapping": 7,
+        "exposure": 1,
+        "outputColorSpace": "srgb",
+        "shadows": true,
+        "shadowType": 1
+      },
+      "sceneSetup": {
+        "shape": {
+          "skins": 4,
+          "morphMeshes": 3,
+          "clips": [
+            "Dance",
+            "Death",
+            "Idle",
+            "Jump",
+            "No",
+            "Punch",
+            "Running",
+            "Sitting",
+            "Standing",
+            "ThumbsUp",
+            "Walking",
+            "WalkJump",
+            "Wave",
+            "Yes"
+          ],
+          "vertices": 7214
+        },
+        "camera": [
+          5,
+          3.5,
+          7
+        ],
+        "target": [
+          0.02903489391441072,
+          2.210306801808131,
+          0.07344450557537341
+        ],
+        "shadow": true,
+        "shadowMapSize": [
+          1024,
+          1024
+        ]
+      },
+      "wallCaptureRangeMs": [
+        9998.185000002384,
+        10001.540000006557
+      ],
+      "phaseMaxErrorSeconds": 4.440892098500626e-14,
+      "phaseMixerAdvanceRangeSeconds": [
+        9.990969999998818,
+        9.993689999997624
+      ],
+      "clockIncrementRangeMs": [
+        0.004999995231628418,
+        0.004999995231628418
+      ]
+    },
+    {
+      "scenario": "E1-idle",
+      "canvas": [
+        930,
+        648
+      ],
+      "css": [
+        930,
+        648
+      ],
+      "rendererDpr": 1,
+      "quality": {
+        "antialias": true,
+        "toneMapping": 7,
+        "exposure": 1,
+        "outputColorSpace": "srgb",
+        "shadows": true,
+        "shadowType": 1
+      },
+      "sceneSetup": {
+        "shape": {
+          "skins": 0,
+          "morphMeshes": 0,
+          "clips": [],
+          "vertices": 0
+        },
+        "camera": [
+          6,
+          4,
+          8
+        ],
+        "target": [
+          0,
+          0.4,
+          0
+        ],
+        "shadow": true,
+        "shadowMapSize": [
+          1024,
+          1024
+        ]
+      },
+      "wallCaptureRangeMs": [
+        1999.0649999976158,
+        2002.4949999898672
+      ],
+      "phaseMaxErrorSeconds": null,
+      "phaseMixerAdvanceRangeSeconds": null,
+      "clockIncrementRangeMs": [
+        0.004999995231628418,
+        0.004999995231628418
+      ]
+    }
+  ],
+  "oracleIndependentCheck": {
+    "pages": 24,
+    "poseRecords": 42,
+    "errors": [],
+    "records": [
+      {
+        "directory": "oracles/E3-root-selected-shadow/original-unmodified",
+        "pose": 0.25,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+        "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+      },
+      {
+        "directory": "oracles/E3-root-selected-shadow/original-unmodified",
+        "pose": 0.75,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+        "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+      },
+      {
+        "directory": "oracles/E3-root-selected-shadow/original-overlay",
+        "pose": 0.25,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+        "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+      },
+      {
+        "directory": "oracles/E3-root-selected-shadow/original-overlay",
+        "pose": 0.75,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+        "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+      },
+      {
+        "directory": "oracles/E3-root-selected-shadow/prepared-js-unmodified",
+        "pose": 0.25,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+        "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+      },
+      {
+        "directory": "oracles/E3-root-selected-shadow/prepared-js-unmodified",
+        "pose": 0.75,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+        "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+      },
+      {
+        "directory": "oracles/E3-root-selected-shadow/prepared-js-overlay",
+        "pose": 0.25,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+        "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+      },
+      {
+        "directory": "oracles/E3-root-selected-shadow/prepared-js-overlay",
+        "pose": 0.75,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+        "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+      },
+      {
+        "directory": "oracles/E3-root-selected-shadow/prepared-wasm-unmodified",
+        "pose": 0.25,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+        "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+      },
+      {
+        "directory": "oracles/E3-root-selected-shadow/prepared-wasm-unmodified",
+        "pose": 0.75,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+        "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+      },
+      {
+        "directory": "oracles/E3-root-selected-shadow/prepared-wasm-overlay",
+        "pose": 0.25,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+        "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+      },
+      {
+        "directory": "oracles/E3-root-selected-shadow/prepared-wasm-overlay",
+        "pose": 0.75,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+        "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+      },
+      {
+        "directory": "oracles/E3-root-selected-no-shadow/original-unmodified",
+        "pose": 0.25,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "f2d477cb39e7d76aecbdfe749a94229244303671fe5957173f904af6093b6b61",
+        "pngSha256": "f2751817beb7b3d82926245e6b9ea0f63a2a45a0863260f8a4aab9ac7622ffe4"
+      },
+      {
+        "directory": "oracles/E3-root-selected-no-shadow/original-unmodified",
+        "pose": 0.75,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "b24f0ec5a7c9b26af75f753742fbc35df7f077264f5da40b0dc08220bda9f878",
+        "pngSha256": "9dda7d6d1e74c306da147c7d80998130b56283357ae592f77d3d2e26f8a4c244"
+      },
+      {
+        "directory": "oracles/E3-root-selected-no-shadow/original-overlay",
+        "pose": 0.25,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "f2d477cb39e7d76aecbdfe749a94229244303671fe5957173f904af6093b6b61",
+        "pngSha256": "f2751817beb7b3d82926245e6b9ea0f63a2a45a0863260f8a4aab9ac7622ffe4"
+      },
+      {
+        "directory": "oracles/E3-root-selected-no-shadow/original-overlay",
+        "pose": 0.75,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "b24f0ec5a7c9b26af75f753742fbc35df7f077264f5da40b0dc08220bda9f878",
+        "pngSha256": "9dda7d6d1e74c306da147c7d80998130b56283357ae592f77d3d2e26f8a4c244"
+      },
+      {
+        "directory": "oracles/E3-root-selected-no-shadow/prepared-js-unmodified",
+        "pose": 0.25,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "f2d477cb39e7d76aecbdfe749a94229244303671fe5957173f904af6093b6b61",
+        "pngSha256": "f2751817beb7b3d82926245e6b9ea0f63a2a45a0863260f8a4aab9ac7622ffe4"
+      },
+      {
+        "directory": "oracles/E3-root-selected-no-shadow/prepared-js-unmodified",
+        "pose": 0.75,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "b24f0ec5a7c9b26af75f753742fbc35df7f077264f5da40b0dc08220bda9f878",
+        "pngSha256": "9dda7d6d1e74c306da147c7d80998130b56283357ae592f77d3d2e26f8a4c244"
+      },
+      {
+        "directory": "oracles/E3-root-selected-no-shadow/prepared-js-overlay",
+        "pose": 0.25,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "f2d477cb39e7d76aecbdfe749a94229244303671fe5957173f904af6093b6b61",
+        "pngSha256": "f2751817beb7b3d82926245e6b9ea0f63a2a45a0863260f8a4aab9ac7622ffe4"
+      },
+      {
+        "directory": "oracles/E3-root-selected-no-shadow/prepared-js-overlay",
+        "pose": 0.75,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "b24f0ec5a7c9b26af75f753742fbc35df7f077264f5da40b0dc08220bda9f878",
+        "pngSha256": "9dda7d6d1e74c306da147c7d80998130b56283357ae592f77d3d2e26f8a4c244"
+      },
+      {
+        "directory": "oracles/E3-root-selected-no-shadow/prepared-wasm-unmodified",
+        "pose": 0.25,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "f2d477cb39e7d76aecbdfe749a94229244303671fe5957173f904af6093b6b61",
+        "pngSha256": "f2751817beb7b3d82926245e6b9ea0f63a2a45a0863260f8a4aab9ac7622ffe4"
+      },
+      {
+        "directory": "oracles/E3-root-selected-no-shadow/prepared-wasm-unmodified",
+        "pose": 0.75,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "b24f0ec5a7c9b26af75f753742fbc35df7f077264f5da40b0dc08220bda9f878",
+        "pngSha256": "9dda7d6d1e74c306da147c7d80998130b56283357ae592f77d3d2e26f8a4c244"
+      },
+      {
+        "directory": "oracles/E3-root-selected-no-shadow/prepared-wasm-overlay",
+        "pose": 0.25,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "f2d477cb39e7d76aecbdfe749a94229244303671fe5957173f904af6093b6b61",
+        "pngSha256": "f2751817beb7b3d82926245e6b9ea0f63a2a45a0863260f8a4aab9ac7622ffe4"
+      },
+      {
+        "directory": "oracles/E3-root-selected-no-shadow/prepared-wasm-overlay",
+        "pose": 0.75,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "b24f0ec5a7c9b26af75f753742fbc35df7f077264f5da40b0dc08220bda9f878",
+        "pngSha256": "9dda7d6d1e74c306da147c7d80998130b56283357ae592f77d3d2e26f8a4c244"
+      },
+      {
+        "directory": "oracles/E3-root-selected-high-resolution/original-unmodified",
+        "pose": 0.25,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "26f8ad14b58a03ae695a2b793cefd4f4f4e0330db6c5ab64338da9289c1f712d",
+        "pngSha256": "1d092b8d890d02e0b8c8aa2d067d0f8587853d8a1fdaad705495164c546f8df8"
+      },
+      {
+        "directory": "oracles/E3-root-selected-high-resolution/original-unmodified",
+        "pose": 0.75,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "18ed333e533e3b4eef322204d1f925836f0c4591e2a32d171bc8ddeb51129d72",
+        "pngSha256": "ecdc77f52a7e2bafa350b63525b6e02f3460da6d64aa52627d3288e14b3e25a9"
+      },
+      {
+        "directory": "oracles/E3-root-selected-high-resolution/original-overlay",
+        "pose": 0.25,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "26f8ad14b58a03ae695a2b793cefd4f4f4e0330db6c5ab64338da9289c1f712d",
+        "pngSha256": "1d092b8d890d02e0b8c8aa2d067d0f8587853d8a1fdaad705495164c546f8df8"
+      },
+      {
+        "directory": "oracles/E3-root-selected-high-resolution/original-overlay",
+        "pose": 0.75,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "18ed333e533e3b4eef322204d1f925836f0c4591e2a32d171bc8ddeb51129d72",
+        "pngSha256": "ecdc77f52a7e2bafa350b63525b6e02f3460da6d64aa52627d3288e14b3e25a9"
+      },
+      {
+        "directory": "oracles/E3-root-selected-high-resolution/prepared-js-unmodified",
+        "pose": 0.25,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "26f8ad14b58a03ae695a2b793cefd4f4f4e0330db6c5ab64338da9289c1f712d",
+        "pngSha256": "1d092b8d890d02e0b8c8aa2d067d0f8587853d8a1fdaad705495164c546f8df8"
+      },
+      {
+        "directory": "oracles/E3-root-selected-high-resolution/prepared-js-unmodified",
+        "pose": 0.75,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "18ed333e533e3b4eef322204d1f925836f0c4591e2a32d171bc8ddeb51129d72",
+        "pngSha256": "ecdc77f52a7e2bafa350b63525b6e02f3460da6d64aa52627d3288e14b3e25a9"
+      },
+      {
+        "directory": "oracles/E3-root-selected-high-resolution/prepared-js-overlay",
+        "pose": 0.25,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "26f8ad14b58a03ae695a2b793cefd4f4f4e0330db6c5ab64338da9289c1f712d",
+        "pngSha256": "1d092b8d890d02e0b8c8aa2d067d0f8587853d8a1fdaad705495164c546f8df8"
+      },
+      {
+        "directory": "oracles/E3-root-selected-high-resolution/prepared-js-overlay",
+        "pose": 0.75,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "18ed333e533e3b4eef322204d1f925836f0c4591e2a32d171bc8ddeb51129d72",
+        "pngSha256": "ecdc77f52a7e2bafa350b63525b6e02f3460da6d64aa52627d3288e14b3e25a9"
+      },
+      {
+        "directory": "oracles/E3-root-selected-high-resolution/prepared-wasm-unmodified",
+        "pose": 0.25,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "26f8ad14b58a03ae695a2b793cefd4f4f4e0330db6c5ab64338da9289c1f712d",
+        "pngSha256": "1d092b8d890d02e0b8c8aa2d067d0f8587853d8a1fdaad705495164c546f8df8"
+      },
+      {
+        "directory": "oracles/E3-root-selected-high-resolution/prepared-wasm-unmodified",
+        "pose": 0.75,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "18ed333e533e3b4eef322204d1f925836f0c4591e2a32d171bc8ddeb51129d72",
+        "pngSha256": "ecdc77f52a7e2bafa350b63525b6e02f3460da6d64aa52627d3288e14b3e25a9"
+      },
+      {
+        "directory": "oracles/E3-root-selected-high-resolution/prepared-wasm-overlay",
+        "pose": 0.25,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "26f8ad14b58a03ae695a2b793cefd4f4f4e0330db6c5ab64338da9289c1f712d",
+        "pngSha256": "1d092b8d890d02e0b8c8aa2d067d0f8587853d8a1fdaad705495164c546f8df8"
+      },
+      {
+        "directory": "oracles/E3-root-selected-high-resolution/prepared-wasm-overlay",
+        "pose": 0.75,
+        "numericValues": 7833,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "18ed333e533e3b4eef322204d1f925836f0c4591e2a32d171bc8ddeb51129d72",
+        "pngSha256": "ecdc77f52a7e2bafa350b63525b6e02f3460da6d64aa52627d3288e14b3e25a9"
+      },
+      {
+        "directory": "oracles/E1-idle/original-unmodified",
+        "pose": 0,
+        "numericValues": 284,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "0cd56c1dff65a115c0862a37b89ae55169734d1c069798ab87356f491b9cddf3",
+        "pngSha256": "ed14bdb7ef0f511dc3b3245c352d8b0a97032666e3aeb01db17e3aec64bd32f4"
+      },
+      {
+        "directory": "oracles/E1-idle/original-overlay",
+        "pose": 0,
+        "numericValues": 284,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "0cd56c1dff65a115c0862a37b89ae55169734d1c069798ab87356f491b9cddf3",
+        "pngSha256": "ed14bdb7ef0f511dc3b3245c352d8b0a97032666e3aeb01db17e3aec64bd32f4"
+      },
+      {
+        "directory": "oracles/E1-idle/prepared-js-unmodified",
+        "pose": 0,
+        "numericValues": 284,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "0cd56c1dff65a115c0862a37b89ae55169734d1c069798ab87356f491b9cddf3",
+        "pngSha256": "ed14bdb7ef0f511dc3b3245c352d8b0a97032666e3aeb01db17e3aec64bd32f4"
+      },
+      {
+        "directory": "oracles/E1-idle/prepared-js-overlay",
+        "pose": 0,
+        "numericValues": 284,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "0cd56c1dff65a115c0862a37b89ae55169734d1c069798ab87356f491b9cddf3",
+        "pngSha256": "ed14bdb7ef0f511dc3b3245c352d8b0a97032666e3aeb01db17e3aec64bd32f4"
+      },
+      {
+        "directory": "oracles/E1-idle/prepared-wasm-unmodified",
+        "pose": 0,
+        "numericValues": 284,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "0cd56c1dff65a115c0862a37b89ae55169734d1c069798ab87356f491b9cddf3",
+        "pngSha256": "ed14bdb7ef0f511dc3b3245c352d8b0a97032666e3aeb01db17e3aec64bd32f4"
+      },
+      {
+        "directory": "oracles/E1-idle/prepared-wasm-overlay",
+        "pose": 0,
+        "numericValues": 284,
+        "maxAbsoluteError": 0,
+        "rawPixelSha256": "0cd56c1dff65a115c0862a37b89ae55169734d1c069798ab87356f491b9cddf3",
+        "pngSha256": "ed14bdb7ef0f511dc3b3245c352d8b0a97032666e3aeb01db17e3aec64bd32f4"
+      }
+    ]
+  },
+  "verdict": "Observed candidate callback costs are higher than original in every continuous condition, and no Rust benefit over matched JS is established. Prepared rendering never activates for this feature-preserving workload. Original A/A block gates fail in all continuous conditions; do not report stable performance percentages, FPS gains, or an exact causal allocation of the regression. This supports a bounded negative adoption verdict for this candidate and app path, not a rejection of Rust ownership generally.",
+  "normalization": {
+    "scope": "Metadata-only public copy: digits in InternalBattery-N (id=...) become <redacted>; the battery index, AC source, charge, power settings and all measured quantities are unchanged.",
+    "batteryIdentifiersRedacted": 2,
+    "originalInputsModified": false,
+    "inputHashScope": "Every inputHashes digest is SHA-256 of original raw file bytes before metadata normalization; no digest describes a normalized replacement."
+  }
+}

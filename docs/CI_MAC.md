@@ -69,3 +69,9 @@ change that workflow's default-branch restriction.
 The historical Mac report records its executed component commands. The current
 precision/matched-JS wrapper has not yet supplied a new physical-Mac result. A
 passing smoke, preflight or artifact build alone does not qualify product speed.
+
+The separately pinned [Mac candidate/application screen](MAC_APP_SCREEN.md)
+records exact-9527 lifecycle diagnostics, C3/epoch fixture comparison, Editor
+candidate correctness and a completed native Editor callback-cost screen.
+Failed continuous A/A screens remain public. These separate experiments do not
+qualify the current Fox wrapper, an app speed advantage or a new baseline.
