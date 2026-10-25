@@ -1,0 +1,15 @@
+✔ prepared-wasm: unchanged topology has no JS command reconstruction (5.926875ms)
+✔ prepared-wasm: committed hierarchy is visible inside synchronous events (0.294166ms)
+✔ prepared-wasm: cached plans observe replaced matrices and layer objects (0.351ms)
+✔ prepared-wasm: release preserves the lazily cleared public dirty flag (0.121375ms)
+✔ prepared-wasm: dirty queues do not retain an abandoned detached record (3.324167ms)
+✔ prepared-wasm: cached snapshots follow retained, selective, manual and lifetime updates (49.670791ms)
+✔ prepared-wasm: repeated verified public reads avoid native memory access (0.84175ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 120.55225
