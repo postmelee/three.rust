@@ -1,0 +1,125 @@
+{
+  "status": "verified",
+  "payloads": 277,
+  "sourceToPublicNumericEquality": "Verified recursively for every JSON document; only explicitly normalized strings may differ.",
+  "suites": [
+    {
+      "suite": "full",
+      "runs": 144,
+      "timedFrames": 86400,
+      "preparedRuns": 96,
+      "wasmRuns": 48,
+      "correctnessCaptures": 24,
+      "fixedImageComparisons": 20,
+      "matrixValuesCompared": 1041280,
+      "maxAbsoluteMatrixError": 0,
+      "allFixedImagesByteIdenticalToOriginalA": true,
+      "allTimedFinalDrawCountsEqualPerScene": true,
+      "allVisibleFocusedHardwareBoundaries": true,
+      "aa": [
+        {
+          "scene": "cubes",
+          "runCount": 12,
+          "failedRuns": 6,
+          "blockCount": 60,
+          "failedBlocks": 12,
+          "toleranceMs": 0.07600000016391278,
+          "passed": false
+        },
+        {
+          "scene": "hierarchy",
+          "runCount": 12,
+          "failedRuns": 8,
+          "blockCount": 60,
+          "failedBlocks": 7,
+          "toleranceMs": 0.33718750011175874,
+          "passed": false
+        },
+        {
+          "scene": "small",
+          "runCount": 12,
+          "failedRuns": 3,
+          "blockCount": 60,
+          "failedBlocks": 13,
+          "toleranceMs": 0.019999980926513672,
+          "passed": false
+        },
+        {
+          "scene": "shader",
+          "runCount": 12,
+          "failedRuns": 1,
+          "blockCount": 60,
+          "failedBlocks": 20,
+          "toleranceMs": 0.019999980926513672,
+          "passed": false
+        }
+      ],
+      "routeBlocks": {
+        "count": 720,
+        "failed": 160
+      },
+      "captureErrors": 0,
+      "startedAt": "2026-10-25T22:19:31.665Z",
+      "finishedAt": "2026-10-25T22:40:17.061Z"
+    },
+    {
+      "suite": "smoke",
+      "runs": 24,
+      "timedFrames": 240,
+      "preparedRuns": 16,
+      "wasmRuns": 8,
+      "correctnessCaptures": 24,
+      "fixedImageComparisons": 20,
+      "matrixValuesCompared": 1041280,
+      "maxAbsoluteMatrixError": 0,
+      "allFixedImagesByteIdenticalToOriginalA": true,
+      "allTimedFinalDrawCountsEqualPerScene": true,
+      "allVisibleFocusedHardwareBoundaries": true,
+      "aa": [
+        {
+          "scene": "cubes",
+          "runCount": 2,
+          "failedRuns": 2,
+          "blockCount": 2,
+          "failedBlocks": 0,
+          "toleranceMs": 0.08743749987334014,
+          "passed": false
+        },
+        {
+          "scene": "hierarchy",
+          "runCount": 2,
+          "failedRuns": 0,
+          "blockCount": 2,
+          "failedBlocks": 0,
+          "toleranceMs": 0.3550625002011657,
+          "passed": true
+        },
+        {
+          "scene": "small",
+          "runCount": 2,
+          "failedRuns": 0,
+          "blockCount": 2,
+          "failedBlocks": 0,
+          "toleranceMs": 0.019999980926513672,
+          "passed": true
+        },
+        {
+          "scene": "shader",
+          "runCount": 2,
+          "failedRuns": 2,
+          "blockCount": 2,
+          "failedBlocks": 0,
+          "toleranceMs": 0.019999980926513672,
+          "passed": false
+        }
+      ],
+      "routeBlocks": {
+        "count": 24,
+        "failed": 0
+      },
+      "captureErrors": 0,
+      "startedAt": "2026-10-25T22:09:48.732Z",
+      "finishedAt": "2026-10-25T22:10:55.661Z"
+    }
+  ]
+}
