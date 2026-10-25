@@ -28,6 +28,10 @@ const MIME = {
 const git = (cwd, args) => execFileSync('git', args, { cwd, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();
 const inside = (root, file) => file === root || file.startsWith(root + path.sep);
 const publicPath = file => file.split(path.sep).join('/');
+const fullFilePatch = (file, before, after) => {
+ const oldLines = before.replace(/\n$/, '').split('\n'), newLines = after.replace(/\n$/, '').split('\n');
+ return [`--- a/${file}`, `+++ b/${file}`, `@@ -1,${oldLines.length} +1,${newLines.length} @@`, ...oldLines.map(line => '-' + line), ...newLines.map(line => '+' + line), ''].join('\n');
+};
 
 export function parseRunOptions(args = process.argv.slice(4), defaultApp = 'all') {
  const options = { engine: 'original', app: defaultApp };
@@ -99,6 +103,10 @@ export async function openRun(rootArg, outArg, options = {}) {
  const out = path.resolve(outArg);
  await fs.mkdir(out, { recursive: false });
  const engine = options.engine ?? 'original';
+ const isolated = options.isolated === true;
+ const dpr = options.deviceScaleFactor ?? 1;
+ const ownsBrowser = !options.browser;
+ const isolationHeaders = isolated ? { 'cross-origin-opener-policy': 'same-origin', 'cross-origin-embedder-policy': 'require-corp' } : {};
  const toolingRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
  let candidateRoot, candidatePackage, candidate, browser, context, server;
  const requests = [], errors = [], served = new Map(), checkedFiles = new Map();
@@ -125,6 +133,7 @@ export async function openRun(rootArg, outArg, options = {}) {
  try {
   if (engine !== 'original' && !Object.hasOwn(ENTRIES, engine)) throw Error('engine must be original, prepared-js or prepared-wasm');
   if (engine !== 'original' && !options.candidateRoot) throw Error('Candidate engine requires candidateRoot');
+  if (![1, 2].includes(dpr)) throw Error('deviceScaleFactor must be 1 or 2');
   checkApps();
   const resources = JSON.parse(await fs.readFile(new URL('./resources.json', import.meta.url)));
   for (const resource of resources) {
@@ -171,6 +180,28 @@ export async function openRun(rootArg, outArg, options = {}) {
   await save('editor-index.original.html', originalIndex.toString('utf8'));
   await save('editor-index.served.html', overlay.data.toString('utf8'));
 
+  const responseOverlays = new Map(), overlayRecords = [];
+  for (const [number, item] of (options.sourceOverlays ?? []).entries()) {
+   const file = await safeFile(root, item.file);
+   if (file === indexFile || responseOverlays.has(file)) throw Error('Duplicate or bootstrap source overlay');
+   const source = await fs.readFile(file);
+   if (hash(source) !== item.sha256) throw Error(`Source overlay hash mismatch: ${item.file}`);
+   remember(file, item.file, source);
+   let text = source.toString('utf8');
+   for (const { from, to } of item.edits) {
+    if (!from || text.split(from).length !== 2) throw Error(`Source overlay anchor mismatch: ${item.file}`);
+    text = text.replace(from, to);
+   }
+   const data = Buffer.from(text);
+   responseOverlays.set(file, data);
+   const prefix = `source-overlay-${number}`;
+   await save(prefix + '.original.txt', source.toString('utf8'));
+   await save(prefix + '.served.txt', text);
+   await save(prefix + '.patch', fullFilePatch(item.file, source.toString('utf8'), text));
+   overlayRecords.push({ file: item.file, originalSha256: hash(source), originalBytes: source.length, servedSha256: hash(data), servedBytes: data.length, edits: item.edits, archivePrefix: prefix });
+  }
+  await save('source-overlays.json', overlayRecords);
+
   server = http.createServer(async (req, res) => {
    let pathname = '';
    try {
@@ -188,9 +219,9 @@ export async function openRun(rootArg, outArg, options = {}) {
     // Generated addons intentionally resolve to the package's same index/core.
     // Reject an accidentally unbuilt addon tree instead of loading another core.
     if (isCandidate && relative.startsWith('addons/') && file.endsWith('.js') && /\bfrom\s*['"]three['"]/.test(source.toString('utf8'))) throw Error('Candidate addon still has an unrewritten bare three import');
-    const data = file === indexFile ? overlay.data : source;
-    served.set(label, { ...record, sha256: hash(data), bytes: data.length, ...(file === indexFile ? { originalSha256: record.sha256, originalBytes: source.length, adapted: engine !== 'original' } : {}) });
-    res.writeHead(200, { 'content-type': MIME[path.extname(file)] || 'application/octet-stream', 'cache-control': 'no-store' });
+    const data = file === indexFile ? overlay.data : responseOverlays.get(file) ?? source;
+    served.set(label, { ...record, sha256: hash(data), bytes: data.length, ...(file === indexFile || responseOverlays.has(file) ? { originalSha256: record.sha256, originalBytes: source.length, adapted: hash(source) !== hash(data) } : {}) });
+    res.writeHead(200, { 'content-type': MIME[path.extname(file)] || 'application/octet-stream', 'cache-control': 'no-store', ...isolationHeaders });
     res.end(req.method === 'HEAD' ? undefined : data);
    } catch (error) {
     errors.push(redact(`Local request ${pathname}: ${error.message}`));
@@ -199,9 +230,9 @@ export async function openRun(rootArg, outArg, options = {}) {
   });
   await new Promise((resolve, reject) => { server.once('error', reject); server.listen(0, '127.0.0.1', resolve); });
   const origin = `http://127.0.0.1:${server.address().port}`;
-  const executablePath = process.env.RTHREE_CHROME || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
-  browser = await chromium.launch({ executablePath, headless: false });
-  context = await browser.newContext({ viewport: { width: 1280, height: 720 }, deviceScaleFactor: 1, colorScheme: 'light', locale: 'en-US', serviceWorkers: 'block' });
+  const executablePath = options.browserExecutablePath || process.env.RTHREE_CHROME || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+  browser = options.browser ?? await chromium.launch({ executablePath, headless: false });
+  context = await browser.newContext({ viewport: { width: 1280, height: 720 }, deviceScaleFactor: dpr, colorScheme: 'light', locale: 'en-US', serviceWorkers: 'block' });
   await context.route('**/*', async route => {
    const url = route.request().url();
    if (url.startsWith(origin + '/')) return route.continue();
@@ -211,7 +242,7 @@ export async function openRun(rootArg, outArg, options = {}) {
     const file = await safeFile(root, 'vendor/' + resource.file), data = await fs.readFile(file);
     remember(file, 'vendor/' + resource.file, data);
     requests.push({ url, sha256: resource.sha256, mirrored: true });
-    return route.fulfill({ body: data, contentType: MIME[path.extname(resource.file)] || 'text/javascript', headers: { 'access-control-allow-origin': '*' } });
+    return route.fulfill({ body: data, contentType: MIME[path.extname(resource.file)] || 'text/javascript', headers: { 'access-control-allow-origin': '*', ...(isolated ? { 'cross-origin-resource-policy': 'cross-origin' } : {}) } });
    }
    requests.push({ url: redact(url), blocked: true }); await route.abort();
   });
@@ -222,7 +253,7 @@ export async function openRun(rootArg, outArg, options = {}) {
   const tooling = sourceState(toolingRoot, true);
   await save('environment.json', { browser: browser.version(), executablePath: redact(executablePath), toolingSha: tooling.sha,
    toolingDirty: tooling.dirty, helperSha256: hash(await fs.readFile(fileURLToPath(import.meta.url))),
-   engine, app: options.app ?? 'all', candidateSha: candidate?.sha ?? null, headed: true, viewport: { width: 1280, height: 720 }, dpr: 1,
+   engine, app: options.app ?? 'all', candidateSha: candidate?.sha ?? null, headed: true, viewport: { width: 1280, height: 720 }, dpr, isolated, browserLifecycle: ownsBrowser ? 'owned-per-run' : 'caller-owned-process-fresh-context',
    mode: options.mode || 'Candidate-aware correctness only; no profiles, timers or frame samples' });
   let closed = false;
   return { root, out, origin, page, context, save, requests, errors, engine, candidateSha: candidate?.sha ?? null,
@@ -232,7 +263,8 @@ export async function openRun(rootArg, outArg, options = {}) {
     let integrityError;
     try {
      // Quiesce requests before checking the artifacts that were actually used.
-     await browser.close();
+     await context.close();
+     if (ownsBrowser) await browser.close();
      await new Promise(resolve => server.close(resolve));
      checkApps();
      if (candidateRoot) {
@@ -244,7 +276,8 @@ export async function openRun(rootArg, outArg, options = {}) {
      }
     } catch (error) { integrityError = error; errors.push(redact(error.message)); }
     finally {
-     await browser.close().catch(() => {});
+     await context.close().catch(() => {});
+     if (ownsBrowser) await browser.close().catch(() => {});
      if (server.listening) await new Promise(resolve => server.close(resolve));
      await save('served-files.json', [...served.values()].sort((a, b) => a.file.localeCompare(b.file)));
      await save('network.json', requests);
@@ -256,7 +289,8 @@ export async function openRun(rootArg, outArg, options = {}) {
   };
  } catch (error) {
   errors.push(redact(error.message));
-  if (browser) await browser.close().catch(() => {});
+  if (context) await context.close().catch(() => {});
+  if (browser && ownsBrowser) await browser.close().catch(() => {});
   if (server?.listening) await new Promise(resolve => server.close(resolve));
   await save('errors.json', errors);
   await save('served-files.json', [...served.values()]);
