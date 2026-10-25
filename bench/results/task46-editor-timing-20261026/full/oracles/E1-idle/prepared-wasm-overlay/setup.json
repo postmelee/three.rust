@@ -1,0 +1,134 @@
+{
+  "scenario": {
+    "id": "E1-idle",
+    "idle": true,
+    "selected": false,
+    "shadow": true,
+    "pixelRatio": 1
+  },
+  "sceneSetup": {
+    "shape": {
+      "skins": 0,
+      "morphMeshes": 0,
+      "clips": [],
+      "vertices": 0
+    },
+    "camera": [
+      6,
+      4,
+      8
+    ],
+    "target": [
+      0,
+      0.4,
+      0
+    ],
+    "shadow": true,
+    "shadowMapSize": [
+      1024,
+      1024
+    ]
+  },
+  "environment": {
+    "at": 2033.7449999898672,
+    "visibility": "visible",
+    "focused": true,
+    "crossOriginIsolated": true,
+    "dpr": 1,
+    "width": 930,
+    "height": 648,
+    "cssWidth": 930,
+    "cssHeight": 648,
+    "rendererPixelRatio": 1,
+    "renderInfo": {
+      "frame": 188,
+      "calls": 9,
+      "triangles": 72,
+      "points": 0,
+      "lines": 0
+    },
+    "quality": {
+      "antialias": true,
+      "toneMapping": 7,
+      "exposure": 1,
+      "outputColorSpace": "srgb",
+      "shadows": true,
+      "shadowType": 1
+    },
+    "autosave": true,
+    "savingStarted": 1,
+    "savingFinished": 1,
+    "renderCount": 27,
+    "mixerTime": 0,
+    "selected": null,
+    "action": null,
+    "diagnostics": {
+      "backend": "prepared-wasm",
+      "wasmActive": true,
+      "batches": 1136,
+      "nodes": 4310,
+      "fallbackRoots": 552,
+      "wasmCalls": 1136,
+      "wasmNodes": 4310,
+      "uploadedBytes": 305200,
+      "scannedBytes": 154560,
+      "materializedBytes": 166784,
+      "arenas": 1,
+      "syncMs": 0,
+      "kernelMs": 0,
+      "readMs": 0,
+      "abiCalls": 1808,
+      "operationBytes": 93940,
+      "matrixReads": 1303,
+      "liveNodes": 121,
+      "topologyBuilds": 69,
+      "dirtyRecords": 44,
+      "retainedUpdates": 238,
+      "preparedInputBytes": 68872,
+      "preparedFallbacks": 120,
+      "preparedWasmCalls": 118,
+      "prepareKernelMs": 0,
+      "prepareMs": 0,
+      "preparedReadMs": 0,
+      "preparedPasses": 118,
+      "preparedDraws": 150,
+      "preparedMatrixBytes": 22200,
+      "preparedMatrixReads": 111,
+      "wasmMemoryBytes": 1376256
+    }
+  },
+  "clock": {
+    "crossOriginIsolated": true,
+    "minPositiveDeltaMs": 0.004999995231628418,
+    "positiveDeltas": 2784,
+    "iterations": 100000,
+    "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+  },
+  "hardware": {
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+    "vendor": "Google Inc. (Apple)",
+    "attributes": {
+      "alpha": true,
+      "antialias": true,
+      "depth": true,
+      "desynchronized": false,
+      "failIfMajorPerformanceCaveat": false,
+      "powerPreference": "default",
+      "premultipliedAlpha": true,
+      "preserveDrawingBuffer": false,
+      "stencil": false,
+      "xrCompatible": false
+    },
+    "width": 930,
+    "height": 648,
+    "dpr": 1
+  },
+  "layout": {
+    "timelineHeight": 37,
+    "timelineContentHeight": 36,
+    "viewportWidth": 930,
+    "viewportHeight": 648,
+    "shading": "default",
+    "xr": false
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "browser": "155.0.8059.86",
+  "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "toolingSha": "a1aad46f2bf8d74176b2b5e2836cbdd1ff34678a",
+  "toolingDirty": false,
+  "helperSha256": "53b7581fc2bebd27b84026795c3f754862f2e74a83c5f1c08081358e4bd0a302",
+  "engine": "original",
+  "app": "editor",
+  "candidateSha": "6990fd92f61a031c8c2ba7a8282cfb63684e6dfb",
+  "headed": true,
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "dpr": 1,
+  "isolated": true,
+  "browserLifecycle": "caller-owned-process-fresh-context",
+  "mode": "Native Editor callback cost instrumentation; no profiler or forced render loop"
+}

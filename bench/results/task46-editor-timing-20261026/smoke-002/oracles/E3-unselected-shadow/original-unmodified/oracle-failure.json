@@ -1,0 +1,8 @@
+{
+  "scenario": "E3-unselected-shadow",
+  "engine": "original",
+  "instrumented": false,
+  "status": "failed",
+  "directory": "oracles/E3-unselected-shadow/original-unmodified",
+  "error": "locator.click: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#animation').getByText('Walking', { exact: true })\u001b[22m\n\n    at setup (<tooling>/scripts/apps/timing.mjs:227:71)\n    at async parity (<tooling>/scripts/apps/timing.mjs:292:5)\n    at async file://<tooling>/scripts/apps/timing.mjs:439:2"
+}

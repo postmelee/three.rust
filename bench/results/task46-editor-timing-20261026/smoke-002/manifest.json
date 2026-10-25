@@ -1,0 +1,512 @@
+{
+  "status": "failed",
+  "kind": "tooling-smoke-only",
+  "startedAt": "2026-10-25T22:53:56.084Z",
+  "configuration": {
+    "mode": "smoke",
+    "qualification": false,
+    "rounds": 1,
+    "warmup": 10,
+    "samples": 30,
+    "idleWarmup": 10,
+    "idleSamples": 30,
+    "cssViewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageDpr": 1,
+    "isolated": true,
+    "timelinePanelHeight": 307,
+    "timelineContentHeight": 306,
+    "profiling": false,
+    "gpuQueries": false,
+    "stageTimers": false,
+    "poseClock": "Unchanged native wall-clock Timer/mixer; poses are not frame-matched across routes",
+    "scope": "Sum of disjoint Viewport.animate and Animation.updateTime synchronous callback bodies; not entire browser CPU, display latency or FPS"
+  },
+  "candidateSha": "6990fd92f61a031c8c2ba7a8282cfb63684e6dfb",
+  "routes": [
+    {
+      "label": "original-A",
+      "engine": "original"
+    },
+    {
+      "label": "prepared-JS",
+      "engine": "prepared-js"
+    },
+    {
+      "label": "prepared-Wasm",
+      "engine": "prepared-wasm"
+    },
+    {
+      "label": "original-B",
+      "engine": "original"
+    }
+  ],
+  "cases": [
+    {
+      "id": "E3-root-selected-shadow",
+      "selected": true,
+      "shadow": true,
+      "pixelRatio": 1
+    },
+    {
+      "id": "E3-unselected-shadow",
+      "selected": false,
+      "shadow": true,
+      "pixelRatio": 1
+    },
+    {
+      "id": "E3-root-selected-no-shadow",
+      "selected": true,
+      "shadow": false,
+      "pixelRatio": 1
+    },
+    {
+      "id": "E3-root-selected-high-resolution",
+      "selected": true,
+      "shadow": true,
+      "pixelRatio": 2
+    }
+  ],
+  "idleCase": {
+    "id": "E1-idle",
+    "idle": true,
+    "selected": false,
+    "shadow": true,
+    "pixelRatio": 1
+  },
+  "orders": [
+    [
+      "original-A",
+      "prepared-JS",
+      "original-B",
+      "prepared-Wasm"
+    ]
+  ],
+  "plannedContinuousRuns": 24,
+  "plannedIdleRuns": 4,
+  "nativeInteractionsAlreadyCovered": [
+    "picking and camera/focus",
+    "gizmo transforms and undo/redo",
+    "timeline play/pause/scrub/clip controls"
+  ],
+  "deferred": [
+    "E1 gizmo handler timing",
+    "new optimization implementation",
+    "GPU-time attribution",
+    "other-date repeats"
+  ],
+  "timingSources": {
+    "editor/editor/js/Viewport.js": "597f323c2b9c8c7e6f87bc92192baf5ecd940edb9533198b0c8dcbdcf706e196",
+    "editor/editor/js/Animation.js": "1d47972dd3b92c1c28a44f0699b6b0e770a5cfcddc8959db87f2d9ef4d982983"
+  },
+  "oracles": [
+    {
+      "scenario": "E3-root-selected-shadow",
+      "engine": "original",
+      "instrumented": false,
+      "status": "passed",
+      "directory": "oracles/E3-root-selected-shadow/original-unmodified",
+      "originalComparisons": [
+        {
+          "maxAbsoluteError": 0,
+          "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+          "numericValues": 7833
+        },
+        {
+          "maxAbsoluteError": 0,
+          "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+          "numericValues": 7833
+        }
+      ]
+    },
+    {
+      "scenario": "E3-root-selected-shadow",
+      "engine": "original",
+      "instrumented": true,
+      "status": "passed",
+      "directory": "oracles/E3-root-selected-shadow/original-overlay",
+      "originalComparisons": [
+        {
+          "maxAbsoluteError": 0,
+          "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+          "numericValues": 7833
+        },
+        {
+          "maxAbsoluteError": 0,
+          "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+          "numericValues": 7833
+        }
+      ],
+      "overlayComparisons": [
+        {
+          "maxAbsoluteError": 0,
+          "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+          "numericValues": 7833
+        },
+        {
+          "maxAbsoluteError": 0,
+          "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+          "numericValues": 7833
+        }
+      ]
+    },
+    {
+      "scenario": "E3-root-selected-shadow",
+      "engine": "prepared-js",
+      "instrumented": false,
+      "status": "passed",
+      "directory": "oracles/E3-root-selected-shadow/prepared-js-unmodified",
+      "originalComparisons": [
+        {
+          "maxAbsoluteError": 0,
+          "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+          "numericValues": 7833
+        },
+        {
+          "maxAbsoluteError": 0,
+          "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+          "numericValues": 7833
+        }
+      ]
+    },
+    {
+      "scenario": "E3-root-selected-shadow",
+      "engine": "prepared-js",
+      "instrumented": true,
+      "status": "passed",
+      "directory": "oracles/E3-root-selected-shadow/prepared-js-overlay",
+      "originalComparisons": [
+        {
+          "maxAbsoluteError": 0,
+          "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+          "numericValues": 7833
+        },
+        {
+          "maxAbsoluteError": 0,
+          "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+          "numericValues": 7833
+        }
+      ],
+      "overlayComparisons": [
+        {
+          "maxAbsoluteError": 0,
+          "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+          "numericValues": 7833
+        },
+        {
+          "maxAbsoluteError": 0,
+          "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+          "numericValues": 7833
+        }
+      ]
+    },
+    {
+      "scenario": "E3-root-selected-shadow",
+      "engine": "prepared-wasm",
+      "instrumented": false,
+      "status": "passed",
+      "directory": "oracles/E3-root-selected-shadow/prepared-wasm-unmodified",
+      "originalComparisons": [
+        {
+          "maxAbsoluteError": 0,
+          "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+          "numericValues": 7833
+        },
+        {
+          "maxAbsoluteError": 0,
+          "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+          "numericValues": 7833
+        }
+      ]
+    },
+    {
+      "scenario": "E3-root-selected-shadow",
+      "engine": "prepared-wasm",
+      "instrumented": true,
+      "status": "passed",
+      "directory": "oracles/E3-root-selected-shadow/prepared-wasm-overlay",
+      "originalComparisons": [
+        {
+          "maxAbsoluteError": 0,
+          "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+          "numericValues": 7833
+        },
+        {
+          "maxAbsoluteError": 0,
+          "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+          "numericValues": 7833
+        }
+      ],
+      "overlayComparisons": [
+        {
+          "maxAbsoluteError": 0,
+          "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+          "numericValues": 7833
+        },
+        {
+          "maxAbsoluteError": 0,
+          "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+          "numericValues": 7833
+        }
+      ]
+    },
+    {
+      "scenario": "E3-unselected-shadow",
+      "engine": "original",
+      "instrumented": false,
+      "status": "failed",
+      "directory": "oracles/E3-unselected-shadow/original-unmodified",
+      "error": "locator.click: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#animation').getByText('Walking', { exact: true })\u001b[22m\n\n    at setup (<tooling>/scripts/apps/timing.mjs:227:71)\n    at async parity (<tooling>/scripts/apps/timing.mjs:292:5)\n    at async file://<tooling>/scripts/apps/timing.mjs:439:2"
+    }
+  ],
+  "runs": [],
+  "errors": [
+    "locator.click: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#animation').getByText('Walking', { exact: true })\u001b[22m\n\n    at setup (<tooling>/scripts/apps/timing.mjs:227:71)\n    at async parity (<tooling>/scripts/apps/timing.mjs:292:5)\n    at async file://<tooling>/scripts/apps/timing.mjs:439:2"
+  ],
+  "coverageExclusions": [
+    "asynchronous IndexedDB completion",
+    "deferred resources UI outside the callback pair",
+    "vendor/browser tasks",
+    "paint/compositor/GPU",
+    "row bookkeeping"
+  ],
+  "higherRasterControl": "Only renderer.setPixelRatio(2) changes; page DPR and CSS layout remain 1 and unchanged. GPU-bound status is not assumed.",
+  "sourceBefore": {
+    "tooling": {
+      "sha": "1881908125e16ba3f68887a1cf13d92f2f8f753e",
+      "dirty": false
+    },
+    "candidate": {
+      "sha": "6990fd92f61a031c8c2ba7a8282cfb63684e6dfb",
+      "dirty": false
+    },
+    "apps": {
+      "editor": {
+        "sha": "9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8",
+        "dirty": false
+      },
+      "viewer": {
+        "sha": "b5ee5dafe27f953ae1b55f42b5fa3697fef08683",
+        "dirty": false
+      }
+    }
+  },
+  "tooling": {
+    "sha": "1881908125e16ba3f68887a1cf13d92f2f8f753e",
+    "dirty": false,
+    "node": "v24.15.0",
+    "files": {
+      "scripts/apps/timing.mjs": "ea0f93f1ef7610ebc4ed650cfb7c4fd52b69e9de9ab054272c187dcb2d9938b1",
+      "scripts/apps/timing-overlay.mjs": "6a977c4b7e89a0eb8dee040a65f34bb77cb8ede6b9463e003d70d519798344fc",
+      "scripts/apps/candidate-browser.mjs": "53b7581fc2bebd27b84026795c3f754862f2e74a83c5f1c08081358e4bd0a302",
+      "scripts/apps/browser.mjs": "3bed1b96cfcd923a8150ae74294153d2b6a4febff9476dec30a2004fe2955c21",
+      "scripts/apps/resources.json": "78a18ae7e19e78ac37891223533a7363e881605102181c1ae8a2402feeb2ba7c",
+      "bench/timing.mjs": "86ed9cd861b454cedeb16732171b7dc42cd71b818807ef04bc7ccacdb78489f8",
+      "package-lock.json": "b938b0b7c45499a8962d4beff96db709ec0caafe2e44d94e1d53754e2666a355",
+      "scripts/runner-environment.mjs": "88cedb93ba5b3ce2622ca087d7336cdd9ffa2389d6310c0c504dbb0caeb0b56c",
+      "scripts/browser-path.mjs": "0a469944255f1128bcd293118fe84082f97fbd84dafba5f358da231dd3f6a168"
+    },
+    "collectorSha256": "2eafbf006c4ea3c3c58a68d2d1ff4beebb8be7d3ff3aae0212b881e82aa432a4"
+  },
+  "asset": {
+    "file": "editor/examples/models/gltf/RobotExpressive/RobotExpressive.glb",
+    "sha256": "047f5e5fb3bb6d378bd1df16ca6137f2a596c99b3a1b5690b4020c05aaf6f319"
+  },
+  "environmentBefore": {
+    "available": true,
+    "file": "environment-before/runner.json",
+    "power": {
+      "available": true,
+      "verifiedAC": true,
+      "observed": {
+        "available": true,
+        "output": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=<redacted>)\t100%; charged; 0:00 remaining present: true"
+      }
+    }
+  },
+  "environmentLimitations": [
+    "Missing display refresh/mode and unrelated workload absence require the operator record; browser callback cadence is recorded separately.",
+    "Unavailable power queries are explicitly not verified; they do not establish AC operation."
+  ],
+  "browser": {
+    "version": "155.0.8059.86",
+    "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "lifecycle": "one caller-owned browser, fresh context/page per oracle and timed run",
+    "protocolMetadata": {
+      "version": {
+        "available": true,
+        "value": {
+          "protocolVersion": "1.3",
+          "product": "Chrome/155.0.8059.86",
+          "revision": "@804d6b05f089b27af8342622a36558c49401a1d4",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+          "jsVersion": "15.5.35.25"
+        }
+      },
+      "commandLine": {
+        "available": true,
+        "value": {
+          "arguments": [
+            "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+            "--disable-field-trial-config",
+            "--disable-background-networking",
+            "--disable-background-timer-throttling",
+            "--disable-backgrounding-occluded-windows",
+            "--disable-back-forward-cache",
+            "--disable-breakpad",
+            "--disable-client-side-phishing-detection",
+            "--disable-component-extensions-with-background-pages",
+            "--disable-component-update",
+            "--no-default-browser-check",
+            "--disable-default-apps",
+            "--disable-dev-shm-usage",
+            "--disable-extensions",
+            "--disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument",
+            "--enable-features=CDPScreenshotNewSurface",
+            "--allow-pre-commit-input",
+            "--disable-hang-monitor",
+            "--disable-ipc-flooding-protection",
+            "--disable-popup-blocking",
+            "--disable-prompt-on-repost",
+            "--disable-renderer-backgrounding",
+            "--force-color-profile=srgb",
+            "--metrics-recording-only",
+            "--no-first-run",
+            "--password-store=basic",
+            "--use-mock-keychain",
+            "--no-service-autorun",
+            "--export-tagged-pdf",
+            "--disable-search-engine-choice-screen",
+            "--unsafely-disable-devtools-self-xss-warnings",
+            "--edge-skip-compat-layer-relaunch",
+            "--enable-automation",
+            "--enable-unsafe-swiftshader",
+            "--no-sandbox",
+            "--user-data-dir=<browser-private-directory>",
+            "--remote-debugging-pipe",
+            "--no-startup-window",
+            "--flag-switches-begin",
+            "--flag-switches-end",
+            "--enable-unsafe-swiftshader"
+          ]
+        }
+      },
+      "systemInfo": {
+        "available": true,
+        "value": {
+          "gpu": {
+            "devices": [
+              {
+                "vendorId": 4203,
+                "deviceId": 0,
+                "vendorString": "Google Inc. (Apple)",
+                "deviceString": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Version 26.5.2 (Build 25F84))",
+                "driverVendor": "Apple",
+                "driverVersion": "26.5.2"
+              }
+            ],
+            "auxAttributes": {
+              "amdSwitchable": false,
+              "canSupportThreadedTextureMailbox": false,
+              "directRenderingVersion": "",
+              "displayType": "ANGLE_METAL",
+              "glExtensions": "GL_AMD_performance_monitor GL_ANGLE_base_vertex_base_instance_shader_builtin GL_ANGLE_blob_cache GL_ANGLE_client_arrays GL_ANGLE_clip_cull_distance GL_ANGLE_compressed_texture_etc GL_ANGLE_depth_texture GL_ANGLE_framebuffer_blit GL_ANGLE_framebuffer_multisample GL_ANGLE_get_serialized_context_string GL_ANGLE_get_tex_level_parameter GL_ANGLE_instanced_arrays GL_ANGLE_memory_size GL_ANGLE_pack_reverse_row_order GL_ANGLE_polygon_mode GL_ANGLE_program_binary_readiness_query GL_ANGLE_program_cache_control GL_ANGLE_provoking_vertex GL_ANGLE_renderability_validation GL_ANGLE_request_extension GL_ANGLE_rgbx_internal_format GL_ANGLE_robust_client_memory GL_ANGLE_shader_pixel_local_storage GL_ANGLE_shader_pixel_local_storage_coherent GL_ANGLE_stencil_texturing GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_ANGLE_texture_multisample GL_ANGLE_translated_shader_source GL_APPLE_clip_distance GL_ARM_rgba8 GL_CHROMIUM_bind_generates_resource GL_CHROMIUM_bind_uniform_location GL_CHROMIUM_copy_texture GL_CHROMIUM_lose_context GL_EXT_base_instance GL_EXT_blend_func_extended GL_EXT_blend_minmax GL_EXT_clip_control GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_compressed_ETC1_RGB8_sub_texture GL_EXT_conservative_depth GL_EXT_debug_label GL_EXT_debug_marker GL_EXT_depth_clamp GL_EXT_discard_framebuffer GL_EXT_disjoint_timer_query GL_EXT_draw_buffers GL_EXT_draw_buffers_indexed GL_EXT_draw_elements_base_vertex GL_EXT_float_blend GL_EXT_frag_depth GL_EXT_instanced_arrays GL_EXT_map_buffer_range GL_EXT_multisampled_render_to_texture GL_EXT_occlusion_query_boolean GL_EXT_polygon_offset_clamp GL_EXT_pvrtc_sRGB GL_EXT_read_format_bgra GL_EXT_render_snorm GL_EXT_robustness GL_EXT_sRGB GL_EXT_shader_texture_lod GL_EXT_texture_compression_bptc GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc_srgb GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_EXT_texture_mirror_clamp_to_edge GL_EXT_texture_norm16 GL_EXT_texture_rg GL_EXT_texture_sRGB_R8 GL_EXT_texture_sRGB_RG8 GL_EXT_texture_shadow_lod GL_EXT_texture_storage GL_IMG_texture_compression_pvrtc GL_KHR_debug GL_KHR_parallel_shader_compile GL_KHR_robustness GL_KHR_texture_compression_astc_hdr GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_sliced_3d GL_MESA_framebuffer_flip_y GL_NV_fence GL_NV_framebuffer_blit GL_NV_pixel_buffer_object GL_NV_shader_noperspective_interpolation GL_OES_EGL_image GL_OES_EGL_sync GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth24 GL_OES_depth32 GL_OES_depth_texture GL_OES_draw_buffers_indexed GL_OES_draw_elements_base_vertex GL_OES_element_index_uint GL_OES_fbo_render_mipmap GL_OES_get_program_binary GL_OES_mapbuffer GL_OES_packed_depth_stencil GL_OES_required_internalformat GL_OES_rgb8_rgba8 GL_OES_sample_variables GL_OES_shader_multisample_interpolation GL_OES_standard_derivatives GL_OES_surfaceless_context GL_OES_texture_3D GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_texture_stencil8 GL_OES_vertex_array_object GL_QCOM_render_shared_exponent ",
+              "glImplementationParts": "(gl=egl-angle,angle=metal)",
+              "glRenderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Version 26.5.2 (Build 25F84))",
+              "glResetNotificationStrategy": 33362,
+              "glVendor": "Google Inc. (Apple)",
+              "glVersion": "OpenGL ES 3.0 (ANGLE 2.1.28854 git hash: cccf60cde32c)",
+              "glWsExtensions": "",
+              "glWsVendor": "",
+              "glWsVersion": "",
+              "inProcessGpu": false,
+              "initializationTime": 0.029659,
+              "isAsan": false,
+              "isClangCoverage": false,
+              "jpegDecodeAcceleratorSupported": false,
+              "maxMsaaSamples": "4",
+              "optimus": false,
+              "passthroughCmdDecoder": true,
+              "pixelShaderVersion": "3.00",
+              "processCrashCount": 0,
+              "sandboxed": false,
+              "skiaBackendType": "GraphiteDawnMetal",
+              "subpixelFontRendering": true,
+              "targetCpuBits": 64,
+              "vertexShaderVersion": "3.00",
+              "visibilityCallbackCallCount": 0
+            },
+            "featureStatus": {
+              "2d_canvas": "enabled",
+              "direct_rendering_display_compositor": "disabled_off_ok",
+              "gpu_compositing": "enabled",
+              "multiple_raster_threads": "enabled_on",
+              "opengl": "enabled_on",
+              "rasterization": "enabled",
+              "raw_draw": "disabled_off_ok",
+              "skia_graphite": "enabled_on",
+              "trees_in_viz": "disabled_off",
+              "video_decode": "enabled",
+              "video_encode": "enabled",
+              "webgl": "enabled",
+              "webgpu": "enabled",
+              "webnn": "disabled_off"
+            },
+            "driverBugWorkarounds": [
+              "disable_2d_canvas_auto_flush",
+              "enable_webgl_timer_query_extensions",
+              "disabled_extension_GL_KHR_blend_equation_advanced",
+              "disabled_extension_GL_KHR_blend_equation_advanced_coherent"
+            ],
+            "videoDecoding": [],
+            "videoEncoding": []
+          },
+          "modelName": "Mac",
+          "modelVersion": "16.8",
+          "commandLine": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --enable-unsafe-swiftshader --no-sandbox --user-data-dir=<browser-private-directory> --remote-debugging-pipe --no-startup-window --flag-switches-begin --flag-switches-end --enable-unsafe-swiftshader"
+        }
+      },
+      "scope": "One browser-level metadata capture before parity; no profiler. Private profile/cache directories are redacted."
+    }
+  },
+  "finishedAt": "2026-10-25T22:55:03.377Z",
+  "sourceAfter": {
+    "tooling": {
+      "sha": "1881908125e16ba3f68887a1cf13d92f2f8f753e",
+      "dirty": false
+    },
+    "candidate": {
+      "sha": "6990fd92f61a031c8c2ba7a8282cfb63684e6dfb",
+      "dirty": false
+    },
+    "apps": {
+      "editor": {
+        "sha": "9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8",
+        "dirty": false
+      },
+      "viewer": {
+        "sha": "b5ee5dafe27f953ae1b55f42b5fa3697fef08683",
+        "dirty": false
+      }
+    }
+  },
+  "sourceIntegrity": {
+    "unchanged": true,
+    "checkedAfterFailure": true
+  },
+  "environmentAfter": {
+    "available": true,
+    "file": "environment-after/runner.json",
+    "power": {
+      "available": true,
+      "verifiedAC": true,
+      "observed": {
+        "available": true,
+        "output": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=<redacted>)\t100%; charged; 0:00 remaining present: true"
+      }
+    }
+  },
+  "powerVerifiedACBeforeAndAfter": true
+}

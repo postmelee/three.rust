@@ -1,0 +1,144 @@
+{
+  "samples": 30,
+  "cpu": {
+    "p50": 2.9724999964237213,
+    "p95": 3.2599999986588957,
+    "p99": 3.341649990975857,
+    "mean": 2.9429999962449074,
+    "min": 2.4600000083446503,
+    "max": 3.374999985098839
+  },
+  "playbackValidation": {
+    "checkedPairs": 30,
+    "checkedTransitions": 29,
+    "durationSeconds": 0.9583333134651184,
+    "toleranceSeconds": 1e-9,
+    "maxPhaseErrorSeconds": 4.163336342344337e-16,
+    "viewportAdvanceSeconds": 0.24139499999582714,
+    "timelineAdvanceSeconds": 0.24332000000774823,
+    "observedPhaseChanges": 29,
+    "observedWraps": 1,
+    "repeatedTimelineObservations": 0,
+    "scope": "Observed native callback phase consistency for unit-speed repeating playback; does not establish pose, render or whole-frame correctness."
+  },
+  "viewportCpu": {
+    "p50": 2.8424999937415123,
+    "p95": 3.147750001400709,
+    "p99": 3.2458499991893768,
+    "mean": 2.832999998827775,
+    "min": 2.3800000101327896,
+    "max": 3.2849999964237213
+  },
+  "timelineCpu": {
+    "p50": 0.10499998927116394,
+    "p95": 0.1599999964237213,
+    "p99": 0.1741999934613705,
+    "mean": 0.10999999741713205,
+    "min": 0.06499999761581421,
+    "max": 0.17999999225139618
+  },
+  "rafIntervals": {
+    "p50": 8.335000000000036,
+    "p95": 10.327000000000044,
+    "p99": 10.335000000000036,
+    "mean": 8.321896551724139,
+    "min": 6.3449999999998,
+    "max": 10.335000000000036
+  },
+  "callbackStartIntervals": {
+    "p50": 8.334999993443489,
+    "p95": 10.364999994635582,
+    "p99": 10.434600000977516,
+    "mean": 8.323620689326319,
+    "min": 6.299999997019768,
+    "max": 10.450000002980232
+  },
+  "arrivalDelay": {
+    "p50": 0.32000000566245035,
+    "p95": 0.42524999886761616,
+    "p99": 0.5103500065983281,
+    "mean": 0.31950000427171593,
+    "min": 0.19000000536425432,
+    "max": 0.5350000095368159
+  },
+  "blocks": [
+    {
+      "start": 0,
+      "samples": 7,
+      "p50": 2.6749999970197678,
+      "p95": 2.7239999905228616,
+      "p99": 2.7287999895215034,
+      "mean": 2.637857139110565,
+      "min": 2.4600000083446503,
+      "max": 2.729999989271164,
+      "stable": false
+    },
+    {
+      "start": 7,
+      "samples": 7,
+      "p50": 2.9099999964237213,
+      "p95": 3.173999997973442,
+      "p99": 3.2147999948263166,
+      "mean": 2.9407142869063785,
+      "min": 2.6900000125169754,
+      "max": 3.2249999940395355,
+      "stable": true
+    },
+    {
+      "start": 14,
+      "samples": 7,
+      "p50": 3.0249999910593033,
+      "p95": 3.2600000008940695,
+      "p99": 3.2600000044703483,
+      "mean": 3.0428571360451833,
+      "min": 2.8699999898672104,
+      "max": 3.260000005364418,
+      "stable": true
+    },
+    {
+      "start": 21,
+      "samples": 7,
+      "p50": 3.064999997615814,
+      "p95": 3.301499983668327,
+      "p99": 3.3602999848127366,
+      "mean": 3.0907142779656818,
+      "min": 2.9449999928474426,
+      "max": 3.374999985098839,
+      "stable": true
+    },
+    {
+      "start": 28,
+      "samples": 2,
+      "p50": 3.1525000035762787,
+      "p95": 3.1862500116229056,
+      "p99": 3.1892500123381615,
+      "mean": 3.1525000035762787,
+      "min": 3.114999994635582,
+      "max": 3.1900000125169754,
+      "stable": false
+    }
+  ],
+  "blockStable": false,
+  "observedClockIncrement": 0.004999995231628418,
+  "phaseCoverage": {
+    "nativeWallClock": true,
+    "frameMatchedAcrossRoutes": false,
+    "mixerTimeStart": 1.7930499999970189,
+    "mixerTimeEnd": 2.034444999992846,
+    "actionTimeStart": 0.8244716865271323,
+    "actionTimeEnd": 0.10945837306976254,
+    "clipDuration": 0.9583333134651184,
+    "elapsedClipCycles": 0.2518904400004597
+  },
+  "renderFrameDelta": 120,
+  "counterDeltas": {
+    "wasmCalls": 4050,
+    "preparedPasses": 0,
+    "preparedWasmCalls": 0,
+    "preparedFallbacks": 120,
+    "preparedMatrixReads": 0,
+    "matrixReads": 6150
+  },
+  "nativeWorkInWindow": true,
+  "fallbackIsExpected": true
+}
