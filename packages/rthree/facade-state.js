@@ -7,7 +7,7 @@ const matrixRecords=new WeakMap();
 let config,arena,nextSlot=1,generation=0;
 const freeSlots=[];
 const planCache=new WeakMap(),dirtyInputs=new Set(),dirtyMeta=new Set();
-let topologyEpoch=0,mutationEpoch=0,activePass;
+let topologyEpoch=0,mutationEpoch=0,observationEpoch=0,activePass;
 const prepared=()=>!!config?.prepared();
 export function invalidatePrepared(){if(prepared()){topologyEpoch++;mutationEpoch++;activePass=undefined;}}
 function markInput(r){if(prepared()){mutationEpoch++;if(r.slot)dirtyInputs.add(r.queueRef);}}
@@ -77,8 +77,11 @@ function retire(token){
 }
 function materialize(r,m){
  if(!r.slot)return;
- const revision=prepared()?view()[r.slot*64+(m.offset===16?55:56)]:0;
- if(m.valid&&(!prepared()||m.dirty||m.revision===revision))return;
+ const versioned=prepared();
+ if(m.valid&&(!versioned||m.dirty||m.observedEpoch===observationEpoch))return;
+ const revision=versioned?view()[r.slot*64+(m.offset===16?55:56)]:0;
+ m.observedEpoch=observationEpoch;
+ if(m.valid&&m.revision===revision)return;
  const start=now(),d=view(),b=r.slot*64+m.offset;
  for(let j=0;j<16;j++)m.target[j]=d[b+j];
  m.valid=true;m.revision=revision;config.counters.materializedBytes+=128;config.counters.matrixReads++;
@@ -207,6 +210,7 @@ export function facadeUpdate(root,method,base,{force=false,parents=false,childre
  const synced=now();
  if(arena.id){if(!call(prepared()?'facade_update_versions':'facade_update',arena.id,nodes.length))throw Error('rthree invalid facade operations');config.counters.wasmCalls++;config.counters.wasmNodes+=nodes.length;}
  else (prepared()?evaluateVersions:evaluateFacade)(d,arena.ops,nodes.length);
+ observationEpoch++; // Successful local/selective evaluation can change any observed matrix.
  const computed=now();
  for(const o of nodes){const r=records.get(o),b=r.slot*64,mask=d[b+51];
   if(mask&1)r.matrices[0].valid=false;
@@ -283,6 +287,7 @@ function updatePlan(p,force){
  const mid=now();
  if(p.id){if(!call('prepared_update',arena.id,p.id,force?1:0))throw Error('rthree invalid prepared topology');config.counters.wasmCalls++;config.counters.wasmNodes+=p.nodes.length;}
  else {p.ops[4]=force?1:0;evaluateVersions(d,p.ops,p.nodes.length);}
+ observationEpoch++; // Retained evaluation invalidates only the observation check, not every snapshot.
  const c=config.counters;c.batches++;c.nodes+=p.nodes.length;c.retainedUpdates++;
  if(config.timings()){c.syncMs+=mid-start;c.kernelMs+=performance.now()-mid;}
  return true;

@@ -28,6 +28,14 @@ scene.add(mesh);
 | Renderer consumption | Compact visible-resource and draw lists; existing WebGL resource updates, materials/shaders and final uploads; replaced JS projection/sort/matrix calculations skipped |
 | Shadows | Existing JS shadow renderer; main-pass numerical/image interaction is tested separately |
 
+Prepared routes check a public matrix's native revision on its first observation
+after a successful transform evaluation. Later reads in that evaluation epoch
+reuse the verified JS snapshot. Retained, local and selective evaluation all
+invalidate this observation guard; manual writes remain tracked, and reads before
+an update retain the existing stale-value semantics. Cached array identities,
+release/reacquisition and memory growth keep the same contract. This policy is
+identical in the JS and Wasm routes and does not imply a measured frame speedup.
+
 The JS control has the same state layout, arithmetic and sorting keys. Both still
 perform dirty synchronization, shared geometry/material checks, visible resource
 updates, draw-list handoff and final matrix copies in JS. Uniform caches use a pinned private read barrier;
