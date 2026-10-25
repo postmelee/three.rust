@@ -42,3 +42,9 @@ Use the existing licensed RobotExpressive setup/required native interactions as 
 ## Optimization decision order
 
 Use the original-app profile evidence to investigate renderer/palette reuse first, then exact bounds and public-matrix consumption, then remaining UI refresh work. This is a cost-based hypothesis, not an approved shortcut or a claimed gain. Measure full outer operations; preserve animation, skins/morphs, selection, shadows, synchronous reads and callbacks. Candidate fallback and measurement stability must be reported before attributing improvements. Reuse requires valid invalidation across ticks, skeletons, cameras, shadow passes and geometry edits; bounds must retain the original precise semantics. No mixed-pass renderer rewrite or approximate bounds is implied by this order.
+
+## Stage 4A bootstrap correction
+
+The first prepared-Wasm Editor attempt failed before construction: Editor.js evaluates its default camera lookAt at module scope before the HTML module body can call init(). Preserve that failure. The adaptation now awaits the candidate initialization before dynamically importing all eleven app/addon entry dependencies in their declared order. Source, modules, features and runtime remain unchanged; only the explicit asynchronous bootstrap boundary moves ahead of module evaluation. Recheck JS and Wasm routes and compare fixed poses/interactions with the original. This is an integration correction, not an engine performance change.
+
+The original app's Animation.updateTime has a separate rAF loop; any later primary timing must include or explicitly bound that UI work in addition to Viewport.animate. Model-root selection with native Walking and timeline controls is a realistic additional scenario with exact full-model bounds, not a replicated workload. Final timing parameters remain to be declared before capture.

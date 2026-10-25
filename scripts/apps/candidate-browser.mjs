@@ -72,7 +72,10 @@ function makeOverlay(original, engine) {
  const edits = [
   ['"three": "../build/three.module.js"', `"three": "${CANDIDATE_PREFIX}${ENTRIES[engine]}"`],
   ['"three/addons/": "../examples/jsm/"', `"three/addons/": "${CANDIDATE_PREFIX}addons/"`],
-  ['\t\t\tconst editor = new Editor();', '\t\t\tawait THREE.init();\n\n\t\t\tconst editor = new Editor();']
+  ["\t\t\timport * as THREE from 'three';", "\t\t\timport * as THREE from 'three';\n\t\t\tawait THREE.init();"],
+  ...['Editor','Viewport','Toolbar','Script','Player','Sidebar','Menubar','Resizer','AnimationResizer','Animation'].map(name =>
+   [`\t\t\timport { ${name} } from './js/${name}.js';`, `\t\t\tconst { ${name} } = await import('./js/${name}.js');`]),
+  ["\t\t\timport { TextGeometry } from 'three/addons/geometries/TextGeometry.js';", "\t\t\tconst { TextGeometry } = await import('three/addons/geometries/TextGeometry.js');"]
  ];
  let after = before;
  for (const [from, to] of edits) {
@@ -214,7 +217,7 @@ export async function openRun(rootArg, outArg, options = {}) {
   });
   context.setDefaultTimeout(20000);
   const page = await context.newPage();
-  page.on('pageerror', error => errors.push(redact(error.message)));
+  page.on('pageerror', error => errors.push(redact(error.stack || error.message).split(origin).join('<origin>')));
   page.on('response', response => { if (response.status() >= 400) errors.push(redact(`HTTP ${response.status()} ${response.url().replace(origin, '<origin>')}`)); });
   const tooling = sourceState(toolingRoot, true);
   await save('environment.json', { browser: browser.version(), executablePath: redact(executablePath), toolingSha: tooling.sha,
