@@ -8,6 +8,7 @@ import { execFileSync } from 'node:child_process';
 import { chromium } from 'playwright';
 import { openRun, gpu, hash } from './candidate-browser.mjs';
 import { timingOverlays, installTimingCollector, TIMING_SOURCE_HASHES } from './timing-overlay.mjs';
+import { validateNativePlayback } from './timing-phase.mjs';
 import { observeClock, validateClock, timingPolicy } from '../../bench/timing.mjs';
 
 const args = {};
@@ -324,17 +325,18 @@ function analyze(raw, scenario, clock) {
   assert(viewport.end <= timeline.start || timeline.end <= viewport.start, 'Overlapping callback intervals');
   return { raf: viewport.raf, start: Math.min(viewport.start, timeline.start), cpu: viewport.end - viewport.start + timeline.end - timeline.start,
    viewportCpu: viewport.end - viewport.start, timelineCpu: timeline.end - timeline.start,
-   mixerTime: viewport.mixerTime, actionTime: timeline.actionTime, clipDuration: timeline.duration };
+   mixerTime: viewport.mixerTime, timelineMixerTime: timeline.mixerTime, actionTime: timeline.actionTime, clipDuration: timeline.duration };
  });
  assert.equal(pairs.length, raw.warmup + raw.samples);
  const measured = pairs.slice(raw.warmup); assert.equal(measured.length, raw.samples);
+ const playbackValidation = scenario.idle ? null : validateNativePlayback(measured, { expectedDuration: raw.before.action.duration });
  const cpu = stats(measured.map(x => x.cpu)), floor = 4 * clock.minPositiveDeltaMs;
  const blockSize = scenario.idle ? Math.max(1, Math.floor(raw.samples / 4)) : (mode === 'full' ? 300 : Math.max(1, Math.floor(raw.samples / 4)));
  const blocks = [];
  for (let i = 0; i < measured.length; i += blockSize) { const block = stats(measured.slice(i, i + blockSize).map(x => x.cpu)); blocks.push({ start: i, samples: Math.min(blockSize, measured.length - i), ...block, stable: Math.abs(block.p50 - cpu.p50) <= Math.max(.05 * cpu.p50, floor) }); }
  const intervals = measured.slice(1).map((x, i) => x.raf - measured[i].raf);
  const callbacks = measured.slice(1).map((x, i) => x.start - measured[i].start);
- return { samples: measured.length, cpu, viewportCpu: stats(measured.map(x => x.viewportCpu)), timelineCpu: stats(measured.map(x => x.timelineCpu)),
+ return { samples: measured.length, cpu, playbackValidation, viewportCpu: stats(measured.map(x => x.viewportCpu)), timelineCpu: stats(measured.map(x => x.timelineCpu)),
   rafIntervals: stats(intervals), callbackStartIntervals: stats(callbacks), arrivalDelay: stats(measured.map(x => x.start - x.raf)),
   blocks, blockStable: blocks.every(x => x.stable), observedClockIncrement: clock.minPositiveDeltaMs,
   phaseCoverage: { nativeWallClock: true, frameMatchedAcrossRoutes: false, mixerTimeStart: measured[0].mixerTime, mixerTimeEnd: measured.at(-1).mixerTime,
@@ -429,7 +431,7 @@ function summarize() {
 try {
  manifest.sourceBefore = sourcePins(); validatePins(manifest.sourceBefore);
  tooling = { ...manifest.sourceBefore.tooling, node: process.version };
- const files = ['scripts/apps/timing.mjs', 'scripts/apps/timing-overlay.mjs', 'scripts/apps/candidate-browser.mjs', 'scripts/apps/browser.mjs', 'scripts/apps/resources.json', 'bench/timing.mjs', 'package-lock.json', 'scripts/runner-environment.mjs', 'scripts/browser-path.mjs'];
+ const files = ['scripts/apps/timing.mjs', 'scripts/apps/timing-overlay.mjs', 'scripts/apps/timing-phase.mjs', 'scripts/apps/candidate-browser.mjs', 'scripts/apps/browser.mjs', 'scripts/apps/resources.json', 'bench/timing.mjs', 'package-lock.json', 'scripts/runner-environment.mjs', 'scripts/browser-path.mjs'];
  tooling.files = Object.fromEntries(await Promise.all(files.map(async file => [file, hash(await fs.readFile(path.join(toolRoot, file)))])));
  tooling.collectorSha256 = hash(installTimingCollector.toString()); manifest.tooling = tooling;
  manifest.asset = { file: 'editor/examples/models/gltf/RobotExpressive/RobotExpressive.glb', sha256: hash(await fs.readFile(path.join(appRoot, 'editor/examples/models/gltf/RobotExpressive/RobotExpressive.glb'))) };
