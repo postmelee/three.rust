@@ -82,18 +82,17 @@ The pinned Editor-owned source has the following scheduling sites:
 
 No app-owned `setInterval`, `requestIdleCallback`, or additional active viewport rAF chain was found in the inspected native Editor modules. Vendor/browser timers were not live-audited in this read-only pass, so an entire-page CPU claim would still be unsupported. Optional CDP cumulative task/script/layout metrics may be read before/after a window as supporting diagnostics; they are not substitutes for the declared callback boundaries and must not activate a profiler.
 
-### Four continuous conditions
+### Three native continuous conditions
 
 Use the same camera, CSS viewport 1280x720, timeline panel height, lighting, materials and quality within a condition across routes. Resolve UI dimensions once, record them, and fail on later changes. Select Walking and press native Play through the existing timeline UI. Keep the original real-time animation behavior.
 
 | Condition | Setup and purpose |
 | --- | --- |
 | E3-root-selected-shadow | Select the imported Robot model root, select Walking, play, retain raster shadows. This naturally exercises whole-model precise bounds plus active timeline UI without adding replicas. |
-| E3-unselected-shadow | Deselect the object, then select Walking in the timeline and press Play. `selectClip` does not select the object. Assert `editor.selected === null` and that Walking runs with an active timeline; deselecting after Play would stop the clip and is invalid. Same camera/panel/shadows as E3-root-selected. |
 | E3-root-selected-no-shadow | Same root-selected scene and timeline, with the existing Key light's `castShadow` disabled, as in the correctness control. Keep the renderer and other settings unchanged. |
 | E3-root-selected-high-resolution | Same root-selected shadow scene, CSS layout and page DPR1; change only `renderer.setPixelRatio(2)` on every route, matching the historical raster control. Label it a higher raster-load control, not proven GPU-bound. Record page DPR, renderer pixel ratio and drawing-buffer dimensions and reject any fallback/quality downgrade. If this condition cannot run unchanged, retain its failure rather than substitute a smaller scene. |
 
-Use existing E2 selected-SkinnedMesh evidence as a separate historical/preparation reference. Do not relabel it E3: root selection increases the precise-bounds workload and activates the timeline. The shadow and selection contrasts change multiple coupled costs; primary deltas alone cannot establish palette or bounds attribution.
+Use existing E2 selected-SkinnedMesh evidence as a separate historical/preparation reference. Do not relabel it E3: root selection increases the precise-bounds workload and activates the timeline. The shadow and raster-load contrasts change multiple coupled costs; primary deltas alone cannot establish palette or bounds attribution. The native unselected-playback contrast is unavailable for the pinned Editor, as recorded below.
 
 ### Static/edit control
 
@@ -107,7 +106,7 @@ Use actual pointer events, not a forced render loop. Locate the visible handle b
 
 For a bounded, explicitly unqualified cost screen: four balanced rounds; warmup600 paired rAF frames and samples1200 paired frames per continuous condition. Use four labels `[original-A, prepared-JS, prepared-Wasm, original-B]` where A/B are independent reloads of identical original code. Williams order seed `[0,1,3,2]`, increased modulo4 each round, balances label positions. Each candidate has four independent run summaries; original has eight, not 9600 statistically independent frames. At 60 Hz, a run is approximately 10 s warmup plus 20 s capture; report actual wall duration and observed refresh cadence.
 
-Add one independent original run before and after each condition's balanced block for explicit bookend A/A. Keep these two rows as drift checks, separately from balanced engine summaries. The four-condition matrix has 72 runs; expected capture/warmup wall time is about36 minutes at60Hz, plus loading and correctness gates. This is preferable to silently shortening a run after inspecting results. A larger adoption study would need a separate protocol.
+Add one independent original run before and after each condition's balanced block for explicit bookend A/A. Keep these two rows as drift checks, separately from balanced engine summaries. The corrected three-condition matrix has 54 continuous runs; expected capture/warmup wall time is about27 minutes at60Hz, plus loading and correctness gates. E1 idle adds 16 runs. Smoke retains one balanced round plus bookends per continuous condition (18 continuous and four idle runs). The three continuous conditions and E1 idle require 24 oracle pages across three routes and unmodified/overlay variants. This is preferable to silently shortening a run after inspecting results. A larger adoption study would need a separate protocol.
 
 For E1 idle, use the same four balanced orders (16 runs) and label them auxiliary screens: warmup120 callback pairs, samples240 callback pairs, with no render notifications or renderer frame advancement. E1 edit-handler timing is deferred to a separately frozen diagnostic; the existing full UI correctness gate retains native gizmo, focus, picking, undo/redo and timeline checks. These settings must be frozen with the driver rather than tuned after output is seen.
 
@@ -157,3 +156,9 @@ Use a fresh output path for every attempt. These are prospective commands until 
 ### Pre-timing layout correction
 
 The first smoke stopped in the original uninstrumented oracle before any timed run: the 306px timeline content box has a 1px top border in the pinned native CSS, so its `getBoundingClientRect()` height is 307px. Record and assert both values. The native 270px resize gesture, page size, scene and renderer settings remain unchanged. Preserve smoke-001 and use a fresh path for the corrected tooling; no timing result was used to choose this correction.
+
+### Pre-timing native selection correction
+
+Preserve `work/task46-editor-timing-smoke-002` unchanged. Its six E3-root-selected-shadow oracle pages passed, then the original unmodified E3-unselected-shadow oracle could not find Walking; no timed run started. The proposed unselected setup was invalid: pinned `Animation.js:getAnimationClips()` reads only `editor.selected.animations` and returns no clips when selection is null (lines268–285). `onObjectSelected()` first calls `deselectClip()`, which stops the active action and clears the action/clip/root before rebuilding the panel (lines490–508 and561–578). Ordinary and multi-object deselection dispatch this native signal.
+
+Exclude E3-unselected-shadow explicitly as unsupported by this native app workflow, not as an engine failure or successful unselected control. Do not force `mixer.clipAction().play()`, bypass selection signals, retain stale UI handlers, or remove precise bounds to invent that condition. The remaining three selected continuous conditions retain all native features; the matrix counts above are corrected before timing. Warmup/sample lengths, four balanced orders, duplicate originals, bookends, quality and source pins remain frozen. Historical E2 preparation evidence is not relabeled as native E3 unselected playback. Use a fresh smoke path and repeat all 24 oracle pages before timing.

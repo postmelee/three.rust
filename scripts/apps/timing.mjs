@@ -49,7 +49,6 @@ const routes = [
 ];
 const cases = [
  { id: 'E3-root-selected-shadow', selected: true, shadow: true, pixelRatio: 1 },
- { id: 'E3-unselected-shadow', selected: false, shadow: true, pixelRatio: 1 },
  { id: 'E3-root-selected-no-shadow', selected: true, shadow: false, pixelRatio: 1 },
  { id: 'E3-root-selected-high-resolution', selected: true, shadow: true, pixelRatio: 2 }
 ];
@@ -61,6 +60,10 @@ const manifest = {
  plannedContinuousRuns: cases.length * (2 + routes.length * configuration.rounds), plannedIdleRuns: routes.length * configuration.rounds,
  nativeInteractionsAlreadyCovered: ['picking and camera/focus', 'gizmo transforms and undo/redo', 'timeline play/pause/scrub/clip controls'],
  deferred: ['E1 gizmo handler timing', 'new optimization implementation', 'GPU-time attribution', 'other-date repeats'],
+ nativeUnsupportedConditions: [{ id: 'E3-unselected-shadow', status: 'excluded-before-timing',
+  reason: 'Pinned native Editor exposes clips only for editor.selected; deselection stops the current action and clears timeline clips. Unselected native timeline playback is unavailable.',
+  source: { appSha: APP_PINS.editor, file: 'editor/editor/js/Animation.js', sha256: TIMING_SOURCE_HASHES['editor/editor/js/Animation.js'], functions: ['getAnimationClips', 'deselectClip', 'onObjectSelected'] },
+  discovery: 'Original unmodified oracle failed in retained task46-editor-timing-smoke-002 before any timed run; no forced actions or signal-bypassing selection were substituted.' }],
  timingSources: TIMING_SOURCE_HASHES, oracles: [], runs: [], errors: [],
  coverageExclusions: ['asynchronous IndexedDB completion', 'deferred resources UI outside the callback pair', 'vendor/browser tasks', 'paint/compositor/GPU', 'row bookkeeping'],
  higherRasterControl: 'Only renderer.setPixelRatio(2) changes; page DPR and CSS layout remain 1 and unchanged. GPU-bound status is not assumed.'
@@ -218,9 +221,8 @@ async function setup(r, scenario) {
  }, scenario);
  if (!scenario.idle) {
   assert.equal(sceneSetup.shape.clips.length, 14); assert.equal(sceneSetup.shape.morphMeshes, 3); assert(sceneSetup.shape.skins >= 2);
-  if (scenario.selected) await p.locator('#outliner .option').filter({ hasText: 'RobotExpressive.glb' }).first().click();
-  // Deselect BEFORE choosing the clip: native deselection stops the prior action.
-  else await p.evaluate(() => editor.deselect());
+  assert.equal(scenario.selected, true, 'Native timeline playback requires the animated root to remain selected');
+  await p.locator('#outliner .option').filter({ hasText: 'RobotExpressive.glb' }).first().click();
   const bar = await p.locator('#animation-resizer').boundingBox(); assert(bar, 'Missing timeline resizer');
   await p.mouse.move(bar.x + bar.width / 2, bar.y + bar.height / 2); await p.mouse.down();
   await p.mouse.move(bar.x + bar.width / 2, bar.y + bar.height / 2 - 270, { steps: 12 }); await p.mouse.up();
