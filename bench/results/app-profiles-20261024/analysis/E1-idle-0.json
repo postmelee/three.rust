@@ -1,0 +1,310 @@
+{
+  "name": "E1-idle-0",
+  "sensitivity": {
+    "method": "Post-capture sensitivity only: unweighted sample counts and time weighting excluding gaps >5ms. Original samples and default weighting remain unchanged.",
+    "activeSamples": 26,
+    "countBuckets": {
+      "program/native-unresolved": 79,
+      "idle": 9471,
+      "UI/callback": 15,
+      "GC": 9,
+      "other/unresolved": 2
+    },
+    "shortGapActiveMs": 32.739000000000004,
+    "shortGapBuckets": {
+      "idle": 11872.545000000091,
+      "program/native-unresolved": 98.25099999999999,
+      "UI/callback": 18.711000000000002,
+      "GC": 11.508,
+      "other/unresolved": 2.52
+    },
+    "longGaps": [
+      {
+        "sample": 0,
+        "node": 2,
+        "ms": 27.664,
+        "bucket": "program/native-unresolved"
+      }
+    ]
+  },
+  "profileDurationMs": 12031.543,
+  "weightedMs": 12031.199000000086,
+  "activeMs": 32.73899999999496,
+  "samples": 9576,
+  "intervalUs": 1000,
+  "buckets": {
+    "program/native-unresolved": {
+      "sampledMs": 125.91500000000003,
+      "percentOfActive": null
+    },
+    "idle": {
+      "sampledMs": 11872.545000000091,
+      "percentOfActive": null
+    },
+    "UI/callback": {
+      "sampledMs": 18.711000000000002,
+      "percentOfActive": 57.152020525987
+    },
+    "GC": {
+      "sampledMs": 11.508,
+      "percentOfActive": 35.150737652346656
+    },
+    "other/unresolved": {
+      "sampledMs": 2.52,
+      "percentOfActive": 7.697241821681749
+    }
+  },
+  "exclusive": [
+    {
+      "id": 3,
+      "label": "(idle)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 11872.545000000091,
+      "inclusiveMs": 11872.545000000091,
+      "hits": 9471
+    },
+    {
+      "id": 2,
+      "label": "(program)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 125.91500000000003,
+      "inclusiveMs": 125.91500000000003,
+      "hits": 79
+    },
+    {
+      "id": 5,
+      "label": "requestAnimationFrame",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 16.198999999999998,
+      "inclusiveMs": 16.198999999999998,
+      "hits": 13
+    },
+    {
+      "id": 6,
+      "label": "(garbage collector)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 11.508,
+      "inclusiveMs": 11.508,
+      "hits": 9
+    },
+    {
+      "id": 4,
+      "label": "Animation.updateTime",
+      "url": "<origin>/editor/editor/js/Animation.js",
+      "line": 542,
+      "column": 21,
+      "selfMs": 2.5119999999999996,
+      "inclusiveMs": 18.711000000000002,
+      "hits": 2
+    },
+    {
+      "id": 10,
+      "label": "Viewport.animate",
+      "url": "<origin>/editor/editor/js/Viewport.js",
+      "line": 856,
+      "column": 18,
+      "selfMs": 1.268,
+      "inclusiveMs": 1.268,
+      "hits": 1
+    },
+    {
+      "id": 9,
+      "label": "Timer.update",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 51264,
+      "column": 8,
+      "selfMs": 1.252,
+      "inclusiveMs": 1.252,
+      "hits": 1
+    },
+    {
+      "id": 1,
+      "label": "(root)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 0,
+      "inclusiveMs": 12031.199000000086,
+      "hits": 0
+    },
+    {
+      "id": 7,
+      "label": "WebGLAnimation.onAnimationFrame",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 16,
+      "column": 27,
+      "selfMs": 0,
+      "inclusiveMs": 1.252,
+      "hits": 0
+    },
+    {
+      "id": 8,
+      "label": "Viewport.animate",
+      "url": "<origin>/editor/editor/js/Viewport.js",
+      "line": 856,
+      "column": 18,
+      "selfMs": 0,
+      "inclusiveMs": 1.252,
+      "hits": 0
+    }
+  ],
+  "inclusive": [
+    {
+      "id": 1,
+      "label": "(root)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 0,
+      "inclusiveMs": 12031.199000000086,
+      "hits": 0
+    },
+    {
+      "id": 3,
+      "label": "(idle)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 11872.545000000091,
+      "inclusiveMs": 11872.545000000091,
+      "hits": 9471
+    },
+    {
+      "id": 2,
+      "label": "(program)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 125.91500000000003,
+      "inclusiveMs": 125.91500000000003,
+      "hits": 79
+    },
+    {
+      "id": 4,
+      "label": "Animation.updateTime",
+      "url": "<origin>/editor/editor/js/Animation.js",
+      "line": 542,
+      "column": 21,
+      "selfMs": 2.5119999999999996,
+      "inclusiveMs": 18.711000000000002,
+      "hits": 2
+    },
+    {
+      "id": 5,
+      "label": "requestAnimationFrame",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 16.198999999999998,
+      "inclusiveMs": 16.198999999999998,
+      "hits": 13
+    },
+    {
+      "id": 6,
+      "label": "(garbage collector)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 11.508,
+      "inclusiveMs": 11.508,
+      "hits": 9
+    },
+    {
+      "id": 10,
+      "label": "Viewport.animate",
+      "url": "<origin>/editor/editor/js/Viewport.js",
+      "line": 856,
+      "column": 18,
+      "selfMs": 1.268,
+      "inclusiveMs": 1.268,
+      "hits": 1
+    },
+    {
+      "id": 7,
+      "label": "WebGLAnimation.onAnimationFrame",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 16,
+      "column": 27,
+      "selfMs": 0,
+      "inclusiveMs": 1.252,
+      "hits": 0
+    },
+    {
+      "id": 8,
+      "label": "Viewport.animate",
+      "url": "<origin>/editor/editor/js/Viewport.js",
+      "line": 856,
+      "column": 18,
+      "selfMs": 0,
+      "inclusiveMs": 1.252,
+      "hits": 0
+    },
+    {
+      "id": 9,
+      "label": "Timer.update",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 51264,
+      "column": 8,
+      "selfMs": 1.252,
+      "inclusiveMs": 1.252,
+      "hits": 1
+    }
+  ],
+  "observations": {
+    "before": {
+      "elapsedMs": 2001.6000000014901,
+      "renderPasses": 0,
+      "passesPerSecond": 0,
+      "focusBefore": true,
+      "focusAfter": true,
+      "programsBefore": 16,
+      "programsAfter": 16
+    },
+    "during": {
+      "elapsedMs": 12002.19999999553,
+      "renderPasses": 0,
+      "passesPerSecond": 0,
+      "focusBefore": true,
+      "focusAfter": true,
+      "programsBefore": 16,
+      "programsAfter": 16
+    },
+    "after": {
+      "elapsedMs": 2002.3999999985099,
+      "renderPasses": 0,
+      "passesPerSecond": 0,
+      "focusBefore": true,
+      "focusAfter": true,
+      "programsBefore": 16,
+      "programsAfter": 16
+    }
+  },
+  "boundaries": {},
+  "boundaryWindow": {
+    "elapsedMs": 3002.10000000149,
+    "renderPasses": 0,
+    "passesPerSecond": 0,
+    "focusBefore": true,
+    "focusAfter": true,
+    "programsBefore": 16,
+    "programsAfter": 16
+  },
+  "glCounts": {},
+  "glWindow": {
+    "elapsedMs": 2014.2999999970198,
+    "renderPasses": 0,
+    "passesPerSecond": 0,
+    "focusBefore": true,
+    "focusAfter": true,
+    "programsBefore": 16,
+    "programsAfter": 16
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "sources": {
+    "viewer": [
+      "https://github.com/donmccurdy/three-gltf-viewer.git",
+      "b5ee5dafe27f953ae1b55f42b5fa3697fef08683"
+    ],
+    "editor": [
+      "https://github.com/mrdoob/three.js.git",
+      "9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8"
+    ]
+  },
+  "node": "v24.15.0",
+  "yarn": "1.22.22",
+  "files": {
+    "viewerLock": {
+      "file": "viewer/yarn.lock",
+      "sha256": "0de5cea95be0d2ea2530c4d05edeab221b878bb2d8a134b5e429005667922b1a"
+    },
+    "viewerPackage": {
+      "file": "viewer/package.json",
+      "sha256": "8e0511ce95d18896009272fb95da6ea8bb0ec720ffc93df5f9712d5c93d94153"
+    },
+    "editorBuild": {
+      "file": "editor/build/three.module.js",
+      "sha256": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea"
+    },
+    "editorCore": {
+      "file": "editor/build/three.core.js",
+      "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6"
+    },
+    "editorPackage": {
+      "file": "editor/package.json",
+      "sha256": "f9c474a27c920b9435353a6235968f4453436bee0444fac7e5fd289c8fa463de"
+    },
+    "asset": {
+      "file": "editor/examples/models/gltf/RobotExpressive/RobotExpressive.glb",
+      "sha256": "047f5e5fb3bb6d378bd1df16ca6137f2a596c99b3a1b5690b4020c05aaf6f319"
+    }
+  },
+  "resources": [
+    {
+      "file": "pathtracer.js",
+      "url": "https://cdn.jsdelivr.net/npm/three-gpu-pathtracer@0.0.23/build/index.module.js",
+      "sha256": "ab9d976a596107b04ae4010be0e7e4fb3147b84dfee8536c7db9b7e69189548c",
+      "bytes": 221705
+    },
+    {
+      "file": "bvh.js",
+      "url": "https://cdn.jsdelivr.net/npm/three-mesh-bvh@0.7.4/build/index.module.js",
+      "sha256": "56c4511480fcd0e3c3125a473ffdbf6f5e2a8d0d6ab23a869260c124cec62814",
+      "bytes": 186732
+    },
+    {
+      "file": "draco-encoder.js",
+      "url": "https://cdn.jsdelivr.net/gh/google/draco@1.5.7/javascript/draco_encoder.js",
+      "sha256": "ce9e4e70adfdcfbff8a46d557efe96ea38ec085274a97eedd869da8ee07b47d8",
+      "bytes": 880075
+    },
+    {
+      "file": "pathtracer-LICENSE",
+      "url": "https://cdn.jsdelivr.net/npm/three-gpu-pathtracer@0.0.23/LICENSE",
+      "sha256": "2df239f3787d174fbd6ead7bc4c748bee526564aa2e67315afcae47e15552e00",
+      "bytes": 1072
+    },
+    {
+      "file": "bvh-LICENSE",
+      "url": "https://cdn.jsdelivr.net/npm/three-mesh-bvh@0.7.4/LICENSE",
+      "sha256": "b106ef6198a9862ed2b5b873e944ecf3583c631a84a7462d400ecc1910ce7fee",
+      "bytes": 1072
+    },
+    {
+      "file": "draco-LICENSE",
+      "url": "https://cdn.jsdelivr.net/gh/google/draco@1.5.7/LICENSE",
+      "sha256": "d3709b0fb4b8a94bbb1d02b8a2e484f258b0d9c5c5a01f940391f3fe662cd1a4",
+      "bytes": 13898
+    },
+    {
+      "file": "draco_decoder.js",
+      "url": "https://unpkg.com/three@0.176.0/examples/jsm/libs/draco/gltf/draco_decoder.js",
+      "sha256": "8625489da79a805f4f2a7d511c3e52d8b4085608a9d2a4d5f4f9de5db0aea04f",
+      "bytes": 512465
+    },
+    {
+      "file": "draco_decoder.wasm",
+      "url": "https://unpkg.com/three@0.176.0/examples/jsm/libs/draco/gltf/draco_decoder.wasm",
+      "sha256": "a680d927bed9cb864ddbd63521868891af2bfbe755092761b4837487618df8ac",
+      "bytes": 192420
+    },
+    {
+      "file": "draco_wasm_wrapper.js",
+      "url": "https://unpkg.com/three@0.176.0/examples/jsm/libs/draco/gltf/draco_wasm_wrapper.js",
+      "sha256": "8bb2952d2ba7d67e1414f8df819410cb0434a666be53f671fff75f68843d76f6",
+      "bytes": 58456
+    },
+    {
+      "file": "basis_transcoder.js",
+      "url": "https://unpkg.com/three@0.176.0/examples/jsm/libs/basis/basis_transcoder.js",
+      "sha256": "8478b5b6d6b74e7d3082b89f6417321d8d1dc0307f2b30d4484bb11b441696a1",
+      "bytes": 57529
+    },
+    {
+      "file": "basis_transcoder.wasm",
+      "url": "https://unpkg.com/three@0.176.0/examples/jsm/libs/basis/basis_transcoder.wasm",
+      "sha256": "6cf17dc889352c42e9acf8897107978d127005fe3386c36a0e3845e27967630a",
+      "bytes": 527333
+    },
+    {
+      "file": "raleway.css",
+      "url": "https://fonts.googleapis.com/css?family=Raleway:300,400",
+      "sha256": "bdf24b4a2f22a30d0acff1898aeb64425bc7dfe980abc1dd97a83dba3760495d",
+      "bytes": 398
+    },
+    {
+      "file": "raleway-LICENSE",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/raleway/OFL.txt",
+      "sha256": "7e946cf1171784d1015279e7dc35f827957a6b5d1f1f659ae0c98e5f5e37ed9b",
+      "bytes": 4497
+    },
+    {
+      "file": "raleway-0.ttf",
+      "url": "https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEorCIPrQ.ttf",
+      "sha256": "640b109ffec25181b2b58dcf7272bd8cce5cd8e72dbba68aeaf04ef709342b38",
+      "bytes": 49556
+    },
+    {
+      "file": "raleway-1.ttf",
+      "url": "https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCIPrQ.ttf",
+      "sha256": "50432fc4fcd6a91645e1e41400341363afbf4b17233fd2a28bfd3e8c98798cf0",
+      "bytes": 49552
+    }
+  ],
+  "scope": "Original upstream apps. No engine candidate; no timings/profiles."
+}

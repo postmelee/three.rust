@@ -1,0 +1,4 @@
+navigate
+wait ready
+navigate
+wait ready

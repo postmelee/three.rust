@@ -1,0 +1,14 @@
+[
+  {
+    "file": "work/app-correctness-006/E2-scene-0.json",
+    "sha256": "a844b89146bbb9f9574aecaebc0d909d9d831dc93f511339c93de2680bb4fd1b",
+    "bytes": 3794901,
+    "reason": "Authored scene export embeds model geometry; retained locally, regenerate with check.mjs."
+  },
+  {
+    "file": "work/app-correctness-006/E2-scene-1.json",
+    "sha256": "1a6602b3e836a8099d9d038d53ad9da03e12484249034d19fdf73c3ca1d94c7d",
+    "bytes": 3794901,
+    "reason": "Authored scene export embeds model geometry; retained locally, regenerate with check.mjs."
+  }
+]

@@ -1,0 +1,5 @@
+# Task #5 profiles: capture and attribution sensitivity
+
+All 16 final captures passed at clean tooling SHA `855012966a136dca89a16b162d9dce805cb0bece`: eight scenarios, two independent reloads with reverse order in the second repeat. Both app source trees stayed clean; foreground/visibility and shader-program counts were stable at observation boundaries. All 32 fixed-pose wrapper image/numeric oracles passed. The source intervals requested 1,000 microseconds but observed median spacing was 1,258–1,265 microseconds; some gaps were much longer. System load averages were high (1-minute value 9.21 before, 9.00 after).
+
+Add an analysis-only sensitivity output: counts per category and original time weighting with intervals >5 ms excluded. This post-capture check does not replace raw profiles or default estimates and is not performance acceptance. No new browser capture or primary timing is needed for this analysis change. Preserve the initial analysis separately; the final report identifies capture and analyzer SHAs independently.

@@ -1,0 +1,27 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import {createHash} from 'node:crypto';
+import {profileSourceVerifier} from '../scripts/apps/profile-sources.mjs';
+const hash = text => createHash('sha256').update(text).digest('hex');
+test('profile attribution refuses changed, missing and uncaptured source bytes', async t => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'rthree-profile-sources-'));
+  t.after(() => fs.rm(root, {recursive:true,force:true}));
+  const apps = path.join(root,'apps'), run = path.join(root,'run');
+  await fs.mkdir(path.join(apps,'vendor'), {recursive:true});await fs.mkdir(run);
+  const local = path.join(apps,'scene.js'), remote = path.join(apps,'vendor','three.js');
+  await fs.writeFile(local,'original');await fs.writeFile(remote,'remote');
+  await fs.writeFile(path.join(run,'served-files.json'), JSON.stringify([{file:'scene.js',sha256:hash('original')}]));
+  await fs.writeFile(path.join(run,'network.json'), JSON.stringify([{url:'https://example.test/three@0.176.x/core',mirrored:true,sha256:hash('remote')}]));
+  const resources = [{url:'https://example.test/three@0.176.0/core',file:'three.js'}];
+  const verify = await profileSourceVerifier(run,apps,resources);
+  verify(local,Buffer.from('original'));
+  assert.throws(() => verify(local,Buffer.from('modified')), /Capture source mismatch/);
+  assert.throws(() => verify(path.join(apps,'unknown.js'),Buffer.from('x')), /No capture hash/);
+  await fs.writeFile(remote,'changed');
+  await assert.rejects(profileSourceVerifier(run,apps,resources), /Capture source mismatch/);
+  await fs.writeFile(remote,'remote');await fs.unlink(local);
+  await assert.rejects(profileSourceVerifier(run,apps,resources), /ENOENT/);
+});

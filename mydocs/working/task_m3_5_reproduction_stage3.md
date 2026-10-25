@@ -1,0 +1,5 @@
+# Task #5 preparation: native UI replay tooling
+
+Continuation of the approved original-app correctness preparation, tracked by #5 and draft PR #41. Added `scripts/apps/ui.mjs` without modifying engine or upstream application sources. The driver uses actual pointer/keyboard/file-chooser input for transform handles, multi-selection, history, focus, timeline controls and light panels. Fixture creation uses native commands; read-only pinned helper raycasts locate visible gizmo hit targets. Renderer signals permit deterministic diagnostic captures after native UI actions.
+
+Development run 001 retained a scrub assertion failure: its pointer crossed a clip header whose click selected a different clip. Run 002 passed 36 checks and four exact image/numeric reload pairs after targeting an expanded track row. Additional final guards check nonblank images, unchanged quality, group spacing, synchronous pointer-event world reads and clip switching. The final clean-tool run and full evidence are recorded separately after this commit. No profiling, primary timing or performance acceptance is included.

@@ -1,0 +1,13 @@
+{
+  "browser": "155.0.8059.86",
+  "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "toolingSha": "acea74519b6bde1cb981ed2282a6c2b6ad15b0eb",
+  "toolingDirty": false,
+  "headed": true,
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "dpr": 1,
+  "mode": "correctness only; no profiles, timers or frame samples"
+}

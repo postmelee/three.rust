@@ -1,0 +1,27 @@
+
+> three-rust-research@0.1.0 test:infra
+> node --test tests/infra.mjs tests/fox-analysis.mjs tests/server-port.mjs
+
+✔ accept matching captured phases (41.345417ms)
+✔ reject mixed clock policies (36.353958ms)
+✔ reject a different measured source (35.479625ms)
+✔ reject a browser update (36.282458ms)
+✔ reject different work (34.968916ms)
+✔ reject incomplete phases (33.998167ms)
+✔ historical evidence separates ownership improvement from unresolved Rust benefit (1.399459ms)
+✔ matched-JS A/A is used separately and incomplete calibration rejects (75.657667ms)
+✔ hardware measurement rejects software, missing and masked renderers (0.5705ms)
+✔ hardware configuration never forces software; options are explicit and validated (0.521542ms)
+✔ roadmap sync is idempotent and only assigns milestones (0.635125ms)
+✔ roadmap sync refuses unmarked issues and closed milestones (0.223792ms)
+✔ analysis refuses false confidence from one run or zero reference timings (67.497375ms)
+✔ an explicit isolated server uses its own port and rejects collisions (16.677792ms)
+✔ RTHREE_PORT selects both the default listener and navigation origin (85.422375ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 341.390791

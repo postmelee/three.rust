@@ -1,0 +1,20 @@
+{
+  "skins": 4,
+  "morphs": 3,
+  "clips": [
+    "1. Dance",
+    "2. Death",
+    "3. Idle",
+    "4. Jump",
+    "5. No",
+    "6. Punch",
+    "7. Running",
+    "8. Sitting",
+    "9. Standing",
+    "10. ThumbsUp",
+    "11. Walking",
+    "12. WalkJump",
+    "13. Wave",
+    "14. Yes"
+  ]
+}

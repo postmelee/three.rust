@@ -1,0 +1,5 @@
+# Task #5 profiles: evidence and report
+
+Capture SHA 855012966a136dca89a16b162d9dce805cb0bece and analyzer SHA ab833bb7d65d59857a0e52af99bb6a743d5d66ee are recorded independently. Sixteen profiles, 32 exact transparent-wrapper image/numeric checks and eight scenario/control paths passed. New evidence archive: 113 hashed payloads, including losslessly compressed raw profiles with original hashes. Both app source trees remain clean.
+
+The [report](../report/task_m3_5_profiles_report.md) documents renderer preparation dominance, duplicate skeleton updates across list/shadow preparation, precise synchronous bounds and Editor UI/callback work. Sampling-gap sensitivity preserves the broad ranking, but high external load, limited active samples and variable timing prevent a performance qualification or Amdahl speedup claim. Primary timing, GPU elapsed work, candidates and profiler CPU-overhead calibration remain unperformed. Preparation CI run 40066043963 passed; the new draft PR has independent CI. #5 remains open.

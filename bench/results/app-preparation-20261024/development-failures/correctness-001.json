@@ -1,0 +1,70 @@
+{
+  "status": "failed",
+  "error": "TimeoutError: page.waitForFunction: Timeout 20000ms exceeded.",
+  "checks": [
+    {
+      "name": "V1 native GUI clip/speed/pause/resume/morph/orbit 0",
+      "pass": true,
+      "skins": 4,
+      "morphs": 3,
+      "clips": [
+        "1. Dance",
+        "2. Death",
+        "3. Idle",
+        "4. Jump",
+        "5. No",
+        "6. Punch",
+        "7. Running",
+        "8. Sitting",
+        "9. Standing",
+        "10. ThumbsUp",
+        "11. Walking",
+        "12. WalkJump",
+        "13. Wave",
+        "14. Yes"
+      ]
+    },
+    {
+      "name": "E1 pointer picking and shift selection 0",
+      "pass": true
+    },
+    {
+      "name": "E1 command transforms/undo/redo/synchronous reads 0",
+      "pass": true
+    },
+    {
+      "name": "E1 idle render suppression 0",
+      "pass": true,
+      "renderNotifications": 0
+    }
+  ],
+  "actions": [
+    {
+      "scenario": "V1",
+      "repeat": 0,
+      "inputs": [
+        "file-input RobotExpressive.glb",
+        "Dance unchecked",
+        "Walking checked",
+        "speed 0.5 -> 0 -> 1",
+        "first Angry 0.65",
+        "orbit (400,300)->(480,340), wheel 100"
+      ],
+      "reference": "controls.reset(); Walking at 0.75 seconds; mixer timeScale 0"
+    },
+    {
+      "scenario": "E1",
+      "repeat": 0,
+      "inputs": [
+        "authored two cubes/ground/directional/ambient lights via AddObjectCommand",
+        "pointer select Left cube",
+        "shift-click Right cube",
+        "SetPosition/SetRotation commands; undo/redo",
+        "deselect and observe 12 rAF callbacks"
+      ],
+      "limitations": [
+        "gizmo drag and focus UI replay not yet automated"
+      ]
+    }
+  ]
+}

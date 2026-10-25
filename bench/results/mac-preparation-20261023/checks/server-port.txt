@@ -1,0 +1,10 @@
+✔ an explicit isolated server uses its own port and rejects collisions (18.149333ms)
+✔ RTHREE_PORT selects both the default listener and navigation origin (86.8315ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 186.317875

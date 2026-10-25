@@ -1,0 +1,13 @@
+{
+  "browser": "155.0.8059.86",
+  "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "toolingSha": "905f5a38c263a51991eb0a768084c588037fa190",
+  "toolingDirty": true,
+  "headed": true,
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "dpr": 1,
+  "mode": "Original-app CPU profiling; sampling and instance diagnostics; NOT primary timing"
+}
