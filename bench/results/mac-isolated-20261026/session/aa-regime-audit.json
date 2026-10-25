@@ -1,0 +1,421 @@
+{
+  "method": "Post-capture audit; all runs retained, no changes to the predeclared rule. Six contiguous blocks of 600 CPU samples; deterministic final-state and paid-work comparison. No causal assignment to CPU scheduling or JIT.",
+  "rows": [
+    {
+      "phase": "aa-js-before",
+      "file": "render-animated-16-owned-js-0.json",
+      "finalHash": "66bf91cfebee391cff177d462e6400b0bb173f5b6c2c3d0eda0efba836c62976",
+      "reads": 60,
+      "draws": 16,
+      "triangles": 9216,
+      "invalid": [],
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1461,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpuBlocks600": [
+        0.5600000023841858,
+        0.5400000065565109,
+        0.5799999982118607,
+        0.5450000017881393,
+        0.5599999949336052,
+        0.5550000071525574
+      ],
+      "stepDelta": 3600,
+      "commandBytesDelta": 64650240
+    },
+    {
+      "phase": "aa-js-before",
+      "file": "render-animated-16-owned-js-1.json",
+      "finalHash": "66bf91cfebee391cff177d462e6400b0bb173f5b6c2c3d0eda0efba836c62976",
+      "reads": 60,
+      "draws": 16,
+      "triangles": 9216,
+      "invalid": [],
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1536,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpuBlocks600": [
+        0.5799999982118607,
+        0.5625,
+        0.5600000023841858,
+        0.5600000023841858,
+        0.5549999922513962,
+        0.5550000071525574
+      ],
+      "stepDelta": 3600,
+      "commandBytesDelta": 64650240
+    },
+    {
+      "phase": "aa-js-before",
+      "file": "render-animated-16-owned-js-2.json",
+      "finalHash": "66bf91cfebee391cff177d462e6400b0bb173f5b6c2c3d0eda0efba836c62976",
+      "reads": 60,
+      "draws": 16,
+      "triangles": 9216,
+      "invalid": [],
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1523,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpuBlocks600": [
+        0.5600000023841858,
+        0.5550000071525574,
+        0.5500000044703484,
+        0.5450000017881393,
+        0.5400000065565109,
+        0.5550000071525574
+      ],
+      "stepDelta": 3600,
+      "commandBytesDelta": 64650240
+    },
+    {
+      "phase": "aa-js-before",
+      "file": "render-animated-16-owned-js-3.json",
+      "finalHash": "66bf91cfebee391cff177d462e6400b0bb173f5b6c2c3d0eda0efba836c62976",
+      "reads": 60,
+      "draws": 16,
+      "triangles": 9216,
+      "invalid": [],
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1554,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpuBlocks600": [
+        0.5550000071525574,
+        0.5600000023841858,
+        0.5700000077486038,
+        0.5699999928474426,
+        0.5549999922513962,
+        0.5400000065565109
+      ],
+      "stepDelta": 3600,
+      "commandBytesDelta": 64650240
+    },
+    {
+      "phase": "aa-js-before",
+      "file": "render-animated-16-owned-js-4.json",
+      "finalHash": "66bf91cfebee391cff177d462e6400b0bb173f5b6c2c3d0eda0efba836c62976",
+      "reads": 60,
+      "draws": 16,
+      "triangles": 9216,
+      "invalid": [],
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1543,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpuBlocks600": [
+        0.5450000017881393,
+        0.5499999970197678,
+        0.5600000023841858,
+        0.5600000023841858,
+        0.5499999970197678,
+        0.5449999943375587
+      ],
+      "stepDelta": 3600,
+      "commandBytesDelta": 64650240
+    },
+    {
+      "phase": "main",
+      "file": "render-animated-16-owned-js-0.json",
+      "finalHash": "66bf91cfebee391cff177d462e6400b0bb173f5b6c2c3d0eda0efba836c62976",
+      "reads": 60,
+      "draws": 16,
+      "triangles": 9216,
+      "invalid": [],
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1520,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpuBlocks600": [
+        0.5749999955296516,
+        0.5499999970197678,
+        0.5750000029802322,
+        0.5550000071525574,
+        0.5550000071525574,
+        0.5699999928474426
+      ],
+      "stepDelta": 3600,
+      "commandBytesDelta": 64650240
+    },
+    {
+      "phase": "main",
+      "file": "render-animated-16-owned-js-1.json",
+      "finalHash": "66bf91cfebee391cff177d462e6400b0bb173f5b6c2c3d0eda0efba836c62976",
+      "reads": 60,
+      "draws": 16,
+      "triangles": 9216,
+      "invalid": [],
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1560,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpuBlocks600": [
+        0.5750000029802322,
+        0.550000011920929,
+        0.5699999928474426,
+        0.5649999976158142,
+        0.5649999976158142,
+        0.5499999970197678
+      ],
+      "stepDelta": 3600,
+      "commandBytesDelta": 64650240
+    },
+    {
+      "phase": "main",
+      "file": "render-animated-16-owned-js-2.json",
+      "finalHash": "66bf91cfebee391cff177d462e6400b0bb173f5b6c2c3d0eda0efba836c62976",
+      "reads": 60,
+      "draws": 16,
+      "triangles": 9216,
+      "invalid": [],
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1484,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpuBlocks600": [
+        0.5649999976158142,
+        0.5550000071525574,
+        0.5600000023841858,
+        0.5600000023841858,
+        0.5450000017881393,
+        0.5450000017881393
+      ],
+      "stepDelta": 3600,
+      "commandBytesDelta": 64650240
+    },
+    {
+      "phase": "main",
+      "file": "render-animated-16-owned-js-3.json",
+      "finalHash": "66bf91cfebee391cff177d462e6400b0bb173f5b6c2c3d0eda0efba836c62976",
+      "reads": 60,
+      "draws": 16,
+      "triangles": 9216,
+      "invalid": [],
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1525,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpuBlocks600": [
+        0.5750000029802322,
+        0.567500002682209,
+        0.5849999934434891,
+        0.5700000077486038,
+        0.5549999922513962,
+        0.5550000071525574
+      ],
+      "stepDelta": 3600,
+      "commandBytesDelta": 64650240
+    },
+    {
+      "phase": "main",
+      "file": "render-animated-16-owned-js-4.json",
+      "finalHash": "66bf91cfebee391cff177d462e6400b0bb173f5b6c2c3d0eda0efba836c62976",
+      "reads": 60,
+      "draws": 16,
+      "triangles": 9216,
+      "invalid": [],
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1548,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpuBlocks600": [
+        0.5700000077486038,
+        0.5650000050663948,
+        0.5799999982118607,
+        0.5699999928474426,
+        0.5750000029802322,
+        0.5499999970197678
+      ],
+      "stepDelta": 3600,
+      "commandBytesDelta": 64650240
+    },
+    {
+      "phase": "main",
+      "file": "render-animated-16-owned-js-5.json",
+      "finalHash": "66bf91cfebee391cff177d462e6400b0bb173f5b6c2c3d0eda0efba836c62976",
+      "reads": 60,
+      "draws": 16,
+      "triangles": 9216,
+      "invalid": [],
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1695,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpuBlocks600": [
+        0.5349999964237213,
+        0.5225000008940697,
+        0.5,
+        0.5274999961256981,
+        0.5400000065565109,
+        0.5450000017881393
+      ],
+      "stepDelta": 3600,
+      "commandBytesDelta": 64650240
+    },
+    {
+      "phase": "aa-js-after",
+      "file": "render-animated-16-owned-js-0.json",
+      "finalHash": "66bf91cfebee391cff177d462e6400b0bb173f5b6c2c3d0eda0efba836c62976",
+      "reads": 60,
+      "draws": 16,
+      "triangles": 9216,
+      "invalid": [],
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1525,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpuBlocks600": [
+        0.2800000011920929,
+        0.28999999165534973,
+        0.2749999910593033,
+        0.28999999910593033,
+        0.2849999964237213,
+        0.30000001192092896
+      ],
+      "stepDelta": 3600,
+      "commandBytesDelta": 64650240
+    },
+    {
+      "phase": "aa-js-after",
+      "file": "render-animated-16-owned-js-1.json",
+      "finalHash": "66bf91cfebee391cff177d462e6400b0bb173f5b6c2c3d0eda0efba836c62976",
+      "reads": 60,
+      "draws": 16,
+      "triangles": 9216,
+      "invalid": [],
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1562,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpuBlocks600": [
+        0.26999999582767487,
+        0.27000001072883606,
+        0.2750000059604645,
+        0.2849999964237213,
+        0.2750000059604645,
+        0.26500000059604645
+      ],
+      "stepDelta": 3600,
+      "commandBytesDelta": 64650240
+    },
+    {
+      "phase": "aa-js-after",
+      "file": "render-animated-16-owned-js-2.json",
+      "finalHash": "66bf91cfebee391cff177d462e6400b0bb173f5b6c2c3d0eda0efba836c62976",
+      "reads": 60,
+      "draws": 16,
+      "triangles": 9216,
+      "invalid": [],
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1586,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpuBlocks600": [
+        0.574999988079071,
+        0.557499997317791,
+        0.5600000023841858,
+        0.5550000071525574,
+        0.5649999976158142,
+        0.5550000071525574
+      ],
+      "stepDelta": 3600,
+      "commandBytesDelta": 64650240
+    },
+    {
+      "phase": "aa-js-after",
+      "file": "render-animated-16-owned-js-3.json",
+      "finalHash": "66bf91cfebee391cff177d462e6400b0bb173f5b6c2c3d0eda0efba836c62976",
+      "reads": 60,
+      "draws": 16,
+      "triangles": 9216,
+      "invalid": [],
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1561,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpuBlocks600": [
+        0.5699999928474426,
+        0.5649999976158142,
+        0.5600000023841858,
+        0.5600000023841858,
+        0.5550000071525574,
+        0.5600000023841858
+      ],
+      "stepDelta": 3600,
+      "commandBytesDelta": 64650240
+    },
+    {
+      "phase": "aa-js-after",
+      "file": "render-animated-16-owned-js-4.json",
+      "finalHash": "66bf91cfebee391cff177d462e6400b0bb173f5b6c2c3d0eda0efba836c62976",
+      "reads": 60,
+      "draws": 16,
+      "triangles": 9216,
+      "invalid": [],
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1572,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpuBlocks600": [
+        0.5600000023841858,
+        0.5649999976158142,
+        0.5649999976158142,
+        0.5649999976158142,
+        0.5700000077486038,
+        0.5549999922513962
+      ],
+      "stepDelta": 3600,
+      "commandBytesDelta": 64650240
+    }
+  ]
+}

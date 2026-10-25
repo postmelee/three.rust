@@ -1,0 +1,3071 @@
+{
+  "sourceCommit": "9527a042ed1134e73ab9cfe8b3ee75f4aac6d2a7",
+  "classification": "Repeated complete render-path CPU experiment; explicit ownership API, not import-only or hardware speedup",
+  "method": "Linear quantiles per run; median and range across run quantiles. Ratios pair repeat indices. No outlier removal, pooled-frame confidence intervals, significance or hardware speedup claim.",
+  "groups": [
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "metrics": {
+        "cpu": {
+          "p50": {
+            "median": 0.20000000298023224,
+            "range": [
+              0.20000000298023224,
+              0.20000000298023224
+            ]
+          },
+          "p95": {
+            "median": 0.4000000059604645,
+            "range": [
+              0.3999999910593033,
+              0.4000000059604645
+            ]
+          },
+          "p99": {
+            "median": 0.5,
+            "range": [
+              0.40100000590085894,
+              0.5
+            ]
+          },
+          "mean": {
+            "median": 0.22508333335320155,
+            "range": [
+              0.19716666695972285,
+              0.23149999998509885
+            ]
+          }
+        },
+        "frameInterval": {
+          "p50": {
+            "median": 8.299999997019768,
+            "range": [
+              8.299999997019768,
+              8.300000011920929
+            ]
+          },
+          "p95": {
+            "median": 10.050000004470348,
+            "range": [
+              10,
+              10.299999997019768
+            ]
+          },
+          "p99": {
+            "median": 10.349999994337558,
+            "range": [
+              10.299999997019768,
+              10.5
+            ]
+          },
+          "mean": {
+            "median": 8.333138564281253,
+            "range": [
+              8.332554257100133,
+              8.333555926539265
+            ]
+          }
+        }
+      },
+      "startupMs": {
+        "p50": 56.533187500004715,
+        "p95": 60.83225000000425,
+        "p99": 61.493550000000916,
+        "mean": 57.009277833338125,
+        "min": 53.74579200000153,
+        "max": 61.65887500000008
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "metrics": {
+        "cpu": {
+          "p50": {
+            "median": 0.20000000298023224,
+            "range": [
+              0.20000000298023224,
+              0.20000000298023224
+            ]
+          },
+          "p95": {
+            "median": 0.4000000059604645,
+            "range": [
+              0.3999999910593033,
+              0.4000000059604645
+            ]
+          },
+          "p99": {
+            "median": 0.5,
+            "range": [
+              0.40100000590085894,
+              0.5
+            ]
+          },
+          "mean": {
+            "median": 0.22433333324889343,
+            "range": [
+              0.20616666639844577,
+              0.23083333348234494
+            ]
+          }
+        },
+        "frameInterval": {
+          "p50": {
+            "median": 8.299999997019768,
+            "range": [
+              8.299999997019768,
+              8.299999997019768
+            ]
+          },
+          "p95": {
+            "median": 10.100000001490116,
+            "range": [
+              10,
+              10.210000002384188
+            ]
+          },
+          "p99": {
+            "median": 10.399999991357326,
+            "range": [
+              10.299999997019768,
+              10.5
+            ]
+          },
+          "mean": {
+            "median": 8.333222036730367,
+            "range": [
+              8.33088480801833,
+              8.33606010016197
+            ]
+          }
+        }
+      },
+      "startupMs": {
+        "p50": 54.85439600000973,
+        "p95": 58.071260500001245,
+        "p99": 58.134285699999694,
+        "mean": 54.5701528333384,
+        "min": 48.78854199999478,
+        "max": 58.1500419999993
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "metrics": {
+        "cpu": {
+          "p50": {
+            "median": 0.20000000298023224,
+            "range": [
+              0.20000000298023224,
+              0.20000000298023224
+            ]
+          },
+          "p95": {
+            "median": 0.3999999910593033,
+            "range": [
+              0.30000001192092896,
+              0.4000000059604645
+            ]
+          },
+          "p99": {
+            "median": 0.5,
+            "range": [
+              0.4000000059604645,
+              0.5
+            ]
+          },
+          "mean": {
+            "median": 0.20375000018626452,
+            "range": [
+              0.19116666624943415,
+              0.24216666705906392
+            ]
+          }
+        },
+        "frameInterval": {
+          "p50": {
+            "median": 8.299999997019768,
+            "range": [
+              8.299999997019768,
+              8.300000011920929
+            ]
+          },
+          "p95": {
+            "median": 10.150000005960464,
+            "range": [
+              10.100000008940697,
+              10.200000002980232
+            ]
+          },
+          "p99": {
+            "median": 10.399999998658895,
+            "range": [
+              10.302000011503695,
+              10.402000005841254
+            ]
+          },
+          "mean": {
+            "median": 8.335726210353073,
+            "range": [
+              8.333222036742805,
+              8.336227045060198
+            ]
+          }
+        }
+      },
+      "startupMs": {
+        "p50": 52.82706250001502,
+        "p95": 59.06156224999859,
+        "p99": 60.284778849999114,
+        "mean": 53.10851383333435,
+        "min": 48.412083000002895,
+        "max": 60.59058299999924
+      }
+    },
+    {
+      "scenario": "animated-64",
+      "variant": "original",
+      "metrics": {
+        "cpu": {
+          "p50": {
+            "median": 1.2000000029802322,
+            "range": [
+              1.199999988079071,
+              1.2000000029802322
+            ]
+          },
+          "p95": {
+            "median": 3.399999998509884,
+            "range": [
+              1.5,
+              3.5
+            ]
+          },
+          "p99": {
+            "median": 3.6505000059306614,
+            "range": [
+              1.6010000088810912,
+              3.7999999970197678
+            ]
+          },
+          "mean": {
+            "median": 1.5729999998336037,
+            "range": [
+              1.1826666666567325,
+              1.6171666662146649
+            ]
+          }
+        },
+        "frameInterval": {
+          "p50": {
+            "median": 8.299999997019768,
+            "range": [
+              8.299999997019768,
+              8.299999997019768
+            ]
+          },
+          "p95": {
+            "median": 10.200000002980232,
+            "range": [
+              9.799999997019768,
+              10.299999997019768
+            ]
+          },
+          "p99": {
+            "median": 10.5,
+            "range": [
+              10.299999997019768,
+              10.600000008940697
+            ]
+          },
+          "mean": {
+            "median": 8.333973288809716,
+            "range": [
+              8.33322203671793,
+              8.335559265442404
+            ]
+          }
+        }
+      },
+      "startupMs": {
+        "p50": 60.30370850000327,
+        "p95": 62.003271250011494,
+        "p99": 62.21642145001406,
+        "mean": 59.35869466667464,
+        "min": 55.961000000010245,
+        "max": 62.2697090000147
+      }
+    },
+    {
+      "scenario": "animated-64",
+      "variant": "owned-js",
+      "metrics": {
+        "cpu": {
+          "p50": {
+            "median": 1,
+            "range": [
+              0.800000011920929,
+              1
+            ]
+          },
+          "p95": {
+            "median": 1.7025000028312185,
+            "range": [
+              1.199999988079071,
+              1.7999999970197678
+            ]
+          },
+          "p99": {
+            "median": 1.899999991208315,
+            "range": [
+              1.6000000089406967,
+              1.901000005900859
+            ]
+          },
+          "mean": {
+            "median": 1.129166666480402,
+            "range": [
+              0.8799999998261531,
+              1.1438333334277073
+            ]
+          }
+        },
+        "frameInterval": {
+          "p50": {
+            "median": 8.299999997019768,
+            "range": [
+              8.299999997019768,
+              8.300000011920929
+            ]
+          },
+          "p95": {
+            "median": 10.100000008940697,
+            "range": [
+              10.099999994039536,
+              10.200000002980232
+            ]
+          },
+          "p99": {
+            "median": 10.45200000286102,
+            "range": [
+              10.399999991059303,
+              10.50199999988079
+            ]
+          },
+          "mean": {
+            "median": 8.335308848082622,
+            "range": [
+              8.331385642737896,
+              8.33606010016197
+            ]
+          }
+        }
+      },
+      "startupMs": {
+        "p50": 61.736291499997606,
+        "p95": 68.19294824999452,
+        "p99": 69.06112324999631,
+        "mean": 62.91379166666411,
+        "min": 59.764375000002474,
+        "max": 69.27816699999676
+      }
+    },
+    {
+      "scenario": "animated-64",
+      "variant": "owned-wasm",
+      "metrics": {
+        "cpu": {
+          "p50": {
+            "median": 0.75,
+            "range": [
+              0.699999988079071,
+              0.7999999970197678
+            ]
+          },
+          "p95": {
+            "median": 1.4000000059604645,
+            "range": [
+              1.0999999940395355,
+              1.5
+            ]
+          },
+          "p99": {
+            "median": 1.6000000089406967,
+            "range": [
+              1.2999999971687795,
+              1.7000000029802322
+            ]
+          },
+          "mean": {
+            "median": 0.9061666666592161,
+            "range": [
+              0.6843333328266938,
+              0.9260000000149011
+            ]
+          }
+        },
+        "frameInterval": {
+          "p50": {
+            "median": 8.299999997019768,
+            "range": [
+              8.299999997019768,
+              8.300000011920929
+            ]
+          },
+          "p95": {
+            "median": 10.149999998509884,
+            "range": [
+              10,
+              10.299999997019768
+            ]
+          },
+          "p99": {
+            "median": 10.451000002920626,
+            "range": [
+              10.400000005960464,
+              10.602000008523463
+            ]
+          },
+          "mean": {
+            "median": 8.332971619370586,
+            "range": [
+              8.332387312177028,
+              8.33422370615706
+            ]
+          }
+        }
+      },
+      "startupMs": {
+        "p50": 61.18660350000573,
+        "p95": 65.93190649999997,
+        "p99": 66.35921490000001,
+        "mean": 61.877222166679225,
+        "min": 58.27945900004124,
+        "max": 66.46604200000002
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "metrics": {
+        "cpu": {
+          "p50": {
+            "median": 0.20000000298023224,
+            "range": [
+              0.20000000298023224,
+              0.20000000298023224
+            ]
+          },
+          "p95": {
+            "median": 0.3500000014901161,
+            "range": [
+              0.30000001192092896,
+              0.4000000059604645
+            ]
+          },
+          "p99": {
+            "median": 0.4005000059306617,
+            "range": [
+              0.4000000059604645,
+              0.5
+            ]
+          },
+          "mean": {
+            "median": 0.1939166667809089,
+            "range": [
+              0.17983333359162013,
+              0.2126666667064031
+            ]
+          }
+        },
+        "frameInterval": {
+          "p50": {
+            "median": 8.299999997019768,
+            "range": [
+              8.299999997019768,
+              8.299999997019768
+            ]
+          },
+          "p95": {
+            "median": 10.200000002980232,
+            "range": [
+              10,
+              10.299999997019768
+            ]
+          },
+          "p99": {
+            "median": 10.399999998509884,
+            "range": [
+              10.29999999731779,
+              10.5
+            ]
+          },
+          "mean": {
+            "median": 8.334557595990834,
+            "range": [
+              8.330717863095225,
+              8.33606010016197
+            ]
+          }
+        }
+      },
+      "startupMs": {
+        "p50": 52.89885399999912,
+        "p95": 60.074469250008406,
+        "p99": 60.66446105001232,
+        "mean": 54.87679866666925,
+        "min": 52.3837910000002,
+        "max": 60.8119590000133
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "metrics": {
+        "cpu": {
+          "p50": {
+            "median": 0.10000000894069672,
+            "range": [
+              0.10000000894069672,
+              0.10000000894069672
+            ]
+          },
+          "p95": {
+            "median": 0.29999999701976776,
+            "range": [
+              0.29999999701976776,
+              0.29999999701976776
+            ]
+          },
+          "p99": {
+            "median": 0.3010000117123118,
+            "range": [
+              0.30000001192092896,
+              0.4000000059604645
+            ]
+          },
+          "mean": {
+            "median": 0.13841666689763465,
+            "range": [
+              0.12900000003476939,
+              0.1461666669199864
+            ]
+          }
+        },
+        "frameInterval": {
+          "p50": {
+            "median": 8.299999997019768,
+            "range": [
+              8.299999997019768,
+              8.299999997019768
+            ]
+          },
+          "p95": {
+            "median": 10.150000005960464,
+            "range": [
+              10,
+              10.299999997019768
+            ]
+          },
+          "p99": {
+            "median": 10.400000005960464,
+            "range": [
+              10.299999997019768,
+              10.5
+            ]
+          },
+          "mean": {
+            "median": 8.333305509179482,
+            "range": [
+              8.332721201998364,
+              8.335559265442404
+            ]
+          }
+        }
+      },
+      "startupMs": {
+        "p50": 54.99422900000354,
+        "p95": 59.11867699999857,
+        "p99": 59.17433539999911,
+        "mean": 55.76391650000247,
+        "min": 52.71691699998337,
+        "max": 59.18824999999924
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "metrics": {
+        "cpu": {
+          "p50": {
+            "median": 0.10000000894069672,
+            "range": [
+              0.10000000894069672,
+              0.10000000894069672
+            ]
+          },
+          "p95": {
+            "median": 0.29999999701976776,
+            "range": [
+              0.29999999701976776,
+              0.29999999701976776
+            ]
+          },
+          "p99": {
+            "median": 0.30000001192092896,
+            "range": [
+              0.30000001192092896,
+              0.3999999912083149
+            ]
+          },
+          "mean": {
+            "median": 0.13474999969204265,
+            "range": [
+              0.1290000000844399,
+              0.14549999994536242
+            ]
+          }
+        },
+        "frameInterval": {
+          "p50": {
+            "median": 8.299999997019768,
+            "range": [
+              8.299999997019768,
+              8.300000011920929
+            ]
+          },
+          "p95": {
+            "median": 10.105000007897615,
+            "range": [
+              9.89999999254942,
+              10.299999997019768
+            ]
+          },
+          "p99": {
+            "median": 10.399999998509884,
+            "range": [
+              10.29999999731779,
+              10.5
+            ]
+          },
+          "mean": {
+            "median": 8.333388981628598,
+            "range": [
+              8.330550918196995,
+              8.333555926564141
+            ]
+          }
+        }
+      },
+      "startupMs": {
+        "p50": 48.9868545000063,
+        "p95": 57.500697750001564,
+        "p99": 58.630905950002486,
+        "mean": 51.08071533334199,
+        "min": 48.166791000025114,
+        "max": 58.91345800000272
+      }
+    }
+  ],
+  "pairedRatios": [
+    {
+      "scenario": "animated-1",
+      "baseline": "original",
+      "variant": "owned-js",
+      "zeroReferences": 0,
+      "ratios": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "median": 1
+    },
+    {
+      "scenario": "animated-1",
+      "baseline": "original",
+      "variant": "owned-wasm",
+      "zeroReferences": 0,
+      "ratios": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "median": 1
+    },
+    {
+      "scenario": "animated-1",
+      "baseline": "owned-js",
+      "variant": "original",
+      "zeroReferences": 0,
+      "ratios": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "median": 1
+    },
+    {
+      "scenario": "animated-1",
+      "baseline": "owned-js",
+      "variant": "owned-wasm",
+      "zeroReferences": 0,
+      "ratios": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "median": 1
+    },
+    {
+      "scenario": "animated-64",
+      "baseline": "original",
+      "variant": "owned-js",
+      "zeroReferences": 0,
+      "ratios": [
+        0.6666666749450896,
+        0.75,
+        0.8333333312637277,
+        0.8333333312637277,
+        0.8333333312637277,
+        0.8333333312637277
+      ],
+      "median": 0.8333333312637277
+    },
+    {
+      "scenario": "animated-64",
+      "baseline": "original",
+      "variant": "owned-wasm",
+      "zeroReferences": 0,
+      "ratios": [
+        0.5833333219505019,
+        0.5833333416117563,
+        0.5833333343681362,
+        0.6666666625274552,
+        0.6666666625274552,
+        0.6666666625274552
+      ],
+      "median": 0.6250000020696058
+    },
+    {
+      "scenario": "animated-64",
+      "baseline": "owned-js",
+      "variant": "original",
+      "zeroReferences": 0,
+      "ratios": [
+        1.4999999813735487,
+        1.3333333333333333,
+        1.2000000029802322,
+        1.2000000029802322,
+        1.2000000029802322,
+        1.2000000029802322
+      ],
+      "median": 1.2000000029802322
+    },
+    {
+      "scenario": "animated-64",
+      "baseline": "owned-js",
+      "variant": "owned-wasm",
+      "zeroReferences": 0,
+      "ratios": [
+        0.8749999720603232,
+        0.777777788815675,
+        0.7000000029802322,
+        0.7999999970197678,
+        0.7999999970197678,
+        0.7999999970197678
+      ],
+      "median": 0.7999999970197678
+    },
+    {
+      "scenario": "static-1",
+      "baseline": "original",
+      "variant": "owned-js",
+      "zeroReferences": 0,
+      "ratios": [
+        0.5000000372529024,
+        0.5000000372529024,
+        0.5000000372529024,
+        0.5000000372529024,
+        0.5000000372529024,
+        0.5000000372529024
+      ],
+      "median": 0.5000000372529024
+    },
+    {
+      "scenario": "static-1",
+      "baseline": "original",
+      "variant": "owned-wasm",
+      "zeroReferences": 0,
+      "ratios": [
+        0.5000000372529024,
+        0.5000000372529024,
+        0.5000000372529024,
+        0.5000000372529024,
+        0.5000000372529024,
+        0.5000000372529024
+      ],
+      "median": 0.5000000372529024
+    },
+    {
+      "scenario": "static-1",
+      "baseline": "owned-js",
+      "variant": "original",
+      "zeroReferences": 0,
+      "ratios": [
+        1.9999998509884014,
+        1.9999998509884014,
+        1.9999998509884014,
+        1.9999998509884014,
+        1.9999998509884014,
+        1.9999998509884014
+      ],
+      "median": 1.9999998509884014
+    },
+    {
+      "scenario": "static-1",
+      "baseline": "owned-js",
+      "variant": "owned-wasm",
+      "zeroReferences": 0,
+      "ratios": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "median": 1
+    }
+  ],
+  "runs": [
+    {
+      "file": "render-animated-1-original-0.json",
+      "scenario": "animated-1",
+      "variant": "original",
+      "repeat": 0,
+      "startupMs": 61.65887500000008,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.4000000059604645,
+          "p99": 0.5,
+          "mean": 0.19716666695972285,
+          "min": 0,
+          "max": 0.7999999970197678
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.299999997019768,
+          "p99": 10.5,
+          "mean": 8.33288814692147,
+          "min": 5.9000000059604645,
+          "max": 10.700000002980232
+        }
+      },
+      "diagnostics": null,
+      "adapter": null
+    },
+    {
+      "file": "render-animated-1-owned-js-0.json",
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "repeat": 0,
+      "startupMs": 58.1500419999993,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.4000000059604645,
+          "p99": 0.5,
+          "mean": 0.20616666639844577,
+          "min": 0,
+          "max": 0.6000000089406967
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.200000002980232,
+          "p99": 10.5,
+          "mean": 8.333555926539265,
+          "min": 6.299999997019768,
+          "max": 10.599999994039536
+        }
+      },
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 16496,
+        "commandBatches": 1,
+        "commandBytes": 320,
+        "readBytes": 0,
+        "paletteBytes": 1105920,
+        "rootBytes": 92160
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-animated-1-owned-wasm-0.json",
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "repeat": 0,
+      "startupMs": 60.59058299999924,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.3999999910593033,
+          "p99": 0.5,
+          "mean": 0.19116666624943415,
+          "min": 0,
+          "max": 1.1000000089406967
+        },
+        "frameInterval": {
+          "p50": 8.300000011920929,
+          "p95": 10.100000008940697,
+          "p99": 10.400000005960464,
+          "mean": 8.335559265442404,
+          "min": 6.199999988079071,
+          "max": 10.5
+        }
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 721,
+        "wasmMemoryBytes": 1245184,
+        "initialBytes": 16496,
+        "commandBatches": 1,
+        "commandBytes": 320,
+        "readBytes": 0,
+        "paletteBytes": 1105920,
+        "rootBytes": 92160
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-animated-64-original-0.json",
+      "scenario": "animated-64",
+      "variant": "original",
+      "repeat": 0,
+      "startupMs": 61.203958000001876,
+      "metrics": {
+        "cpu": {
+          "p50": 1.2000000029802322,
+          "p95": 1.5,
+          "p99": 1.6010000088810912,
+          "mean": 1.1936666661252577,
+          "min": 0.7999999970197678,
+          "max": 2.800000011920929
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.299999997019768,
+          "p99": 10.5,
+          "mean": 8.333388981641036,
+          "min": 6.200000002980232,
+          "max": 10.5
+        }
+      },
+      "diagnostics": null,
+      "adapter": null
+    },
+    {
+      "file": "render-animated-64-owned-js-0.json",
+      "scenario": "animated-64",
+      "variant": "owned-js",
+      "repeat": 0,
+      "startupMs": 59.764375000002474,
+      "metrics": {
+        "cpu": {
+          "p50": 0.800000011920929,
+          "p95": 1.3999999910593033,
+          "p99": 1.6000000089406967,
+          "mean": 0.8799999998261531,
+          "min": 0.5,
+          "max": 2
+        },
+        "frameInterval": {
+          "p50": 8.300000011920929,
+          "p95": 10.100000008940697,
+          "p99": 10.400000005960464,
+          "mean": 8.33589315526374,
+          "min": 6.299999997019768,
+          "max": 10.5
+        }
+      },
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 64,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 24560,
+        "commandBatches": 1,
+        "commandBytes": 20480,
+        "readBytes": 0,
+        "paletteBytes": 70778880,
+        "rootBytes": 5898240
+      },
+      "adapter": {
+        "presentationMeshes": 64,
+        "ordinaryBones": 0,
+        "paletteConsumes": 46080,
+        "paddedPaletteBytes": 147456,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-animated-64-owned-wasm-0.json",
+      "scenario": "animated-64",
+      "variant": "owned-wasm",
+      "repeat": 0,
+      "startupMs": 64.32949999999983,
+      "metrics": {
+        "cpu": {
+          "p50": 0.699999988079071,
+          "p95": 1.0999999940395355,
+          "p99": 1.2999999971687795,
+          "mean": 0.6843333328266938,
+          "min": 0.29999999701976776,
+          "max": 1.5
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.299999997019768,
+          "p99": 10.400000005960464,
+          "mean": 8.33288814692147,
+          "min": 6.200000002980232,
+          "max": 10.600000008940697
+        }
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "nodes": 24,
+        "rigs": 64,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 721,
+        "wasmMemoryBytes": 1769472,
+        "initialBytes": 24560,
+        "commandBatches": 1,
+        "commandBytes": 20480,
+        "readBytes": 0,
+        "paletteBytes": 70778880,
+        "rootBytes": 5898240
+      },
+      "adapter": {
+        "presentationMeshes": 64,
+        "ordinaryBones": 0,
+        "paletteConsumes": 46080,
+        "paddedPaletteBytes": 147456,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-static-1-original-0.json",
+      "scenario": "static-1",
+      "variant": "original",
+      "repeat": 0,
+      "startupMs": 52.3837910000002,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.3999999910593033,
+          "p99": 0.5,
+          "mean": 0.18366666624943415,
+          "min": 0,
+          "max": 0.7000000029802322
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.299999997019768,
+          "p99": 10.5,
+          "mean": 8.330884807993455,
+          "min": 6.200000002980232,
+          "max": 10.599999994039536
+        }
+      },
+      "diagnostics": null,
+      "adapter": null
+    },
+    {
+      "file": "render-static-1-owned-js-0.json",
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "repeat": 0,
+      "startupMs": 59.18824999999924,
+      "metrics": {
+        "cpu": {
+          "p50": 0.10000000894069672,
+          "p95": 0.29999999701976776,
+          "p99": 0.3010000117123118,
+          "mean": 0.13850000016391278,
+          "min": 0,
+          "max": 0.9000000059604645
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10,
+          "p99": 10.5,
+          "mean": 8.333388981641036,
+          "min": 6.100000008940697,
+          "max": 10.599999994039536
+        }
+      },
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 1,
+        "steps": 1,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 16496,
+        "commandBatches": 0,
+        "commandBytes": 0,
+        "readBytes": 0,
+        "paletteBytes": 1536,
+        "rootBytes": 128
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 1
+      }
+    },
+    {
+      "file": "render-static-1-owned-wasm-0.json",
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "repeat": 0,
+      "startupMs": 58.91345800000272,
+      "metrics": {
+        "cpu": {
+          "p50": 0.10000000894069672,
+          "p95": 0.29999999701976776,
+          "p99": 0.30000001192092896,
+          "mean": 0.1290000000844399,
+          "min": 0,
+          "max": 0.800000011920929
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.299999997019768,
+          "p99": 10.5,
+          "mean": 8.330550918196995,
+          "min": 6.199999988079071,
+          "max": 10.899999991059303
+        }
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 1,
+        "steps": 1,
+        "wasmCalls": 1,
+        "wasmMemoryBytes": 1245184,
+        "initialBytes": 16496,
+        "commandBatches": 0,
+        "commandBytes": 0,
+        "readBytes": 0,
+        "paletteBytes": 1536,
+        "rootBytes": 128
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 1
+      }
+    },
+    {
+      "file": "render-static-1-owned-js-1.json",
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "repeat": 1,
+      "startupMs": 58.90995799999655,
+      "metrics": {
+        "cpu": {
+          "p50": 0.10000000894069672,
+          "p95": 0.29999999701976776,
+          "p99": 0.30000001192092896,
+          "mean": 0.13833333363135655,
+          "min": 0,
+          "max": 0.7000000029802322
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.299999997019768,
+          "p99": 10.5,
+          "mean": 8.33322203671793,
+          "min": 6.0999999940395355,
+          "max": 10.800000011920929
+        }
+      },
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 1,
+        "steps": 1,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 16496,
+        "commandBatches": 0,
+        "commandBytes": 0,
+        "readBytes": 0,
+        "paletteBytes": 1536,
+        "rootBytes": 128
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 1
+      }
+    },
+    {
+      "file": "render-static-1-owned-wasm-1.json",
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "repeat": 1,
+      "startupMs": 53.262416999998095,
+      "metrics": {
+        "cpu": {
+          "p50": 0.10000000894069672,
+          "p95": 0.29999999701976776,
+          "p99": 0.30000001192092896,
+          "mean": 0.1356666662792365,
+          "min": 0,
+          "max": 0.5
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.110000006854536,
+          "p99": 10.400000005960464,
+          "mean": 8.330550918196995,
+          "min": 6.299999997019768,
+          "max": 10.700000002980232
+        }
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 1,
+        "steps": 1,
+        "wasmCalls": 1,
+        "wasmMemoryBytes": 1245184,
+        "initialBytes": 16496,
+        "commandBatches": 0,
+        "commandBytes": 0,
+        "readBytes": 0,
+        "paletteBytes": 1536,
+        "rootBytes": 128
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 1
+      }
+    },
+    {
+      "file": "render-static-1-original-1.json",
+      "scenario": "static-1",
+      "variant": "original",
+      "repeat": 1,
+      "startupMs": 57.861999999993714,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.3999999910593033,
+          "p99": 0.40100000590085894,
+          "mean": 0.17983333359162013,
+          "min": 0,
+          "max": 0.7000000029802322
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.200000002980232,
+          "p99": 10.402000005841254,
+          "mean": 8.335726210340633,
+          "min": 6.0999999940395355,
+          "max": 10.599999994039536
+        }
+      },
+      "diagnostics": null,
+      "adapter": null
+    },
+    {
+      "file": "render-animated-64-owned-js-1.json",
+      "scenario": "animated-64",
+      "variant": "owned-js",
+      "repeat": 1,
+      "startupMs": 69.27816699999676,
+      "metrics": {
+        "cpu": {
+          "p50": 0.8999999910593033,
+          "p95": 1.199999988079071,
+          "p99": 1.7000000029802322,
+          "mean": 0.8888333332538605,
+          "min": 0.5,
+          "max": 1.7999999970197678
+        },
+        "frameInterval": {
+          "p50": 8.300000011920929,
+          "p95": 10.099999995529652,
+          "p99": 10.399999991059303,
+          "mean": 8.33589315526374,
+          "min": 6.299999997019768,
+          "max": 10.5
+        }
+      },
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 64,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 24560,
+        "commandBatches": 1,
+        "commandBytes": 20480,
+        "readBytes": 0,
+        "paletteBytes": 70778880,
+        "rootBytes": 5898240
+      },
+      "adapter": {
+        "presentationMeshes": 64,
+        "ordinaryBones": 0,
+        "paletteConsumes": 46080,
+        "paddedPaletteBytes": 147456,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-animated-64-owned-wasm-1.json",
+      "scenario": "animated-64",
+      "variant": "owned-wasm",
+      "repeat": 1,
+      "startupMs": 66.46604200000002,
+      "metrics": {
+        "cpu": {
+          "p50": 0.7000000029802322,
+          "p95": 1.2000000029802322,
+          "p99": 1.3999999910593033,
+          "mean": 0.7019999998311202,
+          "min": 0.29999999701976776,
+          "max": 1.5999999940395355
+        },
+        "frameInterval": {
+          "p50": 8.300000011920929,
+          "p95": 10.199999988079071,
+          "p99": 10.402000005841254,
+          "mean": 8.333555926539265,
+          "min": 6,
+          "max": 10.599999994039536
+        }
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "nodes": 24,
+        "rigs": 64,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 721,
+        "wasmMemoryBytes": 1769472,
+        "initialBytes": 24560,
+        "commandBatches": 1,
+        "commandBytes": 20480,
+        "readBytes": 0,
+        "paletteBytes": 70778880,
+        "rootBytes": 5898240
+      },
+      "adapter": {
+        "presentationMeshes": 64,
+        "ordinaryBones": 0,
+        "paletteConsumes": 46080,
+        "paddedPaletteBytes": 147456,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-animated-64-original-1.json",
+      "scenario": "animated-64",
+      "variant": "original",
+      "repeat": 1,
+      "startupMs": 60.582042000009096,
+      "metrics": {
+        "cpu": {
+          "p50": 1.199999988079071,
+          "p95": 1.5999999940395355,
+          "p99": 2.7010000030696384,
+          "mean": 1.1826666666567325,
+          "min": 0.5,
+          "max": 3.6000000089406967
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.299999997019768,
+          "p99": 10.5,
+          "mean": 8.33322203671793,
+          "min": 6.0999999940395355,
+          "max": 10.600000008940697
+        }
+      },
+      "diagnostics": null,
+      "adapter": null
+    },
+    {
+      "file": "render-animated-1-owned-js-1.json",
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "repeat": 1,
+      "startupMs": 57.83491600000707,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.3999999910593033,
+          "p99": 0.40100000590085894,
+          "mean": 0.22266666665673257,
+          "min": 0,
+          "max": 0.8999999910593033
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.099999994039536,
+          "p99": 10.399999991357326,
+          "mean": 8.33088480801833,
+          "min": 6.199999988079071,
+          "max": 10.599999994039536
+        }
+      },
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 16496,
+        "commandBatches": 1,
+        "commandBytes": 320,
+        "readBytes": 0,
+        "paletteBytes": 1105920,
+        "rootBytes": 92160
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-animated-1-owned-wasm-1.json",
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "repeat": 1,
+      "startupMs": 54.474499999996624,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.4000000059604645,
+          "p99": 0.5,
+          "mean": 0.24216666705906392,
+          "min": 0,
+          "max": 1.2999999970197678
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.100000008940697,
+          "p99": 10.399999991357326,
+          "mean": 8.33422370615706,
+          "min": 4.600000008940697,
+          "max": 11
+        }
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 721,
+        "wasmMemoryBytes": 1245184,
+        "initialBytes": 16496,
+        "commandBatches": 1,
+        "commandBytes": 320,
+        "readBytes": 0,
+        "paletteBytes": 1105920,
+        "rootBytes": 92160
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-animated-1-original-1.json",
+      "scenario": "animated-1",
+      "variant": "original",
+      "repeat": 1,
+      "startupMs": 53.74579200000153,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.4000000059604645,
+          "p99": 0.5,
+          "mean": 0.22733333361645539,
+          "min": 0,
+          "max": 0.6000000089406967
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.199999988079071,
+          "p99": 10.399999991357326,
+          "mean": 8.333388981641036,
+          "min": 6.299999997019768,
+          "max": 10.5
+        }
+      },
+      "diagnostics": null,
+      "adapter": null
+    },
+    {
+      "file": "render-animated-1-owned-wasm-2.json",
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "repeat": 2,
+      "startupMs": 48.412083000002895,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.4000000059604645,
+          "p99": 0.5,
+          "mean": 0.22483333314458528,
+          "min": 0,
+          "max": 0.800000011920929
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.100000008940697,
+          "p99": 10.302000011503695,
+          "mean": 8.33606010016197,
+          "min": 6.100000008940697,
+          "max": 10.5
+        }
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 721,
+        "wasmMemoryBytes": 1245184,
+        "initialBytes": 16496,
+        "commandBatches": 1,
+        "commandBytes": 320,
+        "readBytes": 0,
+        "paletteBytes": 1105920,
+        "rootBytes": 92160
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-animated-1-original-2.json",
+      "scenario": "animated-1",
+      "variant": "original",
+      "repeat": 2,
+      "startupMs": 56.940125000008265,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.3999999910593033,
+          "p99": 0.40100000590085894,
+          "mean": 0.21416666691501934,
+          "min": 0,
+          "max": 0.7000000029802322
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10,
+          "p99": 10.299999997019768,
+          "mean": 8.333555926539265,
+          "min": 6.299999997019768,
+          "max": 10.5
+        }
+      },
+      "diagnostics": null,
+      "adapter": null
+    },
+    {
+      "file": "render-animated-1-owned-js-2.json",
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "repeat": 2,
+      "startupMs": 54.553625000000466,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.4000000059604645,
+          "p99": 0.5,
+          "mean": 0.22983333356678487,
+          "min": 0,
+          "max": 1.5
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.210000002384188,
+          "p99": 10.400000005960464,
+          "mean": 8.33606010016197,
+          "min": 6.200000002980232,
+          "max": 10.599999994039536
+        }
+      },
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 16496,
+        "commandBatches": 1,
+        "commandBytes": 320,
+        "readBytes": 0,
+        "paletteBytes": 1105920,
+        "rootBytes": 92160
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-animated-64-owned-wasm-2.json",
+      "scenario": "animated-64",
+      "variant": "owned-wasm",
+      "repeat": 2,
+      "startupMs": 60.903040999997756,
+      "metrics": {
+        "cpu": {
+          "p50": 0.7000000029802322,
+          "p95": 1.4000000059604645,
+          "p99": 1.6000000089406967,
+          "mean": 0.8965000000099341,
+          "min": 0.29999999701976776,
+          "max": 1.7000000029802322
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.299999997019768,
+          "p99": 10.602000008523463,
+          "mean": 8.332387312177028,
+          "min": 5.899999991059303,
+          "max": 10.800000011920929
+        }
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "nodes": 24,
+        "rigs": 64,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 721,
+        "wasmMemoryBytes": 1769472,
+        "initialBytes": 24560,
+        "commandBatches": 1,
+        "commandBytes": 20480,
+        "readBytes": 0,
+        "paletteBytes": 70778880,
+        "rootBytes": 5898240
+      },
+      "adapter": {
+        "presentationMeshes": 64,
+        "ordinaryBones": 0,
+        "paletteConsumes": 46080,
+        "paddedPaletteBytes": 147456,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-animated-64-original-2.json",
+      "scenario": "animated-64",
+      "variant": "original",
+      "repeat": 2,
+      "startupMs": 60.02537499999744,
+      "metrics": {
+        "cpu": {
+          "p50": 1.2000000029802322,
+          "p95": 3.4000000059604645,
+          "p99": 3.7999999970197678,
+          "mean": 1.6171666662146649,
+          "min": 0.5,
+          "max": 4.299999997019768
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 9.799999997019768,
+          "p99": 10.299999997019768,
+          "mean": 8.334557595978396,
+          "min": 6.299999997019768,
+          "max": 10.599999994039536
+        }
+      },
+      "diagnostics": null,
+      "adapter": null
+    },
+    {
+      "file": "render-animated-64-owned-js-2.json",
+      "scenario": "animated-64",
+      "variant": "owned-js",
+      "repeat": 2,
+      "startupMs": 64.93729199998779,
+      "metrics": {
+        "cpu": {
+          "p50": 1,
+          "p95": 1.7050000026822045,
+          "p99": 1.901000005900859,
+          "mean": 1.1184999997665486,
+          "min": 0.5,
+          "max": 2.5
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.199999988079071,
+          "p99": 10.5,
+          "mean": 8.33606010016197,
+          "min": 5.9000000059604645,
+          "max": 10.700000002980232
+        }
+      },
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 64,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 24560,
+        "commandBatches": 1,
+        "commandBytes": 20480,
+        "readBytes": 0,
+        "paletteBytes": 70778880,
+        "rootBytes": 5898240
+      },
+      "adapter": {
+        "presentationMeshes": 64,
+        "ordinaryBones": 0,
+        "paletteConsumes": 46080,
+        "paddedPaletteBytes": 147456,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-static-1-owned-wasm-2.json",
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "repeat": 2,
+      "startupMs": 48.166791000025114,
+      "metrics": {
+        "cpu": {
+          "p50": 0.10000000894069672,
+          "p95": 0.29999999701976776,
+          "p99": 0.30000001192092896,
+          "mean": 0.13383333310484885,
+          "min": 0,
+          "max": 1.6000000089406967
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.199999988079071,
+          "p99": 10.399999991059303,
+          "mean": 8.33322203671793,
+          "min": 6.200000002980232,
+          "max": 11.599999994039536
+        }
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 1,
+        "steps": 1,
+        "wasmCalls": 1,
+        "wasmMemoryBytes": 1245184,
+        "initialBytes": 16496,
+        "commandBatches": 0,
+        "commandBytes": 0,
+        "readBytes": 0,
+        "paletteBytes": 1536,
+        "rootBytes": 128
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 1
+      }
+    },
+    {
+      "file": "render-static-1-original-2.json",
+      "scenario": "static-1",
+      "variant": "original",
+      "repeat": 2,
+      "startupMs": 53.193666999985,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.30000001192092896,
+          "p99": 0.4000000059604645,
+          "mean": 0.20050000036756196,
+          "min": 0,
+          "max": 1.2000000029802322
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10,
+          "p99": 10.29999999731779,
+          "mean": 8.333388981641036,
+          "min": 6.399999991059303,
+          "max": 10.5
+        }
+      },
+      "diagnostics": null,
+      "adapter": null
+    },
+    {
+      "file": "render-static-1-owned-js-2.json",
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "repeat": 2,
+      "startupMs": 52.71691699998337,
+      "metrics": {
+        "cpu": {
+          "p50": 0.10000000894069672,
+          "p95": 0.29999999701976776,
+          "p99": 0.3999999910593033,
+          "mean": 0.14016666678090892,
+          "min": 0,
+          "max": 1.0999999940395355
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.100000008940697,
+          "p99": 10.400000005960464,
+          "mean": 8.332721201998364,
+          "min": 6.299999997019768,
+          "max": 10.599999994039536
+        }
+      },
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 1,
+        "steps": 1,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 16496,
+        "commandBatches": 0,
+        "commandBytes": 0,
+        "readBytes": 0,
+        "paletteBytes": 1536,
+        "rootBytes": 128
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 1
+      }
+    },
+    {
+      "file": "render-static-1-original-3.json",
+      "scenario": "static-1",
+      "variant": "original",
+      "repeat": 3,
+      "startupMs": 60.8119590000133,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.4000000059604645,
+          "p99": 0.5,
+          "mean": 0.2126666667064031,
+          "min": 0,
+          "max": 0.9000000059604645
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.200000002980232,
+          "p99": 10.400000005960464,
+          "mean": 8.330717863095225,
+          "min": 6.299999997019768,
+          "max": 10.599999994039536
+        }
+      },
+      "diagnostics": null,
+      "adapter": null
+    },
+    {
+      "file": "render-static-1-owned-js-3.json",
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "repeat": 3,
+      "startupMs": 56.00283300000592,
+      "metrics": {
+        "cpu": {
+          "p50": 0.10000000894069672,
+          "p95": 0.29999999701976776,
+          "p99": 0.4000000059604645,
+          "mean": 0.1461666669199864,
+          "min": 0,
+          "max": 1.0999999940395355
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.200000002980232,
+          "p99": 10.399999991357326,
+          "mean": 8.333555926539265,
+          "min": 6.299999997019768,
+          "max": 10.5
+        }
+      },
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 1,
+        "steps": 1,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 16496,
+        "commandBatches": 0,
+        "commandBytes": 0,
+        "readBytes": 0,
+        "paletteBytes": 1536,
+        "rootBytes": 128
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 1
+      }
+    },
+    {
+      "file": "render-static-1-owned-wasm-3.json",
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "repeat": 3,
+      "startupMs": 48.473041999997804,
+      "metrics": {
+        "cpu": {
+          "p50": 0.10000000894069672,
+          "p95": 0.29999999701976776,
+          "p99": 0.30000001192092896,
+          "mean": 0.1319999996572733,
+          "min": 0,
+          "max": 1.0999999940395355
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 9.89999999254942,
+          "p99": 10.302000011503695,
+          "mean": 8.333555926539265,
+          "min": 6.299999997019768,
+          "max": 10.600000008940697
+        }
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 1,
+        "steps": 1,
+        "wasmCalls": 1,
+        "wasmMemoryBytes": 1245184,
+        "initialBytes": 16496,
+        "commandBatches": 0,
+        "commandBytes": 0,
+        "readBytes": 0,
+        "paletteBytes": 1536,
+        "rootBytes": 128
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 1
+      }
+    },
+    {
+      "file": "render-animated-64-original-3.json",
+      "scenario": "animated-64",
+      "variant": "original",
+      "repeat": 3,
+      "startupMs": 56.11008400001447,
+      "metrics": {
+        "cpu": {
+          "p50": 1.2000000029802322,
+          "p95": 3.5,
+          "p99": 3.7010000029206265,
+          "mean": 1.6095000009735425,
+          "min": 0.6000000089406967,
+          "max": 3.9000000059604645
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.200000002980232,
+          "p99": 10.600000008940697,
+          "mean": 8.335559265442404,
+          "min": 6.200000002980232,
+          "max": 10.700000002980232
+        }
+      },
+      "diagnostics": null,
+      "adapter": null
+    },
+    {
+      "file": "render-animated-64-owned-js-3.json",
+      "scenario": "animated-64",
+      "variant": "owned-js",
+      "repeat": 3,
+      "startupMs": 60.99624999999651,
+      "metrics": {
+        "cpu": {
+          "p50": 1,
+          "p95": 1.7999999970197678,
+          "p99": 1.9000000059604645,
+          "mean": 1.1438333334277073,
+          "min": 0.5,
+          "max": 2.2999999970197678
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.099999994039536,
+          "p99": 10.404000005722041,
+          "mean": 8.331385642737896,
+          "min": 6.299999997019768,
+          "max": 10.799999997019768
+        }
+      },
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 64,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 24560,
+        "commandBatches": 1,
+        "commandBytes": 20480,
+        "readBytes": 0,
+        "paletteBytes": 70778880,
+        "rootBytes": 5898240
+      },
+      "adapter": {
+        "presentationMeshes": 64,
+        "ordinaryBones": 0,
+        "paletteConsumes": 46080,
+        "paddedPaletteBytes": 147456,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-animated-64-owned-wasm-3.json",
+      "scenario": "animated-64",
+      "variant": "owned-wasm",
+      "repeat": 3,
+      "startupMs": 61.470166000013705,
+      "metrics": {
+        "cpu": {
+          "p50": 0.7999999970197678,
+          "p95": 1.5,
+          "p99": 1.7000000029802322,
+          "mean": 0.9260000000149011,
+          "min": 0.29999999701976776,
+          "max": 2.0999999940395355
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10,
+          "p99": 10.402000005841254,
+          "mean": 8.332888146896593,
+          "min": 6.200000002980232,
+          "max": 10.700000002980232
+        }
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "nodes": 24,
+        "rigs": 64,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 721,
+        "wasmMemoryBytes": 1769472,
+        "initialBytes": 24560,
+        "commandBatches": 1,
+        "commandBytes": 20480,
+        "readBytes": 0,
+        "paletteBytes": 70778880,
+        "rootBytes": 5898240
+      },
+      "adapter": {
+        "presentationMeshes": 64,
+        "ordinaryBones": 0,
+        "paletteConsumes": 46080,
+        "paddedPaletteBytes": 147456,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-animated-1-original-3.json",
+      "scenario": "animated-1",
+      "variant": "original",
+      "repeat": 3,
+      "startupMs": 56.126250000001164,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.4000000059604645,
+          "p99": 0.5,
+          "mean": 0.23149999998509885,
+          "min": 0,
+          "max": 0.7000000029802322
+        },
+        "frameInterval": {
+          "p50": 8.300000011920929,
+          "p95": 10,
+          "p99": 10.29999999731779,
+          "mean": 8.33272120202324,
+          "min": 6.299999997019768,
+          "max": 10.5
+        }
+      },
+      "diagnostics": null,
+      "adapter": null
+    },
+    {
+      "file": "render-animated-1-owned-js-3.json",
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "repeat": 3,
+      "startupMs": 55.15516700001899,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.4000000059604645,
+          "p99": 0.5,
+          "mean": 0.22299999992052713,
+          "min": 0,
+          "max": 0.7999999970197678
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.100000008940697,
+          "p99": 10.399999991357326,
+          "mean": 8.33105175291656,
+          "min": 6.199999988079071,
+          "max": 10.5
+        }
+      },
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 16496,
+        "commandBatches": 1,
+        "commandBytes": 320,
+        "readBytes": 0,
+        "paletteBytes": 1105920,
+        "rootBytes": 92160
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-animated-1-owned-wasm-3.json",
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "repeat": 3,
+      "startupMs": 49.519791999977315,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.30000001192092896,
+          "p99": 0.4000000059604645,
+          "mean": 0.19966666725774607,
+          "min": 0,
+          "max": 1.0999999940395355
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.200000002980232,
+          "p99": 10.402000005841254,
+          "mean": 8.33589315526374,
+          "min": 6.299999997019768,
+          "max": 10.600000008940697
+        }
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 721,
+        "wasmMemoryBytes": 1245184,
+        "initialBytes": 16496,
+        "commandBatches": 1,
+        "commandBytes": 320,
+        "readBytes": 0,
+        "paletteBytes": 1105920,
+        "rootBytes": 92160
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-animated-1-owned-js-4.json",
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "repeat": 4,
+      "startupMs": 48.78854199999478,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.4000000059604645,
+          "p99": 0.5,
+          "mean": 0.2256666665772597,
+          "min": 0,
+          "max": 1.2999999970197678
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10,
+          "p99": 10.299999997019768,
+          "mean": 8.33288814692147,
+          "min": 6.200000002980232,
+          "max": 10.5
+        }
+      },
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 16496,
+        "commandBatches": 1,
+        "commandBytes": 320,
+        "readBytes": 0,
+        "paletteBytes": 1105920,
+        "rootBytes": 92160
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-animated-1-owned-wasm-4.json",
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "repeat": 4,
+      "startupMs": 53.4197920000006,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.3999999910593033,
+          "p99": 0.5,
+          "mean": 0.19650000028312206,
+          "min": 0,
+          "max": 0.800000011920929
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.200000002980232,
+          "p99": 10.400000005960464,
+          "mean": 8.333222036742805,
+          "min": 6.299999997019768,
+          "max": 10.5
+        }
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 721,
+        "wasmMemoryBytes": 1245184,
+        "initialBytes": 16496,
+        "commandBatches": 1,
+        "commandBytes": 320,
+        "readBytes": 0,
+        "paletteBytes": 1105920,
+        "rootBytes": 92160
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-animated-1-original-4.json",
+      "scenario": "animated-1",
+      "variant": "original",
+      "repeat": 4,
+      "startupMs": 58.352375000016764,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.4000000059604645,
+          "p99": 0.5,
+          "mean": 0.22983333284656207,
+          "min": 0,
+          "max": 0.699999988079071
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.100000008940697,
+          "p99": 10.400000005960464,
+          "mean": 8.332554257100133,
+          "min": 6.299999997019768,
+          "max": 10.5
+        }
+      },
+      "diagnostics": null,
+      "adapter": null
+    },
+    {
+      "file": "render-animated-64-owned-js-4.json",
+      "scenario": "animated-64",
+      "variant": "owned-js",
+      "repeat": 4,
+      "startupMs": 60.03033300000243,
+      "metrics": {
+        "cpu": {
+          "p50": 1,
+          "p95": 1.7000000029802322,
+          "p99": 1.899999991208315,
+          "mean": 1.1433333333581686,
+          "min": 0.4000000059604645,
+          "max": 2.2000000029802322
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.100000008940697,
+          "p99": 10.5,
+          "mean": 8.334724540901503,
+          "min": 6.199999988079071,
+          "max": 10.700000002980232
+        }
+      },
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 64,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 24560,
+        "commandBatches": 1,
+        "commandBytes": 20480,
+        "readBytes": 0,
+        "paletteBytes": 70778880,
+        "rootBytes": 5898240
+      },
+      "adapter": {
+        "presentationMeshes": 64,
+        "ordinaryBones": 0,
+        "paletteConsumes": 46080,
+        "paddedPaletteBytes": 147456,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-animated-64-owned-wasm-4.json",
+      "scenario": "animated-64",
+      "variant": "owned-wasm",
+      "repeat": 4,
+      "startupMs": 59.81512500002282,
+      "metrics": {
+        "cpu": {
+          "p50": 0.7999999970197678,
+          "p95": 1.4000000059604645,
+          "p99": 1.7000000029802322,
+          "mean": 0.915833333308498,
+          "min": 0.29999999701976776,
+          "max": 1.9000000059604645
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.100000008940697,
+          "p99": 10.5,
+          "mean": 8.3330550918197,
+          "min": 6,
+          "max": 10.700000002980232
+        }
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "nodes": 24,
+        "rigs": 64,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 721,
+        "wasmMemoryBytes": 1769472,
+        "initialBytes": 24560,
+        "commandBatches": 1,
+        "commandBytes": 20480,
+        "readBytes": 0,
+        "paletteBytes": 70778880,
+        "rootBytes": 5898240
+      },
+      "adapter": {
+        "presentationMeshes": 64,
+        "ordinaryBones": 0,
+        "paletteConsumes": 46080,
+        "paddedPaletteBytes": 147456,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-animated-64-original-4.json",
+      "scenario": "animated-64",
+      "variant": "original",
+      "repeat": 4,
+      "startupMs": 62.2697090000147,
+      "metrics": {
+        "cpu": {
+          "p50": 1.2000000029802322,
+          "p95": 3.3999999910593033,
+          "p99": 3.6000000089406967,
+          "mean": 1.5385000002135834,
+          "min": 0.5999999940395355,
+          "max": 4.0999999940395355
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.200000002980232,
+          "p99": 10.600000008940697,
+          "mean": 8.334724540901503,
+          "min": 6.0999999940395355,
+          "max": 11.200000002980232
+        }
+      },
+      "diagnostics": null,
+      "adapter": null
+    },
+    {
+      "file": "render-static-1-owned-js-4.json",
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "repeat": 4,
+      "startupMs": 53.985625000001164,
+      "metrics": {
+        "cpu": {
+          "p50": 0.10000000894069672,
+          "p95": 0.29999999701976776,
+          "p99": 0.30000001192092896,
+          "mean": 0.12900000003476939,
+          "min": 0,
+          "max": 0.9000000059604645
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10,
+          "p99": 10.299999997019768,
+          "mean": 8.33322203671793,
+          "min": 6.199999988079071,
+          "max": 10.600000008940697
+        }
+      },
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 1,
+        "steps": 1,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 16496,
+        "commandBatches": 0,
+        "commandBytes": 0,
+        "readBytes": 0,
+        "paletteBytes": 1536,
+        "rootBytes": 128
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 1
+      }
+    },
+    {
+      "file": "render-static-1-owned-wasm-4.json",
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "repeat": 4,
+      "startupMs": 49.5006670000148,
+      "metrics": {
+        "cpu": {
+          "p50": 0.10000000894069672,
+          "p95": 0.29999999701976776,
+          "p99": 0.3999999910593033,
+          "mean": 0.14216666658719382,
+          "min": 0,
+          "max": 1.2999999970197678
+        },
+        "frameInterval": {
+          "p50": 8.300000011920929,
+          "p95": 10.100000008940697,
+          "p99": 10.400000005960464,
+          "mean": 8.333555926564141,
+          "min": 6.299999997019768,
+          "max": 10.599999994039536
+        }
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 1,
+        "steps": 1,
+        "wasmCalls": 1,
+        "wasmMemoryBytes": 1245184,
+        "initialBytes": 16496,
+        "commandBatches": 0,
+        "commandBytes": 0,
+        "readBytes": 0,
+        "paletteBytes": 1536,
+        "rootBytes": 128
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 1
+      }
+    },
+    {
+      "file": "render-static-1-original-4.json",
+      "scenario": "static-1",
+      "variant": "original",
+      "repeat": 4,
+      "startupMs": 52.40533400001004,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.30000001192092896,
+          "p99": 0.4000000059604645,
+          "mean": 0.19433333384493987,
+          "min": 0,
+          "max": 0.7000000029802322
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.200000002980232,
+          "p99": 10.300000011920929,
+          "mean": 8.33606010016197,
+          "min": 6.299999997019768,
+          "max": 10.400000005960464
+        }
+      },
+      "diagnostics": null,
+      "adapter": null
+    },
+    {
+      "file": "render-static-1-owned-wasm-5.json",
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "repeat": 5,
+      "startupMs": 48.167917000013404,
+      "metrics": {
+        "cpu": {
+          "p50": 0.10000000894069672,
+          "p95": 0.29999999701976776,
+          "p99": 0.3999999912083149,
+          "mean": 0.14549999994536242,
+          "min": 0,
+          "max": 1.5999999940395355
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10,
+          "p99": 10.29999999731779,
+          "mean": 8.333555926564141,
+          "min": 6.199999988079071,
+          "max": 10.400000005960464
+        }
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 1,
+        "steps": 1,
+        "wasmCalls": 1,
+        "wasmMemoryBytes": 1245184,
+        "initialBytes": 16496,
+        "commandBatches": 0,
+        "commandBytes": 0,
+        "readBytes": 0,
+        "paletteBytes": 1536,
+        "rootBytes": 128
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 1
+      }
+    },
+    {
+      "file": "render-static-1-original-5.json",
+      "scenario": "static-1",
+      "variant": "original",
+      "repeat": 5,
+      "startupMs": 52.60404100001324,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.30000001192092896,
+          "p99": 0.4000000059604645,
+          "mean": 0.19349999971687792,
+          "min": 0,
+          "max": 1
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.200000002980232,
+          "p99": 10.399999991059303,
+          "mean": 8.33589315526374,
+          "min": 6.199999988079071,
+          "max": 10.400000005960464
+        }
+      },
+      "diagnostics": null,
+      "adapter": null
+    },
+    {
+      "file": "render-static-1-owned-js-5.json",
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "repeat": 5,
+      "startupMs": 53.77991600002861,
+      "metrics": {
+        "cpu": {
+          "p50": 0.10000000894069672,
+          "p95": 0.29999999701976776,
+          "p99": 0.3010000117123118,
+          "mean": 0.13700000025331974,
+          "min": 0,
+          "max": 1.0999999940395355
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.200000002980232,
+          "p99": 10.400000005960464,
+          "mean": 8.335559265442404,
+          "min": 6.200000002980232,
+          "max": 10.600000008940697
+        }
+      },
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 1,
+        "steps": 1,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 16496,
+        "commandBatches": 0,
+        "commandBytes": 0,
+        "readBytes": 0,
+        "paletteBytes": 1536,
+        "rootBytes": 128
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 1
+      }
+    },
+    {
+      "file": "render-animated-64-owned-wasm-5.json",
+      "scenario": "animated-64",
+      "variant": "owned-wasm",
+      "repeat": 5,
+      "startupMs": 58.27945900004124,
+      "metrics": {
+        "cpu": {
+          "p50": 0.7999999970197678,
+          "p95": 1.5,
+          "p99": 1.6000000089406967,
+          "mean": 0.9216666663934787,
+          "min": 0.4000000059604645,
+          "max": 2.199999988079071
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.009999999403956,
+          "p99": 10.5,
+          "mean": 8.33422370615706,
+          "min": 6.0999999940395355,
+          "max": 10.599999994039536
+        }
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "nodes": 24,
+        "rigs": 64,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 721,
+        "wasmMemoryBytes": 1769472,
+        "initialBytes": 24560,
+        "commandBatches": 1,
+        "commandBytes": 20480,
+        "readBytes": 0,
+        "paletteBytes": 70778880,
+        "rootBytes": 5898240
+      },
+      "adapter": {
+        "presentationMeshes": 64,
+        "ordinaryBones": 0,
+        "paletteConsumes": 46080,
+        "paddedPaletteBytes": 147456,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-animated-64-original-5.json",
+      "scenario": "animated-64",
+      "variant": "original",
+      "repeat": 5,
+      "startupMs": 55.961000000010245,
+      "metrics": {
+        "cpu": {
+          "p50": 1.2000000029802322,
+          "p95": 3.5,
+          "p99": 3.7010000029206265,
+          "mean": 1.607499999453624,
+          "min": 0.5,
+          "max": 4
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 9.900000005960464,
+          "p99": 10.400000005960464,
+          "mean": 8.333388981641036,
+          "min": 5.899999991059303,
+          "max": 10.799999997019768
+        }
+      },
+      "diagnostics": null,
+      "adapter": null
+    },
+    {
+      "file": "render-animated-64-owned-js-5.json",
+      "scenario": "animated-64",
+      "variant": "owned-js",
+      "repeat": 5,
+      "startupMs": 62.476332999998704,
+      "metrics": {
+        "cpu": {
+          "p50": 1,
+          "p95": 1.7999999970197678,
+          "p99": 1.899999991208315,
+          "mean": 1.1398333331942558,
+          "min": 0.4000000059604645,
+          "max": 2.2000000029802322
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.200000002980232,
+          "p99": 10.50199999988079,
+          "mean": 8.33288814692147,
+          "min": 6.0999999940395355,
+          "max": 10.700000002980232
+        }
+      },
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 64,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 24560,
+        "commandBatches": 1,
+        "commandBytes": 20480,
+        "readBytes": 0,
+        "paletteBytes": 70778880,
+        "rootBytes": 5898240
+      },
+      "adapter": {
+        "presentationMeshes": 64,
+        "ordinaryBones": 0,
+        "paletteConsumes": 46080,
+        "paddedPaletteBytes": 147456,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-animated-1-owned-wasm-5.json",
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "repeat": 5,
+      "startupMs": 52.23433300002944,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.3999999910593033,
+          "p99": 0.5,
+          "mean": 0.20783333311478297,
+          "min": 0,
+          "max": 1.0999999940395355
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10.200000002980232,
+          "p99": 10.399999991357326,
+          "mean": 8.336227045060198,
+          "min": 6.200000002980232,
+          "max": 10.599999994039536
+        }
+      },
+      "diagnostics": {
+        "backend": "wasm",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 721,
+        "wasmMemoryBytes": 1245184,
+        "initialBytes": 16496,
+        "commandBatches": 1,
+        "commandBytes": 320,
+        "readBytes": 0,
+        "paletteBytes": 1105920,
+        "rootBytes": 92160
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 720
+      }
+    },
+    {
+      "file": "render-animated-1-original-5.json",
+      "scenario": "animated-1",
+      "variant": "original",
+      "repeat": 5,
+      "startupMs": 55.23225000000093,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.39999999180436135,
+          "p99": 0.40100000590085894,
+          "mean": 0.2228333330899477,
+          "min": 0,
+          "max": 0.6000000089406967
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10,
+          "p99": 10.299999997019768,
+          "mean": 8.333555926539265,
+          "min": 6.299999997019768,
+          "max": 10.5
+        }
+      },
+      "diagnostics": null,
+      "adapter": null
+    },
+    {
+      "file": "render-animated-1-owned-js-5.json",
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "repeat": 5,
+      "startupMs": 52.93862500000978,
+      "metrics": {
+        "cpu": {
+          "p50": 0.20000000298023224,
+          "p95": 0.4000000059604645,
+          "p99": 0.5,
+          "mean": 0.23083333348234494,
+          "min": 0,
+          "max": 1.0999999940395355
+        },
+        "frameInterval": {
+          "p50": 8.299999997019768,
+          "p95": 10,
+          "p99": 10.399999991059303,
+          "mean": 8.333555926539265,
+          "min": 6.299999997019768,
+          "max": 10.400000005960464
+        }
+      },
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 2,
+        "revision": 720,
+        "steps": 720,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 16496,
+        "commandBatches": 1,
+        "commandBytes": 320,
+        "readBytes": 0,
+        "paletteBytes": 1105920,
+        "rootBytes": 92160
+      },
+      "adapter": {
+        "presentationMeshes": 1,
+        "ordinaryBones": 0,
+        "paletteConsumes": 720,
+        "paddedPaletteBytes": 2304,
+        "appliedRevision": 720
+      }
+    }
+  ]
+}
