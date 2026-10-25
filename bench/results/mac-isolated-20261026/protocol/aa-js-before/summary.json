@@ -1,0 +1,1495 @@
+{
+  "method": "Linear per-run quantiles; median/range of run quantiles; repeat-paired ratios. No pooled-frame confidence claims or outlier deletion. Startup uses shared browser caches.",
+  "groups": [
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "metrics": {
+        "cpu": {
+          "p50": {
+            "median": 0.23000000417232513,
+            "range": [
+              0.1900000125169754,
+              0.23999999463558197
+            ]
+          },
+          "p95": {
+            "median": 0.33500000834465027,
+            "range": [
+              0.2949999876320362,
+              0.3399999886751175
+            ]
+          },
+          "p99": {
+            "median": 0.3949999959766865,
+            "range": [
+              0.3449999988079071,
+              0.4150500063598144
+            ]
+          },
+          "mean": {
+            "median": 0.23236111116906008,
+            "range": [
+              0.19332083328730532,
+              0.23697361110813087
+            ]
+          }
+        },
+        "frameInterval": {
+          "p50": {
+            "median": 8.319999992847443,
+            "range": [
+              8.314999997615814,
+              8.320000007748604
+            ]
+          },
+          "p95": {
+            "median": 10.129999995231628,
+            "range": [
+              10.064999997615814,
+              10.199999989569188
+            ]
+          },
+          "p99": {
+            "median": 10.390000000596046,
+            "range": [
+              10.344999998807907,
+              10.399999991059303
+            ]
+          },
+          "mean": {
+            "median": 8.333702417339474,
+            "range": [
+              8.33312031119507,
+              8.333799666573718
+            ]
+          }
+        },
+        "rafInterval": {
+          "p50": {
+            "median": 8.330000000001746,
+            "range": [
+              8.329999999999927,
+              8.330000000001746
+            ]
+          },
+          "p95": {
+            "median": 10.055000000000291,
+            "range": [
+              10,
+              10.185000000001674
+            ]
+          },
+          "p99": {
+            "median": 10.314999999998726,
+            "range": [
+              10.309999999997672,
+              10.319999999999709
+            ]
+          },
+          "mean": {
+            "median": 8.333696860238955,
+            "range": [
+              8.333098082800777,
+              8.333782995276465
+            ]
+          }
+        }
+      },
+      "startup": {
+        "assetMs": {
+          "p50": 20.310000002384186,
+          "p95": 34.53700000941753,
+          "p99": 36.987400009036065,
+          "mean": 23.404000005126,
+          "min": 17.885000005364418,
+          "max": 37.6000000089407
+        },
+        "conversionMs": {
+          "p50": 0.5900000035762787,
+          "p95": 0.6590000092983246,
+          "p99": 0.659800010919571,
+          "mean": 0.5980000048875809,
+          "min": 0.5400000065565109,
+          "max": 0.6600000113248825
+        },
+        "initMs": {
+          "p50": 2.344999998807907,
+          "p95": 2.444000002741814,
+          "p99": 2.4488000029325487,
+          "mean": 2.3330000013113024,
+          "min": 2.219999998807907,
+          "max": 2.4500000029802322
+        },
+        "shaderMs": {
+          "p50": 17.12999999523163,
+          "p95": 18.059000006318094,
+          "p99": 18.091800008416175,
+          "mean": 17.447999998927116,
+          "min": 17.019999995827675,
+          "max": 18.100000008940697
+        },
+        "totalMs": {
+          "p50": 48.75,
+          "p95": 64.64000000059605,
+          "p99": 67.15200000107288,
+          "mean": 52.46800000071526,
+          "min": 46.37000000476837,
+          "max": 67.7800000011921
+        }
+      },
+      "navigationToReady": {
+        "p50": 102.66354099998716,
+        "p95": 108.26587500000241,
+        "p99": 108.94957500000048,
+        "mean": 101.94719980000136,
+        "min": 93.70162499998696,
+        "max": 109.12049999999999
+      },
+      "durationMs": {
+        "p50": 29999.940000012517,
+        "p95": 30001.20299999714,
+        "p99": 30001.44459999561,
+        "mean": 30000.126000002027,
+        "min": 29999.390000000596,
+        "max": 30001.50499999523
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-js",
+      "metrics": {
+        "cpu": {
+          "p50": {
+            "median": 0.5550000071525574,
+            "range": [
+              0.5499999970197678,
+              0.5600000023841858
+            ]
+          },
+          "p95": {
+            "median": 0.7950000017881393,
+            "range": [
+              0.7699999958276749,
+              0.7999999970197678
+            ]
+          },
+          "p99": {
+            "median": 0.9599999935925007,
+            "range": [
+              0.9150000065565109,
+              0.9650500035285938
+            ]
+          },
+          "mean": {
+            "median": 0.555819444635676,
+            "range": [
+              0.553198611214757,
+              0.5630750001221895
+            ]
+          }
+        },
+        "frameInterval": {
+          "p50": {
+            "median": 8.320000007748604,
+            "range": [
+              8.314999997615814,
+              8.325000002980232
+            ]
+          },
+          "p95": {
+            "median": 10.080499997735023,
+            "range": [
+              10.060000002384186,
+              10.144999995827675
+            ]
+          },
+          "p99": {
+            "median": 10.364999994635582,
+            "range": [
+              10.344999998807907,
+              10.40020000576973
+            ]
+          },
+          "mean": {
+            "median": 8.332854959709044,
+            "range": [
+              8.332843845512974,
+              8.333474576270358
+            ]
+          }
+        },
+        "rafInterval": {
+          "p50": {
+            "median": 8.330000000001746,
+            "range": [
+              8.330000000001746,
+              8.330000000001746
+            ]
+          },
+          "p95": {
+            "median": 10.014999999999418,
+            "range": [
+              9.995000000000982,
+              10.090000000000146
+            ]
+          },
+          "p99": {
+            "median": 10.31499999999869,
+            "range": [
+              10.309999999997672,
+              10.319999999999709
+            ]
+          },
+          "mean": {
+            "median": 8.332899416504583,
+            "range": [
+              8.33284662406224,
+              8.333487079744375
+            ]
+          }
+        }
+      },
+      "startup": {
+        "assetMs": {
+          "p50": 21.140000000596046,
+          "p95": 24.165999999642374,
+          "p99": 24.609199998974802,
+          "mean": 21.565999999642372,
+          "min": 19.90999999642372,
+          "max": 24.719999998807907
+        },
+        "conversionMs": {
+          "p50": 0.5900000035762787,
+          "p95": 0.823999997973442,
+          "p99": 0.8687999957799911,
+          "mean": 0.6400000035762787,
+          "min": 0.550000011920929,
+          "max": 0.8799999952316284
+        },
+        "initMs": {
+          "p50": 2.5750000029802322,
+          "p95": 2.6460000038146974,
+          "p99": 2.649200005531311,
+          "mean": 2.539000001549721,
+          "min": 2.3599999994039536,
+          "max": 2.6500000059604645
+        },
+        "shaderMs": {
+          "p50": 18.62000000476837,
+          "p95": 18.833999997377397,
+          "p99": 18.854799998998644,
+          "mean": 18.54699999988079,
+          "min": 18.07999999821186,
+          "max": 18.859999999403954
+        },
+        "totalMs": {
+          "p50": 52.01500000059605,
+          "p95": 55.27699999511242,
+          "p99": 55.73539999425411,
+          "mean": 52.40899999737739,
+          "min": 50.38499999046326,
+          "max": 55.849999994039536
+        }
+      },
+      "navigationToReady": {
+        "p50": 106.15170899999794,
+        "p95": 108.80610020001913,
+        "p99": 109.22785364002368,
+        "mean": 104.19976660000539,
+        "min": 97.83704100002069,
+        "max": 109.33329200002481
+      },
+      "durationMs": {
+        "p50": 29998.510000005364,
+        "p95": 29999.27199999988,
+        "p99": 29999.302400001885,
+        "mean": 29998.425999999046,
+        "min": 29997.569999992847,
+        "max": 29999.310000002384
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "metrics": {
+        "cpu": {
+          "p50": {
+            "median": 0.10000000894069672,
+            "range": [
+              0.08500000834465027,
+              0.10500000417232513
+            ]
+          },
+          "p95": {
+            "median": 0.16499999165534973,
+            "range": [
+              0.14499999582767487,
+              0.17000000178813934
+            ]
+          },
+          "p99": {
+            "median": 0.20999999344348907,
+            "range": [
+              0.17499999701976776,
+              0.24500000476837158
+            ]
+          },
+          "mean": {
+            "median": 0.10278194455636872,
+            "range": [
+              0.08900555542773671,
+              0.10808888888607422
+            ]
+          }
+        },
+        "frameInterval": {
+          "p50": {
+            "median": 8.325000002980232,
+            "range": [
+              8.320000007748604,
+              8.325000002980232
+            ]
+          },
+          "p95": {
+            "median": 10.145500008761882,
+            "range": [
+              10.090000003576279,
+              10.195500007271766
+            ]
+          },
+          "p99": {
+            "median": 10.375,
+            "range": [
+              10.370000004768372,
+              10.380099995136261
+            ]
+          },
+          "mean": {
+            "median": 8.333213392608892,
+            "range": [
+              8.332825784937114,
+              8.333701028066
+            ]
+          }
+        },
+        "rafInterval": {
+          "p50": {
+            "median": 8.330000000001746,
+            "range": [
+              8.329999999999927,
+              8.330000000001746
+            ]
+          },
+          "p95": {
+            "median": 10.105499999999665,
+            "range": [
+              10.030499999998574,
+              10.19999999999727
+            ]
+          },
+          "p99": {
+            "median": 10.319999999999709,
+            "range": [
+              10.314999999998726,
+              10.32499999999709
+            ]
+          },
+          "mean": {
+            "median": 8.33319116421228,
+            "range": [
+              8.332813281467073,
+              8.3336537927202
+            ]
+          }
+        }
+      },
+      "startup": {
+        "assetMs": {
+          "p50": 19.20999999344349,
+          "p95": 20.33199999034405,
+          "p99": 20.426399988532065,
+          "mean": 19.13999999463558,
+          "min": 17.49499998986721,
+          "max": 20.44999998807907
+        },
+        "conversionMs": {
+          "p50": 0.5799999982118607,
+          "p95": 0.8559999912977219,
+          "p99": 0.891199991106987,
+          "mean": 0.6549999952316284,
+          "min": 0.5549999922513962,
+          "max": 0.8999999910593033
+        },
+        "initMs": {
+          "p50": 2.320000007748604,
+          "p95": 2.380000004172325,
+          "p99": 2.3840000051259995,
+          "mean": 2.314000004529953,
+          "min": 2.230000004172325,
+          "max": 2.385000005364418
+        },
+        "shaderMs": {
+          "p50": 17.82999999821186,
+          "p95": 18.012999999523164,
+          "p99": 18.026600000858306,
+          "mean": 17.469999995827674,
+          "min": 16.569999992847443,
+          "max": 18.030000001192093
+        },
+        "totalMs": {
+          "p50": 48.34499999880791,
+          "p95": 48.53899998962879,
+          "p99": 48.54379998743534,
+          "mean": 48.10099999606609,
+          "min": 47.04999999701977,
+          "max": 48.54499998688698
+        }
+      },
+      "navigationToReady": {
+        "p50": 104.17204199999105,
+        "p95": 108.71365019995429,
+        "p99": 108.8886636399472,
+        "mean": 104.58106659998593,
+        "min": 99.26054099999601,
+        "max": 108.93241699994542
+      },
+      "durationMs": {
+        "p50": 29999.064999997616,
+        "p95": 29999.51600000858,
+        "p99": 29999.519200010298,
+        "mean": 29999.08900000453,
+        "min": 29998.535000011325,
+        "max": 29999.52000001073
+      }
+    }
+  ],
+  "parity": [
+    {
+      "scenario": "animated-1",
+      "draws": 1,
+      "triangles": 576,
+      "reads": 60
+    },
+    {
+      "scenario": "animated-16",
+      "draws": 16,
+      "triangles": 9216,
+      "reads": 60
+    },
+    {
+      "scenario": "static-1",
+      "draws": 1,
+      "triangles": 576,
+      "reads": 60
+    }
+  ],
+  "ratios": [],
+  "rows": [
+    {
+      "file": "render-animated-1-owned-js-0.json",
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1575,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "repeat": 0,
+      "metrics": {
+        "cpu": {
+          "p50": 0.19499999284744263,
+          "p95": 0.3202500067651258,
+          "p99": 0.375,
+          "mean": 0.19332083328730532,
+          "min": 0.019999995827674866,
+          "max": 0.45500001311302185
+        },
+        "frameInterval": {
+          "p50": 8.320000007748604,
+          "p95": 10.199999989569188,
+          "p99": 10.395099995732307,
+          "mean": 8.333702417339474,
+          "min": 6.064999997615814,
+          "max": 10.729999989271164
+        },
+        "rafInterval": {
+          "p50": 8.330000000001746,
+          "p95": 10.185000000001674,
+          "p99": 10.319999999999709,
+          "mean": 8.333709363712142,
+          "min": 6.309999999997672,
+          "max": 10.37000000000262
+        }
+      },
+      "startupMs": 109.12049999999999,
+      "startup": {
+        "assetMs": 37.6000000089407,
+        "conversionMs": 0.5400000065565109,
+        "initMs": 2.219999998807907,
+        "shaderMs": 17.894999995827675,
+        "totalMs": 67.7800000011921
+      },
+      "durationMs": 30001.50499999523,
+      "draws": 1,
+      "triangles": 576,
+      "readCount": 60,
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 3,
+        "revision": 4803,
+        "steps": 4803,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 112216,
+        "commandBatches": 4803,
+        "commandBytes": 5389440,
+        "readBytes": 542080,
+        "paletteBytes": 7374336,
+        "rootBytes": 614528
+      }
+    },
+    {
+      "file": "render-animated-16-owned-js-0.json",
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1461,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "scenario": "animated-16",
+      "variant": "owned-js",
+      "repeat": 0,
+      "metrics": {
+        "cpu": {
+          "p50": 0.5550000071525574,
+          "p95": 0.7999999970197678,
+          "p99": 0.9599999935925007,
+          "mean": 0.553198611214757,
+          "min": 0.1550000011920929,
+          "max": 1.135000005364418
+        },
+        "frameInterval": {
+          "p50": 8.319999992847443,
+          "p95": 10.144999995827675,
+          "p99": 10.40020000576973,
+          "mean": 8.333310641847275,
+          "min": 6.155000001192093,
+          "max": 10.70499999821186
+        },
+        "rafInterval": {
+          "p50": 8.330000000001746,
+          "p95": 10.090000000000146,
+          "p99": 10.31499999999869,
+          "mean": 8.333305084745763,
+          "min": 6.334999999999127,
+          "max": 10.344999999997526
+        }
+      },
+      "startupMs": 106.69733299999643,
+      "startup": {
+        "assetMs": 20.109999999403954,
+        "conversionMs": 0.5900000035762787,
+        "initMs": 2.6500000059604645,
+        "shaderMs": 18.729999989271164,
+        "totalMs": 50.810000002384186
+      },
+      "durationMs": 29999.310000002384,
+      "draws": 16,
+      "triangles": 9216,
+      "readCount": 60,
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 16,
+        "clips": 3,
+        "revision": 4803,
+        "steps": 4803,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 114136,
+        "commandBatches": 4803,
+        "commandBytes": 86231040,
+        "readBytes": 8673280,
+        "paletteBytes": 117989376,
+        "rootBytes": 9832448
+      }
+    },
+    {
+      "file": "render-static-1-owned-js-0.json",
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1527,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "repeat": 0,
+      "metrics": {
+        "cpu": {
+          "p50": 0.08500000834465027,
+          "p95": 0.14499999582767487,
+          "p99": 0.17499999701976776,
+          "mean": 0.08900555542773671,
+          "min": 0.004999995231628418,
+          "max": 0.4150000065565109
+        },
+        "frameInterval": {
+          "p50": 8.325000002980232,
+          "p95": 10.195500007271766,
+          "p99": 10.370000004768372,
+          "mean": 8.333213392608892,
+          "min": 6.064999997615814,
+          "max": 10.734999999403954
+        },
+        "rafInterval": {
+          "p50": 8.330000000001746,
+          "p95": 10.19999999999727,
+          "p99": 10.319999999999709,
+          "mean": 8.33319116421228,
+          "min": 6.319999999999709,
+          "max": 10.35000000000582
+        }
+      },
+      "startupMs": 102.70175000000745,
+      "startup": {
+        "assetMs": 19.20999999344349,
+        "conversionMs": 0.6799999922513962,
+        "initMs": 2.320000007748604,
+        "shaderMs": 17.944999992847443,
+        "totalMs": 48.54499998688698
+      },
+      "durationMs": 29999.064999997616,
+      "draws": 1,
+      "triangles": 576,
+      "readCount": 60,
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 3,
+        "revision": 3,
+        "steps": 3,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 112216,
+        "commandBatches": 3,
+        "commandBytes": 1920,
+        "readBytes": 542080,
+        "paletteBytes": 4608,
+        "rootBytes": 384
+      }
+    },
+    {
+      "file": "render-static-1-owned-js-1.json",
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1473,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "repeat": 1,
+      "metrics": {
+        "cpu": {
+          "p50": 0.10000000894069672,
+          "p95": 0.16500000655651093,
+          "p99": 0.20999999344348907,
+          "mean": 0.10278194455636872,
+          "min": 0.004999995231628418,
+          "max": 0.510000005364418
+        },
+        "frameInterval": {
+          "p50": 8.325000002980232,
+          "p95": 10.145500008761882,
+          "p99": 10.375,
+          "mean": 8.333321756043345,
+          "min": 6.11999998986721,
+          "max": 10.929999992251396
+        },
+        "rafInterval": {
+          "p50": 8.329999999999927,
+          "p95": 10.105499999999665,
+          "p99": 10.315000000002328,
+          "mean": 8.333327313142538,
+          "min": 6.2700000000040745,
+          "max": 10.37999999999738
+        }
+      },
+      "startupMs": 107.83858299998974,
+      "startup": {
+        "assetMs": 20.44999998807907,
+        "conversionMs": 0.5549999922513962,
+        "initMs": 2.2750000059604645,
+        "shaderMs": 16.569999992847443,
+        "totalMs": 48.34499999880791
+      },
+      "durationMs": 29999.52000001073,
+      "draws": 1,
+      "triangles": 576,
+      "readCount": 60,
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 3,
+        "revision": 3,
+        "steps": 3,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 112216,
+        "commandBatches": 3,
+        "commandBytes": 1920,
+        "readBytes": 542080,
+        "paletteBytes": 4608,
+        "rootBytes": 384
+      }
+    },
+    {
+      "file": "render-animated-16-owned-js-1.json",
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1536,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "scenario": "animated-16",
+      "variant": "owned-js",
+      "repeat": 1,
+      "metrics": {
+        "cpu": {
+          "p50": 0.5600000023841858,
+          "p95": 0.7699999958276749,
+          "p99": 0.9150000065565109,
+          "mean": 0.5630750001221895,
+          "min": 0.14499999582767487,
+          "max": 1.3350000083446503
+        },
+        "frameInterval": {
+          "p50": 8.320000007748604,
+          "p95": 10.060000002384186,
+          "p99": 10.344999998807907,
+          "mean": 8.332843845512974,
+          "min": 6.114999994635582,
+          "max": 10.615000009536743
+        },
+        "rafInterval": {
+          "p50": 8.330000000001746,
+          "p95": 9.995000000000982,
+          "p99": 10.315000000002328,
+          "mean": 8.33284662406224,
+          "min": 6.3399999999965075,
+          "max": 10.37000000000262
+        }
+      },
+      "startupMs": 109.33329200002481,
+      "startup": {
+        "assetMs": 21.140000000596046,
+        "conversionMs": 0.6000000089406967,
+        "initMs": 2.6299999952316284,
+        "shaderMs": 18.445000007748604,
+        "totalMs": 52.01500000059605
+      },
+      "durationMs": 29999.119999989867,
+      "draws": 16,
+      "triangles": 9216,
+      "readCount": 60,
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 16,
+        "clips": 3,
+        "revision": 4803,
+        "steps": 4803,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 114136,
+        "commandBatches": 4803,
+        "commandBytes": 86231040,
+        "readBytes": 8673280,
+        "paletteBytes": 117989376,
+        "rootBytes": 9832448
+      }
+    },
+    {
+      "file": "render-animated-1-owned-js-1.json",
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1584,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "repeat": 1,
+      "metrics": {
+        "cpu": {
+          "p50": 0.23999999463558197,
+          "p95": 0.33500000834465027,
+          "p99": 0.3949999959766865,
+          "mean": 0.23638333331379627,
+          "min": 0.024999991059303284,
+          "max": 0.6000000089406967
+        },
+        "frameInterval": {
+          "p50": 8.319999992847443,
+          "p95": 10.129999995231628,
+          "p99": 10.399999991059303,
+          "mean": 8.333716310086633,
+          "min": 5.834999993443489,
+          "max": 10.92000000178814
+        },
+        "rafInterval": {
+          "p50": 8.330000000001746,
+          "p95": 10.055000000000291,
+          "p99": 10.314999999998726,
+          "mean": 8.333696860238955,
+          "min": 6.319999999999709,
+          "max": 10.345000000001164
+        }
+      },
+      "startupMs": 102.66354099998716,
+      "startup": {
+        "assetMs": 22.285000011324883,
+        "conversionMs": 0.6550000011920929,
+        "initMs": 2.344999998807907,
+        "shaderMs": 18.100000008940697,
+        "totalMs": 52.07999999821186
+      },
+      "durationMs": 29999.940000012517,
+      "draws": 1,
+      "triangles": 576,
+      "readCount": 60,
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 3,
+        "revision": 4803,
+        "steps": 4803,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 112216,
+        "commandBatches": 4803,
+        "commandBytes": 5389440,
+        "readBytes": 542080,
+        "paletteBytes": 7374336,
+        "rootBytes": 614528
+      }
+    },
+    {
+      "file": "render-animated-1-owned-js-2.json",
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1468,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "repeat": 2,
+      "metrics": {
+        "cpu": {
+          "p50": 0.23499999940395355,
+          "p95": 0.3399999886751175,
+          "p99": 0.41499999180436137,
+          "mean": 0.23697361110813087,
+          "min": 0.05499999225139618,
+          "max": 0.7049999982118607
+        },
+        "frameInterval": {
+          "p50": 8.314999997615814,
+          "p95": 10.130499996244907,
+          "p99": 10.390000000596046,
+          "mean": 8.333799666573718,
+          "min": 6.049999997019768,
+          "max": 10.739999994635582
+        },
+        "rafInterval": {
+          "p50": 8.329999999999927,
+          "p95": 10.055000000000291,
+          "p99": 10.315000000002328,
+          "mean": 8.333782995276465,
+          "min": 6.334999999999127,
+          "max": 10.37000000000262
+        }
+      },
+      "startupMs": 93.70162499998696,
+      "startup": {
+        "assetMs": 17.885000005364418,
+        "conversionMs": 0.6600000113248825,
+        "initMs": 2.4500000029802322,
+        "shaderMs": 17.094999998807907,
+        "totalMs": 46.37000000476837
+      },
+      "durationMs": 29999.79999999702,
+      "draws": 1,
+      "triangles": 576,
+      "readCount": 60,
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 3,
+        "revision": 4803,
+        "steps": 4803,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 112216,
+        "commandBatches": 4803,
+        "commandBytes": 5389440,
+        "readBytes": 542080,
+        "paletteBytes": 7374336,
+        "rootBytes": 614528
+      }
+    },
+    {
+      "file": "render-animated-16-owned-js-2.json",
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1523,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "scenario": "animated-16",
+      "variant": "owned-js",
+      "repeat": 2,
+      "metrics": {
+        "cpu": {
+          "p50": 0.5499999970197678,
+          "p95": 0.7849999964237213,
+          "p99": 0.9599999935925007,
+          "mean": 0.555819444635676,
+          "min": 0.14000000059604645,
+          "max": 1.2150000035762787
+        },
+        "frameInterval": {
+          "p50": 8.325000002980232,
+          "p95": 10.070000007748604,
+          "p99": 10.364999994635582,
+          "mean": 8.332850791888623,
+          "min": 6.030000001192093,
+          "max": 10.689999997615814
+        },
+        "rafInterval": {
+          "p50": 8.330000000001746,
+          "p95": 10,
+          "p99": 10.309999999997745,
+          "mean": 8.332899416504583,
+          "min": 6.315000000002328,
+          "max": 10.360000000000582
+        }
+      },
+      "startupMs": 106.15170899999794,
+      "startup": {
+        "assetMs": 19.90999999642372,
+        "conversionMs": 0.8799999952316284,
+        "initMs": 2.480000004172325,
+        "shaderMs": 18.07999999821186,
+        "totalMs": 50.38499999046326
+      },
+      "durationMs": 29997.569999992847,
+      "draws": 16,
+      "triangles": 9216,
+      "readCount": 60,
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 16,
+        "clips": 3,
+        "revision": 4803,
+        "steps": 4803,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 114136,
+        "commandBatches": 4803,
+        "commandBytes": 86231040,
+        "readBytes": 8673280,
+        "paletteBytes": 117989376,
+        "rootBytes": 9832448
+      }
+    },
+    {
+      "file": "render-static-1-owned-js-2.json",
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1540,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "repeat": 2,
+      "metrics": {
+        "cpu": {
+          "p50": 0.10499998927116394,
+          "p95": 0.16499999165534973,
+          "p99": 0.2200500135123718,
+          "mean": 0.10508888896140788,
+          "min": 0.014999985694885254,
+          "max": 0.5400000065565109
+        },
+        "frameInterval": {
+          "p50": 8.320000007748604,
+          "p95": 10.090000003576279,
+          "p99": 10.375,
+          "mean": 8.333089747153808,
+          "min": 5.659999996423721,
+          "max": 11.28999999165535
+        },
+        "rafInterval": {
+          "p50": 8.330000000001746,
+          "p95": 10.030499999998574,
+          "p99": 10.319999999999709,
+          "mean": 8.33309391497638,
+          "min": 6.319999999999709,
+          "max": 10.349999999998545
+        }
+      },
+      "startupMs": 99.26054099999601,
+      "startup": {
+        "assetMs": 17.49499998986721,
+        "conversionMs": 0.8999999910593033,
+        "initMs": 2.385000005364418,
+        "shaderMs": 17.82999999821186,
+        "totalMs": 47.04999999701977
+      },
+      "durationMs": 29998.82500000298,
+      "draws": 1,
+      "triangles": 576,
+      "readCount": 60,
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 3,
+        "revision": 3,
+        "steps": 3,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 112216,
+        "commandBatches": 3,
+        "commandBytes": 1920,
+        "readBytes": 542080,
+        "paletteBytes": 4608,
+        "rootBytes": 384
+      }
+    },
+    {
+      "file": "render-static-1-owned-js-3.json",
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1534,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "repeat": 3,
+      "metrics": {
+        "cpu": {
+          "p50": 0.08500000834465027,
+          "p95": 0.14999999105930328,
+          "p99": 0.1850000023841858,
+          "mean": 0.08987638896952073,
+          "min": 0.009999990463256836,
+          "max": 0.48499999940395355
+        },
+        "frameInterval": {
+          "p50": 8.325000002980232,
+          "p95": 10.160500009357929,
+          "p99": 10.380099995136261,
+          "mean": 8.332825784937114,
+          "min": 6.159999996423721,
+          "max": 10.700000002980232
+        },
+        "rafInterval": {
+          "p50": 8.330000000001746,
+          "p95": 10.169999999998254,
+          "p99": 10.32499999999709,
+          "mean": 8.332813281467073,
+          "min": 6.319999999999709,
+          "max": 10.364999999997963
+        }
+      },
+      "startupMs": 104.17204199999105,
+      "startup": {
+        "assetMs": 18.685000002384186,
+        "conversionMs": 0.5600000023841858,
+        "initMs": 2.3599999994039536,
+        "shaderMs": 18.030000001192093,
+        "totalMs": 48.51500000059605
+      },
+      "durationMs": 29998.535000011325,
+      "draws": 1,
+      "triangles": 576,
+      "readCount": 60,
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 3,
+        "revision": 3,
+        "steps": 3,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 112216,
+        "commandBatches": 3,
+        "commandBytes": 1920,
+        "readBytes": 542080,
+        "paletteBytes": 4608,
+        "rootBytes": 384
+      }
+    },
+    {
+      "file": "render-animated-16-owned-js-3.json",
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1554,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "scenario": "animated-16",
+      "variant": "owned-js",
+      "repeat": 3,
+      "metrics": {
+        "cpu": {
+          "p50": 0.5599999874830246,
+          "p95": 0.7950000017881393,
+          "p99": 0.9650500035285938,
+          "mean": 0.5627333333343267,
+          "min": 0.125,
+          "max": 1.2049999982118607
+        },
+        "frameInterval": {
+          "p50": 8.314999997615814,
+          "p95": 10.080499997735023,
+          "p99": 10.345100013315678,
+          "mean": 8.333474576270358,
+          "min": 6.0999999940395355,
+          "max": 10.689999997615814
+        },
+        "rafInterval": {
+          "p50": 8.330000000001746,
+          "p95": 10.014999999999418,
+          "p99": 10.309999999997672,
+          "mean": 8.333487079744375,
+          "min": 6.344999999997526,
+          "max": 10.340000000000146
+        }
+      },
+      "startupMs": 100.97945799998706,
+      "startup": {
+        "assetMs": 21.950000002980232,
+        "conversionMs": 0.5799999982118607,
+        "initMs": 2.5750000029802322,
+        "shaderMs": 18.62000000476837,
+        "totalMs": 52.98499999940395
+      },
+      "durationMs": 29998.510000005364,
+      "draws": 16,
+      "triangles": 9216,
+      "readCount": 60,
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 16,
+        "clips": 3,
+        "revision": 4803,
+        "steps": 4803,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 114136,
+        "commandBatches": 4803,
+        "commandBytes": 86231040,
+        "readBytes": 8673280,
+        "paletteBytes": 117989376,
+        "rootBytes": 9832448
+      }
+    },
+    {
+      "file": "render-animated-1-owned-js-3.json",
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1537,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "repeat": 3,
+      "metrics": {
+        "cpu": {
+          "p50": 0.23000000417232513,
+          "p95": 0.33500000834465027,
+          "p99": 0.4150500063598144,
+          "mean": 0.23236111116906008,
+          "min": 0.03999999165534973,
+          "max": 0.7049999982118607
+        },
+        "frameInterval": {
+          "p50": 8.320000007748604,
+          "p95": 10.064999997615814,
+          "p99": 10.344999998807907,
+          "mean": 8.33312031119507,
+          "min": 6.200000002980232,
+          "max": 10.549999997019768
+        },
+        "rafInterval": {
+          "p50": 8.330000000001746,
+          "p95": 10,
+          "p99": 10.309999999997672,
+          "mean": 8.333098082800777,
+          "min": 6.305000000000291,
+          "max": 10.369999999998981
+        }
+      },
+      "startupMs": 99.40295800002059,
+      "startup": {
+        "assetMs": 18.939999997615814,
+        "conversionMs": 0.5450000017881393,
+        "initMs": 2.230000004172325,
+        "shaderMs": 17.019999995827675,
+        "totalMs": 47.35999999940395
+      },
+      "durationMs": 29999.390000000596,
+      "draws": 1,
+      "triangles": 576,
+      "readCount": 60,
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 3,
+        "revision": 4803,
+        "steps": 4803,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 112216,
+        "commandBatches": 4803,
+        "commandBytes": 5389440,
+        "readBytes": 542080,
+        "paletteBytes": 7374336,
+        "rootBytes": 614528
+      }
+    },
+    {
+      "file": "render-animated-1-owned-js-4.json",
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1558,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "repeat": 4,
+      "metrics": {
+        "cpu": {
+          "p50": 0.1900000125169754,
+          "p95": 0.2949999876320362,
+          "p99": 0.3449999988079071,
+          "mean": 0.1945625001606014,
+          "min": 0.024999991059303284,
+          "max": 0.5499999970197678
+        },
+        "frameInterval": {
+          "p50": 8.319999992847443,
+          "p95": 10.125,
+          "p99": 10.370000004768372,
+          "mean": 8.333385662685238,
+          "min": 6.219999998807907,
+          "max": 10.674999997019768
+        },
+        "rafInterval": {
+          "p50": 8.330000000001746,
+          "p95": 10.080000000001746,
+          "p99": 10.31499999999869,
+          "mean": 8.33339399833287,
+          "min": 6.315000000002328,
+          "max": 10.345000000001164
+        }
+      },
+      "startupMs": 104.84737500001211,
+      "startup": {
+        "assetMs": 20.310000002384186,
+        "conversionMs": 0.5900000035762787,
+        "initMs": 2.4200000017881393,
+        "shaderMs": 17.12999999523163,
+        "totalMs": 48.75
+      },
+      "durationMs": 29999.99500000477,
+      "draws": 1,
+      "triangles": 576,
+      "readCount": 60,
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 3,
+        "revision": 4803,
+        "steps": 4803,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 112216,
+        "commandBatches": 4803,
+        "commandBytes": 5389440,
+        "readBytes": 542080,
+        "paletteBytes": 7374336,
+        "rootBytes": 614528
+      }
+    },
+    {
+      "file": "render-animated-16-owned-js-4.json",
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1543,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "scenario": "animated-16",
+      "variant": "owned-js",
+      "repeat": 4,
+      "metrics": {
+        "cpu": {
+          "p50": 0.5499999970197678,
+          "p95": 0.7950000017881393,
+          "p99": 0.9400499975681293,
+          "mean": 0.5550125000501672,
+          "min": 0.14000000059604645,
+          "max": 1.2150000035762787
+        },
+        "frameInterval": {
+          "p50": 8.324999988079071,
+          "p95": 10.08500000834465,
+          "p99": 10.380100010037422,
+          "mean": 8.332854959709044,
+          "min": 5.5999999940395355,
+          "max": 11.094999998807907
+        },
+        "rafInterval": {
+          "p50": 8.330000000001746,
+          "p95": 10.040000000000873,
+          "p99": 10.319999999999709,
+          "mean": 8.332860516810225,
+          "min": 6.325000000000728,
+          "max": 10.350000000000364
+        }
+      },
+      "startupMs": 97.83704100002069,
+      "startup": {
+        "assetMs": 24.719999998807907,
+        "conversionMs": 0.550000011920929,
+        "initMs": 2.3599999994039536,
+        "shaderMs": 18.859999999403954,
+        "totalMs": 55.849999994039536
+      },
+      "durationMs": 29997.62000000477,
+      "draws": 16,
+      "triangles": 9216,
+      "readCount": 60,
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 16,
+        "clips": 3,
+        "revision": 4803,
+        "steps": 4803,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 114136,
+        "commandBatches": 4803,
+        "commandBytes": 86231040,
+        "readBytes": 8673280,
+        "paletteBytes": 117989376,
+        "rootBytes": 9832448
+      }
+    },
+    {
+      "file": "render-static-1-owned-js-4.json",
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1472,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "repeat": 4,
+      "metrics": {
+        "cpu": {
+          "p50": 0.10500000417232513,
+          "p95": 0.17000000178813934,
+          "p99": 0.24500000476837158,
+          "mean": 0.10808888888607422,
+          "min": 0.009999990463256836,
+          "max": 0.5250000059604645
+        },
+        "frameInterval": {
+          "p50": 8.325000002980232,
+          "p95": 10.140000000596046,
+          "p99": 10.375099999904632,
+          "mean": 8.333701028066,
+          "min": 6.185000002384186,
+          "max": 10.614999994635582
+        },
+        "rafInterval": {
+          "p50": 8.330000000001746,
+          "p95": 10.06499999999869,
+          "p99": 10.314999999998726,
+          "mean": 8.3336537927202,
+          "min": 6.3399999999965075,
+          "max": 10.349999999998545
+        }
+      },
+      "startupMs": 108.93241699994542,
+      "startup": {
+        "assetMs": 19.859999999403954,
+        "conversionMs": 0.5799999982118607,
+        "initMs": 2.230000004172325,
+        "shaderMs": 16.974999994039536,
+        "totalMs": 48.04999999701977
+      },
+      "durationMs": 29999.5,
+      "draws": 1,
+      "triangles": 576,
+      "readCount": 60,
+      "diagnostics": {
+        "backend": "js",
+        "nodes": 24,
+        "rigs": 1,
+        "clips": 3,
+        "revision": 3,
+        "steps": 3,
+        "wasmCalls": 0,
+        "wasmMemoryBytes": 0,
+        "initialBytes": 112216,
+        "commandBatches": 3,
+        "commandBytes": 1920,
+        "readBytes": 542080,
+        "paletteBytes": 4608,
+        "rootBytes": 384
+      }
+    }
+  ]
+}

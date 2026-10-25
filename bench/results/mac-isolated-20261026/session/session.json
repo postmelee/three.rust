@@ -1,0 +1,19 @@
+{
+  "sourceCommit": "9527a042ed1134e73ab9cfe8b3ee75f4aac6d2a7",
+  "trackedClean": true,
+  "node": "v24.15.0",
+  "rust": "rustc 1.90.0 (1159e78c4 2025-09-14)",
+  "command": "RTHREE_TIMING_MODE=isolated caffeinate -di bash scripts/mac-validation.sh work/mac-precision-20261026-001",
+  "startedAt": "2026-10-25T17:57:03.877809+00:00",
+  "setupPassed": [
+    "npm ci",
+    "npm run fixtures",
+    "npm run build",
+    "npm test",
+    "node scripts/fetch-fox.mjs",
+    "npm run test:timing",
+    "hardware owned and Fox image/numeric checks (002)",
+    "isolated Fox smoke (002; diagnostic only)"
+  ],
+  "conditions": "AC power, power mode 0, 120 Hz built-in display. No agent builds/profiles run concurrently with primary timing. Other desktop activity is not forcibly terminated. Original and matched-JS A/A determine drift; no quietness or performance qualification is assumed."
+}
