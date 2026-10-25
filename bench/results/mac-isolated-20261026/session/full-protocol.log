@@ -1,0 +1,409 @@
+Pinned Fox asset and attribution verified
+ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)
+render-animated-1-original-0.json
+render-animated-1-owned-js-0.json
+render-animated-1-owned-wasm-0.json
+render-animated-64-original-0.json
+render-animated-64-owned-js-0.json
+render-animated-64-owned-wasm-0.json
+render-static-1-original-0.json
+render-static-1-owned-js-0.json
+render-static-1-owned-wasm-0.json
+render-static-1-owned-js-1.json
+render-static-1-owned-wasm-1.json
+render-static-1-original-1.json
+render-animated-64-owned-js-1.json
+render-animated-64-owned-wasm-1.json
+render-animated-64-original-1.json
+render-animated-1-owned-js-1.json
+render-animated-1-owned-wasm-1.json
+render-animated-1-original-1.json
+render-animated-1-owned-wasm-2.json
+render-animated-1-original-2.json
+render-animated-1-owned-js-2.json
+render-animated-64-owned-wasm-2.json
+render-animated-64-original-2.json
+render-animated-64-owned-js-2.json
+render-static-1-owned-wasm-2.json
+render-static-1-original-2.json
+render-static-1-owned-js-2.json
+render-static-1-original-3.json
+render-static-1-owned-js-3.json
+render-static-1-owned-wasm-3.json
+render-animated-64-original-3.json
+render-animated-64-owned-js-3.json
+render-animated-64-owned-wasm-3.json
+render-animated-1-original-3.json
+render-animated-1-owned-js-3.json
+render-animated-1-owned-wasm-3.json
+render-animated-1-owned-js-4.json
+render-animated-1-owned-wasm-4.json
+render-animated-1-original-4.json
+render-animated-64-owned-js-4.json
+render-animated-64-owned-wasm-4.json
+render-animated-64-original-4.json
+render-static-1-owned-js-4.json
+render-static-1-owned-wasm-4.json
+render-static-1-original-4.json
+render-static-1-owned-wasm-5.json
+render-static-1-original-5.json
+render-static-1-owned-js-5.json
+render-animated-64-owned-wasm-5.json
+render-animated-64-original-5.json
+render-animated-64-owned-js-5.json
+render-animated-1-owned-wasm-5.json
+render-animated-1-original-5.json
+render-animated-1-owned-js-5.json
+┌─────────┬───────────────┬──────────────┬──────────┬──────────┬──────────┬──────────┐
+│ (index) │ scenario      │ variant      │ p50      │ p95      │ p99      │ interval │
+├─────────┼───────────────┼──────────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0       │ 'animated-1'  │ 'original'   │ '0.2000' │ '0.4000' │ '0.5000' │ '8.30'   │
+│ 1       │ 'animated-1'  │ 'owned-js'   │ '0.2000' │ '0.4000' │ '0.5000' │ '8.30'   │
+│ 2       │ 'animated-1'  │ 'owned-wasm' │ '0.2000' │ '0.4000' │ '0.5000' │ '8.30'   │
+│ 3       │ 'animated-64' │ 'original'   │ '1.2000' │ '3.4000' │ '3.6505' │ '8.30'   │
+│ 4       │ 'animated-64' │ 'owned-js'   │ '1.0000' │ '1.7025' │ '1.9000' │ '8.30'   │
+│ 5       │ 'animated-64' │ 'owned-wasm' │ '0.7500' │ '1.4000' │ '1.6000' │ '8.30'   │
+│ 6       │ 'static-1'    │ 'original'   │ '0.2000' │ '0.3500' │ '0.4005' │ '8.30'   │
+│ 7       │ 'static-1'    │ 'owned-js'   │ '0.1000' │ '0.3000' │ '0.3010' │ '8.30'   │
+│ 8       │ 'static-1'    │ 'owned-wasm' │ '0.1000' │ '0.3000' │ '0.3000' │ '8.30'   │
+└─────────┴───────────────┴──────────────┴──────────┴──────────┴──────────┴──────────┘
+render-animated-1-original-0.json
+render-animated-16-original-0.json
+render-static-1-original-0.json
+render-static-1-original-1.json
+render-animated-16-original-1.json
+render-animated-1-original-1.json
+render-animated-1-original-2.json
+render-animated-16-original-2.json
+render-static-1-original-2.json
+render-static-1-original-3.json
+render-animated-16-original-3.json
+render-animated-1-original-3.json
+render-animated-1-original-4.json
+render-animated-16-original-4.json
+render-static-1-original-4.json
+┌─────────┬───────────────┬────────────┬─────────────────────┬────────────────────┬─────────────────────┬────────────────────┐
+│ (index) │ scenario      │ variant    │ p50                 │ p95                │ p99                 │ interval95         │
+├─────────┼───────────────┼────────────┼─────────────────────┼────────────────────┼─────────────────────┼────────────────────┤
+│ 0       │ 'animated-1'  │ 'original' │ 0.24000000953674316 │ 0.3502500079572187 │ 0.4350000023841858  │ 10.114999996125698 │
+│ 1       │ 'animated-16' │ 'original' │ 1.0750000029802322  │ 1.435250002145766  │ 2.2150499887764443  │ 10.120500004291534 │
+│ 2       │ 'static-1'    │ 'original' │ 0.1899999976158142  │ 0.2849999964237213 │ 0.36499999463558197 │ 10.105500003695488 │
+└─────────┴───────────────┴────────────┴─────────────────────┴────────────────────┴─────────────────────┴────────────────────┘
+render-animated-1-owned-js-0.json
+render-animated-16-owned-js-0.json
+render-static-1-owned-js-0.json
+render-static-1-owned-js-1.json
+render-animated-16-owned-js-1.json
+render-animated-1-owned-js-1.json
+render-animated-1-owned-js-2.json
+render-animated-16-owned-js-2.json
+render-static-1-owned-js-2.json
+render-static-1-owned-js-3.json
+render-animated-16-owned-js-3.json
+render-animated-1-owned-js-3.json
+render-animated-1-owned-js-4.json
+render-animated-16-owned-js-4.json
+render-static-1-owned-js-4.json
+┌─────────┬───────────────┬────────────┬─────────────────────┬─────────────────────┬─────────────────────┬────────────────────┐
+│ (index) │ scenario      │ variant    │ p50                 │ p95                 │ p99                 │ interval95         │
+├─────────┼───────────────┼────────────┼─────────────────────┼─────────────────────┼─────────────────────┼────────────────────┤
+│ 0       │ 'animated-1'  │ 'owned-js' │ 0.23000000417232513 │ 0.33500000834465027 │ 0.3949999959766865  │ 10.129999995231628 │
+│ 1       │ 'animated-16' │ 'owned-js' │ 0.5550000071525574  │ 0.7950000017881393  │ 0.9599999935925007  │ 10.080499997735023 │
+│ 2       │ 'static-1'    │ 'owned-js' │ 0.10000000894069672 │ 0.16499999165534973 │ 0.20999999344348907 │ 10.145500008761882 │
+└─────────┴───────────────┴────────────┴─────────────────────┴─────────────────────┴─────────────────────┴────────────────────┘
+render-animated-1-original-0.json
+render-animated-1-owned-js-0.json
+render-animated-1-owned-wasm-0.json
+render-animated-16-original-0.json
+render-animated-16-owned-js-0.json
+render-animated-16-owned-wasm-0.json
+render-static-1-original-0.json
+render-static-1-owned-js-0.json
+render-static-1-owned-wasm-0.json
+render-static-1-owned-wasm-1.json
+render-static-1-owned-js-1.json
+render-static-1-original-1.json
+render-animated-16-owned-wasm-1.json
+render-animated-16-owned-js-1.json
+render-animated-16-original-1.json
+render-animated-1-owned-wasm-1.json
+render-animated-1-owned-js-1.json
+render-animated-1-original-1.json
+render-animated-1-owned-js-2.json
+render-animated-1-owned-wasm-2.json
+render-animated-1-original-2.json
+render-animated-16-owned-js-2.json
+render-animated-16-owned-wasm-2.json
+render-animated-16-original-2.json
+render-static-1-owned-js-2.json
+render-static-1-owned-wasm-2.json
+render-static-1-original-2.json
+render-static-1-original-3.json
+render-static-1-owned-wasm-3.json
+render-static-1-owned-js-3.json
+render-animated-16-original-3.json
+render-animated-16-owned-wasm-3.json
+render-animated-16-owned-js-3.json
+render-animated-1-original-3.json
+render-animated-1-owned-wasm-3.json
+render-animated-1-owned-js-3.json
+render-animated-1-owned-wasm-4.json
+render-animated-1-original-4.json
+render-animated-1-owned-js-4.json
+render-animated-16-owned-wasm-4.json
+render-animated-16-original-4.json
+render-animated-16-owned-js-4.json
+render-static-1-owned-wasm-4.json
+render-static-1-original-4.json
+render-static-1-owned-js-4.json
+render-static-1-owned-js-5.json
+render-static-1-original-5.json
+render-static-1-owned-wasm-5.json
+render-animated-16-owned-js-5.json
+render-animated-16-original-5.json
+render-animated-16-owned-wasm-5.json
+render-animated-1-owned-js-5.json
+render-animated-1-original-5.json
+render-animated-1-owned-wasm-5.json
+┌─────────┬───────────────┬──────────────┬─────────────────────┬─────────────────────┬────────────────────┬────────────────────┐
+│ (index) │ scenario      │ variant      │ p50                 │ p95                 │ p99                │ interval95         │
+├─────────┼───────────────┼──────────────┼─────────────────────┼─────────────────────┼────────────────────┼────────────────────┤
+│ 0       │ 'animated-1'  │ 'original'   │ 0.23499999940395355 │ 0.3399999961256981  │ 0.4224999994784594 │ 10.137499995529652 │
+│ 1       │ 'animated-1'  │ 'owned-js'   │ 0.23250000178813934 │ 0.3374999914318323  │ 0.4050000011920929 │ 10.147750008106232 │
+│ 2       │ 'animated-1'  │ 'owned-wasm' │ 0.22374999895691872 │ 0.32750000059604645 │ 0.380000002682209  │ 10.16499999910593  │
+│ 3       │ 'animated-16' │ 'original'   │ 1.0700000002980232  │ 1.4250000044703484  │ 2.2350499921292055 │ 10.127499997615814 │
+│ 4       │ 'animated-16' │ 'owned-js'   │ 0.5649999976158142  │ 0.7875000014901161  │ 0.9450500002503384 │ 10.140250000357629 │
+│ 5       │ 'animated-16' │ 'owned-wasm' │ 0.4699999988079071  │ 0.6649999994784593  │ 0.7800250010937446 │ 10.122499994933605 │
+│ 6       │ 'static-1'    │ 'original'   │ 0.1899999976158142  │ 0.2849999967962503  │ 0.380000002682209  │ 10.149999999254941 │
+│ 7       │ 'static-1'    │ 'owned-js'   │ 0.0950000062584877  │ 0.1600000038743019  │ 0.2175000011920929 │ 10.147750000655652 │
+│ 8       │ 'static-1'    │ 'owned-wasm' │ 0.10249999910593033 │ 0.16500000655651093 │ 0.2175000011920929 │ 10.145000003278255 │
+└─────────┴───────────────┴──────────────┴─────────────────────┴─────────────────────┴────────────────────┴────────────────────┘
+render-animated-1-owned-js-0.json
+render-animated-16-owned-js-0.json
+render-static-1-owned-js-0.json
+render-static-1-owned-js-1.json
+render-animated-16-owned-js-1.json
+render-animated-1-owned-js-1.json
+render-animated-1-owned-js-2.json
+render-animated-16-owned-js-2.json
+render-static-1-owned-js-2.json
+render-static-1-owned-js-3.json
+render-animated-16-owned-js-3.json
+render-animated-1-owned-js-3.json
+render-animated-1-owned-js-4.json
+render-animated-16-owned-js-4.json
+render-static-1-owned-js-4.json
+┌─────────┬───────────────┬────────────┬─────────────────────┬─────────────────────┬─────────────────────┬────────────────────┐
+│ (index) │ scenario      │ variant    │ p50                 │ p95                 │ p99                 │ interval95         │
+├─────────┼───────────────┼────────────┼─────────────────────┼─────────────────────┼─────────────────────┼────────────────────┤
+│ 0       │ 'animated-1'  │ 'owned-js' │ 0.22500000894069672 │ 0.32999999821186066 │ 0.39005000054836153 │ 10.119999991357327 │
+│ 1       │ 'animated-16' │ 'owned-js' │ 0.5600000023841858  │ 0.7799999870359897  │ 0.9050000011920929  │ 10.160500009357929 │
+│ 2       │ 'static-1'    │ 'owned-js' │ 0.10500000417232513 │ 0.16500000655651093 │ 0.2150000035762787  │ 10.135000005364418 │
+└─────────┴───────────────┴────────────┴─────────────────────┴─────────────────────┴─────────────────────┴────────────────────┘
+render-animated-1-original-0.json
+render-animated-16-original-0.json
+render-static-1-original-0.json
+render-static-1-original-1.json
+render-animated-16-original-1.json
+render-animated-1-original-1.json
+render-animated-1-original-2.json
+render-animated-16-original-2.json
+render-static-1-original-2.json
+render-static-1-original-3.json
+render-animated-16-original-3.json
+render-animated-1-original-3.json
+render-animated-1-original-4.json
+render-animated-16-original-4.json
+render-static-1-original-4.json
+┌─────────┬───────────────┬────────────┬─────────────────────┬────────────────────┬─────────────────────┬────────────────────┐
+│ (index) │ scenario      │ variant    │ p50                 │ p95                │ p99                 │ interval95         │
+├─────────┼───────────────┼────────────┼─────────────────────┼────────────────────┼─────────────────────┼────────────────────┤
+│ 0       │ 'animated-1'  │ 'original' │ 0.23499999940395355 │ 0.3499999940395355 │ 0.4299999922513962  │ 10.13550000488758  │
+│ 1       │ 'animated-16' │ 'original' │ 1.0600000023841858  │ 1.3852500051259982 │ 2.290100006461141   │ 10.139999987185002 │
+│ 2       │ 'static-1'    │ 'original' │ 0.1899999976158142  │ 0.2849999964237213 │ 0.35999999940395355 │ 10.125             │
+└─────────┴───────────────┴────────────┴─────────────────────┴────────────────────┴─────────────────────┴────────────────────┘
+diagnostic-animated-1-original-0.json
+diagnostic-animated-1-owned-js-0.json
+diagnostic-animated-1-owned-wasm-0.json
+diagnostic-animated-16-original-0.json
+diagnostic-animated-16-owned-js-0.json
+diagnostic-animated-16-owned-wasm-0.json
+diagnostic-static-1-original-0.json
+diagnostic-static-1-owned-js-0.json
+diagnostic-static-1-owned-wasm-0.json
+diagnostic-static-1-owned-wasm-1.json
+diagnostic-static-1-owned-js-1.json
+diagnostic-static-1-original-1.json
+diagnostic-animated-16-owned-wasm-1.json
+diagnostic-animated-16-owned-js-1.json
+diagnostic-animated-16-original-1.json
+diagnostic-animated-1-owned-wasm-1.json
+diagnostic-animated-1-owned-js-1.json
+diagnostic-animated-1-original-1.json
+diagnostic-animated-1-owned-js-2.json
+diagnostic-animated-1-owned-wasm-2.json
+diagnostic-animated-1-original-2.json
+diagnostic-animated-16-owned-js-2.json
+diagnostic-animated-16-owned-wasm-2.json
+diagnostic-animated-16-original-2.json
+diagnostic-static-1-owned-js-2.json
+diagnostic-static-1-owned-wasm-2.json
+diagnostic-static-1-original-2.json
+diagnostic-static-1-original-3.json
+diagnostic-static-1-owned-wasm-3.json
+diagnostic-static-1-owned-js-3.json
+diagnostic-animated-16-original-3.json
+diagnostic-animated-16-owned-wasm-3.json
+diagnostic-animated-16-owned-js-3.json
+diagnostic-animated-1-original-3.json
+diagnostic-animated-1-owned-wasm-3.json
+diagnostic-animated-1-owned-js-3.json
+diagnostic-animated-1-owned-wasm-4.json
+diagnostic-animated-1-original-4.json
+diagnostic-animated-1-owned-js-4.json
+diagnostic-animated-16-owned-wasm-4.json
+diagnostic-animated-16-original-4.json
+diagnostic-animated-16-owned-js-4.json
+diagnostic-static-1-owned-wasm-4.json
+diagnostic-static-1-original-4.json
+diagnostic-static-1-owned-js-4.json
+┌─────────┬───────────────┬──────────────┬─────────────────────┬─────────────────────┬─────────────────────┬────────────────────┐
+│ (index) │ scenario      │ variant      │ p50                 │ p95                 │ p99                 │ interval95         │
+├─────────┼───────────────┼──────────────┼─────────────────────┼─────────────────────┼─────────────────────┼────────────────────┤
+│ 0       │ 'animated-1'  │ 'original'   │ 0.38499999046325684 │ 0.5600000023841858  │ 0.625               │ 10.070499993860722 │
+│ 1       │ 'animated-1'  │ 'owned-js'   │ 0.2749999910593033  │ 0.39499999582767487 │ 0.47004999876022335 │ 9.984999999403954  │
+│ 2       │ 'animated-1'  │ 'owned-wasm' │ 0.26500000059604645 │ 0.3799999959766865  │ 0.4450999929010867  │ 10.100499995052814 │
+│ 3       │ 'animated-16' │ 'original'   │ 1.8050000071525574  │ 3.0649999983608724  │ 3.3503500089049334  │ 10.190499997138977 │
+│ 4       │ 'animated-16' │ 'owned-js'   │ 0.6499999910593033  │ 0.8549999892711639  │ 0.9804500040411945  │ 9.971499998867513  │
+│ 5       │ 'animated-16' │ 'owned-wasm' │ 0.5649999976158142  │ 0.7549999959766864  │ 0.8551500040292739  │ 10.160000011324883 │
+│ 6       │ 'static-1'    │ 'original'   │ 0.3400000035762787  │ 0.5                 │ 0.5601000022888183  │ 10.109999999403954 │
+│ 7       │ 'static-1'    │ 'owned-js'   │ 0.1550000011920929  │ 0.24500000476837158 │ 0.30510000705718987 │ 10                 │
+│ 8       │ 'static-1'    │ 'owned-wasm' │ 0.1549999862909317  │ 0.23999999463558197 │ 0.29004999175667756 │ 10.174999998509884 │
+└─────────┴───────────────┴──────────────┴─────────────────────┴─────────────────────┴─────────────────────┴────────────────────┘
+┌─────────┬───────────────┬──────────────┬────────────────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────────┬──────────────────────┬─────────────────────┬──────────────────────┬──────────────────────┬────────────┬────────────────────┬────────────────────┐
+│ (index) │ scenario      │ variant      │ aaBeforeP50                                                                        │ aaAfterP50                                                                          │ relativeDrift        │ requiredGain        │ observedGain         │ absoluteSavingMs     │ aboveNoise │ tail95Ratio        │ interval95Ratio    │
+├─────────┼───────────────┼──────────────┼────────────────────────────────────────────────────────────────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────┼──────────────────────┼─────────────────────┼──────────────────────┼──────────────────────┼────────────┼────────────────────┼────────────────────┤
+│ 0       │ 'animated-1'  │ 'owned-js'   │ [ 0.23500001430511475, 0.23499999940395355, 0.2449999898672104, ... 2 more items ] │ [ 0.19499999284744263, 0.24000000953674316, 0.23499999940395355, ... 2 more items ] │ 0.020833374725446108 │ 0.05                │ 0.01063828775385156  │ 0.002499997615814209 │ false      │ 0.9926470449342548 │ 1.0010110986516498 │
+│ 1       │ 'animated-1'  │ 'owned-wasm' │ [ 0.23500001430511475, 0.23499999940395355, 0.2449999898672104, ... 2 more items ] │ [ 0.19499999284744263, 0.24000000953674316, 0.23499999940395355, ... 2 more items ] │ 0.020833374725446108 │ 0.05                │ 0.047872342449229666 │ 0.011250000447034836 │ false      │ 0.9632353068467966 │ 1.0027127007238872 │
+│ 2       │ 'animated-16' │ 'owned-js'   │ [ 1.0799999982118607, 1.0799999982118607, 1.0700000077486038, ... 2 more items ]   │ [ 1.0600000023841858, 1.0499999970197678, 0.9599999934434891, ... 2 more items ]    │ 0.013953488887871401 │ 0.05                │ 0.4719626191977133   │ 0.505000002682209    │ true       │ 0.5526315782594109 │ 1.0012589486788266 │
+│ 3       │ 'animated-16' │ 'owned-wasm' │ [ 1.0799999982118607, 1.0799999982118607, 1.0700000077486038, ... 2 more items ]   │ [ 1.0600000023841858, 1.0499999970197678, 0.9599999934434891, ... 2 more items ]    │ 0.013953488887871401 │ 0.05                │ 0.5607476647878508   │ 0.6000000014901161   │ true       │ 0.4666666648366995 │ 0.9995062944770786 │
+│ 4       │ 'static-1'    │ 'owned-js'   │ [ 0.19500000774860382, 0.1899999976158142, 0.19500000774860382, ... 2 more items ] │ [ 0.1850000023841858, 0.20000000298023224, 0.1850000023841858, ... 2 more items ]   │ 0                    │ 0.05263168626875233 │ 0.4999999607864174   │ 0.09499999135732651  │ true       │ 0.5614035286768361 │ 0.9997783252611375 │
+│ 5       │ 'static-1'    │ 'owned-wasm' │ [ 0.19500000774860382, 0.1899999976158142, 0.19500000774860382, ... 2 more items ] │ [ 0.1850000023841858, 0.20000000298023224, 0.1850000023841858, ... 2 more items ]   │ 0                    │ 0.05263168626875233 │ 0.46052631372560093  │ 0.08749999850988388  │ true       │ 0.5789473979344332 │ 0.999507389558911  │
+└─────────┴───────────────┴──────────────┴────────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────────┴──────────────────────┴─────────────────────┴──────────────────────┴──────────────────────┴────────────┴────────────────────┴────────────────────┘
+┌─────────┬───────────────┬────────────┬──────────────┬───────────────────────┬───────────────────────────────┬──────────────────────┐
+│ (index) │ scenario      │ baseline   │ variant      │ savingMs              │ exceedsObservedClockIncrement │ allRepeatPairsFaster │
+├─────────┼───────────────┼────────────┼──────────────┼───────────────────────┼───────────────────────────────┼──────────────────────┤
+│ 0       │ 'animated-1'  │ 'original' │ 'owned-js'   │ 0.002499997615814209  │ false                         │ false                │
+│ 1       │ 'animated-1'  │ 'original' │ 'owned-wasm' │ 0.011250000447034836  │ true                          │ false                │
+│ 2       │ 'animated-1'  │ 'owned-js' │ 'owned-wasm' │ 0.008750002831220627  │ true                          │ true                 │
+│ 3       │ 'animated-16' │ 'original' │ 'owned-js'   │ 0.505000002682209     │ true                          │ true                 │
+│ 4       │ 'animated-16' │ 'original' │ 'owned-wasm' │ 0.6000000014901161    │ true                          │ true                 │
+│ 5       │ 'animated-16' │ 'owned-js' │ 'owned-wasm' │ 0.0949999988079071    │ true                          │ true                 │
+│ 6       │ 'static-1'    │ 'original' │ 'owned-js'   │ 0.09499999135732651   │ true                          │ true                 │
+│ 7       │ 'static-1'    │ 'original' │ 'owned-wasm' │ 0.08749999850988388   │ true                          │ true                 │
+│ 8       │ 'static-1'    │ 'owned-js' │ 'owned-wasm' │ -0.007499992847442627 │ false                         │ false                │
+└─────────┴───────────────┴────────────┴──────────────┴───────────────────────┴───────────────────────────────┴──────────────────────┘
+shader-original-0.json {"cpu":0.10000000894069672,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-js-0.json {"cpu":0.09999999403953552,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-wasm-0.json {"cpu":0.09999999403953552,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-packed-js-0.json {"cpu":0.10000000894069672,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+small-original-0.json {"cpu":0.29999999701976776,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+small-js-0.json {"cpu":0.29999999701976776,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+small-wasm-0.json {"cpu":0.29999999701976776,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+small-packed-js-0.json {"cpu":0.30000001192092896,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-js-1.json {"cpu":0.09999999403953552,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-wasm-1.json {"cpu":0.10000000894069672,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-packed-js-1.json {"cpu":0.10000000894069672,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-original-1.json {"cpu":0.10000000894069672,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+small-js-1.json {"cpu":0.29999999701976776,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+small-wasm-1.json {"cpu":0.30000001192092896,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+small-packed-js-1.json {"cpu":0.30000001192092896,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+small-original-1.json {"cpu":0.29999999701976776,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-wasm-2.json {"cpu":0.10000000894069672,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-packed-js-2.json {"cpu":0.09999999403953552,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-original-2.json {"cpu":0.10000000894069672,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-js-2.json {"cpu":0.09999999403953552,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+small-wasm-2.json {"cpu":0.30000001192092896,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+small-packed-js-2.json {"cpu":0.29999999701976776,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+small-original-2.json {"cpu":0.29999999701976776,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+small-js-2.json {"cpu":0.29999999701976776,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-packed-js-3.json {"cpu":0.10000000894069672,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-original-3.json {"cpu":0.10000000894069672,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-js-3.json {"cpu":0.10000000894069672,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-wasm-3.json {"cpu":0.10000000894069672,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+small-packed-js-3.json {"cpu":0.29999999701976776,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+small-original-3.json {"cpu":0.29999999701976776,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+small-js-3.json {"cpu":0.29999999701976776,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+small-wasm-3.json {"cpu":0.29999999701976776,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+| Scene | Engine | CPU p50 | CPU p95 | CPU p99 | interval p95 |
+|---|---|---:|---:|---:|---:|
+| shader | original | 0.10 | 0.20 | 0.30 | 10.20 |
+| shader | js | 0.10 | 0.20 | 0.30 | 10.10 |
+| shader | wasm | 0.10 | 0.30 | 0.30 | 10.10 |
+| shader | packed-js | 0.10 | 0.30 | 0.30 | 10.10 |
+| small | original | 0.30 | 0.50 | 0.60 | 10.20 |
+| small | js | 0.30 | 0.50 | 0.60 | 10.10 |
+| small | wasm | 0.30 | 0.50 | 0.60 | 10.10 |
+| small | packed-js | 0.30 | 0.50 | 0.60 | 10.00 |
+
+[
+  {
+    scene: 'shader',
+    median: 0,
+    lo: -0.000014901159861580027,
+    hi: 0,
+    samples: [ -0.000014901159861580027, 0, 0, 0 ],
+    omitted: 0
+  },
+  {
+    scene: 'small',
+    median: 0,
+    lo: 0,
+    hi: 0.000004967053790494447,
+    samples: [ 0, 0.000004967053790494447, 0.000004967053790494447, 0 ],
+    omitted: 0
+  }
+]
+shader-original-0.json {"cpu":0.10000000894069672,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-js-0.json {"cpu":0.20000000298023224,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-wasm-0.json {"cpu":0.20000000298023224,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-packed-js-0.json {"cpu":0.20000000298023224,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-js-1.json {"cpu":0.20000000298023224,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-wasm-1.json {"cpu":0.20000000298023224,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-packed-js-1.json {"cpu":0.20000000298023224,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-original-1.json {"cpu":0.20000000298023224,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-wasm-2.json {"cpu":0.20000000298023224,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-packed-js-2.json {"cpu":0.20000000298023224,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-original-2.json {"cpu":0.20000000298023224,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-js-2.json {"cpu":0.20000000298023224,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-packed-js-3.json {"cpu":0.20000000298023224,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-original-3.json {"cpu":0.19999998807907104,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-js-3.json {"cpu":0.20000000298023224,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-wasm-3.json {"cpu":0.20000000298023224,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+| Scene | Engine | CPU p50 | CPU p95 | CPU p99 | interval p95 |
+|---|---|---:|---:|---:|---:|
+| shader | original | 0.20 | 0.30 | 0.40 | 10.10 |
+| shader | js | 0.20 | 0.30 | 0.40 | 10.00 |
+| shader | wasm | 0.20 | 0.30 | 0.40 | 10.10 |
+| shader | packed-js | 0.20 | 0.30 | 0.40 | 10.10 |
+
+[
+  {
+    scene: 'shader',
+    median: 0,
+    lo: 0,
+    hi: 99.99998509884014,
+    samples: [ 99.99998509884014, 0, 0, 0.000007450581041013038 ],
+    omitted: 0
+  }
+]
+shader-original-0.json {"cpu":0.19999998807907104,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-original-1.json {"cpu":0.20000000298023224,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+shader-original-2.json {"cpu":0.20000000298023224,"renderer":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"}
+┌─────────┬──────────────────────────┬──────────┬──────────┬──────────┬───────────┬────────────────┐
+│ (index) │ file                     │ p50      │ p95      │ p99      │ available │ pending-at-end │
+├─────────┼──────────────────────────┼──────────┼──────────┼──────────┼───────────┼────────────────┤
+│ 0       │ 'shader-original-0.json' │ 3.147083 │ 3.874124 │ 4.008249 │ 299       │ 1              │
+│ 1       │ 'shader-original-1.json' │ 3.148499 │ 3.932124 │ 3.990708 │ 299       │ 1              │
+│ 2       │ 'shader-original-2.json' │ 3.152    │ 3.937541 │ 4.050499 │ 299       │ 1              │
+└─────────┴──────────────────────────┴──────────┴──────────┴──────────┴───────────┴────────────────┘
