@@ -39,7 +39,7 @@ const configuration = {
  warmup: mode === 'full' ? 600 : 10, samples: mode === 'full' ? 1200 : 30,
  idleWarmup: mode === 'full' ? 120 : 10, idleSamples: mode === 'full' ? 240 : 30,
  cssViewport: { width: 1280, height: 720 }, pageDpr: 1, isolated: true,
- timelinePanelHeight: 306, profiling: false, gpuQueries: false, stageTimers: false,
+ timelinePanelHeight: 307, timelineContentHeight: 306, profiling: false, gpuQueries: false, stageTimers: false,
  poseClock: 'Unchanged native wall-clock Timer/mixer; poses are not frame-matched across routes',
  scope: 'Sum of disjoint Viewport.animate and Animation.updateTime synchronous callback bodies; not entire browser CPU, display latency or FPS'
 };
@@ -237,10 +237,10 @@ async function setup(r, scenario) {
  assert.equal(r.context.pages().length, 1, 'Unexpected export/popup page');
  const clock = await p.evaluate(observeClock); validateClock(clock, timingPolicy('isolated'));
  const hardware = await gpu(p, '#viewport canvas');
- const layout = await p.evaluate(() => ({ timelineHeight: document.querySelector('#animation').getBoundingClientRect().height, viewportWidth: document.querySelector('#viewport canvas').clientWidth, viewportHeight: document.querySelector('#viewport canvas').clientHeight, shading: editor.viewportShading, xr: __timingRenderer.xr.isPresenting }));
- assert.equal(layout.xr, false); assert.notEqual(layout.shading, 'realistic');
- if (!scenario.idle) assert.equal(layout.timelineHeight, configuration.timelinePanelHeight, 'Timeline layout changed');
+ const layout = await p.evaluate(() => ({ timelineHeight: document.querySelector('#animation').getBoundingClientRect().height, timelineContentHeight: parseFloat(getComputedStyle(document.querySelector('#animation')).height), viewportWidth: document.querySelector('#viewport canvas').clientWidth, viewportHeight: document.querySelector('#viewport canvas').clientHeight, shading: editor.viewportShading, xr: __timingRenderer.xr.isPresenting }));
  await r.save('setup.json', { scenario, sceneSetup, environment: env, clock, hardware, layout });
+ assert.equal(layout.xr, false); assert.notEqual(layout.shading, 'realistic');
+ if (!scenario.idle) { assert.equal(layout.timelineHeight, configuration.timelinePanelHeight, 'Timeline border-box layout changed'); assert.equal(layout.timelineContentHeight, configuration.timelineContentHeight, 'Timeline content-box layout changed'); }
  return { env, clock, hardware, layout };
 }
 async function oracleCapture(r, scenario, time) {

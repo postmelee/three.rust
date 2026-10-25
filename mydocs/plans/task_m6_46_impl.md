@@ -153,3 +153,7 @@ caffeinate -di node scripts/apps/timing.mjs "$APP_ROOT" work/task46-editor-timin
 ```
 
 Use a fresh output path for every attempt. These are prospective commands until the capture report records execution. Source and timing-tool commits remain distinct from the frozen engine candidate.
+
+### Pre-timing layout correction
+
+The first smoke stopped in the original uninstrumented oracle before any timed run: the 306px timeline content box has a 1px top border in the pinned native CSS, so its `getBoundingClientRect()` height is 307px. Record and assert both values. The native 270px resize gesture, page size, scene and renderer settings remain unchanged. Preserve smoke-001 and use a fresh path for the corrected tooling; no timing result was used to choose this correction.
