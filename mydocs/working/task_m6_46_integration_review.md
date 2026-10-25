@@ -36,3 +36,9 @@ The source conflict-resolution commits are ccc1602 (apps) and 05bf604 (archive);
 ## Remote integration gate
 
 Publish a main-target integration PR, require successful CI on its exact head, then merge with an expected-head merge commit. Preserve the original PR bases/heads before retargeting their already-contained commits to main. Confirm API merged status and ancestry rather than assuming indirect merge. Broad #3/#4/#5/#12/#13 remain open; finite implementation acceptance must be distinguished from remaining performance gates. This record precedes the remote integration and does not claim it already happened.
+
+## Confirmed integration outcome
+
+PR [#47](https://github.com/postmelee/three.rust/pull/47) merged at `fa4eead58d19720420a886fdbc898c0b9ebde321`. Its exact head `23a9096441b093d4e198547d44e819b9a3138a9c` passed the complete [CI run 40235510548](https://github.com/postmelee/three.rust/actions/runs/40235510548). The API confirms that all twelve preserved stage PRs (#30/#32/#33/#35/#36/#37/#39/#41/#42/#43/#44/#45) are merged after retargeting; each exact head is an ancestor of main. This is verified integration, not an inference from closed status. No separate merge-commit workflow was returned by the workflow query; the confirmed CI applies to the tested PR head.
+
+Finite tasks #29/#31/#34/#38/#40 were closed as completed with the integration evidence and links to remaining qualification work. Broad #3/#4/#5/#12/#13 stay open, as does this finite #46 continuation. Historical branches and raw-result worktrees remain necessary evidence and are retained. The original primary checkout was not reset or switched.
