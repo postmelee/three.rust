@@ -1,7 +1,9 @@
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
-import {openRun,gpu,hash} from './browser.mjs';
-const r=await openRun(process.argv[2],process.argv[3]);
+import {openRun,parseRunOptions,gpu,hash} from './candidate-browser.mjs';
+const options=parseRunOptions(process.argv.slice(4),'editor');
+const r=await openRun(process.argv[2],process.argv[3],options);
+const route={engine:options.engine,app:options.app,candidateSha:r.candidateSha};
 const checks=[],inputs=[],refs=new Map();
 function pass(name,detail={}){checks.push({name,...detail});console.log(name);}
 const settle=()=>r.page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
@@ -21,9 +23,10 @@ async function shot(name,repeat){
   const renderer=__uiRenderer,c=renderer.domElement,gl=renderer.getContext(),pixels=new Uint8Array(c.width*c.height*4);gl.readPixels(0,0,c.width,c.height,gl.RGBA,gl.UNSIGNED_BYTE,pixels);
   const numeric=[];editor.scene.traverse(o=>{numeric.push(...o.matrixWorld.elements);if(o.skeleton)numeric.push(...o.skeleton.boneMatrices);if(o.morphTargetInfluences)numeric.push(...o.morphTargetInfluences);});numeric.push(...editor.camera.matrixWorld.elements,...editor.camera.projectionMatrix.elements);
   const colors=new Set();for(let i=0;i<pixels.length;i+=4)colors.add(pixels[i]*65536+pixels[i+1]*256+pixels[i+2]);
-  return {numeric,pixels:Array.from(pixels),colors:colors.size,png:c.toDataURL('image/png'),width:c.width,height:c.height,quality:{antialias:gl.getContextAttributes().antialias,toneMapping:renderer.toneMapping,exposure:renderer.toneMappingExposure,outputColorSpace:renderer.outputColorSpace,shadowEnabled:renderer.shadowMap.enabled,shadowType:renderer.shadowMap.type}};
+  return {diagnostics:globalThis.THREE.diagnostics?.()??null,numeric,pixels:Array.from(pixels),colors:colors.size,png:c.toDataURL('image/png'),width:c.width,height:c.height,quality:{antialias:gl.getContextAttributes().antialias,toneMapping:renderer.toneMapping,exposure:renderer.toneMappingExposure,outputColorSpace:renderer.outputColorSpace,shadowEnabled:renderer.shadowMap.enabled,shadowType:renderer.shadowMap.type}};
  });
  const pixelSha256=hash(Buffer.from(data.pixels));delete data.pixels;await fs.writeFile(`${r.out}/${name}-${repeat}.png`,Buffer.from(data.png.split(',')[1],'base64'));delete data.png;data.pixelSha256=pixelSha256;
+ if(options.engine!=='original'){assert.equal(data.diagnostics?.backend,options.engine,'Wrong candidate backend');if(options.engine==='prepared-wasm')assert(data.diagnostics.wasmActive&&data.diagnostics.wasmCalls>0,'Actual native execution required');}
  assert(data.colors>16,'blank/degenerate image');assert(data.numeric.every(Number.isFinite));await r.save(`${name}-${repeat}.json`,data);
  if(repeat===0)refs.set(name,data);else{assert.deepEqual(data.quality,refs.get(name).quality,name+' quality repeat');assert.deepEqual(data.numeric,refs.get(name).numeric,name+' numeric repeat');assert.equal(data.pixelSha256,refs.get(name).pixelSha256,name+' image repeat');pass(name+' exact reload A/A');}
  return data;
@@ -99,6 +102,6 @@ async function timelineUI(repeat){
  await r.page.locator('#animation').getByText('Idle',{exact:true}).click();assert.equal((await actionState()).running,false);assert.equal((await actionState()).time,0);const idle=()=>r.page.evaluate(()=>{const m=editor.scene.getObjectByName('RobotExpressive.glb'),a=editor.mixer.existingAction(m.animations.find(c=>c.name==='Idle'),m);return {running:a.isRunning(),paused:a.paused,time:a.time};});assert.equal((await idle()).running,false);await buttons.nth(0).click();await r.page.waitForFunction(()=>{const m=editor.scene.getObjectByName('RobotExpressive.glb');return editor.mixer.existingAction(m.animations.find(c=>c.name==='Idle'),m).time>0;});await buttons.nth(1).click();assert((await idle()).paused);pass('timeline clip switch stops previous without autoplay '+repeat);
  await r.page.screenshot({path:`${r.out}/timeline-ui-${repeat}.png`});await r.save(`timeline-state-${repeat}.json`,{paused,stopped,final:await actionState()});
 }
-try{for(let repeat=0;repeat<2;repeat++){await staticUI(repeat);await timelineUI(repeat);}assert.deepEqual(r.errors,[]);assert(!r.requests.some(x=>x.blocked));await r.save('result.json',{status:'passed',scope:'Native UI correctness only; no timing/profile/engine candidate',checks,inputs});}
-catch(e){await r.save('result.json',{status:'failed',error:String(e),checks,inputs});await r.save('failure-dom.txt',await r.page.locator('body').innerText().catch(()=>''));await r.page.screenshot({path:r.out+'/failure.png'}).catch(()=>{});throw e;}
+try{for(let repeat=0;repeat<2;repeat++){await staticUI(repeat);await timelineUI(repeat);}await r.close();assert.deepEqual(r.errors,[]);assert(!r.requests.some(x=>x.blocked));await r.save('result.json',{status:'passed',...route,scope:options.engine==='original'?'Native UI correctness only; no timing/profile/engine candidate':'Candidate native UI correctness with within-route reload A/A; no cross-engine equivalence or performance qualification',checks,inputs});}
+catch(e){await r.save('result.json',{status:'failed',...route,error:String(e),checks,inputs});await r.save('failure-dom.txt',await r.page.locator('body').innerText().catch(()=>''));await r.page.screenshot({path:r.out+'/failure.png'}).catch(()=>{});throw e;}
 finally{await r.close();}

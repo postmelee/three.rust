@@ -1,7 +1,9 @@
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
-import {openRun,gpu,hash} from './browser.mjs';
-const r=await openRun(process.argv[2],process.argv[3]);
+import {openRun,parseRunOptions,gpu,hash} from './candidate-browser.mjs';
+const options=parseRunOptions();
+const r=await openRun(process.argv[2],process.argv[3],options);
+const route={engine:options.engine,app:options.app,candidateSha:r.candidateSha};
 const checks=[],references=new Map(),actions=[];
 const record=(name,details={})=>{checks.push({name,pass:true,...details});console.log(name);};
 async function capture(name,app,repeat){
@@ -20,10 +22,11 @@ async function capture(name,app,repeat){
   const colors=new Set();for(let i=0;i<pixels.length;i+=4)colors.add(pixels[i]*65536+pixels[i+1]*256+pixels[i+2]);
   const png=canvas.toDataURL('image/png');
   const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',pixels)),n=>n.toString(16).padStart(2,'0')).join('');
-  return {numeric,objects,width:canvas.width,height:canvas.height,colors:colors.size,pixelSha256:digest,png,quality:{antialias:gl.getContextAttributes().antialias,toneMapping:renderer.toneMapping,exposure:renderer.toneMappingExposure,outputColorSpace:renderer.outputColorSpace,shadowEnabled:renderer.shadowMap.enabled,shadowType:renderer.shadowMap.type}};
+  return {diagnostics:app==='editor'?(globalThis.THREE.diagnostics?.()??null):null,numeric,objects,width:canvas.width,height:canvas.height,colors:colors.size,pixelSha256:digest,png,quality:{antialias:gl.getContextAttributes().antialias,toneMapping:renderer.toneMapping,exposure:renderer.toneMappingExposure,outputColorSpace:renderer.outputColorSpace,shadowEnabled:renderer.shadowMap.enabled,shadowType:renderer.shadowMap.type}};
  },app);
  const png=Buffer.from(data.png.split(',')[1],'base64');delete data.png;
  await fs.writeFile(`${r.out}/${name}-${repeat}.png`,png);await r.save(`${name}-${repeat}.json`,data);
+ if(app==='editor'&&options.engine!=='original'){assert.equal(data.diagnostics?.backend,options.engine,'Wrong candidate backend');if(options.engine==='prepared-wasm')assert(data.diagnostics.wasmActive&&data.diagnostics.wasmCalls>0,'Actual native execution required');}
  assert(data.colors>16,'blank/degenerate image');
  if(repeat===0)references.set(name,data);else{
   const a=references.get(name);assert.deepEqual(data.numeric,a.numeric,`${name}: numeric A/A mismatch`);assert.deepEqual(data.objects,a.objects,`${name}: object A/A mismatch`);assert.deepEqual(data.quality,a.quality);assert.equal(data.pixelSha256,a.pixelSha256,`${name}: pixel A/A mismatch`);
@@ -160,7 +163,8 @@ async function editorAnimated(repeat){
  actions.push({scenario:'E2',repeat,inputs:['native Loader.loadFiles RobotExpressive','authored ground, raster shadow light and ambient via AddObjectCommand','Walking action, select SkinnedMesh','fixed pose 0.75 seconds','shadow off/on, model visible off/on'],limitations:['programmatic native APIs; timeline and light GUI replay not yet automated','raster shadow workload is GPU-oriented, not proven GPU-bound']});
 }
 try{
- for(let repeat=0;repeat<2;repeat++){await viewer(repeat);await editorStatic(repeat);await editorAnimated(repeat);}
+ for(let repeat=0;repeat<2;repeat++){if(options.app==='all')await viewer(repeat);await editorStatic(repeat);await editorAnimated(repeat);}
+ await r.close();
  assert.deepEqual(r.errors,[]);assert(!r.requests.some(r=>r.blocked));
- await r.save('result.json',{status:'passed',assetConformance:'Known upstream failure: 752 nonnormalized weight errors, four skin-node warnings; unchanged asset. Runtime normalized weights checked separately.',scope:'Upstream-only correctness preparation; no engine equivalence or performance qualification',checks,actions});
-}catch(e){await r.save('result.json',{status:'failed',error:String(e),checks,actions});throw e;}finally{await r.close();}
+ await r.save('result.json',{status:'passed',...route,assetConformance:'Known upstream failure: 752 nonnormalized weight errors, four skin-node warnings; unchanged asset. Runtime normalized weights checked separately.',scope:options.engine==='original'?'Upstream-only correctness preparation; no engine equivalence or performance qualification':'Candidate correctness preparation with within-route A/A; no cross-engine equivalence or performance qualification',checks,actions});
+}catch(e){await r.save('result.json',{status:'failed',...route,error:String(e),checks,actions});throw e;}finally{await r.close();}
