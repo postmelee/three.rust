@@ -1,0 +1,514 @@
+{
+  "engine": "facade-js",
+  "results": [
+    {
+      "id": "identity",
+      "passed": true,
+      "trace": {
+        "position": [
+          3,
+          0,
+          0
+        ],
+        "matrix": [
+          0.9210609940028851,
+          0,
+          -0.38941834230865047,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0.38941834230865047,
+          0,
+          0.9210609940028851,
+          0,
+          3,
+          0,
+          0,
+          1
+        ],
+        "stable": true
+      },
+      "wasmCalls": 0
+    },
+    {
+      "id": "rotation-coupling",
+      "passed": true,
+      "trace": [
+        [
+          "XYZ",
+          0,
+          0.5999999999999999,
+          0,
+          0,
+          0.29552020666133955,
+          0,
+          0.955336489125606
+        ],
+        [
+          "YXZ",
+          0,
+          0.5999999999999999,
+          0,
+          0,
+          0.29552020666133955,
+          0,
+          0.955336489125606
+        ],
+        [
+          "ZXY",
+          0,
+          0.5999999999999999,
+          0,
+          0,
+          0.29552020666133955,
+          0,
+          0.955336489125606
+        ],
+        [
+          "ZYX",
+          0,
+          0.5999999999999999,
+          0,
+          0,
+          0.29552020666133955,
+          0,
+          0.955336489125606
+        ],
+        [
+          "YZX",
+          0,
+          0.5999999999999999,
+          0,
+          0,
+          0.29552020666133955,
+          0,
+          0.955336489125606
+        ],
+        [
+          "XZY",
+          0,
+          0.5999999999999999,
+          0,
+          0,
+          0.29552020666133955,
+          0,
+          0.955336489125606
+        ]
+      ],
+      "wasmCalls": 0
+    },
+    {
+      "id": "lazy-and-forced-reads",
+      "passed": true,
+      "trace": {
+        "read": [
+          14,
+          0,
+          0
+        ],
+        "beforeSibling": [
+          6,
+          0,
+          0
+        ],
+        "afterSibling": [
+          15,
+          0,
+          0
+        ]
+      },
+      "wasmCalls": 0
+    },
+    {
+      "id": "manual-matrix-and-force",
+      "passed": true,
+      "trace": {
+        "local": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          11,
+          0,
+          0,
+          1
+        ],
+        "world": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          13,
+          0,
+          0,
+          1
+        ],
+        "oldAlias": 8
+      },
+      "wasmCalls": 0
+    },
+    {
+      "id": "external-parent",
+      "passed": true,
+      "trace": {
+        "stale": [
+          5,
+          0,
+          0
+        ],
+        "refreshed": [
+          12,
+          0,
+          0
+        ]
+      },
+      "wasmCalls": 0
+    },
+    {
+      "id": "pivot",
+      "passed": true,
+      "trace": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0,
+        2,
+        1,
+        -3,
+        1
+      ],
+      "wasmCalls": 0
+    },
+    {
+      "id": "hierarchy-events",
+      "passed": true,
+      "trace": [
+        [
+          "child",
+          "removed",
+          null,
+          false,
+          false,
+          true
+        ],
+        [
+          "a",
+          "childremoved",
+          null,
+          false,
+          false,
+          true
+        ],
+        [
+          "child",
+          "added",
+          "b",
+          false,
+          true,
+          true
+        ],
+        [
+          "b",
+          "childadded",
+          "b",
+          false,
+          true,
+          true
+        ],
+        [
+          "child",
+          "removed",
+          null,
+          false,
+          false,
+          true
+        ]
+      ],
+      "wasmCalls": 0
+    },
+    {
+      "id": "attach",
+      "passed": true,
+      "trace": {
+        "world": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          5,
+          0,
+          0,
+          1
+        ],
+        "local": [
+          9,
+          0,
+          0
+        ],
+        "events": [
+          [
+            true,
+            9,
+            0,
+            0
+          ]
+        ]
+      },
+      "wasmCalls": 0
+    },
+    {
+      "id": "listener-mutation-and-reentrancy",
+      "passed": true,
+      "trace": [
+        "first",
+        "second",
+        "first",
+        "later",
+        "depth-0",
+        "depth-1"
+      ],
+      "wasmCalls": 0
+    },
+    {
+      "id": "exception-partial-state",
+      "passed": true,
+      "trace": {
+        "hierarchyCommitted": true,
+        "parentEvent": false,
+        "mutation": 3,
+        "unvisited": [
+          0,
+          0,
+          0
+        ]
+      },
+      "wasmCalls": 0
+    },
+    {
+      "id": "custom-update-dispatch",
+      "passed": true,
+      "trace": {
+        "calls": [
+          [
+            "world",
+            true
+          ],
+          "local",
+          [
+            "world",
+            true
+          ],
+          "local"
+        ],
+        "world": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2,
+          0,
+          1
+        ]
+      },
+      "wasmCalls": 0
+    },
+    {
+      "id": "clone-and-resource-identity",
+      "passed": true,
+      "trace": {
+        "independentObjects": true,
+        "sharedResources": true,
+        "sourceUserData": {
+          "nested": {
+            "value": 1
+          }
+        },
+        "objects": 1,
+        "resources": 2,
+        "reusableAfterDispose": [
+          8,
+          0,
+          0
+        ]
+      },
+      "wasmCalls": 0
+    },
+    {
+      "id": "animation-event-observation",
+      "passed": true,
+      "trace": {
+        "events": [
+          [
+            "loop",
+            1.25,
+            0.25,
+            7.5
+          ],
+          [
+            "finished",
+            2.25,
+            1,
+            2.5
+          ]
+        ],
+        "restored": 0
+      },
+      "wasmCalls": 0
+    },
+    {
+      "id": "arbitrary-property-animation",
+      "passed": true,
+      "trace": {
+        "restored": 3
+      },
+      "wasmCalls": 0
+    },
+    {
+      "id": "skeleton-palette-lifecycle",
+      "passed": true,
+      "trace": {
+        "oldPalette": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          3,
+          0,
+          0,
+          1
+        ],
+        "textureAllocated": true,
+        "disposed": 1
+      },
+      "wasmCalls": 0
+    },
+    {
+      "id": "camera-and-skinned-overrides",
+      "passed": true,
+      "trace": {
+        "inverse": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          -2,
+          -3,
+          -4,
+          1
+        ],
+        "bind": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          -5,
+          0,
+          0,
+          1
+        ]
+      },
+      "wasmCalls": 0
+    }
+  ],
+  "diagnostics": {
+    "backend": "facade-js",
+    "wasmActive": false,
+    "batches": 27,
+    "nodes": 43,
+    "fallbackRoots": 11,
+    "wasmCalls": 0,
+    "wasmNodes": 0,
+    "uploadedBytes": 9048,
+    "scannedBytes": 2912,
+    "materializedBytes": 5504,
+    "arenas": 0,
+    "syncMs": 0,
+    "kernelMs": 0,
+    "readMs": 0,
+    "abiCalls": 0,
+    "operationBytes": 1204,
+    "matrixReads": 43,
+    "liveNodes": 0,
+    "topologyBuilds": 0,
+    "dirtyRecords": 0,
+    "retainedUpdates": 0,
+    "preparedInputBytes": 0,
+    "preparedFallbacks": 0,
+    "preparedWasmCalls": 0,
+    "prepareKernelMs": 0,
+    "prepareMs": 0,
+    "preparedReadMs": 0,
+    "preparedPasses": 0,
+    "preparedDraws": 0,
+    "preparedMatrixBytes": 0,
+    "preparedMatrixReads": 0,
+    "wasmMemoryBytes": 0
+  }
+}

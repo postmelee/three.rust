@@ -1,0 +1,14 @@
+{
+  "researchCommit": "9527a042ed1134e73ab9cfe8b3ee75f4aac6d2a7",
+  "smokeCommit": "1ed9cb37de1ea5e3c31b3b6732cbedfc67a936bf",
+  "smokeDirty": false,
+  "smokeStatus": "complete",
+  "measuredSourceHashesStillMatch": true,
+  "engineFixtureToolchainAndLockDiff": [],
+  "wasmSha256": "edfe1c9ae78e2e4ea76db9515fb17e4ae91a8231fb097dd30388147b3f75fcec",
+  "toolingDiff": "tooling-adaptation.patch",
+  "nodeVersion": "v24.15.0",
+  "npmVersion": "11.12.1",
+  "rustcVersion": "rustc 1.90.0 (1159e78c4 2025-09-14)",
+  "cargoVersion": "cargo 1.90.0 (840b83a10 2025-07-30)"
+}

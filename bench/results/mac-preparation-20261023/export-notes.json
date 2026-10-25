@@ -1,0 +1,88 @@
+{
+  "redactions": [
+    {
+      "path": "checks/build.txt",
+      "originalSha256": "0ac63699f1ffd377cc9d0d246ad5b7b4913baea1aedf247f145214d9cf976b78",
+      "exportedSha256": "962c7550fefd5fe0f4d21c3975dc34ac70474395d02f10d9df0b63ca94a1a812",
+      "reason": "Remove local checkout path/battery identifier; correct legacy background-work sentence to observed experiment condition. Numeric samples unchanged."
+    },
+    {
+      "path": "checks/test.txt",
+      "originalSha256": "1cc895f794fc0d93a47eb915a2f1f5eb241766d05a6a1936a7c4fbb27dd16431",
+      "exportedSha256": "5c4e7d018067d94d049f0af3d7ecd65bcacbb9559f115107286f3daab4cebbbf",
+      "reason": "Remove local checkout path/battery identifier; correct legacy background-work sentence to observed experiment condition. Numeric samples unchanged."
+    },
+    {
+      "path": "preflight/runner.json",
+      "originalSha256": "f013b5ad6495f9d9358d574b1c579a402727d6704df302d59f8b6531c8caea3a",
+      "exportedSha256": "53e25a75f333f28089617b755b7f379270a3048e930ee167f0e94a5a3a546c9c",
+      "reason": "Remove local checkout path/battery identifier; correct legacy background-work sentence to observed experiment condition. Numeric samples unchanged."
+    },
+    {
+      "path": "smoke/environment-after/runner.json",
+      "originalSha256": "ffccb92fcac65eab907d8ff4f3e0eb6b89f6cccbdffde01e22ef0089d3cde839",
+      "exportedSha256": "ace4987f701f9503b71dde8272e46614dbc21f3eabdd1962dacd38110491b4ec",
+      "reason": "Remove local checkout path/battery identifier; correct legacy background-work sentence to observed experiment condition. Numeric samples unchanged."
+    },
+    {
+      "path": "smoke/environment-before/runner.json",
+      "originalSha256": "a53e75cde6f7a70c2df95510e60a83917a55e36f2343a05f8f47c73d993d0c73",
+      "exportedSha256": "eeaebb4ba192b69cf2988d932ee8357febef28840617e1105e4d0976aaf4d13a",
+      "reason": "Remove local checkout path/battery identifier; correct legacy background-work sentence to observed experiment condition. Numeric samples unchanged."
+    },
+    {
+      "path": "smoke/manifest.json",
+      "originalSha256": "4ad2c2c81a0844a700abb2ee874b57d9d1366525dca21613db0ba191a449dd51",
+      "exportedSha256": "2b89c2b0a08628853900b56a20b281c0c9c14903a6b42877c36f402158dfda91",
+      "reason": "Remove local checkout path/battery identifier; correct legacy background-work sentence to observed experiment condition. Numeric samples unchanged."
+    }
+  ],
+  "excludedFromPublicArchive": [
+    {
+      "localRelativePath": "work/mac-preparation-003/facade-correctness/skinning-js-diff.png",
+      "sha256": "f5a6f05b7180cf1dbf72d342d1ce4da540f21bc72e73117b8df5482fc87a33d6",
+      "reason": "Soldier-derived image redistribution not audited; retained locally. Numeric and pixel comparison results are exported."
+    },
+    {
+      "localRelativePath": "work/mac-preparation-003/facade-correctness/skinning-js.png",
+      "sha256": "f172f089e577ed09f1a3fdb66085f055dbf4fde3b87990bcc027ddad0fd52ea1",
+      "reason": "Soldier-derived image redistribution not audited; retained locally. Numeric and pixel comparison results are exported."
+    },
+    {
+      "localRelativePath": "work/mac-preparation-003/facade-correctness/skinning-original-repeat-diff.png",
+      "sha256": "f5a6f05b7180cf1dbf72d342d1ce4da540f21bc72e73117b8df5482fc87a33d6",
+      "reason": "Soldier-derived image redistribution not audited; retained locally. Numeric and pixel comparison results are exported."
+    },
+    {
+      "localRelativePath": "work/mac-preparation-003/facade-correctness/skinning-original-repeat.png",
+      "sha256": "f172f089e577ed09f1a3fdb66085f055dbf4fde3b87990bcc027ddad0fd52ea1",
+      "reason": "Soldier-derived image redistribution not audited; retained locally. Numeric and pixel comparison results are exported."
+    },
+    {
+      "localRelativePath": "work/mac-preparation-003/facade-correctness/skinning-original.png",
+      "sha256": "f172f089e577ed09f1a3fdb66085f055dbf4fde3b87990bcc027ddad0fd52ea1",
+      "reason": "Soldier-derived image redistribution not audited; retained locally. Numeric and pixel comparison results are exported."
+    },
+    {
+      "localRelativePath": "work/mac-preparation-003/facade-correctness/skinning-packed-js-diff.png",
+      "sha256": "f5a6f05b7180cf1dbf72d342d1ce4da540f21bc72e73117b8df5482fc87a33d6",
+      "reason": "Soldier-derived image redistribution not audited; retained locally. Numeric and pixel comparison results are exported."
+    },
+    {
+      "localRelativePath": "work/mac-preparation-003/facade-correctness/skinning-packed-js.png",
+      "sha256": "f172f089e577ed09f1a3fdb66085f055dbf4fde3b87990bcc027ddad0fd52ea1",
+      "reason": "Soldier-derived image redistribution not audited; retained locally. Numeric and pixel comparison results are exported."
+    },
+    {
+      "localRelativePath": "work/mac-preparation-003/facade-correctness/skinning-wasm-diff.png",
+      "sha256": "f5a6f05b7180cf1dbf72d342d1ce4da540f21bc72e73117b8df5482fc87a33d6",
+      "reason": "Soldier-derived image redistribution not audited; retained locally. Numeric and pixel comparison results are exported."
+    },
+    {
+      "localRelativePath": "work/mac-preparation-003/facade-correctness/skinning-wasm.png",
+      "sha256": "f172f089e577ed09f1a3fdb66085f055dbf4fde3b87990bcc027ddad0fd52ea1",
+      "reason": "Soldier-derived image redistribution not audited; retained locally. Numeric and pixel comparison results are exported."
+    }
+  ],
+  "originals": "Unmodified originals retained under ignored work/ in the measurement checkout; no process list or personal session prompt exported"
+}

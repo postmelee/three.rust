@@ -1,0 +1,34 @@
+
+> three-rust-research@0.1.0 test:owned
+> node scripts/pipeline-audit.mjs --check && node --test tests/owned.mjs && node tests/owned-browser.mjs
+
+✔ js: upstream blended poses/world/palette, repeat/reverse/pause/once and root/reparent (20.427833ms)
+✔ js: rejection is atomic, snapshot isolated, forced reads and lifetime (0.893875ms)
+✔ js: randomized vector/quaternion clips and normalized overweight blending (30.423083ms)
+✔ wasm: upstream blended poses/world/palette, repeat/reverse/pause/once and root/reparent (17.512833ms)
+✔ wasm: rejection is atomic, snapshot isolated, forced reads and lifetime (0.6455ms)
+✔ wasm: randomized vector/quaternion clips and normalized overweight blending (22.175417ms)
+✔ unsupported acquisition fails without changing caller descriptors (1.163208ms)
+✔ Wasm ABI growth, invalid native batches and module retry (1.623459ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 156.537667
+owned browser original passed
+owned browser original passed
+owned browser js passed
+owned browser wasm passed
+owned browser packed-js passed
+owned browser owned-js passed
+owned browser owned-wasm passed
+owned browser original passed
+owned browser original passed
+owned browser js passed
+owned browser wasm passed
+owned browser packed-js passed
+owned browser owned-js passed
+owned browser owned-wasm passed

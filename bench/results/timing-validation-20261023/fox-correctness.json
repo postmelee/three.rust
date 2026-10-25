@@ -1,0 +1,3208 @@
+{
+  "status": "complete",
+  "browser": "154.0.8037.57",
+  "method": "11 input checkpoints; pose rotations compared modulo quaternion sign, raw sign differences retained; all world/palette/action/root elements; poisoned upstream recomputation; exact A/A; alternate paths <0.1% changed channels and <0.02 mean absolute 8-bit channel error",
+  "results": [
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 1,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 120,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 150,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 180,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 240,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 300,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 420,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 450,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 480,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 540,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 600,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 1,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 120,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 150,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 180,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 240,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 300,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 420,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 450,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 480,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 540,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 600,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 1,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 120,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 150,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 180,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 240,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 300,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 420,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 450,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 1.939917188410907,
+      "quaternionSignFlips": 2,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 480,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 1.939917188410907,
+      "quaternionSignFlips": 2,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 540,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 600,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 1,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 120,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 150,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 180,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 240,
+      "numeric": {
+        "pose": 1.1102230246251565e-16,
+        "world": 1.942890293094024e-16,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 1.1102230246251565e-16,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 300,
+      "numeric": {
+        "pose": 2.220446049250313e-16,
+        "world": 2.7755575615628914e-16,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 2.220446049250313e-16,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 420,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 450,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 1.939917188410907,
+      "quaternionSignFlips": 2,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 480,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 1.939917188410907,
+      "quaternionSignFlips": 2,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 540,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 600,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "original",
+      "view": 0,
+      "tick": 1,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "original",
+      "view": 0,
+      "tick": 120,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "original",
+      "view": 0,
+      "tick": 150,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "original",
+      "view": 0,
+      "tick": 180,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "original",
+      "view": 0,
+      "tick": 240,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "original",
+      "view": 0,
+      "tick": 300,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "original",
+      "view": 0,
+      "tick": 420,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "original",
+      "view": 0,
+      "tick": 450,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "original",
+      "view": 0,
+      "tick": 480,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "original",
+      "view": 0,
+      "tick": 540,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "original",
+      "view": 0,
+      "tick": 600,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "original",
+      "view": 1,
+      "tick": 1,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "original",
+      "view": 1,
+      "tick": 120,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "original",
+      "view": 1,
+      "tick": 150,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "original",
+      "view": 1,
+      "tick": 180,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "original",
+      "view": 1,
+      "tick": 240,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "original",
+      "view": 1,
+      "tick": 300,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "original",
+      "view": 1,
+      "tick": 420,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "original",
+      "view": 1,
+      "tick": 450,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "original",
+      "view": 1,
+      "tick": 480,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "original",
+      "view": 1,
+      "tick": 540,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "original",
+      "view": 1,
+      "tick": 600,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 1,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 120,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 150,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 180,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 240,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 300,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 420,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 450,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 1.939917188410907,
+      "quaternionSignFlips": 32,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 480,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 1.939917188410907,
+      "quaternionSignFlips": 32,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 540,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 600,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 1,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 120,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 150,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 180,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 240,
+      "numeric": {
+        "pose": 1.1102230246251565e-16,
+        "world": 4.440892098500626e-16,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 1.1102230246251565e-16,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 300,
+      "numeric": {
+        "pose": 2.220446049250313e-16,
+        "world": 2.7755575615628914e-16,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 2.220446049250313e-16,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 420,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 450,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 1.939917188410907,
+      "quaternionSignFlips": 32,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 480,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 1.939917188410907,
+      "quaternionSignFlips": 32,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 540,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 600,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 16,
+      "triangles": 9216,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 1,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 120,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 150,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 180,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 240,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 300,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 420,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 450,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 480,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 540,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "view": 0,
+      "tick": 600,
+      "numeric": {},
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 1,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 120,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 150,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 180,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 240,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 300,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 420,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 450,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 480,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 540,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "original",
+      "view": 1,
+      "tick": 600,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 1,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 120,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 150,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 180,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 240,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 300,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 420,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 450,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 480,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 540,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "view": 2,
+      "tick": 600,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 1,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 120,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 150,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 180,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 240,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 300,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 420,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 450,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 480,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 540,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "view": 3,
+      "tick": 600,
+      "numeric": {
+        "pose": 0,
+        "world": 0,
+        "palette": 0,
+        "actions": 0,
+        "roots": 0,
+        "camera": 0
+      },
+      "rawPoseMax": 0,
+      "quaternionSignFlips": 0,
+      "maxPixel": 0,
+      "changedChannels": 0,
+      "meanAbsolutePixel": 0,
+      "draws": 1,
+      "triangles": 576,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "timerQuery": true
+      }
+    }
+  ]
+}

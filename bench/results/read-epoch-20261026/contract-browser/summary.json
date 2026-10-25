@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "scope": "correctness only; no speed claim",
+  "browser": "155.0.8059.86",
+  "hardwareRequested": true,
+  "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+  "engines": [
+    "original",
+    "js",
+    "wasm",
+    "packed-js",
+    "facade-js",
+    "facade-wasm",
+    "prepared-js",
+    "prepared-wasm"
+  ],
+  "semanticCases": 16,
+  "renderPassesPerRoute": 2,
+  "exactPixels": true
+}

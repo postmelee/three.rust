@@ -1,0 +1,29 @@
+{
+  "os": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.2\nBuildVersion:\t\t25F84",
+  "cpu": "Apple M4 Pro",
+  "logicalCpus": "12",
+  "memoryBytes": "25769803776",
+  "powerSource": "Now drawing from 'AC Power'",
+  "powerModes": [
+    "Battery Power:",
+    "powermode            0",
+    "AC Power:",
+    "powermode            0"
+  ],
+  "thermal": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+  "loadAverage": "{ 9.21 7.75 6.41 }",
+  "scope": "Diagnostic profiles only. External desktop activity not controlled. Display refresh not independently measured. No agent builds or analysis during final capture.",
+  "displays": [
+    {
+      "chipset": "Apple M4 Pro",
+      "cores": "16",
+      "displays": [
+        {
+          "pixels": "3024 x 1964",
+          "resolution": "1512 x 982 @ 120.00Hz",
+          "main": "spdisplays_yes"
+        }
+      ]
+    }
+  ]
+}

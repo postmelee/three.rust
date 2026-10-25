@@ -1,0 +1,8 @@
+{
+  "status": "failed-before-browser",
+  "sourceCommit": "9527a042ed1134e73ab9cfe8b3ee75f4aac6d2a7",
+  "command": "RTHREE_BROWSER_MODE=hardware RTHREE_HEADLESS=false RTHREE_OWNED_RESULTS_DIR=work/mac-owned-check-20261026-001 npm run test:owned",
+  "error": "listen EADDRINUSE: address already in use 127.0.0.1:4173",
+  "nativeCasesPassed": 8,
+  "followUp": "No listener was found after failure; an explicit bind probe succeeded. Retry uses a fresh 002 directory. No external process was terminated."
+}

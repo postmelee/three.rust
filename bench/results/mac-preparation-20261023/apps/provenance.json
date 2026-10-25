@@ -1,0 +1,130 @@
+{
+  "classification": "Source/asset screening only; no representative performance qualification",
+  "applications": [
+    {
+      "repository": "https://github.com/donmccurdy/three-gltf-viewer",
+      "sourceCommit": "b5ee5dafe27f953ae1b55f42b5fa3697fef08683",
+      "sourceStatus": "Unmodified source checkout; source/license inspection only; no app build or profile executed",
+      "files": {
+        "LICENSE": "b951340896f853eeba83f72e442a2b254d0b581fda9ec80f0a70a53cd278893d",
+        "package.json": "8e0511ce95d18896009272fb95da6ea8bb0ec720ffc93df5f9712d5c93d94153",
+        "yarn.lock": "0de5cea95be0d2ea2530c4d05edeab221b878bb2d8a134b5e429005667922b1a",
+        "src/viewer.js": "506b3246b0f7e994e448e708abb64d01c4262964198c195de7cef73e173264cb",
+        "src/app.js": "dae069bc2655bb37db1beb88a836bb031c4c890e376db1feb25ad371b69d13f6",
+        "src/environments.js": "887f938a2c27262b2f8a0f2ffbee95a11cb22eb07fd64c450349741bc4ed8d13"
+      },
+      "absentRequestedPaths": []
+    },
+    {
+      "repository": "https://github.com/mrdoob/three.js",
+      "sourceCommit": "9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8",
+      "sourceStatus": "Unmodified source checkout; source/license inspection only; no app build or profile executed",
+      "files": {
+        "LICENSE": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+        "package.json": "f9c474a27c920b9435353a6235968f4453436bee0444fac7e5fd289c8fa463de",
+        "package-lock.json": "2e0b5d7f81754122c921b1d550adb0fd93b5c02e4f8889431e1555b3fb6e9870",
+        "editor/index.html": "1e186dca4fd7f15d3fea1f137406e250786b5fcd2451cf8677c65a77946aad36",
+        "editor/js/Viewport.js": "597f323c2b9c8c7e6f87bc92192baf5ecd940edb9533198b0c8dcbdcf706e196",
+        "editor/js/Selector.js": "9443dcdeb7efae1d05c8e896c528fef9273b5e30d7c200c1ba3e7ee217199e57",
+        "editor/js/Sidebar.Project.Renderer.js": "4cb47b0cf6e0a55955667a35a8b1e796d325e68970a8f2e3dc57b2f1a6801427",
+        "editor/js/Sidebar.Object.js": "ce7f9e5b9220aec100d94fd2fd136a6cd9f20a264e6ebe1c5ad46fa115fd7743",
+        "src/renderers/WebGLRenderer.js": "9e8740aad691246b31b3704014e8f3bbd38a8e7bf4b1b4d23868541b023cc63a",
+        "src/renderers/webgl/WebGLObjects.js": "60829abba98579b02a84177ce86b3eea127a7decac487b69c70f0e3e83a1d923",
+        "src/renderers/webgl/WebGLRenderLists.js": "3139dfcd01675333266c02d853a768913318f353e694de39545aa50747d2011a",
+        "src/renderers/webgl/WebGLShadowMap.js": "88669e97ab02b2132a175eb94f9bfeea2a705d5f6c59e677bcb6421f258ff696"
+      },
+      "absentRequestedPaths": []
+    },
+    {
+      "repository": "https://github.com/kovacsv/Online3DViewer",
+      "sourceCommit": "d025663dcdd101527e87971d9ae2cf16f02949b4",
+      "sourceStatus": "Unmodified source checkout; source/license inspection only; no app build or profile executed",
+      "files": {
+        "LICENSE.md": "0ce9c1b7c467d106c30c0f4d514934912cd61dd252eef8e7b191a93b1a75d606",
+        "package.json": "61bd5fb2bed9f048625cfc636c34abdbc6ddad716951aeadd9be27af1e12544d",
+        "package-lock.json": "07f6010727ffbf5b57a623733c0e752a61fa784005dcd27ade991995c8bad41f",
+        "source/engine/viewer/viewer.js": "ee38ea0afbc19e76171ba74cf1eb923d4535f9a5024f2141fcf1dbe30e3ec7ba",
+        "source/engine/viewer/viewermodel.js": "9360c858d807dd1378db5181e296d064e0eb8b80cfa764769207e524790264b7",
+        "source/engine/viewer/shadingmodel.js": "c2b483c6f5ea38db64c0e531fc20754894288823a2ca2f5ea9777e9cd6219079",
+        "website/assets/models/README.md": "0f4fbd1eda780d89880851fc80fe042e5b43cd9be6f7732ee1d0e1e542db8fc6"
+      },
+      "absentRequestedPaths": []
+    }
+  ],
+  "asset": {
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8/examples/models/gltf/RobotExpressive/RobotExpressive.glb",
+    "sha256": "047f5e5fb3bb6d378bd1df16ca6137f2a596c99b3a1b5690b4020c05aaf6f319",
+    "bytes": 463988,
+    "license": "CC0-1.0 per pinned README; model Tomas Laulhe; modifications Don McCurdy",
+    "licenseSha256": "14687ac4a51d5e013b0fbc5486dabc743f76c1e37b7ca872af74cfb93115b4b2",
+    "nodes": 74,
+    "skins": 2,
+    "jointCounts": [
+      43,
+      43
+    ],
+    "uniqueJointNodes": 43,
+    "clips": [
+      {
+        "name": "Dance",
+        "channels": 12
+      },
+      {
+        "name": "Death",
+        "channels": 18
+      },
+      {
+        "name": "Idle",
+        "channels": 7
+      },
+      {
+        "name": "Jump",
+        "channels": 18
+      },
+      {
+        "name": "No",
+        "channels": 7
+      },
+      {
+        "name": "Punch",
+        "channels": 15
+      },
+      {
+        "name": "Running",
+        "channels": 18
+      },
+      {
+        "name": "Sitting",
+        "channels": 10
+      },
+      {
+        "name": "Standing",
+        "channels": 10
+      },
+      {
+        "name": "ThumbsUp",
+        "channels": 15
+      },
+      {
+        "name": "Walking",
+        "channels": 20
+      },
+      {
+        "name": "WalkJump",
+        "channels": 18
+      },
+      {
+        "name": "Wave",
+        "channels": 18
+      },
+      {
+        "name": "Yes",
+        "channels": 7
+      }
+    ],
+    "morphPrimitives": 3,
+    "potentialPaletteOutputBytesPerFrame": 5504,
+    "potentialAllNodeWorldSnapshotBytes": 9472,
+    "interpretation": "Static layout estimates, not measured transfer traffic or CPU costs. Palettes may share joints; engine can reuse computation."
+  }
+}

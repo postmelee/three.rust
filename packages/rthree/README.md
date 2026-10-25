@@ -49,6 +49,19 @@ product speed claims. See repository docs/REPORT.md and docs/COMPATIBILITY.md.
 Project MIT, upstream THREE-LICENSE and copied declaration THREE-TYPES-LICENSE notices are included.
 
 
+## Optional persistent facade
+
+Use `rthree/facade` (Rust) or `rthree/facade-js` (matched JS) for the bounded C2
+experiment. The root import above still selects the legacy eager bridge. C2 keeps
+evaluated local/world matrices in the engine, tracks TRS writes and materializes
+stable proxy arrays on read. All three Object3D update methods can batch; ordinary
+animation and renderer work remain upstream JS. Cached arrays survive growth and
+release, but reflective descriptors differ and structuredClone of the proxy array
+is unsupported (use Array.from for an explicit snapshot). Replaced arrays retain
+the caller's exact reference and use JS fallback. See docs/PERSISTENT_FACADE.md.
+Reduced copies do not guarantee faster rendered frames; read-heavy proxy costs
+and negative results remain part of the experiment.
+
 ## Explicit owned animation API
 
 `rthree/owned` adds a separate experimental descriptor/command API. Await
@@ -64,3 +77,13 @@ repeat and clamped-once playback form the finite contract. Event listeners,
 arbitrary bindings, additive/cubic tracks, transparent rendering and CPU raycasts
 are unsupported. This requires application migration and is not an import-only
 AnimationMixer acceleration claim. See docs/OWNED_ANIMATION.md in the repository.
+
+## Optional prepared main pass
+
+Use `rthree/prepared` or `rthree/prepared-js` to evaluate the bounded C3 design.
+It retains topology, tracks writes and prepares ordinary-Mesh visibility, ordering
+and per-draw matrices for the existing WebGL renderer. Unsupported object/pass or
+callback contracts use upstream rendering; shadows remain JS. Public inputs and
+hierarchy methods stay synchronous. Use add/remove/attach rather than direct
+children-array edits. See docs/PREPARED_PASS.md for scope, read/copy costs and tests.
+No acceleration or full compatibility is implied; the root entry is unchanged.

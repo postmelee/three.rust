@@ -1,8 +1,16 @@
-# Compatibility at M2
+# Compatibility
 
 Runtime reference **three 0.186.1**, matching r186 commit 9b4a2ac…;
 declarations **@types/three 0.186.0**, independently checked on npm.
 This replaces the bootstrap's proposed promises with the implemented boundary.
+The [observable contract](FACADE_CONTRACT.md) adds executable identity, mutation,
+read/event and lifecycle requirements. The table below describes the default legacy
+bridge. The optional [persistent facade](PERSISTENT_FACADE.md) adds lazy proxy arrays
+and Rust evaluation of all three transform-update methods, with separate restrictions.
+[C3 prepared entries](PREPARED_PASS.md) retain topology and evaluate ordinary-Mesh
+main-pass visibility, ordering and draw matrices in Rust or matched JS. Unsupported
+passes use the upstream path. The table below is not a claim about these optional
+entries; their contracts and measured costs are separate.
 
 | Path/API | Implementation and verification |
 |---|---|
@@ -15,7 +23,7 @@ This replaces the bootstrap's proposed promises with the implemented boundary.
 | AnimationMixer, skeleton palette | JS maintained; event/pose differential test; Soldier rendering/shadows compared, no claimed Rust animation port |
 | WebGL renderer/materials/shaders | Upstream unchanged; five deterministic scene image comparisons plus multi-render callbacks |
 | Root/addons identity | One bundled core, addon imports rewritten to that exact root; GLTFLoader/SkeletonUtils tested in Node and GLTF/SunLight in browser |
-| TypeScript | NodeNext strict consumer and GLTFLoader/OrbitControls imports pass; not full API declaration audit |
+| TypeScript | NodeNext and Bundler strict consumers with GLTFLoader/OrbitControls imports; not full API declaration audit |
 | ESM/local install | Actual npm pack + isolated consumer install, Node import, esbuild single core verified |
 | JS compatibility / packed JS | `rthree/js` disables hook; `rthree/packed-js` uses same bridge/layout, independently JS arithmetic |
 

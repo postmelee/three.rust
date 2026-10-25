@@ -1,0 +1,38 @@
+✔ prepared-wasm: unchanged topology has no JS command reconstruction (5.341375ms)
+✔ prepared-wasm: committed hierarchy is visible inside synchronous events (0.306583ms)
+✔ prepared-wasm: cached plans observe replaced matrices and layer objects (0.363167ms)
+✔ prepared-wasm: release preserves the lazily cleared public dirty flag (0.114542ms)
+✔ prepared-wasm: dirty queues do not retain an abandoned detached record (3.478208ms)
+✔ prepared-wasm: cached snapshots follow retained, selective, manual and lifetime updates (45.0535ms)
+✖ prepared-wasm: repeated verified public reads avoid native memory access (1.214167ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 6
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 119.3065
+
+✖ failing tests:
+
+test at tests/prepared-state.mjs:72:1
+✖ prepared-wasm: repeated verified public reads avoid native memory access (1.214167ms)
+  AssertionError [ERR_ASSERTION]: Verified snapshots must not repeatedly consult Wasm memory
+  
+  192 !== 0
+  
+      at TestContext.<anonymous> (file://<checkout>/tests/prepared-state.mjs:79:36)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 192,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

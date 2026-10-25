@@ -1,0 +1,22 @@
+{
+  "kind": "separate diagnostic CPU sampling; not primary timing",
+  "engines": [
+    "original",
+    "prepared-js",
+    "prepared-wasm"
+  ],
+  "commit": "066ddbaa3d538e95126a46c9203b550613bf3d3d",
+  "trackedSourceDirty": false,
+  "browser": "154.0.8037.57",
+  "warmupFrames": 22,
+  "sampledFrames": 30,
+  "intervalMicroseconds": 1000,
+  "hashes": {
+    "packages/rthree/core.js": "38047dc221ea8b3d029c33bb413e0fe602a160aa714462dc1c6bd3316a3cd777",
+    "packages/rthree/facade-state.js": "54393ff30097aa3aeaa22cba60d76d6db6276a641e69b13b0eae90a73427aea5",
+    "packages/rthree/scene_core.wasm": "95f7aa7a807bd0bd4c9b45f0a855d2305c262cf5b7fef35a2d9dd9dfa889cdd9",
+    "packages/rthree/prepared-kernel.js": "52c7fbee67a4fa2ca2f7cc48322b844029d037229be7caf5714c3540ab6a2f5f",
+    "crates/scene-core/src/prepared.rs": "8ad971add72430cf2e4860d089036bdff58b9a54e8e60cd4d23da72040c9ca06",
+    "bench/facade-profile.mjs": "b456182b32a3aaa913e4f2035a40f06c76ad86014b7902bec5031eb16daaeff9"
+  }
+}

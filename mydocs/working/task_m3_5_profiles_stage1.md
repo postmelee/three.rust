@@ -1,0 +1,7 @@
+# Task #5 profiles: tooling verification
+
+Added a separate original-app V8 profiling driver and source-position analyzer. Browser helper accepts an explicit mode label while preserving correctness defaults. The driver keeps original source trees clean, retains native loops, rejects software GPU/unknown external requests, performs two reloads in reversed scenario order, and separates sampling, instance boundary timers and WebGL argument counters. Each diagnostic wrapper is restored; fixed-pose RGBA hashes and numerical outputs are checked against the unwrapped renderer after capture.
+
+Smoke 001 retained a picking failure when the point overlapped the selected gizmo. Smoke 002 passed after first selecting the other object, then viewport-picking the target. Smoke 003 covered paused/idle/high-resolution controls and wrapper oracles; smoke 004 covered final editing and shadow-disabled paths. These short development runs are not the final profile evidence. All previous raw outputs remain local; the report preserves failures and their scope. Analyzer smoke confirmed exclusive sample accounting and inclusive >= exclusive invariants. Minified Viewer attribution uses structural class/method signatures and retains unresolved names.
+
+No upstream app, renderer engine, README/progress or existing evidence changed. Final profiles must identify the clean tooling SHA recorded by the driver. No primary timing is part of this task.

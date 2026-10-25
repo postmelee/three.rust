@@ -1,0 +1,7 @@
+{
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "dri_present": false,
+  "dri_entries": [],
+  "chromium": "Chromium 154.0.8037.57 built on Debian GNU/Linux 13 (trixie)",
+  "gpu_devices": []
+}

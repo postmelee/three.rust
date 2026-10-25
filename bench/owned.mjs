@@ -1,6 +1,6 @@
 import { browserPath } from '../scripts/browser-path.mjs';
 import { chromium } from "playwright";
-import { serve } from "../scripts/server.mjs";
+import { serve, serverOrigin } from "../scripts/server.mjs";
 import { configuration, hardwareRenderer } from "./config.mjs";
 import { mkdirSync, writeFileSync, readFileSync, existsSync } from "node:fs";
 import { execFileSync } from "node:child_process";
@@ -167,7 +167,7 @@ try {
           : "original";
         const start = performance.now();
         await page.goto(
-          `http://127.0.0.1:4173/fixtures/owned/index.html?manual&count=${count}&bones=24&variant=${variant}&engine=${engine}${scenario.startsWith("static") ? "&static" : ""}`,
+          `${serverOrigin}/fixtures/owned/index.html?manual&count=${count}&bones=24&variant=${variant}&engine=${engine}${scenario.startsWith("static") ? "&static" : ""}`,
         );
         await page.waitForFunction(() => !!window.__owned);
         await page.bringToFront();

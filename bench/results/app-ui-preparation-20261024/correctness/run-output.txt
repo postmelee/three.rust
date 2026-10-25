@@ -1,0 +1,40 @@
+translate pointer gizmo + keyboard undo/redo 0
+rotate pointer gizmo + keyboard undo/redo 0
+scale pointer gizmo + keyboard undo/redo 0
+translate pointer gizmo + keyboard undo/redo 0-group
+multi-selection pointer transform 0
+keyboard focus preserves objects 0
+outliner double-click focus 0
+synchronous pointer world reads 0
+light intensity sidebar 0
+light cast-shadow sidebar 0
+light visibility sidebar 0
+timeline play/pause 0
+timeline resume 0
+timeline time-scale UI 0
+timeline pointer scrubbing 0
+timeline stop 0
+timeline restart after stop 0
+timeline clip switch stops previous without autoplay 0
+translate pointer gizmo + keyboard undo/redo 1
+rotate pointer gizmo + keyboard undo/redo 1
+scale pointer gizmo + keyboard undo/redo 1
+translate pointer gizmo + keyboard undo/redo 1-group
+multi-selection pointer transform 1
+keyboard focus preserves objects 1
+focused-static exact reload A/A
+outliner double-click focus 1
+synchronous pointer world reads 1
+light intensity sidebar 1
+light cast-shadow sidebar 1
+light visibility sidebar 1
+light-controls exact reload A/A
+timeline play/pause 1
+timeline resume 1
+timeline time-scale UI 1
+timeline-0.25 exact reload A/A
+timeline-0.75 exact reload A/A
+timeline pointer scrubbing 1
+timeline stop 1
+timeline restart after stop 1
+timeline clip switch stops previous without autoplay 1

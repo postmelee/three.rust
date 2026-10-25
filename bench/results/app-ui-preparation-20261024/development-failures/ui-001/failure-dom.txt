@@ -1,0 +1,86 @@
+Camera
+realistic
+solid
+normals
+wireframe
+84objects
+7,214vertices
+3,237triangles
+0.30render time
+
+
+SCENEPROJECTSETTINGS
+ Camera
+ Scene
+ RobotExpressive.glb
+
+
+Background
+Default
+Color
+Texture
+Equirect
+Environment
+Default
+Equirect
+None
+Fog
+None
+Linear
+Exponential
+OBJECTSCRIPT
+Type
+Group
+UUID
+NEW
+Name
+Position
+Rotation
+Scale
+Shadow
+cast
+receive
+Visible
+Frustum Cull
+Render Order
+User data
+EXPORT JSON
+File
+Edit
+Add
+View
+Render
+Help
+autosaver186
+0.00
+/
+3.33
+Time Scale
+Dance
+Head_2.morphTargetInfluences
+Head_3.morphTargetInfluences
+Head_4.morphTargetInfluences
+Body.position
+Body.quaternion
+Head.quaternion
+UpperArm.quaternion
+LowerArm.quaternion
+UpperArm.quaternion
+LowerArm.quaternion
+UpperLeg.quaternion
+LowerLeg.quaternion
+UpperLeg.quaternion
+LowerLeg.quaternion
+Death
+Idle
+Jump
+No
+Punch
+Running
+Sitting
+Standing
+ThumbsUp
+Walking
+WalkJump
+Wave
+Yes

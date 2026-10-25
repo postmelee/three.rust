@@ -1,0 +1,212 @@
+{
+  "sourceCommit": "1080c215904be39aa988265479e8a964f950ad6f",
+  "hardware": false,
+  "timing": {
+    "mode": "isolated",
+    "probeVersion": 1
+  },
+  "clockSource": "All main and A/A pages before warmup",
+  "conservativeObservedIncrementMs": 0.004999995231628418,
+  "fullProtocol": false,
+  "verdict": "Diagnostic screens only; no automatic product, FPS or Rust-specific acceptance",
+  "comparisons": [
+    {
+      "scenario": "animated-1",
+      "baseline": "original",
+      "variant": "owned-js",
+      "baselineP50Ms": 0.5324999988079071,
+      "candidateP50Ms": 0.8124999925494194,
+      "savingMs": -0.2799999937415123,
+      "observedReduction": -0.5258215856682451,
+      "baselineAtOrBelowClockIncrement": false,
+      "exceedsObservedClockIncrement": false,
+      "allRepeatPairsFaster": false,
+      "omittedZeroBaselinePairs": 0,
+      "repeatRatios": [
+        1.525821585668245
+      ],
+      "aboveOriginalRelativeNoise": false,
+      "aboveBaselineRelativeNoise": false,
+      "cpuP95Within5Percent": false,
+      "cpuP99Within5Percent": false,
+      "intervalP95Within5Percent": true,
+      "limitation": "Baseline A/A screens relative drift only; not statistical significance"
+    },
+    {
+      "scenario": "animated-1",
+      "baseline": "original",
+      "variant": "owned-wasm",
+      "baselineP50Ms": 0.5324999988079071,
+      "candidateP50Ms": 0.4975000023841858,
+      "savingMs": 0.034999996423721313,
+      "observedReduction": 0.06572769296164283,
+      "baselineAtOrBelowClockIncrement": false,
+      "exceedsObservedClockIncrement": true,
+      "allRepeatPairsFaster": true,
+      "omittedZeroBaselinePairs": 0,
+      "repeatRatios": [
+        0.9342723070383572
+      ],
+      "aboveOriginalRelativeNoise": false,
+      "aboveBaselineRelativeNoise": false,
+      "cpuP95Within5Percent": true,
+      "cpuP99Within5Percent": true,
+      "intervalP95Within5Percent": true,
+      "limitation": "Baseline A/A screens relative drift only; not statistical significance"
+    },
+    {
+      "scenario": "animated-1",
+      "baseline": "owned-js",
+      "variant": "owned-wasm",
+      "baselineP50Ms": 0.8124999925494194,
+      "candidateP50Ms": 0.4975000023841858,
+      "savingMs": 0.3149999901652336,
+      "observedReduction": 0.387692299143097,
+      "baselineAtOrBelowClockIncrement": false,
+      "exceedsObservedClockIncrement": true,
+      "allRepeatPairsFaster": true,
+      "omittedZeroBaselinePairs": 0,
+      "repeatRatios": [
+        0.612307700856903
+      ],
+      "aboveOriginalRelativeNoise": null,
+      "aboveBaselineRelativeNoise": false,
+      "cpuP95Within5Percent": true,
+      "cpuP99Within5Percent": true,
+      "intervalP95Within5Percent": true,
+      "limitation": "Baseline A/A screens relative drift only; not statistical significance"
+    },
+    {
+      "scenario": "animated-16",
+      "baseline": "original",
+      "variant": "owned-js",
+      "baselineP50Ms": 1.3300000056624413,
+      "candidateP50Ms": 1.2599999979138374,
+      "savingMs": 0.07000000774860382,
+      "observedReduction": 0.05263158454930872,
+      "baselineAtOrBelowClockIncrement": false,
+      "exceedsObservedClockIncrement": true,
+      "allRepeatPairsFaster": true,
+      "omittedZeroBaselinePairs": 0,
+      "repeatRatios": [
+        0.9473684154506913
+      ],
+      "aboveOriginalRelativeNoise": false,
+      "aboveBaselineRelativeNoise": false,
+      "cpuP95Within5Percent": false,
+      "cpuP99Within5Percent": false,
+      "intervalP95Within5Percent": true,
+      "limitation": "Baseline A/A screens relative drift only; not statistical significance"
+    },
+    {
+      "scenario": "animated-16",
+      "baseline": "original",
+      "variant": "owned-wasm",
+      "baselineP50Ms": 1.3300000056624413,
+      "candidateP50Ms": 1.1000000089406967,
+      "savingMs": 0.22999999672174454,
+      "observedReduction": 0.1729323276259589,
+      "baselineAtOrBelowClockIncrement": false,
+      "exceedsObservedClockIncrement": true,
+      "allRepeatPairsFaster": true,
+      "omittedZeroBaselinePairs": 0,
+      "repeatRatios": [
+        0.8270676723740411
+      ],
+      "aboveOriginalRelativeNoise": false,
+      "aboveBaselineRelativeNoise": false,
+      "cpuP95Within5Percent": true,
+      "cpuP99Within5Percent": true,
+      "intervalP95Within5Percent": true,
+      "limitation": "Baseline A/A screens relative drift only; not statistical significance"
+    },
+    {
+      "scenario": "animated-16",
+      "baseline": "owned-js",
+      "variant": "owned-wasm",
+      "baselineP50Ms": 1.2599999979138374,
+      "candidateP50Ms": 1.1000000089406967,
+      "savingMs": 0.15999998897314072,
+      "observedReduction": 0.12698411844289703,
+      "baselineAtOrBelowClockIncrement": false,
+      "exceedsObservedClockIncrement": true,
+      "allRepeatPairsFaster": true,
+      "omittedZeroBaselinePairs": 0,
+      "repeatRatios": [
+        0.873015881557103
+      ],
+      "aboveOriginalRelativeNoise": null,
+      "aboveBaselineRelativeNoise": false,
+      "cpuP95Within5Percent": true,
+      "cpuP99Within5Percent": true,
+      "intervalP95Within5Percent": true,
+      "limitation": "Baseline A/A screens relative drift only; not statistical significance"
+    },
+    {
+      "scenario": "static-1",
+      "baseline": "original",
+      "variant": "owned-js",
+      "baselineP50Ms": 0.7474999949336052,
+      "candidateP50Ms": 0.28999999910593033,
+      "savingMs": 0.45749999582767487,
+      "observedReduction": 0.6120401323458352,
+      "baselineAtOrBelowClockIncrement": false,
+      "exceedsObservedClockIncrement": true,
+      "allRepeatPairsFaster": true,
+      "omittedZeroBaselinePairs": 0,
+      "repeatRatios": [
+        0.3879598676541648
+      ],
+      "aboveOriginalRelativeNoise": false,
+      "aboveBaselineRelativeNoise": false,
+      "cpuP95Within5Percent": true,
+      "cpuP99Within5Percent": true,
+      "intervalP95Within5Percent": true,
+      "limitation": "Baseline A/A screens relative drift only; not statistical significance"
+    },
+    {
+      "scenario": "static-1",
+      "baseline": "original",
+      "variant": "owned-wasm",
+      "baselineP50Ms": 0.7474999949336052,
+      "candidateP50Ms": 0.4399999976158142,
+      "savingMs": 0.307499997317791,
+      "observedReduction": 0.41137123665814057,
+      "baselineAtOrBelowClockIncrement": false,
+      "exceedsObservedClockIncrement": true,
+      "allRepeatPairsFaster": true,
+      "omittedZeroBaselinePairs": 0,
+      "repeatRatios": [
+        0.5886287633418594
+      ],
+      "aboveOriginalRelativeNoise": false,
+      "aboveBaselineRelativeNoise": false,
+      "cpuP95Within5Percent": true,
+      "cpuP99Within5Percent": true,
+      "intervalP95Within5Percent": true,
+      "limitation": "Baseline A/A screens relative drift only; not statistical significance"
+    },
+    {
+      "scenario": "static-1",
+      "baseline": "owned-js",
+      "variant": "owned-wasm",
+      "baselineP50Ms": 0.28999999910593033,
+      "candidateP50Ms": 0.4399999976158142,
+      "savingMs": -0.14999999850988388,
+      "observedReduction": -0.5172413757666681,
+      "baselineAtOrBelowClockIncrement": false,
+      "exceedsObservedClockIncrement": false,
+      "allRepeatPairsFaster": false,
+      "omittedZeroBaselinePairs": 0,
+      "repeatRatios": [
+        1.517241375766668
+      ],
+      "aboveOriginalRelativeNoise": null,
+      "aboveBaselineRelativeNoise": false,
+      "cpuP95Within5Percent": false,
+      "cpuP99Within5Percent": false,
+      "intervalP95Within5Percent": true,
+      "limitation": "Baseline A/A screens relative drift only; not statistical significance"
+    }
+  ]
+}

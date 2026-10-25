@@ -1,0 +1,83 @@
+{
+  "checkedAt": "2026-10-23 13:15:07 UTC",
+  "repository": "postmelee/three.rust",
+  "main": "b5a0fc335f7eb21e5a47115417786f576af165e3",
+  "research": "9527a042ed1134e73ab9cfe8b3ee75f4aac6d2a7",
+  "pullRequests": [
+    {
+      "number": 30,
+      "url": "https://github.com/postmelee/three.rust/pull/30",
+      "state": "open",
+      "draft": true,
+      "base": "main",
+      "head": "codex/performance-evidence",
+      "head_sha": "8918f7e4b394c58bd413fac2e4518152d452a004"
+    },
+    {
+      "number": 32,
+      "url": "https://github.com/postmelee/three.rust/pull/32",
+      "state": "open",
+      "draft": true,
+      "base": "codex/performance-evidence",
+      "head": "codex/adoption-goals",
+      "head_sha": "fa64d49f2e21dd669f913dc81137649083faafa7"
+    },
+    {
+      "number": 33,
+      "url": "https://github.com/postmelee/three.rust/pull/33",
+      "state": "open",
+      "draft": true,
+      "base": "codex/adoption-goals",
+      "head": "codex/ownership-research",
+      "head_sha": "9527a042ed1134e73ab9cfe8b3ee75f4aac6d2a7"
+    },
+    {
+      "number": 35,
+      "url": "https://github.com/postmelee/three.rust/pull/35",
+      "state": "open",
+      "draft": true,
+      "base": "codex/ownership-research",
+      "head": "codex/docs-handoff",
+      "head_sha": "15ae9d32725d54c00ac382a329603c01f642edc2"
+    }
+  ],
+  "workflows": [
+    {
+      "sha": "8918f7e4b394c58bd413fac2e4518152d452a004",
+      "run": 39928816084,
+      "conclusion": "success"
+    },
+    {
+      "sha": "fa64d49f2e21dd669f913dc81137649083faafa7",
+      "run": 39932674025,
+      "conclusion": "success"
+    },
+    {
+      "sha": "9527a042ed1134e73ab9cfe8b3ee75f4aac6d2a7",
+      "run": 39949132733,
+      "conclusion": "success"
+    },
+    {
+      "sha": "15ae9d32725d54c00ac382a329603c01f642edc2",
+      "run": 39956531672,
+      "conclusion": "success"
+    }
+  ],
+  "issues": [
+    {
+      "number": 3,
+      "state": "open",
+      "scope": "Hardware runner qualification; local hardware does not register a persistent Actions runner"
+    },
+    {
+      "number": 4,
+      "state": "open",
+      "scope": "Repeated quiet A/A and complete hardware baseline remain open"
+    },
+    {
+      "number": 5,
+      "state": "open",
+      "scope": "Representative measured CPU ranking remains open"
+    }
+  ]
+}

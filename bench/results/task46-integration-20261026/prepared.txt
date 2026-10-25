@@ -1,0 +1,64 @@
+
+> three-rust-research@0.1.0 test:prepared
+> node tests/prepared.mjs
+
+✔ prepared-js: preparation failure/retry and pre-update aliases (1.077083ms)
+✔ prepared-js: dirty inputs and demand-only materialization (2.914167ms)
+✔ prepared-js: randomized partial updates, hierarchy and dirty flags (28.288125ms)
+✔ prepared-js: skips displaced JS math and retains stale observations (0.315042ms)
+✔ prepared-js: cached arrays across growth, release, slot reuse and pivot removal (31.776042ms)
+✔ prepared-js: caller-owned arrays and overrides fall back before evaluation (0.488625ms)
+✔ prepared-js: internal matrix reads preserve snapshots and tracked destinations (0.385125ms)
+✔ prepared-js: internal backing arrays never escape through overridden consumers (0.197041ms)
+✔ prepared-js: unchanged topology has no JS command reconstruction (6.306625ms)
+✔ prepared-js: committed hierarchy is visible inside synchronous events (0.326625ms)
+✔ prepared-js: cached plans observe replaced matrices and layer objects (0.372ms)
+✔ prepared-js: release preserves the lazily cleared public dirty flag (0.11175ms)
+✔ prepared-js: dirty queues do not retain an abandoned detached record (3.194667ms)
+✔ prepared-js: cached snapshots follow retained, selective, manual and lifetime updates (43.766875ms)
+﹣ prepared-js: repeated verified public reads avoid native memory access (0.060459ms) # SKIP
+ℹ tests 15
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 1
+ℹ todo 0
+ℹ duration_ms 140.473667
+✔ prepared-wasm: preparation failure/retry and pre-update aliases (3.010625ms)
+✔ prepared-wasm: dirty inputs and demand-only materialization (2.356083ms)
+✔ prepared-wasm: randomized partial updates, hierarchy and dirty flags (30.045375ms)
+✔ prepared-wasm: skips displaced JS math and retains stale observations (0.256375ms)
+✔ prepared-wasm: cached arrays across growth, release, slot reuse and pivot removal (27.383875ms)
+✔ prepared-wasm: caller-owned arrays and overrides fall back before evaluation (0.32025ms)
+✔ prepared-wasm: internal matrix reads preserve snapshots and tracked destinations (0.442458ms)
+✔ prepared-wasm: internal backing arrays never escape through overridden consumers (0.152125ms)
+✔ prepared-wasm: unchanged topology has no JS command reconstruction (5.213667ms)
+✔ prepared-wasm: committed hierarchy is visible inside synchronous events (0.291833ms)
+✔ prepared-wasm: cached plans observe replaced matrices and layer objects (0.338ms)
+✔ prepared-wasm: release preserves the lazily cleared public dirty flag (0.10575ms)
+✔ prepared-wasm: dirty queues do not retain an abandoned detached record (3.556583ms)
+✔ prepared-wasm: cached snapshots follow retained, selective, manual and lifetime updates (41.826083ms)
+✔ prepared-wasm: repeated verified public reads avoid native memory access (0.973292ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 140.853334
+✔ randomized upstream culling, exact ordered lists, depth and per-draw matrices (15.5415ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 68.786834
+original twelve main/camera/shadow/fallback checkpoints plus nested/exception/upload checks passed
+original twelve main/camera/shadow/fallback checkpoints plus nested/exception/upload checks passed
+facade-wasm twelve main/camera/shadow/fallback checkpoints plus nested/exception/upload checks passed
+prepared-js twelve main/camera/shadow/fallback checkpoints plus nested/exception/upload checks passed
+prepared-wasm twelve main/camera/shadow/fallback checkpoints plus nested/exception/upload checks passed

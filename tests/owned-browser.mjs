@@ -1,6 +1,6 @@
 import { browserPath } from '../scripts/browser-path.mjs';
 import { chromium } from "playwright";
-import { serve } from "../scripts/server.mjs";
+import { serve, serverOrigin } from "../scripts/server.mjs";
 import { configuration, hardwareRenderer } from "../bench/config.mjs";
 import assert from "node:assert/strict";
 import { mkdirSync, writeFileSync } from "node:fs";
@@ -51,7 +51,7 @@ try {
         ? variant
         : "original";
       await page.goto(
-        `http://127.0.0.1:4173/fixtures/owned/index.html?manual&count=${scenario.count}&bones=${scenario.bones}&variant=${variant}&engine=${engine}${scenario.name === "static" ? "&static" : ""}`,
+        `${serverOrigin}/fixtures/owned/index.html?manual&count=${scenario.count}&bones=${scenario.bones}&variant=${variant}&engine=${engine}${scenario.name === "static" ? "&static" : ""}`,
       );
       await page.waitForFunction(() => !!window.__owned);
       const result = await page.evaluate(() => {

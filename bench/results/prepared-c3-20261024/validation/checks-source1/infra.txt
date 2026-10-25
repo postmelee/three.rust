@@ -1,0 +1,25 @@
+
+> three-rust-research@0.1.0 test:infra
+> node --test tests/infra.mjs tests/fox-analysis.mjs
+
+✔ accept matching captured phases (124.203364ms)
+✔ reject mixed clock policies (156.403097ms)
+✔ reject a different measured source (70.699298ms)
+✔ reject a browser update (66.927436ms)
+✔ reject different work (57.032892ms)
+✔ reject incomplete phases (60.388919ms)
+✔ historical evidence separates ownership improvement from unresolved Rust benefit (2.798474ms)
+✔ matched-JS A/A is used separately and incomplete calibration rejects (122.237876ms)
+✔ hardware measurement rejects software, missing and masked renderers (2.445584ms)
+✔ hardware configuration never forces software; options are explicit and validated (2.21834ms)
+✔ roadmap sync is idempotent and only assigns milestones (1.832098ms)
+✔ roadmap sync refuses unmarked issues and closed milestones (0.616141ms)
+✔ analysis refuses false confidence from one run or zero reference timings (191.625421ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 789.73744

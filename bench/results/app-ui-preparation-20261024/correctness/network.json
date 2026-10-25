@@ -1,0 +1,62 @@
+[
+  {
+    "url": "https://cdn.jsdelivr.net/gh/google/draco@1.5.7/javascript/draco_encoder.js",
+    "sha256": "ce9e4e70adfdcfbff8a46d557efe96ea38ec085274a97eedd869da8ee07b47d8",
+    "mirrored": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/npm/three-gpu-pathtracer@0.0.23/build/index.module.js",
+    "sha256": "ab9d976a596107b04ae4010be0e7e4fb3147b84dfee8536c7db9b7e69189548c",
+    "mirrored": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/npm/three-mesh-bvh@0.7.4/build/index.module.js",
+    "sha256": "56c4511480fcd0e3c3125a473ffdbf6f5e2a8d0d6ab23a869260c124cec62814",
+    "mirrored": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/google/draco@1.5.7/javascript/draco_encoder.js",
+    "sha256": "ce9e4e70adfdcfbff8a46d557efe96ea38ec085274a97eedd869da8ee07b47d8",
+    "mirrored": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/npm/three-gpu-pathtracer@0.0.23/build/index.module.js",
+    "sha256": "ab9d976a596107b04ae4010be0e7e4fb3147b84dfee8536c7db9b7e69189548c",
+    "mirrored": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/npm/three-mesh-bvh@0.7.4/build/index.module.js",
+    "sha256": "56c4511480fcd0e3c3125a473ffdbf6f5e2a8d0d6ab23a869260c124cec62814",
+    "mirrored": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/google/draco@1.5.7/javascript/draco_encoder.js",
+    "sha256": "ce9e4e70adfdcfbff8a46d557efe96ea38ec085274a97eedd869da8ee07b47d8",
+    "mirrored": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/npm/three-gpu-pathtracer@0.0.23/build/index.module.js",
+    "sha256": "ab9d976a596107b04ae4010be0e7e4fb3147b84dfee8536c7db9b7e69189548c",
+    "mirrored": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/npm/three-mesh-bvh@0.7.4/build/index.module.js",
+    "sha256": "56c4511480fcd0e3c3125a473ffdbf6f5e2a8d0d6ab23a869260c124cec62814",
+    "mirrored": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/google/draco@1.5.7/javascript/draco_encoder.js",
+    "sha256": "ce9e4e70adfdcfbff8a46d557efe96ea38ec085274a97eedd869da8ee07b47d8",
+    "mirrored": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/npm/three-gpu-pathtracer@0.0.23/build/index.module.js",
+    "sha256": "ab9d976a596107b04ae4010be0e7e4fb3147b84dfee8536c7db9b7e69189548c",
+    "mirrored": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/npm/three-mesh-bvh@0.7.4/build/index.module.js",
+    "sha256": "56c4511480fcd0e3c3125a473ffdbf6f5e2a8d0d6ab23a869260c124cec62814",
+    "mirrored": true
+  }
+]

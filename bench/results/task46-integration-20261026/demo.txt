@@ -1,0 +1,5 @@
+
+> three-rust-research@0.1.0 test:demo
+> node tests/demo.mjs
+
+Demo original, legacy and prepared routes with pause passed

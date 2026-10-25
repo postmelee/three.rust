@@ -1,0 +1,8 @@
+{
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+  "logicalCpus": 5,
+  "devDriExists": false,
+  "pciDisplayDevices": [],
+  "classification": "shared cloud; actual browser renderer separately recorded; no physical desktop GPU qualification"
+}

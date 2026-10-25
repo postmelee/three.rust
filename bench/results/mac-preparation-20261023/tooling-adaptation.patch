@@ -1,0 +1,394 @@
+diff --git a/bench/fox.mjs b/bench/fox.mjs
+index e049a70..711a814 100644
+--- a/bench/fox.mjs
++++ b/bench/fox.mjs
+@@ -1,6 +1,6 @@
+ import { observeClock, timingPolicy, validateClock } from "./timing.mjs";
+ import { chromium } from "playwright";
+-import { serve } from "../scripts/server.mjs";
++import { serve, serverOrigin } from "../scripts/server.mjs";
+ import { browserPath } from "../scripts/browser-path.mjs";
+ import { configuration, hardwareRenderer } from "./config.mjs";
+ import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
+@@ -134,7 +134,7 @@ const save = () =>
+     JSON.stringify(manifest, null, 2) + "\n",
+   );
+ save();
+-const server = await serve(4173, { isolated: timing.mode === "isolated" });
++const server = await serve(undefined, { isolated: timing.mode === "isolated" });
+ let browser;
+ const permutations = [
+   [0, 1, 2],
+@@ -172,7 +172,7 @@ try {
+         const start = performance.now(),
+           [kind, count] = scenario.split("-");
+         await page.goto(
+-          `http://127.0.0.1:4173/fixtures/fox/index.html?manual&count=${count}&variant=${variant}${kind === "static" ? "&static" : ""}`,
++          `${serverOrigin}/fixtures/fox/index.html?manual&count=${count}&variant=${variant}${kind === "static" ? "&static" : ""}`,
+         );
+         await page.waitForFunction(() => !!window.__fox);
+         await page.bringToFront();
+diff --git a/bench/owned.mjs b/bench/owned.mjs
+index 4d07d02..2e5e889 100644
+--- a/bench/owned.mjs
++++ b/bench/owned.mjs
+@@ -1,6 +1,6 @@
+ import { browserPath } from '../scripts/browser-path.mjs';
+ import { chromium } from "playwright";
+-import { serve } from "../scripts/server.mjs";
++import { serve, serverOrigin } from "../scripts/server.mjs";
+ import { configuration, hardwareRenderer } from "./config.mjs";
+ import { mkdirSync, writeFileSync, readFileSync, existsSync } from "node:fs";
+ import { execFileSync } from "node:child_process";
+@@ -167,7 +167,7 @@ try {
+           : "original";
+         const start = performance.now();
+         await page.goto(
+-          `http://127.0.0.1:4173/fixtures/owned/index.html?manual&count=${count}&bones=24&variant=${variant}&engine=${engine}${scenario.startsWith("static") ? "&static" : ""}`,
++          `${serverOrigin}/fixtures/owned/index.html?manual&count=${count}&bones=24&variant=${variant}&engine=${engine}${scenario.startsWith("static") ? "&static" : ""}`,
+         );
+         await page.waitForFunction(() => !!window.__owned);
+         await page.bringToFront();
+diff --git a/bench/pipeline.mjs b/bench/pipeline.mjs
+index 2ae8052..ec52bd6 100644
+--- a/bench/pipeline.mjs
++++ b/bench/pipeline.mjs
+@@ -1,6 +1,6 @@
+ import { browserPath } from '../scripts/browser-path.mjs';
+ // Preparation diagnostic; not the M5 Rust-owned pipeline or a product speedup study.
+-import {chromium} from 'playwright';import {serve} from '../scripts/server.mjs';import {configuration,hardwareRenderer} from './config.mjs';
++import {chromium} from 'playwright';import {serve, serverOrigin} from '../scripts/server.mjs';import {configuration,hardwareRenderer} from './config.mjs';
+ import {mkdirSync,writeFileSync,readFileSync,existsSync} from 'node:fs';import {execFileSync} from 'node:child_process';import {createHash} from 'node:crypto';import os from 'node:os';
+ const opt={};for(const s of process.argv.slice(2)){const i=s.indexOf('=');const key=s.slice(0,i);if(i<1||!['out','counts','bones','engines','repeats','warmup','samples','stage','mode','headless','angle'].includes(key)||key in opt)throw Error(`Invalid option: ${s}`);opt[key]=s.slice(i+1);}
+ const cfg=configuration(['scenarios=skinning',`repeats=${opt.repeats||3}`,`warmup=${opt.warmup||30}`,`samples=${opt.samples||60}`,`engines=${opt.engines||'original'}`,...['mode','headless','angle'].filter(k=>k in opt).map(k=>`${k}=${opt[k]}`)]);
+@@ -15,7 +15,7 @@ const manifest={classification:stage==='cpu'?'CPU-only preparation diagnostic; n
+ const save=()=>writeFileSync(`${out}/manifest.json`,JSON.stringify(manifest,null,2)+'\n');save();const server=await serve();let browser;
+ try{browser=await chromium.launch({executablePath:browserPath(),headless:cfg.headless,args:cfg.args});manifest.browser=browser.version();
+ for(let repeat=0;repeat<cfg.repeats;repeat++)for(const count of (repeat%2?[...counts].reverse():counts))for(const engine of (repeat%2?[...cfg.engines].reverse():cfg.engines)){
+- const page=await browser.newPage({viewport:cfg.viewport,deviceScaleFactor:1});const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(`http://127.0.0.1:4173/fixtures/pipeline/index.html?manual&count=${count}&bones=${bones}&engine=${engine}`);await page.waitForFunction(()=>!!window.__pipeline);
++ const page=await browser.newPage({viewport:cfg.viewport,deviceScaleFactor:1});const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(`${serverOrigin}/fixtures/pipeline/index.html?manual&count=${count}&bones=${bones}&engine=${engine}`);await page.waitForFunction(()=>!!window.__pipeline);
+  const gpu=await page.evaluate(()=>window.__pipeline.gpu);if(cfg.hardware)hardwareRenderer(gpu.renderer);
+  const data=await page.evaluate(async c=>window.__pipeline.measure(c),{mode:stage,warmup:cfg.warmup,samples:cfg.samples});if(errors.length)throw Error(errors.join('\n'));
+  if(data.raw.length!==cfg.samples||data.raw.some(r=>!Number.isFinite(r.cpu)||r.cpu<0))throw Error('Incomplete samples');
+diff --git a/bench/profile.mjs b/bench/profile.mjs
+index 6a79a8e..cfedfee 100644
+--- a/bench/profile.mjs
++++ b/bench/profile.mjs
+@@ -1,6 +1,6 @@
+ import { browserPath } from '../scripts/browser-path.mjs';
+ import {chromium} from 'playwright';
+ import {writeFileSync} from 'node:fs';
+-import {serve} from '../scripts/server.mjs';
++import {serve, serverOrigin} from '../scripts/server.mjs';
+ const server=await serve();const browser=await chromium.launch({executablePath:browserPath(),headless:true,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+-try{for(const name of ['cubes','hierarchy','skinning']){const page=await browser.newPage({viewport:{width:640,height:360}});await page.goto(`http://127.0.0.1:4173/fixtures/generated/${name}.html`);await page.waitForFunction(()=>!!window.__bench);await page.evaluate(()=>window.__bench.run({warmup:30,samples:1}));const cdp=await page.context().newCDPSession(page);await cdp.send('Profiler.enable');await cdp.send('Profiler.setSamplingInterval',{interval:100});await cdp.send('Profiler.start');await page.evaluate(()=>window.__bench.run({warmup:0,samples:120}));const {profile}=await cdp.send('Profiler.stop');writeFileSync(`bench/results/m0/${name}.cpuprofile`,JSON.stringify(profile));console.log(name,profile.samples.length);await page.close();}}finally{await browser.close();server.close();}
++try{for(const name of ['cubes','hierarchy','skinning']){const page=await browser.newPage({viewport:{width:640,height:360}});await page.goto(`${serverOrigin}/fixtures/generated/${name}.html`);await page.waitForFunction(()=>!!window.__bench);await page.evaluate(()=>window.__bench.run({warmup:30,samples:1}));const cdp=await page.context().newCDPSession(page);await cdp.send('Profiler.enable');await cdp.send('Profiler.setSamplingInterval',{interval:100});await cdp.send('Profiler.start');await page.evaluate(()=>window.__bench.run({warmup:0,samples:120}));const {profile}=await cdp.send('Profiler.stop');writeFileSync(`bench/results/m0/${name}.cpuprofile`,JSON.stringify(profile));console.log(name,profile.samples.length);await page.close();}}finally{await browser.close();server.close();}
+diff --git a/bench/run.mjs b/bench/run.mjs
+index 3df59a3..a83d61d 100644
+--- a/bench/run.mjs
++++ b/bench/run.mjs
+@@ -4,7 +4,7 @@ import {mkdirSync,writeFileSync,readFileSync,existsSync} from 'node:fs';
+ import {execFileSync} from 'node:child_process';
+ import os from 'node:os';
+ import {createHash} from 'node:crypto';
+-import {serve} from '../scripts/server.mjs';
++import {serve, serverOrigin} from '../scripts/server.mjs';
+ import {configuration,hardwareRenderer} from './config.mjs';
+ const c=configuration(process.argv.slice(2));
+ const {out,scenarios,engines,repeats,warmup,samples,hardware,headless,args,viewport}=c;
+@@ -19,7 +19,7 @@ try{
+  server=await serve();browser=await chromium.launch({executablePath:browserPath(),headless,args});manifest.browser=browser.version();save();
+  for(let rep=0;rep<repeats;rep++)for(const scenario of scenarios)for(const engine of [...engines.slice(rep%engines.length),...engines.slice(0,rep%engines.length)]){
+   const page=await browser.newPage({viewport,deviceScaleFactor:1});const errors=[];page.on('pageerror',e=>errors.push(e.message));const start=Date.now();
+-  await page.goto(`http://127.0.0.1:4173/fixtures/generated/${scenario}.html?engine=${engine}`);await page.waitForFunction(()=>!!window.__bench,{},{timeout:60000});
++  await page.goto(`${serverOrigin}/fixtures/generated/${scenario}.html?engine=${engine}`);await page.waitForFunction(()=>!!window.__bench,{},{timeout:60000});
+   const env=await page.evaluate(()=>window.__bench.ready());manifest.lastObservedEnvironment=env;save();
+   const startupMs=Date.now()-start;if(hardware)hardwareRenderer(env.renderer);
+   await page.evaluate(t=>window.__bench.THREE.configureDiagnostics?.({timings:t}),c.timings);
+diff --git a/bench/startup.mjs b/bench/startup.mjs
+index f65a95b..1c59c64 100644
+--- a/bench/startup.mjs
++++ b/bench/startup.mjs
+@@ -2,13 +2,13 @@ import { browserPath } from '../scripts/browser-path.mjs';
+ // Separate diagnostics. Cache-Control:no-store does not erase V8/Wasm process caches.
+ import {chromium} from 'playwright';
+ import {mkdirSync,writeFileSync} from 'node:fs';
+-import {serve} from '../scripts/server.mjs';
++import {serve, serverOrigin} from '../scripts/server.mjs';
+ const dir='bench/results/startup';mkdirSync(dir,{recursive:true});const server=await serve();const args=['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader'];
+ const browser=await chromium.launch({executablePath:browserPath(),headless:true,args});const runs=[];
+ try{for(let repeat=0;repeat<5;repeat++)for(const engine of ['original','js','wasm','packed-js']){
+  const context=await browser.newContext({viewport:{width:640,height:360}}),page=await context.newPage();
+  await page.addInitScript(()=>{window.__wasmCompile=[];const instantiate=WebAssembly.instantiate;WebAssembly.instantiate=async function(...args){const t=performance.now();const result=await instantiate.apply(this,args);window.__wasmCompile.push(performance.now()-t);return result;};});
+- await page.goto(`http://127.0.0.1:4173/fixtures/generated/cubes.html?engine=${engine}`);await page.waitForFunction(()=>!!window.__bench);
++ await page.goto(`${serverOrigin}/fixtures/generated/cubes.html?engine=${engine}`);await page.waitForFunction(()=>!!window.__bench);
+  const result=await page.evaluate(async()=>{const env=await window.__bench.ready(),readyAt=performance.now();const first=window.__bench.step();return {env,readyAt,firstRenderReturnAt:performance.now(),firstFrameCpuMs:first.cpu,wasmCompileInstantiateMs:window.__wasmCompile,wasmFetch:performance.getEntriesByType('resource').filter(r=>r.name.endsWith('.wasm')).map(r=>({duration:r.duration,transferSize:r.transferSize,encodedBodySize:r.encodedBodySize})),path:window.__bench.THREE.diagnostics?.()??null};});
+  runs.push({repeat,engine,...result});writeFileSync(`${dir}/runs.json`,JSON.stringify({method:'fresh browser contexts, shared browser process, no-store; not fully cold cache; first render return is not compositor presentation',browser:browser.version(),args,runs},null,2));await context.close();console.log('startup',repeat,engine);
+ }}finally{await browser.close();server.close();}
+diff --git a/mydocs/orders/20261023.md b/mydocs/orders/20261023.md
+index d73aef3..f91d391 100644
+--- a/mydocs/orders/20261023.md
++++ b/mydocs/orders/20261023.md
+@@ -4,6 +4,7 @@
+ 
+ | Issue | Task | Status | Notes |
+ |---|---|---|---|
++| #4 / #5 | Prepare precise Mac rerun and screen independent applications | Verification | Full quiet timing and CPU profiles deferred; correctness and source research only |
+ | #29 | Resolve timing limits and publish accessible performance evidence | Done | Done: 18:01; local implementation/validation complete; draft PR #30 CI/review and new hardware run remain separate |
+ | #3 | Mac hardware and real-asset owned validation | Done | Done: 16:30; implementation, physical-Mac measurements and local checks complete; draft review/final CI and broader issue gates remain separate |
+ | #21 | Source-derived ownership status, history, pipeline preparation and main integration | Done | Done: 10:46; implementation/local checks complete; final CI/main acceptance tracked in PR/issue; hardware evidence remains separate |
+diff --git a/mydocs/plans/task_m3_4_precision.md b/mydocs/plans/task_m3_4_precision.md
+new file mode 100644
+index 0000000..34cfeeb
+--- /dev/null
++++ b/mydocs/plans/task_m3_4_precision.md
+@@ -0,0 +1,26 @@
++# Task #4: precision-validation preparation
++
++Related issue: #5. Milestone: M3. Research code pin: `9527a042ed1134e73ab9cfe8b3ee75f4aac6d2a7`.
++
++## Purpose and scope
++Reproduce the existing physical-Mac setup and correctness gates before any new performance conclusion. Preserve original checkout, historical samples, renderer, workload, quality, lockfiles and Rust toolchain. Use a separate `codex/` worktree. Engine/API work belongs to a separate implementation stream.
++
++## Stages
++1. Read pinned protocol, inspect PR/CI state, install/build/test and collect allowlisted hardware evidence.
++2. Resolve only validation-tool blockers in a separate commit, then hardware image/numeric/bypass/rejection checks and a short isolated smoke.
++3. Archive observations and source hashes, research independent applications and publish a draft report. Main timing and app CPU profiles require a quiet session; those stages remain unperformed in this delivery.
++
++## Tooling adjustment
++The fixed localhost port conflicts with an unrelated service. Support `RTHREE_PORT` consistently in active server consumers, retaining 4173 by default; fail explicitly on invalid ports/collisions. No source-port calculation or input changes. Verify binding, navigation origin, headers, negative cases, infrastructure tests and actual Fox rendering. Record the complete tooling commit separately from the research pin.
++
++## Document location judgment
++| Artifact | Classification/audience | Selected path | Alternative | Reason |
++|---|---|---|---|---|
++| Preparation evidence | Reproduction archive; contributors | bench/results/mac-preparation-20261023 | docs/assets | Existing raw-evidence convention; no new public performance policy |
++| App screening | Technical research; contributors | mydocs/tech/task_m3_5_apps.md | docs | Candidates and unmeasured hypotheses, not an accepted application contract |
++| Plan/report | Issue work artifacts | mydocs/plans and mydocs/report | docs | Scoped experiment record |
++
++## Acceptance and limits
++Require actual Apple/Metal preflight; reject SwiftShader as hardware; compare A/A and upstream/matched-JS/Wasm numeric and image outputs with existing tolerances. Preserve failed invocations, report no new A/A/performance verdict without the full quiet protocol. Do not infer FPS, CPU shares or Rust benefit from correctness or smoke. No second-day, cold-cache, mobile or second-device completion claim.
++
++The existing noise rule and five-phase full protocol remain unchanged. A future session must run the exact candidate SHA in a fresh path, with 1200/3600 fixed frames, five pre/post original and matched-JS repeats, six balanced main permutations, separated diagnostics and controls. Review p50/p95/p99 and absolute milliseconds; do not pool per-frame samples as independent repeats.
+diff --git a/package.json b/package.json
+index fbdd36b..5aa9f20 100644
+--- a/package.json
++++ b/package.json
+@@ -16,7 +16,7 @@
+     "bench:diagnostic": "node bench/run.mjs repeats=1 warmup=30 samples=60 engines=original,js,wasm,packed-js timings=true gpu=true out=work/bench-diagnostic",
+     "bench:startup": "node bench/startup.mjs",
+     "bench:analyze": "node bench/summarize.mjs bench/results/m2-full && node bench/analyze.mjs bench/results/m2-full",
+-    "test:infra": "node --test tests/infra.mjs tests/fox-analysis.mjs",
++    "test:infra": "node --test tests/infra.mjs tests/fox-analysis.mjs tests/server-port.mjs",
+     "test:gpu-guard": "node tests/gpu-guard.mjs",
+     "bundle:demo": "node scripts/bundle-demo.mjs",
+     "test:bundle": "node tests/bundle.mjs",
+diff --git a/scripts/server.mjs b/scripts/server.mjs
+index d48d241..d60e677 100644
+--- a/scripts/server.mjs
++++ b/scripts/server.mjs
+@@ -1,7 +1,10 @@
+ import http from 'node:http';
+ import {readFile} from 'node:fs/promises';
+ import path from 'node:path';
+-export function serve(port=4173,{isolated=false}={}){return new Promise(resolve=>{const server=http.createServer(async(req,res)=>{
++const validationPort = Number(process.env.RTHREE_PORT ?? 4173);
++if (!Number.isInteger(validationPort) || validationPort < 1 || validationPort > 65535) throw Error('Invalid RTHREE_PORT');
++export const serverOrigin = `http://127.0.0.1:${validationPort}`;
++export function serve(port=validationPort,{isolated=false}={}){return new Promise((resolve,reject)=>{const server=http.createServer(async(req,res)=>{
+  if(isolated){res.setHeader('Cross-Origin-Opener-Policy','same-origin');res.setHeader('Cross-Origin-Embedder-Policy','require-corp');}
+  try{const u=new URL(req.url,'http://localhost');let p=decodeURIComponent(u.pathname);if(p==='/')p='/demo/index.html';
+  const f=path.resolve('.','.'+p);if(!f.startsWith(process.cwd()+path.sep))throw Error('path');
+@@ -10,5 +13,5 @@ export function serve(port=4173,{isolated=false}={}){return new Promise(resolve=
+  }
+  const types={'.html':'text/html','.js':'text/javascript','.mjs':'text/javascript','.wasm':'application/wasm','.svg':'image/svg+xml','.css':'text/css','.json':'application/json','.glb':'model/gltf-binary'};
+  res.writeHead(200,{'Content-Type':types[path.extname(f)]||'application/octet-stream','Cache-Control':'no-store'});res.end(data);
+- }catch(e){res.writeHead(404);res.end('Not found');}}).listen(port,'127.0.0.1',()=>resolve(server));});}
+-if(process.argv[1]===new URL(import.meta.url).pathname){await serve();console.log('http://127.0.0.1:4173');}
++ }catch(e){res.writeHead(404);res.end('Not found');}}).once('error',reject).listen(port,'127.0.0.1',()=>resolve(server));});}
++if(process.argv[1]===new URL(import.meta.url).pathname){await serve();console.log(serverOrigin);}
+diff --git a/tests/browser.mjs b/tests/browser.mjs
+index 9c3f6be..fc33a86 100644
+--- a/tests/browser.mjs
++++ b/tests/browser.mjs
+@@ -2,7 +2,7 @@ import { browserPath } from '../scripts/browser-path.mjs';
+ import assert from 'node:assert/strict';
+ import {chromium} from 'playwright';
+ import {mkdirSync,writeFileSync} from 'node:fs';
+-import {serve} from '../scripts/server.mjs';
++import {serve, serverOrigin} from '../scripts/server.mjs';
+ import {configuration,hardwareRenderer} from '../bench/config.mjs';
+ const hardware=process.env.RTHREE_BROWSER_MODE==='hardware';
+ const config=configuration(hardware?['mode=hardware',`headless=${process.env.RTHREE_HEADLESS||'true'}`,...(process.env.RTHREE_ANGLE_BACKEND?[`angle=${process.env.RTHREE_ANGLE_BACKEND}`]:[])]:[]);
+@@ -11,7 +11,7 @@ let browser;const results=[];
+ try{browser=await chromium.launch({executablePath:browserPath(),headless:config.headless,args:config.args});for(const scenario of ['cubes','skinning','shader','small','hierarchy']){
+  let ref;
+  for(const engine of ['original','original','js','wasm','packed-js']){
+-  const page=await browser.newPage({viewport:{width:640,height:360},deviceScaleFactor:1});const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(`http://127.0.0.1:4173/fixtures/generated/${scenario}.html?engine=${engine}`);await page.waitForFunction(()=>!!window.__bench);const env=await page.evaluate(()=>window.__bench.ready());if(hardware){writeFileSync(`${out}/hardware-preflight.json`,JSON.stringify(env,null,2));hardwareRenderer(env.renderer);}
++  const page=await browser.newPage({viewport:{width:640,height:360},deviceScaleFactor:1});const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(`${serverOrigin}/fixtures/generated/${scenario}.html?engine=${engine}`);await page.waitForFunction(()=>!!window.__bench);const env=await page.evaluate(()=>window.__bench.ready());if(hardware){writeFileSync(`${out}/hardware-preflight.json`,JSON.stringify(env,null,2));hardwareRenderer(env.renderer);}
+   await page.evaluate(()=>{for(let i=0;i<12;i++)window.__bench.step()});
+   const snap=await page.evaluate(()=>window.__bench.snapshot());const diag=await page.evaluate(()=>window.__bench.THREE.diagnostics?.()??null);
+   assert.deepEqual(errors,[]);const file=`${scenario}-${engine}${engine==='original'&&ref?'-repeat':''}.png`;writeFileSync(`${out}/${file}`,Buffer.from(snap.png.split(',')[1],'base64'));
+@@ -26,7 +26,7 @@ try{browser=await chromium.launch({executablePath:browserPath(),headless:config.
+  }
+ }
+ // Callback mutations/explicit updates, shadow, multiple renders, and clone identity.
+-const page=await browser.newPage();await page.goto('http://127.0.0.1:4173/fixtures/generated/small.html?engine=wasm');await page.waitForFunction(()=>!!window.__bench);await page.evaluate(()=>window.__bench.ready());
++const page=await browser.newPage();await page.goto(`${serverOrigin}/fixtures/generated/small.html?engine=wasm`);await page.waitForFunction(()=>!!window.__bench);await page.evaluate(()=>window.__bench.ready());
+ const callback=await page.evaluate(()=>{const {THREE:T,get}=window.__bench,{renderer}=get();const s=new T.Scene(),c=new T.PerspectiveCamera(45,1,.1,100);c.position.z=5;const a=new T.Mesh(new T.BoxGeometry(),new T.MeshBasicMaterial());s.add(a);let before=0,after=0;a.onBeforeRender=()=>{before++;a.position.x=.2;a.updateMatrixWorld(true);};a.onAfterRender=()=>after++;renderer.render(s,c);renderer.render(s,c);const pos=a.getWorldPosition(new T.Vector3()).x;T.release(s);return {before,after,pos};});assert.deepEqual(callback,{before:2,after:2,pos:.2});await page.close();
+ writeFileSync(`${out}/results.json`,JSON.stringify({results,callback,method:'12 fixed ticks, exact A/A and engine pixel comparison, matrices atol 1e-10 rtol 1e-12; no capture in performance loops'},null,2));
+ }finally{if(browser)await browser.close();server.close();}
+diff --git a/tests/demo.mjs b/tests/demo.mjs
+index 9a9cc06..52eecb6 100644
+--- a/tests/demo.mjs
++++ b/tests/demo.mjs
+@@ -2,7 +2,7 @@ import { browserPath } from '../scripts/browser-path.mjs';
+ import {chromium} from 'playwright';
+ import assert from 'node:assert/strict';
+ import {writeFileSync,mkdirSync} from 'node:fs';
+-import {serve} from '../scripts/server.mjs';
++import {serve, serverOrigin} from '../scripts/server.mjs';
+ const out=process.env.RTHREE_DEMO_RESULTS_DIR||'work/demo-validation';
+ const server=await serve();const browser=await chromium.launch({executablePath:browserPath(),headless:true,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+-try{const page=await browser.newPage({viewport:{width:1100,height:900}});const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('http://127.0.0.1:4173');await page.waitForFunction(()=>document.querySelector('#status').textContent.includes('upstream JS'));await page.selectOption('#engine','wasm');await page.click('#open');await page.waitForFunction(()=>document.querySelector('#status').textContent.includes('"wasmActive": true'));await page.click('#stop');const before=await page.evaluate(()=>document.querySelector('#view').contentWindow.__bench.THREE.diagnostics().wasmCalls);await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));const after=await page.evaluate(()=>document.querySelector('#view').contentWindow.__bench.THREE.diagnostics().wasmCalls);assert.equal(before,after);assert.deepEqual(errors,[]);assert.ok(after>0);mkdirSync(out,{recursive:true});await page.screenshot({path:out+'/demo.png',fullPage:true});writeFileSync(out+'/demo.json',JSON.stringify({passed:true,checks:['original autostart','switch to Wasm','Wasm executed','pause stops updates'],wasmCalls:after,errors},null,2));console.log('Demo original/Wasm switch and pause passed');}finally{await browser.close();server.close();}
++try{const page=await browser.newPage({viewport:{width:1100,height:900}});const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(`${serverOrigin}`);await page.waitForFunction(()=>document.querySelector('#status').textContent.includes('upstream JS'));await page.selectOption('#engine','wasm');await page.click('#open');await page.waitForFunction(()=>document.querySelector('#status').textContent.includes('"wasmActive": true'));await page.click('#stop');const before=await page.evaluate(()=>document.querySelector('#view').contentWindow.__bench.THREE.diagnostics().wasmCalls);await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));const after=await page.evaluate(()=>document.querySelector('#view').contentWindow.__bench.THREE.diagnostics().wasmCalls);assert.equal(before,after);assert.deepEqual(errors,[]);assert.ok(after>0);mkdirSync(out,{recursive:true});await page.screenshot({path:out+'/demo.png',fullPage:true});writeFileSync(out+'/demo.json',JSON.stringify({passed:true,checks:['original autostart','switch to Wasm','Wasm executed','pause stops updates'],wasmCalls:after,errors},null,2));console.log('Demo original/Wasm switch and pause passed');}finally{await browser.close();server.close();}
+diff --git a/tests/fox-browser.mjs b/tests/fox-browser.mjs
+index 2d3ecbe..38eb244 100644
+--- a/tests/fox-browser.mjs
++++ b/tests/fox-browser.mjs
+@@ -1,6 +1,6 @@
+ import { chromium } from "playwright";
+ import { browserPath } from "../scripts/browser-path.mjs";
+-import { serve } from "../scripts/server.mjs";
++import { serve, serverOrigin } from "../scripts/server.mjs";
+ import { hardwareRenderer, configuration } from "../bench/config.mjs";
+ import { mkdirSync, writeFileSync } from "node:fs";
+ import assert from "node:assert/strict";
+@@ -46,7 +46,7 @@ try {
+         errors = [];
+       page.on("pageerror", (e) => errors.push(String(e)));
+       await page.goto(
+-        `http://127.0.0.1:4173/fixtures/fox/index.html?manual&count=${count}&variant=${variant}${kind === "static" ? "&static" : ""}`,
++        `${serverOrigin}/fixtures/fox/index.html?manual&count=${count}&variant=${variant}${kind === "static" ? "&static" : ""}`,
+       );
+       await page.waitForFunction(() => !!window.__fox);
+       await page.bringToFront();
+diff --git a/tests/fox-rejections.mjs b/tests/fox-rejections.mjs
+index 60d04ba..cbc6875 100644
+--- a/tests/fox-rejections.mjs
++++ b/tests/fox-rejections.mjs
+@@ -1,13 +1,13 @@
+ import { chromium } from 'playwright';
+ import { browserPath } from '../scripts/browser-path.mjs';
+-import { serve } from '../scripts/server.mjs';
++import { serve, serverOrigin } from '../scripts/server.mjs';
+ import { configuration, hardwareRenderer } from '../bench/config.mjs';
+ import assert from 'node:assert/strict';
+ import { mkdirSync, writeFileSync } from 'node:fs';
+ const out=process.env.RTHREE_FOX_REJECTION_DIR||'work/fox-rejections';mkdirSync(out,{recursive:true});
+ const cfg=configuration(process.env.RTHREE_BROWSER_MODE==='hardware'?['mode=hardware','headless=false']:[]),server=await serve();
+ const browser=await chromium.launch({executablePath:browserPath(),headless:cfg.headless,args:cfg.args});
+-try{const page=await browser.newPage();await page.goto('http://127.0.0.1:4173/fixtures/fox/index.html?manual&variant=original');await page.waitForFunction(()=>window.__fox);const gpu=await page.evaluate(()=>window.__fox.gpu);if(cfg.hardware)hardwareRenderer(gpu.renderer);
++try{const page=await browser.newPage();await page.goto(`${serverOrigin}/fixtures/fox/index.html?manual&variant=original`);await page.waitForFunction(()=>window.__fox);const gpu=await page.evaluate(()=>window.__fox.gpu);if(cfg.hardware)hardwareRenderer(gpu.renderer);
+ const results=await page.evaluate(async()=>{
+  const THREE=await import('three'),{GLTFLoader}=await import('three/addons/loaders/GLTFLoader.js'),{descriptorFromFox}=await import('./descriptor.mjs'),{createOwnedAnimation}=await import('/packages/rthree/owned.js');
+  const gltf=await new GLTFLoader().loadAsync('/work/assets/Fox.glb'),roots=[new THREE.Matrix4().toArray()],errors={};
+diff --git a/tests/owned-browser.mjs b/tests/owned-browser.mjs
+index f0f33fe..756376d 100644
+--- a/tests/owned-browser.mjs
++++ b/tests/owned-browser.mjs
+@@ -1,6 +1,6 @@
+ import { browserPath } from '../scripts/browser-path.mjs';
+ import { chromium } from "playwright";
+-import { serve } from "../scripts/server.mjs";
++import { serve, serverOrigin } from "../scripts/server.mjs";
+ import { configuration, hardwareRenderer } from "../bench/config.mjs";
+ import assert from "node:assert/strict";
+ import { mkdirSync, writeFileSync } from "node:fs";
+@@ -51,7 +51,7 @@ try {
+         ? variant
+         : "original";
+       await page.goto(
+-        `http://127.0.0.1:4173/fixtures/owned/index.html?manual&count=${scenario.count}&bones=${scenario.bones}&variant=${variant}&engine=${engine}${scenario.name === "static" ? "&static" : ""}`,
++        `${serverOrigin}/fixtures/owned/index.html?manual&count=${scenario.count}&bones=${scenario.bones}&variant=${variant}&engine=${engine}${scenario.name === "static" ? "&static" : ""}`,
+       );
+       await page.waitForFunction(() => !!window.__owned);
+       const result = await page.evaluate(() => {
+diff --git a/tests/pipeline-browser.mjs b/tests/pipeline-browser.mjs
+index 1d24c2c..2b054b4 100644
+--- a/tests/pipeline-browser.mjs
++++ b/tests/pipeline-browser.mjs
+@@ -1,11 +1,11 @@
+ import { browserPath } from '../scripts/browser-path.mjs';
+-import {chromium} from 'playwright';import {serve} from '../scripts/server.mjs';import {configuration,hardwareRenderer} from '../bench/config.mjs';import assert from 'node:assert/strict';import {mkdirSync,writeFileSync} from 'node:fs';
++import {chromium} from 'playwright';import {serve, serverOrigin} from '../scripts/server.mjs';import {configuration,hardwareRenderer} from '../bench/config.mjs';import assert from 'node:assert/strict';import {mkdirSync,writeFileSync} from 'node:fs';
+ const out=process.env.RTHREE_PIPELINE_RESULTS_DIR||'work/pipeline-validation';mkdirSync(out,{recursive:true});
+ const hardware=process.env.RTHREE_BROWSER_MODE==='hardware',cfg=configuration(hardware?['mode=hardware',`headless=${process.env.RTHREE_HEADLESS||'true'}`,...(process.env.RTHREE_ANGLE_BACKEND?[`angle=${process.env.RTHREE_ANGLE_BACKEND}`]:[])]:[]);
+ const server=await serve();let browser,reference;const results=[];
+ try{browser=await chromium.launch({executablePath:browserPath(),headless:cfg.headless,args:cfg.args});
+ for(const [i,engine] of ['original','original','js','wasm','packed-js'].entries()){
+- const page=await browser.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(`http://127.0.0.1:4173/fixtures/pipeline/index.html?manual&count=2&bones=8&engine=${engine}`);await page.waitForFunction(()=>!!window.__pipeline);
++ const page=await browser.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(`${serverOrigin}/fixtures/pipeline/index.html?manual&count=2&bones=8&engine=${engine}`);await page.waitForFunction(()=>!!window.__pipeline);
+  const snap=await page.evaluate(()=>{const p=window.__pipeline;for(let i=0;i<37;i++)p.renderStep();return {palette:p.rig.snapshot(),pixels:p.pixels(),gpu:p.gpu,volumes:p.rig.volumes(),draws:p.renderer.info.render.calls};});
+  assert.deepEqual(errors,[]);if(hardware)hardwareRenderer(snap.gpu.renderer);assert.equal(snap.draws,2);let maxPalette=0,maxPixel=0;
+  if(reference){assert.equal(snap.palette.length,reference.palette.length);for(let n=0;n<snap.palette.length;n++)maxPalette=Math.max(maxPalette,Math.abs(snap.palette[n]-reference.palette[n]));for(let n=0;n<snap.pixels.length;n++)maxPixel=Math.max(maxPixel,Math.abs(snap.pixels[n]-reference.pixels[n]));assert(maxPalette<=1e-6);assert.equal(maxPixel,0);}else reference=snap;
+diff --git a/tests/progress.mjs b/tests/progress.mjs
+index 9f1ab8c..7ab42ff 100644
+--- a/tests/progress.mjs
++++ b/tests/progress.mjs
+@@ -1,6 +1,6 @@
+ import { browserPath } from '../scripts/browser-path.mjs';
+ import {chromium} from 'playwright';
+-import {serve} from '../scripts/server.mjs';
++import {serve, serverOrigin} from '../scripts/server.mjs';
+ import {mkdirSync,readFileSync,writeFileSync} from 'node:fs';
+ import assert from 'node:assert/strict';
+ const out=process.env.RTHREE_PROGRESS_RESULTS_DIR||'work/progress-validation';mkdirSync(out,{recursive:true});
+@@ -12,7 +12,7 @@ const server=await serve();let browser;const results=[];
+ try{browser=await chromium.launch({executablePath:browserPath(),headless:true,args:['--no-sandbox']});
+  for(const [name,width,height] of [['desktop',1280,1000],['mobile',390,844]]){
+   const page=await browser.newPage({viewport:{width,height}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
+-  await page.goto('http://127.0.0.1:4173/docs/progress.html');
++  await page.goto(`${serverOrigin}/docs/progress.html`);
+   assert.equal(await page.locator('#adoption-gates tbody tr').count(),6);
+   assert.match(await page.locator('#adoption-heading').textContent(),/Product goals/);
+   assert.equal(await page.locator('h1').textContent(),'Ownership progress');
+@@ -22,7 +22,7 @@ try{browser=await chromium.launch({executablePath:browserPath(),headless:true,ar
+   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+   await page.screenshot({path:`${out}/${name}.png`});
+   await page.locator('#state-state-core-Object3D-js summary').click();assert((await page.locator('#state-state-core-Object3D-js li').count())>20);
+-  await page.goto('http://127.0.0.1:4173/docs/history.html');assert(await page.locator('body').textContent().then(x=>x.includes('not comparable')));
++  await page.goto(`${serverOrigin}/docs/history.html`);assert(await page.locator('body').textContent().then(x=>x.includes('not comparable')));
+   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert.deepEqual(errors,[]);
+   assert.equal(await page.locator('[data-role=history-chart] [data-panel]').count(),2);
+   await page.locator('[data-detail]').first().focus();assert((await page.locator('#history-detail').textContent()).includes(`conditional Rust ${first.counts.functions.states['rust-batch']}/${first.counts.functions.total}`));
+diff --git a/tests/server-port.mjs b/tests/server-port.mjs
+new file mode 100644
+index 0000000..5ac8836
+--- /dev/null
++++ b/tests/server-port.mjs
+@@ -0,0 +1,25 @@
++import { test } from 'node:test';
++import assert from 'node:assert/strict';
++import { execFileSync, spawnSync } from 'node:child_process';
++import { serve } from '../scripts/server.mjs';
++
++test('an explicit isolated server uses its own port and rejects collisions', async () => {
++  const server = await serve(0, {isolated: true});
++  const port = server.address().port;
++  try {
++    const response = await fetch(`http://127.0.0.1:${port}/package.json`);
++    assert.equal(response.status, 200);
++    assert.equal(response.headers.get('cross-origin-embedder-policy'), 'require-corp');
++    assert.equal((await response.json()).name, 'three-rust-research');
++    await assert.rejects(serve(port), {code: 'EADDRINUSE'});
++  } finally { await new Promise(resolve => server.close(resolve)); }
++});
++
++test('RTHREE_PORT selects both the default listener and navigation origin', () => {
++  const code = `const {serve,serverOrigin}=await import('./scripts/server.mjs');const s=await serve();console.log(JSON.stringify({origin:serverOrigin,port:s.address().port}));s.close();`;
++  const result = JSON.parse(execFileSync(process.execPath, ['--input-type=module', '-e', code], {env: {...process.env, RTHREE_PORT: '4384'}, encoding: 'utf8'}));
++  assert.deepEqual(result, {origin:'http://127.0.0.1:4384',port:4384});
++  const invalid = spawnSync(process.execPath, ['--input-type=module', '-e', code], {env: {...process.env, RTHREE_PORT:'0'},encoding:'utf8'});
++  assert.notEqual(invalid.status, 0);
++  assert.match(invalid.stderr, /Invalid RTHREE_PORT/);
++});

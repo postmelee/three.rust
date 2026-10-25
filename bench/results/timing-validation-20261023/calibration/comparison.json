@@ -1,0 +1,162 @@
+{
+  "rule": "Gain > max(5%, twice absolute before/after original p50 drift, twice relative within-session MAD). Timer-resolution and all workload/tail gates still require human interpretation. Single machine with uncontrolled background work.",
+  "decisions": [
+    {
+      "scenario": "animated-1",
+      "variant": "owned-js",
+      "aaBeforeP50": [
+        1.4549999982118607
+      ],
+      "aaAfterP50": [
+        0.6274999976158142
+      ],
+      "relativeDrift": 0.5687285234453693,
+      "requiredGain": 1.1374570468907386,
+      "observedGain": -0.5258215856682451,
+      "absoluteSavingMs": -0.2799999937415123,
+      "aboveNoise": false,
+      "tail95Ratio": 1.3046471736121066,
+      "interval95Ratio": 0.9919800394203586
+    },
+    {
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "aaBeforeP50": [
+        1.4549999982118607
+      ],
+      "aaAfterP50": [
+        0.6274999976158142
+      ],
+      "relativeDrift": 0.5687285234453693,
+      "requiredGain": 1.1374570468907386,
+      "observedGain": 0.06572769296164283,
+      "absoluteSavingMs": 0.034999996423721313,
+      "aboveNoise": false,
+      "tail95Ratio": 0.7641996487029432,
+      "interval95Ratio": 0.9941186957165673
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-js",
+      "aaBeforeP50": [
+        1.6125000044703484
+      ],
+      "aaAfterP50": [
+        1.9924999922513962
+      ],
+      "relativeDrift": 0.23565890649771815,
+      "requiredGain": 0.4713178129954363,
+      "observedGain": 0.05263158454930872,
+      "absoluteSavingMs": 0.07000000774860382,
+      "aboveNoise": false,
+      "tail95Ratio": 1.6940912504538475,
+      "interval95Ratio": 0.9377064652834706
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-wasm",
+      "aaBeforeP50": [
+        1.6125000044703484
+      ],
+      "aaAfterP50": [
+        1.9924999922513962
+      ],
+      "relativeDrift": 0.23565890649771815,
+      "requiredGain": 0.4713178129954363,
+      "observedGain": 0.1729323276259589,
+      "absoluteSavingMs": 0.22999999672174454,
+      "aboveNoise": false,
+      "tail95Ratio": 0.7195213180838319,
+      "interval95Ratio": 0.4177740245197712
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-js",
+      "aaBeforeP50": [
+        0.557499997317791
+      ],
+      "aaAfterP50": [
+        0.8524999991059303
+      ],
+      "relativeDrift": 0.5291479878160088,
+      "requiredGain": 1.0582959756320176,
+      "observedGain": 0.6120401323458352,
+      "absoluteSavingMs": 0.45749999582767487,
+      "aboveNoise": false,
+      "tail95Ratio": 0.3220338941194989,
+      "interval95Ratio": 0.9939415533949431
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "aaBeforeP50": [
+        0.557499997317791
+      ],
+      "aaAfterP50": [
+        0.8524999991059303
+      ],
+      "relativeDrift": 0.5291479878160088,
+      "requiredGain": 1.0582959756320176,
+      "observedGain": 0.41137123665814057,
+      "absoluteSavingMs": 0.307499997317791,
+      "aboveNoise": false,
+      "tail95Ratio": 0.3964218489883885,
+      "interval95Ratio": 0.9905559518643503
+    }
+  ],
+  "matchedJsDecisions": [
+    {
+      "scenario": "animated-1",
+      "variant": "owned-wasm",
+      "aaBeforeP50": [
+        0.7625000029802322
+      ],
+      "aaAfterP50": [
+        0.6074999943375587
+      ],
+      "relativeDrift": 0.20327869906472884,
+      "requiredGain": 0.4065573981294577,
+      "observedGain": 0.387692299143097,
+      "absoluteSavingMs": 0.3149999901652336,
+      "aboveNoise": false,
+      "tail95Ratio": 0.5857519673975491,
+      "interval95Ratio": 1.0021559469054018
+    },
+    {
+      "scenario": "animated-16",
+      "variant": "owned-wasm",
+      "aaBeforeP50": [
+        1.2650000005960464
+      ],
+      "aaAfterP50": [
+        1.4275000020861626
+      ],
+      "relativeDrift": 0.12845849914114527,
+      "requiredGain": 0.25691699828229053,
+      "observedGain": 0.12698411844289703,
+      "absoluteSavingMs": 0.15999998897314072,
+      "aboveNoise": false,
+      "tail95Ratio": 0.42472406246775196,
+      "interval95Ratio": 0.445527507793686
+    },
+    {
+      "scenario": "static-1",
+      "variant": "owned-wasm",
+      "aaBeforeP50": [
+        0.3475000038743019
+      ],
+      "aaAfterP50": [
+        0.46000000089406967
+      ],
+      "relativeDrift": 0.32374099500862563,
+      "requiredGain": 0.6474819900172513,
+      "observedGain": -0.5172413757666681,
+      "absoluteSavingMs": -0.14999999850988388,
+      "aboveNoise": false,
+      "tail95Ratio": 1.2309941786478105,
+      "interval95Ratio": 0.9965937619581063
+    }
+  ],
+  "matchedJsRule": "Same relative-noise rule using matched-JS A/A, not original A/A",
+  "clockResolutionMs": 0.004999995231628418
+}

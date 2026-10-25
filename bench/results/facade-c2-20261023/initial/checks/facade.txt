@@ -1,0 +1,32 @@
+
+> three-rust-research@0.1.0 test:facade
+> node tests/facade.mjs
+
+✔ facade-js: preparation failure/retry and pre-update aliases (2.988718ms)
+✔ facade-js: dirty inputs and demand-only materialization (7.845372ms)
+✔ facade-js: randomized partial updates, hierarchy and dirty flags (80.793197ms)
+✔ facade-js: skips displaced JS math and retains stale observations (0.709117ms)
+✔ facade-js: cached arrays across growth, release, slot reuse and pivot removal (71.861602ms)
+✔ facade-js: caller-owned arrays and overrides fall back before evaluation (0.752591ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 323.383091
+✔ facade-wasm: preparation failure/retry and pre-update aliases (7.290511ms)
+✔ facade-wasm: dirty inputs and demand-only materialization (6.006025ms)
+✔ facade-wasm: randomized partial updates, hierarchy and dirty flags (79.793329ms)
+✔ facade-wasm: skips displaced JS math and retains stale observations (0.649674ms)
+✔ facade-wasm: cached arrays across growth, release, slot reuse and pivot removal (65.396587ms)
+✔ facade-wasm: caller-owned arrays and overrides fall back before evaluation (1.229676ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 302.421853

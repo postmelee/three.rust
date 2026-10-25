@@ -1,14 +1,29 @@
-# Computation and ownership progress
+# Product readiness and implementation progress
+
+[Adoption goals](PRODUCT_GOALS.md) define when an application has a reason to migrate.
+README and the standalone page keep the existing ownership diagram and add
+a simple product-goal table from product-goals.json. Early evidence does not mean qualification; there is no overall
+completion percentage. The existing fine-grained map below remains implementation
+evidence, and its historical counts retain their original meaning.
 
 ![Current ownership map](assets/progress.svg)
 
 [Progress history](https://postmelee.github.io/three.rust/history.html) · [Raw inventory](progress.json) ·
 [Standalone page](progress.html) · [Source selection](progress-source.json)
 
-The upper bands distinguish the compatibility facade from the implemented, bounded
-explicit owned-rig API. The facade arena remains a cache of authoritative JS values.
-The opt-in domain owns its animation/pose/world/palette state. Broader scene-core
-ownership is still planned. Computation and state ownership are independent.
+The upper bands distinguish compatible transforms from the explicit owned-rig API.
+The default legacy bridge remains a cache of authoritative JS values. The optional
+[C2 facade](PERSISTENT_FACADE.md) retains evaluated local/world matrices in Rust;
+public inputs and hierarchy stay in JS. [C3](PREPARED_PASS.md) additionally retains
+topology and prepares ordinary-Mesh visibility, ordering and draw matrices for the
+WebGL consumer. The explicit owned rig separately owns animation/pose/world/palette
+state. Broader scene-core ownership is still planned.
+
+The [observable contract](FACADE_CONTRACT.md) and facade-specific tests support C2's
+bounded claims. The [C3 pass oracles](../tests/prepared.mjs) support its narrower
+renderer mappings. [C2](FACADE_REPORT.md) and [C3](PREPARED_REPORT.md) cloud results
+do not qualify a product gate; implementation progress and useful performance
+remain separate.
 
 ## Units and legend
 
@@ -17,7 +32,7 @@ ownership is still planned. Computation and state ownership are independent.
 | Gray | JavaScript execution or JavaScript-owned state |
 | Amber | Scoped Rust computation; inspect the declared API tier and exclusions |
 | Blue | A callable's computation is implemented in Rust within its declared contract |
-| Green | The logical field is authoritative in Rust within the explicit owned API |
+| Green | The logical field is authoritative in Rust within its stated API scope |
 
 The left map has one tile per named callable definition in the selected Three.js
 source files. The right map has one tile per statically declared state field in
@@ -29,17 +44,20 @@ layout. A Rust batch can combine many operations; a claim is added only for its
 verified scope. A green field means Rust owns the corresponding logical state,
 not that Rust happens to allocate another copy with the same name.
 
-Three source mappings are amber: the existing eligible Object3D transform route,
-plus bounded AnimationMixer.update and Skeleton.update algorithms in the explicit
-owned API. The latter ordinary JS methods still run in JS. Twelve green fields
-map logical rig TRS/parent/world, action time/scale/weight/pause/loop and inverse-bind/
-palette state to Rust authority in that opt-in domain. Ordinary Three.js objects do
-not acquire Rust authority. Each mapping links the finite contract and tests.
+Seven source mappings are amber: three eligible Object3D update methods,
+AnimationMixer.update and Skeleton.update algorithms in the explicit owned API,
+and the C3 prepared-main-pass projection/order algorithms. Ordinary animation and
+skeleton methods still run in JS. Fifteen green fields map finite owned-rig state,
+C2/C3 evaluated transform matrices and C3's per-pass model-view/normal results.
+Public last-draw arrays remain copies; unsupported passes compute in JS. Public
+inputs/hierarchy and the default bridge retain their existing authority. Each
+mapping links its exact contract and tests.
 
 This extends the original conditional-computation legend to distinguish API tiers;
 it does not count helper arithmetic as globally ported public math methods. Scalar
-Matrix4/Quaternion APIs remain JS. Renderer/shader work is not counted as removed.
-Full event/binding/facade semantics are outside the new mappings. See
+Matrix4/Quaternion APIs remain JS. Only the declared C3 projection/order/matrix
+work is displaced; resource submission, shadow rendering and shaders remain.
+Full event/binding/facade semantics are outside these finite mappings. See
 [owned API](OWNED_ANIMATION.md) and its [experimental ADR](adr/0003-owned-animation-experiment.md).
 
 ## Source extraction

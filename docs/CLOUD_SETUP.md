@@ -17,6 +17,8 @@ npm ci
 npm run fixtures
 npm run build
 npm test
+npm run test:facade
+npm run test:prepared
 ```
 
 `npm run fixtures` downloads only the pinned Soldier asset (SHA-256 checked)
@@ -35,6 +37,9 @@ npm run test:browser
 npm run test:package
 npm run bench:smoke
 ```
+
+For the full timing-policy/Fox checks, first run `node scripts/fetch-fox.mjs`;
+`npm run fixtures` only fetches Soldier. Then run `npm run test:timing`.
 
 Alternatively `CHROMIUM=/usr/bin/chromium` uses an installed system browser.
 Smoke is 5 warm-up + 10 sampled frames and **not** a performance conclusion.
@@ -66,7 +71,10 @@ package exports alone are interpreted by Node/bundlers, not browser URL loaders.
 
 Run the local demo with `npm run dev`, open http://127.0.0.1:4173. In a cloud
 session forward port 4173 using the environment's port-forwarding UI. No public
-hosting deployment is implied. Choose A/B/C/D and a scene; Pause stops the loop.
+hosting deployment is implied. Choose an engine and scene; the two optional C2
+facade routes are described in [their contract](PERSISTENT_FACADE.md). The two C3
+prepared routes use [this main-pass contract](PREPARED_PASS.md); their full comparison
+commands are in [the C3 report](PREPARED_REPORT.md). Pause stops the loop.
 For manual hardware frame timings use the benchmark command below instead of
 the live demo counter.
 

@@ -1,0 +1,57 @@
+{
+  "repeat": 5,
+  "count": 1,
+  "bones": 24,
+  "backend": "wasm",
+  "mode": "fragmented",
+  "clock": {
+    "crossOriginIsolated": true,
+    "minPositiveDeltaMs": 0.004999995231628418,
+    "positiveDeltas": 6566,
+    "iterations": 100000,
+    "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+  },
+  "rawBlockMs": [
+    0.3449999988079071,
+    0.17499999701976776,
+    0.14499999582767487,
+    0.15000000596046448,
+    0.17999999225139618,
+    0.18000000715255737,
+    0.29500000178813934,
+    0.375,
+    0.26999999582767487,
+    0.23499999940395355,
+    0.20000000298023224,
+    0.21000000834465027,
+    0.28999999165534973,
+    0.22499999403953552,
+    0.2199999988079071,
+    0.21000000834465027,
+    0.2149999886751175,
+    0.23999999463558197,
+    0.22499999403953552,
+    0.20000000298023224,
+    0.20000000298023224,
+    0.23000000417232513,
+    0.20499999821186066,
+    2.655000001192093
+  ],
+  "delta": {
+    "steps": 384,
+    "wasmCalls": 768,
+    "commandBatches": 384,
+    "commandBytes": 61440,
+    "readBytes": 0
+  },
+  "maxErrors": {
+    "pose": 0,
+    "world": 0,
+    "roots": 0,
+    "actions": 0,
+    "palette": 0
+  },
+  "observed": 0,
+  "linearMemoryBytes": 1245184,
+  "snapshotBytes": 6736
+}

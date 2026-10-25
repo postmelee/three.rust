@@ -1,0 +1,32 @@
+✔ prepared-wasm: unchanged topology has no JS command reconstruction (23.719216ms)
+✔ prepared-wasm: committed hierarchy is visible inside synchronous events (1.645812ms)
+✔ prepared-wasm: cached plans observe replaced matrices and layer objects (1.384156ms)
+✔ prepared-wasm: release preserves the lazily cleared public dirty flag (0.66454ms)
+✖ prepared-wasm: dirty queues do not retain an abandoned detached record (403.952311ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 4
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 593.915282
+
+✖ failing tests:
+
+test at tests/prepared-state.mjs:35:1
+✖ prepared-wasm: dirty queues do not retain an abandoned detached record (403.952311ms)
+  AssertionError [ERR_ASSERTION]: Dirty metadata/input queues must not keep its native slot alive
+  
+  2 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/work/three-rust-prepared/tests/prepared-state.mjs:48:9)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

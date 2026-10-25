@@ -1,0 +1,1406 @@
+{
+  "name": "E1-edit-0",
+  "sensitivity": {
+    "method": "Post-capture sensitivity only: unweighted sample counts and time weighting excluding gaps >5ms. Original samples and default weighting remain unchanged.",
+    "activeSamples": 463,
+    "countBuckets": {
+      "program/native-unresolved": 608,
+      "idle": 8720,
+      "UI/callback": 187,
+      "automation/observation": 47,
+      "transform/math residual": 22,
+      "shadow pass": 23,
+      "other/unresolved": 63,
+      "visibility/sort": 17,
+      "render preparation/submission": 37,
+      "render residual": 41,
+      "GC": 22,
+      "bounds/picking/skinned-public-read": 4
+    },
+    "shortGapActiveMs": 577.8849999999998,
+    "shortGapBuckets": {
+      "idle": 10890.92800000006,
+      "program/native-unresolved": 750.3739999999992,
+      "UI/callback": 233.26299999999975,
+      "automation/observation": 57.99499999999999,
+      "transform/math residual": 27.415999999999997,
+      "shadow pass": 28.591,
+      "other/unresolved": 78.86,
+      "visibility/sort": 21.330000000000002,
+      "render preparation/submission": 46.160999999999994,
+      "render residual": 51.12800000000001,
+      "GC": 28.073000000000004,
+      "bounds/picking/skinned-public-read": 5.068
+    },
+    "longGaps": [
+      {
+        "sample": 0,
+        "node": 2,
+        "ms": 126.637,
+        "bucket": "program/native-unresolved"
+      }
+    ]
+  },
+  "profileDurationMs": 12347.133,
+  "weightedMs": 12345.82400000005,
+  "activeMs": 577.884999999991,
+  "samples": 9791,
+  "intervalUs": 1000,
+  "buckets": {
+    "program/native-unresolved": {
+      "sampledMs": 877.0109999999987,
+      "percentOfActive": null
+    },
+    "idle": {
+      "sampledMs": 10890.92800000006,
+      "percentOfActive": null
+    },
+    "UI/callback": {
+      "sampledMs": 233.26299999999975,
+      "percentOfActive": 40.3649515041926
+    },
+    "automation/observation": {
+      "sampledMs": 57.99499999999999,
+      "percentOfActive": 10.03573375325556
+    },
+    "transform/math residual": {
+      "sampledMs": 27.415999999999997,
+      "percentOfActive": 4.744196509686256
+    },
+    "shadow pass": {
+      "sampledMs": 28.591,
+      "percentOfActive": 4.947524161381667
+    },
+    "other/unresolved": {
+      "sampledMs": 78.86,
+      "percentOfActive": 13.646313712936179
+    },
+    "visibility/sort": {
+      "sampledMs": 21.330000000000002,
+      "percentOfActive": 3.6910457963090124
+    },
+    "render preparation/submission": {
+      "sampledMs": 46.160999999999994,
+      "percentOfActive": 7.987921472265366
+    },
+    "render residual": {
+      "sampledMs": 51.12800000000001,
+      "percentOfActive": 8.847435043304602
+    },
+    "GC": {
+      "sampledMs": 28.073000000000004,
+      "percentOfActive": 4.857886949825733
+    },
+    "bounds/picking/skinned-public-read": {
+      "sampledMs": 5.068,
+      "percentOfActive": 0.8769910968445415
+    }
+  },
+  "exclusive": [
+    {
+      "id": 3,
+      "label": "(idle)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 10890.92800000006,
+      "inclusiveMs": 10890.92800000006,
+      "hits": 8720
+    },
+    {
+      "id": 2,
+      "label": "(program)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 877.0109999999987,
+      "inclusiveMs": 877.0109999999987,
+      "hits": 608
+    },
+    {
+      "id": 155,
+      "label": "(garbage collector)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 28.073000000000004,
+      "inclusiveMs": 28.073000000000004,
+      "hits": 22
+    },
+    {
+      "id": 48,
+      "label": "Viewport.render",
+      "url": "<origin>/editor/editor/js/Viewport.js",
+      "line": 964,
+      "column": 17,
+      "selfMs": 27.435,
+      "inclusiveMs": 89.981,
+      "hits": 22
+    },
+    {
+      "id": 46,
+      "label": "formatNumber",
+      "url": "<origin>/editor/editor/js/Editor.js",
+      "line": 885,
+      "column": 22,
+      "selfMs": 21.006,
+      "inclusiveMs": 21.006,
+      "hits": 17
+    },
+    {
+      "id": 211,
+      "label": "(anonymous)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 18.799,
+      "inclusiveMs": 18.799,
+      "hits": 15
+    },
+    {
+      "id": 159,
+      "label": "Viewport.updateAspectRatio",
+      "url": "<origin>/editor/editor/js/Viewport.js",
+      "line": 160,
+      "column": 28,
+      "selfMs": 14.142,
+      "inclusiveMs": 15.404000000000003,
+      "hits": 12
+    },
+    {
+      "id": 164,
+      "label": "UIOutliner.setValue",
+      "url": "<origin>/editor/editor/js/libs/ui.three.js",
+      "line": 513,
+      "column": 10,
+      "selfMs": 13.925999999999998,
+      "inclusiveMs": 13.925999999999998,
+      "hits": 11
+    },
+    {
+      "id": 267,
+      "label": "UIText.setValue",
+      "url": "<origin>/editor/editor/js/libs/ui.js",
+      "line": 270,
+      "column": 10,
+      "selfMs": 11.133000000000001,
+      "inclusiveMs": 11.133000000000001,
+      "hits": 9
+    },
+    {
+      "id": 45,
+      "label": "ViewportInfo.update",
+      "url": "<origin>/editor/editor/js/Viewport.Info.js",
+      "line": 46,
+      "column": 17,
+      "selfMs": 10.001999999999999,
+      "inclusiveMs": 42.141000000000005,
+      "hits": 8
+    },
+    {
+      "id": 182,
+      "label": "UIOutliner.setValue",
+      "url": "<origin>/editor/editor/js/libs/ui.three.js",
+      "line": 513,
+      "column": 10,
+      "selfMs": 8.829,
+      "inclusiveMs": 8.829,
+      "hits": 7
+    },
+    {
+      "id": 239,
+      "label": "Timer.update",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 51264,
+      "column": 8,
+      "selfMs": 8.824,
+      "inclusiveMs": 10.077,
+      "hits": 7
+    },
+    {
+      "id": 25,
+      "label": "formatNumber",
+      "url": "<origin>/editor/editor/js/Editor.js",
+      "line": 885,
+      "column": 22,
+      "selfMs": 7.646999999999999,
+      "inclusiveMs": 7.646999999999999,
+      "hits": 6
+    },
+    {
+      "id": 337,
+      "label": "SidebarScene.(anonymous)",
+      "url": "<origin>/editor/editor/js/Sidebar.Scene.js",
+      "line": 537,
+      "column": 38,
+      "selfMs": 7.605,
+      "inclusiveMs": 7.605,
+      "hits": 6
+    },
+    {
+      "id": 95,
+      "label": "query",
+      "url": "",
+      "line": 5119,
+      "column": 21,
+      "selfMs": 7.5680000000000005,
+      "inclusiveMs": 8.769000000000002,
+      "hits": 6
+    },
+    {
+      "id": 354,
+      "label": "UIOutliner.setValue",
+      "url": "<origin>/editor/editor/js/libs/ui.three.js",
+      "line": 513,
+      "column": 10,
+      "selfMs": 7.564,
+      "inclusiveMs": 7.564,
+      "hits": 6
+    },
+    {
+      "id": 157,
+      "label": "requestAnimationFrame",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 6.071,
+      "inclusiveMs": 6.071,
+      "hits": 5
+    },
+    {
+      "id": 234,
+      "label": "formatNumber",
+      "url": "<origin>/editor/editor/js/Editor.js",
+      "line": 885,
+      "column": 22,
+      "selfMs": 5.032,
+      "inclusiveMs": 5.032,
+      "hits": 4
+    },
+    {
+      "id": 96,
+      "label": "formatNumber",
+      "url": "<origin>/editor/editor/js/Editor.js",
+      "line": 885,
+      "column": 22,
+      "selfMs": 5.022,
+      "inclusiveMs": 5.022,
+      "hits": 4
+    },
+    {
+      "id": 162,
+      "label": "getBoundingClientRect",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 4.898,
+      "inclusiveMs": 4.898,
+      "hits": 4
+    },
+    {
+      "id": 167,
+      "label": "intersect",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 56748,
+      "column": 19,
+      "selfMs": 4.861000000000001,
+      "inclusiveMs": 16.177999999999997,
+      "hits": 4
+    },
+    {
+      "id": 27,
+      "label": "evaluate",
+      "url": "",
+      "line": 284,
+      "column": 11,
+      "selfMs": 4.843,
+      "inclusiveMs": 57.99499999999999,
+      "hits": 4
+    },
+    {
+      "id": 114,
+      "label": "Ray.intersectTriangle",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 23536,
+      "column": 19,
+      "selfMs": 3.8409999999999997,
+      "inclusiveMs": 3.8409999999999997,
+      "hits": 3
+    },
+    {
+      "id": 372,
+      "label": "removeChild",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 3.819,
+      "inclusiveMs": 3.819,
+      "hits": 3
+    },
+    {
+      "id": 325,
+      "label": "removeChild",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 3.8040000000000003,
+      "inclusiveMs": 3.8040000000000003,
+      "hits": 3
+    },
+    {
+      "id": 460,
+      "label": "UINumber.setValue",
+      "url": "<origin>/editor/editor/js/libs/ui.js",
+      "line": 697,
+      "column": 10,
+      "selfMs": 3.7909999999999995,
+      "inclusiveMs": 3.7909999999999995,
+      "hits": 3
+    },
+    {
+      "id": 288,
+      "label": "getPointer",
+      "url": "<origin>/editor/examples/jsm/controls/TransformControls.js",
+      "line": 977,
+      "column": 20,
+      "selfMs": 3.778,
+      "inclusiveMs": 3.778,
+      "hits": 3
+    },
+    {
+      "id": 37,
+      "label": "TransformControls.pointerMove",
+      "url": "<origin>/editor/examples/jsm/controls/TransformControls.js",
+      "line": 512,
+      "column": 13,
+      "selfMs": 3.776,
+      "inclusiveMs": 159.89400000000003,
+      "hits": 3
+    },
+    {
+      "id": 44,
+      "label": "UIText.setValue",
+      "url": "<origin>/editor/editor/js/libs/ui.js",
+      "line": 270,
+      "column": 10,
+      "selfMs": 3.7649999999999997,
+      "inclusiveMs": 3.7649999999999997,
+      "hits": 3
+    },
+    {
+      "id": 256,
+      "label": "UINumber.setValue",
+      "url": "<origin>/editor/editor/js/libs/ui.js",
+      "line": 697,
+      "column": 10,
+      "selfMs": 3.76,
+      "inclusiveMs": 3.76,
+      "hits": 3
+    },
+    {
+      "id": 160,
+      "label": "onPointerHover",
+      "url": "<origin>/editor/examples/jsm/controls/TransformControls.js",
+      "line": 1020,
+      "column": 24,
+      "selfMs": 3.6579999999999995,
+      "inclusiveMs": 18.628999999999998,
+      "hits": 3
+    },
+    {
+      "id": 376,
+      "label": "WebGLState.setMaterial",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 10409,
+      "column": 22,
+      "selfMs": 3.6489999999999996,
+      "inclusiveMs": 3.6489999999999996,
+      "hits": 3
+    },
+    {
+      "id": 185,
+      "label": "SidebarGeometry.build",
+      "url": "<origin>/editor/editor/js/Sidebar.Geometry.js",
+      "line": 279,
+      "column": 22,
+      "selfMs": 3.5919999999999996,
+      "inclusiveMs": 7.396,
+      "hits": 3
+    },
+    {
+      "id": 26,
+      "label": "(anonymous)",
+      "url": "",
+      "line": 1,
+      "column": 2,
+      "selfMs": 3.537,
+      "inclusiveMs": 61.53199999999999,
+      "hits": 3
+    },
+    {
+      "id": 352,
+      "label": "listener",
+      "url": "",
+      "line": 7517,
+      "column": 22,
+      "selfMs": 2.557,
+      "inclusiveMs": 2.557,
+      "hits": 2
+    },
+    {
+      "id": 28,
+      "label": "(anonymous)",
+      "url": "",
+      "line": 1,
+      "column": 1,
+      "selfMs": 2.538,
+      "inclusiveMs": 21.232999999999997,
+      "hits": 2
+    },
+    {
+      "id": 265,
+      "label": "UIColor.setHexValue",
+      "url": "<origin>/editor/editor/js/libs/ui.js",
+      "line": 531,
+      "column": 13,
+      "selfMs": 2.534,
+      "inclusiveMs": 2.534,
+      "hits": 2
+    },
+    {
+      "id": 168,
+      "label": "GeometryParametersPanel",
+      "url": "<origin>/editor/editor/js/Sidebar.Geometry.BoxGeometry.js",
+      "line": 7,
+      "column": 33,
+      "selfMs": 2.533,
+      "inclusiveMs": 11.493999999999998,
+      "hits": 2
+    },
+    {
+      "id": 386,
+      "label": "Mesh.getVertexPosition",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 24135,
+      "column": 19,
+      "selfMs": 2.529,
+      "inclusiveMs": 2.529,
+      "hits": 2
+    },
+    {
+      "id": 140,
+      "label": "(anonymous)",
+      "url": "<origin>/editor/editor/js/Player.js",
+      "line": 24,
+      "column": 37,
+      "selfMs": 2.5279999999999996,
+      "inclusiveMs": 2.5279999999999996,
+      "hits": 2
+    },
+    {
+      "id": 75,
+      "label": "formatNumber",
+      "url": "<origin>/editor/editor/js/Editor.js",
+      "line": 885,
+      "column": 22,
+      "selfMs": 2.525,
+      "inclusiveMs": 2.525,
+      "hits": 2
+    },
+    {
+      "id": 53,
+      "label": "TransformControlsGizmo.updateMatrixWorld",
+      "url": "<origin>/editor/examples/jsm/controls/TransformControls.js",
+      "line": 1583,
+      "column": 19,
+      "selfMs": 2.521,
+      "inclusiveMs": 7.355,
+      "hits": 2
+    },
+    {
+      "id": 437,
+      "label": "(anonymous)",
+      "url": "",
+      "line": 1,
+      "column": 1,
+      "selfMs": 2.52,
+      "inclusiveMs": 3.8049999999999997,
+      "hits": 2
+    },
+    {
+      "id": 236,
+      "label": "checkGeometryIntersection",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 24411,
+      "column": 35,
+      "selfMs": 2.518,
+      "inclusiveMs": 7.576999999999999,
+      "hits": 2
+    },
+    {
+      "id": 175,
+      "label": "WebGLRenderer.setProgram",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 18407,
+      "column": 22,
+      "selfMs": 2.516,
+      "inclusiveMs": 15.171000000000001,
+      "hits": 2
+    },
+    {
+      "id": 119,
+      "label": "WebGLRenderer.projectObject",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17897,
+      "column": 25,
+      "selfMs": 2.513,
+      "inclusiveMs": 2.513,
+      "hits": 2
+    },
+    {
+      "id": 215,
+      "label": "Viewport.render",
+      "url": "<origin>/editor/editor/js/Viewport.js",
+      "line": 964,
+      "column": 17,
+      "selfMs": 2.512,
+      "inclusiveMs": 9.892,
+      "hits": 2
+    },
+    {
+      "id": 36,
+      "label": "onPointerMove",
+      "url": "<origin>/editor/examples/jsm/controls/TransformControls.js",
+      "line": 1052,
+      "column": 23,
+      "selfMs": 2.509,
+      "inclusiveMs": 162.40300000000005,
+      "hits": 2
+    },
+    {
+      "id": 67,
+      "label": "UINumber.setValue",
+      "url": "<origin>/editor/editor/js/libs/ui.js",
+      "line": 697,
+      "column": 10,
+      "selfMs": 2.5060000000000002,
+      "inclusiveMs": 2.5060000000000002,
+      "hits": 2
+    },
+    {
+      "id": 290,
+      "label": "setKey",
+      "url": "<origin>/editor/editor/js/Config.js",
+      "line": 63,
+      "column": 20,
+      "selfMs": 2.5,
+      "inclusiveMs": 2.5,
+      "hits": 2
+    },
+    {
+      "id": 266,
+      "label": "Vector3.applyMatrix4",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 5244,
+      "column": 14,
+      "selfMs": 2.498,
+      "inclusiveMs": 2.498,
+      "hits": 2
+    },
+    {
+      "id": 152,
+      "label": "Viewport.render",
+      "url": "<origin>/editor/editor/js/Viewport.js",
+      "line": 964,
+      "column": 17,
+      "selfMs": 2.4450000000000003,
+      "inclusiveMs": 18.8,
+      "hits": 2
+    },
+    {
+      "id": 118,
+      "label": "viewport",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 2.445,
+      "inclusiveMs": 2.445,
+      "hits": 2
+    },
+    {
+      "id": 284,
+      "label": "Viewport.updateAspectRatio",
+      "url": "<origin>/editor/editor/js/Viewport.js",
+      "line": 160,
+      "column": 28,
+      "selfMs": 2.436,
+      "inclusiveMs": 2.436,
+      "hits": 2
+    },
+    {
+      "id": 547,
+      "label": "drawElements",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 2.341,
+      "inclusiveMs": 2.341,
+      "hits": 2
+    },
+    {
+      "id": 263,
+      "label": "createTextMatcher",
+      "url": "",
+      "line": 7783,
+      "column": 27,
+      "selfMs": 2.316,
+      "inclusiveMs": 2.316,
+      "hits": 2
+    },
+    {
+      "id": 283,
+      "label": "Matrix4.multiplyMatrices",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 10570,
+      "column": 18,
+      "selfMs": 2.298,
+      "inclusiveMs": 2.298,
+      "hits": 2
+    },
+    {
+      "id": 385,
+      "label": "elementsFromPoint",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 2.295,
+      "inclusiveMs": 2.295,
+      "hits": 2
+    },
+    {
+      "id": 466,
+      "label": "setKey",
+      "url": "<origin>/editor/editor/js/Config.js",
+      "line": 63,
+      "column": 20,
+      "selfMs": 2.271,
+      "inclusiveMs": 2.271,
+      "hits": 2
+    },
+    {
+      "id": 259,
+      "label": "UISelect.setOptions",
+      "url": "<origin>/editor/editor/js/libs/ui.js",
+      "line": 398,
+      "column": 12,
+      "selfMs": 2.2439999999999998,
+      "inclusiveMs": 4.758,
+      "hits": 2
+    }
+  ],
+  "inclusive": [
+    {
+      "id": 1,
+      "label": "(root)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 0,
+      "inclusiveMs": 12345.82400000005,
+      "hits": 0
+    },
+    {
+      "id": 3,
+      "label": "(idle)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 10890.92800000006,
+      "inclusiveMs": 10890.92800000006,
+      "hits": 8720
+    },
+    {
+      "id": 2,
+      "label": "(program)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 877.0109999999987,
+      "inclusiveMs": 877.0109999999987,
+      "hits": 608
+    },
+    {
+      "id": 36,
+      "label": "onPointerMove",
+      "url": "<origin>/editor/examples/jsm/controls/TransformControls.js",
+      "line": 1052,
+      "column": 23,
+      "selfMs": 2.509,
+      "inclusiveMs": 162.40300000000005,
+      "hits": 2
+    },
+    {
+      "id": 37,
+      "label": "TransformControls.pointerMove",
+      "url": "<origin>/editor/examples/jsm/controls/TransformControls.js",
+      "line": 512,
+      "column": 13,
+      "selfMs": 3.776,
+      "inclusiveMs": 159.89400000000003,
+      "hits": 3
+    },
+    {
+      "id": 38,
+      "label": "EventDispatcher.dispatchEvent",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 2274,
+      "column": 15,
+      "selfMs": 0,
+      "inclusiveMs": 154.8600000000001,
+      "hits": 0
+    },
+    {
+      "id": 39,
+      "label": "Viewport.(anonymous)",
+      "url": "<origin>/editor/editor/js/Viewport.js",
+      "line": 84,
+      "column": 63,
+      "selfMs": 0,
+      "inclusiveMs": 154.8600000000001,
+      "hits": 0
+    },
+    {
+      "id": 40,
+      "label": "dispatch",
+      "url": "<origin>/editor/editor/js/libs/signals.min.js",
+      "line": 8,
+      "column": 344,
+      "selfMs": 0,
+      "inclusiveMs": 154.8600000000001,
+      "hits": 0
+    },
+    {
+      "id": 41,
+      "label": "dispatch",
+      "url": "<origin>/editor/editor/js/libs/signals.min.js",
+      "line": 12,
+      "column": 382,
+      "selfMs": 1.252,
+      "inclusiveMs": 154.8600000000001,
+      "hits": 1
+    },
+    {
+      "id": 47,
+      "label": "Viewport.(anonymous)",
+      "url": "<origin>/editor/editor/js/Viewport.js",
+      "line": 493,
+      "column": 38,
+      "selfMs": 1.258,
+      "inclusiveMs": 91.23899999999999,
+      "hits": 1
+    },
+    {
+      "id": 48,
+      "label": "Viewport.render",
+      "url": "<origin>/editor/editor/js/Viewport.js",
+      "line": 964,
+      "column": 17,
+      "selfMs": 27.435,
+      "inclusiveMs": 89.981,
+      "hits": 22
+    },
+    {
+      "id": 15,
+      "label": "Viewport.onMouseUp",
+      "url": "<origin>/editor/editor/js/Viewport.js",
+      "line": 227,
+      "column": 20,
+      "selfMs": 0,
+      "inclusiveMs": 73.03000000000002,
+      "hits": 0
+    },
+    {
+      "id": 16,
+      "label": "Viewport.handleClick",
+      "url": "<origin>/editor/editor/js/Viewport.js",
+      "line": 201,
+      "column": 22,
+      "selfMs": 0,
+      "inclusiveMs": 71.77100000000002,
+      "hits": 0
+    },
+    {
+      "id": 4,
+      "label": "UIOutliner.onClick",
+      "url": "<origin>/editor/editor/js/libs/ui.three.js",
+      "line": 352,
+      "column": 19,
+      "selfMs": 0,
+      "inclusiveMs": 70,
+      "hits": 0
+    },
+    {
+      "id": 5,
+      "label": "dispatchEvent",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 0,
+      "inclusiveMs": 70,
+      "hits": 0
+    },
+    {
+      "id": 6,
+      "label": "SidebarScene.(anonymous)",
+      "url": "<origin>/editor/editor/js/Sidebar.Scene.js",
+      "line": 134,
+      "column": 30,
+      "selfMs": 0,
+      "inclusiveMs": 70,
+      "hits": 0
+    },
+    {
+      "id": 7,
+      "label": "selectById",
+      "url": "<origin>/editor/editor/js/Editor.js",
+      "line": 645,
+      "column": 23,
+      "selfMs": 0,
+      "inclusiveMs": 70,
+      "hits": 0
+    },
+    {
+      "id": 8,
+      "label": "select",
+      "url": "<origin>/editor/editor/js/Editor.js",
+      "line": 639,
+      "column": 19,
+      "selfMs": 0,
+      "inclusiveMs": 68.88199999999999,
+      "hits": 0
+    },
+    {
+      "id": 9,
+      "label": "Selector.select",
+      "url": "<origin>/editor/editor/js/Selector.js",
+      "line": 159,
+      "column": 8,
+      "selfMs": 0,
+      "inclusiveMs": 68.88199999999999,
+      "hits": 0
+    },
+    {
+      "id": 10,
+      "label": "Selector.setSelection",
+      "url": "<origin>/editor/editor/js/Selector.js",
+      "line": 185,
+      "column": 14,
+      "selfMs": 0,
+      "inclusiveMs": 68.88199999999999,
+      "hits": 0
+    },
+    {
+      "id": 11,
+      "label": "dispatch",
+      "url": "<origin>/editor/editor/js/libs/signals.min.js",
+      "line": 8,
+      "column": 344,
+      "selfMs": 0,
+      "inclusiveMs": 66.61099999999999,
+      "hits": 0
+    },
+    {
+      "id": 12,
+      "label": "dispatch",
+      "url": "<origin>/editor/editor/js/libs/signals.min.js",
+      "line": 12,
+      "column": 382,
+      "selfMs": 1.256,
+      "inclusiveMs": 66.61099999999999,
+      "hits": 1
+    },
+    {
+      "id": 17,
+      "label": "dispatch",
+      "url": "<origin>/editor/editor/js/libs/signals.min.js",
+      "line": 8,
+      "column": 344,
+      "selfMs": 0,
+      "inclusiveMs": 65.42200000000001,
+      "hits": 0
+    },
+    {
+      "id": 18,
+      "label": "dispatch",
+      "url": "<origin>/editor/editor/js/libs/signals.min.js",
+      "line": 12,
+      "column": 382,
+      "selfMs": 0,
+      "inclusiveMs": 65.42200000000001,
+      "hits": 0
+    },
+    {
+      "id": 19,
+      "label": "Selector.(anonymous)",
+      "url": "<origin>/editor/editor/js/Selector.js",
+      "line": 32,
+      "column": 38,
+      "selfMs": 0,
+      "inclusiveMs": 65.42200000000001,
+      "hits": 0
+    },
+    {
+      "id": 20,
+      "label": "Selector.select",
+      "url": "<origin>/editor/editor/js/Selector.js",
+      "line": 159,
+      "column": 8,
+      "selfMs": 0,
+      "inclusiveMs": 65.42200000000001,
+      "hits": 0
+    },
+    {
+      "id": 21,
+      "label": "Selector.setSelection",
+      "url": "<origin>/editor/editor/js/Selector.js",
+      "line": 185,
+      "column": 14,
+      "selfMs": 1.254,
+      "inclusiveMs": 65.42200000000001,
+      "hits": 1
+    },
+    {
+      "id": 22,
+      "label": "dispatch",
+      "url": "<origin>/editor/editor/js/libs/signals.min.js",
+      "line": 8,
+      "column": 344,
+      "selfMs": 0,
+      "inclusiveMs": 61.66800000000003,
+      "hits": 0
+    },
+    {
+      "id": 23,
+      "label": "dispatch",
+      "url": "<origin>/editor/editor/js/libs/signals.min.js",
+      "line": 12,
+      "column": 382,
+      "selfMs": 0,
+      "inclusiveMs": 61.66800000000003,
+      "hits": 0
+    },
+    {
+      "id": 26,
+      "label": "(anonymous)",
+      "url": "",
+      "line": 1,
+      "column": 2,
+      "selfMs": 3.537,
+      "inclusiveMs": 61.53199999999999,
+      "hits": 3
+    },
+    {
+      "id": 27,
+      "label": "evaluate",
+      "url": "",
+      "line": 284,
+      "column": 11,
+      "selfMs": 4.843,
+      "inclusiveMs": 57.99499999999999,
+      "hits": 4
+    },
+    {
+      "id": 49,
+      "label": "WebGLRenderer.render",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17674,
+      "column": 26,
+      "selfMs": 1.257,
+      "inclusiveMs": 56.19899999999999,
+      "hits": 1
+    },
+    {
+      "id": 56,
+      "label": "onPointerUp",
+      "url": "<origin>/editor/examples/jsm/controls/TransformControls.js",
+      "line": 1060,
+      "column": 21,
+      "selfMs": 0,
+      "inclusiveMs": 46.318000000000005,
+      "hits": 0
+    },
+    {
+      "id": 57,
+      "label": "TransformControls.pointerUp",
+      "url": "<origin>/editor/examples/jsm/controls/TransformControls.js",
+      "line": 773,
+      "column": 11,
+      "selfMs": 0,
+      "inclusiveMs": 42.540000000000006,
+      "hits": 0
+    },
+    {
+      "id": 45,
+      "label": "ViewportInfo.update",
+      "url": "<origin>/editor/editor/js/Viewport.Info.js",
+      "line": 46,
+      "column": 17,
+      "selfMs": 10.001999999999999,
+      "inclusiveMs": 42.141000000000005,
+      "hits": 8
+    },
+    {
+      "id": 58,
+      "label": "EventDispatcher.dispatchEvent",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 2274,
+      "column": 15,
+      "selfMs": 0,
+      "inclusiveMs": 40.199000000000005,
+      "hits": 0
+    },
+    {
+      "id": 59,
+      "label": "Viewport.(anonymous)",
+      "url": "<origin>/editor/editor/js/Viewport.js",
+      "line": 105,
+      "column": 58,
+      "selfMs": 0,
+      "inclusiveMs": 40.199000000000005,
+      "hits": 0
+    },
+    {
+      "id": 60,
+      "label": "execute",
+      "url": "<origin>/editor/editor/js/Editor.js",
+      "line": 828,
+      "column": 20,
+      "selfMs": 0,
+      "inclusiveMs": 40.199000000000005,
+      "hits": 0
+    },
+    {
+      "id": 61,
+      "label": "History.execute",
+      "url": "<origin>/editor/editor/js/History.js",
+      "line": 34,
+      "column": 9,
+      "selfMs": 0,
+      "inclusiveMs": 40.199000000000005,
+      "hits": 0
+    },
+    {
+      "id": 68,
+      "label": "SidebarSettingsShortcuts.(anonymous)",
+      "url": "<origin>/editor/editor/js/Sidebar.Settings.Shortcuts.js",
+      "line": 99,
+      "column": 49,
+      "selfMs": 1.257,
+      "inclusiveMs": 38.68900000000001,
+      "hits": 1
+    },
+    {
+      "id": 62,
+      "label": "SetPositionCommand.execute",
+      "url": "<origin>/editor/editor/js/commands/SetPositionCommand.js",
+      "line": 38,
+      "column": 9,
+      "selfMs": 0,
+      "inclusiveMs": 28.848000000000003,
+      "hits": 0
+    },
+    {
+      "id": 63,
+      "label": "dispatch",
+      "url": "<origin>/editor/editor/js/libs/signals.min.js",
+      "line": 8,
+      "column": 344,
+      "selfMs": 0,
+      "inclusiveMs": 28.848000000000003,
+      "hits": 0
+    },
+    {
+      "id": 64,
+      "label": "dispatch",
+      "url": "<origin>/editor/editor/js/libs/signals.min.js",
+      "line": 12,
+      "column": 382,
+      "selfMs": 0,
+      "inclusiveMs": 28.848000000000003,
+      "hits": 0
+    },
+    {
+      "id": 69,
+      "label": "undo",
+      "url": "<origin>/editor/editor/js/Editor.js",
+      "line": 834,
+      "column": 17,
+      "selfMs": 0,
+      "inclusiveMs": 28.799000000000003,
+      "hits": 0
+    },
+    {
+      "id": 70,
+      "label": "History.undo",
+      "url": "<origin>/editor/editor/js/History.js",
+      "line": 87,
+      "column": 6,
+      "selfMs": 0,
+      "inclusiveMs": 28.799000000000003,
+      "hits": 0
+    },
+    {
+      "id": 155,
+      "label": "(garbage collector)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 28.073000000000004,
+      "inclusiveMs": 28.073000000000004,
+      "hits": 22
+    },
+    {
+      "id": 28,
+      "label": "(anonymous)",
+      "url": "",
+      "line": 1,
+      "column": 1,
+      "selfMs": 2.538,
+      "inclusiveMs": 21.232999999999997,
+      "hits": 2
+    },
+    {
+      "id": 46,
+      "label": "formatNumber",
+      "url": "<origin>/editor/editor/js/Editor.js",
+      "line": 885,
+      "column": 22,
+      "selfMs": 21.006,
+      "inclusiveMs": 21.006,
+      "hits": 17
+    },
+    {
+      "id": 171,
+      "label": "WebGLRenderer.renderScene",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 18015,
+      "column": 23,
+      "selfMs": 0,
+      "inclusiveMs": 20.239000000000004,
+      "hits": 0
+    },
+    {
+      "id": 172,
+      "label": "WebGLRenderer.renderObjects",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 18165,
+      "column": 25,
+      "selfMs": 0,
+      "inclusiveMs": 20.239000000000004,
+      "hits": 0
+    },
+    {
+      "id": 173,
+      "label": "WebGLRenderer.renderObject",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 18192,
+      "column": 24,
+      "selfMs": 0,
+      "inclusiveMs": 20.239000000000004,
+      "hits": 0
+    },
+    {
+      "id": 174,
+      "label": "WebGLRenderer.renderBufferDirect",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17233,
+      "column": 38,
+      "selfMs": 1.256,
+      "inclusiveMs": 20.239000000000004,
+      "hits": 1
+    },
+    {
+      "id": 76,
+      "label": "(anonymous)",
+      "url": "",
+      "line": 1,
+      "column": 1,
+      "selfMs": 0,
+      "inclusiveMs": 19.662,
+      "hits": 0
+    },
+    {
+      "id": 133,
+      "label": "Animation.onObjectSelected",
+      "url": "<origin>/editor/editor/js/Animation.js",
+      "line": 561,
+      "column": 27,
+      "selfMs": 0,
+      "inclusiveMs": 19.194,
+      "hits": 0
+    },
+    {
+      "id": 134,
+      "label": "Animation.update",
+      "url": "<origin>/editor/editor/js/Animation.js",
+      "line": 300,
+      "column": 17,
+      "selfMs": 0,
+      "inclusiveMs": 19.194,
+      "hits": 0
+    },
+    {
+      "id": 135,
+      "label": "dispatch",
+      "url": "<origin>/editor/editor/js/libs/signals.min.js",
+      "line": 8,
+      "column": 344,
+      "selfMs": 0,
+      "inclusiveMs": 19.194,
+      "hits": 0
+    },
+    {
+      "id": 136,
+      "label": "dispatch",
+      "url": "<origin>/editor/editor/js/libs/signals.min.js",
+      "line": 12,
+      "column": 382,
+      "selfMs": 0,
+      "inclusiveMs": 19.194,
+      "hits": 0
+    },
+    {
+      "id": 137,
+      "label": "(anonymous)",
+      "url": "<origin>/editor/editor/",
+      "line": 115,
+      "column": 55,
+      "selfMs": 0,
+      "inclusiveMs": 19.194,
+      "hits": 0
+    },
+    {
+      "id": 138,
+      "label": "dispatch",
+      "url": "<origin>/editor/editor/js/libs/signals.min.js",
+      "line": 8,
+      "column": 344,
+      "selfMs": 0,
+      "inclusiveMs": 19.194,
+      "hits": 0
+    },
+    {
+      "id": 139,
+      "label": "dispatch",
+      "url": "<origin>/editor/editor/js/libs/signals.min.js",
+      "line": 12,
+      "column": 382,
+      "selfMs": 0,
+      "inclusiveMs": 19.194,
+      "hits": 0
+    }
+  ],
+  "observations": {
+    "before": {
+      "elapsedMs": 2126.1999999955297,
+      "renderPasses": 576,
+      "passesPerSecond": 270.9058414077749,
+      "focusBefore": true,
+      "focusAfter": true,
+      "programsBefore": 17,
+      "programsAfter": 17
+    },
+    "during": {
+      "elapsedMs": 12218.80000000447,
+      "renderPasses": 3328,
+      "passesPerSecond": 272.3671718989412,
+      "focusBefore": true,
+      "focusAfter": true,
+      "programsBefore": 17,
+      "programsAfter": 17
+    },
+    "after": {
+      "elapsedMs": 2074.5,
+      "renderPasses": 576,
+      "passesPerSecond": 277.65726681127984,
+      "focusBefore": true,
+      "focusAfter": true,
+      "programsBefore": 17,
+      "programsAfter": 17
+    }
+  },
+  "boundaries": {
+    "selectionBox.setFromObject": {
+      "calls": 130,
+      "totalMs": 0.6999999955296516,
+      "meanMs": 0.005384615350228089,
+      "maxMs": 0.10000000149011612
+    },
+    "scene.updateMatrixWorld": {
+      "calls": 221,
+      "totalMs": 0.4999999850988388,
+      "meanMs": 0.0022624433714879583,
+      "maxMs": 0.10000000149011612
+    },
+    "renderer.renderBufferDirect": {
+      "calls": 6487,
+      "totalMs": 21.799999974668026,
+      "meanMs": 0.003360567284517963,
+      "maxMs": 0.20000000298023224
+    },
+    "renderer.render": {
+      "calls": 832,
+      "totalMs": 44.09999995678663,
+      "meanMs": 0.05300480764036855,
+      "maxMs": 0.29999999701976776
+    },
+    "selected.updateWorldMatrix": {
+      "calls": 156,
+      "totalMs": 0.20000000298023224,
+      "meanMs": 0.0012820513011553348,
+      "maxMs": 0.10000000149011612
+    },
+    "signals.objectChanged": {
+      "calls": 104,
+      "totalMs": 65.10000001639128,
+      "meanMs": 0.6259615386191469,
+      "maxMs": 0.9000000059604645
+    }
+  },
+  "boundaryWindow": {
+    "elapsedMs": 3049.89999999851,
+    "renderPasses": 832,
+    "passesPerSecond": 272.79582937158807,
+    "focusBefore": true,
+    "focusAfter": true,
+    "programsBefore": 17,
+    "programsAfter": 17
+  },
+  "glCounts": {
+    "uniformMatrix4fv": {
+      "calls": 4140,
+      "arrayArgumentBytes": 264960
+    },
+    "drawElements": {
+      "calls": 3672,
+      "arrayArgumentBytes": 0
+    },
+    "uniformMatrix3fv": {
+      "calls": 288,
+      "arrayArgumentBytes": 10368
+    },
+    "drawArrays": {
+      "calls": 819,
+      "arrayArgumentBytes": 0
+    }
+  },
+  "glWindow": {
+    "elapsedMs": 2166.7000000029802,
+    "renderPasses": 576,
+    "passesPerSecond": 265.84206396788096,
+    "focusBefore": true,
+    "focusAfter": true,
+    "programsBefore": 17,
+    "programsAfter": 17
+  }
+}

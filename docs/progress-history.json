@@ -69,6 +69,58 @@
         }
       },
       "note": "New counting scheme; no engine port is implied by the denominator change."
+    },
+    {
+      "schemaVersion": 3,
+      "recordedAt": "2026-10-23T15:31:27.097790+00:00",
+      "implementationCommit": "dabcd69d3c30a9560d36ffc9a52862ef329892d8",
+      "label": "Source-derived computation and authority inventory",
+      "inventoryHash": "e2d0da2bb1bc4d7ea6fe99fddc981ab8ce7f50c83466b9ff60df9e48b36672fa",
+      "upstreamCommit": "9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8",
+      "counts": {
+        "functions": {
+          "total": 1515,
+          "states": {
+            "js": 1510,
+            "rust": 0,
+            "rust-batch": 5
+          }
+        },
+        "state": {
+          "total": 115,
+          "states": {
+            "js": 102,
+            "rust-owned": 13
+          }
+        }
+      },
+      "note": "C2 adds two scoped update-method mappings and evaluated local-matrix authority; the declared inventory is unchanged. No performance qualification."
+    },
+    {
+      "schemaVersion": 3,
+      "recordedAt": "2026-10-24T04:35:04.149129+00:00",
+      "implementationCommit": "066ddbaa3d538e95126a46c9203b550613bf3d3d",
+      "label": "Source-derived computation and authority inventory",
+      "inventoryHash": "53b6d3cc68787e493dfdb4c09574c8267809dd5e809a887840972556ffd72604",
+      "upstreamCommit": "9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8",
+      "counts": {
+        "functions": {
+          "total": 1515,
+          "states": {
+            "js": 1508,
+            "rust": 0,
+            "rust-batch": 7
+          }
+        },
+        "state": {
+          "total": 115,
+          "states": {
+            "js": 100,
+            "rust-owned": 15
+          }
+        }
+      },
+      "note": "C3 adds scoped main-pass projection/order and per-pass matrix state mappings; the declared inventory is unchanged. No performance qualification."
     }
   ]
 }

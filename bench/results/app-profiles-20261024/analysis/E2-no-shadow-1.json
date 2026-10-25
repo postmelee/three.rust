@@ -1,0 +1,1414 @@
+{
+  "name": "E2-no-shadow-1",
+  "sensitivity": {
+    "method": "Post-capture sensitivity only: unweighted sample counts and time weighting excluding gaps >5ms. Original samples and default weighting remain unchanged.",
+    "activeSamples": 539,
+    "countBuckets": {
+      "program/native-unresolved": 354,
+      "render residual": 78,
+      "idle": 8645,
+      "render preparation/submission": 243,
+      "transform/math residual": 79,
+      "skeleton/palette": 50,
+      "visibility/sort": 47,
+      "UI/callback": 6,
+      "animation/binding": 16,
+      "automation/observation": 3,
+      "GC": 13,
+      "other/unresolved": 4
+    },
+    "shortGapActiveMs": 693.1279999999999,
+    "shortGapBuckets": {
+      "render residual": 105.55800000000005,
+      "idle": 10857.418000000067,
+      "program/native-unresolved": 453.1859999999998,
+      "render preparation/submission": 309.74499999999966,
+      "transform/math residual": 99.405,
+      "skeleton/palette": 64.15200000000002,
+      "visibility/sort": 60.25200000000001,
+      "UI/callback": 7.606,
+      "animation/binding": 20.298,
+      "automation/observation": 3.787,
+      "GC": 17.214000000000002,
+      "other/unresolved": 5.111
+    },
+    "longGaps": [
+      {
+        "sample": 0,
+        "node": 2,
+        "ms": 37.671,
+        "bucket": "program/native-unresolved"
+      }
+    ]
+  },
+  "profileDurationMs": 12042.619,
+  "weightedMs": 12041.403000000088,
+  "activeMs": 693.1280000000207,
+  "samples": 9538,
+  "intervalUs": 1000,
+  "buckets": {
+    "program/native-unresolved": {
+      "sampledMs": 490.85699999999986,
+      "percentOfActive": null
+    },
+    "render residual": {
+      "sampledMs": 105.55800000000005,
+      "percentOfActive": 15.229221731050671
+    },
+    "idle": {
+      "sampledMs": 10857.418000000067,
+      "percentOfActive": null
+    },
+    "render preparation/submission": {
+      "sampledMs": 309.74499999999966,
+      "percentOfActive": 44.687994136723724
+    },
+    "transform/math residual": {
+      "sampledMs": 99.405,
+      "percentOfActive": 14.341506907814578
+    },
+    "skeleton/palette": {
+      "sampledMs": 64.15200000000002,
+      "percentOfActive": 9.255433339873457
+    },
+    "visibility/sort": {
+      "sampledMs": 60.25200000000001,
+      "percentOfActive": 8.692766703985152
+    },
+    "UI/callback": {
+      "sampledMs": 7.606,
+      "percentOfActive": 1.0973442134785742
+    },
+    "animation/binding": {
+      "sampledMs": 20.298,
+      "percentOfActive": 2.928463429554049
+    },
+    "automation/observation": {
+      "sampledMs": 3.787,
+      "percentOfActive": 0.5463637307971813
+    },
+    "GC": {
+      "sampledMs": 17.214000000000002,
+      "percentOfActive": 2.483523966713145
+    },
+    "other/unresolved": {
+      "sampledMs": 5.111,
+      "percentOfActive": 0.7373818400064414
+    }
+  },
+  "exclusive": [
+    {
+      "id": 10,
+      "label": "(idle)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 10857.418000000067,
+      "inclusiveMs": 10857.418000000067,
+      "hits": 8645
+    },
+    {
+      "id": 2,
+      "label": "(program)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 490.85699999999986,
+      "inclusiveMs": 490.85699999999986,
+      "hits": 354
+    },
+    {
+      "id": 60,
+      "label": "Matrix4.toArray",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 11302,
+      "column": 9,
+      "selfMs": 47.80000000000001,
+      "inclusiveMs": 47.80000000000001,
+      "hits": 38
+    },
+    {
+      "id": 77,
+      "label": "ViewportInfo.updateFrametime",
+      "url": "<origin>/editor/editor/js/Viewport.Info.js",
+      "line": 110,
+      "column": 26,
+      "selfMs": 43.236000000000004,
+      "inclusiveMs": 43.236000000000004,
+      "hits": 30
+    },
+    {
+      "id": 89,
+      "label": "WebGLRenderer.getProgram",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 18224,
+      "column": 22,
+      "selfMs": 41.93100000000001,
+      "inclusiveMs": 109.108,
+      "hits": 33
+    },
+    {
+      "id": 109,
+      "label": "WebGLPrograms.getParameters",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 7357,
+      "column": 24,
+      "selfMs": 37.965999999999994,
+      "inclusiveMs": 37.965999999999994,
+      "hits": 30
+    },
+    {
+      "id": 131,
+      "label": "(garbage collector)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 17.214000000000002,
+      "inclusiveMs": 17.214000000000002,
+      "hits": 13
+    },
+    {
+      "id": 14,
+      "label": "WebGLRenderer.renderBufferDirect",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17233,
+      "column": 38,
+      "selfMs": 15.323,
+      "inclusiveMs": 272.5269999999999,
+      "hits": 12
+    },
+    {
+      "id": 101,
+      "label": "WebGLPrograms.getProgramCacheKey",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 7703,
+      "column": 29,
+      "selfMs": 15.208,
+      "inclusiveMs": 25.42,
+      "hits": 12
+    },
+    {
+      "id": 6,
+      "label": "WebGLRenderer.render",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17674,
+      "column": 26,
+      "selfMs": 15.084000000000001,
+      "inclusiveMs": 542.9249999999997,
+      "hits": 12
+    },
+    {
+      "id": 13,
+      "label": "WebGLRenderer.renderObject",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 18192,
+      "column": 24,
+      "selfMs": 13.879999999999999,
+      "inclusiveMs": 290.2139999999998,
+      "hits": 11
+    },
+    {
+      "id": 15,
+      "label": "WebGLRenderer.setProgram",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 18407,
+      "column": 22,
+      "selfMs": 12.961,
+      "inclusiveMs": 220.7239999999999,
+      "hits": 10
+    },
+    {
+      "id": 19,
+      "label": "WebGLTextures.uploadTexture",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 11918,
+      "column": 24,
+      "selfMs": 11.5,
+      "inclusiveMs": 33.31999999999999,
+      "hits": 9
+    },
+    {
+      "id": 88,
+      "label": "Euler.setFromRotationMatrix",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 11523,
+      "column": 23,
+      "selfMs": 11.434000000000001,
+      "inclusiveMs": 11.434000000000001,
+      "hits": 9
+    },
+    {
+      "id": 52,
+      "label": "TransformControlsGizmo.updateMatrixWorld",
+      "url": "<origin>/editor/examples/jsm/controls/TransformControls.js",
+      "line": 1583,
+      "column": 19,
+      "selfMs": 11.353999999999997,
+      "inclusiveMs": 33.62800000000001,
+      "hits": 9
+    },
+    {
+      "id": 9,
+      "label": "clear",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 11.314,
+      "inclusiveMs": 11.314,
+      "hits": 9
+    },
+    {
+      "id": 21,
+      "label": "texSubImage2D",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 10.121,
+      "inclusiveMs": 10.121,
+      "hits": 8
+    },
+    {
+      "id": 80,
+      "label": "bindVertexArray",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 9.913999999999998,
+      "inclusiveMs": 9.913999999999998,
+      "hits": 8
+    },
+    {
+      "id": 5,
+      "label": "Viewport.render",
+      "url": "<origin>/editor/editor/js/Viewport.js",
+      "line": 964,
+      "column": 17,
+      "selfMs": 9.174,
+      "inclusiveMs": 635.3409999999997,
+      "hits": 6
+    },
+    {
+      "id": 132,
+      "label": "setValueM4",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 5284,
+      "column": 20,
+      "selfMs": 8.783,
+      "inclusiveMs": 10.04,
+      "hits": 7
+    },
+    {
+      "id": 124,
+      "label": "SkeletonHelper.updateMatrixWorld",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 58246,
+      "column": 19,
+      "selfMs": 8.501999999999999,
+      "inclusiveMs": 12.291,
+      "hits": 6
+    },
+    {
+      "id": 123,
+      "label": "WebGLLights.setup",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 8516,
+      "column": 16,
+      "selfMs": 7.6080000000000005,
+      "inclusiveMs": 8.868,
+      "hits": 6
+    },
+    {
+      "id": 103,
+      "label": "Object3D.onRotationChange",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 12036,
+      "column": 28,
+      "selfMs": 7.461,
+      "inclusiveMs": 8.724,
+      "hits": 6
+    },
+    {
+      "id": 72,
+      "label": "requestAnimationFrame",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 6.346,
+      "inclusiveMs": 6.346,
+      "hits": 5
+    },
+    {
+      "id": 135,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 13067,
+      "column": 19,
+      "selfMs": 6.239999999999999,
+      "inclusiveMs": 8.769,
+      "hits": 5
+    },
+    {
+      "id": 158,
+      "label": "WebGLPrograms.getProgramCacheKeyBooleans",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 7798,
+      "column": 37,
+      "selfMs": 5.16,
+      "inclusiveMs": 5.16,
+      "hits": 4
+    },
+    {
+      "id": 29,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 13067,
+      "column": 19,
+      "selfMs": 5.085,
+      "inclusiveMs": 20.031,
+      "hits": 4
+    },
+    {
+      "id": 74,
+      "label": "uniformMatrix3fv",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 5.077,
+      "inclusiveMs": 5.077,
+      "hits": 4
+    },
+    {
+      "id": 96,
+      "label": "WebGLUniforms.upload",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 6123,
+      "column": 15,
+      "selfMs": 5.061999999999999,
+      "inclusiveMs": 11.365999999999998,
+      "hits": 4
+    },
+    {
+      "id": 152,
+      "label": "WebGLPrograms.getProgramCacheKeyParameters",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 7743,
+      "column": 39,
+      "selfMs": 5.052,
+      "inclusiveMs": 5.052,
+      "hits": 4
+    },
+    {
+      "id": 107,
+      "label": "useProgram",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 5.026999999999999,
+      "inclusiveMs": 5.026999999999999,
+      "hits": 4
+    },
+    {
+      "id": 11,
+      "label": "WebGLRenderer.renderScene",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 18015,
+      "column": 23,
+      "selfMs": 4.9399999999999995,
+      "inclusiveMs": 298.9359999999998,
+      "hits": 4
+    },
+    {
+      "id": 45,
+      "label": "WebGLRenderer.renderBufferDirect",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17233,
+      "column": 38,
+      "selfMs": 4.481,
+      "inclusiveMs": 19.531,
+      "hits": 2
+    },
+    {
+      "id": 172,
+      "label": "Matrix4.multiplyMatrices",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 10570,
+      "column": 18,
+      "selfMs": 4.061,
+      "inclusiveMs": 4.061,
+      "hits": 3
+    },
+    {
+      "id": 54,
+      "label": "WebGLRenderer.projectObject",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17897,
+      "column": 25,
+      "selfMs": 3.878,
+      "inclusiveMs": 95.44400000000005,
+      "hits": 3
+    },
+    {
+      "id": 91,
+      "label": "WebGLRenderer.projectObject",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17897,
+      "column": 25,
+      "selfMs": 3.835,
+      "inclusiveMs": 21.344,
+      "hits": 3
+    },
+    {
+      "id": 23,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 13067,
+      "column": 19,
+      "selfMs": 3.814,
+      "inclusiveMs": 96.57100000000001,
+      "hits": 3
+    },
+    {
+      "id": 106,
+      "label": "WebGLState.useProgram",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 10221,
+      "column": 21,
+      "selfMs": 3.794,
+      "inclusiveMs": 8.820999999999998,
+      "hits": 3
+    },
+    {
+      "id": 164,
+      "label": "Matrix4.multiplyMatrices",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 10570,
+      "column": 18,
+      "selfMs": 3.7889999999999997,
+      "inclusiveMs": 3.7889999999999997,
+      "hits": 3
+    },
+    {
+      "id": 202,
+      "label": "WebGLBindingStates.needsUpdate",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 1759,
+      "column": 22,
+      "selfMs": 3.785,
+      "inclusiveMs": 3.785,
+      "hits": 3
+    },
+    {
+      "id": 51,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 13067,
+      "column": 19,
+      "selfMs": 3.7030000000000003,
+      "inclusiveMs": 38.57800000000002,
+      "hits": 3
+    },
+    {
+      "id": 70,
+      "label": "bufferSubData",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 3.606,
+      "inclusiveMs": 3.606,
+      "hits": 3
+    },
+    {
+      "id": 53,
+      "label": "WebGLRenderer.projectObject",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17897,
+      "column": 25,
+      "selfMs": 2.7720000000000002,
+      "inclusiveMs": 98.21600000000004,
+      "hits": 2
+    },
+    {
+      "id": 125,
+      "label": "SkinnedMesh.updateMatrixWorld",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 24746,
+      "column": 19,
+      "selfMs": 2.65,
+      "inclusiveMs": 3.917,
+      "hits": 2
+    },
+    {
+      "id": 28,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 13067,
+      "column": 19,
+      "selfMs": 2.592,
+      "inclusiveMs": 22.622999999999998,
+      "hits": 2
+    },
+    {
+      "id": 57,
+      "label": "WebGLRenderer.projectObject",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17897,
+      "column": 25,
+      "selfMs": 2.591,
+      "inclusiveMs": 78.38200000000005,
+      "hits": 2
+    },
+    {
+      "id": 191,
+      "label": "drawElements",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 2.5860000000000003,
+      "inclusiveMs": 2.5860000000000003,
+      "hits": 2
+    },
+    {
+      "id": 25,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 13067,
+      "column": 19,
+      "selfMs": 2.5839999999999996,
+      "inclusiveMs": 31.775999999999996,
+      "hits": 2
+    },
+    {
+      "id": 173,
+      "label": "WebGLTextures.getMipLevels",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 11314,
+      "column": 23,
+      "selfMs": 2.57,
+      "inclusiveMs": 2.57,
+      "hits": 2
+    },
+    {
+      "id": 151,
+      "label": "WebGLRenderer.projectObject",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17897,
+      "column": 25,
+      "selfMs": 2.564,
+      "inclusiveMs": 6.3549999999999995,
+      "hits": 2
+    },
+    {
+      "id": 87,
+      "label": "Euler.setFromQuaternion",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 11662,
+      "column": 19,
+      "selfMs": 2.556,
+      "inclusiveMs": 13.99,
+      "hits": 2
+    },
+    {
+      "id": 147,
+      "label": "WebGLEnvironments.getPMREM",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 3916,
+      "column": 19,
+      "selfMs": 2.55,
+      "inclusiveMs": 2.55,
+      "hits": 2
+    },
+    {
+      "id": 168,
+      "label": "WebGLRenderList.sort",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 8213,
+      "column": 15,
+      "selfMs": 2.54,
+      "inclusiveMs": 5.0649999999999995,
+      "hits": 2
+    },
+    {
+      "id": 7,
+      "label": "WebGLBackground.render",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 1357,
+      "column": 17,
+      "selfMs": 2.537,
+      "inclusiveMs": 13.850999999999999,
+      "hits": 2
+    },
+    {
+      "id": 22,
+      "label": "WebGLTextures.setTextureParameters",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 11682,
+      "column": 31,
+      "selfMs": 2.535,
+      "inclusiveMs": 3.7929999999999997,
+      "hits": 2
+    },
+    {
+      "id": 62,
+      "label": "setValueV1fArray",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 5647,
+      "column": 26,
+      "selfMs": 2.533,
+      "inclusiveMs": 5.027,
+      "hits": 2
+    },
+    {
+      "id": 117,
+      "label": "Quaternion.slerpFlat",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 3950,
+      "column": 18,
+      "selfMs": 2.532,
+      "inclusiveMs": 2.532,
+      "hits": 2
+    },
+    {
+      "id": 24,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 13067,
+      "column": 19,
+      "selfMs": 2.53,
+      "inclusiveMs": 35.555,
+      "hits": 2
+    },
+    {
+      "id": 187,
+      "label": "WebGLMaterials.refreshUniformsCommon",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 15139,
+      "column": 32,
+      "selfMs": 2.526,
+      "inclusiveMs": 3.839,
+      "hits": 2
+    },
+    {
+      "id": 160,
+      "label": "WebGLRenderer.projectObject",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17897,
+      "column": 25,
+      "selfMs": 2.526,
+      "inclusiveMs": 2.526,
+      "hits": 2
+    }
+  ],
+  "inclusive": [
+    {
+      "id": 1,
+      "label": "(root)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 0,
+      "inclusiveMs": 12041.403000000088,
+      "hits": 0
+    },
+    {
+      "id": 10,
+      "label": "(idle)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 10857.418000000067,
+      "inclusiveMs": 10857.418000000067,
+      "hits": 8645
+    },
+    {
+      "id": 3,
+      "label": "WebGLAnimation.onAnimationFrame",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 16,
+      "column": 27,
+      "selfMs": 1.271,
+      "inclusiveMs": 663.2819999999996,
+      "hits": 1
+    },
+    {
+      "id": 4,
+      "label": "Viewport.animate",
+      "url": "<origin>/editor/editor/js/Viewport.js",
+      "line": 856,
+      "column": 18,
+      "selfMs": 1.325,
+      "inclusiveMs": 662.0109999999996,
+      "hits": 1
+    },
+    {
+      "id": 5,
+      "label": "Viewport.render",
+      "url": "<origin>/editor/editor/js/Viewport.js",
+      "line": 964,
+      "column": 17,
+      "selfMs": 9.174,
+      "inclusiveMs": 635.3409999999997,
+      "hits": 6
+    },
+    {
+      "id": 6,
+      "label": "WebGLRenderer.render",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17674,
+      "column": 26,
+      "selfMs": 15.084000000000001,
+      "inclusiveMs": 542.9249999999997,
+      "hits": 12
+    },
+    {
+      "id": 2,
+      "label": "(program)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 490.85699999999986,
+      "inclusiveMs": 490.85699999999986,
+      "hits": 354
+    },
+    {
+      "id": 11,
+      "label": "WebGLRenderer.renderScene",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 18015,
+      "column": 23,
+      "selfMs": 4.9399999999999995,
+      "inclusiveMs": 298.9359999999998,
+      "hits": 4
+    },
+    {
+      "id": 12,
+      "label": "WebGLRenderer.renderObjects",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 18165,
+      "column": 25,
+      "selfMs": 0,
+      "inclusiveMs": 290.2139999999998,
+      "hits": 0
+    },
+    {
+      "id": 13,
+      "label": "WebGLRenderer.renderObject",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 18192,
+      "column": 24,
+      "selfMs": 13.879999999999999,
+      "inclusiveMs": 290.2139999999998,
+      "hits": 11
+    },
+    {
+      "id": 14,
+      "label": "WebGLRenderer.renderBufferDirect",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17233,
+      "column": 38,
+      "selfMs": 15.323,
+      "inclusiveMs": 272.5269999999999,
+      "hits": 12
+    },
+    {
+      "id": 15,
+      "label": "WebGLRenderer.setProgram",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 18407,
+      "column": 22,
+      "selfMs": 12.961,
+      "inclusiveMs": 220.7239999999999,
+      "hits": 10
+    },
+    {
+      "id": 89,
+      "label": "WebGLRenderer.getProgram",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 18224,
+      "column": 22,
+      "selfMs": 41.93100000000001,
+      "inclusiveMs": 109.108,
+      "hits": 33
+    },
+    {
+      "id": 53,
+      "label": "WebGLRenderer.projectObject",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17897,
+      "column": 25,
+      "selfMs": 2.7720000000000002,
+      "inclusiveMs": 98.21600000000004,
+      "hits": 2
+    },
+    {
+      "id": 23,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 13067,
+      "column": 19,
+      "selfMs": 3.814,
+      "inclusiveMs": 96.57100000000001,
+      "hits": 3
+    },
+    {
+      "id": 54,
+      "label": "WebGLRenderer.projectObject",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17897,
+      "column": 25,
+      "selfMs": 3.878,
+      "inclusiveMs": 95.44400000000005,
+      "hits": 3
+    },
+    {
+      "id": 55,
+      "label": "WebGLRenderer.projectObject",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17897,
+      "column": 25,
+      "selfMs": 1.281,
+      "inclusiveMs": 82.19800000000004,
+      "hits": 1
+    },
+    {
+      "id": 56,
+      "label": "WebGLRenderer.projectObject",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17897,
+      "column": 25,
+      "selfMs": 1.262,
+      "inclusiveMs": 80.91700000000004,
+      "hits": 1
+    },
+    {
+      "id": 57,
+      "label": "WebGLRenderer.projectObject",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17897,
+      "column": 25,
+      "selfMs": 2.591,
+      "inclusiveMs": 78.38200000000005,
+      "hits": 2
+    },
+    {
+      "id": 16,
+      "label": "WebGLUniforms.setValue",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 6107,
+      "column": 10,
+      "selfMs": 1.277,
+      "inclusiveMs": 54.56499999999999,
+      "hits": 1
+    },
+    {
+      "id": 58,
+      "label": "WebGLObjects.update",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 4612,
+      "column": 17,
+      "selfMs": 0,
+      "inclusiveMs": 51.86100000000001,
+      "hits": 0
+    },
+    {
+      "id": 59,
+      "label": "Skeleton.update",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 25135,
+      "column": 8,
+      "selfMs": 0,
+      "inclusiveMs": 51.86100000000001,
+      "hits": 0
+    },
+    {
+      "id": 60,
+      "label": "Matrix4.toArray",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 11302,
+      "column": 9,
+      "selfMs": 47.80000000000001,
+      "inclusiveMs": 47.80000000000001,
+      "hits": 38
+    },
+    {
+      "id": 50,
+      "label": "TransformControlsRoot.updateMatrixWorld",
+      "url": "<origin>/editor/examples/jsm/controls/TransformControls.js",
+      "line": 1125,
+      "column": 19,
+      "selfMs": 0,
+      "inclusiveMs": 44.911000000000016,
+      "hits": 0
+    },
+    {
+      "id": 76,
+      "label": "dispatch",
+      "url": "<origin>/editor/editor/js/libs/signals.min.js",
+      "line": 12,
+      "column": 382,
+      "selfMs": 1.257,
+      "inclusiveMs": 44.49300000000001,
+      "hits": 1
+    },
+    {
+      "id": 77,
+      "label": "ViewportInfo.updateFrametime",
+      "url": "<origin>/editor/editor/js/Viewport.Info.js",
+      "line": 110,
+      "column": 26,
+      "selfMs": 43.236000000000004,
+      "inclusiveMs": 43.236000000000004,
+      "hits": 30
+    },
+    {
+      "id": 51,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 13067,
+      "column": 19,
+      "selfMs": 3.7030000000000003,
+      "inclusiveMs": 38.57800000000002,
+      "hits": 3
+    },
+    {
+      "id": 109,
+      "label": "WebGLPrograms.getParameters",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 7357,
+      "column": 24,
+      "selfMs": 37.965999999999994,
+      "inclusiveMs": 37.965999999999994,
+      "hits": 30
+    },
+    {
+      "id": 24,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 13067,
+      "column": 19,
+      "selfMs": 2.53,
+      "inclusiveMs": 35.555,
+      "hits": 2
+    },
+    {
+      "id": 17,
+      "label": "setValueT1",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 5514,
+      "column": 20,
+      "selfMs": 0,
+      "inclusiveMs": 34.577999999999996,
+      "hits": 0
+    },
+    {
+      "id": 52,
+      "label": "TransformControlsGizmo.updateMatrixWorld",
+      "url": "<origin>/editor/examples/jsm/controls/TransformControls.js",
+      "line": 1583,
+      "column": 19,
+      "selfMs": 11.353999999999997,
+      "inclusiveMs": 33.62800000000001,
+      "hits": 9
+    },
+    {
+      "id": 18,
+      "label": "WebGLTextures.setTexture2D",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 11571,
+      "column": 23,
+      "selfMs": 0,
+      "inclusiveMs": 33.31999999999999,
+      "hits": 0
+    },
+    {
+      "id": 19,
+      "label": "WebGLTextures.uploadTexture",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 11918,
+      "column": 24,
+      "selfMs": 11.5,
+      "inclusiveMs": 33.31999999999999,
+      "hits": 9
+    },
+    {
+      "id": 40,
+      "label": "ViewHelper.render",
+      "url": "<origin>/editor/examples/jsm/helpers/ViewHelper.js",
+      "line": 174,
+      "column": 26,
+      "selfMs": 1.53,
+      "inclusiveMs": 32.42000000000001,
+      "hits": 1
+    },
+    {
+      "id": 25,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 13067,
+      "column": 19,
+      "selfMs": 2.5839999999999996,
+      "inclusiveMs": 31.775999999999996,
+      "hits": 2
+    },
+    {
+      "id": 41,
+      "label": "WebGLRenderer.render",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17674,
+      "column": 26,
+      "selfMs": 1.267,
+      "inclusiveMs": 29.638000000000005,
+      "hits": 1
+    },
+    {
+      "id": 26,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 13067,
+      "column": 19,
+      "selfMs": 0,
+      "inclusiveMs": 27.929,
+      "hits": 0
+    },
+    {
+      "id": 101,
+      "label": "WebGLPrograms.getProgramCacheKey",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 7703,
+      "column": 29,
+      "selfMs": 15.208,
+      "inclusiveMs": 25.42,
+      "hits": 12
+    },
+    {
+      "id": 90,
+      "label": "WebGLRenderer.projectObject",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17897,
+      "column": 25,
+      "selfMs": 0,
+      "inclusiveMs": 22.626000000000005,
+      "hits": 0
+    },
+    {
+      "id": 27,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 13067,
+      "column": 19,
+      "selfMs": 0,
+      "inclusiveMs": 22.622999999999998,
+      "hits": 0
+    },
+    {
+      "id": 28,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 13067,
+      "column": 19,
+      "selfMs": 2.592,
+      "inclusiveMs": 22.622999999999998,
+      "hits": 2
+    },
+    {
+      "id": 42,
+      "label": "WebGLRenderer.renderScene",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 18015,
+      "column": 23,
+      "selfMs": 1.262,
+      "inclusiveMs": 22.052000000000003,
+      "hits": 1
+    },
+    {
+      "id": 82,
+      "label": "AnimationMixer.update",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 55820,
+      "column": 8,
+      "selfMs": 1.274,
+      "inclusiveMs": 21.571,
+      "hits": 1
+    },
+    {
+      "id": 91,
+      "label": "WebGLRenderer.projectObject",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17897,
+      "column": 25,
+      "selfMs": 3.835,
+      "inclusiveMs": 21.344,
+      "hits": 3
+    },
+    {
+      "id": 29,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 13067,
+      "column": 19,
+      "selfMs": 5.085,
+      "inclusiveMs": 20.031,
+      "hits": 4
+    },
+    {
+      "id": 43,
+      "label": "WebGLRenderer.renderObjects",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 18165,
+      "column": 25,
+      "selfMs": 0,
+      "inclusiveMs": 19.531,
+      "hits": 0
+    },
+    {
+      "id": 44,
+      "label": "WebGLRenderer.renderObject",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 18192,
+      "column": 24,
+      "selfMs": 0,
+      "inclusiveMs": 19.531,
+      "hits": 0
+    },
+    {
+      "id": 45,
+      "label": "WebGLRenderer.renderBufferDirect",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17233,
+      "column": 38,
+      "selfMs": 4.481,
+      "inclusiveMs": 19.531,
+      "hits": 2
+    },
+    {
+      "id": 131,
+      "label": "(garbage collector)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "selfMs": 17.214000000000002,
+      "inclusiveMs": 17.214000000000002,
+      "hits": 13
+    },
+    {
+      "id": 78,
+      "label": "WebGLBindingStates.setup",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 1623,
+      "column": 16,
+      "selfMs": 1.036,
+      "inclusiveMs": 16.003999999999998,
+      "hits": 1
+    },
+    {
+      "id": 141,
+      "label": "WebGLRenderer.projectObject",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 17897,
+      "column": 25,
+      "selfMs": 1.269,
+      "inclusiveMs": 14.963000000000001,
+      "hits": 1
+    },
+    {
+      "id": 83,
+      "label": "PropertyMixer.apply",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 52816,
+      "column": 7,
+      "selfMs": 0,
+      "inclusiveMs": 13.99,
+      "hits": 0
+    },
+    {
+      "id": 84,
+      "label": "PropertyBinding._setValue_fromArray_setMatrixWorldNeedsUpdate",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 53463,
+      "column": 47,
+      "selfMs": 0,
+      "inclusiveMs": 13.99,
+      "hits": 0
+    },
+    {
+      "id": 85,
+      "label": "Quaternion.fromArray",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 4713,
+      "column": 11,
+      "selfMs": 0,
+      "inclusiveMs": 13.99,
+      "hits": 0
+    },
+    {
+      "id": 86,
+      "label": "Object3D.onQuaternionChange",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 12042,
+      "column": 30,
+      "selfMs": 0,
+      "inclusiveMs": 13.99,
+      "hits": 0
+    },
+    {
+      "id": 87,
+      "label": "Euler.setFromQuaternion",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 11662,
+      "column": 19,
+      "selfMs": 2.556,
+      "inclusiveMs": 13.99,
+      "hits": 2
+    },
+    {
+      "id": 35,
+      "label": "WebGLMorphtargets.update",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 4452,
+      "column": 17,
+      "selfMs": 1.263,
+      "inclusiveMs": 13.889999999999999,
+      "hits": 1
+    },
+    {
+      "id": 7,
+      "label": "WebGLBackground.render",
+      "url": "<origin>/editor/build/three.module.js",
+      "line": 1357,
+      "column": 17,
+      "selfMs": 2.537,
+      "inclusiveMs": 13.850999999999999,
+      "hits": 2
+    },
+    {
+      "id": 30,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 13067,
+      "column": 19,
+      "selfMs": 1.266,
+      "inclusiveMs": 13.738999999999999,
+      "hits": 1
+    },
+    {
+      "id": 31,
+      "label": "Object3D.updateMatrixWorld",
+      "url": "<origin>/editor/build/three.core.js",
+      "line": 13067,
+      "column": 19,
+      "selfMs": 0,
+      "inclusiveMs": 12.473,
+      "hits": 0
+    }
+  ],
+  "observations": {
+    "before": {
+      "elapsedMs": 2002.0999999940395,
+      "renderPasses": 964,
+      "passesPerSecond": 481.49443084904345,
+      "focusBefore": true,
+      "focusAfter": true,
+      "programsBefore": 20,
+      "programsAfter": 20
+    },
+    "during": {
+      "elapsedMs": 12002.79999999702,
+      "renderPasses": 5764,
+      "passesPerSecond": 480.22128170105566,
+      "focusBefore": true,
+      "focusAfter": true,
+      "programsBefore": 20,
+      "programsAfter": 20
+    },
+    "after": {
+      "elapsedMs": 2002.5,
+      "renderPasses": 964,
+      "passesPerSecond": 481.39825218476904,
+      "focusBefore": true,
+      "focusAfter": true,
+      "programsBefore": 20,
+      "programsAfter": 20
+    }
+  },
+  "boundaries": {
+    "mixer.update": {
+      "calls": 360,
+      "totalMs": 6.999999985098839,
+      "meanMs": 0.01944444440305233,
+      "maxMs": 0.20000000298023224
+    },
+    "signals.morphTargetsUpdated": {
+      "calls": 360,
+      "totalMs": 2.1999999955296516,
+      "meanMs": 0.006111111098693477,
+      "maxMs": 0.10000000149011612
+    },
+    "scene.updateMatrixWorld": {
+      "calls": 360,
+      "totalMs": 14.599999949336052,
+      "meanMs": 0.040555555414822364,
+      "maxMs": 0.20000000298023224
+    },
+    "skeleton.update": {
+      "calls": 720,
+      "totalMs": 20.200000032782555,
+      "meanMs": 0.02805555560108688,
+      "maxMs": 0.20000000298023224
+    },
+    "renderer.renderBufferDirect": {
+      "calls": 13320,
+      "totalMs": 99.40000004321337,
+      "meanMs": 0.007462462465706709,
+      "maxMs": 0.29999999701976776
+    },
+    "renderer.render": {
+      "calls": 1440,
+      "totalMs": 197.69999995082617,
+      "meanMs": 0.13729166663251818,
+      "maxMs": 1.1999999955296516
+    }
+  },
+  "boundaryWindow": {
+    "elapsedMs": 3001.39999999851,
+    "renderPasses": 1440,
+    "passesPerSecond": 479.77610448481204,
+    "focusBefore": true,
+    "focusAfter": true,
+    "programsBefore": 20,
+    "programsAfter": 20
+  },
+  "glCounts": {
+    "uniformMatrix4fv": {
+      "calls": 10320,
+      "arrayArgumentBytes": 660480
+    },
+    "uniformMatrix3fv": {
+      "calls": 3360,
+      "arrayArgumentBytes": 120960
+    },
+    "drawElements": {
+      "calls": 6960,
+      "arrayArgumentBytes": 0
+    },
+    "texSubImage2D": {
+      "calls": 480,
+      "arrayArgumentBytes": 1966080
+    },
+    "drawArrays": {
+      "calls": 1920,
+      "arrayArgumentBytes": 0
+    },
+    "bufferSubData": {
+      "calls": 1200,
+      "arrayArgumentBytes": 1209600
+    }
+  },
+  "glWindow": {
+    "elapsedMs": 2001.7000000029802,
+    "renderPasses": 960,
+    "passesPerSecond": 479.59234650475634,
+    "focusBefore": true,
+    "focusAfter": true,
+    "programsBefore": 20,
+    "programsAfter": 20
+  }
+}

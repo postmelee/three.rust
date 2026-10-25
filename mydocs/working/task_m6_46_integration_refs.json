@@ -1,0 +1,246 @@
+{
+  "recordedAt": "2026-10-25T21:23:38.129Z",
+  "purpose": "Pre-integration PR bases, exact heads and successful CI; retargeting and main integration are separate verified actions.",
+  "prs": [
+    {
+      "number": 30,
+      "url": "https://github.com/postmelee/three.rust/pull/30",
+      "base": "main",
+      "baseSha": "b5a0fc335f7eb21e5a47115417786f576af165e3",
+      "head": "codex/performance-evidence",
+      "headSha": "8918f7e4b394c58bd413fac2e4518152d452a004",
+      "draft": true,
+      "state": "open",
+      "ci": {
+        "id": 39928816084,
+        "name": "correctness",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 35,
+        "jobs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/39928816084/jobs",
+        "logs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/39928816084/logs",
+        "workflow_id": 392728115
+      }
+    },
+    {
+      "number": 32,
+      "url": "https://github.com/postmelee/three.rust/pull/32",
+      "base": "codex/performance-evidence",
+      "baseSha": "8918f7e4b394c58bd413fac2e4518152d452a004",
+      "head": "codex/adoption-goals",
+      "headSha": "fa64d49f2e21dd669f913dc81137649083faafa7",
+      "draft": true,
+      "state": "open",
+      "ci": {
+        "id": 39932674025,
+        "name": "correctness",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 38,
+        "jobs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/39932674025/jobs",
+        "logs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/39932674025/logs",
+        "workflow_id": 392728115
+      }
+    },
+    {
+      "number": 33,
+      "url": "https://github.com/postmelee/three.rust/pull/33",
+      "base": "codex/adoption-goals",
+      "baseSha": "fa64d49f2e21dd669f913dc81137649083faafa7",
+      "head": "codex/ownership-research",
+      "headSha": "9527a042ed1134e73ab9cfe8b3ee75f4aac6d2a7",
+      "draft": true,
+      "state": "open",
+      "ci": {
+        "id": 39949132733,
+        "name": "correctness",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 40,
+        "jobs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/39949132733/jobs",
+        "logs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/39949132733/logs",
+        "workflow_id": 392728115
+      }
+    },
+    {
+      "number": 35,
+      "url": "https://github.com/postmelee/three.rust/pull/35",
+      "base": "codex/ownership-research",
+      "baseSha": "9527a042ed1134e73ab9cfe8b3ee75f4aac6d2a7",
+      "head": "codex/docs-handoff",
+      "headSha": "15ae9d32725d54c00ac382a329603c01f642edc2",
+      "draft": true,
+      "state": "open",
+      "ci": {
+        "id": 39956531672,
+        "name": "correctness",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 44,
+        "jobs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/39956531672/jobs",
+        "logs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/39956531672/logs",
+        "workflow_id": 392728115
+      }
+    },
+    {
+      "number": 36,
+      "url": "https://github.com/postmelee/three.rust/pull/36",
+      "base": "codex/ownership-research",
+      "baseSha": "9527a042ed1134e73ab9cfe8b3ee75f4aac6d2a7",
+      "head": "codex/mac-precision-profile-20261023",
+      "headSha": "e30133cdb147d0433bc99e01678f14205089975b",
+      "draft": true,
+      "state": "open",
+      "ci": {
+        "id": 39960422319,
+        "name": "correctness",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 47,
+        "jobs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/39960422319/jobs",
+        "logs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/39960422319/logs",
+        "workflow_id": 392728115
+      }
+    },
+    {
+      "number": 37,
+      "url": "https://github.com/postmelee/three.rust/pull/37",
+      "base": "codex/docs-handoff",
+      "baseSha": "15ae9d32725d54c00ac382a329603c01f642edc2",
+      "head": "codex/facade-contract",
+      "headSha": "7637881c5d4a3c360097d33c5e9c18704c64fff9",
+      "draft": true,
+      "state": "open",
+      "ci": {
+        "id": 39960759361,
+        "name": "correctness",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 49,
+        "jobs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/39960759361/jobs",
+        "logs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/39960759361/logs",
+        "workflow_id": 392728115
+      }
+    },
+    {
+      "number": 39,
+      "url": "https://github.com/postmelee/three.rust/pull/39",
+      "base": "codex/facade-contract",
+      "baseSha": "7637881c5d4a3c360097d33c5e9c18704c64fff9",
+      "head": "codex/persistent-facade",
+      "headSha": "10be41f79f6a8b894b9170eb32f00f131f188247",
+      "draft": true,
+      "state": "open",
+      "ci": {
+        "id": 39982088988,
+        "name": "correctness",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 54,
+        "jobs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/39982088988/jobs",
+        "logs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/39982088988/logs",
+        "workflow_id": 392728115
+      }
+    },
+    {
+      "number": 41,
+      "url": "https://github.com/postmelee/three.rust/pull/41",
+      "base": "codex/mac-precision-profile-20261023",
+      "baseSha": "e30133cdb147d0433bc99e01678f14205089975b",
+      "head": "codex/mac-app-reproduction-20261024",
+      "headSha": "f339a46c006be788d885fb7c3bff2fcbff72d758",
+      "draft": true,
+      "state": "open",
+      "ci": {
+        "id": 40066043963,
+        "name": "correctness",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 63,
+        "jobs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/40066043963/jobs",
+        "logs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/40066043963/logs",
+        "workflow_id": 392728115
+      }
+    },
+    {
+      "number": 42,
+      "url": "https://github.com/postmelee/three.rust/pull/42",
+      "base": "codex/persistent-facade",
+      "baseSha": "10be41f79f6a8b894b9170eb32f00f131f188247",
+      "head": "codex/prepared-pass",
+      "headSha": "ce21ffcf355534a8cf32eb4c9f7e43d6a86509b5",
+      "draft": true,
+      "state": "open",
+      "ci": {
+        "id": 40063536106,
+        "name": "correctness",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 61,
+        "jobs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/40063536106/jobs",
+        "logs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/40063536106/logs",
+        "workflow_id": 392728115
+      }
+    },
+    {
+      "number": 43,
+      "url": "https://github.com/postmelee/three.rust/pull/43",
+      "base": "codex/mac-app-reproduction-20261024",
+      "baseSha": "f339a46c006be788d885fb7c3bff2fcbff72d758",
+      "head": "codex/mac-original-app-profiles-20261024",
+      "headSha": "3b564fb1bd3d34efb564f930da23e405471c0905",
+      "draft": true,
+      "state": "open",
+      "ci": {
+        "id": 40218640565,
+        "name": "correctness",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 67,
+        "jobs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/40218640565/jobs",
+        "logs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/40218640565/logs",
+        "workflow_id": 392728115
+      }
+    },
+    {
+      "number": 44,
+      "url": "https://github.com/postmelee/three.rust/pull/44",
+      "base": "codex/prepared-pass",
+      "baseSha": "ce21ffcf355534a8cf32eb4c9f7e43d6a86509b5",
+      "head": "codex/matrix-read-epoch-20261026",
+      "headSha": "6990fd92f61a031c8c2ba7a8282cfb63684e6dfb",
+      "draft": true,
+      "state": "open",
+      "ci": {
+        "id": 40228144069,
+        "name": "correctness",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 69,
+        "jobs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/40228144069/jobs",
+        "logs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/40228144069/logs",
+        "workflow_id": 392728115
+      }
+    },
+    {
+      "number": 45,
+      "url": "https://github.com/postmelee/three.rust/pull/45",
+      "base": "codex/ownership-research",
+      "baseSha": "9527a042ed1134e73ab9cfe8b3ee75f4aac6d2a7",
+      "head": "codex/mac-precision-20261026",
+      "headSha": "1010048a8a81395f62ee60cc4d3aed19fe700c95",
+      "draft": true,
+      "state": "open",
+      "ci": {
+        "id": 40228202751,
+        "name": "correctness",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 71,
+        "jobs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/40228202751/jobs",
+        "logs_url": "https://api.github.com/repos/postmelee/three.rust/actions/runs/40228202751/logs",
+        "workflow_id": 392728115
+      }
+    }
+  ]
+}

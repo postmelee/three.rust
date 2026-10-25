@@ -1,0 +1,6 @@
+
+> three-rust-research@0.1.0 test:compatibility
+> node tests/compatibility.mjs && node tests/compatibility-browser.mjs
+
+16 semantic cases: original expectations and seven candidate traces passed
+Browser semantic, two-camera callback, matrix and exact-pixel contracts passed

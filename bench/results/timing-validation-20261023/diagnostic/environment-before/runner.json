@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-23T08:57:55.495Z",
+  "platform": "linux",
+  "release": "6.18.55",
+  "arch": "x64",
+  "cpuModel": "INTEL(R) XEON(R) PLATINUM 8573C",
+  "logicalCpus": 5,
+  "totalMemory": 18882674688,
+  "browserPath": "/usr/bin/chromium",
+  "node": "v24.19.0",
+  "nvidia": {
+    "available": false,
+    "reason": "ENOENT"
+  },
+  "pci": {
+    "available": false,
+    "reason": "ENOENT"
+  },
+  "glx": {
+    "available": false,
+    "reason": "ENOENT"
+  },
+  "vulkan": {
+    "available": false,
+    "reason": "ENOENT"
+  },
+  "cpuQuota": "400000 100000",
+  "memoryLimit": "17179869184"
+}

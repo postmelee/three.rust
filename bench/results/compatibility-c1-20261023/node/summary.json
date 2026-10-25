@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "engines": [
+    "original",
+    "js",
+    "wasm",
+    "packed-js"
+  ],
+  "cases": 16,
+  "comparisons": 48,
+  "scope": "existing routes; no new Rust ownership"
+}

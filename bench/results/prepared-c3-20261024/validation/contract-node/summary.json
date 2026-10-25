@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "engines": [
+    "original",
+    "js",
+    "wasm",
+    "packed-js",
+    "facade-js",
+    "facade-wasm",
+    "prepared-js",
+    "prepared-wasm"
+  ],
+  "cases": 16,
+  "comparisons": 112,
+  "scope": "C1 semantics including bounded C2 facade routes"
+}

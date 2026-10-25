@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Persistent facade boundary experiment</title>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js"}}</script>
+<script type="module">
+import * as T from 'three';
+import {observeClock} from './timing.mjs';
+await T.init?.();
+window.__facade={run({warmup,samples,timings=false}){
+ const clock=observeClock(),cases=[],count=1000;
+ for(const [name,write,read] of [['static-none','none','none'],['sparse-none','sparse','none'],['dense-none','dense','none'],['sparse-sparse','sparse','sparse'],['dense-all','dense','all']]){
+  const root=new T.Group(),nodes=[];
+  for(let i=0;i<count;i++){const o=new T.Object3D();o.position.set(i%13,(i%7)/8,-i/100);(i<10?root:nodes[Math.floor((i-10)/10)]).add(o);nodes.push(o);}
+  root.updateMatrixWorld();T.configureDiagnostics?.({timings});T.resetDiagnostics?.();
+  const rows=[];let sink=0;
+  for(let frame=0;frame<warmup+samples;frame++){
+   if(frame===warmup)T.resetDiagnostics?.();
+   const t=performance.now();
+   if(write!=='none'){const stride=write==='dense'?1:100;for(let i=0;i<count;i+=stride)nodes[i].position.x=(i%13)+Math.sin(frame/30)*.1;}
+   root.updateMatrixWorld();
+   if(read==='sparse')sink+=nodes[997].matrixWorld.elements[12];
+   if(read==='all')for(const o of nodes)for(let j=0;j<16;j++)sink+=o.matrixWorld.elements[j];
+   const cpu=performance.now()-t;
+   if(frame>=warmup)rows.push({cpu});
+  }
+  const diagnostics=T.diagnostics?.()??null;
+  const final=nodes.map(o=>o.matrixWorld.elements.slice());
+  cases.push({name,count,write,read,rows,sink,final,diagnostics});T.release?.(root);
+ }
+ return {clock,cases};
+}};
+</script></html>

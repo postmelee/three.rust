@@ -1,0 +1,24 @@
+
+> three-rust-research@0.1.0 test:pipeline
+> node scripts/pipeline-audit.mjs --check && node --test tests/pipeline-oracle.mjs && node tests/pipeline-browser.mjs
+
+✔ finished callback reads previous bound pose; final pose applies after callback (3.674714ms)
+✔ callback exceptions interrupt binding application, not action time advancement (0.746933ms)
+✔ repeat, ping-pong, reverse and pause have synchronous bound values (0.463433ms)
+✔ weighted quaternion clips normalize poses; deterministic rigs produce the same palettes (12.694839ms)
+✔ palette is world times bind inverse, Float32, with padded texture replacement (0.961282ms)
+✔ crossfade and additive binding preserve numeric weight semantics (0.805657ms)
+✔ hierarchy removal/reparenting and manual local matrices change the next palette (0.931071ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 135.341936
+pipeline original ok
+pipeline original ok
+pipeline js ok
+pipeline wasm ok
+pipeline packed-js ok

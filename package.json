@@ -16,7 +16,7 @@
     "bench:diagnostic": "node bench/run.mjs repeats=1 warmup=30 samples=60 engines=original,js,wasm,packed-js timings=true gpu=true out=work/bench-diagnostic",
     "bench:startup": "node bench/startup.mjs",
     "bench:analyze": "node bench/summarize.mjs bench/results/m2-full && node bench/analyze.mjs bench/results/m2-full",
-    "test:infra": "node --test tests/infra.mjs tests/fox-analysis.mjs",
+    "test:infra": "node --test tests/infra.mjs tests/fox-analysis.mjs tests/server-port.mjs tests/profile-sources.mjs",
     "test:gpu-guard": "node tests/gpu-guard.mjs",
     "bundle:demo": "node scripts/bundle-demo.mjs",
     "test:bundle": "node tests/bundle.mjs",
@@ -31,7 +31,13 @@
     "bench:owned": "node bench/owned.mjs",
     "test:fox": "node scripts/fetch-fox.mjs && node tests/fox-rejections.mjs && node tests/fox-browser.mjs",
     "test:browser-path": "node --test tests/browser-path.mjs",
-    "bench:mac": "bash scripts/mac-validation.sh"
+    "bench:mac": "bash scripts/mac-validation.sh",
+    "test:timing": "node --test tests/timing.mjs",
+    "test:compatibility": "node tests/compatibility.mjs && node tests/compatibility-browser.mjs",
+    "docs:performance": "node scripts/performance-summary.mjs",
+    "test:facade": "node tests/facade.mjs",
+    "bench:facade": "node bench/facade.mjs",
+    "test:prepared": "node tests/prepared.mjs"
   },
   "devDependencies": {
     "@types/three": "0.186.0",

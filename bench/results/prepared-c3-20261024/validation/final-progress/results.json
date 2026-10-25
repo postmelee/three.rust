@@ -1,0 +1,26 @@
+[
+  {
+    "name": "desktop",
+    "width": 1280,
+    "passed": true,
+    "checks": [
+      "actual source tile count",
+      "totals match JSON",
+      "no overflow",
+      "field evidence expands",
+      "history distinguishes schemas"
+    ]
+  },
+  {
+    "name": "mobile",
+    "width": 390,
+    "passed": true,
+    "checks": [
+      "actual source tile count",
+      "totals match JSON",
+      "no overflow",
+      "field evidence expands",
+      "history distinguishes schemas"
+    ]
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "kind": "correctness-only",
+  "hardwareRequested": true,
+  "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "headed": true,
+  "gpuRoutes": [
+    {
+      "engine": "original",
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"
+    },
+    {
+      "engine": "original",
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"
+    },
+    {
+      "engine": "facade-wasm",
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"
+    },
+    {
+      "engine": "prepared-js",
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"
+    },
+    {
+      "engine": "prepared-wasm",
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)"
+    }
+  ],
+  "commit": "40ec9385ee79290e45904ce3298c741e91a78341",
+  "sourceTreeDirty": false,
+  "browser": "155.0.8059.86",
+  "status": "complete",
+  "hashes": {
+    "packages/rthree/core.js": "38047dc221ea8b3d029c33bb413e0fe602a160aa714462dc1c6bd3316a3cd777",
+    "packages/rthree/runtime.js": "ec39c3e313d45dd9b7c672b2f4f4844dc14bb1ac2c442480aba9a2af560d7814",
+    "packages/rthree/facade-state.js": "d759cdae29dac35b7e30711c16810dbad968625e461cdf5940cb0dc4388af12b",
+    "packages/rthree/prepared-kernel.js": "52c7fbee67a4fa2ca2f7cc48322b844029d037229be7caf5714c3540ab6a2f5f",
+    "packages/rthree/scene_core.wasm": "95f7aa7a807bd0bd4c9b45f0a855d2305c262cf5b7fef35a2d9dd9dfa889cdd9",
+    "tests/prepared/index.html": "8c28ee1dd0a3eb768d0684a1c573a444631ef81a20529b55ca4e3e55d81a7c65",
+    "tests/prepared-browser.mjs": "e8f765b960ffe73e1566c7cc733b88b749658b14161ed39d3f8f755f7116c053"
+  }
+}

@@ -70,13 +70,13 @@ def svg_text(x, y, text, size=15, extra=''):
 def render_svg(data):
     parts = ['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="710" viewBox="0 0 1200 710" role="img" aria-labelledby="title desc">',
              '<title id="title">three.rust — computation and persistent state ownership</title>',
-             '<desc id="desc">The compatibility facade retains JS authority. The explicit owned rig API retains animation, transforms and palettes in Rust. Fine tiles map scoped computation and logical state to pinned upstream declarations; ordinary JS methods and objects remain JS.</desc>',
+             '<desc id="desc">The legacy bridge retains JS authority. The C3 facade retains topology and evaluated transforms, visibility, ordering and draw matrices in Rust with JS public inputs and hierarchy. The explicit owned rig API retains animation, transforms and palettes. Fine tiles map each declared scope, not complete public APIs.</desc>',
              '<rect width="1200" height="710" fill="#0d1117"/><g font-family="Arial, sans-serif" fill="#f0f6fc">',
              svg_text(16, 27, 'Computation and authority: compatibility facade and owned rig pipeline', 23),
-             svg_text(16, 53, 'COMPATIBILITY FACADE — public objects remain authoritative in JavaScript', 13)]
+             svg_text(16, 53, 'OPT-IN COMPATIBLE API — C3 retains transforms → visibility → ordering → per-draw matrices', 13)]
     for i, stage in enumerate(data['pipeline']):
         x=16+i*236
-        color=COLORS['rust-batch'] if i==2 else COLORS['js']
+        color=COLORS['rust-batch'] if i in (2,3) else COLORS['js']
         parts.append(f'<rect x="{x}" y="65" width="220" height="49" fill="#161b22" stroke="{color}"/>')
         parts += [svg_text(x+8,85,stage['name'],14),svg_text(x+8,103,stage['current'],12)]
         if i<4:
@@ -87,7 +87,7 @@ def render_svg(data):
         x=16+i*236
         if i==4:
             parts.append(f'<rect x="{x}" y="151" width="220" height="52" fill="#161b22" stroke="#6e7681"/>')
-        parts += [svg_text(x+8,172,stage['name'],14),svg_text(x+8,190,stage['target'],12)]
+        parts += [svg_text(x+8,172,stage.get('ownedName',stage['name']),14),svg_text(x+8,190,stage['target'],12)]
         if i<4:
             parts.append(svg_text(x+222,181,'→',16))
     titles={'functions':f'CPU functions: {data["functions"]["counts"]["rust-batch"]} scoped Rust mappings / {data["functions"]["total"]} tracked',
@@ -112,10 +112,10 @@ def render_svg(data):
                 label=group['name'][:max(3,int((w-8)/7))]
                 parts.append(svg_text(x+4,y+15,label,12,'stroke="#0d1117" stroke-width="3" paint-order="stroke"'))
             parts.append('</g>')
-    for x,state,label in [(16,'js','JavaScript execution / state'),(315,'rust-batch','Scoped Rust computation'),(602,'rust','Rust computation'),(802,'rust-owned','Owned API: Rust state')]:
+    for x,state,label in [(16,'js','JavaScript execution / state'),(315,'rust-batch','Scoped Rust computation'),(602,'rust','Rust computation'),(802,'rust-owned','Scoped Rust-owned state')]:
         parts.append(f'<rect x="{x}" y="635" width="12" height="12" fill="{COLORS[state]}"/>')
         parts.append(svg_text(x+20,646,label,14))
-    parts.append(svg_text(16,676,'One cell = one source definition or logical field mapping. Scoped owned API claims are not ordinary JS API ports.',14))
+    parts.append(svg_text(16,676,'One cell = one source definition or logical field mapping. Inspect each API scope; no complete public-method port is implied.',14))
     parts.append(svg_text(16,698,'Counts describe the selected r186 source inventory; they are not speed, effort, or complete Three.js compatibility.',13))
     return '\n'.join(parts+['</g></svg>'])+'\n'
 
@@ -124,15 +124,75 @@ def shell(title,body):
     return f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{escape(title)}</title><style>{STYLE}</style></head><body>{body}</body></html>\n'
 
 
+GATE_STATES = {'open': 'Not yet', 'early': 'Early evidence', 'qualified': 'Qualified'}
+
+
+def validate_goals(goals):
+    if goals['schemaVersion'] != 1 or goals['apiTier'] != 'application-replacement':
+        raise ValueError('Unknown adoption schema or API tier')
+    ids = set()
+    for gate in goals['gates']:
+        if gate['id'] in ids or gate['status'] not in GATE_STATES:
+            raise ValueError('Duplicate gate or unknown state')
+        ids.add(gate['id'])
+        for evidence in gate['evidence']:
+            p = (ROOT / evidence).resolve()
+            if not p.is_relative_to(ROOT) or not p.is_file():
+                raise ValueError('Missing adoption evidence')
+        if gate['status'] == 'qualified':
+            q = gate.get('qualification', {})
+            if (q.get('profile') != goals['profile'] or q.get('apiTier') != goals['apiTier']
+                or q.get('report') not in gate['evidence']
+                or not re.fullmatch('[a-f0-9]{40}', q.get('implementationCommit', ''))):
+                raise ValueError('Qualified gate requires matching profile/tier, report and pinned implementation')
+    if len(ids) != 6:
+        raise ValueError('Adoption profile must declare six gates')
+    return goals
+
+
+def read_goals():
+    return validate_goals(json.loads((ROOT/'docs/product-goals.json').read_text()))
+
+
+def readme_goals(goals):
+    source = (ROOT/'README.md').read_text()
+    start, end = '<!-- adoption-goals:start -->', '<!-- adoption-goals:end -->'
+    if source.count(start) != 1 or source.count(end) != 1 or source.index(start) >= source.index(end):
+        raise ValueError('README requires one adoption-goals marker pair')
+    lines = ['| Product gate | Target | Current status |', '|---|---|---|']
+    def cell(value):
+        return escape(value).replace('|', '&#124;').replace('\n', ' ')
+    for gate in goals['gates']:
+        label = GATE_STATES[gate['status']]
+        lines.append('| '+ ' | '.join(cell(v) for v in [gate['title'],gate['target'],label])+' |')
+    return source[:source.index(start)+len(start)]+'\n'+'\n'.join(lines)+'\n'+source[source.index(end):]
+
+
+def readiness_html(goals, base):
+    parts = ['<section aria-labelledby="adoption-heading"><h2 id="adoption-heading">Product goals</h2>',
+             '<p><strong>'+escape(goals['stage'])+' — '+escape(goals['claim'])+'</strong></p>',
+             '<p><a href="'+base+goals['contract']+'">Product goals and qualification budgets</a> · <a href="'+base+'docs/product-goals.json">Declared gates</a></p>',
+             '<p>Early evidence is not qualification. These gates describe application replacement; an explicit accelerator has a separate migration contract. Source ownership is implementation evidence, not product completion.</p>',
+             '<table id="adoption-gates"><caption>Application replacement: prospective targets and current evidence</caption><thead><tr><th>Gate / target</th><th>Status / current evidence</th></tr></thead><tbody>']
+    for gate in goals['gates']:
+        label = GATE_STATES[gate['status']]
+        links = ' · '.join('<a href="'+base+escape(e)+'">Evidence '+str(i+1)+'</a>' for i,e in enumerate(gate['evidence']))
+        parts.append('<tr><th>'+escape(gate['title'])+'<br><small>'+escape(gate['target'])+'</small></th><td><strong>'+label+'</strong><br>'+escape(gate['current'])+'<br>'+links+'</td></tr>')
+    parts.append('</tbody></table></section>')
+    return '\n'.join(parts)
+
+
 def render_html(data):
     base=BASE+'blob/'+data['sourceRef']+'/'
     parts=['<h1>Ownership progress</h1>',render_svg(data),'<p><a href="history.html">Progress history</a> · <a href="progress.json">Raw data</a> · <a href="'+base+'docs/PROGRESS.md">Counting rules</a></p>']
+    parts.append('<p>The goal is a useful Three.js replacement with little application change. This map tracks implementation; <a href="#adoption-heading">product goals and current evidence</a> are listed separately below.</p>')
     for panel,title,statuses in [('functions','Known CPU callable definitions',['js','rust-batch','rust']),('state','Known scene and animation state fields',['js','rust-owned'])]:
         p=data[panel]
         parts.append(f'<table id="{panel}"><caption>{title}</caption><thead><tr><th>Source group</th>'+''.join(f'<th>{s}</th>' for s in statuses)+'<th>Total</th></tr></thead><tbody>')
         for g in p['groups']:
             parts.append(f'<tr><th><a href="#{panel}-{g["id"]}">{escape(g["name"])}</a></th>'+''.join(f'<td>{g["counts"][s]}</td>' for s in statuses)+f'<td>{g["total"]}</td></tr>')
         parts.append('</tbody><tfoot><tr><th>Total</th>'+''.join(f'<td>{p["counts"][s]}</td>' for s in statuses)+f'<td>{p["total"]}</td></tr></tfoot></table>')
+    parts.append(readiness_html(read_goals(),base))
     parts.append('<p>State fields are inventoried independently of computation. Public metadata and callbacks may remain in JS by design. No 100% Rust target is implied for every declaration. Unsupported custom transform dispatch retains the documented JS path.</p><h2>Definitions and evidence</h2>')
     for panel in ['functions','state']:
         for g in data[panel]['groups']:
@@ -172,7 +232,7 @@ def record(history,data,commit):
         raise ValueError('Use the full observed implementation commit')
     if any(o.get('inventoryHash')==data['inventoryHash'] and o['implementationCommit']==commit for o in history['observations']):
         return
-    history['observations'].append({'schemaVersion':3,'recordedAt':datetime.now(timezone.utc).isoformat(),'implementationCommit':commit,'label':'Source-derived computation and authority inventory','inventoryHash':data['inventoryHash'],'upstreamCommit':data['upstream']['commit'],'counts':{p:{'total':data[p]['total'],'states':data[p]['counts']} for p in ['functions','state']},'note':'New counting scheme; no engine port is implied by the denominator change.'})
+    history['observations'].append({'schemaVersion':3,'recordedAt':datetime.now(timezone.utc).isoformat(),'implementationCommit':commit,'label':'Source-derived computation and authority inventory','inventoryHash':data['inventoryHash'],'upstreamCommit':data['upstream']['commit'],'counts':{p:{'total':data[p]['total'],'states':data[p]['counts']} for p in ['functions','state']},'note':'Observed scoped computation and state mappings; counts do not imply complete APIs or performance.'})
 
 
 def daily_history(history):
@@ -278,7 +338,7 @@ def main():
         record(history,data,args.record);validate_history(history)
         (ROOT/'docs/progress-history.json').write_text(json.dumps(history,indent=2)+'\n')
     md,html=history_views(history)
-    outputs={'docs/progress.json':json.dumps(data,indent=2)+'\n','docs/progress.html':render_html(data),'docs/assets/progress.svg':render_svg(data),'docs/HISTORY.md':md,'docs/history.html':html,'docs/assets/history.svg':history_chart(history)+'\n'}
+    outputs={'README.md':readme_goals(read_goals()),'docs/progress.json':json.dumps(data,indent=2)+'\n','docs/progress.html':render_html(data),'docs/assets/progress.svg':render_svg(data),'docs/HISTORY.md':md,'docs/history.html':html,'docs/assets/history.svg':history_chart(history)+'\n'}
     for name,content in outputs.items():
         p=ROOT/name
         if args.check:
