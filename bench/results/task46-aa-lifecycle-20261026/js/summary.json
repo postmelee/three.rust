@@ -1,0 +1,2188 @@
+{
+  "method": "Run-level linearly interpolated quantiles; median of run p50s per lifecycle. Every run/block retained. Diagnostic reproducibility screen, not statistical significance or product qualification.",
+  "rule": "Every run p50 within max(5% of its condition median p50, four maximum observed clock increments) of that condition median; every contiguous 600-frame block p50 within the same absolute tolerance of its own run p50. Partial blocks in smoke are identified.",
+  "classification": "Prospective A/A lifecycle diagnostic only; no performance qualification",
+  "finalStateHashes": [
+    "cd07e642b45c319d37f8293f059a983e60fa60a96cb1bf7a498f3bd747a90ccf"
+  ],
+  "identicalFinalState": true,
+  "groups": [
+    {
+      "condition": "same-page",
+      "runs": 3,
+      "medianP50": 0.5200000107288361,
+      "p50Range": [
+        0.510000005364418,
+        0.5399999916553497
+      ],
+      "toleranceMs": 0.026000000536441803,
+      "maximumObservedClockIncrementMs": 0.004999995231628418,
+      "diagnosticScreenPass": false,
+      "checks": [
+        {
+          "file": "0-same-page-owned-js.json",
+          "runDeviationMs": 0.019999980926513672,
+          "runPass": true,
+          "blocks": [
+            {
+              "firstFrame": 0,
+              "samples": 600,
+              "deviationMs": 0.024999991059303284,
+              "pass": true
+            },
+            {
+              "firstFrame": 600,
+              "samples": 600,
+              "deviationMs": 0.015000000596046448,
+              "pass": true
+            },
+            {
+              "firstFrame": 1200,
+              "samples": 600,
+              "deviationMs": 0.012500010430812836,
+              "pass": true
+            },
+            {
+              "firstFrame": 1800,
+              "samples": 600,
+              "deviationMs": 0.02000001072883606,
+              "pass": true
+            },
+            {
+              "firstFrame": 2400,
+              "samples": 600,
+              "deviationMs": 0.009999990463256836,
+              "pass": true
+            },
+            {
+              "firstFrame": 3000,
+              "samples": 600,
+              "deviationMs": 0.004999995231628418,
+              "pass": true
+            }
+          ]
+        },
+        {
+          "file": "1-same-page-owned-js.json",
+          "runDeviationMs": 0.01000000536441803,
+          "runPass": true,
+          "blocks": [
+            {
+              "firstFrame": 0,
+              "samples": 600,
+              "deviationMs": 0.004999995231628418,
+              "pass": true
+            },
+            {
+              "firstFrame": 600,
+              "samples": 600,
+              "deviationMs": 0,
+              "pass": true
+            },
+            {
+              "firstFrame": 1200,
+              "samples": 600,
+              "deviationMs": 0,
+              "pass": true
+            },
+            {
+              "firstFrame": 1800,
+              "samples": 600,
+              "deviationMs": 0.005000002682209015,
+              "pass": true
+            },
+            {
+              "firstFrame": 2400,
+              "samples": 600,
+              "deviationMs": 0.004999995231628418,
+              "pass": true
+            },
+            {
+              "firstFrame": 3000,
+              "samples": 600,
+              "deviationMs": 0.01000000536441803,
+              "pass": true
+            }
+          ]
+        },
+        {
+          "file": "2-same-page-owned-js.json",
+          "runDeviationMs": 0,
+          "runPass": true,
+          "blocks": [
+            {
+              "firstFrame": 0,
+              "samples": 600,
+              "deviationMs": 0.0599999874830246,
+              "pass": false
+            },
+            {
+              "firstFrame": 600,
+              "samples": 600,
+              "deviationMs": 0.06499999016523361,
+              "pass": false
+            },
+            {
+              "firstFrame": 1200,
+              "samples": 600,
+              "deviationMs": 0.35500000417232513,
+              "pass": false
+            },
+            {
+              "firstFrame": 1800,
+              "samples": 600,
+              "deviationMs": 0.35500000417232513,
+              "pass": false
+            },
+            {
+              "firstFrame": 2400,
+              "samples": 600,
+              "deviationMs": 0.019999980926513672,
+              "pass": true
+            },
+            {
+              "firstFrame": 3000,
+              "samples": 600,
+              "deviationMs": 0.03999999165534973,
+              "pass": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": "new-page",
+      "runs": 3,
+      "medianP50": 0.5349999964237213,
+      "p50Range": [
+        0.510000005364418,
+        0.5400000065565109
+      ],
+      "toleranceMs": 0.026749999821186067,
+      "maximumObservedClockIncrementMs": 0.004999995231628418,
+      "diagnosticScreenPass": false,
+      "checks": [
+        {
+          "file": "0-new-page-owned-js.json",
+          "runDeviationMs": 0.005000010132789612,
+          "runPass": true,
+          "blocks": [
+            {
+              "firstFrame": 0,
+              "samples": 600,
+              "deviationMs": 0.04999999701976776,
+              "pass": false
+            },
+            {
+              "firstFrame": 600,
+              "samples": 600,
+              "deviationMs": 0.005000010132789612,
+              "pass": true
+            },
+            {
+              "firstFrame": 1200,
+              "samples": 600,
+              "deviationMs": 0.004999995231628418,
+              "pass": true
+            },
+            {
+              "firstFrame": 1800,
+              "samples": 600,
+              "deviationMs": 0,
+              "pass": true
+            },
+            {
+              "firstFrame": 2400,
+              "samples": 600,
+              "deviationMs": 0.025000005960464478,
+              "pass": true
+            },
+            {
+              "firstFrame": 3000,
+              "samples": 600,
+              "deviationMs": 0.01000000536441803,
+              "pass": true
+            }
+          ]
+        },
+        {
+          "file": "1-new-page-owned-js.json",
+          "runDeviationMs": 0,
+          "runPass": true,
+          "blocks": [
+            {
+              "firstFrame": 0,
+              "samples": 600,
+              "deviationMs": 0.019999995827674866,
+              "pass": true
+            },
+            {
+              "firstFrame": 600,
+              "samples": 600,
+              "deviationMs": 0.015000000596046448,
+              "pass": true
+            },
+            {
+              "firstFrame": 1200,
+              "samples": 600,
+              "deviationMs": 0,
+              "pass": true
+            },
+            {
+              "firstFrame": 1800,
+              "samples": 600,
+              "deviationMs": 0.007500000298023224,
+              "pass": true
+            },
+            {
+              "firstFrame": 2400,
+              "samples": 600,
+              "deviationMs": 0.004999995231628418,
+              "pass": true
+            },
+            {
+              "firstFrame": 3000,
+              "samples": 600,
+              "deviationMs": 0.005000002682209015,
+              "pass": true
+            }
+          ]
+        },
+        {
+          "file": "2-new-page-owned-js.json",
+          "runDeviationMs": 0.024999991059303284,
+          "runPass": true,
+          "blocks": [
+            {
+              "firstFrame": 0,
+              "samples": 600,
+              "deviationMs": 0.005000010132789612,
+              "pass": true
+            },
+            {
+              "firstFrame": 600,
+              "samples": 600,
+              "deviationMs": 0.01000000536441803,
+              "pass": true
+            },
+            {
+              "firstFrame": 1200,
+              "samples": 600,
+              "deviationMs": 0.024999991059303284,
+              "pass": true
+            },
+            {
+              "firstFrame": 1800,
+              "samples": 600,
+              "deviationMs": 0.004999995231628418,
+              "pass": true
+            },
+            {
+              "firstFrame": 2400,
+              "samples": 600,
+              "deviationMs": 0.01000000536441803,
+              "pass": true
+            },
+            {
+              "firstFrame": 3000,
+              "samples": 600,
+              "deviationMs": 0.015000000596046448,
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": "new-browser",
+      "runs": 3,
+      "medianP50": 0.5150000005960464,
+      "p50Range": [
+        0.3774999976158142,
+        0.5300000011920929
+      ],
+      "toleranceMs": 0.025750000029802322,
+      "maximumObservedClockIncrementMs": 0.004999995231628418,
+      "diagnosticScreenPass": false,
+      "checks": [
+        {
+          "file": "0-new-browser-owned-js.json",
+          "runDeviationMs": 0,
+          "runPass": true,
+          "blocks": [
+            {
+              "firstFrame": 0,
+              "samples": 600,
+              "deviationMs": 0.01000000536441803,
+              "pass": true
+            },
+            {
+              "firstFrame": 600,
+              "samples": 600,
+              "deviationMs": 0.025000005960464478,
+              "pass": true
+            },
+            {
+              "firstFrame": 1200,
+              "samples": 600,
+              "deviationMs": 0.019999995827674866,
+              "pass": true
+            },
+            {
+              "firstFrame": 1800,
+              "samples": 600,
+              "deviationMs": 0.012500002980232239,
+              "pass": true
+            },
+            {
+              "firstFrame": 2400,
+              "samples": 600,
+              "deviationMs": 0,
+              "pass": true
+            },
+            {
+              "firstFrame": 3000,
+              "samples": 600,
+              "deviationMs": 0,
+              "pass": true
+            }
+          ]
+        },
+        {
+          "file": "1-new-browser-owned-js.json",
+          "runDeviationMs": 0.13750000298023224,
+          "runPass": false,
+          "blocks": [
+            {
+              "firstFrame": 0,
+              "samples": 600,
+              "deviationMs": 0.07249999046325684,
+              "pass": false
+            },
+            {
+              "firstFrame": 600,
+              "samples": 600,
+              "deviationMs": 0.16499999165534973,
+              "pass": false
+            },
+            {
+              "firstFrame": 1200,
+              "samples": 600,
+              "deviationMs": 0.23250000178813934,
+              "pass": false
+            },
+            {
+              "firstFrame": 1800,
+              "samples": 600,
+              "deviationMs": 0.10249999910593033,
+              "pass": false
+            },
+            {
+              "firstFrame": 2400,
+              "samples": 600,
+              "deviationMs": 0.09750001132488251,
+              "pass": false
+            },
+            {
+              "firstFrame": 3000,
+              "samples": 600,
+              "deviationMs": 0.11750000715255737,
+              "pass": false
+            }
+          ]
+        },
+        {
+          "file": "2-new-browser-owned-js.json",
+          "runDeviationMs": 0.015000000596046448,
+          "runPass": true,
+          "blocks": [
+            {
+              "firstFrame": 0,
+              "samples": 600,
+              "deviationMs": 0.030000001192092896,
+              "pass": false
+            },
+            {
+              "firstFrame": 600,
+              "samples": 600,
+              "deviationMs": 0.019999995827674866,
+              "pass": true
+            },
+            {
+              "firstFrame": 1200,
+              "samples": 600,
+              "deviationMs": 0.012500002980232239,
+              "pass": true
+            },
+            {
+              "firstFrame": 1800,
+              "samples": 600,
+              "deviationMs": 0.004999995231628418,
+              "pass": true
+            },
+            {
+              "firstFrame": 2400,
+              "samples": 600,
+              "deviationMs": 0.004999995231628418,
+              "pass": true
+            },
+            {
+              "firstFrame": 3000,
+              "samples": 600,
+              "deviationMs": 0.015000000596046448,
+              "pass": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "file": "0-same-page-owned-js.json",
+      "condition": "same-page",
+      "round": 0,
+      "cpu": {
+        "p50": 0.5399999916553497,
+        "p95": 0.7452500045299516,
+        "p99": 0.9300500071048725,
+        "min": 0.0949999988079071,
+        "max": 1.1299999952316284,
+        "mean": 0.51873888887465
+      },
+      "callbackInterval": {
+        "p50": 8.325000002980232,
+        "p95": 10.114999994635582,
+        "p99": 10.375199999809265,
+        "min": 6.219999998807907,
+        "max": 10.689999997615814,
+        "mean": 8.333239788829733
+      },
+      "rafInterval": {
+        "p50": 8.330000000001746,
+        "p95": 10.095000000001164,
+        "p99": 10.315100000002277,
+        "min": 6.345000000001164,
+        "max": 10.349999999998545,
+        "mean": 8.333228674631842
+      },
+      "callbackArrival": {
+        "p50": 0.2800000002971501,
+        "p95": 0.4099999940985981,
+        "p99": 0.504999997021514,
+        "min": 0.034999992847588146,
+        "max": 0.7249999928462785,
+        "mean": 0.27051804903660065
+      },
+      "blocks": [
+        {
+          "firstFrame": 0,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5150000005960464,
+            "p95": 0.7250000089406967,
+            "p99": 0.9000499911606311,
+            "min": 0.125,
+            "max": 1.0649999976158142,
+            "mean": 0.4715250000854333
+          },
+          "callbackArrival": {
+            "p50": 0.2624999940389898,
+            "p95": 0.4102499982123843,
+            "p99": 0.47539998988466287,
+            "min": 0.044999987483606674,
+            "max": 0.5849999916554225,
+            "mean": 0.24209166016377215
+          }
+        },
+        {
+          "firstFrame": 600,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5249999910593033,
+            "p95": 0.739999994635582,
+            "p99": 0.9152000065147875,
+            "min": 0.0949999988079071,
+            "max": 1.0799999982118607,
+            "mean": 0.4788833331068357
+          },
+          "callbackArrival": {
+            "p50": 0.2799999880789983,
+            "p95": 0.410000000596483,
+            "p99": 0.4650999910580139,
+            "min": 0.034999992847588146,
+            "max": 0.6049999976166873,
+            "mean": 0.2520249935507733
+          }
+        },
+        {
+          "firstFrame": 1200,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5525000020861626,
+            "p95": 0.739999994635582,
+            "p99": 0.8750999999046325,
+            "min": 0.20999999344348907,
+            "max": 1.1299999952316284,
+            "mean": 0.5539666669070721
+          },
+          "callbackArrival": {
+            "p50": 0.2899999958281114,
+            "p95": 0.4149999879595271,
+            "p99": 0.5250499892396328,
+            "min": 0.06999998688843334,
+            "max": 0.6499999904626748,
+            "mean": 0.2921249932814984
+          }
+        },
+        {
+          "firstFrame": 1800,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5600000023841858,
+            "p95": 0.75,
+            "p99": 0.8850500051677227,
+            "min": 0.17499999701976776,
+            "max": 1.0450000017881393,
+            "mean": 0.5501999996602536
+          },
+          "callbackArrival": {
+            "p50": 0.28999999493316864,
+            "p95": 0.4054999994921668,
+            "p99": 0.5851999898613938,
+            "min": 0.06499998629078618,
+            "max": 0.7249999880805262,
+            "mean": 0.2873333270589319
+          }
+        },
+        {
+          "firstFrame": 2400,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5300000011920929,
+            "p95": 0.7450000047683716,
+            "p99": 0.9703999988734718,
+            "min": 0.14499999582767487,
+            "max": 1.094999998807907,
+            "mean": 0.515558332875371
+          },
+          "callbackArrival": {
+            "p50": 0.2799999880808173,
+            "p95": 0.4099999875710637,
+            "p99": 0.5100499963447873,
+            "min": 0.04499999344261596,
+            "max": 0.5699999994030804,
+            "mean": 0.2653166603793822
+          }
+        },
+        {
+          "firstFrame": 3000,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5449999868869781,
+            "p95": 0.7849999964237213,
+            "p99": 1.0050500100851059,
+            "min": 0.17499999701976776,
+            "max": 1.0550000071525574,
+            "mean": 0.5423000006129345
+          },
+          "callbackArrival": {
+            "p50": 0.28499999373889295,
+            "p95": 0.40499999705243683,
+            "p99": 0.4950499975088314,
+            "min": 0.06999999761319486,
+            "max": 0.7249999928462785,
+            "mean": 0.2842166597852459
+          }
+        }
+      ],
+      "observedClockIncrementMs": 0.004999995231628418,
+      "finalStateSha256": "cd07e642b45c319d37f8293f059a983e60fa60a96cb1bf7a498f3bd747a90ccf",
+      "workload": {
+        "draws": 16,
+        "triangles": 9216,
+        "readCount": 60,
+        "diagnosticsDelta": {
+          "nodes": 0,
+          "rigs": 0,
+          "clips": 0,
+          "revision": 3600,
+          "steps": 3600,
+          "wasmCalls": 0,
+          "wasmMemoryBytes": 0,
+          "initialBytes": 0,
+          "commandBatches": 3600,
+          "commandBytes": 64650240,
+          "readBytes": 6504960,
+          "paletteBytes": 88473600,
+          "rootBytes": 7372800
+        },
+        "adapterDeltaIncludingWarmup": {
+          "presentationMeshes": 0,
+          "ordinaryBones": 0,
+          "paletteConsumes": 76800,
+          "paddedPaletteBytes": 0,
+          "appliedRevision": 4802
+        }
+      }
+    },
+    {
+      "file": "0-new-page-owned-js.json",
+      "condition": "new-page",
+      "round": 0,
+      "cpu": {
+        "p50": 0.5400000065565109,
+        "p95": 0.7599999912083149,
+        "p99": 0.8900500005483616,
+        "min": 0.125,
+        "max": 1.4350000023841858,
+        "mean": 0.5387361112071408
+      },
+      "callbackInterval": {
+        "p50": 8.319999992847443,
+        "p95": 10.105000004172325,
+        "p99": 10.355100004076958,
+        "min": 6.049999997019768,
+        "max": 10.890000000596046,
+        "mean": 8.333382884134151
+      },
+      "rafInterval": {
+        "p50": 8.330000000001746,
+        "p95": 10.049999999995999,
+        "p99": 10.314999999998726,
+        "min": 6.31000000000131,
+        "max": 10.364999999999782,
+        "mean": 8.333332870241733
+      },
+      "callbackArrival": {
+        "p50": 0.24500001072738087,
+        "p95": 0.36500001311287633,
+        "p99": 0.4400000113374517,
+        "min": 0.04000000357700628,
+        "max": 0.694999999999709,
+        "mean": 0.24537222811068002
+      },
+      "blocks": [
+        {
+          "firstFrame": 0,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5900000035762787,
+            "p95": 0.8049999929964542,
+            "p99": 0.9251000118255615,
+            "min": 0.12999999523162842,
+            "max": 1.0649999976158142,
+            "mean": 0.5690166667103768
+          },
+          "callbackArrival": {
+            "p50": 0.2949999988086347,
+            "p95": 0.42000000971584084,
+            "p99": 0.5000000047795038,
+            "min": 0.04000000357700628,
+            "max": 0.694999999999709,
+            "mean": 0.27579167255566667
+          }
+        },
+        {
+          "firstFrame": 600,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5349999964237213,
+            "p95": 0.7302500039339064,
+            "p99": 0.8651999947428701,
+            "min": 0.125,
+            "max": 1.4350000023841858,
+            "mean": 0.5337333336969217
+          },
+          "callbackArrival": {
+            "p50": 0.24000000238447683,
+            "p95": 0.33525001248817693,
+            "p99": 0.4100500024185021,
+            "min": 0.06500000357664248,
+            "max": 0.44999999880747055,
+            "mean": 0.23711667246720633
+          }
+        },
+        {
+          "firstFrame": 1200,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5450000017881393,
+            "p95": 0.7552499949932097,
+            "p99": 0.8950500106811523,
+            "min": 0.1850000023841858,
+            "max": 1.0800000131130219,
+            "mean": 0.5471666666865349
+          },
+          "callbackArrival": {
+            "p50": 0.2450000020871812,
+            "p95": 0.34500000125044605,
+            "p99": 0.4254000113243088,
+            "min": 0.060000010729709174,
+            "max": 0.6650000083463965,
+            "mean": 0.24202500604088223
+          }
+        },
+        {
+          "firstFrame": 1800,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5400000065565109,
+            "p95": 0.7450000047683716,
+            "p99": 0.9150999917089938,
+            "min": 0.14500001072883606,
+            "max": 1.0750000029802322,
+            "mean": 0.5349416667222977
+          },
+          "callbackArrival": {
+            "p50": 0.2450000053650001,
+            "p95": 0.35000001013395377,
+            "p99": 0.39505001064539097,
+            "min": 0.05000000059590093,
+            "max": 0.43000000059691956,
+            "mean": 0.240341672639103
+          }
+        },
+        {
+          "firstFrame": 2400,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5150000005960464,
+            "p95": 0.7150000035762787,
+            "p99": 0.8403000035881993,
+            "min": 0.17999999225139618,
+            "max": 0.9249999970197678,
+            "mean": 0.5077500001092752
+          },
+          "callbackArrival": {
+            "p50": 0.23500000446983904,
+            "p95": 0.3502500028622305,
+            "p99": 0.41000000895626726,
+            "min": 0.05500000238316716,
+            "max": 0.694999999999709,
+            "mean": 0.23143333895005222
+          }
+        },
+        {
+          "firstFrame": 3000,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5300000011920929,
+            "p95": 0.75,
+            "p99": 0.8302499981224535,
+            "min": 0.19499999284744263,
+            "max": 1.0499999970197678,
+            "mean": 0.5398083333174387
+          },
+          "callbackArrival": {
+            "p50": 0.2450000089374953,
+            "p95": 0.3502500056598362,
+            "p99": 0.42010001064089003,
+            "min": 0.050000010727671906,
+            "max": 0.6849999999976717,
+            "mean": 0.24552500601116967
+          }
+        }
+      ],
+      "observedClockIncrementMs": 0.004999995231628418,
+      "finalStateSha256": "cd07e642b45c319d37f8293f059a983e60fa60a96cb1bf7a498f3bd747a90ccf",
+      "workload": {
+        "draws": 16,
+        "triangles": 9216,
+        "readCount": 60,
+        "diagnosticsDelta": {
+          "nodes": 0,
+          "rigs": 0,
+          "clips": 0,
+          "revision": 3600,
+          "steps": 3600,
+          "wasmCalls": 0,
+          "wasmMemoryBytes": 0,
+          "initialBytes": 0,
+          "commandBatches": 3600,
+          "commandBytes": 64650240,
+          "readBytes": 6504960,
+          "paletteBytes": 88473600,
+          "rootBytes": 7372800
+        },
+        "adapterDeltaIncludingWarmup": {
+          "presentationMeshes": 0,
+          "ordinaryBones": 0,
+          "paletteConsumes": 76800,
+          "paddedPaletteBytes": 0,
+          "appliedRevision": 4802
+        }
+      }
+    },
+    {
+      "file": "0-new-browser-owned-js.json",
+      "condition": "new-browser",
+      "round": 0,
+      "cpu": {
+        "p50": 0.5150000005960464,
+        "p95": 0.7300000041723251,
+        "p99": 0.864999994635582,
+        "min": 0.0949999988079071,
+        "max": 1.2699999958276749,
+        "mean": 0.4978013888291187
+      },
+      "callbackInterval": {
+        "p50": 8.324999988079071,
+        "p95": 10.144999995827675,
+        "p99": 10.3801000097394,
+        "min": 6.105000004172325,
+        "max": 10.75,
+        "mean": 8.333157821616123
+      },
+      "rafInterval": {
+        "p50": 8.330000000001746,
+        "p95": 10.10050000000483,
+        "p99": 10.31010000000475,
+        "min": 6.335000000002765,
+        "max": 10.350000000002183,
+        "mean": 8.333150875243124
+      },
+      "callbackArrival": {
+        "p50": 0.24000000745036232,
+        "p95": 0.3600000071528484,
+        "p99": 0.4400500064745017,
+        "min": 0.03000000059546437,
+        "max": 0.6750000053652911,
+        "mean": 0.23197361464899333
+      },
+      "blocks": [
+        {
+          "firstFrame": 0,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5049999952316284,
+            "p95": 0.7302500039339064,
+            "p99": 0.8751500000059603,
+            "min": 0.11499999463558197,
+            "max": 1.0150000005960464,
+            "mean": 0.4671166666597128
+          },
+          "callbackArrival": {
+            "p50": 0.2250000065569111,
+            "p95": 0.3799999999706415,
+            "p99": 0.46515000422057695,
+            "min": 0.040000001192311174,
+            "max": 0.6750000053652911,
+            "mean": 0.2131583368748276
+          }
+        },
+        {
+          "firstFrame": 600,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.48999999463558197,
+            "p95": 0.7352499991655348,
+            "p99": 0.8352499935030935,
+            "min": 0.0949999988079071,
+            "max": 0.9249999970197678,
+            "mean": 0.4577999998629093
+          },
+          "callbackArrival": {
+            "p50": 0.22499999821229721,
+            "p95": 0.37025000834510113,
+            "p99": 0.46005000532342816,
+            "min": 0.03000000059546437,
+            "max": 0.615000004767353,
+            "mean": 0.21317500350569693
+          }
+        },
+        {
+          "firstFrame": 1200,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5349999964237213,
+            "p95": 0.7402499951422212,
+            "p99": 0.87999999538064,
+            "min": 0.19499999284744263,
+            "max": 1.2150000035762787,
+            "mean": 0.543816666478912
+          },
+          "callbackArrival": {
+            "p50": 0.25000000208638085,
+            "p95": 0.3552500033969407,
+            "p99": 0.41504999772165313,
+            "min": 0.09000000476953574,
+            "max": 0.5200000101322075,
+            "mean": 0.25047500370147946
+          }
+        },
+        {
+          "firstFrame": 1800,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5275000035762787,
+            "p95": 0.7102499939501283,
+            "p99": 0.8500499941408634,
+            "min": 0.17500001192092896,
+            "max": 1.2699999958276749,
+            "mean": 0.524200000166893
+          },
+          "callbackArrival": {
+            "p50": 0.2500000089421519,
+            "p95": 0.35025000786717986,
+            "p99": 0.4350500106879917,
+            "min": 0.06999999821346137,
+            "max": 0.5300000089409878,
+            "mean": 0.24727500357623286
+          }
+        },
+        {
+          "firstFrame": 2400,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5150000005960464,
+            "p95": 0.7350000001490116,
+            "p99": 0.8901500006020068,
+            "min": 0.14000000059604645,
+            "max": 1.1000000089406967,
+            "mean": 0.5114166667064031
+          },
+          "callbackArrival": {
+            "p50": 0.24500000745138095,
+            "p95": 0.34000000783835277,
+            "p99": 0.42499999824281987,
+            "min": 0.055000003576424206,
+            "max": 0.49500001013075234,
+            "mean": 0.23904166996486917
+          }
+        },
+        {
+          "firstFrame": 3000,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5150000005960464,
+            "p95": 0.675000011920929,
+            "p99": 0.8400499887764453,
+            "min": 0.10999999940395355,
+            "max": 1.0299999862909317,
+            "mean": 0.4824583330998818
+          },
+          "callbackArrival": {
+            "p50": 0.2399999994013342,
+            "p95": 0.35025000095338304,
+            "p99": 0.4400999982660868,
+            "min": 0.03999999940424459,
+            "max": 0.6400000029825605,
+            "mean": 0.228716670270854
+          }
+        }
+      ],
+      "observedClockIncrementMs": 0.004999995231628418,
+      "finalStateSha256": "cd07e642b45c319d37f8293f059a983e60fa60a96cb1bf7a498f3bd747a90ccf",
+      "workload": {
+        "draws": 16,
+        "triangles": 9216,
+        "readCount": 60,
+        "diagnosticsDelta": {
+          "nodes": 0,
+          "rigs": 0,
+          "clips": 0,
+          "revision": 3600,
+          "steps": 3600,
+          "wasmCalls": 0,
+          "wasmMemoryBytes": 0,
+          "initialBytes": 0,
+          "commandBatches": 3600,
+          "commandBytes": 64650240,
+          "readBytes": 6504960,
+          "paletteBytes": 88473600,
+          "rootBytes": 7372800
+        },
+        "adapterDeltaIncludingWarmup": {
+          "presentationMeshes": 0,
+          "ordinaryBones": 0,
+          "paletteConsumes": 76800,
+          "paddedPaletteBytes": 0,
+          "appliedRevision": 4802
+        }
+      }
+    },
+    {
+      "file": "1-new-page-owned-js.json",
+      "condition": "new-page",
+      "round": 1,
+      "cpu": {
+        "p50": 0.5349999964237213,
+        "p95": 0.7349999994039536,
+        "p99": 0.8900000005960464,
+        "min": 0.12999999523162842,
+        "max": 1.2750000059604645,
+        "mean": 0.5252847221203977
+      },
+      "callbackInterval": {
+        "p50": 8.319999992847443,
+        "p95": 10.144999995827675,
+        "p99": 10.384999990463257,
+        "min": 5.644999995827675,
+        "max": 10.765000000596046,
+        "mean": 8.332911919979427
+      },
+      "rafInterval": {
+        "p50": 8.329999999999927,
+        "p95": 10.110000000000582,
+        "p99": 10.315000000000545,
+        "min": 6.334999999999127,
+        "max": 10.340000000000146,
+        "mean": 8.332939705473741
+      },
+      "callbackArrival": {
+        "p50": 0.28500000357598765,
+        "p95": 0.4152500129934183,
+        "p99": 0.5050500106757669,
+        "min": 0.05000000774816726,
+        "max": 1.2750000059604645,
+        "mean": 0.2785958399722848
+      },
+      "blocks": [
+        {
+          "firstFrame": 0,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5150000005960464,
+            "p95": 0.7300000041723251,
+            "p99": 0.8450499987602234,
+            "min": 0.16499999165534973,
+            "max": 1.1699999868869781,
+            "mean": 0.49094999969005587
+          },
+          "callbackArrival": {
+            "p50": 0.2600000137099414,
+            "p95": 0.4152500126651828,
+            "p99": 0.4800500029868453,
+            "min": 0.05500001311338565,
+            "max": 0.7350000023834582,
+            "mean": 0.25150000661118005
+          }
+        },
+        {
+          "firstFrame": 600,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5199999958276749,
+            "p95": 0.7402500085532663,
+            "p99": 0.8652500092983244,
+            "min": 0.12999999523162842,
+            "max": 1.2750000059604645,
+            "mean": 0.5002749999860923
+          },
+          "callbackArrival": {
+            "p50": 0.2750000131127308,
+            "p95": 0.43000000059691956,
+            "p99": 0.5200500124036443,
+            "min": 0.05500001370819518,
+            "max": 0.5500000107276719,
+            "mean": 0.2648916733423054
+          }
+        },
+        {
+          "firstFrame": 1200,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5349999964237213,
+            "p95": 0.7257499940693372,
+            "p99": 0.8754999999701972,
+            "min": 0.12999999523162842,
+            "max": 1.0599999874830246,
+            "mean": 0.5247833337138097
+          },
+          "callbackArrival": {
+            "p50": 0.28500000774874934,
+            "p95": 0.41500000432261,
+            "p99": 0.5100000053703844,
+            "min": 0.05000000774816726,
+            "max": 0.8300000113231363,
+            "mean": 0.27758333987682515
+          }
+        },
+        {
+          "firstFrame": 1800,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5424999967217445,
+            "p95": 0.7352499999105928,
+            "p99": 0.9050499863922595,
+            "min": 0.15000000596046448,
+            "max": 1.0250000059604645,
+            "mean": 0.5443416663507621
+          },
+          "callbackArrival": {
+            "p50": 0.2900000119207107,
+            "p95": 0.4302500035764749,
+            "p99": 0.5101500082723941,
+            "min": 0.06000000000130967,
+            "max": 0.7050000083436316,
+            "mean": 0.29342500654558534
+          }
+        },
+        {
+          "firstFrame": 2400,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5399999916553497,
+            "p95": 0.7554999954998489,
+            "p99": 0.945249992907047,
+            "min": 0.14499999582767487,
+            "max": 1.0349999964237213,
+            "mean": 0.546924999927481
+          },
+          "callbackArrival": {
+            "p50": 0.2900000017889397,
+            "p95": 0.4100000071817703,
+            "p99": 0.5251500136020694,
+            "min": 0.08500000417188858,
+            "max": 1.2750000059604645,
+            "mean": 0.2942833397517825
+          }
+        },
+        {
+          "firstFrame": 3000,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5399999991059303,
+            "p95": 0.7304999895393844,
+            "p99": 0.8699999898672104,
+            "min": 0.17000000178813934,
+            "max": 1.0850000083446503,
+            "mean": 0.544433333054185
+          },
+          "callbackArrival": {
+            "p50": 0.2900000116205774,
+            "p95": 0.4002500099806637,
+            "p99": 0.4600500041456689,
+            "min": 0.09000000118976459,
+            "max": 0.6050000011891825,
+            "mean": 0.28989167370603053
+          }
+        }
+      ],
+      "observedClockIncrementMs": 0.004999995231628418,
+      "finalStateSha256": "cd07e642b45c319d37f8293f059a983e60fa60a96cb1bf7a498f3bd747a90ccf",
+      "workload": {
+        "draws": 16,
+        "triangles": 9216,
+        "readCount": 60,
+        "diagnosticsDelta": {
+          "nodes": 0,
+          "rigs": 0,
+          "clips": 0,
+          "revision": 3600,
+          "steps": 3600,
+          "wasmCalls": 0,
+          "wasmMemoryBytes": 0,
+          "initialBytes": 0,
+          "commandBatches": 3600,
+          "commandBytes": 64650240,
+          "readBytes": 6504960,
+          "paletteBytes": 88473600,
+          "rootBytes": 7372800
+        },
+        "adapterDeltaIncludingWarmup": {
+          "presentationMeshes": 0,
+          "ordinaryBones": 0,
+          "paletteConsumes": 76800,
+          "paddedPaletteBytes": 0,
+          "appliedRevision": 4802
+        }
+      }
+    },
+    {
+      "file": "1-new-browser-owned-js.json",
+      "condition": "new-browser",
+      "round": 1,
+      "cpu": {
+        "p50": 0.3774999976158142,
+        "p95": 0.6600000113248825,
+        "p99": 0.7550500100851048,
+        "min": 0.0949999988079071,
+        "max": 0.9800000041723251,
+        "mean": 0.3788930554398232
+      },
+      "callbackInterval": {
+        "p50": 8.320000007748604,
+        "p95": 10.20499999821186,
+        "p99": 10.39509999603033,
+        "min": 6.069999992847443,
+        "max": 10.724999994039536,
+        "mean": 8.33336065573787
+      },
+      "rafInterval": {
+        "p50": 8.330000000001746,
+        "p95": 10.134999999998763,
+        "p99": 10.319999999999709,
+        "min": 6.325000000004366,
+        "max": 10.354999999995925,
+        "mean": 8.333324534592942
+      },
+      "callbackArrival": {
+        "p50": 0.13500000417207048,
+        "p95": 0.38999999761308574,
+        "p99": 0.4650500111880671,
+        "min": 0.024999998808198143,
+        "max": 0.7050000095332507,
+        "mean": 0.17896389370229876
+      },
+      "blocks": [
+        {
+          "firstFrame": 0,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.3050000071525574,
+            "p95": 0.6752500116825102,
+            "p99": 0.7750999912619589,
+            "min": 0.11500000953674316,
+            "max": 0.9799999892711639,
+            "mean": 0.37185833329955736
+          },
+          "callbackArrival": {
+            "p50": 0.1100000047681533,
+            "p95": 0.3900000007748531,
+            "p99": 0.4600000018247738,
+            "min": 0.0350000089401874,
+            "max": 0.6599999976151594,
+            "mean": 0.16890833793180113
+          }
+        },
+        {
+          "firstFrame": 600,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.21250000596046448,
+            "p95": 0.675249996781349,
+            "p99": 0.775200005918741,
+            "min": 0.09999999403953552,
+            "max": 0.8849999904632568,
+            "mean": 0.3107416662077109
+          },
+          "callbackArrival": {
+            "p50": 0.09000000297965016,
+            "p95": 0.38525000724248437,
+            "p99": 0.4700500011627991,
+            "min": 0.025000006557093002,
+            "max": 0.6550000059596641,
+            "mean": 0.14256667170827617
+          }
+        },
+        {
+          "firstFrame": 1200,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.14499999582767487,
+            "p95": 0.5352500110864638,
+            "p99": 0.6299999952316284,
+            "min": 0.0949999988079071,
+            "max": 0.6599999964237213,
+            "mean": 0.20389999978244305
+          },
+          "callbackArrival": {
+            "p50": 0.05500001072869054,
+            "p95": 0.29000000083578925,
+            "p99": 0.39010000596801536,
+            "min": 0.024999998808198143,
+            "max": 0.48500000834610546,
+            "mean": 0.09075833797865926
+          }
+        },
+        {
+          "firstFrame": 1800,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.47999999672174454,
+            "p95": 0.6799999929964542,
+            "p99": 0.8101500022411345,
+            "min": 0.11999998986721039,
+            "max": 0.9800000041723251,
+            "mean": 0.45436666637659073
+          },
+          "callbackArrival": {
+            "p50": 0.22250000655731128,
+            "p95": 0.39525000020894346,
+            "p99": 0.47015000483846947,
+            "min": 0.04500000119151082,
+            "max": 0.5300000077477307,
+            "mean": 0.21556667172711969
+          }
+        },
+        {
+          "firstFrame": 2400,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.4750000089406967,
+            "p95": 0.6699999876320362,
+            "p99": 0.7300500041246414,
+            "min": 0.14499999582767487,
+            "max": 0.8399999886751175,
+            "mean": 0.45204999995728334
+          },
+          "callbackArrival": {
+            "p50": 0.2300000011928205,
+            "p95": 0.3900000029791045,
+            "p99": 0.4601000107096478,
+            "min": 0.03500001192151103,
+            "max": 0.6750000059619197,
+            "mean": 0.21860833841171068
+          }
+        },
+        {
+          "firstFrame": 3000,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.4950000047683716,
+            "p95": 0.6552500009536741,
+            "p99": 0.7602500054240224,
+            "min": 0.16500000655651093,
+            "max": 0.8449999988079071,
+            "mean": 0.48044166701535385
+          },
+          "callbackArrival": {
+            "p50": 0.2350000020887819,
+            "p95": 0.4049999984476017,
+            "p99": 0.4900500053317955,
+            "min": 0.055000005959300324,
+            "max": 0.7050000095332507,
+            "mean": 0.23737500445622572
+          }
+        }
+      ],
+      "observedClockIncrementMs": 0.004999995231628418,
+      "finalStateSha256": "cd07e642b45c319d37f8293f059a983e60fa60a96cb1bf7a498f3bd747a90ccf",
+      "workload": {
+        "draws": 16,
+        "triangles": 9216,
+        "readCount": 60,
+        "diagnosticsDelta": {
+          "nodes": 0,
+          "rigs": 0,
+          "clips": 0,
+          "revision": 3600,
+          "steps": 3600,
+          "wasmCalls": 0,
+          "wasmMemoryBytes": 0,
+          "initialBytes": 0,
+          "commandBatches": 3600,
+          "commandBytes": 64650240,
+          "readBytes": 6504960,
+          "paletteBytes": 88473600,
+          "rootBytes": 7372800
+        },
+        "adapterDeltaIncludingWarmup": {
+          "presentationMeshes": 0,
+          "ordinaryBones": 0,
+          "paletteConsumes": 76800,
+          "paddedPaletteBytes": 0,
+          "appliedRevision": 4802
+        }
+      }
+    },
+    {
+      "file": "1-same-page-owned-js.json",
+      "condition": "same-page",
+      "round": 1,
+      "cpu": {
+        "p50": 0.510000005364418,
+        "p95": 0.6849999874830246,
+        "p99": 0.8149999976158142,
+        "min": 0.14999999105930328,
+        "max": 1.0199999958276749,
+        "mean": 0.5121569445563687
+      },
+      "callbackInterval": {
+        "p50": 8.320000007748604,
+        "p95": 9.290000006556511,
+        "p99": 9.409999996721744,
+        "min": 6.825000002980232,
+        "max": 9.70499999821186,
+        "mean": 8.333109196999
+      },
+      "rafInterval": {
+        "p50": 8.329999999987194,
+        "p95": 9.27499999999418,
+        "p99": 9.320000000006985,
+        "min": 7.315000000002328,
+        "max": 9.355000000010477,
+        "mean": 8.333071686579608
+      },
+      "callbackArrival": {
+        "p50": 0.22999999223975465,
+        "p95": 0.3299999922761344,
+        "p99": 0.40499998810206306,
+        "min": 0.04999999701976776,
+        "max": 0.8199999892676715,
+        "mean": 0.23018610450082633
+      },
+      "blocks": [
+        {
+          "firstFrame": 0,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5150000005960464,
+            "p95": 0.6849999874830246,
+            "p99": 0.800049996972084,
+            "min": 0.2199999988079071,
+            "max": 0.9800000041723251,
+            "mean": 0.5100333333512147
+          },
+          "callbackArrival": {
+            "p50": 0.22999999701278284,
+            "p95": 0.3399999965666211,
+            "p99": 0.435249998810468,
+            "min": 0.06499999403604306,
+            "max": 0.7699999886681326,
+            "mean": 0.23124999335816634
+          }
+        },
+        {
+          "firstFrame": 600,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.510000005364418,
+            "p95": 0.6800000071525574,
+            "p99": 0.7952500016987322,
+            "min": 0.15000000596046448,
+            "max": 0.9849999994039536,
+            "mean": 0.5159583330154419
+          },
+          "callbackArrival": {
+            "p50": 0.22999999643070623,
+            "p95": 0.33524999160727,
+            "p99": 0.38504999871453033,
+            "min": 0.06499999403604306,
+            "max": 0.5349999874888454,
+            "mean": 0.23271666024224638
+          }
+        },
+        {
+          "firstFrame": 1200,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.510000005364418,
+            "p95": 0.7000000029802322,
+            "p99": 0.815049997717142,
+            "min": 0.1899999976158142,
+            "max": 0.9400000125169754,
+            "mean": 0.5183499999095996
+          },
+          "callbackArrival": {
+            "p50": 0.22499999463616405,
+            "p95": 0.31524999821267535,
+            "p99": 0.37504999041237164,
+            "min": 0.06499999106745236,
+            "max": 0.5949999934528023,
+            "mean": 0.22630832691371325
+          }
+        },
+        {
+          "firstFrame": 1800,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.505000002682209,
+            "p95": 0.6850000023841858,
+            "p99": 0.8350499935448169,
+            "min": 0.1599999964237213,
+            "max": 0.989999994635582,
+            "mean": 0.5115166667848825
+          },
+          "callbackArrival": {
+            "p50": 0.22999998868908733,
+            "p95": 0.34499999293184375,
+            "p99": 0.3850999987087561,
+            "min": 0.07500000001164153,
+            "max": 0.4800000000104774,
+            "mean": 0.22926666015031516
+          }
+        },
+        {
+          "firstFrame": 2400,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5150000005960464,
+            "p95": 0.6850000023841858,
+            "p99": 0.8150999975204467,
+            "min": 0.2199999988079071,
+            "max": 1,
+            "mean": 0.520800000578165
+          },
+          "callbackArrival": {
+            "p50": 0.22999998659361154,
+            "p95": 0.32999999469175234,
+            "p99": 0.40004999693599524,
+            "min": 0.06999999939580448,
+            "max": 0.49499998809187673,
+            "mean": 0.23135832648617605
+          }
+        },
+        {
+          "firstFrame": 3000,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5,
+            "p95": 0.6652500063180922,
+            "p99": 0.7654000006616112,
+            "min": 0.14999999105930328,
+            "max": 1.0199999958276749,
+            "mean": 0.4962833336989085
+          },
+          "callbackArrival": {
+            "p50": 0.2349999907601159,
+            "p95": 0.3199999924428994,
+            "p99": 0.410049991068663,
+            "min": 0.04999999701976776,
+            "max": 0.8199999892676715,
+            "mean": 0.23021665985434084
+          }
+        }
+      ],
+      "observedClockIncrementMs": 0.004999995231628418,
+      "finalStateSha256": "cd07e642b45c319d37f8293f059a983e60fa60a96cb1bf7a498f3bd747a90ccf",
+      "workload": {
+        "draws": 16,
+        "triangles": 9216,
+        "readCount": 60,
+        "diagnosticsDelta": {
+          "nodes": 0,
+          "rigs": 0,
+          "clips": 0,
+          "revision": 3600,
+          "steps": 3600,
+          "wasmCalls": 0,
+          "wasmMemoryBytes": 0,
+          "initialBytes": 0,
+          "commandBatches": 3600,
+          "commandBytes": 64650240,
+          "readBytes": 6504960,
+          "paletteBytes": 88473600,
+          "rootBytes": 7372800
+        },
+        "adapterDeltaIncludingWarmup": {
+          "presentationMeshes": 0,
+          "ordinaryBones": 0,
+          "paletteConsumes": 76800,
+          "paddedPaletteBytes": 0,
+          "appliedRevision": 4802
+        }
+      }
+    },
+    {
+      "file": "2-new-browser-owned-js.json",
+      "condition": "new-browser",
+      "round": 2,
+      "cpu": {
+        "p50": 0.5300000011920929,
+        "p95": 0.7449999906122684,
+        "p99": 0.87999999538064,
+        "min": 0.0949999988079071,
+        "max": 1.2100000083446503,
+        "mean": 0.5152694446055426
+      },
+      "callbackInterval": {
+        "p50": 8.320000007748604,
+        "p95": 9.274999991059303,
+        "p99": 9.409999996423721,
+        "min": 6.7750000059604645,
+        "max": 9.814999997615814,
+        "mean": 8.333559322030917
+      },
+      "rafInterval": {
+        "p50": 8.330000000001746,
+        "p95": 9.2600000000004,
+        "p99": 9.315100000002277,
+        "min": 7.325000000000728,
+        "max": 9.345000000001164,
+        "mean": 8.333541261461518
+      },
+      "callbackArrival": {
+        "p50": 0.27500000476720743,
+        "p95": 0.41500000238393114,
+        "p99": 0.524999999470383,
+        "min": 0.034999995230464265,
+        "max": 0.9949999958262197,
+        "mean": 0.2695527788859403
+      },
+      "blocks": [
+        {
+          "firstFrame": 0,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5,
+            "p95": 0.7149999894201755,
+            "p99": 0.7955500018596644,
+            "min": 0.0949999988079071,
+            "max": 1.0649999976158142,
+            "mean": 0.44552499962349734
+          },
+          "callbackArrival": {
+            "p50": 0.25000000357613317,
+            "p95": 0.410250007898321,
+            "p99": 0.4803000070385858,
+            "min": 0.03499999880841642,
+            "max": 0.6899999994038808,
+            "mean": 0.22833333482440443
+          }
+        },
+        {
+          "firstFrame": 600,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.510000005364418,
+            "p95": 0.7352499991655348,
+            "p99": 0.8950499957799911,
+            "min": 0.10499998927116394,
+            "max": 1.0499999970197678,
+            "mean": 0.468625000094374
+          },
+          "callbackArrival": {
+            "p50": 0.25500000566171366,
+            "p95": 0.4202500054840127,
+            "p99": 0.6154999976210451,
+            "min": 0.034999995230464265,
+            "max": 0.9949999958262197,
+            "mean": 0.24486666783595562
+          }
+        },
+        {
+          "firstFrame": 1200,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5425000041723251,
+            "p95": 0.735499999672174,
+            "p99": 0.8550499893724918,
+            "min": 0.20999999344348907,
+            "max": 1.1499999910593033,
+            "mean": 0.5504083339124918
+          },
+          "callbackArrival": {
+            "p50": 0.28499999493215,
+            "p95": 0.43000000363608704,
+            "p99": 0.5199999965136886,
+            "min": 0.06000000715357601,
+            "max": 0.8449999952317739,
+            "mean": 0.2888416676919345
+          }
+        },
+        {
+          "firstFrame": 1800,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5349999964237213,
+            "p95": 0.7502499997615812,
+            "p99": 0.8700500047206878,
+            "min": 0.17499999701976776,
+            "max": 1.010000005364418,
+            "mean": 0.5368250001221895
+          },
+          "callbackArrival": {
+            "p50": 0.2800000062597974,
+            "p95": 0.4252499979442289,
+            "p99": 0.5299999946602838,
+            "min": 0.07500000298023224,
+            "max": 0.774999995232065,
+            "mean": 0.2875000010838994
+          }
+        },
+        {
+          "firstFrame": 2400,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5349999964237213,
+            "p95": 0.7849999964237213,
+            "p99": 0.9100500111281872,
+            "min": 0.1550000011920929,
+            "max": 1.2100000083446503,
+            "mean": 0.5359916669378678
+          },
+          "callbackArrival": {
+            "p50": 0.2800000077477307,
+            "p95": 0.40525000214693113,
+            "p99": 0.49004999653872794,
+            "min": 0.04999999642313924,
+            "max": 0.5899999958273838,
+            "mean": 0.27870833434560455
+          }
+        },
+        {
+          "firstFrame": 3000,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5450000017881393,
+            "p95": 0.7502499997615812,
+            "p99": 0.9753000088036058,
+            "min": 0.1899999976158142,
+            "max": 1.0750000029802322,
+            "mean": 0.5542416669428348
+          },
+          "callbackArrival": {
+            "p50": 0.28000000089377863,
+            "p95": 0.40525000089401125,
+            "p99": 0.5151999988002351,
+            "min": 0.08000000119500328,
+            "max": 0.8299999988084892,
+            "mean": 0.2890666675338434
+          }
+        }
+      ],
+      "observedClockIncrementMs": 0.004999995231628418,
+      "finalStateSha256": "cd07e642b45c319d37f8293f059a983e60fa60a96cb1bf7a498f3bd747a90ccf",
+      "workload": {
+        "draws": 16,
+        "triangles": 9216,
+        "readCount": 60,
+        "diagnosticsDelta": {
+          "nodes": 0,
+          "rigs": 0,
+          "clips": 0,
+          "revision": 3600,
+          "steps": 3600,
+          "wasmCalls": 0,
+          "wasmMemoryBytes": 0,
+          "initialBytes": 0,
+          "commandBatches": 3600,
+          "commandBytes": 64650240,
+          "readBytes": 6504960,
+          "paletteBytes": 88473600,
+          "rootBytes": 7372800
+        },
+        "adapterDeltaIncludingWarmup": {
+          "presentationMeshes": 0,
+          "ordinaryBones": 0,
+          "paletteConsumes": 76800,
+          "paddedPaletteBytes": 0,
+          "appliedRevision": 4802
+        }
+      }
+    },
+    {
+      "file": "2-same-page-owned-js.json",
+      "condition": "same-page",
+      "round": 2,
+      "cpu": {
+        "p50": 0.5200000107288361,
+        "p95": 0.7950000017881393,
+        "p99": 0.9599999934434891,
+        "min": 0.09999999403953552,
+        "max": 1.2999999970197678,
+        "mean": 0.48190555555539
+      },
+      "callbackInterval": {
+        "p50": 8.325000002980232,
+        "p95": 9.275000005960464,
+        "p99": 9.350099993944168,
+        "min": 7.105000004172325,
+        "max": 9.674999997019768,
+        "mean": 8.333552375659409
+      },
+      "rafInterval": {
+        "p50": 8.330000000016298,
+        "p95": 9.275000000023283,
+        "p99": 9.320000000006985,
+        "min": 7.335000000020955,
+        "max": 9.354999999981374,
+        "mean": 8.333570436232291
+      },
+      "callbackArrival": {
+        "p50": 0.23999998928047717,
+        "p95": 0.34499998929095455,
+        "p99": 0.41999999463441784,
+        "min": 0.0349999881000258,
+        "max": 0.6100000005681068,
+        "mean": 0.21391666012950333
+      },
+      "blocks": [
+        {
+          "firstFrame": 0,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5799999982118607,
+            "p95": 0.8852500043809411,
+            "p99": 1.0699999929964543,
+            "min": 0.21000000834465027,
+            "max": 1.2999999970197678,
+            "mean": 0.5942000000178814
+          },
+          "callbackArrival": {
+            "p50": 0.2549999922630377,
+            "p95": 0.35499999366875273,
+            "p99": 0.43504999812808814,
+            "min": 0.07999998750165105,
+            "max": 0.5299999993876554,
+            "mean": 0.2553333268243781
+          }
+        },
+        {
+          "firstFrame": 600,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5850000008940697,
+            "p95": 0.8202500075101851,
+            "p99": 0.9700999987125396,
+            "min": 0.23000000417232513,
+            "max": 1.0600000023841858,
+            "mean": 0.591224999676148
+          },
+          "callbackArrival": {
+            "p50": 0.2599999895901419,
+            "p95": 0.34999999703723006,
+            "p99": 0.42004998880438504,
+            "min": 0.0999999904888682,
+            "max": 0.5749999869149178,
+            "mean": 0.260124993554103
+          }
+        },
+        {
+          "firstFrame": 1200,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.16500000655651093,
+            "p95": 0.6952499933540819,
+            "p99": 0.875,
+            "min": 0.09999999403953552,
+            "max": 1.1800000071525574,
+            "mean": 0.29505000022550426
+          },
+          "callbackArrival": {
+            "p50": 0.0899999940302223,
+            "p95": 0.2949999988777563,
+            "p99": 0.33999999464838765,
+            "min": 0.03499998926417902,
+            "max": 0.36999999644467607,
+            "mean": 0.1336416599615283
+          }
+        },
+        {
+          "firstFrame": 1800,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.16500000655651093,
+            "p95": 0.6950000077486038,
+            "p99": 0.8401500034332274,
+            "min": 0.09999999403953552,
+            "max": 1,
+            "mean": 0.3125583333273729
+          },
+          "callbackArrival": {
+            "p50": 0.08499998718616553,
+            "p95": 0.31999998630199117,
+            "p99": 0.38004998817341396,
+            "min": 0.0349999881000258,
+            "max": 0.5249999993829988,
+            "mean": 0.14390832688407196
+          }
+        },
+        {
+          "firstFrame": 2400,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5399999916553497,
+            "p95": 0.7750000059604645,
+            "p99": 0.9601500083506106,
+            "min": 0.17000000178813934,
+            "max": 1.2150000035762787,
+            "mean": 0.535475000316898
+          },
+          "callbackArrival": {
+            "p50": 0.24499999702675268,
+            "p95": 0.3649999924586155,
+            "p99": 0.4400499916786793,
+            "min": 0.06999999639810994,
+            "max": 0.5150000000139698,
+            "mean": 0.23762499322154326
+          }
+        },
+        {
+          "firstFrame": 3000,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5600000023841858,
+            "p95": 0.8052500061690805,
+            "p99": 0.9401499976217745,
+            "min": 0.2150000035762787,
+            "max": 1.0700000077486038,
+            "mean": 0.5629249997685353
+          },
+          "callbackArrival": {
+            "p50": 0.25249999374500476,
+            "p95": 0.34999999189167286,
+            "p99": 0.40520000053860694,
+            "min": 0.07499999640276656,
+            "max": 0.6100000005681068,
+            "mean": 0.2528666603313953
+          }
+        }
+      ],
+      "observedClockIncrementMs": 0.004999995231628418,
+      "finalStateSha256": "cd07e642b45c319d37f8293f059a983e60fa60a96cb1bf7a498f3bd747a90ccf",
+      "workload": {
+        "draws": 16,
+        "triangles": 9216,
+        "readCount": 60,
+        "diagnosticsDelta": {
+          "nodes": 0,
+          "rigs": 0,
+          "clips": 0,
+          "revision": 3600,
+          "steps": 3600,
+          "wasmCalls": 0,
+          "wasmMemoryBytes": 0,
+          "initialBytes": 0,
+          "commandBatches": 3600,
+          "commandBytes": 64650240,
+          "readBytes": 6504960,
+          "paletteBytes": 88473600,
+          "rootBytes": 7372800
+        },
+        "adapterDeltaIncludingWarmup": {
+          "presentationMeshes": 0,
+          "ordinaryBones": 0,
+          "paletteConsumes": 76800,
+          "paddedPaletteBytes": 0,
+          "appliedRevision": 4802
+        }
+      }
+    },
+    {
+      "file": "2-new-page-owned-js.json",
+      "condition": "new-page",
+      "round": 2,
+      "cpu": {
+        "p50": 0.510000005364418,
+        "p95": 0.675250010937451,
+        "p99": 0.7950000017881393,
+        "min": 0.16499999165534973,
+        "max": 1.1300000101327896,
+        "mean": 0.5139041666024261
+      },
+      "callbackInterval": {
+        "p50": 8.324999988079071,
+        "p95": 9.290000006556511,
+        "p99": 9.43010000705719,
+        "min": 5.555000007152557,
+        "max": 10.644999995827675,
+        "mean": 8.33306057238188
+      },
+      "rafInterval": {
+        "p50": 8.330000000001746,
+        "p95": 9.274999999999636,
+        "p99": 9.319999999999709,
+        "min": 5.805000000000291,
+        "max": 10.590000000000146,
+        "mean": 8.333067518755211
+      },
+      "callbackArrival": {
+        "p50": 0.23500000357671524,
+        "p95": 0.3650000054534758,
+        "p99": 0.4400500088275828,
+        "min": 0.06000001013308065,
+        "max": 0.7400000041725434,
+        "mean": 0.2380333381757095
+      },
+      "blocks": [
+        {
+          "firstFrame": 0,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5049999952316284,
+            "p95": 0.6599999964237213,
+            "p99": 0.780100001245737,
+            "min": 0.17000000178813934,
+            "max": 1.0049999952316284,
+            "mean": 0.5041833331187566
+          },
+          "callbackArrival": {
+            "p50": 0.2325000053642725,
+            "p95": 0.35025000345731294,
+            "p99": 0.4400500088275839,
+            "min": 0.08000000357606041,
+            "max": 0.5999999988071067,
+            "mean": 0.23141667166444374
+          }
+        },
+        {
+          "firstFrame": 600,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5200000107288361,
+            "p95": 0.6902500115334985,
+            "p99": 0.8300999982655047,
+            "min": 0.16499999165534973,
+            "max": 1.0349999964237213,
+            "mean": 0.5166916668166717
+          },
+          "callbackArrival": {
+            "p50": 0.2400000101333717,
+            "p95": 0.39499999898598614,
+            "p99": 0.4751500023612242,
+            "min": 0.07499999821084202,
+            "max": 0.7400000041725434,
+            "mean": 0.24717500480217494
+          }
+        },
+        {
+          "firstFrame": 1200,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5349999964237213,
+            "p95": 0.7052499979734419,
+            "p99": 0.8050500071048736,
+            "min": 0.2449999898672104,
+            "max": 0.9849999994039536,
+            "mean": 0.5358583336820205
+          },
+          "callbackArrival": {
+            "p50": 0.2400000000016007,
+            "p95": 0.37999999767416737,
+            "p99": 0.43020001133128954,
+            "min": 0.0800000119197648,
+            "max": 0.4950000005956099,
+            "mean": 0.24543333798553552
+          }
+        },
+        {
+          "firstFrame": 1800,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5150000005960464,
+            "p95": 0.6649999916553497,
+            "p99": 0.7450500047206878,
+            "min": 0.1900000125169754,
+            "max": 1.1300000101327896,
+            "mean": 0.5190833333631356
+          },
+          "callbackArrival": {
+            "p50": 0.23500001072898158,
+            "p95": 0.3650000056917634,
+            "p99": 0.43510000835514795,
+            "min": 0.06000001013308065,
+            "max": 0.4850000023834582,
+            "mean": 0.24139167136456915
+          }
+        },
+        {
+          "firstFrame": 2400,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.5,
+            "p95": 0.6850000023841858,
+            "p99": 0.8251000028848647,
+            "min": 0.19499999284744263,
+            "max": 0.9950000047683716,
+            "mean": 0.5052749995390574
+          },
+          "callbackArrival": {
+            "p50": 0.22999999999774445,
+            "p95": 0.3400000084349813,
+            "p99": 0.43019999946925946,
+            "min": 0.06500000476808054,
+            "max": 0.5950000053635449,
+            "mean": 0.23114167168731606
+          }
+        },
+        {
+          "firstFrame": 3000,
+          "samples": 600,
+          "complete600": true,
+          "cpu": {
+            "p50": 0.4950000047683716,
+            "p95": 0.6650000065565109,
+            "p99": 0.7801500011980532,
+            "min": 0.16999998688697815,
+            "max": 0.9699999988079071,
+            "mean": 0.5023333330949148
+          },
+          "callbackArrival": {
+            "p50": 0.23000000476895366,
+            "p95": 0.3402500107888043,
+            "p99": 0.3949999988108175,
+            "min": 0.07500001192238415,
+            "max": 0.4900000077468576,
+            "mean": 0.23164167155021761
+          }
+        }
+      ],
+      "observedClockIncrementMs": 0.004999995231628418,
+      "finalStateSha256": "cd07e642b45c319d37f8293f059a983e60fa60a96cb1bf7a498f3bd747a90ccf",
+      "workload": {
+        "draws": 16,
+        "triangles": 9216,
+        "readCount": 60,
+        "diagnosticsDelta": {
+          "nodes": 0,
+          "rigs": 0,
+          "clips": 0,
+          "revision": 3600,
+          "steps": 3600,
+          "wasmCalls": 0,
+          "wasmMemoryBytes": 0,
+          "initialBytes": 0,
+          "commandBatches": 3600,
+          "commandBytes": 64650240,
+          "readBytes": 6504960,
+          "paletteBytes": 88473600,
+          "rootBytes": 7372800
+        },
+        "adapterDeltaIncludingWarmup": {
+          "presentationMeshes": 0,
+          "ordinaryBones": 0,
+          "paletteConsumes": 76800,
+          "paddedPaletteBytes": 0,
+          "appliedRevision": 4802
+        }
+      }
+    }
+  ]
+}
