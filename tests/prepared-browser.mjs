@@ -5,19 +5,25 @@ import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import {browserPath} from '../scripts/browser-path.mjs';
 import {serve} from '../scripts/server.mjs';
+import {configuration,hardwareRenderer} from '../bench/config.mjs';
 import {compareTrace} from './compatibility/cases.mjs';
 const out=process.env.RTHREE_PREPARED_RESULTS_DIR||'work/prepared-validation';
 if(existsSync(out))throw Error('Choose fresh prepared results directory');mkdirSync(out,{recursive:true});
 const server=await serve(0),origin=`http://127.0.0.1:${server.address().port}`;
-const browser=await chromium.launch({executablePath:browserPath(),headless:true,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+const hardware=process.env.RTHREE_BROWSER_MODE==='hardware';
+const cfg=configuration(hardware?['mode=hardware','headless=false']:[]);
+const browser=await chromium.launch({executablePath:browserPath(),headless:cfg.headless,args:cfg.args});
 const results=[];let reference,referenceFallbacks;
 const hash=value=>createHash('sha256').update(value).digest('hex');
-const manifest={kind:'correctness-only',commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),sourceTreeDirty:!!execFileSync('git',['status','--porcelain'],{encoding:'utf8'}).trim(),browser:browser.version(),status:'running',hashes:Object.fromEntries(['packages/rthree/core.js','packages/rthree/runtime.js','packages/rthree/facade-state.js','packages/rthree/prepared-kernel.js','packages/rthree/scene_core.wasm','tests/prepared/index.html','tests/prepared-browser.mjs'].map(p=>[p,hash(readFileSync(p))]))};
+const manifest={kind:'correctness-only',hardwareRequested:hardware,executablePath:browserPath(),headed:!cfg.headless,gpuRoutes:[],commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),sourceTreeDirty:!!execFileSync('git',['status','--porcelain'],{encoding:'utf8'}).trim(),browser:browser.version(),status:'running',hashes:Object.fromEntries(['packages/rthree/core.js','packages/rthree/runtime.js','packages/rthree/facade-state.js','packages/rthree/prepared-kernel.js','packages/rthree/scene_core.wasm','tests/prepared/index.html','tests/prepared-browser.mjs'].map(p=>[p,hash(readFileSync(p))]))};
 writeFileSync(`${out}/manifest.json`,JSON.stringify(manifest,null,2));
 const evidence=({pixels,...rest})=>({...rest,pixelSha256:hash(Buffer.from(pixels))});
 try{
  for(const [index,engine] of ['original','original','facade-wasm','prepared-js','prepared-wasm'].entries()){
   const page=await browser.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(`${origin}/tests/prepared/index.html?engine=${engine}`);await page.waitForFunction(()=>!!window.__prepared);
+  await page.bringToFront();
+  const renderer=await page.evaluate(()=>{const gl=window.__prepared.renderer.getContext(),e=gl.getExtension('WEBGL_debug_renderer_info');return e?gl.getParameter(e.UNMASKED_RENDERER_WEBGL):null;});
+  if(hardware)hardwareRenderer(renderer);manifest.gpuRoutes.push({engine,renderer});
   const frames=[];
   for(let step=0;step<12;step++){
    const value=await page.evaluate(step=>window.__prepared.frame(step),step);frames.push(value);
