@@ -64,6 +64,13 @@ const manifest={status:'running',startedAt:new Date().toISOString(),kind:'whole-
 };
 const save=()=>json('manifest.json',manifest);
 save();
+// Keep returned samples/state even if the following page observation fails.
+async function persistBeforeObservation(record,afterKey,observe,persist){
+ persist(record);
+ record[afterKey]=await observe();
+ persist(record);
+ return record;
+}
 const children=[],timed=[],correctnessReferences=new Map(),workReferences=new Map();
 let browser,interrupted=false;
 const stopRequested=()=>{interrupted=true;browser?.close().catch(()=>{});};
@@ -141,7 +148,7 @@ async function preparePage(route,scenario,hardwareRenderer){
 }
 async function correctness(route,scenario,hardwareRenderer){
  const key=`correctness/${scenario}-${route.label}`,attempt={kind:'correctness',route:route.label,scenario,status:'running',startedAt:new Date().toISOString()};manifest.attempts.push(attempt);save();
- let p;
+ let p,returnedStateAvailable=false;
  try{
   p=await preparePage(route,scenario,hardwareRenderer);
   const value=await p.page.evaluate(()=>{
@@ -151,9 +158,11 @@ async function correctness(route,scenario,hardwareRenderer){
   });
   const pixels=Buffer.from(value.snapshot.pixels);const {png,...snapshot}=value.snapshot;
   writeFileSync(path.join(out,key+'.png'),Buffer.from(png.split(',')[1],'base64'));
-  const evidence={route:route.label,scenario,env:p.env,clock:p.clock,stateBefore:p.initial,stateAfter:await state(p.page),errors:p.errors,requestFailures:p.requestFailures,
+  const evidence={route:route.label,scenario,env:p.env,clock:p.clock,stateBefore:p.initial,stateAfter:null,errors:p.errors,requestFailures:p.requestFailures,
    ...value,snapshot:{...snapshot,pixelSha256:hash(pixels)},snapshotAddsRender:true,meaning:'Twelve fixed steps and one separate snapshot render; no timed page is reused.'};
-  writeFileSync(path.join(out,key+'.json.gz'),gzipSync(Buffer.from(JSON.stringify(evidence)),{level:9}));
+  await persistBeforeObservation(evidence,'stateAfter',()=>state(p.page),record=>{
+   writeFileSync(path.join(out,key+'.json.gz'),gzipSync(Buffer.from(JSON.stringify(record)),{level:9}));returnedStateAvailable=true;
+  });
   assert.deepEqual(p.errors,[]);assert.deepEqual(p.requestFailures,[]);assertVisible(evidence.stateAfter);assert.equal(value.tick,11);assertExecution(route,value.diagnostics);
   assert.equal(pixels.length,viewport.width*viewport.height*4);finiteArray(snapshot.matrices,'World matrices');
   let maxAbsoluteMatrixError=0;
@@ -162,7 +171,7 @@ async function correctness(route,scenario,hardwareRenderer){
    maxAbsoluteMatrixError=matrixCompare(snapshot.matrices,ref.matrices);assert.deepEqual(drawWork(value.before),ref.before);assert.deepEqual(drawWork(value.after),ref.after);
   }else {assert.equal(route.label,'original-A');correctnessReferences.set(scenario,{pixels,matrices:snapshot.matrices,before:drawWork(value.before),after:drawWork(value.after)});}
   attempt.status='passed';manifest.correctness.push({route:route.label,scenario,file:key+'.json.gz',image:key+'.png',pixelSha256:hash(pixels),maxAbsoluteMatrixError,draws:drawWork(value.before),diagnostics:value.diagnostics});
- }catch(e){attempt.status='failed';attempt.error=e.stack??String(e);throw e;}
+ }catch(e){attempt.status='failed';attempt.error=e.stack??String(e);if(p)json(key+'-failure.json',{attempt,errors:p.errors,requestFailures:p.requestFailures,returnedStateAvailable,rawFile:returnedStateAvailable?key+'.json.gz':null});throw e;}
  finally{attempt.finishedAt=new Date().toISOString();save();await p?.context.close();}
 }
 function analyze(){
@@ -208,13 +217,16 @@ try{
  for(let repeat=0;repeat<repeats;repeat++)for(const scenario of scenes)for(const idx of orderSeed.map(i=>(i+repeat)%6)){
   if(interrupted)throw Error('Interrupted');const route=routes[idx],file=`runs/${scenario}-${route.label}-${repeat}.json`;
   const attempt={kind:'timing',route:route.label,scenario,repeat,file,status:'running',startedAt:new Date().toISOString()};manifest.attempts.push(attempt);save();
-  let p;
+  let p,partialRowsAvailable=false;
   try{
    p=await preparePage(route,scenario,hardwareRenderer);const before=await state(p.page);assertVisible(before);
    const beforeDiagnostics=await p.page.evaluate(()=>window.__bench.THREE.diagnostics?.()??null);
    const wallStart=Date.now();const result=await p.page.evaluate(config=>window.__bench.run(config),{warmup,samples,profile:false,gpu:false});
-   const after=await state(p.page),record={route:route.label,runtime:route.root,engine:route.engine,scenario,repeat,position:orderSeed.map(i=>(i+repeat)%6).indexOf(idx),sourceCommit:manifest.runtime[route.root].commit,toolCommit:manifest.tooling.commit,env:p.env,clock:p.clock,before,after,elapsedWallMs:Date.now()-wallStart,errors:p.errors,requestFailures:p.requestFailures,beforeDiagnostics,...result};
-   json(file,record);manifest.runs.push(file);save(); // Preserve raw return before validation.
+   const record={route:route.label,runtime:route.root,engine:route.engine,scenario,repeat,position:orderSeed.map(i=>(i+repeat)%6).indexOf(idx),sourceCommit:manifest.runtime[route.root].commit,toolCommit:manifest.tooling.commit,env:p.env,clock:p.clock,before,after:null,elapsedWallMs:Date.now()-wallStart,errors:p.errors,requestFailures:p.requestFailures,beforeDiagnostics,...result};
+   await persistBeforeObservation(record,'after',()=>state(p.page),value=>{
+    json(file,value);if(!partialRowsAvailable){partialRowsAvailable=true;manifest.runs.push(file);save();}
+   });
+   const after=record.after;
    assert.deepEqual(p.errors,[]);assert.deepEqual(p.requestFailures,[]);assertVisible(after);assert.equal(result.rows.length,samples);
    for(const [i,row] of result.rows.entries()){assert.ok(Number.isFinite(row.cpu)&&row.cpu>=0);assert.equal(row.tick,warmup+i);assert.equal(row.gpuStatus,'not-requested');assert.equal(row.gpuMs,null);assert.ok(row.interval===null||(Number.isFinite(row.interval)&&row.interval>0));}
    assert.equal(after.tick,warmup+samples-1);const coverage=executionCoverage(route,result.rows,beforeDiagnostics);
@@ -224,7 +236,7 @@ try{
    for(let i=0;i<samples;i+=120){const rows=result.rows.slice(i,i+120),p50=quantile(rows.map(r=>r.cpu),.5);blocks.push({firstSample:i,lastSample:i+rows.length-1,count:rows.length,fullBlock:rows.length===120,p50,deltaMs:p50-cpu.p50,withinTolerance:Math.abs(p50-cpu.p50)<=tolerance});}
    timed.push({file,scenario,route:route.label,repeat,executionCoverage:coverage,clock:p.clock,cpu,rafInterval,blockToleranceMs:tolerance,blocks,blockScreenPassed:blocks.every(b=>b.withinTolerance),draws:work});
    attempt.status='complete';console.log(JSON.stringify({file,cpuP50:cpu.p50,cpuP95:cpu.p95,blockScreenPassed:blocks.every(b=>b.withinTolerance)}));
-  }catch(e){attempt.status='failed';attempt.error=e.stack??String(e);if(p)json(file.replace('.json','-failure.json'),{attempt,errors:p.errors,requestFailures:p.requestFailures,partialRowsAvailable:false});throw e;}
+  }catch(e){attempt.status='failed';attempt.error=e.stack??String(e);if(p)json(file.replace('.json','-failure.json'),{attempt,errors:p.errors,requestFailures:p.requestFailures,partialRowsAvailable,rawFile:partialRowsAvailable?file:null});throw e;}
   finally{attempt.finishedAt=new Date().toISOString();save();await p?.context.close();}
  }
  json('analysis.json',analyze());manifest.status='complete';
