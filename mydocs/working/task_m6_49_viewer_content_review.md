@@ -112,3 +112,24 @@ The next explicit pair uses a deny-only local proxy in both arms, with only the 
 `proxy-playwright` retains Playwright's catch-all interception. `proxy-cdp-remote` uses a page CDP Fetch handler for HTTPS only, serving the same exact mirrored allowlist and rejecting unknown requests; all other nonlocal destinations encounter the deny proxy. Cache remains explicitly disabled, matching the existing Playwright route mode, and service workers stay blocked. Local HTTP responses are no longer paused by Fetch in the second arm. The original app, asset bytes, native cache setting, validator and strict request-failure gate remain unchanged. Browser proxy/interception configuration and captured pause/denial events are recorded. The diagnostic is restricted to the original-r176 Chess load and is not a replacement protocol for historical primary timing.
 
 The control with the same proxy is necessary because proxy launch configuration is itself an intervention. A passing remote-only arm would establish a bounded usable configuration and an association with this interception arrangement, not prove a Chromium implementation cause. Unknown-worker/subframe behavior is not qualified by a page-session test; the deny-only proxy prevents outbound forwarding if such a request escapes the page handler, and a missing dependency must still fail readiness.
+
+
+### Completed interception diagnostics and next content gate
+
+Clean tooling `6e9e857748ec0c5380430026b7c24ca8bf6726f3` passed the separate actual-Chrome guard test: both modes delivered exact local and mirrored payload hashes, rejected unknown HTTP/HTTPS and another loopback port, and observed zero connections at the second loopback sentinel. The remote-only mode recorded no local Fetch pauses. This test result omitted its own tool-SHA field; the execution record identifies the clean checkout and command, and the test source remains in that commit. It is not a complete worker/popup/network-policy qualification.
+
+The original Chess whole-app sequence then produced:
+
+| Fresh capture | Network condition | Strict outcome |
+| --- | --- | --- |
+| `chess-proxy-playwright-diagnostic-001` | Same Playwright routing plus deny proxy | Pass |
+| `chess-proxy-cdp-diagnostic-001` | Remote-only CDP plus deny proxy | Pass |
+| `chess-default-framing-diagnostic-002` | Existing default, no proxy | Fail: initial BIN ERR_ABORTED |
+| `chess-proxy-playwright-diagnostic-002` | Repeat Playwright plus deny proxy | Fail: initial BIN ERR_ABORTED |
+| `chess-proxy-cdp-diagnostic-002` | Repeat remote-only CDP plus deny proxy | Pass |
+
+All results retain source/structure/material/fixed-image/numeric evidence and the expected complete cached BIN hash. Playwright-plus-proxy is intermittent, so the proxy itself is not established as a remedy. Two remote-only successes support testing that explicit configuration further; they do not prove the cancellation mechanism or relabel any earlier failure.
+
+The next prospective five-route gates extend only the explicit `proxy-cdp-remote` mode to both pinned contents. Original chunked framing, app/asset bytes, native validator, dual renderers, authored clips/materials and strict failure criteria remain. Each route uses its own browser with only its exact local origin bypassing the deny proxy. Any new failure stays visible. No historical Robot capture is reinterpreted under these settings.
+
+If these gates pass, a separate larger-content profile path will preserve the native first Bistro clip without stop/play reconstruction, discover and then freeze each actual GUI listener set, and repeat native/observer image/numerical checks. Every fresh run must pass the source-derived feature contract and strict request/console gate. Profiles remain uninstrumented sampling; static Chess and default grid-off/DPR1 quality stay intact. Full profile protocols will be committed after smoke discovery and before full captures, with exact asset/preparation/runtime hashes and this transport/browser lifecycle explicit. Their sampled CPU weights will not be pooled with the earlier Robot primary timing or used as FPS evidence.

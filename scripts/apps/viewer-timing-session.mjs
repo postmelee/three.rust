@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { gpu } from './viewer-browser.mjs';
+import { captureViewerContentReadiness, assertViewerContentReadiness } from './viewer-content.mjs';
 import { VIEWER_ROUTES } from './viewer-adapter.mjs';
 import { captureViewerSnapshot, compareViewerSnapshots as compareBaseViewerSnapshots } from './viewer-oracle.mjs';
 
@@ -14,6 +15,7 @@ export async function setupViewerCapture(run, scenario, asset) {
  }, run.origin + '/__viewer_content__/' + asset.id + '/' + asset.entry);
  await run.page.waitForFunction(() => VIEWER.app.viewer?.content && VIEWER.app.viewer.content !== globalThis.__viewerPreviousContent && VIEWER.app.validator.report !== null && VIEWER.app.validator.report !== globalThis.__viewerPreviousReport);
  await run.save('validator.json', await run.page.evaluate(() => VIEWER.app.validator.report));
+ if (asset.expected) { const readiness = await run.page.evaluate(captureViewerContentReadiness); await run.save('content-readiness.json', readiness); assertViewerContentReadiness(asset.expected, readiness); }
  const prepared = await run.page.evaluate(config => {
   delete globalThis.__viewerPreviousContent; delete globalThis.__viewerPreviousReport;
   const viewer = VIEWER.app.viewer, controllers = [];
@@ -23,10 +25,16 @@ export async function setupViewerCapture(run, scenario, asset) {
    if (matches.length !== 1) throw Error('Expected one native GUI controller: ' + property);
    if (matches[0].getValue() !== value) matches[0].setValue(value);
   };
-  for (const clip of viewer.clips) set(clip.name, false);
-  if (config.playback !== 'static') {
-   const selected = viewer.clips.find(clip => config.playback === 'walking' ? clip.name.endsWith('. Walking') : clip.name === config.clip);
-   if (!selected) throw Error('Content has no declared native clip'); set(selected.name, true);
+  if (config.nativeDefaultClip) {
+   if (viewer.clips[0]?.name !== config.clip) throw Error('Native default clip differs from the declared authored clip');
+   const running = viewer.clips.filter(clip => viewer.mixer?.existingAction(clip)?.isRunning());
+   if (running.length !== 1 || running[0].name !== config.clip || !viewer.state.actionStates[config.clip]) throw Error('Native first-clip autoplay history is not active');
+  } else {
+   for (const clip of viewer.clips) set(clip.name, false);
+   if (config.playback !== 'static') {
+    const selected = viewer.clips.find(clip => config.playback === 'walking' ? clip.name.endsWith('. Walking') : clip.name === config.clip);
+    if (!selected) throw Error('Content has no declared native clip'); set(selected.name, true);
+   }
   }
   set('playbackSpeed', 1); set('grid', config.grid); set('autoRotate', false);
   viewer.controls.reset();

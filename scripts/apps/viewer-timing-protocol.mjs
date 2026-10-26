@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
+import { createPinnedViewerContent } from './viewer-content.mjs';
 import { VIEWER_PIN, hash } from './viewer-adapter.mjs';
 
 export const VIEWER_CAPTURE_SETTINGS = Object.freeze({
@@ -26,6 +27,7 @@ export function validateViewerCase(item, requireGui = false) {
   assert(typeof item.clip === 'string' && item.clip.length > 0, 'Pin the authored native GUI clip name');
   assert(Number.isFinite(item.clipDuration) && item.clipDuration > 0, 'Pin the authored clip duration'); assert(Number.isSafeInteger(item.clipTargetCount) && item.clipTargetCount > 0, 'Pin the authored target-node count');
  }
+ if (item.nativeDefaultClip !== undefined) { assert.equal(item.nativeDefaultClip, true); assert.equal(item.playback, 'clip'); }
  assert([1, 2].includes(item.pixelRatio)); assert.equal(typeof item.grid, 'boolean');
  if (requireGui || item.guiLoops) {
   assert(Array.isArray(item.guiLoops) && item.guiLoops.length > 0);
@@ -89,6 +91,7 @@ export async function loadViewerContents(apps, extraFile, declared) {
   assert((typeof item.source === 'string' && item.source || item.source && typeof item.source === 'object' && item.source.pin && item.source.repository) && typeof item.license === 'string' && item.license, 'Content source/license evidence is required');
   assert(Array.isArray(item.files) && item.files.some(file => file.file === item.entry), 'Content entry must be allowlisted');
   item.root = await fs.realpath(path.resolve(item.root));
+  if (['bistro', 'beautiful-game'].includes(item.id)) { const pinned = await createPinnedViewerContent(item.id, item.root); for (const key of ['entry', 'files', 'source']) assert.deepEqual(item[key], pinned[key], 'Content differs from native feature contract: ' + key); item.expected = pinned.expected; }
   if (declared) { const pin = declared.find(row => row.id === item.id); if (pin) { for (const key of ['entry', 'files', 'source']) assert.deepEqual(item[key], pin[key], 'Content differs from protocol: ' + item.id + '.' + key); assert.equal(item.license, pin.license ?? pin.source?.license, 'Content license differs from protocol'); } }
  }
  if (declared) for (const item of declared) assert(contents.some(row => row.id === item.id), 'Missing declared content: ' + item.id);

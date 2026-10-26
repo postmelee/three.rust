@@ -44,7 +44,8 @@ test('network experiment is explicitly scoped and existing default remains uncha
  assert.equal(viewerContentOptions(args).networkDiagnostic, undefined);
  for (const mode of ['proxy-playwright', 'proxy-cdp-remote']) assert.equal(viewerContentOptions([...args, 'networkDiagnostic=' + mode]).networkDiagnostic, mode);
  assert.throws(() => viewerContentOptions([...args, 'networkDiagnostic=none']));
- assert.throws(() => viewerContentOptions(['content=bistro', 'contentRoot=/fixture', 'routes=original-r176', 'networkDiagnostic=proxy-cdp-remote']));
+ assert.equal(viewerContentOptions(['content=bistro', 'contentRoot=/fixture', 'routes=original-r176', 'networkDiagnostic=proxy-cdp-remote']).networkDiagnostic, 'proxy-cdp-remote');
+ assert.throws(() => viewerContentOptions(['content=bistro', 'contentRoot=/fixture', 'routes=original-r176', 'networkDiagnostic=proxy-playwright']));
 });
 
 test('stalled mirror cleanup is bounded and detaches its session', async () => {

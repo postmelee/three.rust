@@ -14,22 +14,27 @@ import { installViewerProfileObserver, setupViewerCapture, fixedViewerOracle, co
 export async function createViewerCapture(kind, argv) {
  assert(argv.length >= 3, `Usage: node scripts/apps/viewer-${kind}.mjs APPS PREPARED NEW_OUT runtimeRoot=... runtimeSha=... [mode=smoke|full] [group=engine|migration] [protocol=...] [contents=...] [timingPrepared=...] [timingOriginal=...]`);
  const options = {};
- for (const arg of argv.slice(3)) { const split = arg.indexOf('='), key = arg.slice(0, split), value = arg.slice(split + 1); assert(split > 0 && value && ['runtimeRoot', 'runtimeSha', 'mode', 'group', 'protocol', 'contents', 'cases', 'timingPrepared', 'timingOriginal'].includes(key) && !Object.hasOwn(options, key), 'Unknown, duplicate or empty option'); options[key] = value; }
+ for (const arg of argv.slice(3)) { const split = arg.indexOf('='), key = arg.slice(0, split), value = arg.slice(split + 1); assert(split > 0 && value && ['runtimeRoot', 'runtimeSha', 'mode', 'group', 'protocol', 'contents', 'cases', 'timingPrepared', 'timingOriginal', 'networkDiagnostic'].includes(key) && !Object.hasOwn(options, key), 'Unknown, duplicate or empty option'); options[key] = value; }
  const mode = options.mode ?? 'smoke', group = options.group ?? 'engine', toolRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
  const apps = await fs.realpath(path.resolve(argv[0])), prepared = await fs.realpath(path.resolve(argv[1])), out = path.resolve(argv[2]);
  assert(options.runtimeRoot && options.runtimeSha); const runtimeRoot = await fs.realpath(path.resolve(options.runtimeRoot));
  const protocol = await resolveViewerProtocol(toolRoot, { kind, mode, protocolPath: options.protocol, output: out, runtimeSha: options.runtimeSha, group, casesPath: options.cases });
  if (kind === 'timing') { assert(options.timingPrepared, 'Timing requires a separate instrumented external bundle'); if (group === 'migration') assert(options.timingOriginal, 'Migration timing requires an instrumented bundled-r176 control'); }
  else assert(!options.timingPrepared && !options.timingOriginal, 'CPU profiles must use uninstrumented app bundles');
+ const networkDiagnostic = options.networkDiagnostic ?? protocol.evidence?.protocol.transport?.network ?? 'playwright';
+ assert(['playwright', 'proxy-cdp-remote'].includes(networkDiagnostic));
+ if (networkDiagnostic !== 'playwright') { assert.equal(kind, 'profile'); if (protocol.evidence) assert.equal(protocol.evidence.protocol.transport?.network, networkDiagnostic); }
+ const strictContent = networkDiagnostic !== 'playwright';
  const preparedRoots = { native: prepared };
  for (const [key, value] of [['timing', options.timingPrepared], ['timingOriginal', options.timingOriginal]]) if (value) preparedRoots[key] = await fs.realpath(path.resolve(value));
  const contents = await loadViewerContents(apps, options.contents, protocol.evidence?.protocol.assets);
  for (const scenario of protocol.cases) assert(contents.some(asset => asset.id === scenario.asset), 'Missing case content: ' + scenario.asset);
+ if (protocol.cases.some(scenario => contents.find(asset => asset.id === scenario.asset)?.expected)) assert(strictContent, 'Pinned authored content requires its prospective strict transport/readiness profile path');
  await fs.mkdir(out, { recursive: false });
  const aliases = [[apps, '<apps>'], [runtimeRoot, '<runtime>'], [toolRoot, '<tooling>'], ...Object.entries(preparedRoots).map(([name, root]) => [root, '<prepared-' + name + '>']), ...contents.map(asset => [asset.root, '<content-' + asset.id + '>']), [out, '<output>'], [os.homedir(), '<home>']];
  const redact = value => aliases.reduce((text, [from, to]) => text.split(from).join(to), String(value));
  const save = async (name, value) => { const file = path.join(out, name); await fs.mkdir(path.dirname(file), { recursive: true }); await fs.writeFile(file, typeof value === 'string' ? value : JSON.stringify(value, null, 2) + '\n'); };
- const configuration = { ...protocol.config, pageDpr: 1, cssViewport: { width: 1280, height: 720 }, isolated: true, profiling: kind === 'profile', gpuQueriesInWindow: false,
+ const configuration = { ...protocol.config, networkDiagnostic, strictContent, pageDpr: 1, cssViewport: { width: 1280, height: 720 }, isolated: true, profiling: kind === 'profile', gpuQueriesInWindow: false,
   scope: kind === 'timing' ? 'Disjoint native Viewer.animate plus every frozen dat.gui.updateDisplays rAF body; not full browser/GPU CPU or FPS.' : 'Diagnostic CPU sampling with uninstrumented native Viewer and GUI loops; not primary timing or FPS.',
   callbackQuantizationFloor: '2 * frozen callback count * observed minimum positive clock increment', nativeClock: 'Unchanged native rAF timestamps; poses are not frame-matched across routes.' };
  const routes = VIEWER_GROUPS[group], engines = [...new Set(routes.map(route => route.engine))];
@@ -62,9 +67,24 @@ export async function createViewerCapture(kind, argv) {
   check(); await fs.mkdir(path.dirname(path.join(out, directory)), { recursive: true });
   const root = instrumented ? preparedRoots[engine === 'original-r176' ? 'timingOriginal' : 'timing'] : preparedRoots.native;
   assert(root, 'Missing required prepared bundle');
-  const run = await openViewerRun(apps, root, path.join(out, directory), { route: engine, runtimeRoot, runtimeSha: options.runtimeSha, browser,
+  const run = await openViewerRun(apps, root, path.join(out, directory), { route: engine, runtimeRoot, runtimeSha: options.runtimeSha, browser, networkDiagnostic,
    isolated: true, captureSources: kind === 'profile' || instrumented, contentRoots: scenario ? contents.filter(asset => asset.id === scenario.asset) : contents, mode: instrumented ? 'Native Viewer and dat.gui callback timing; no profiler' : 'Uninstrumented Viewer oracle or diagnostic profile' });
-  current = run; await run.context.addInitScript(installViewerTimingCollector); if (observer) await run.context.addInitScript(installViewerProfileObserver); return run;
+  current = run;
+  if (strictContent) {
+   const failures = [], consoleErrors = [];
+   const failed = request => failures.push({ url: run.redact(request.url()).split(run.origin).join('<origin>'), error: request.failure()?.errorText ?? null });
+   const logged = message => { if (message.type() === 'error') consoleErrors.push(run.redact(message.text()).split(run.origin).join('<origin>')); };
+   run.page.on('requestfailed', failed); run.page.on('console', logged);
+   const nativeClose = run.close; let closed = false;
+   run.close = async () => {
+    if (closed) return; closed = true;
+    run.page.off('requestfailed', failed); run.page.off('console', logged);
+    try { await run.save('content-transport.json', { failures, consoleErrors, strict: true }); if (failures.length || consoleErrors.length) run.errors.push('Strict content transport/console gate failed'); }
+    finally { await nativeClose(); }
+   };
+   await run.save('browser-process.json', await browserEvidence(run.browser));
+  }
+  await run.context.addInitScript(installViewerTimingCollector); if (observer) await run.context.addInitScript(installViewerProfileObserver); return run;
  }
  async function parity() {
   for (const scenario of manifest.cases) {
@@ -90,6 +110,11 @@ export async function createViewerCapture(kind, argv) {
    }
   }
  }
+ async function browserEvidence(instance) {
+  const result = { version: instance.version() }, cdp = await instance.newBrowserCDPSession();
+  try { for (const [key, method] of [['version', 'Browser.getVersion'], ['commandLine', 'Browser.getBrowserCommandLine'], ['systemInfo', 'SystemInfo.getInfo']]) { try { result[key] = JSON.parse(redact(JSON.stringify(await cdp.send(method))).replace(/--(user-data-dir|crash-dumps-dir|disk-cache-dir)=[^"\\\s]+/g, '--$1=<browser-private-directory>')); } catch (error) { result[key] = { unavailable: true, error: redact(error.message) }; } } }
+  finally { await cdp.detach(); } return result;
+ }
  async function prepare() {
   manifest.sourceBefore = pins();
   const scriptNames = (await fs.readdir(path.join(toolRoot, 'scripts/apps'))).filter(name => name.startsWith('viewer-') && name.endsWith('.mjs')).map(name => 'scripts/apps/' + name);
@@ -110,10 +135,8 @@ export async function createViewerCapture(kind, argv) {
   }
   manifest.environmentBefore = await environment('before'); await persist();
   const executablePath = process.env.RTHREE_CHROME || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
-  browser = await chromium.launch({ executablePath, headless: false }); manifest.browser = { executablePath: redact(executablePath), version: browser.version(), lifecycle: 'One process; sequential fresh contexts' };
-  const cdp = await browser.newBrowserCDPSession();
-  try { for (const [key, method] of [['version', 'Browser.getVersion'], ['commandLine', 'Browser.getBrowserCommandLine'], ['systemInfo', 'SystemInfo.getInfo']]) { try { manifest.browser[key] = JSON.parse(redact(JSON.stringify(await cdp.send(method))).replace(/--(user-data-dir|crash-dumps-dir|disk-cache-dir)=[^"\\\s]+/g, '--$1=<browser-private-directory>')); } catch (error) { manifest.browser[key] = { unavailable: true, error: redact(error.message) }; } } }
-  finally { await cdp.detach(); }
+  if (strictContent) manifest.browser = { executablePath: redact(executablePath), lifecycle: 'Owned process per run; exact origin-only proxy bypass; process evidence in each run' };
+  else { browser = await chromium.launch({ executablePath, headless: false }); manifest.browser = { executablePath: redact(executablePath), lifecycle: 'One process; sequential fresh contexts', ...await browserEvidence(browser) }; }
   await persist(); await parity();
  }
  async function finish(error) {

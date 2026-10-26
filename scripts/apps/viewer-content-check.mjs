@@ -20,7 +20,7 @@ export function viewerContentOptions(args) {
  if(!Number.isSafeInteger(options.timeoutMs)||options.timeoutMs<30000||options.timeoutMs>600000)throw Error('timeoutMs must be between 30000 and 600000');
  if(options.routes.some(route=>VIEWER_ROUTES[route].revision==='186')&&(!options.runtimeRoot||!/^[a-f0-9]{40}$/.test(options.runtimeSha??'')))throw Error('r186 routes require an exact runtime SHA');
  options.contentFramingDiagnostic=seen.has('diagnosticContentLength');
- if (options.networkDiagnostic !== undefined && (!VIEWER_NETWORK_DIAGNOSTICS.includes(options.networkDiagnostic) || options.content !== 'beautiful-game' || options.routes.length !== 1 || options.routes[0] !== 'original-r176')) throw Error('Network diagnostic requires original-r176 A Beautiful Game');
+ if (options.networkDiagnostic !== undefined && (!VIEWER_NETWORK_DIAGNOSTICS.includes(options.networkDiagnostic) || options.networkDiagnostic !== 'proxy-cdp-remote' && (options.content !== 'beautiful-game' || options.routes.length !== 1 || options.routes[0] !== 'original-r176'))) throw Error('Only remote-only guarded transport is available for extended content checks');
  if(options.contentFramingDiagnostic&&(options.content!=='beautiful-game'||options.routes.length!==1||options.routes[0]!=='original-r176'))throw Error('Content-Length diagnostic is restricted to the original-r176 A Beautiful Game whole-app load');
  return options;
 }
