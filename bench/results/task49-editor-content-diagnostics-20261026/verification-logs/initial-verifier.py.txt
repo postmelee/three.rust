@@ -1,0 +1,120 @@
+"""Offline Editor native-content evidence audit; no browser, asset download or timing."""
+from pathlib import Path
+import argparse,gzip,hashlib,importlib.util,json,math,sys
+sys.dont_write_bytecode=True
+ROOT=Path(__file__).resolve().parent
+spec=importlib.util.spec_from_file_location('storage',ROOT/'storage.py');s=importlib.util.module_from_spec(spec);spec.loader.exec_module(s)
+spec=importlib.util.spec_from_file_location('png_codec',ROOT/'png.py');png=importlib.util.module_from_spec(spec);spec.loader.exec_module(png)
+H=lambda b:hashlib.sha256(b).hexdigest()
+EDITOR='9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8';RUNTIME='85e2c5d500edb0b92ea4ecb997087fded3fed45b'
+
+def numeric(a,b):
+ assert len(a)==len(b);diff=[]
+ for i,(x,y) in enumerate(zip(a,b)):
+  assert math.isfinite(x) and math.isfinite(y)
+  if abs(x-y)>1e-10+1e-12*abs(y):diff.append({'index':i,'reference':x,'actual':y,'delta':y-x})
+ return diff
+
+def compare(a,b):
+ fields=[k for k in ['pixelSha256','width','height','objects','history','selectedRoot'] if a[k]!=b[k]];changes=numeric(a['numeric'],b['numeric'])
+ return {'equal':not fields and not changes,'differentFields':fields,'numericValues':len(a['numeric']),'numericDifferences':changes,'maximumAbsoluteDifference':max([abs(x-y) for x,y in zip(a['numeric'],b['numeric'])],default=0)}
+
+def readiness(expected,actual):
+ issues=[]
+ def eq(x,y,label):
+  if x!=y:issues.append(label)
+ eq(actual['contextLost'],False,'contextLost');eq(actual['selectedRoot'],True,'selectedRoot');eq(actual['meshInstances'],expected['primitiveInstances'],'primitiveInstances');eq(actual['skinnedMeshes'],expected['skinnedNodes'],'skinnedNodes');eq(actual['morphMeshes'],expected['morphNodes'],'morphNodes')
+ nodes={x['name']:x for x in actual['nodes']};eq(len(nodes),len(actual['nodes']),'uniqueNames');eq(set(nodes),{x['name'] for x in expected['nodeRecords']},'nodeNames');mnames={x['index']:x['name'] for x in expected['materialNames']}
+ for want in expected['nodeRecords']:
+  got=nodes.get(want['name'])
+  if got is None:continue
+  for k in ['parentName','childNames']:eq(got[k],want[k],want['name']+'.'+k)
+  if not want['animated']:
+   for k in ['matrix'] if want['matrix'] else ['translation','rotation','scale']:
+    if numeric(got[k],want[k]):issues.append(want['name']+'.'+k)
+  eq(len(got['primitives']),len(want['primitives']),want['name']+'.primitives')
+  for g,e in zip(got['primitives'],want['primitives']):
+   eq(g['materialName'],mnames[e['materialIndex']],'primitiveMaterial');eq(g['indexCount'],e['indexCount'],'primitiveIndices')
+   for k,v in e['attributes'].items():eq(g['attributes'].get(k),v,'primitiveAttribute.'+k)
+ eq(sorted(set(x['index'] for x in actual['materials'])),expected['materialIndices'],'materialIndices');materials={m['index']:m for m in expected['materials']}
+ for got in actual['materials']:
+  want=materials.get(got['index'])
+  if want is None:issues.append('unknownMaterial');continue
+  for k in ['transmission','thickness','attenuationDistance','attenuationColor','specularIntensity','specularColor']:eq(got[k],want[k],'material.'+k)
+  eq([x['slot'] for x in got['textureSlots']],[x['slot'] for x in want['textureSlots']],'materialSlots');slots={x['slot']:x for x in got['textureSlots']}
+  for e in want['textureSlots']:
+   g=slots.get(e['slot'])
+   if g is None:continue
+   for k in ['imageIndex','sampler','texCoord','offset','scale','rotation','flipY','colorTransfer']:eq(g[k],e[k],'texture.'+k)
+ eq(all(x['ready'] for x in actual['textures']),True,'textureReadiness');eq(sorted(set(x['imageIndex'] for x in actual['textures'])),expected['imageIndices'],'imageIndices');eq(all(math.isfinite(x['duration']) and x['duration']>0 for x in actual['clips']),True,'clipDurations');eq([{'name':x['name'],'tracks':x['tracks']} for x in actual['clips']],[{'name':x['name'],'tracks':x['tracks']} for x in expected['editorAnimations']],'clips')
+ return {'issues':issues,'nodes':len(actual['nodes']),'materialInstances':len(actual['materials']),'sourceMaterials':len(expected['materials']),'materialSlots':sum(len(m['textureSlots']) for m in actual['materials']),'decodedImages':len(set(x['imageIndex'] for x in actual['textures'] if x['ready'])),'clips':len(actual['clips']),'sourceRelationshipsPassed':not issues}
+
+def source(A,base,engine,tooling):
+ a=A.J(base+'/adaptation.json');e=A.J(base+'/environment.json');assert a['appSources']['editor']==EDITOR and a['engine']==engine and a['candidate']['sha']==RUNTIME and not a['candidate']['dirty'];assert e['candidateSha']==RUNTIME and e['toolingSha']==tooling['sha'] and not e['toolingDirty'] and e['engine']==engine and e['headed'] and e['isolated']
+ original=A.B(base+'/editor-index.original.html');served=A.B(base+'/editor-index.served.html');meta=a['editor']
+ for k,b in [('original',original),('served',served)]:assert H(b)==meta[k+'Sha256'] and len(b)==meta[k+'Bytes']
+ transformed=original.decode()
+ for change in meta['edits']:assert transformed.count(change['from'])==1;transformed=transformed.replace(change['from'],change['to'])
+ assert transformed.encode()==served;assert A.J(base+'/source-overlays.json')==[]
+ if engine=='original':assert original==served and meta['edits']==[]
+ served_index={x['file']:x for x in A.J(base+'/served-files.json')};network=A.J(base+'/network.json');remote={x['url']:x for x in network if x.get('mirrored')};captured=A.J(base+'/captured-sources.json')
+ for row in captured:
+  b=A.B(base+'/'+row['file']);assert H(b)==row['sha256'] and len(b)==row['bytes'];ref=served_index.get(row['label']) if row['url'].startswith('<origin>/') else remote.get(row['url']);assert ref and ref['sha256']==H(b) and ref['bytes']==len(b)
+ integrity=A.J(base+'/integrity.json');assert integrity['unchanged'] and integrity['error'] is None
+ gpu=A.J(base+'/gpu.json') if A.exists(base+'/gpu.json') else None
+ if gpu:assert 'Apple M4 Pro' in gpu['renderer'] and 'Metal' in gpu['renderer'] and 'SwiftShader' not in gpu['renderer']
+ errors=A.J(base+'/errors.json');assert e['helperSha256']==tooling['files']['scripts/apps/candidate-browser.mjs']
+ return {'capturedSources':len(captured),'executedSourceHashesVerified':True,'htmlTransformationVerified':True,'environment':e,'gpu':gpu,'integrity':integrity,'helperErrors':errors,'blockedRequests':[r for r in network if r.get('blocked')]}
+
+def events(A,base):
+ active=A.J(base+'/native-events.json');before=A.J(base+'/native-events-before-close.json')['events'];after=A.J(base+'/native-events-after-close.json')['events']
+ for key in before:assert after[key][:len(before[key])]==before[key]
+ # Failed runs can preserve native-events.json before closing. Both its prefix
+ # and the dedicated post-close tail remain evidence; no event is filtered.
+ for key in active:assert after[key][:len(active[key])]==active[key]
+ return {'savedNativeCounts':{k:len(v) for k,v in active.items()},'savedNativeIncludesCompleteTail':active==after,'beforeCloseCounts':{k:len(v) for k,v in before.items()},'afterCloseCounts':{k:len(v) for k,v in after.items()},'requestFailed':after['requestFailed'],'consoleErrors':[r for r in after['console'] if r['type']=='error'],'dialogs':after['dialogs'],'crashes':after['crashes'],'tailEvents':{k:after[k][len(before[k]):] for k in before}}
+
+def verify(root):
+ A=s.Archive(root);out={'status':'verified','performanceEvidence':False,'logicalFiles':len(A.rows),'physicalBlobs':len(A.blobs),'attempts':[]};decoded=[]
+ for label in s.builder.NAMES:
+  r=A.J(label+'/result.json');assert not r['performanceEvidence'] and not r['tooling']['dirty'];assert r['tooling']==r['toolingAfter'] and r['toolingUnchanged'] and r['preparationUnchanged'] and r['integrityUnchanged']
+  for f,h in r['tooling']['files'].items():assert H(A.B('tool-sources/'+r['tooling']['sha']+'/'+f))==h
+  prep='task49-editor-bistro-zip-001' if r['content']['source']['repository']=='qian-o/GLTF-Assets' else 'task49-editor-chess-zip-002';mbytes=A.B('zip-preparation/'+prep+'/manifest.json');m=json.loads(mbytes);assert H(mbytes)==r['content']['manifestSha256'] and m['source']==r['content']['source'] and m['zip']==r['content']['zip']
+  routes=[]
+  for row in r['routes']:
+   engine=row['engine'];base=label+'/'+engine;assert A.J(base+'/result.json')==row;src=source(A,base,engine,r['tooling']);ev=events(A,base);states={};pairs=[]
+   for file in ['source-readiness.json','source-readiness-after-import.json']:
+    if A.exists(base+'/'+file):states[file]=readiness(m['expected'],A.J(base+'/'+file))
+   if 'sourceContract' in row:
+    state=states['source-readiness.json'];assert not state['issues'];assert {k:v for k,v in state.items() if k!='issues'}==row['sourceContract']
+   for file in sorted(p for p in A.rows if p.startswith(base+'/pose-') and p.endswith('-repeat-0.json')):
+    second=file.removesuffix('-repeat-0.json')+'-repeat-1.json';a=A.J(file);b=A.J(second);delta=compare(a,b);assert delta['equal'];assert A.B(file.removesuffix('.json')+'.png')==A.B(second.removesuffix('.json')+'.png');pairs.append({'file':file,'comparison':delta})
+   if row['status']=='passed':assert ev['savedNativeIncludesCompleteTail'];assert not ev['requestFailed'] and not ev['consoleErrors'] and not ev['dialogs'] and not ev['crashes'] and not src['helperErrors'] and not src['blockedRequests'];assert pairs
+   native=None
+   if A.exists(base+'/native-observation.json'):
+    n=A.J(base+'/native-observation.json');before=n['before'];after=n['after'];native={'renderPasses':after['render']['frame']-before['render']['frame'],'mixerAdvanceSeconds':after['mixerTime']-before['mixerTime'],'elapsedMs':after['at']-before['at']};assert all(native[k]==row['nativeWork'][k] for k in native);assert row['nativeWork']['perRenderFrameDenominator']==(native['renderPasses'] or None)
+   cross=[]
+   if 'originalComparisons' in row:
+    for pair in pairs:
+     reference=label+'/original/'+Path(pair['file']).name;delta=compare(A.J(reference),A.J(pair['file']));assert delta['equal'];cross.append({'file':Path(pair['file']).name,'reference':'original',**delta})
+    assert len(cross)==len(row['originalComparisons'])
+    for actual,recorded in zip(cross,row['originalComparisons']):assert recorded['equal'] and recorded['numericValues']==actual['numericValues'] and recorded['pixelSha256']==A.J(label+'/original/'+actual['file'])['pixelSha256']
+   routes.append({'engine':engine,'status':row['status'],'recordedError':row.get('error'),'source':src,'events':ev,'readiness':states,'fixedPairs':pairs,'nativeObservation':native,'crossComparisons':cross})
+  assert r['status']==('passed' if all(x['status']=='passed' for x in r['routes']) else 'failed')
+  out['attempts'].append({'label':label,'recordedStatus':r['status'],'tooling':r['tooling'],'routes':routes,'recordedComparisons':r['comparisons']})
+ for file in sorted(p for p in A.rows if p.endswith('.png') and '/pose-' in p):
+  w,h,top,bottom=png.png_rgba(A.B(file));m=A.J(file.removesuffix('.png')+'.json');assert (w,h)==(m['width'],m['height']) and H(bottom)==m['pixelSha256'];decoded.append({'file':file,'readPixelsSha256':H(bottom),'width':w,'height':h})
+ out['decodedPngs']=decoded
+ first='chess-correctness-001/original/pose-0-repeat-0';second='chess-correctness-002/original/pose-0-repeat-0';candidate='chess-correctness-002/prepared-js/pose-0-repeat-0'
+ assert A.J(first+'.json')==A.J(second+'.json') and A.B(first+'.png')==A.B(second+'.png');diff=compare(A.J(second+'.json'),A.J(candidate+'.json'));image=png.compare_png(A.B(second+'.png'),A.B(candidate+'.png'))
+ assert len(diff['numericDifferences'])==11 and all(2142<=r['index']<2158 for r in diff['numericDifferences']);assert image['changedPixels']==91610 and image['changedChannels']==274520 and image['maxAbsoluteChannelDelta']==255
+ out['initialChessCrossRoute']={'originalFreshPagesExactlyEqual':True,'numericAndContract':diff,'image':image,'scope':'The preserved initial candidate view has a different camera. Equal scene numbers do not make this an equal-camera renderer comparison. Cause is not inferred from endpoints.'}
+ out['limitations']=['Failed application gates remain failed; subsequent diagnoses do not rewrite them.','This audit does not execute native app interactions or assign candidate causality to an endpoint mismatch.','Bistro import texture failures and native action timeout are preserved separately; they do not qualify CPU profiling or prove permanent content incompatibility.','Large original assets and ZIP payloads are omitted. Source/preparation manifests and earlier independent ZIP verification remain bound.','No hardware performance, Rust benefit, CPU headroom, frame rate or adoption qualification follows.']
+ return out
+
+if __name__=='__main__':
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('--archive',type=Path,default=ROOT);p.add_argument('--out',type=Path);p.add_argument('--extract',type=Path);a=p.parse_args();report=verify(a.archive)
+ if a.out:
+  with a.out.open('x') as f:json.dump(report,f,indent=2,allow_nan=False);f.write('\n')
+ if a.extract:s.Archive(a.archive).extract(a.extract)
+ print(json.dumps({'status':report['status'],'logicalFiles':report['logicalFiles'],'physicalBlobs':report['physicalBlobs'],'attempts':len(report['attempts']),'decodedPngs':len(report['decodedPngs'])}))

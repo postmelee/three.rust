@@ -1,0 +1,65 @@
+{
+  "status": "complete",
+  "inputs": [
+    {
+      "label": "chess-correctness-001",
+      "sourceDirectory": "work/task49-editor-chess-correctness-001",
+      "recordedStatus": "passed",
+      "recordedToolSha": "d1def5a2b1845cb0a398bdb5d2528d0fbee69929",
+      "files": 162
+    },
+    {
+      "label": "chess-correctness-002",
+      "sourceDirectory": "work/task49-editor-chess-correctness-002",
+      "recordedStatus": "failed",
+      "recordedToolSha": "d1def5a2b1845cb0a398bdb5d2528d0fbee69929",
+      "files": 332
+    },
+    {
+      "label": "bistro-correctness-001",
+      "sourceDirectory": "work/task49-editor-bistro-correctness-001",
+      "recordedStatus": "failed",
+      "recordedToolSha": "d1def5a2b1845cb0a398bdb5d2528d0fbee69929",
+      "files": 157
+    },
+    {
+      "label": "chess-focus-diagnostic-001",
+      "sourceDirectory": "work/task49-editor-chess-focus-diagnostic-001",
+      "recordedStatus": "preparing",
+      "recordedToolSha": "0fef6601aea862d156ea5e3104b506fd747c055d",
+      "files": 139
+    },
+    {
+      "label": "chess-focus-diagnostic-002",
+      "sourceDirectory": "work/task49-editor-chess-focus-diagnostic-002",
+      "recordedStatus": "passed",
+      "recordedToolSha": "500880cd21d5c7ce0ecd63d0d32d16dca55e10c7",
+      "files": 534
+    },
+    {
+      "label": "chess-correctness-003",
+      "sourceDirectory": "work/task49-editor-chess-correctness-003",
+      "recordedStatus": "failed",
+      "recordedToolSha": "500880cd21d5c7ce0ecd63d0d32d16dca55e10c7",
+      "files": 489
+    },
+    {
+      "label": "chess-native-input-correctness-001",
+      "sourceDirectory": "work/task49-editor-chess-native-input-correctness-001",
+      "recordedStatus": "passed",
+      "recordedToolSha": "48f7a196ea635c50005f63376fdbffc02253bc2f",
+      "files": 510
+    },
+    {
+      "label": "bistro-native-input-correctness-001",
+      "sourceDirectory": "work/task49-editor-bistro-native-input-correctness-001",
+      "recordedStatus": "failed",
+      "recordedToolSha": "48f7a196ea635c50005f63376fdbffc02253bc2f",
+      "files": 160
+    }
+  ],
+  "logicalFiles": 2513,
+  "physicalBlobs": 371,
+  "sourceHashesRechecked": true,
+  "sourceListingsUnchanged": true
+}
