@@ -127,6 +127,22 @@ test('scalar and flag accessors cannot be classified as matrix materialization b
  assert.equal(summary.buckets['facade matrix materialization/proxy'].samples,2);
  assert.equal(summary.buckets['facade other'].samples,2);
 });
+test('verified real candidate URLs do not make native app or matrix consumers look like automation',async()=>{
+ const origin='http://127.0.0.1:43210/__rthree_candidate__/';
+ const p={startTime:0,endTime:3000,nodes:[{id:1,callFrame:jsFrame('(root)',''),children:[2,3,4]},
+  {id:2,callFrame:jsFrame('SkinnedMesh.applyBoneTransform',origin+'core.js')},
+  {id:3,callFrame:jsFrame('readFacadeElements',origin+'facade-state.js')},
+  {id:4,callFrame:jsFrame('UtilityScript.evaluate','')}
+ ],samples:[2,3,4],timeDeltas:[1000,1000,1000]};
+ const summary=await analyzeCandidateProfile(p,async f=>f.url.startsWith(origin)
+  ? {label:f.functionName,sourceStatus:'verified-js',source:{file:'candidate/packages/rthree/'+f.url.slice(origin.length),sha256:'a'.repeat(64)}}
+  : {label:f.functionName,sourceStatus:'unresolved-script-unavailable'});
+ assert.equal(summary.buckets['bounds/picking/skinned-public-read'].samples,1);
+ assert.equal(summary.buckets['facade matrix materialization/proxy'].samples,1);
+ assert.equal(summary.buckets['automation/observation'].samples,1);
+ assert.equal(summary.exclusive.find(node=>node.id===2).sourceStatus,'verified-js');
+ assert.equal(summary.exclusive.find(node=>node.id===3).category,'facade matrix materialization/proxy');
+});
 
 test('full-rate profiles do not depend on JavaScript argument-spread limits',async()=>{
  const count=130001,p={startTime:0,endTime:count*100,nodes:[

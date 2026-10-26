@@ -138,7 +138,10 @@ function classify(node) {
  if(raw==='(program)')return 'program/native-unresolved';
  if(raw==='(root)')return 'root';
  if(node.wasm || /^wasm:/.test(node.callFrame.url??''))return node.wasm?.resolved?'Wasm verified function':'Wasm unresolved';
- if(/UtilityScript|injectedScript|__pw|__rthree/.test(node.label+' '+node.callFrame.url)||(node.sourceStatus!=='verified-js'&&/^(?:observe|evaluate)$/.test(node.label)))return 'automation/observation';
+ // The verified engine route itself is /__rthree_candidate__/; its URL is
+ // application source identity, not evidence of automation instrumentation.
+ if(node.sourceStatus!=='verified-js'&&(/UtilityScript|injectedScript|__pw|__rthree/.test(node.label+' '+node.callFrame.url)||/^(?:observe|evaluate)$/.test(node.label)))return 'automation/observation';
+ if(/(?:^|\/)(?:candidate-profile-session|timing-overlay)\.mjs$/.test(node.source?.file??'')&&/profileSnapshot|warmNativeFrames|installProfileObserver|installTimingCollector/.test(node.label))return 'automation/observation';
  if(node.sourceStatus!=='verified-js')return 'source unresolved';
  const file=node.source?.file??'', label=node.label;
  if(/(?:facade|prepared)-kernel\.js$/.test(file))return 'matched-JS kernel';
