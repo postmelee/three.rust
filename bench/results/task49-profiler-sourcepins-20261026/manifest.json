@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "file": "chromium-DEPS",
+      "url": "https://chromium.googlesource.com/chromium/src/+/804d6b05f089b27af8342622a36558c49401a1d4/DEPS?format=TEXT",
+      "httpStatus": 200,
+      "bytes": 198290,
+      "sha256": "23ef1ed90785da130901961e4f4179b4fc10adac957eee5622d7e67fe4b82ec5",
+      "wireSha256": "06d8411b34d7dd7cc77c734b1862fdb92186caa93d013701913217a4b3be2d8e",
+      "encoding": "base64-decoded Gitiles TEXT",
+      "retrievedAt": "2026-10-26T11:43:13.730948+00:00"
+    },
+    {
+      "file": "chromium-commit.json",
+      "url": "https://chromium.googlesource.com/chromium/src/+/804d6b05f089b27af8342622a36558c49401a1d4?format=JSON",
+      "httpStatus": 200,
+      "bytes": 1498,
+      "sha256": "1deab3bec33cb7c77366a942758b395fdc3bd73281620b3be104641866f913b4",
+      "wireSha256": "1deab3bec33cb7c77366a942758b395fdc3bd73281620b3be104641866f913b4",
+      "encoding": "verbatim",
+      "retrievedAt": "2026-10-26T11:43:14.130933+00:00"
+    },
+    {
+      "file": "chromium-LICENSE",
+      "url": "https://chromium.googlesource.com/chromium/src/+/804d6b05f089b27af8342622a36558c49401a1d4/LICENSE?format=TEXT",
+      "httpStatus": 200,
+      "bytes": 1536,
+      "sha256": "368cca1106be99d39ecd32a38d8305585d802a475effb66380b91ffc9bcf709b",
+      "wireSha256": "363eddfec00830d4826f38173bd40a17eeada40a947a8d93b935371a1ae5a6d1",
+      "encoding": "base64-decoded Gitiles TEXT",
+      "retrievedAt": "2026-10-26T11:43:14.666506+00:00"
+    },
+    {
+      "file": "devtools-CPUProfileDataModel.ts",
+      "url": "https://chromium.googlesource.com/devtools/devtools-frontend/+/a7b389bcb341f6e5e1bfa107992d3c327db75736/front_end/core/sdk/CPUProfileDataModel.ts?format=TEXT",
+      "retrievedAt": "2026-10-26T11:43:52.707689+00:00",
+      "httpStatus": 404,
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "file": "devtools-CPUProfileDataModel.test.ts",
+      "url": "https://chromium.googlesource.com/devtools/devtools-frontend/+/a7b389bcb341f6e5e1bfa107992d3c327db75736/front_end/core/sdk/CPUProfileDataModel.test.ts?format=TEXT",
+      "retrievedAt": "2026-10-26T11:43:53.436683+00:00",
+      "httpStatus": 404,
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "file": "devtools-LICENSE",
+      "url": "https://chromium.googlesource.com/devtools/devtools-frontend/+/a7b389bcb341f6e5e1bfa107992d3c327db75736/LICENSE?format=TEXT",
+      "retrievedAt": "2026-10-26T11:43:53.878225+00:00",
+      "httpStatus": 200,
+      "bytes": 1537,
+      "sha256": "ff11d445fb41a1087c7630e120ab15f1a2cb67c1b707173cb494141805fca35e",
+      "wireSha256": "b419e435f754c3e74514e6d7f2fdd9096b0b6662f2c3e5b5b944151b1dc2fa5e",
+      "encoding": "base64-decoded Gitiles TEXT"
+    },
+    {
+      "file": "v8-profiler-agent-impl.cc",
+      "url": "https://chromium.googlesource.com/v8/v8/+/712e1808de2d7416f1276d0deb1ee4ac978132b8/src/inspector/v8-profiler-agent-impl.cc?format=TEXT",
+      "retrievedAt": "2026-10-26T11:43:54.236011+00:00",
+      "httpStatus": 200,
+      "bytes": 19490,
+      "sha256": "4db6678ad50265752e74d1c918a3a4c751209e13f58b86b7771b314d032bb315",
+      "wireSha256": "1142d2804e6e6695f059094cbe5cbe4666d1509becc9da939c3f3fd05a960147",
+      "encoding": "base64-decoded Gitiles TEXT"
+    },
+    {
+      "file": "v8-js_protocol.pdl",
+      "url": "https://chromium.googlesource.com/v8/v8/+/712e1808de2d7416f1276d0deb1ee4ac978132b8/include/js_protocol.pdl?format=TEXT",
+      "retrievedAt": "2026-10-26T11:43:54.992399+00:00",
+      "httpStatus": 200,
+      "bytes": 70738,
+      "sha256": "678fd97bf64779f0a82dba9e02cc00ab21b18eaec6570b10f7bbd63512cc84f0",
+      "wireSha256": "4da3f78abbb31b60e6e1142decf88ebc3fb56e5244f7c08086ef2dc3e58cb702",
+      "encoding": "base64-decoded Gitiles TEXT"
+    },
+    {
+      "file": "v8-version.h",
+      "url": "https://chromium.googlesource.com/v8/v8/+/712e1808de2d7416f1276d0deb1ee4ac978132b8/include/v8-version.h?format=TEXT",
+      "retrievedAt": "2026-10-26T11:43:55.809661+00:00",
+      "httpStatus": 200,
+      "bytes": 772,
+      "sha256": "6697986581cfb9b606a33113e8e9b680a735b04c3e6c605d40ff60d876a2de38",
+      "wireSha256": "eb47d75411542615724fe38f51472a50a400475107bafabd6be4d02fa1c112f1",
+      "encoding": "base64-decoded Gitiles TEXT"
+    },
+    {
+      "file": "v8-profile-generator.cc",
+      "url": "https://chromium.googlesource.com/v8/v8/+/712e1808de2d7416f1276d0deb1ee4ac978132b8/src/profiler/profile-generator.cc?format=TEXT",
+      "retrievedAt": "2026-10-26T11:43:56.545413+00:00",
+      "httpStatus": 200,
+      "bytes": 45901,
+      "sha256": "b22f6debd0e9557920dc5b57acff38ed038ffd9c9439dc29661c1741bc772aa0",
+      "wireSha256": "40ebde9be0dee8d550a2195ba45020ca6ef3d2efc2d7deb1aa926c40c9b6373c",
+      "encoding": "base64-decoded Gitiles TEXT"
+    },
+    {
+      "file": "v8-cpu-profiler.cc",
+      "url": "https://chromium.googlesource.com/v8/v8/+/712e1808de2d7416f1276d0deb1ee4ac978132b8/src/profiler/cpu-profiler.cc?format=TEXT",
+      "retrievedAt": "2026-10-26T11:43:57.704926+00:00",
+      "httpStatus": 200,
+      "bytes": 25317,
+      "sha256": "0fc3c2dc54b74b930de31a7633178dd064b2382d2fcdfcca94c0f8b2e305ed24",
+      "wireSha256": "9a00dfa144c2c03884effd04be68fce374231198d0b08fc88ca45d528520859a",
+      "encoding": "base64-decoded Gitiles TEXT"
+    },
+    {
+      "file": "v8-profiler.h",
+      "url": "https://chromium.googlesource.com/v8/v8/+/712e1808de2d7416f1276d0deb1ee4ac978132b8/include/v8-profiler.h?format=TEXT",
+      "retrievedAt": "2026-10-26T11:43:58.423856+00:00",
+      "httpStatus": 200,
+      "bytes": 46451,
+      "sha256": "cf1ec8920a2f7b49c09b68c649cbfc947d127fec32778df5af5e5be421081d27",
+      "wireSha256": "e88f87046b405001a822f5fd7ecc2e95da40315a483049ab07f3b5a5e98088a4",
+      "encoding": "base64-decoded Gitiles TEXT"
+    },
+    {
+      "file": "v8-LICENSE",
+      "url": "https://chromium.googlesource.com/v8/v8/+/712e1808de2d7416f1276d0deb1ee4ac978132b8/LICENSE?format=TEXT",
+      "retrievedAt": "2026-10-26T11:43:58.981238+00:00",
+      "httpStatus": 200,
+      "bytes": 3093,
+      "sha256": "6ab33af8774a0f396ee3aeeb761e3229057682d6f9fa7f572e390c2cb3a6e509",
+      "wireSha256": "0ed351df2adb17b89c7b1be7fb95cbc7b64ac3de01551d609a77818c44875c14",
+      "encoding": "base64-decoded Gitiles TEXT"
+    },
+    {
+      "file": "devtools-commit.json",
+      "url": "https://chromium.googlesource.com/devtools/devtools-frontend/+/a7b389bcb341f6e5e1bfa107992d3c327db75736?format=JSON",
+      "retrievedAt": "2026-10-26T11:43:59.690134+00:00",
+      "httpStatus": 200,
+      "bytes": 1957,
+      "sha256": "e8bfb269b6c3c5ad593c42910de673ee368428524cd4c34186f1f201720b6687",
+      "wireSha256": "e8bfb269b6c3c5ad593c42910de673ee368428524cd4c34186f1f201720b6687",
+      "encoding": "verbatim"
+    },
+    {
+      "file": "v8-commit.json",
+      "url": "https://chromium.googlesource.com/v8/v8/+/712e1808de2d7416f1276d0deb1ee4ac978132b8?format=JSON",
+      "retrievedAt": "2026-10-26T11:44:00.347758+00:00",
+      "httpStatus": 200,
+      "bytes": 1537,
+      "sha256": "b7b36d0f460a60836001f068a88769e2add13e3792b1c3aae071c79bd2325e07",
+      "wireSha256": "b7b36d0f460a60836001f068a88769e2add13e3792b1c3aae071c79bd2325e07",
+      "encoding": "verbatim"
+    },
+    {
+      "file": "devtools-CPUProfileDataModel.ts",
+      "url": "https://chromium.googlesource.com/devtools/devtools-frontend/+/a7b389bcb341f6e5e1bfa107992d3c327db75736/front_end/models/cpu_profile/CPUProfileDataModel.ts?format=TEXT",
+      "httpStatus": 200,
+      "bytes": 21830,
+      "sha256": "710dfae00238647201fe3243c133641e3a0930dada500f46cc85e1527c14a82b",
+      "wireSha256": "b26bb2db4e5cae871c2627342c2ac9326b8d15aa00c365e49743fe1e09986943",
+      "encoding": "base64-decoded Gitiles TEXT",
+      "retrievedAt": "2026-10-26T11:44:55.519504+00:00"
+    },
+    {
+      "file": "devtools-CPUProfileDataModel.test.ts",
+      "url": "https://chromium.googlesource.com/devtools/devtools-frontend/+/a7b389bcb341f6e5e1bfa107992d3c327db75736/front_end/models/cpu_profile/CPUProfileDataModel.test.ts?format=TEXT",
+      "httpStatus": 200,
+      "bytes": 14277,
+      "sha256": "2f239517e9315fa7c9b9792d58df085764e3e9d2c220e08b2321f40ec5207a99",
+      "wireSha256": "ca5faad148b34d84d191e73de0fe54641facb11d8b10dfc7fc0c79a2744678c2",
+      "encoding": "base64-decoded Gitiles TEXT",
+      "retrievedAt": "2026-10-26T11:44:56.091502+00:00"
+    },
+    {
+      "file": "devtools-ProfileTreeModel.ts",
+      "url": "https://chromium.googlesource.com/devtools/devtools-frontend/+/a7b389bcb341f6e5e1bfa107992d3c327db75736/front_end/models/cpu_profile/ProfileTreeModel.ts?format=TEXT",
+      "httpStatus": 200,
+      "bytes": 2792,
+      "sha256": "e4929f85419e29a91275d31650abe4a9e419145fb341a3456b87026b154724f6",
+      "wireSha256": "459265da85c4251461da60fcaf3d7fb185b0e53a360eed5a422606480d507dd1",
+      "encoding": "base64-decoded Gitiles TEXT",
+      "retrievedAt": "2026-10-26T11:44:56.551286+00:00"
+    },
+    {
+      "file": "historical-CPUProfileDataModel.ts",
+      "url": "https://chromium.googlesource.com/devtools/devtools-frontend/+/9a696c4e723caa3c7e1f78886da353f1f06a79b0/front_end/core/sdk/CPUProfileDataModel.ts?format=TEXT",
+      "httpStatus": 200,
+      "bytes": 19476,
+      "sha256": "4eecd8cd09c0450cd1b4963291b8a0c9189c2a4faaee7fc7e77c357c67a0b617",
+      "wireSha256": "63b66b2c16b31bcb87804eb2a5a61a4c78fad179cccf8f0700da5197e36cc9d3",
+      "encoding": "base64-decoded Gitiles TEXT",
+      "retrievedAt": "2026-10-26T11:44:57.979834+00:00"
+    },
+    {
+      "file": "historical-devtools-LICENSE",
+      "url": "https://chromium.googlesource.com/devtools/devtools-frontend/+/9a696c4e723caa3c7e1f78886da353f1f06a79b0/LICENSE?format=TEXT",
+      "httpStatus": 200,
+      "bytes": 1559,
+      "sha256": "7a209dd1b94cabdb5ea9c6f9164b9546ffa5daaa671e7767d49510db055f5c51",
+      "wireSha256": "4e77c486b046c52e313096757e73c2e6c81ce6b501df3b904bdb4f6209a190d3",
+      "encoding": "base64-decoded Gitiles TEXT",
+      "retrievedAt": "2026-10-26T11:44:58.795633+00:00"
+    },
+    {
+      "file": "v8-test-cpu-profiler.cc",
+      "url": "https://chromium.googlesource.com/v8/v8/+/712e1808de2d7416f1276d0deb1ee4ac978132b8/test/cctest/test-cpu-profiler.cc?format=TEXT",
+      "retrievedAt": "2026-10-26T11:45:38.969552+00:00",
+      "httpStatus": 200,
+      "bytes": 183545,
+      "sha256": "a74f367793f8cff9de8d1367d6ffb91558cc764d3087c46d4fb60647bdcb0059",
+      "wireSha256": "c4c70fae88f22bac42b507410161818784124ef62f820af3b36e532e610bf402",
+      "encoding": "base64-decoded Gitiles TEXT"
+    },
+    {
+      "file": "devtools-model-log.json",
+      "url": "https://chromium.googlesource.com/devtools/devtools-frontend/+log/a7b389bcb341f6e5e1bfa107992d3c327db75736/front_end/models/cpu_profile/CPUProfileDataModel.ts?format=JSON&n=40",
+      "retrievedAt": "2026-10-26T11:45:40.358438+00:00",
+      "httpStatus": 429,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "file": "historical-devtools-model-log.json",
+      "url": "https://chromium.googlesource.com/devtools/devtools-frontend/+log/9a696c4e723caa3c7e1f78886da353f1f06a79b0/front_end/core/sdk/CPUProfileDataModel.ts?format=JSON&n=40",
+      "retrievedAt": "2026-10-26T11:45:41.135950+00:00",
+      "httpStatus": 429,
+      "error": "HTTP Error 429: Too Many Requests"
+    }
+  ]
+}
