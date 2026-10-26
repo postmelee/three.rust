@@ -148,7 +148,7 @@ function classify(node) {
  if(/facade-state\.js$/.test(file)) {
   if(/(?:^|\.)(?:materialize|readFacadeElements|trackedMatrix)(?:\.|$)/.test(label))return 'facade matrix materialization/proxy';
   if(/(?:^|\.)(?:scalar|trackFacadeObject)(?:\.|$)/.test(label))return 'facade scalar/input/flag tracking';
-  if(/markInput|markMeta|upload|facadeUpdate|syncInputs|updatePlan|refreshPassInputs|ensurePlan|objectMeta/.test(label))return 'facade operation preparation';
+  if(/markInput|markMeta|upload|facadeUpdate|updateSingle|syncInputs|updatePlan|refreshPassInputs|ensurePlan|objectMeta/.test(label))return 'facade operation preparation';
   if(/(?:^|\.)call$/.test(label))return 'facade ABI dispatch';
   return 'facade other';
  }

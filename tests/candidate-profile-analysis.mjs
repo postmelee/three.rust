@@ -144,6 +144,15 @@ test('verified real candidate URLs do not make native app or matrix consumers lo
  assert.equal(summary.exclusive.find(node=>node.id===3).category,'facade matrix materialization/proxy');
 });
 
+test('the verified single-node preparation helper stays in the same operation category',async()=>{
+ const url='http://127.0.0.1:43210/__rthree_candidate__/facade-state.js';
+ const p={startTime:0,endTime:2000,nodes:[{id:1,callFrame:jsFrame('(root)',''),children:[2,3]},
+  {id:2,callFrame:jsFrame('facadeUpdate',url)},{id:3,callFrame:jsFrame('updateSingle',url)}],samples:[2,3],timeDeltas:[1000,1000]};
+ const summary=await analyzeCandidateProfile(p,async f=>f.url===url?{label:f.functionName,sourceStatus:'verified-js',source:{file:'candidate/packages/rthree/facade-state.js'}}:{label:f.functionName});
+ assert.equal(summary.buckets['facade operation preparation'].samples,2);
+ assert.equal(summary.buckets['facade operation preparation'].sampledMs,2);
+});
+
 test('full-rate profiles do not depend on JavaScript argument-spread limits',async()=>{
  const count=130001,p={startTime:0,endTime:count*100,nodes:[
   {id:1,callFrame:jsFrame('(root)',''),children:[2]},
