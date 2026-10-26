@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import { chromium } from 'playwright';
 import { openRun, hash } from './candidate-browser.mjs';
+import { resolveEditorProtocol, validateEditorProtocolConfiguration } from './editor-candidate-protocol.mjs';
 import { setup, oracleCapture, compareOracle, assertBackend, assertEnvironment } from './editor-scenario.mjs';
 import { timingOverlays, installTimingCollector, TIMING_SOURCE_HASHES } from './timing-overlay.mjs';
 import { validateNativePlayback } from './timing-phase.mjs';
@@ -14,14 +15,16 @@ import { validateNativePlayback } from './timing-phase.mjs';
 const args = {};
 for (const item of process.argv.slice(4)) {
  const at = item.indexOf('='), key = item.slice(0, at), value = item.slice(at + 1);
- assert(at > 0 && value && ['mode', 'candidateRoot', 'candidateSha'].includes(key) && !Object.hasOwn(args, key), 'Unknown, duplicate or empty key=value argument');
+ assert(at > 0 && value && ['mode', 'candidateRoot', 'candidateSha', 'protocol'].includes(key) && !Object.hasOwn(args, key), 'Unknown, duplicate or empty key=value argument');
  args[key] = value;
 }
-assert(process.argv[2] && process.argv[3] && args.candidateRoot, 'Usage: node scripts/apps/timing.mjs APP_ROOT OUT mode=smoke|full candidateRoot=CHECKOUT [candidateSha=FULL_SHA]');
+assert(process.argv[2] && process.argv[3] && args.candidateRoot, 'Usage: node scripts/apps/timing.mjs APP_ROOT OUT mode=smoke|full candidateRoot=CHECKOUT [candidateSha=FULL_SHA] [protocol=COMMITTED_JSON]');
 const mode = args.mode ?? 'smoke';
 assert(['smoke', 'full'].includes(mode), 'mode must be smoke or full');
-const candidateSha = args.candidateSha ?? '6990fd92f61a031c8c2ba7a8282cfb63684e6dfb';
-assert.equal(candidateSha, '6990fd92f61a031c8c2ba7a8282cfb63684e6dfb', 'A new candidate requires a separately frozen protocol');
+const resolvedProtocol = await resolveEditorProtocol(path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..'), {
+ kind: 'timing', protocolPath: args.protocol, requestedSha: args.candidateSha, output: process.argv[3]
+});
+const candidateSha = resolvedProtocol.candidateSha;
 const appRoot = await fs.realpath(path.resolve(process.argv[2]));
 const candidateRoot = await fs.realpath(path.resolve(args.candidateRoot));
 const out = path.resolve(process.argv[3]);
@@ -44,6 +47,7 @@ const configuration = {
  poseClock: 'Unchanged native wall-clock Timer/mixer; poses are not frame-matched across routes',
  scope: 'Sum of disjoint Viewport.animate and Animation.updateTime synchronous callback bodies; not entire browser CPU, display latency or FPS'
 };
+validateEditorProtocolConfiguration(resolvedProtocol, 'timing', configuration);
 const routes = [
  { label: 'original-A', engine: 'original' }, { label: 'prepared-JS', engine: 'prepared-js' },
  { label: 'prepared-Wasm', engine: 'prepared-wasm' }, { label: 'original-B', engine: 'original' }
@@ -57,10 +61,10 @@ const idleCase = { id: 'E1-idle', idle: true, selected: false, shadow: true, pix
 const orders = Array.from({ length: configuration.rounds }, (_, round) => [0, 1, 3, 2].map(i => (i + round) % 4));
 const manifest = {
  status: 'preparing', kind: mode === 'full' ? 'unqualified-editor-cost-screen' : 'tooling-smoke-only', startedAt: new Date().toISOString(),
- configuration, candidateSha, routes, cases, idleCase, orders: orders.map(order => order.map(i => routes[i].label)),
+ configuration, candidateSha, protocol: resolvedProtocol.evidence, routes, cases, idleCase, orders: orders.map(order => order.map(i => routes[i].label)),
  plannedContinuousRuns: cases.length * (2 + routes.length * configuration.rounds), plannedIdleRuns: routes.length * configuration.rounds,
  nativeInteractionsAlreadyCovered: ['picking and camera/focus', 'gizmo transforms and undo/redo', 'timeline play/pause/scrub/clip controls'],
- deferred: ['E1 gizmo handler timing', 'new optimization implementation', 'GPU-time attribution', 'other-date repeats'],
+ deferred: ['E1 gizmo handler timing', ...(resolvedProtocol.evidence ? [] : ['new optimization implementation']), 'GPU-time attribution', 'other-date repeats'],
  nativeUnsupportedConditions: [{ id: 'E3-unselected-shadow', status: 'excluded-before-timing',
   reason: 'Pinned native Editor exposes clips only for editor.selected; deselection stops the current action and clears timeline clips. Unselected native timeline playback is unavailable.',
   source: { appSha: APP_PINS.editor, file: 'editor/editor/js/Animation.js', sha256: TIMING_SOURCE_HASHES['editor/editor/js/Animation.js'], functions: ['getAnimationClips', 'deselectClip', 'onObjectSelected'] },
@@ -301,7 +305,7 @@ function summarize() {
 try {
  manifest.sourceBefore = sourcePins(); validatePins(manifest.sourceBefore);
  tooling = { ...manifest.sourceBefore.tooling, node: process.version };
- const files = ['scripts/apps/timing.mjs', 'scripts/apps/editor-scenario.mjs', 'scripts/apps/timing-overlay.mjs', 'scripts/apps/timing-phase.mjs', 'scripts/apps/candidate-browser.mjs', 'scripts/apps/browser.mjs', 'scripts/apps/resources.json', 'bench/timing.mjs', 'package-lock.json', 'scripts/runner-environment.mjs', 'scripts/browser-path.mjs'];
+ const files = [...resolvedProtocol.files, 'scripts/apps/editor-candidate-protocol.mjs', 'scripts/apps/timing.mjs', 'scripts/apps/editor-scenario.mjs', 'scripts/apps/timing-overlay.mjs', 'scripts/apps/timing-phase.mjs', 'scripts/apps/candidate-browser.mjs', 'scripts/apps/browser.mjs', 'scripts/apps/resources.json', 'bench/timing.mjs', 'package-lock.json', 'scripts/runner-environment.mjs', 'scripts/browser-path.mjs'];
  tooling.files = Object.fromEntries(await Promise.all(files.map(async file => [file, hash(await fs.readFile(path.join(toolRoot, file)))])));
  tooling.collectorSha256 = hash(installTimingCollector.toString()); manifest.tooling = tooling;
  manifest.asset = { file: 'editor/examples/models/gltf/RobotExpressive/RobotExpressive.glb', sha256: hash(await fs.readFile(path.join(appRoot, 'editor/examples/models/gltf/RobotExpressive/RobotExpressive.glb'))) };

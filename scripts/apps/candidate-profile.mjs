@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import { chromium } from 'playwright';
 import { openRun, hash } from './candidate-browser.mjs';
+import { resolveEditorProtocol, validateEditorProtocolConfiguration } from './editor-candidate-protocol.mjs';
 import { installTimingCollector } from './timing-overlay.mjs';
 import { E3_SHADOW, setup, oracleCapture, compareOracle } from './editor-scenario.mjs';
 import { captureProfileScripts } from './candidate-profile-sources.mjs';
@@ -15,13 +16,15 @@ import { installProfileObserver, warmNativeFrames, profileSnapshot, validateProf
 const args = {};
 for (const item of process.argv.slice(4)) {
  const at = item.indexOf('='), key = item.slice(0, at), value = item.slice(at + 1);
- assert(at > 0 && value && ['mode', 'candidateRoot', 'candidateSha'].includes(key) && !Object.hasOwn(args, key), 'Unknown, duplicate or empty argument');
+ assert(at > 0 && value && ['mode', 'candidateRoot', 'candidateSha', 'protocol'].includes(key) && !Object.hasOwn(args, key), 'Unknown, duplicate or empty argument');
  args[key] = value;
 }
-assert(process.argv[2] && process.argv[3] && args.candidateRoot, 'Usage: node scripts/apps/candidate-profile.mjs APP_ROOT FRESH_OUT mode=smoke|full candidateRoot=CHECKOUT [candidateSha=FULL_SHA]');
+assert(process.argv[2] && process.argv[3] && args.candidateRoot, 'Usage: node scripts/apps/candidate-profile.mjs APP_ROOT FRESH_OUT mode=smoke|full candidateRoot=CHECKOUT [candidateSha=FULL_SHA] [protocol=COMMITTED_JSON]');
 const mode = args.mode ?? 'smoke'; assert(['smoke', 'full'].includes(mode));
-const candidateSha = args.candidateSha ?? '6990fd92f61a031c8c2ba7a8282cfb63684e6dfb';
-assert.equal(candidateSha, '6990fd92f61a031c8c2ba7a8282cfb63684e6dfb', 'Freeze a new protocol before changing candidate');
+const resolvedProtocol = await resolveEditorProtocol(path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..'), {
+ kind: 'profile', protocolPath: args.protocol, requestedSha: args.candidateSha, output: process.argv[3]
+});
+const candidateSha = resolvedProtocol.candidateSha;
 const appRoot = await fs.realpath(path.resolve(process.argv[2])), candidateRoot = await fs.realpath(path.resolve(args.candidateRoot));
 const out = path.resolve(process.argv[3]), toolRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 await fs.mkdir(path.dirname(out), { recursive: true }); await fs.mkdir(out, { recursive: false });
@@ -33,9 +36,10 @@ const config = { mode, repeats: mode === 'full' ? 3 : 1, warmupFrames: mode === 
  seconds: mode === 'full' ? 12 : 2, samplingIntervalUs: 100, prePostObservationSeconds: 2,
  scenario: E3_SHADOW, pageDpr: 1, rendererDpr: 1, viewport: { width: 1280, height: 720 }, isolated: true,
  timingOverlays: false, boundaryWrappers: false, gpuQueries: false, debuggerDuringSampling: false };
+validateEditorProtocolConfiguration(resolvedProtocol, 'profile', config);
 const engines = ['original', 'prepared-js', 'prepared-wasm'];
 const manifest = { status: 'preparing', kind: mode === 'full' ? 'native-candidate-attribution-only' : 'profile-tooling-smoke-only',
- qualification: false, startedAt: new Date().toISOString(), config, candidateSha,
+ qualification: false, startedAt: new Date().toISOString(), config, candidateSha, protocol: resolvedProtocol.evidence,
  orders: Array.from({ length: config.repeats }, (_, round) => engines.map((_, i) => engines[(i + round) % engines.length])),
  scope: 'CPU sampling only. Not primary CPU quantiles, GPU timing, FPS, or stable speedup evidence.',
  overhead: 'Requested 100us interval and passive snapshot/signals observers have uncalibrated CPU overhead. Before/after cadence (including a 120Hz ceiling) cannot calibrate CPU overhead. Preserve observed gaps; do not subtract overhead into product timings.',
@@ -153,7 +157,7 @@ async function profileRun(engine, round) {
   if (r) await r.close(); current = null; await persist();
  }
 }
-const toolFiles = ['scripts/apps/candidate-profile.mjs', 'scripts/apps/candidate-profile-session.mjs', 'scripts/apps/candidate-profile-sources.mjs', 'scripts/apps/candidate-profile-analysis.mjs', 'scripts/apps/editor-scenario.mjs', 'scripts/apps/candidate-browser.mjs', 'scripts/apps/browser.mjs', 'scripts/apps/timing-overlay.mjs', 'scripts/apps/resources.json', 'scripts/runner-environment.mjs', 'package-lock.json'];
+const toolFiles = [...resolvedProtocol.files, 'scripts/apps/editor-candidate-protocol.mjs', 'scripts/apps/candidate-profile.mjs', 'scripts/apps/candidate-profile-session.mjs', 'scripts/apps/candidate-profile-sources.mjs', 'scripts/apps/candidate-profile-analysis.mjs', 'scripts/apps/editor-scenario.mjs', 'scripts/apps/candidate-browser.mjs', 'scripts/apps/browser.mjs', 'scripts/apps/timing-overlay.mjs', 'scripts/apps/resources.json', 'scripts/runner-environment.mjs', 'package-lock.json'];
 try {
  manifest.sourceBefore = pins(); manifest.toolHashes = Object.fromEntries(await Promise.all(toolFiles.map(async file => [file, hash(await fs.readFile(path.join(toolRoot, file)))])));
  const eligibilityBytes = await fs.readFile(path.join(candidateRoot, 'packages/rthree/facade-state.js'));
