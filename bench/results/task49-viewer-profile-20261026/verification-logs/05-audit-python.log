@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<tooling-checkout>/bench/results/task49-viewer-profile-20261026/verify.py", line 364, in <module>
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--archive',type=Path,default=Path(__file__).resolve().parent);parser.add_argument('--out',type=Path);args=parser.parse_args();result=verify(args.archive)
+                                                                                                                                                                                                                  ~~~~~~^^^^^^^^^^^^^^
+  File "<tooling-checkout>/bench/results/task49-viewer-profile-20261026/verify.py", line 352, in verify
+    audit=audit_profile(A,label,run,file)
+  File "<tooling-checkout>/bench/results/task49-viewer-profile-20261026/verify.py", line 243, in audit_profile
+    bound,byurl,scripts,source_report=source_audit(A,run);maps=source_maps(A,root,run,byurl,scripts)
+                                                               ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<tooling-checkout>/bench/results/task49-viewer-profile-20261026/verify.py", line 146, in source_maps
+    parsed=script.get('parsed',{});pair=byurl.get(parsed.get('url'))
+                                                  ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
