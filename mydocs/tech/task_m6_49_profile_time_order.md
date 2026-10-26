@@ -55,7 +55,7 @@ Counts and shares of sampled observations can identify call stacks for investiga
 - The cause of each negative interval, including whether it involved deoptimization, remains unproven.
 - A sorted-timestamp diagnostic is not implemented or substituted for the failed method. It would require a separate protocol/version, new output directory, retained raw hashes, input integrity checks, a bijective paired permutation, deterministic tie handling, and explicit endpoint/interval ownership rules.
 - A future diagnostic must distinguish the complete official DevTools model from a method that adopts only its paired sorting. The latter must not claim official-model equivalence. Any missing-sample replacement, native-node folding, inferred terminal duration, or omitted boundary gap must be disclosed.
-- Neither counts-only analysis nor retrospective sorted reanalysis qualifies candidate adoption or replaces the separate primary measurement gates. Migration profiling collection is deferred while the selected secondary analysis is prepared.
+- Neither counts-only analysis nor retrospective sorted reanalysis qualifies candidate adoption or replaces the separate primary measurement gates. The selected counts-only tool and independent source/count audits subsequently completed. The separate migration capture then retained six passing oracles, one completed original-r176 profile and an external-r176 raw profile whose post-window activity gate failed. Its comparison remains incomplete; counts-only attributes the original profile only.
 
 ## Implementation impact
 
@@ -72,3 +72,7 @@ Key decoded SHA-256 values:
 - Exact V8 ordering test: `a74f367793f8cff9de8d1367d6ffb91558cc764d3087c46d4fb60647bdcb0059`
 
 The existing raw validity inventory is `work/task49-viewer-bistro-profile-validity-001/audit.json`. This source review executed no browser run, build, upstream test, sample transformation, or new performance analysis.
+
+## Later independent primary screen
+
+The [prospective Bistro callback protocol](../plans/task_m6_49_bistro_decision.md) declares a separate elapsed callback-time measurement. It does not use CDP sample intervals, convert counts to milliseconds, repair these failures or qualify the incomplete migration comparison. Native-versus-timing-overlay correctness, A/A and complete raw callback groups are independent required gates. Its final results belong in the application report, not in this source-method investigation.
