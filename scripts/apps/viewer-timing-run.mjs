@@ -7,7 +7,7 @@ import { execFileSync } from 'node:child_process';
 import { chromium } from 'playwright';
 import { openViewerRun } from './viewer-browser.mjs';
 import { VIEWER_PIN, hash } from './viewer-adapter.mjs';
-import { VIEWER_GROUPS, resolveViewerProtocol, loadViewerContents, publicViewerContent, validateViewerZipCase, verifyViewerZipInputs } from './viewer-timing-protocol.mjs';
+import { VIEWER_GROUPS, resolveViewerProtocol, loadViewerContents, publicViewerContent, validateViewerContentCapturePolicy, verifyViewerZipInputs } from './viewer-timing-protocol.mjs';
 import { installViewerTimingCollector } from './viewer-timing-collector.mjs';
 import { installViewerProfileObserver, setupViewerCapture, fixedViewerOracle, compareViewerSnapshots } from './viewer-timing-session.mjs';
 
@@ -30,9 +30,7 @@ export async function createViewerCapture(kind, argv) {
  for (const [key, value] of [['timing', options.timingPrepared], ['timingOriginal', options.timingOriginal]]) if (value) preparedRoots[key] = await fs.realpath(path.resolve(value));
  const contents = await loadViewerContents(apps, options.contents, protocol.evidence?.protocol.assets);
  for (const scenario of protocol.cases) assert(contents.some(asset => asset.id === scenario.asset), 'Missing case content: ' + scenario.asset);
- const zipContents = contents.filter(asset => asset.zipPrepared), strictContent = ownedProcessPerRun || zipContents.length > 0;
- if (zipContents.length) { assert.equal(kind, 'profile', 'ZIP input is currently diagnostic profiling only'); assert.equal(networkDiagnostic, 'playwright', 'ZIP input preserves the original mirror policy'); }
- for (const scenario of protocol.cases) { const asset = contents.find(asset => asset.id === scenario.asset); if (asset.zipPrepared) validateViewerZipCase(scenario, asset); else if (asset.expected) assert(ownedProcessPerRun, 'Mounted authored content requires its prospective strict transport/readiness profile path'); }
+ const { zipContents, strictContent } = validateViewerContentCapturePolicy(contents, protocol.cases, { kind, group, networkDiagnostic, protocolEvidence: protocol.evidence });
  await fs.mkdir(out, { recursive: false });
  const aliases = [[apps, '<apps>'], [runtimeRoot, '<runtime>'], [toolRoot, '<tooling>'], ...Object.entries(preparedRoots).map(([name, root]) => [root, '<prepared-' + name + '>']), ...contents.map(asset => [asset.root, '<content-' + asset.id + '>']), ...zipContents.map(asset => [asset.zipPrepared, '<zip-preparation-' + asset.id + '>']), [out, '<output>'], [os.homedir(), '<home>']];
  const redact = value => aliases.reduce((text, [from, to]) => text.split(from).join(to), String(value));

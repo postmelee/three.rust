@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { VIEWER_PIN } from '../scripts/apps/viewer-adapter.mjs';
-import { VIEWER_CAPTURE_SETTINGS, validateViewerProtocol, validateViewerCase, validateViewerZipInput, bindViewerZipInput, publicViewerContent, validateViewerZipCase } from '../scripts/apps/viewer-timing-protocol.mjs';
+import { VIEWER_CAPTURE_SETTINGS, validateViewerProtocol, validateViewerCase, validateViewerZipInput, bindViewerZipInput, publicViewerContent, validateViewerZipCase, validateViewerContentCapturePolicy } from '../scripts/apps/viewer-timing-protocol.mjs';
 
 function fixture() {
  return { schema: 1, contract: 'native-viewer-callbacks-v1', viewerSha: VIEWER_PIN, runtimeSha: 'a'.repeat(40), adoptionPolicy: 'adoption-v1', settings: structuredClone(VIEWER_CAPTURE_SETTINGS),
@@ -35,7 +35,7 @@ test('migration paths and instrumented bundled-r176 evidence remain separate fro
 });
 
 const zipFixture = () => ({ kind: 'native-file-input ZIP', preparationManifestSha256: 'a'.repeat(64), zip: { file: 'beautiful-game.zip', bytes: 100, sha256: 'b'.repeat(64) }, assetBytesChanged: false });
-test('native ZIP protocol pins exact input and forbids private paths, guard substitution and primary timing expansion', () => {
+test('native ZIP profile pins exact input and cannot silently expand into primary timing', () => {
  const value = fixture(); value.cases[0] = { ...value.cases[0], id: 'beautiful-game-static', asset: 'beautiful-game', grid: false };
  value.assets[0] = { ...value.assets[0], id: 'beautiful-game', input: zipFixture() };
  const profile = { ...options, kind: 'profile', output: '/tmp/task49-viewer-profile-engine-001' };
@@ -45,6 +45,38 @@ test('native ZIP protocol pins exact input and forbids private paths, guard subs
  }
  assert.throws(() => validateViewerProtocol(value, options));
  for (const mutate of [v => v.root = '/private', v => v.zip.bytes = 0, v => v.zip.sha256 = 'bad', v => v.assetBytesChanged = true]) { const bad = zipFixture(); mutate(bad); assert.throws(() => validateViewerZipInput(bad)); }
+});
+function bistroTimingProtocol() {
+ const value = fixture(), clip = '1. Lantern_Wind_21|Take 001|BaseLayer';
+ value.cases = [{ id: 'bistro-native-first-clip', asset: 'bistro', playback: 'clip', clip, clipDuration: 130.7916717529297, clipTargetCount: 1, nativeDefaultClip: true, pixelRatio: 1, grid: false,
+  guiLoops: [{ path: 'root/Lighting', controllers: ['punctualLights'] }, { path: 'root/Animation', controllers: [clip] }] }];
+ value.assets = [{ ...value.assets[0], id: 'bistro', input: { ...zipFixture(), zip: { ...zipFixture().zip, file: 'bistro.zip' } } }];
+ value.transport = { network: 'playwright', strictContent: true, browser: 'one-process-sequential-fresh-contexts', input: 'native-file-input ZIP' };
+ return value;
+}
+test('prospective native ZIP timing requires frozen native/timed bundles, strict input transport and a separate output', () => {
+ const value = bistroTimingProtocol(); assert.equal(validateViewerProtocol(value, options), value);
+ const migration = { ...options, group: 'migration', output: '/tmp/task49-viewer-timing-migration-001' };
+ assert.equal(validateViewerProtocol(value, migration), value);
+ for (const mutate of [v => delete v.preparedManifests.timing, v => delete v.transport, v => { v.transport.strictContent = false; }, v => { v.transport.browser = 'other'; }, v => { v.transport.input = 'HTTP'; }, v => { v.outputPrefixes.profile.engine = v.outputPrefixes.timing.engine; }]) {
+  const bad = structuredClone(value); mutate(bad); assert.throws(() => validateViewerProtocol(bad, options));
+ }
+ const missingOriginal = structuredClone(value); delete missingOriginal.preparedManifests.timingOriginal; assert.throws(() => validateViewerProtocol(missingOriginal, migration));
+});
+test('native ZIP timing including smoke requires committed input evidence while profile and Robot policies stay distinct', () => {
+ const protocol = bistroTimingProtocol(), asset = { ...protocol.assets[0], zipPrepared: '/private/zip', expected: { animations: [{ nativeName: protocol.cases[0].clip }] } };
+ const capture = { kind: 'timing', group: 'engine', networkDiagnostic: 'playwright', protocolEvidence: { protocol } };
+ const result = validateViewerContentCapturePolicy([asset], protocol.cases, capture);
+ assert.equal(result.strictContent, true); assert.deepEqual(result.zipContents, [asset]);
+ assert.throws(() => validateViewerContentCapturePolicy([asset], protocol.cases, { ...capture, protocolEvidence: null }), /committed prospective protocol/);
+ const changed = structuredClone(asset); changed.input.zip.sha256 = 'f'.repeat(64);
+ assert.throws(() => validateViewerContentCapturePolicy([changed], protocol.cases, capture), /committed input evidence/);
+ assert.throws(() => validateViewerContentCapturePolicy([asset], protocol.cases, { ...capture, networkDiagnostic: 'proxy-cdp-remote' }));
+ assert.equal(validateViewerContentCapturePolicy([asset], protocol.cases, { ...capture, kind: 'profile', protocolEvidence: null }).strictContent, true);
+ const robot = fixture(); assert.equal(validateViewerContentCapturePolicy(robot.assets, robot.cases, { ...capture, protocolEvidence: null }).strictContent, false);
+ const mounted = { ...asset }; delete mounted.zipPrepared; delete mounted.input;
+ assert.throws(() => validateViewerContentCapturePolicy([mounted], protocol.cases, capture), /Mounted authored content/);
+ assert.equal(validateViewerContentCapturePolicy([mounted], protocol.cases, { ...capture, kind: 'profile', networkDiagnostic: 'proxy-cdp-remote', protocolEvidence: null }).strictContent, true);
 });
 test('verified ZIP binding rejects changed original entries and pins; public projection removes preparation paths', () => {
  const asset = { id: 'beautiful-game', entry: 'scene.gltf', files: [{ file: 'scene.gltf', bytes: 2, sha256: 'c'.repeat(64) }], root: '/private/content', zipPrepared: '/private/zip', zipPreparation: { zip: '/private/zip/model.zip' }, filepath: '/private/descriptor-only' };

@@ -5,19 +5,21 @@ import { installViewerTimingCollector } from '../scripts/apps/viewer-timing-coll
 import { analyzeViewerTiming, summarizeViewerTiming } from '../scripts/apps/viewer-timing-analysis.mjs';
 import { instrumentViewerSource } from '../scripts/apps/viewer-timing-overlay.mjs';
 
-function fixture({ playback = 'walking', noMixer = false } = {}) {
- const events = {}, clip = { name: '2. Walking', duration: 1 }, action = { time: 0, paused: false, enabled: true, getClip: () => clip, isRunning: () => true, getEffectiveTimeScale: () => 1 };
+function fixture({ playback = 'walking', noMixer = false, grid = true } = {}) {
+ const events = {}, clip = { name: playback === 'clip' ? '1. Authored Wind' : '2. Walking', duration: 1 }, action = { time: 0, paused: false, enabled: true, getClip: () => clip, isRunning: () => true, getEffectiveTimeScale: () => 1 };
  const renderer = () => ({ domElement: { width: 100, height: 50, clientWidth: 100, clientHeight: 50 }, getPixelRatio: () => 1, getContext: () => ({ getContextAttributes: () => ({ antialias: true }) }), info: { render: { frame: 0, calls: 1, triangles: 1, lines: 1, points: 0 } }, shadowMap: { enabled: false, type: 1 }, toneMapping: 1, toneMappingExposure: 1, outputColorSpace: 'srgb' });
- const first = [{ property: 'camera' }], second = [{ property: clip.name }];
- const viewer = { gui: { __listening: first, __folders: { animation: { __listening: second, __folders: {} } } }, clips: [clip], mixer: noMixer ? null : { time: 0, timeScale: 1, existingAction: () => action }, renderer: renderer(), axesRenderer: renderer(), controls: { enabled: true, autoRotate: false },
-  state: { grid: true, environment: 'Neutral', background: false, playbackSpeed: 1, wireframe: false, skeleton: false, autoRotate: false, camera: 'default', actionStates: playback === 'walking' ? { [clip.name]: true } : { [clip.name]: false } } };
+ const first = [{ property: playback === 'clip' ? 'punctualLights' : 'camera' }], second = [{ property: clip.name }];
+ const gui = playback === 'clip' ? { __listening: [], __folders: { Lighting: { __listening: first, __folders: {} }, Animation: { __listening: second, __folders: {} } } } : { __listening: first, __folders: { animation: { __listening: second, __folders: {} } } };
+ const viewer = { gui, clips: [clip], mixer: noMixer ? null : { time: 0, timeScale: 1, existingAction: () => action }, renderer: renderer(), axesRenderer: renderer(), controls: { enabled: true, autoRotate: false },
+  state: { grid, environment: 'Neutral', background: false, playbackSpeed: 1, wireframe: false, skeleton: false, autoRotate: false, camera: 'default', actionStates: { [clip.name]: playback !== 'static' } } };
  let now = 0;
- const context = vm.createContext({ performance: { now: () => ++now }, crossOriginIsolated: true, devicePixelRatio: 1, THREE: { REVISION: '186' }, getComputedStyle: () => ({ display: 'block', visibility: 'visible' }), addEventListener: (name, callback) => { events[name] = callback; }, document: { visibilityState: 'visible', hasFocus: () => true, addEventListener: (name, callback) => { events[name] = callback; } } });
+ const forbiddenIO = () => { throw Error('No fetch or hashing belongs in warmup/sample callbacks'); };
+ const context = vm.createContext({ fetch: forbiddenIO, crypto: { subtle: { digest: forbiddenIO } }, performance: { now: () => ++now }, crossOriginIsolated: true, devicePixelRatio: 1, THREE: { REVISION: '186' }, getComputedStyle: () => ({ display: 'block', visibility: 'visible' }), addEventListener: (name, callback) => { events[name] = callback; }, document: { visibilityState: 'visible', hasFocus: () => true, addEventListener: (name, callback) => { events[name] = callback; } } });
  vm.runInContext(`(${installViewerTimingCollector.toString()})()`, context);
- const collector = context.__rthreeViewerTiming, scenario = { id: 'fixture', playback, grid: true, pixelRatio: 1 };
+ const collector = context.__rthreeViewerTiming, scenario = { id: 'fixture', playback, grid, pixelRatio: 1, ...(playback === 'clip' ? { clip: clip.name, nativeDefaultClip: true } : {}) };
  collector.attach(viewer, scenario);
  const row = (kind, raf, { start = raf + kind * 2, end = start + 1 } = {}) => kind === 0 ? collector.recordViewer(viewer, raf, start, end) : collector.recordGUI(kind === 1 ? first : second, raf, start, end);
- const group = (raf, order = [0, 1, 2]) => { if (viewer.mixer) viewer.mixer.time = raf / 1000; action.time = raf / 1000 % 1; viewer.renderer.info.render.frame++; viewer.axesRenderer.info.render.frame++; for (const kind of order) row(kind, raf); };
+ const group = (raf, order = [0, 1, 2]) => { if (viewer.mixer) viewer.mixer.time = raf / 1000; action.time = raf / 1000 % 1; viewer.renderer.info.render.frame++; if (grid) viewer.axesRenderer.info.render.frame++; for (const kind of order) row(kind, raf); };
  return { viewer, action, collector, events, scenario, row, group, raw: () => JSON.parse(JSON.stringify(collector.export())), first, second };
 }
 test('Viewer and every native GUI loop form a disjoint complete callback group with partial arming retained', async () => {
@@ -28,6 +30,20 @@ test('Viewer and every native GUI loop form a disjoint complete callback group w
  assert.equal(raw.after.renderers.main.frame - raw.before.renderers.main.frame, 2);
  const analysis = analyzeViewerTiming(raw, f.scenario, { minPositiveDeltaMs: .005 }, { mode: 'smoke', blockSize: 1 });
  assert.equal(analysis.cpu.p50, 3); assert.equal(analysis.animateCpu.p50, 1); assert.equal(analysis.guiCpu.p50, 2); assert.equal(analysis.quantizationFloorMs, .03); assert.equal(analysis.rafIntervals.p50, 10);
+});
+test('authored first-clip grid-off timing preserves K3 and phase through warmup/sample without fetch or hashing', async () => {
+ const f = fixture({ playback: 'clip', grid: false });
+ f.scenario.guiLoops = [{ path: 'root/Lighting', controllers: ['punctualLights'] }, { path: 'root/Animation', controllers: ['1. Authored Wind'] }];
+ const done = f.collector.run({ warmup: 1, samples: 2 });
+ for (const raf of [10, 20, 30, 40]) f.group(raf);
+ assert.equal((await done).status, 'captured');
+ const raw = f.raw(), result = analyzeViewerTiming(raw, f.scenario, { minPositiveDeltaMs: .005 }, { mode: 'smoke', blockSize: 1 });
+ assert.equal(result.callbackCount, 3); assert.equal(result.samples, 2); assert.equal(result.quantizationFloorMs, .03);
+ assert.equal(raw.after.renderers.main.frame - raw.before.renderers.main.frame, 2); assert.equal(raw.after.renderers.axes.frame - raw.before.renderers.axes.frame, 0);
+ assert.equal(raw.before.action.name, '1. Authored Wind'); assert.equal(raw.after.action.name, raw.before.action.name);
+ assert.equal(raw.before.action.running, true); assert.equal(raw.after.action.running, true);
+ const incorrect = structuredClone(raw); incorrect.rows[27 + 8] = 1;
+ assert.throws(() => analyzeViewerTiming(incorrect, f.scenario, { minPositiveDeltaMs: .005 }, { mode: 'smoke', blockSize: 1 }));
 });
 test('static content without a mixer retains all rendering and GUI work without fabricated phase', async () => {
  const f = fixture({ playback: 'static', noMixer: true }), done = f.collector.run({ warmup: 1, samples: 2 });

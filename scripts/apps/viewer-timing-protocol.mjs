@@ -55,13 +55,43 @@ export function validateViewerProtocol(value, { kind, mode, output, runtimeSha, 
   assert(asset.source && (typeof asset.source === 'string' || typeof asset.source === 'object' && asset.source.pin && asset.source.repository));
   assert(typeof (asset.license ?? asset.source?.license) === 'string' && (asset.license ?? asset.source?.license));
   for (const key of ['root', 'zipPrepared', 'zipPreparation']) assert(!Object.hasOwn(asset, key), 'Public protocol assets must exclude local input paths: ' + key);
-  if (asset.input) { assert.equal(kind, 'profile', 'Native ZIP is a diagnostic profile input, not a new primary timing protocol'); validateViewerZipInput(asset.input); assert.equal(value.transport?.network ?? 'playwright', 'playwright', 'Native ZIP preserves the original Playwright mirror policy'); }
+  if (asset.input) {
+   assert(['profile', 'timing'].includes(kind)); validateViewerZipInput(asset.input);
+   assert.equal(value.transport?.network ?? 'playwright', 'playwright', 'Native ZIP preserves the original Playwright mirror policy');
+   if (kind === 'timing') assertViewerZipTimingProtocol(value, group);
+  }
  }
  for (const item of value.cases) { const asset = value.assets.find(asset => asset.id === item.asset); assert(asset, 'Case asset missing from protocol'); if (asset.input) validateViewerZipCase(item); }
  assert.match(value.outputPrefixes?.[kind]?.[group] ?? '', /^task[0-9]+-viewer-[a-z0-9-]+-$/);
  assert(path.basename(path.resolve(output)).startsWith(value.outputPrefixes[kind][group]), 'Use the frozen dedicated Viewer output prefix');
  assert(['full', 'smoke'].includes(mode));
  return value;
+}
+function assertViewerZipTimingProtocol(value, group) {
+ assert(value, 'Native ZIP timing requires a separately committed prospective protocol, including smoke');
+ for (const key of ['native', 'timing', ...(group === 'migration' ? ['timingOriginal'] : [])]) assert.match(value.preparedManifests?.[key] ?? '', /^[0-9a-f]{64}$/, 'Pin every native/timing bundle before ZIP timing');
+ assert.equal(value.transport?.network, 'playwright'); assert.equal(value.transport?.strictContent, true);
+ assert.equal(value.transport?.input, 'native-file-input ZIP'); assert.equal(value.transport?.browser, 'one-process-sequential-fresh-contexts');
+ assert.match(value.outputPrefixes?.timing?.[group] ?? '', /^task[0-9]+-viewer-[a-z0-9-]+-$/);
+ assert.notEqual(value.outputPrefixes.timing[group], value.outputPrefixes.profile?.[group], 'Timing and profile outputs must remain distinct');
+}
+export function validateViewerContentCapturePolicy(contents, cases, { kind, group, networkDiagnostic, protocolEvidence }) {
+ assert(['profile', 'timing'].includes(kind)); assert(['playwright', 'proxy-cdp-remote'].includes(networkDiagnostic));
+ const zipContents = contents.filter(asset => asset.zipPrepared), ownedProcessPerRun = networkDiagnostic !== 'playwright';
+ if (ownedProcessPerRun) assert.equal(kind, 'profile', 'Alternate content transport remains profile-only');
+ if (zipContents.length) {
+  assert.equal(networkDiagnostic, 'playwright', 'ZIP input preserves the original mirror policy');
+  if (kind === 'timing') {
+   assertViewerZipTimingProtocol(protocolEvidence?.protocol, group);
+   for (const asset of zipContents) assert.deepEqual(asset.input, protocolEvidence.protocol.assets.find(item => item.id === asset.id)?.input, 'Timing ZIP must match its committed input evidence');
+  }
+ }
+ for (const scenario of cases) {
+  const asset = contents.find(item => item.id === scenario.asset); assert(asset, 'Missing case content: ' + scenario.asset);
+  if (asset.zipPrepared) validateViewerZipCase(scenario, asset);
+  else if (asset.expected) assert(ownedProcessPerRun, 'Mounted authored content requires its prospective strict transport/readiness profile path');
+ }
+ return { zipContents, strictContent: ownedProcessPerRun || zipContents.length > 0 };
 }
 export async function resolveViewerProtocol(toolRoot, options) {
  const { kind, mode, protocolPath, runtimeSha, group, casesPath } = options;
