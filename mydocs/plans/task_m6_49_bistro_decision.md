@@ -1,0 +1,33 @@
+# Task #49: prospective Bistro complete-callback screen
+
+This additional, finite primary experiment is declared before its first timing smoke/full run. It follows the approved intact-content investigation. The [Robot decision appendix](task_m6_49_viewer_decision.md) and adoption-v1 budgets remain unchanged; this document specifies the additional authored-content workload and its actual three-callback boundary. It does not repair prior profiles or pool separate sessions.
+
+## Inputs and comparison
+
+Keep Viewer `b5ee5dafe27f953ae1b55f42b5fa3697fef08683`, experimental runtime `85e2c5d500edb0b92ea4ecb997087fded3fed45b`, and the intact Bistro Exterior native ZIP. Source `qian-o/GLTF-Assets@816a1d6533c55787b3fabc9b75660c0d0c57ebc6`, all 407 referenced original files, KTX2/transmission/specular materials, source credits/license, hierarchy and thirteen clips remain. Use its shipped first-clip autoplay (`1. Lantern_Wind_21|Take 001|BaseLayer`, 130.7916717529297 seconds, three TRS tracks on one target), grid off, renderer/page DPR1 and 1280×720 CSS viewport. No play-all, model replication, material removal or app/GPU-backend replacement is introduced.
+
+The dedicated protocol freezes asset/ZIP/preparation hashes and ordered GUI lists. Use pure-r186-A / matched-JS / Wasm / pure-r186-B, the existing four rotated Williams orders and pure-r186 pre/post bookends: **18 full runs**, each with **600 warmup and 1200 measured groups**, blocks of 300. The eight balanced pure-r186 runs define performance contrasts; all ten original runs enter A/A. Smoke uses one balanced round plus bookends, 10 warmup/30 measured groups, and is only a tooling check. It cannot supply headroom or performance results. A failed smoke must be diagnosed before a new named attempt; failures remain.
+
+This is the same-version engine matrix only. The separate Bistro migration profile stopped after one completed original and an external raw profile whose post-window activity gate failed. It remains incomplete. No Bistro primary version-migration comparison is planned here, and no migration cost is subtracted from candidate costs.
+
+## Boundary and gates
+
+**K=3** comprises the entire native Viewer.animate body and two native dat.gui.updateDisplays bodies: Lighting (one punctualLights controller) and Animation (thirteen authored clip controllers). Their callback identities/order/controller membership must be exact. Do not reuse Robot's K=4 floor; that scene has an additional native Morph Targets loop. Native Viewer controls, stats, mixer, transmission rendering and GUI work remain. Timer reads bracket disjoint bodies; collector bookkeeping is excluded. Covered CPU is elapsed performance.now callback duration, not thread CPU cycles, GPU completion, every browser task or FPS. Driver stalls can contribute to elapsed submission time. Instrumentation overhead is uncalibrated.
+
+Require all native-versus-timing and same-version fixed image/numeric/material/core oracles before samples. Validate actual Metal GPU, AC, foreground/visibility, immutable sources, unchanged ZIP/entries, native source readiness, both renderer identities, ordered GUI lists, fixed quality, first-clip phase, frame/pass counters and strict request/console errors including close-tail events. No build/profile/screenshot/GPU query/heap/source fetch or ZIP hashing occurs in warmup/measured callback windows. Source and ZIP checks happen outside those windows. Preserve raw arming, warmup, failed and interrupted rows; no selective sample removal or replacement for a favorable result.
+
+Use one headed Chrome process with sequential fresh contexts/pages. The existing first-timestamp arming policy remains. Natural animation is wall-clock driven; frames/poses are not synchronized between routes. Require exactly 1200 complete three-callback groups, one main frame per group, zero axes rendering and expected phase advance. Inputs/quality/visibility/activity changes invalidate the affected run. A failure keeps the matrix incomplete; no performance pass is available from a surviving subset.
+
+## Prospective stability and decision
+
+For the original baseline, let m be the median p50 of all ten original runs and c the largest observed minimum positive clock increment. Use **T=max(0.05*m, 6*c)** milliseconds (2*K*c). Each original run p50 must lie within T of m; every 300-group block p50 must lie within T of its own run p50. Independently report matched-JS and Wasm four-repeat/block screens with their own median and largest clock increment. These repeats do not substitute for dedicated JS A/A/bookends.
+
+Report medians of balanced per-run p50/p95/p99, absolute and relative contrasts, ranges and rAF/callback-start intervals. Never pool frames as independent trials. Report ≥5ms original callback p50 as observed covered-boundary headroom only, with A/A status and the elapsed-time limitation above. Counts-only profiles cannot establish this threshold or CPU-versus-GPU limitation.
+
+Apply the existing budgets unchanged: G1 requires both p50 and p95 savings ≥max(20% of pure-r186, 1ms); G2 requires both savings ≥max(10% of matched-JS, 0.5ms), above its stability/clock evidence. A promising G2 result still requires a separately predeclared dedicated JS A/A/bookend calibration before recommending Rust. G5 CPU p50/p95/p99 and interval p95/p99 regressions must stay within max(5% of the relevant baseline quantile, 0.2ms). Noise is assessed separately and is not added to these product allowances.
+
+Failed original A/A leaves exact effect sizes inconclusive. Valid stable results that miss the useful savings threshold decline this candidate for this workload; missing or invalid evidence does not pass. Existing Robot small/static/high-raster controls remain separate historical experiments, not contemporaneous controls or pooled estimates. Do not advance overall product adoption from a single content result.
+
+The runtime specialization has been excluded from the proposed final integration because its benefit was unproven; this experiment still uses immutable runtime85 consistently with prior app data. A favorable result would require reviewing that disposition, not automatically assigning its benefit to updateSingle. The final runtime has a different SHA and receives independent correctness checks, not inherited speed claims.
+
+Still unperformed: CPU/GPU-time separation, startup/transfer/memory budgets, long-duration interactions, independent heavy animation content, stable different-day/device/browser comparisons and broad API compatibility. The exact failed weighted profiles, counts-only diagnosis, Editor texture failure and Chess image instability remain separate evidence regardless of this outcome.
