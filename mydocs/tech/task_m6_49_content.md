@@ -68,3 +68,7 @@ No CPU classification, app correctness pass, timing benefit, FPS improvement, re
 ## Subsequent acquisition observation
 
 After this read-only shortlist, the complete unchanged Tokyo GLB and Bistro Exterior resources were downloaded into fresh local output directories. Bistro retained 407 payloads / 546,272,742 bytes; every ordinary Git blob and the LFS buffer hash matched the pinned source metadata. The fetch manifest is in [the preparation archive](../../bench/results/task49-content-preparation-20261026/README.md). Original payloads remain local, outside the repository; pinned URLs/hashes and license notices permit reproduction. This does not establish import correctness or CPU headroom. Initial notice lookup/name/encoding failures were preserved without changing source bytes.
+
+## Subsequent structural validation decision
+
+The [validation audit](task_m6_49_asset_validation.md) found 2,195 real source conformance errors in Tokyo. Preserve it as an upstream native-compatibility stress case, not a clean qualification asset. Bistro has no detected structural errors but KTX2 remains outside validator coverage. [A Beautiful Game](task_m6_49_chess_preparation.md) was also downloaded and has no detected structural errors, with tangent/target warnings retained. None has yet passed app import or supplied measured CPU headroom.

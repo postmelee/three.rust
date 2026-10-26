@@ -1,0 +1,29 @@
+{
+  "source": "Unchanged local validation reports; no metadata normalization required",
+  "files": [
+    {
+      "file": "task49-bistro-validator-001.json.gz",
+      "originalBytes": 176698,
+      "originalSHA256": "4fb31ca04b4ab2057c8b3fd69b77f311ee3383687656634969d3dd5e9c479d7d",
+      "storedSHA256": "bc6130ac0a90498c3cfa41c49a8ab82b58eb35afa2a80fd0753b8250ec911a93"
+    },
+    {
+      "file": "task49-tokyo-validator-001.json.gz",
+      "originalBytes": 710168,
+      "originalSHA256": "7596792dda331a11e78f88c47f1eaa50c60d6d71830fccde5332d70b003403ff",
+      "storedSHA256": "5d9c94fe864d510432494850a5dba0a08dc62ac4de60682ffb333a93d6705803"
+    },
+    {
+      "file": "task49-beautiful-game-validator-001.json.gz",
+      "originalBytes": 27768,
+      "originalSHA256": "3c56829771691aa04f7abe7a2ce0f1fc9f2704202068d3ae871aa669adf47321",
+      "storedSHA256": "8cf495ff26d48a1996f520419e1971102a9289364969405edfa8f9ef260f6e9f"
+    },
+    {
+      "file": "task49-tokyo-animation-structural-audit.json.gz",
+      "originalBytes": 50158,
+      "originalSHA256": "985d3ee1c6ff9b4d295900cc4782eef8681eb266408688b4576240842a28dd81",
+      "storedSHA256": "f0458927dd8b749a4e0091f07670444ee979d3d33ae43d27745d11b9975431aa"
+    }
+  ]
+}
