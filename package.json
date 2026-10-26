@@ -16,7 +16,7 @@
     "bench:diagnostic": "node bench/run.mjs repeats=1 warmup=30 samples=60 engines=original,js,wasm,packed-js timings=true gpu=true out=work/bench-diagnostic",
     "bench:startup": "node bench/startup.mjs",
     "bench:analyze": "node bench/summarize.mjs bench/results/m2-full && node bench/analyze.mjs bench/results/m2-full",
-    "test:infra": "node --test tests/infra.mjs tests/fox-analysis.mjs tests/server-port.mjs tests/profile-sources.mjs tests/editor-timing.mjs tests/editor-timing-phase.mjs tests/candidate-evidence.mjs",
+    "test:infra": "node --test tests/infra.mjs tests/fox-analysis.mjs tests/server-port.mjs tests/profile-sources.mjs tests/editor-timing.mjs tests/editor-timing-phase.mjs tests/candidate-evidence.mjs tests/candidate-profile-analysis.mjs tests/candidate-profile-session.mjs tests/candidate-profile-sources.mjs",
     "test:gpu-guard": "node tests/gpu-guard.mjs",
     "bundle:demo": "node scripts/bundle-demo.mjs",
     "test:bundle": "node tests/bundle.mjs",

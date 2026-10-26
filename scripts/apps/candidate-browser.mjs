@@ -109,7 +109,7 @@ export async function openRun(rootArg, outArg, options = {}) {
  const isolationHeaders = isolated ? { 'cross-origin-opener-policy': 'same-origin', 'cross-origin-embedder-policy': 'require-corp' } : {};
  const toolingRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
  let candidateRoot, candidatePackage, candidate, browser, context, server;
- const requests = [], errors = [], served = new Map(), checkedFiles = new Map();
+ const requests = [], errors = [], served = new Map(), checkedFiles = new Map(), capturedSources = new Map();
  const redactions = [[root, '<apps>'], [out, '<output>'], [toolingRoot, '<tooling>'], [os.homedir(), '<home>']];
  const redact = value => redactions.reduce((s, [from, to]) => s.split(from).join(to), String(value));
  const save = async (name, data) => {
@@ -123,6 +123,16 @@ export async function openRun(rootArg, outArg, options = {}) {
   const record = { file: label, sha256, bytes: data.length };
   checkedFiles.set(file, record);
   return record;
+ };
+ const captureSource = async (url, label, data, contentType) => {
+  if (!options.captureSources || !/\.(?:js|mjs|html|wasm)$/.test(label)) return;
+  const sha256 = hash(data), file = `sources/${sha256}.bin`;
+  const previous = capturedSources.get(url);
+  if (previous && previous.sha256 !== sha256) throw Error('Served source changed for URL: ' + url);
+  await fs.mkdir(path.join(out, 'sources'), { recursive: true });
+  try { await fs.writeFile(path.join(out, file), data, { flag: 'wx' }); }
+  catch (error) { if (error.code !== 'EEXIST' || hash(await fs.readFile(path.join(out, file))) !== sha256) throw error; }
+  capturedSources.set(url, { url, label, file, sha256, bytes: data.length, contentType });
  };
  const checkApps = () => {
   for (const [app, sha] of Object.entries(APP_PINS)) {
@@ -221,6 +231,8 @@ export async function openRun(rootArg, outArg, options = {}) {
     if (isCandidate && relative.startsWith('addons/') && file.endsWith('.js') && /\bfrom\s*['"]three['"]/.test(source.toString('utf8'))) throw Error('Candidate addon still has an unrewritten bare three import');
     const data = file === indexFile ? overlay.data : responseOverlays.get(file) ?? source;
     served.set(label, { ...record, sha256: hash(data), bytes: data.length, ...(file === indexFile || responseOverlays.has(file) ? { originalSha256: record.sha256, originalBytes: source.length, adapted: hash(source) !== hash(data) } : {}) });
+    const requestURL = new URL(req.url, 'http://localhost');
+    await captureSource('<origin>' + requestURL.pathname + requestURL.search, label, data, MIME[path.extname(file)] || 'application/octet-stream');
     res.writeHead(200, { 'content-type': MIME[path.extname(file)] || 'application/octet-stream', 'cache-control': 'no-store', ...isolationHeaders });
     res.end(req.method === 'HEAD' ? undefined : data);
    } catch (error) {
@@ -241,6 +253,7 @@ export async function openRun(rootArg, outArg, options = {}) {
    if (resource) {
     const file = await safeFile(root, 'vendor/' + resource.file), data = await fs.readFile(file);
     remember(file, 'vendor/' + resource.file, data);
+    await captureSource(url, 'vendor/' + resource.file, data, MIME[path.extname(resource.file)] || 'text/javascript');
     requests.push({ url, sha256: resource.sha256, mirrored: true });
     return route.fulfill({ body: data, contentType: MIME[path.extname(resource.file)] || 'text/javascript', headers: { 'access-control-allow-origin': '*', ...(isolated ? { 'cross-origin-resource-policy': 'cross-origin' } : {}) } });
    }
@@ -280,6 +293,7 @@ export async function openRun(rootArg, outArg, options = {}) {
      if (ownsBrowser) await browser.close().catch(() => {});
      if (server.listening) await new Promise(resolve => server.close(resolve));
      await save('served-files.json', [...served.values()].sort((a, b) => a.file.localeCompare(b.file)));
+     if (options.captureSources) await save('captured-sources.json', [...capturedSources.values()].sort((a, b) => a.url.localeCompare(b.url)));
      await save('network.json', requests);
      await save('errors.json', errors);
      await save('integrity.json', { unchanged: !integrityError, error: integrityError ? redact(integrityError.message) : null });
@@ -294,6 +308,7 @@ export async function openRun(rootArg, outArg, options = {}) {
   if (server?.listening) await new Promise(resolve => server.close(resolve));
   await save('errors.json', errors);
   await save('served-files.json', [...served.values()]);
+  if (options.captureSources) await save('captured-sources.json', [...capturedSources.values()].sort((a, b) => a.url.localeCompare(b.url)));
   await save('network.json', requests);
   throw Error(redact(error.message));
  }
