@@ -18,7 +18,7 @@ const analysisTool = { sha: git('rev-parse', 'HEAD'), dirty: Boolean(git('status
 const summary = { captureToolSha: manifest.sourceBefore?.tooling.sha, analysisTool, candidateSha: manifest.candidateSha, group: manifest.group, captureStatus: manifest.status,
  scope: 'Exclusive diagnostic sampled weight and overlapping inclusive stacks; never primary callback CPU, GPU timing or FPS.',
  sourceScope: 'Generated JS bytes and Wasm indices are verified first. Only exact source-map segments with captured prepared output and sourcesContent/build-input provenance resolve to a unique original AST function. Other positions retain generated attribution with explicit fallback reasons; no minified-name inference or original-r176 map substitution.', runs: [], unprocessed: [] };
-const batch = await analyzeViewerProfileRuns({ root, out, entries: manifest.runs, redact: viewerAnalysisRedactor(root, out, toolRoot),
+const batch = await analyzeViewerProfileRuns({ root, out, manifest, redact: viewerAnalysisRedactor(root, out, toolRoot),
  provenance: { analysisTool, captureToolSha: summary.captureToolSha, candidateSha: summary.candidateSha },
  analyze: async ({ entry, run, profile, file }) => {
  const pin = JSON.parse(await fs.readFile(path.join(run, 'profile-manifest.json')));
