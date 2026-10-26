@@ -1,0 +1,2893 @@
+{
+  "format": 1,
+  "status": "passed",
+  "logicalFiles": 2056,
+  "physicalBlobs": 646,
+  "normalizedFiles": [
+    "work/task49-setup/infra-viewer-integration-001.log",
+    "work/task49-setup/viewer-tools-001/unit.log",
+    "work/task49-viewer-node-004/server-command.json"
+  ],
+  "captures": [
+    {
+      "capture": "smoke-001",
+      "status": "passed",
+      "runtimeSha": "6990fd92f61a031c8c2ba7a8282cfb63684e6dfb",
+      "routeChecks": [
+        {
+          "route": "original-r176",
+          "case": "walking-grid-off",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "walking-grid-on",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "walking-grid-off-again",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "walking-grid-off",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "walking-grid-on",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "walking-grid-off-again",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "walking-grid-off",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "walking-grid-on",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "walking-grid-off-again",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        }
+      ],
+      "comparisons": [
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "walking-grid-off",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "walking-grid-on",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8164
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "walking-grid-off-again",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "walking-grid-off",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8080
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "walking-grid-on",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8164
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "walking-grid-off-again",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8080
+        }
+      ],
+      "requiredComparisons": 3,
+      "requiredFailures": []
+    },
+    {
+      "capture": "smoke-002",
+      "status": "passed",
+      "runtimeSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "routeChecks": [
+        {
+          "route": "pure-r186",
+          "case": "walking-grid-off",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "walking-grid-on",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "walking-grid-off-again",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "walking-grid-off",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "walking-grid-on",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "walking-grid-off-again",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "walking-grid-off",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "walking-grid-on",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "walking-grid-off-again",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        }
+      ],
+      "comparisons": [
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "walking-grid-off",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "walking-grid-on",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8164
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "walking-grid-off-again",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "walking-grid-off",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "walking-grid-on",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8164
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "walking-grid-off-again",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        }
+      ],
+      "requiredComparisons": 6,
+      "requiredFailures": []
+    },
+    {
+      "capture": "correctness-001",
+      "status": "failed",
+      "runtimeSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "routeChecks": [
+        {
+          "route": "original-r176",
+          "case": "manual-morph",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "walking-grid-off",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "walking-grid-on",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "walking-grid-off-again",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "helpers-wireframe",
+          "numericValues": 8248,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "environment-none",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "neutral-background",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "resized-two-renderers",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        }
+      ],
+      "comparisons": [],
+      "requiredComparisons": 0,
+      "requiredFailures": []
+    },
+    {
+      "capture": "correctness-002",
+      "status": "failed",
+      "runtimeSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "routeChecks": [
+        {
+          "route": "original-r176",
+          "case": "manual-morph",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "walking-grid-off",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "walking-grid-on",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "walking-grid-off-again",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "helpers-wireframe",
+          "numericValues": 8248,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "environment-none",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "neutral-background",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "resized-two-renderers",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "reloaded-walking",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "manual-morph",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "walking-grid-off",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "walking-grid-on",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "walking-grid-off-again",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "helpers-wireframe",
+          "numericValues": 8248,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "environment-none",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "neutral-background",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "resized-two-renderers",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "reloaded-walking",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "manual-morph",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "walking-grid-off",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "walking-grid-on",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "walking-grid-off-again",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "helpers-wireframe",
+          "numericValues": 8248,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "environment-none",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "neutral-background",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "resized-two-renderers",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "reloaded-walking",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "manual-morph",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "walking-grid-off",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "walking-grid-on",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "walking-grid-off-again",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "helpers-wireframe",
+          "numericValues": 8248,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "environment-none",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "neutral-background",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "resized-two-renderers",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "reloaded-walking",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "manual-morph",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "walking-grid-off",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "walking-grid-on",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "walking-grid-off-again",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "helpers-wireframe",
+          "numericValues": 8248,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "environment-none",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "neutral-background",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "resized-two-renderers",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "reloaded-walking",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        }
+      ],
+      "comparisons": [
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "manual-morph",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 2181,
+              "maxAbsoluteDifference": 0.04818498133183624
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 0.04818498133183624,
+          "numericValues": 8080
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "walking-grid-off",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "walking-grid-on",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8164
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "walking-grid-off-again",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "helpers-wireframe",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8248
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "environment-none",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "neutral-background",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "resized-two-renderers",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8164
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "reloaded-walking",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "manual-morph",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 2920,
+              "maxAbsoluteDifference": 82.2784047231351
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 82.2784047231351,
+          "numericValues": 8080
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "walking-grid-off",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8080
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "walking-grid-on",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8164
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "walking-grid-off-again",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8080
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "helpers-wireframe",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8248
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "environment-none",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8080
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "neutral-background",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8080
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "resized-two-renderers",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8164
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "reloaded-walking",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "manual-morph",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 2644,
+              "maxAbsoluteDifference": 0.15274070525489236
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 0.15274070525489236,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "walking-grid-off",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "walking-grid-on",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8164
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "walking-grid-off-again",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "helpers-wireframe",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8248
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "environment-none",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "neutral-background",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "resized-two-renderers",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8164
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "reloaded-walking",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "manual-morph",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 2920,
+              "maxAbsoluteDifference": 81.44153834957696
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 81.44153834957696,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "walking-grid-off",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "walking-grid-on",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8164
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "walking-grid-off-again",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "helpers-wireframe",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8248
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "environment-none",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "neutral-background",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "resized-two-renderers",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8164
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "reloaded-walking",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        }
+      ],
+      "requiredComparisons": 27,
+      "requiredFailures": [
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "manual-morph",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 2181,
+              "maxAbsoluteDifference": 0.04818498133183624
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 0.04818498133183624,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "manual-morph",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 2644,
+              "maxAbsoluteDifference": 0.15274070525489236
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 0.15274070525489236,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "manual-morph",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 2920,
+              "maxAbsoluteDifference": 81.44153834957696
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 81.44153834957696,
+          "numericValues": 8080
+        }
+      ]
+    },
+    {
+      "capture": "correctness-003",
+      "status": "passed",
+      "runtimeSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "routeChecks": [
+        {
+          "route": "original-r176",
+          "case": "manual-morph",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "walking-grid-off",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "walking-grid-on",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "walking-grid-off-again",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "helpers-wireframe",
+          "numericValues": 8248,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "environment-none",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "neutral-background",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "resized-two-renderers",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "reloaded-walking",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "manual-morph",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "walking-grid-off",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "walking-grid-on",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "walking-grid-off-again",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "helpers-wireframe",
+          "numericValues": 8248,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "environment-none",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "neutral-background",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "resized-two-renderers",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "reloaded-walking",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "manual-morph",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "walking-grid-off",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "walking-grid-on",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "walking-grid-off-again",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "helpers-wireframe",
+          "numericValues": 8248,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "environment-none",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "neutral-background",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "resized-two-renderers",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "reloaded-walking",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "manual-morph",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "walking-grid-off",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "walking-grid-on",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "walking-grid-off-again",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "helpers-wireframe",
+          "numericValues": 8248,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "environment-none",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "neutral-background",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "resized-two-renderers",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "reloaded-walking",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "manual-morph",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "walking-grid-off",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "walking-grid-on",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "walking-grid-off-again",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "helpers-wireframe",
+          "numericValues": 8248,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "environment-none",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "neutral-background",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "resized-two-renderers",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "reloaded-walking",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        }
+      ],
+      "comparisons": [
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "manual-morph",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "walking-grid-off",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "walking-grid-on",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8164
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "walking-grid-off-again",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "helpers-wireframe",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8248
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "environment-none",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "neutral-background",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "resized-two-renderers",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8164
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "reloaded-walking",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "manual-morph",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 1.7763568394002505e-15,
+          "numericValues": 8080
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "walking-grid-off",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8080
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "walking-grid-on",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8164
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "walking-grid-off-again",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8080
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "helpers-wireframe",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8248
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "environment-none",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8080
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "neutral-background",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8080
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "resized-two-renderers",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8164
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "reloaded-walking",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "manual-morph",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "walking-grid-off",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "walking-grid-on",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8164
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "walking-grid-off-again",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "helpers-wireframe",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8248
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "environment-none",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "neutral-background",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "resized-two-renderers",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8164
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "reloaded-walking",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "manual-morph",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "walking-grid-off",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "walking-grid-on",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8164
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "walking-grid-off-again",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "helpers-wireframe",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8248
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "environment-none",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "neutral-background",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "resized-two-renderers",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8164
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "reloaded-walking",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        }
+      ],
+      "requiredComparisons": 27,
+      "requiredFailures": []
+    },
+    {
+      "capture": "correctness-004",
+      "status": "passed",
+      "runtimeSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "routeChecks": [
+        {
+          "route": "original-r176",
+          "case": "manual-morph",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "fixed-play-all",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "fixed-history-manual-morph",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "walking-grid-off",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "walking-grid-on",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "walking-grid-off-again",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "helpers-wireframe",
+          "numericValues": 8248,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "environment-none",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "neutral-background",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "resized-two-renderers",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "original-r176",
+          "case": "reloaded-walking",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "manual-morph",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "fixed-play-all",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "fixed-history-manual-morph",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "walking-grid-off",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "walking-grid-on",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "walking-grid-off-again",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "helpers-wireframe",
+          "numericValues": 8248,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "environment-none",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "neutral-background",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "resized-two-renderers",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "external-r176",
+          "case": "reloaded-walking",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "manual-morph",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "fixed-play-all",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "fixed-history-manual-morph",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "walking-grid-off",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "walking-grid-on",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "walking-grid-off-again",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "helpers-wireframe",
+          "numericValues": 8248,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "environment-none",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "neutral-background",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "resized-two-renderers",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "pure-r186",
+          "case": "reloaded-walking",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "manual-morph",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "fixed-play-all",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "fixed-history-manual-morph",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "walking-grid-off",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "walking-grid-on",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "walking-grid-off-again",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "helpers-wireframe",
+          "numericValues": 8248,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "environment-none",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "neutral-background",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "resized-two-renderers",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-js-r186",
+          "case": "reloaded-walking",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "manual-morph",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "fixed-play-all",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "fixed-history-manual-morph",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "walking-grid-off",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "walking-grid-on",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "walking-grid-off-again",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "helpers-wireframe",
+          "numericValues": 8248,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "environment-none",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "neutral-background",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "resized-two-renderers",
+          "numericValues": 8164,
+          "maximumAbsoluteDifference": 0
+        },
+        {
+          "route": "prepared-wasm-r186",
+          "case": "reloaded-walking",
+          "numericValues": 8080,
+          "maximumAbsoluteDifference": 0
+        }
+      ],
+      "comparisons": [
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "manual-morph",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "fixed-play-all",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "fixed-history-manual-morph",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "walking-grid-off",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "walking-grid-on",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8164
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "walking-grid-off-again",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "helpers-wireframe",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8248
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "environment-none",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "neutral-background",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "resized-two-renderers",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8164
+        },
+        {
+          "reference": "original-r176",
+          "actual": "external-r176",
+          "case": "reloaded-walking",
+          "purpose": "packaging parity",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "manual-morph",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 1.7763568394002505e-15,
+          "numericValues": 8080
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "fixed-play-all",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1695,
+              "maxAbsoluteDifference": 6.866455078125e-05
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 6.866455078125e-05,
+          "numericValues": 8080
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "fixed-history-manual-morph",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 1.7763568394002505e-15,
+          "numericValues": 8080
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "walking-grid-off",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8080
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "walking-grid-on",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8164
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "walking-grid-off-again",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8080
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "helpers-wireframe",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8248
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "environment-none",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8080
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "neutral-background",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8080
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "resized-two-renderers",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8164
+        },
+        {
+          "reference": "external-r176",
+          "actual": "pure-r186",
+          "case": "reloaded-walking",
+          "purpose": "upstream version migration",
+          "requiredEqual": false,
+          "equal": false,
+          "differences": [
+            {
+              "field": "numeric",
+              "count": 1645,
+              "maxAbsoluteDifference": 7.62939453125e-06
+            },
+            {
+              "field": "main.pixelSha256"
+            }
+          ],
+          "maxAbsoluteDifference": 7.62939453125e-06,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "manual-morph",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "fixed-play-all",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "fixed-history-manual-morph",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "walking-grid-off",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "walking-grid-on",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8164
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "walking-grid-off-again",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "helpers-wireframe",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8248
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "environment-none",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "neutral-background",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "resized-two-renderers",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8164
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-js-r186",
+          "case": "reloaded-walking",
+          "purpose": "candidate JS equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "manual-morph",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "fixed-play-all",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "fixed-history-manual-morph",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "walking-grid-off",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "walking-grid-on",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8164
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "walking-grid-off-again",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "helpers-wireframe",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8248
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "environment-none",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "neutral-background",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "resized-two-renderers",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8164
+        },
+        {
+          "reference": "pure-r186",
+          "actual": "prepared-wasm-r186",
+          "case": "reloaded-walking",
+          "purpose": "candidate Wasm equivalence",
+          "requiredEqual": true,
+          "equal": true,
+          "differences": [],
+          "maxAbsoluteDifference": 0,
+          "numericValues": 8080
+        }
+      ],
+      "requiredComparisons": 33,
+      "requiredFailures": []
+    }
+  ],
+  "independentWithinRouteComparisons": 171,
+  "independentCrossRouteComparisons": 128,
+  "orderedNumericValuesCompared": 2426168,
+  "pngContainersAndDimensionsChecked": 684,
+  "executedSourceHashChecks": 415,
+  "preparationExecutableParity": [
+    "dist/assets/app-DCiaOplT.js",
+    "dist/assets/index-Ba43DX0S.css",
+    "dist/assets/index-C3mYsQHq.js"
+  ],
+  "snapshot004FilesVerified": 10,
+  "finalRequiredComparisons": 33,
+  "finalRequiredMaximumAbsoluteDifference": 0,
+  "limits": [
+    "Finite fixed-state correctness, not a continuous timing/profiling or full compatibility claim.",
+    "002 uncontrolled-history differences remain failures; subsequent matched history does not establish their complete cause.",
+    "GPU pixel hashes are preserved; cross-route PNG byte equality and container dimensions are independently checked.",
+    "Capture used dirty tools; exact 004 snapshot verified. Earlier historical tool hashes are retained without claiming complete executable tool snapshots.",
+    "Runtime/source/transport provenance and all failed raw records are retained; power and performance stability are not qualified by this archive."
+  ]
+}

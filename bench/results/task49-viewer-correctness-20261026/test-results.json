@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "tests": 6,
+  "command": "python3 test_archive.py",
+  "browserExecuted": false,
+  "sourceMeasurementsExecuted": false
+}

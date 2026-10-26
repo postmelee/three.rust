@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "logicalFiles": 2056,
+  "physicalBlobs": 646,
+  "sourceBytes": 176543206,
+  "storedBlobBytes": 14982974,
+  "normalizedFiles": 3,
+  "sourceHashesRechecked": true,
+  "sourceListingsUnchanged": true
+}

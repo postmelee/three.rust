@@ -1,0 +1,44 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 9696,
+      "sha256": "e6c1a64ef2cb6f3fdb30e8af39b415e23b51e16fb0612d170d6a6a03d77ebc42"
+    },
+    {
+      "path": "archive-index.json",
+      "bytes": 1613419,
+      "sha256": "b77845d0042b5f07b929e1b51e08442a8c31523a04867a98843275b171bb2aa5"
+    },
+    {
+      "path": "audit.json",
+      "bytes": 85934,
+      "sha256": "dbe5b8cec886ab4a4b271ada421bec1a88c3c489ce206d0d0618036fc0eb2475"
+    },
+    {
+      "path": "build-status.json",
+      "bytes": 226,
+      "sha256": "b14932cbddf83daac83564ddddb9a9cc65f8453032783b5ef37a318fa22f097b"
+    },
+    {
+      "path": "build.py",
+      "bytes": 9616,
+      "sha256": "cc6fab9b603aa821f4bbd5f19d4f1abadc3661e0b2a0ac296807b52b9987f0f8"
+    },
+    {
+      "path": "test-results.json",
+      "bytes": 146,
+      "sha256": "658d159ac62af73d106d0382f3674ce802b4845d8fbfa1e11974e8d5592036e7"
+    },
+    {
+      "path": "test_archive.py",
+      "bytes": 2885,
+      "sha256": "bf960625c8299efb714daa0a3df6b8a9122fa949329c5c331fe6e3dc83596fdf"
+    },
+    {
+      "path": "verify.py",
+      "bytes": 14297,
+      "sha256": "6dea8983184913a0857abe72a8b52bb63cd0ec01fa9b59bedb23bc67266412f6"
+    }
+  ]
+}
