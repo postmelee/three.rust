@@ -29,6 +29,8 @@ export async function safeViewerFile(root, relative) {
 
 // No browser is launched here, allowing transport/hash/security tests to run in Node.
 export async function createViewerServer(appsArg, preparedArg, outArg, options = {}) {
+ const diagnosticContentLength = options.diagnosticContentLength === undefined ? false : options.diagnosticContentLength;
+ if (typeof diagnosticContentLength !== 'boolean') throw Error('diagnosticContentLength must be a boolean');
  const apps = await fs.realpath(path.resolve(appsArg)), viewer = path.join(apps, 'viewer');
  const prepared = await fs.realpath(path.resolve(preparedArg)), out = path.resolve(outArg);
  await fs.mkdir(out, { recursive: false });
@@ -105,6 +107,7 @@ export async function createViewerServer(appsArg, preparedArg, outArg, options =
   await save('index.original.html', originalIndex); await save('index.served.html', index);
   const metadata = { schema: 1, route: routeName, appPin: VIEWER_PIN, runtimeSha: runtimeState?.sha ?? null,
    revision: route.revision, threeVersion: route.version, engine: route.engine ?? 'original',
+   transportDiagnostic: { contentLength: diagnosticContentLength, scope: 'Successful allowlisted mounted-content GET/HEAD responses only; default framing elsewhere.', interception: 'Unchanged Playwright catch-all route and remote deny/mirror policy', performanceEvidence: false },
    externalized: route.externalized, instrumentation: manifest.instrumentation ?? null, bundledTimingControl, preparationManifestSha256: hash(await fs.readFile(preparedManifestFile)),
    appBundleOutputs: manifest.outputs, originalDist: manifest.originalDist,
    index: { originalSha256: hash(originalIndex), originalBytes: originalIndex.length, servedSha256: hash(index), servedBytes: index.length },
@@ -159,7 +162,7 @@ export async function createViewerServer(appsArg, preparedArg, outArg, options =
     const record = { file: label, sha256: hash(data), bytes: data.length };
     if (file === path.join(dist, 'index.html')) Object.assign(record, { originalSha256: hash(originalIndex), originalBytes: originalIndex.length });
     served.set(label, record); await capture('<origin>' + pathname, label, data);
-    response.writeHead(200, { 'content-type': MIME[path.extname(file)] ?? 'application/octet-stream', 'cache-control': 'no-store', ...isolationHeaders });
+    response.writeHead(200, { 'content-type': MIME[path.extname(file)] ?? 'application/octet-stream', 'cache-control': 'no-store', ...isolationHeaders, ...(diagnosticContentLength && pathname.startsWith('/__viewer_content__/') ? { 'content-length': String(data.length) } : {}) });
     response.end(request.method === 'HEAD' ? undefined : data);
    } catch (error) {
     errors.push(redact(`Local request ${pathname}: ${error.message}`)); response.writeHead(404); response.end('Not found');
@@ -218,7 +221,7 @@ export async function openViewerRun(apps, prepared, out, options = {}) {
   page.on('response', response => { if (response.status() >= 400) run.errors.push(run.redact(`HTTP ${response.status()} ${response.url().replace(run.origin, '<origin>')}`)); });
   await run.save('environment.json', { browser: browser.version(), executablePath: run.redact(executablePath), headed: true,
    viewport: { width: 1280, height: 720 }, dpr: 1, isolated: options.isolated === true,
-   route: run.route, runtimeSha: run.metadata.runtimeSha, browserLifecycle: ownsBrowser ? 'owned-per-run' : 'caller-owned-process-fresh-context',
+   route: run.route, runtimeSha: run.metadata.runtimeSha, transportDiagnostic: run.metadata.transportDiagnostic, browserLifecycle: ownsBrowser ? 'owned-per-run' : 'caller-owned-process-fresh-context',
    helperSha256: hash(await fs.readFile(fileURLToPath(import.meta.url))), mode: options.mode ?? 'Viewer compatibility only; no profiles or frame timers' });
   const serverClose = run.close;
   let closed = false;

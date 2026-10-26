@@ -38,3 +38,64 @@ Node tests cover duplicate request URLs with distinct IDs, retained canceled fai
 The failed Bistro gate excludes unsuccessful routes from its official cross-route comparison list. A separate diagnostic compared its already completed raw fixed snapshots without changing their gate status: r176 packaging and both r186 candidate routes match at both 0.75 and 1.5 seconds, including 74,619 numerical values and both renderer images. r176-to-r186 differences remain migration evidence, with main-image changes and maximum numerical differences about `1.8e-7` and `1.9e-7`. The diagnostic is retained in `work/task49-viewer-node-004/bistro-001-independent-snapshots.json` and does not override the transport failure.
 
 The default far camera shows conspicuous bright speckling on Bistro walls and roofs in both the native r176 and pure r186 views. Exact candidate image agreement is not a visual-fidelity certification. The source conversion README's DirectX normal-map warning is retained, but no causal connection to the speckling has been established. No asset, normal map, material or default camera is repaired to make this check pass.
+
+## Completed original-r176 diagnostics 002
+
+The fresh original-r176-only captures `task49-viewer-bistro-transport-diagnostic-002` and `task49-viewer-chess-transport-diagnostic-002` used clean tooling `3d7453d5a509ac93212a31fd1cc2678e89d77c2b` and native preparation 003. They exercised the corrected relationship contract and passive CDP observation. No candidate engine was selected in these original-r176 routes. Both reached the unchanged strict requestfailed check and failed there; neither failed gate is replaced by the observations below.
+
+Bistro retained all 1,297 original node instances, 1,284 static source transforms plus 13 animated targets, 132 materials, 405 attached image/slot relationships and 13 clips. Chess retained all 49 original node instances and static source transforms, 15 materials and 71 authored map slots; 43 texture definitions correctly alias 33 decoded images. The native source relationship checks and completed within-route fixed-image/numeric A/A checks passed. No context loss, OOM or crash was observed.
+
+The new request IDs and initiating stacks separate the cancellations from later validator requests:
+
+| Content | Initial native loader | Initial validator | Reload validator |
+| --- | --- | --- | --- |
+| Bistro | 407 requests: 298 finished, 109 canceled | 407 finished | 407 finished |
+| Chess | Two FileLoader requests: one finished, one canceled; 33 ImageLoader requests finished | 35 finished | No reload |
+
+Every canceled content request had an HTTP-200 response and a subsequent CDP `loadingFailed` with `canceled: true` and `net::ERR_ABORTED`; no CORS or blocked reason was recorded. The initiating frame in the unchanged original bundle is `assets/index-_rZ_swZ7.js`, zero-based line 43, column 132222. Its surrounding code is the pinned r176 FileLoader path from `fetch` through `response.body.getReader()` and a new ReadableStream. The pinned FileLoader does not contain an AbortController call. This identifies the requesting path, not the cancellation mechanism.
+
+For example, Bistro BIN request `50955.13` started at CDP time `110900.917322` and canceled at `110901.686743`. Its distinct initial validator request `50955.426` began at `110903.572121`, and reload validator request `50955.834` at `110921.994556`. Chess BIN request `51324.13` started at `110977.795495` and canceled at `110977.917785`; its validator request `51324.48` began at `110978.449084`. These are CDP monotonic seconds, not wall-clock timestamps or performance measurements. In these observations cancellation preceded the same URL's validator request and did not occur during reload, fixed-pose checks or browser closure. A separately canceled favicon request is retained and distinguished from content requests.
+
+Native cache entries exist for canceled loader URLs, but their presence is not a complete-body checksum. Some Bistro KTX2 cache ArrayBuffers have zero length after the native worker-transfer path; zero length is not reinterpreted as missing content or verified full delivery. Request IDs, timestamps, initiating stacks, native state, validator reports, fixed snapshots and raw failures remain in the two 002 directories. Commands and preparation records are in `work/task49-viewer-node-006`.
+
+## Completed single-file probe 001
+
+The separate `task49-viewer-transport-probe-001` used clean tooling `42121c8ff9bc4e83a65991072a03d9514ce5823c`, the unchanged original-r176 bootstrap and native preparation 003. It loaded no app scene and created no renderer, profile or primary timing window. Its single allowlisted payload was the original A Beautiful Game BIN: 10,829,440 bytes, SHA-256 `727eea28752b2b0c35cad89e726f0bc6a1800c3fa8696867ccf3d0c39933f5fb`.
+
+| Trial | Reader | Complete expected bytes/hash | Payload terminal |
+| --- | --- | --- | --- |
+| 1 | Native fetch | Matched | One loadingFinished |
+| 2 | Original r176 FileLoader | Matched | One loadingFinished |
+| 3 | Original r176 FileLoader | Matched | One loadingFinished |
+| 4 | Native fetch | Matched | One loadingFinished |
+
+All four trials used distinct fresh query URLs and lacked preexisting Three cache entries. Payload cancellations, Page/helper errors and blocked external requests were absent. Source/file integrity remained unchanged and the owned browser closed. The bounded probe reports body verification and strict transport success; it does not qualify the full app or change either 002 gate failure.
+
+All four responses were HTTP 200 with `Transfer-Encoding: chunked`, `Cache-Control: no-store`, MIME `application/octet-stream`, and no Content-Length. FileLoader's additional progress observer ended at loaded 10,829,440, total 0 and lengthComputable false. Returned byte length, in-page SHA-256, callback/digest times, progress observations, selected headers and complete CDP terminal evidence are retained. The diagnostic omits scene creation and parallel model/image work and adds a progress observer relative to native App.view. It did not reproduce a complete payload together with a canceled request. Therefore it neither establishes the original cancellation's cause nor supports missing Content-Length as that cause. Commands and logs are in `work/task49-viewer-node-007`.
+
+## Why a narrow Playwright route does not bypass local CDP pauses
+
+The installed Playwright Core is locked to 1.56.1 by `package-lock.json`, with registry artifact `https://registry.npmjs.org/playwright-core/-/playwright-core-1.56.1.tgz` and integrity `sha512-hutraynyn31F+Bifme+Ps9Vq59hKuUCz7H1kDOcBs+2oGguKkWTU50bBWrtz34OUWmIwpBTWDxaRPXrIXkgvmQ==`. The following evidence was read from that installed Apache-2.0 package; the corresponding upstream version is [Playwright v1.56.1](https://github.com/microsoft/playwright/tree/v1.56.1).
+
+`lib/client/network.js`, `RouteHandler.prepareInterceptionPatterns` at line 637, retains regular-expression matchers but maps function predicates to a catch-all `**/*`. `lib/server/dispatchers/browserContextDispatcher.js` at line 252 enables the context interceptor whenever any matchers exist. Its request callback at line 72 continues a nonmatching request with `isFallback: true` after interception. In `lib/server/chromium/crNetworkManager.js`, `_updateProtocolRequestInterceptionForSession` sends:
+
+```js
+const cachePromise = info.session.send("Network.setCacheDisabled", { cacheDisabled: enabled });
+// When interception is enabled:
+fetchPromise = info.session.send("Fetch.enable", {
+  handleAuthRequests: true,
+  patterns: [{ urlPattern: "*", requestStage: "Request" }]
+});
+```
+
+Consequently, excluding the local origin in a public route regex would not remove local requests from CDP Fetch pauses. Replacing the interception stack would introduce additional session, cache and remote-policy changes, so it was not selected as the next one-condition experiment. These are source observations for the pinned version, not a claim about future Playwright implementations.
+
+## Pending whole-app response-framing diagnostic
+
+An explicitly opt-in `diagnosticContentLength=true|false` tool path has been prepared for the original-r176 A Beautiful Game native App.view load. Explicit false selects the current default chunked transport with the same extra diagnostic observations as true; omitting the option retains the ordinary gate behavior. Only successful allowlisted mounted-content GET/HEAD responses receive a Content-Length equal to the verified served buffer length, naturally selecting explicit-length framing instead of chunked framing. Default server behavior, application/asset bytes, native loader/validator, renderer settings, Playwright interception, remote deny/mirror rules and strict requestfailed checks remain unchanged. No cancellation is filtered or waived.
+
+The prepared observation records actual selected response headers with request IDs and timestamps, asserts the intended framing for every original resource, and retains the normal structure/material/image checks. After fixed-state screenshots it attempts SHA-256 on already retained native BIN ArrayBuffers without fetching replacement data or transferring the buffers. Missing, non-ArrayBuffer, zero-length/detached or digest-unavailable entries remain explicitly unavailable; a completed but mismatched checksum fails. This cannot substitute for a successful request terminal or prove a cancellation mechanism.
+
+The seven changed source/test modules passed syntax checks; the focused content/network/probe suite passed 15/15, and the standalone server test passed seven checks. The server test confirmed unchanged default chunked framing, exact opted-in GET/HEAD lengths and body hashes, content-only scope, remote deny/mirror behavior, invalid option rejection, and the existing mutation/source guards. Logs are in `work/task49-viewer-node-008`, with standalone evidence in `work/task49-viewer-content-length-server-node-001`. No test failed in this validation pass.
+
+The browser diagnostic has not yet executed. After the tool is committed/frozen, a new default-framing capture and a new Content-Length capture will use that same tool and the same diagnostic observations. Proposed fresh outputs are `work/task49-viewer-chess-default-framing-diagnostic-001` and `work/task49-viewer-chess-content-length-diagnostic-001`; none of the existing results will be overwritten. This matched pair prevents a later intermittent default success from being attributed to the header alone. Even a successful capture would establish an association with response framing under this workload, not an underlying Chromium/Playwright cause or a rendering-speed advantage.

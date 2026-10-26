@@ -131,3 +131,19 @@ export function assertViewerContentReadiness(expected, observed) {
  for(const source of expected.materials){for(const actual of observed.materials.filter(row=>row.index===source.index)){assert.deepEqual(actual.textureSlots.map(row=>row.slot),source.textureSlots.map(row=>row.slot),'Every authored material map slot must remain attached');for(const wanted of source.textureSlots){const got=actual.textureSlots.find(row=>row.slot===wanted.slot);for(const key of ['imageIndex','imageURI','sampler','texCoord','offset','scale','rotation','flipY','colorTransfer'])assert.deepEqual(got[key],wanted[key],'Material '+source.index+' '+wanted.slot+' '+key);}assert.equal(actual.transmission,source.transmission,'Transmission factor must be retained');assert.equal(actual.thickness,source.thickness,'Volume thickness must be retained');if(source.hasVolume){assert.equal(actual.attenuationDistance,source.attenuationDistance,'Volume attenuation distance must be retained');assert.deepEqual(actual.attenuationColor,source.attenuationColor,'Volume linear attenuation color must be retained');}if(source.hasSpecular){assert.equal(actual.specularIntensity,source.specularIntensity,'Specular factor must be retained');assert.deepEqual(actual.specularColor,source.specularColor,'Specular linear color must be retained');}}}
  return {originalNodeInstances:expected.nodeRecords.length,staticSourceTransformsChecked:expected.nodeRecords.filter(row=>!row.animated).length,animatedNodesRequireFixedCrossRouteOracle:expected.nodeRecords.filter(row=>row.animated).length,attachedOriginalMaterials:expected.materialIndices.length,authoredTextureDefinitions:expected.textureIndices.length,attachedMaterialTextureSlots:expected.materials.reduce((sum,row)=>sum+row.textureSlots.length,0),decodedAttachedImageDefinitions:expected.imageIndices.length,declaredImages:expected.declaredImages,authoredClips:expected.animations.length,checkedSourceFeaturesRetained:true,associationPolicy:'Raw node/texture association indices are diagnostic. Node identity uses unique original names and instance relationships; material slots require source image, sampler and UV semantics, allowing only equivalent source aliases.'};
 }
+
+// Correctness diagnostic only: observe already retained native FileLoader BINs.
+// Never fetches, mutates, transfers, repairs, or returns the asset buffer.
+export async function captureViewerNativeCacheChecksums(entries) {
+ const rows=[];
+ for(const entry of entries){
+  const value=THREE.Cache.get(entry.url),row={file:entry.file,path:new URL(entry.url).pathname,cacheEnabled:THREE.Cache.enabled,present:value!==undefined,type:value?.constructor?.name??null,byteLength:value?.byteLength??null,expectedBytes:entry.expectedBytes,expectedSha256:entry.expectedSha256,status:'unavailable',matchesExpected:null};
+  try{
+   if(!(value instanceof ArrayBuffer))row.reason=value===undefined?'Native cache entry absent; no replacement fetch attempted.':'Native cache entry is not an ArrayBuffer.';
+   else if(value.byteLength===0)row.reason='Native cache buffer is zero length or detached; no completeness claim is possible.';
+   else{row.sha256=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',value)),byte=>byte.toString(16).padStart(2,'0')).join('');row.status='hashed';row.matchesExpected=row.byteLength===entry.expectedBytes&&row.sha256===entry.expectedSha256;}
+  }catch(error){row.reason='Native cache digest unavailable: '+String(error.message);}
+  rows.push(row);
+ }
+ return rows;
+}

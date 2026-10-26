@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {safeContentName,gltfContentExpectations,normalizeContentManifest,assertViewerContentReadiness,VIEWER_CONTENT_PINS} from '../scripts/apps/viewer-content.mjs';
+import {viewerContentOptions} from '../scripts/apps/viewer-content-check.mjs';
+import {safeContentName,gltfContentExpectations,normalizeContentManifest,assertViewerContentReadiness,VIEWER_CONTENT_PINS,captureViewerNativeCacheChecksums} from '../scripts/apps/viewer-content.mjs';
 
 const asset=()=>({scene:0,scenes:[{nodes:[0]}],nodes:[{name:'Root',children:[1]},{name:'Mesh',mesh:0}],meshes:[{primitives:[{material:0,attributes:{POSITION:0},indices:1}]}],accessors:[{count:3,type:'VEC3'},{count:3,type:'SCALAR'}],buffers:[{uri:'scene.bin'}],images:[{uri:'Textures/base.ktx2'}],textures:[{extensions:{KHR_texture_basisu:{source:0}}}],materials:[{name:'Glass',pbrMetallicRoughness:{baseColorTexture:{index:0}},extensions:{KHR_materials_transmission:{transmissionFactor:0.8},KHR_materials_volume:{thicknessFactor:0.5,attenuationDistance:2,attenuationColor:[0.5,0.6,0.7]},KHR_materials_specular:{specularFactor:0.4,specularColorFactor:[0.7,0.6,0.5]}}}],animations:[{name:'Wind',channels:[{target:{node:1,path:'translation'}}]}]});
 const map=()=>({slot:'map',textureIndex:0,imageIndex:0,imageURI:'Textures/base.ktx2',sampler:{wrapS:10497,wrapT:10497,magFilter:9729,minFilter:9987},texCoord:0,offset:[0,0],scale:[1,1],rotation:0,flipY:false,colorSpace:'srgb',colorTransfer:'srgb'});
@@ -36,4 +37,27 @@ test('equivalent texture aliases and raw node association aliases preserve actua
  const source=asset();source.textures.push(structuredClone(source.textures[0]));source.materials[0].extensions.KHR_materials_specular.specularColorTexture={index:1};const actual=observed();actual.nodeIndices=[1];actual.materials[0].textureSlots.push({...map(),slot:'specularColorMap'});
  const result=assertViewerContentReadiness(gltfContentExpectations(source,'scene.gltf'),actual);assert.equal(result.authoredTextureDefinitions,2);assert.equal(result.decodedAttachedImageDefinitions,1);assert.equal(result.originalNodeInstances,2);
  const duplicate=asset();duplicate.nodes[1].name='Root';assert.throws(()=>gltfContentExpectations(duplicate,'scene.gltf'),/unique original node names/);
+});
+
+test('native cache checksum observes intact retained BINs without fetching or repairing unavailable buffers',async()=>{
+ const prior=globalThis.THREE,bytes=Uint8Array.from([97,98,99]).buffer,empty=new ArrayBuffer(0),detached=new ArrayBuffer(4);structuredClone(detached,{transfer:[detached]});
+ const cache=new Map([['valid',bytes],['wrong',bytes],['wrong-length',bytes],['text','abc'],['empty',empty],['detached',detached]]),gets=[];
+ const expected='ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad';
+ globalThis.THREE={Cache:{enabled:true,get:url=>{const key=new URL(url).pathname.slice(1);gets.push(key);return cache.get(key);}}};
+ try{
+  const names=['valid','wrong','wrong-length','missing','text','empty','detached'];
+  const rows=await captureViewerNativeCacheChecksums(names.map(file=>({file,url:'http://localhost/'+file,expectedBytes:file==='wrong-length'?4:3,expectedSha256:file==='wrong'?'0'.repeat(64):expected})));
+  assert.deepEqual(gets,names);assert.equal(rows[0].status,'hashed');assert.equal(rows[0].matchesExpected,true);assert.equal(rows[1].matchesExpected,false);assert.equal(rows[2].matchesExpected,false);
+  for(const row of rows.slice(3)){assert.equal(row.status,'unavailable');assert.equal(row.matchesExpected,null);assert(row.reason);assert.equal(row.sha256,undefined);}
+  assert.equal(bytes.byteLength,3);assert.deepEqual([...new Uint8Array(bytes)],[97,98,99]);assert.equal(detached.byteLength,0);
+ }finally{if(prior===undefined)delete globalThis.THREE;else globalThis.THREE=prior;}
+});
+
+test('Content-Length CLI diagnostic is explicit and restricted without changing ordinary content defaults',()=>{
+ const args=['content=beautiful-game','contentRoot=/not-read','routes=original-r176'];
+ assert.equal(viewerContentOptions(args).diagnosticContentLength,false);assert.equal(viewerContentOptions(args).contentFramingDiagnostic,false);assert.equal(viewerContentOptions([...args,'diagnosticContentLength=false']).contentFramingDiagnostic,true);assert.equal(viewerContentOptions([...args,'diagnosticContentLength=false']).diagnosticContentLength,false);assert.equal(viewerContentOptions([...args,'diagnosticContentLength=true']).diagnosticContentLength,true);
+ assert.throws(()=>viewerContentOptions([...args,'diagnosticContentLength=1']),/must be true or false/);
+ assert.throws(()=>viewerContentOptions([...args,'diagnosticContentLength=true','diagnosticContentLength=false']),/unique/);
+ assert.throws(()=>viewerContentOptions(['content=bistro',...args.slice(1),'diagnosticContentLength=true']),/restricted/);
+ assert.throws(()=>viewerContentOptions([...args.slice(0,2),'routes=external-r176','diagnosticContentLength=true']),/restricted/);
 });

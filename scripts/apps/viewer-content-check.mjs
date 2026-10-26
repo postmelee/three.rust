@@ -6,18 +6,20 @@ import {execFileSync} from 'node:child_process';
 import {openViewerRun,gpu} from './viewer-browser.mjs';
 import {VIEWER_ROUTES,hash} from './viewer-adapter.mjs';
 import {captureViewerSnapshot,compareViewerSnapshots} from './viewer-oracle.mjs';
-import {VIEWER_CONTENT_PINS,createPinnedViewerContent,captureViewerContentReadiness,assertViewerContentReadiness} from './viewer-content.mjs';
+import {VIEWER_CONTENT_PINS,createPinnedViewerContent,captureViewerContentReadiness,assertViewerContentReadiness,captureViewerNativeCacheChecksums} from './viewer-content.mjs';
 import {createViewerNetworkEvidence,viewerPhaseClock} from './viewer-network.mjs';
 
 const nextFrames=page=>page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
 const input=(page,name)=>page.getByText(name,{exact:true}).first().locator('..').locator('input');
 
-function optionsFrom(args) {
- const options={routes:Object.keys(VIEWER_ROUTES),timeoutMs:180000},seen=new Set();
- for(const arg of args){const at=arg.indexOf('='),key=arg.slice(0,at),value=arg.slice(at+1);if(at<1||!value||seen.has(key)||!['content','contentRoot','routes','runtimeRoot','runtimeSha','timeoutMs'].includes(key))throw Error('Expected unique content=, contentRoot=, routes=, runtimeRoot=, runtimeSha=, timeoutMs= options');seen.add(key);options[key]=key==='routes'?value.split(','):key==='timeoutMs'?Number(value):value;}
+export function viewerContentOptions(args) {
+ const options={routes:Object.keys(VIEWER_ROUTES),timeoutMs:180000,diagnosticContentLength:false},seen=new Set();
+ for(const arg of args){const at=arg.indexOf('='),key=arg.slice(0,at),value=arg.slice(at+1);if(at<1||!value||seen.has(key)||!['content','contentRoot','routes','runtimeRoot','runtimeSha','timeoutMs','diagnosticContentLength'].includes(key))throw Error('Expected unique content=, contentRoot=, routes=, runtimeRoot=, runtimeSha=, timeoutMs=, diagnosticContentLength=true|false options');seen.add(key);if(key==='diagnosticContentLength'&&!['true','false'].includes(value))throw Error('diagnosticContentLength must be true or false');options[key]=key==='routes'?value.split(','):key==='timeoutMs'?Number(value):key==='diagnosticContentLength'?value==='true':value;}
  if(!VIEWER_CONTENT_PINS[options.content]||!options.contentRoot||!options.routes.length||new Set(options.routes).size!==options.routes.length||options.routes.some(route=>!VIEWER_ROUTES[route]))throw Error('Invalid content/root/routes');
  if(!Number.isSafeInteger(options.timeoutMs)||options.timeoutMs<30000||options.timeoutMs>600000)throw Error('timeoutMs must be between 30000 and 600000');
  if(options.routes.some(route=>VIEWER_ROUTES[route].revision==='186')&&(!options.runtimeRoot||!/^[a-f0-9]{40}$/.test(options.runtimeSha??'')))throw Error('r186 routes require an exact runtime SHA');
+ options.contentFramingDiagnostic=seen.has('diagnosticContentLength');
+ if(options.contentFramingDiagnostic&&(options.content!=='beautiful-game'||options.routes.length!==1||options.routes[0]!=='original-r176'))throw Error('Content-Length diagnostic is restricted to the original-r176 A Beautiful Game whole-app load');
  return options;
 }
 
@@ -31,7 +33,8 @@ async function observeNativeAnimation(page) {
 
 export async function checkViewerContent(appsArg,preparedArg,outArg,options) {
  const apps=path.resolve(appsArg),prepared=path.resolve(preparedArg),out=path.resolve(outArg);await fs.mkdir(out,{recursive:false});
- const summary={schema:1,kind:'native Viewer original-content correctness gate',status:'running',performanceEvidence:false,content:options.content,runtimeSha:options.runtimeSha??null,routes:[],comparisons:[],limitations:['This gate does not establish CPU headroom, hardware throughput, or a stable performance advantage.','Texture readiness means decoded images attached to native scene material slots, plus served resource hash evidence. It does not claim a byte-exact inventory of GPU allocations.','The native validator runs unchanged and its warnings are retained. KTX2 conformance is outside that validator capability.','Fixed-pose mixer.setTime calls are diagnostic adaptations only, separated from native wall-clock playback checks.']};
+ const framingDiagnostic=options.contentFramingDiagnostic===true||options.diagnosticContentLength===true;
+ const summary={schema:1,kind:'native Viewer original-content correctness gate',status:'running',performanceEvidence:false,transportDiagnostic:{enabled:framingDiagnostic,contentLength:options.diagnosticContentLength===true,scope:'Successful mounted-content responses only; app/asset/remote policy and strict failure gate unchanged.',existingFailedGatesUnchanged:true},content:options.content,runtimeSha:options.runtimeSha??null,routes:[],comparisons:[],limitations:['This gate does not establish CPU headroom, hardware throughput, or a stable performance advantage.','Texture readiness means decoded images attached to native scene material slots, plus served resource hash evidence. It does not claim a byte-exact inventory of GPU allocations.','The native validator runs unchanged and its warnings are retained. KTX2 conformance is outside that validator capability.','Fixed-pose mixer.setTime calls are diagnostic adaptations only, separated from native wall-clock playback checks.']};
  const save=(file,value)=>fs.writeFile(path.join(out,file),JSON.stringify(value,null,2)+'\n');
  const redact=value=>String(value).split(apps).join('<apps>').split(prepared).join('<prepared>').split(out).join('<output>').split(path.resolve(options.contentRoot)).join('<content>');
  const routeData=new Map();let content;
@@ -45,7 +48,7 @@ export async function checkViewerContent(appsArg,preparedArg,outArg,options) {
    const route=VIEWER_ROUTES[routeName],record={route:routeName,status:'running',checks:[]};summary.routes.push(record);await save('result.json',summary);
    let run,network,closing=false;const events={console:[],dialogs:[],responses:[],finished:[],failed:[],contextLoss:[],crashes:[]},captures={};
    try {
-    run=await openViewerRun(apps,prepared,path.join(out,routeName),{route:routeName,runtimeRoot:options.runtimeRoot,runtimeSha:options.runtimeSha,captureSources:true,contentRoots:[content],mode:'Native original-content import/feature gate only. No profiler or CPU timing collector.'});
+    run=await openViewerRun(apps,prepared,path.join(out,routeName),{route:routeName,runtimeRoot:options.runtimeRoot,runtimeSha:options.runtimeSha,captureSources:true,contentRoots:[content],diagnosticContentLength:options.diagnosticContentLength,mode:'Native original-content import/feature gate only. No profiler or CPU timing collector.'});
     const page=run.page;page.setDefaultTimeout(options.timeoutMs);
     const publicURL=url=>run.redact(url).split(run.origin).join('<origin>');
     network=await createViewerNetworkEvidence(await run.context.newCDPSession(page),publicURL);
@@ -104,7 +107,18 @@ export async function checkViewerContent(appsArg,preparedArg,outArg,options) {
      captures[name]=reference;
     }
     await phase('final-checks');const finalReadiness=await page.evaluate(captureViewerContentReadiness);await run.save('native-final.json',finalReadiness);assertViewerContentReadiness(content.expected,finalReadiness);
-    await page.screenshot({path:path.join(run.out,'native-ui.png')});events.contextLoss=await page.evaluate(()=>__viewerContentContextEvents);
+    await page.screenshot({path:path.join(run.out,'native-ui.png')});
+    if(framingDiagnostic){
+     await phase('native-cache-checksum');
+     const entries=content.files.filter(file=>file.file.endsWith('.bin')).map(file=>({file:file.file,url:run.origin+'/__viewer_content__/'+content.id+'/'+file.file,expectedBytes:file.bytes,expectedSha256:file.sha256}));
+     const checksums=await page.evaluate(captureViewerNativeCacheChecksums,entries);await run.save('native-cache-checksums.json',checksums);record.nativeCacheChecksums=checksums;
+     assert(checksums.every(row=>row.status!=='hashed'||row.matchesExpected),'A retained native loader BIN differs from the original pinned bytes');
+     const prefix='<origin>/__viewer_content__/'+content.id+'/';
+     const responses=network.snapshot().events.filter(row=>row.event==='Network.responseReceived'&&row.response.url.startsWith(prefix)).map(row=>{const file=decodeURIComponent(row.response.url.slice(prefix.length).split('?')[0]),expected=content.files.find(item=>item.file===file),headers=row.response.headers;return {requestId:row.requestId,timestamp:row.timestamp,phaseAtReceipt:row.phaseAtReceipt,file,status:row.response.status,headers,expectedBytes:expected?.bytes??null,matched:Boolean(expected&&row.response.status===200&&(options.diagnosticContentLength?headers['content-length']===String(expected.bytes)&&headers['transfer-encoding']===undefined:headers['content-length']===undefined&&headers['transfer-encoding']==='chunked'))};});
+     await run.save('content-response-framing.json',responses);record.transportHeaders={framing:options.diagnosticContentLength?'content-length':'default-chunked',responses:responses.length,uniqueOriginalResources:new Set(responses.map(row=>row.file)).size,allMatched:responses.length>0&&responses.every(row=>row.matched)};
+     assert(record.transportHeaders.allMatched,'Actual content response headers must match the selected framing condition');assert.equal(record.transportHeaders.uniqueOriginalResources,content.files.length,'Actual framing must be observed for every original resource');
+    }
+    events.contextLoss=await page.evaluate(()=>__viewerContentContextEvents);
     assert.deepEqual(events.contextLoss,[]);assert.deepEqual(events.dialogs,[]);assert.deepEqual(events.failed,[]);assert(!events.console.some(row=>row.type==='error'),'Native console errors retained in native-events.json');
     const prefix='<origin>/__viewer_content__/'+content.id+'/';const finished=new Set(events.finished.map(url=>decodeURIComponent(url.slice(prefix.length))));
     const missing=content.files.filter(file=>!finished.has(file.file)).map(file=>file.file);record.requestCoverage={allowlisted:content.files.length,uniqueFinished:finished.size,missing,scope:'Includes native loader and native validator requests; decoded material associations independently prove renderer-facing image readiness.'};assert.deepEqual(missing,[],'Every referenced resource request must finish');
@@ -126,6 +140,6 @@ export async function checkViewerContent(appsArg,preparedArg,outArg,options) {
 }
 
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
- if(process.argv.length<5)throw Error('Usage: node scripts/apps/viewer-content-check.mjs APPS_ROOT PREPARED_ROOT NEW_OUTPUT content=bistro|beautiful-game contentRoot=... [routes=...] [runtimeRoot=...] [runtimeSha=...] [timeoutMs=180000]');
- const result=await checkViewerContent(process.argv[2],process.argv[3],process.argv[4],optionsFrom(process.argv.slice(5)));console.log(JSON.stringify({status:result.status,content:result.content,routes:result.routes.length,comparisons:result.comparisons.length,performanceEvidence:false}));
+ if(process.argv.length<5)throw Error('Usage: node scripts/apps/viewer-content-check.mjs APPS_ROOT PREPARED_ROOT NEW_OUTPUT content=bistro|beautiful-game contentRoot=... [routes=...] [runtimeRoot=...] [runtimeSha=...] [timeoutMs=180000] [diagnosticContentLength=true|false]');
+ const result=await checkViewerContent(process.argv[2],process.argv[3],process.argv[4],viewerContentOptions(process.argv.slice(5)));console.log(JSON.stringify({status:result.status,content:result.content,routes:result.routes.length,comparisons:result.comparisons.length,performanceEvidence:false}));
 }

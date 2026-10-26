@@ -20,3 +20,11 @@ test('missing page clock is explicit and does not discard already captured failu
  const recorder=await createViewerNetworkEvidence(session,x=>x);session.emit('Network.loadingFailed',{requestId:'one',timestamp:1,type:'Fetch',errorText:'closed',canceled:true});await recorder.mark('closing',async()=>{throw Error('Page closed');});
  assert.equal(recorder.snapshot().events[0].requestId,'one');assert.equal(recorder.snapshot().events[1].browserClockUnavailable,'Page closed');await recorder.dispose();
 });
+
+test('response framing headers are retained with request IDs but unrelated headers are excluded',async()=>{
+ const session=new EventEmitter();session.send=async()=>{};session.detach=async()=>{};
+ const recorder=await createViewerNetworkEvidence(session,x=>x);
+ session.emit('Network.responseReceived',{requestId:'loader-bin',timestamp:5,type:'Fetch',response:{url:'http://localhost/model.bin',status:200,mimeType:'application/octet-stream',protocol:'http/1.1',headers:{'Content-Length':'10829440','Cache-Control':'no-store','Content-Type':'application/octet-stream','Set-Cookie':'not-evidence'}}});
+ session.emit('Network.responseReceived',{requestId:'validator-bin',timestamp:6,type:'Fetch',response:{url:'http://localhost/model.bin',status:200,headers:{'Transfer-Encoding':'chunked'}}});
+ const rows=recorder.snapshot().events;assert.equal(rows[0].requestId,'loader-bin');assert.equal(rows[0].timestamp,5);assert.deepEqual(rows[0].response.headers,{'content-length':'10829440','cache-control':'no-store','content-type':'application/octet-stream'});assert.deepEqual(rows[1].response.headers,{'transfer-encoding':'chunked'});assert(!JSON.stringify(rows).includes('Set-Cookie'));await recorder.dispose();
+});
