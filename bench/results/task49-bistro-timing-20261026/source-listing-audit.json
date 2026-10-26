@@ -1,0 +1,88 @@
+{
+  "status": "pass",
+  "scope": "Post-build exact regular-file and directory-symlink path inventories; exact approved link-target hashes checked without dependency-directory traversal. Source payload hashes were already rechecked by the builder.",
+  "records": [
+    {
+      "sourceDirectory": "repository/work/task49-viewer-bistro-zip-engine-timing-smoke-001",
+      "regularFiles": 557,
+      "directorySymlinks": [],
+      "regularFilesMatchArchive": true,
+      "linkSetExact": true
+    },
+    {
+      "sourceDirectory": "repository/work/task49-viewer-bistro-zip-engine-timing-full-001",
+      "regularFiles": 1160,
+      "directorySymlinks": [],
+      "regularFilesMatchArchive": true,
+      "linkSetExact": true
+    },
+    {
+      "sourceDirectory": "repository/work/task49-bistro-timing-smoke-audit-001",
+      "regularFiles": 8,
+      "directorySymlinks": [],
+      "regularFilesMatchArchive": true,
+      "linkSetExact": true
+    },
+    {
+      "sourceDirectory": "repository/work/task49-bistro-timing-smoke-audit-002",
+      "regularFiles": 7,
+      "directorySymlinks": [],
+      "regularFilesMatchArchive": true,
+      "linkSetExact": true
+    },
+    {
+      "sourceDirectory": "repository/work/task49-bistro-timing-full-audit-001",
+      "regularFiles": 9,
+      "directorySymlinks": [],
+      "regularFilesMatchArchive": true,
+      "linkSetExact": true
+    },
+    {
+      "sourceDirectory": "repository/work/task49-bistro-timing-audit-preparation-001/validation-001",
+      "regularFiles": 3,
+      "directorySymlinks": [],
+      "regularFilesMatchArchive": true,
+      "linkSetExact": true
+    },
+    {
+      "sourceDirectory": "repository/work/task49-bistro-timing-audit-preparation-001/validation-002",
+      "regularFiles": 2,
+      "directorySymlinks": [],
+      "regularFilesMatchArchive": true,
+      "linkSetExact": true
+    },
+    {
+      "sourceDirectory": "repository/work/task49-bistro-timing-archive-build-001/build-failure-001",
+      "regularFiles": 5,
+      "directorySymlinks": [],
+      "regularFilesMatchArchive": true,
+      "linkSetExact": true
+    },
+    {
+      "sourceDirectory": "repository/work/task49-bistro-timing-archive-build-001/build-failure-002",
+      "regularFiles": 5,
+      "directorySymlinks": [],
+      "regularFilesMatchArchive": true,
+      "linkSetExact": true
+    },
+    {
+      "sourceDirectory": "final/work/task49-final-viewer-native-001",
+      "regularFiles": 38,
+      "directorySymlinks": [
+        "source/node_modules"
+      ],
+      "regularFilesMatchArchive": true,
+      "linkSetExact": true
+    },
+    {
+      "sourceDirectory": "final/work/task49-bistro-timing-preparation-001",
+      "regularFiles": 41,
+      "directorySymlinks": [
+        "source/node_modules"
+      ],
+      "regularFilesMatchArchive": true,
+      "linkSetExact": true
+    }
+  ],
+  "originalSourcesModified": false
+}

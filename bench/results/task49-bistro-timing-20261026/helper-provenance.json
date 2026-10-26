@@ -1,0 +1,26 @@
+{
+  "executedBuilder": {
+    "file": "archive-executed.py",
+    "sha256": "efec84450e6a0e40d6741bd053b0464ae467823fa1810708b5797d495d4649e9"
+  },
+  "reproductionBuilder": {
+    "file": "archive.py",
+    "sha256": "ee83aa3c04c4cbec82f1978c480ef38a0a33ab5748aeab2f95e37e6c1b9494b8",
+    "difference": "Adds an exact final source directory-symlink path-set recheck. The executed build already rechecked every original regular-file hash/list and both known link-target hashes. The separately preserved post-build inventory audit applies the new path-set check to all eleven original source trees."
+  },
+  "independentRawAuditor": [
+    {
+      "file": "analyze.py",
+      "source": "full-audit/analyze.py",
+      "sha256": "dc2bb0083438bd09beffa2f17df16feb64f051d562ec898b8b6b6a7b6f75aa97",
+      "byteIdentical": true
+    },
+    {
+      "file": "numeric_verify.py",
+      "source": "full-audit/verify.py",
+      "sha256": "43f957c72358383a08eab3f5c1091fd5290285f9650b68285ca770dcdba8ee03",
+      "byteIdentical": true
+    }
+  ],
+  "archiveStorageBasis": "Adapted format-2 storage/preparation checker from bench/results/task49-viewer-timing-20261026/verify.py; originals unchanged."
+}
