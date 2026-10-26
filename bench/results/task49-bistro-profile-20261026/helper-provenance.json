@@ -1,0 +1,33 @@
+{
+  "scope": "Archive verifier helper provenance. Adapted Python sources are audit code, never replacements for raw measurements or exact captured JavaScript tool snapshots.",
+  "helpers": [
+    {
+      "file": "profile_audit.py",
+      "sha256": "31a087befb13247e058bffa7aa27e0cb1a5133360c8baaf1914a67f2e60dfd44",
+      "sourceFile": "bench/results/task49-viewer-profile-20261026/verify.py",
+      "sourceSha256": "1bf72292455e5ccbfef16cd064b23c4530280808210ccec867893842feb6bdc0",
+      "scope": "Retained storage/source/map/Wasm and weighted-smoke audit; observation checks adapted to Bistro first clip, two GUI loops and r176 controls."
+    },
+    {
+      "file": "counts_audit.py",
+      "sha256": "43ce2f5dc0143e921861efdbb62e41299260ce4cd1afe9c938a79547b894f290",
+      "sourceFile": "work/task49-viewer-bistro-count-audit-001/audit.py",
+      "sourceSha256": "10833b1bd13643d1def039d859e101d69e047d228a57f23da08d0525ea0950ad",
+      "scope": "Retained category, source, exact-map and Wasm helper function definitions; no main engine-only audit execution. Reads are bound to archived virtual files."
+    },
+    {
+      "file": "content_audit.py",
+      "sha256": "ca7dc3f0e998359ec2ef7fc297b81f9a1268b87bf77bac8c30528cd89210bb07",
+      "sourceFile": "bench/results/task49-native-content-correctness-20261026/protocol_audit.py",
+      "sourceSha256": "9d920c72feb3cc2f4a9c3d6789a2ccaf85f0cdd152e5b0c6d819da800609f798",
+      "scope": "Exact readiness function extracted by Python AST; no browser/source execution."
+    },
+    {
+      "file": "png.py",
+      "sha256": "3adc01a23ee73700327daf938cef15b2f30252da4d49f86d02e4ac72eca2211c",
+      "sourceFile": "bench/results/task49-editor-content-diagnostics-20261026/png.py",
+      "sourceSha256": "3adc01a23ee73700327daf938cef15b2f30252da4d49f86d02e4ac72eca2211c",
+      "scope": "Standard-library RGBA PNG decoder."
+    }
+  ]
+}

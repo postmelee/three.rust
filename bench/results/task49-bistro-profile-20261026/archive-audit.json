@@ -1,0 +1,2891 @@
+{
+  "status": "pass",
+  "scope": "Offline identity, failure preservation, fixed image/numeric oracles, raw profile structure and secondary observation-count audit; not a performance qualification.",
+  "runtimeIdentity": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+  "viewerIdentity": "b5ee5dafe27f953ae1b55f42b5fa3697fef08683",
+  "logicalFiles": 1990,
+  "uniqueBlobs": 495,
+  "originalCaptureDirectories": 4,
+  "rawProfiles": 14,
+  "retainedCapturedProfiles": 13,
+  "failedRawProfiles": 1,
+  "rawSamples": 1051779,
+  "decodedPNGs": 72,
+  "fixedPoseNumericValues": 2683260,
+  "captures": [
+    {
+      "label": "smoke-ac-failure",
+      "status": "failed",
+      "oracleEntries": 0,
+      "profileEntries": 0,
+      "errors": [
+        "AssertionError [ERR_ASSERTION]: AC power required\n    at environment (file://<tooling>/scripts/apps/viewer-timing-run.mjs:66:82)\n    at async Object.prepare (file://<tooling>/scripts/apps/viewer-timing-run.mjs:149:32)\n    at async file://<tooling>/scripts/apps/viewer-profile.mjs:78:2",
+        "AssertionError [ERR_ASSERTION]: AC power required\n    at environment (file://<tooling>/scripts/apps/viewer-timing-run.mjs:66:82)\n    at async Object.finish (file://<tooling>/scripts/apps/viewer-timing-run.mjs:163:69)\n    at async file://<tooling>/scripts/apps/viewer-profile.mjs:82:11"
+      ],
+      "environmentGate": "AC preflight failed before browser capture"
+    },
+    {
+      "label": "smoke",
+      "status": "capture-complete-attribution-pending",
+      "toolSha": "d1def5a2b1845cb0a398bdb5d2528d0fbee69929",
+      "configuration": {
+        "mode": "smoke",
+        "repeats": 1,
+        "warmupFrames": 60,
+        "seconds": 2,
+        "samplingIntervalUs": 100,
+        "prePostObservationSeconds": 2,
+        "networkDiagnostic": "playwright",
+        "strictContent": true,
+        "pageDpr": 1,
+        "cssViewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "isolated": true,
+        "profiling": true,
+        "gpuQueriesInWindow": false,
+        "scope": "Diagnostic CPU sampling with uninstrumented native Viewer and GUI loops; not primary timing or FPS.",
+        "callbackQuantizationFloor": "2 * frozen callback count * observed minimum positive clock increment",
+        "nativeClock": "Unchanged native rAF timestamps; poses are not frame-matched across routes."
+      },
+      "oracleEntries": 6,
+      "oracles": [
+        {
+          "engine": "pure-r186",
+          "observer": false,
+          "source": {
+            "capturedSourceFiles": 23,
+            "debuggerSourceInventoryAvailable": false,
+            "sourceMapInventoryAvailable": false,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "poses": [
+            {
+              "pose": 0.25,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            },
+            {
+              "pose": 0.75,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            }
+          ]
+        },
+        {
+          "engine": "pure-r186",
+          "observer": true,
+          "source": {
+            "capturedSourceFiles": 23,
+            "debuggerSourceInventoryAvailable": false,
+            "sourceMapInventoryAvailable": false,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "poses": [
+            {
+              "pose": 0.25,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            },
+            {
+              "pose": 0.75,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            }
+          ]
+        },
+        {
+          "engine": "prepared-js-r186",
+          "observer": false,
+          "source": {
+            "capturedSourceFiles": 29,
+            "debuggerSourceInventoryAvailable": false,
+            "sourceMapInventoryAvailable": false,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "poses": [
+            {
+              "pose": 0.25,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            },
+            {
+              "pose": 0.75,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            }
+          ]
+        },
+        {
+          "engine": "prepared-js-r186",
+          "observer": true,
+          "source": {
+            "capturedSourceFiles": 29,
+            "debuggerSourceInventoryAvailable": false,
+            "sourceMapInventoryAvailable": false,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "poses": [
+            {
+              "pose": 0.25,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            },
+            {
+              "pose": 0.75,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            }
+          ]
+        },
+        {
+          "engine": "prepared-wasm-r186",
+          "observer": false,
+          "source": {
+            "capturedSourceFiles": 30,
+            "debuggerSourceInventoryAvailable": false,
+            "sourceMapInventoryAvailable": false,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "poses": [
+            {
+              "pose": 0.25,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            },
+            {
+              "pose": 0.75,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            }
+          ]
+        },
+        {
+          "engine": "prepared-wasm-r186",
+          "observer": true,
+          "source": {
+            "capturedSourceFiles": 30,
+            "debuggerSourceInventoryAvailable": false,
+            "sourceMapInventoryAvailable": false,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "poses": [
+            {
+              "pose": 0.25,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            },
+            {
+              "pose": 0.75,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            }
+          ]
+        }
+      ],
+      "profileEntries": 3,
+      "runs": [
+        {
+          "engine": "pure-r186",
+          "sequence": 1,
+          "round": 0,
+          "status": "captured",
+          "raw": {
+            "sha256": "65361fd4e2c6719f3a396da8a4e8742b2a0597a7359ae57bcfcfc214b101006d",
+            "samples": 17175,
+            "nodes": 438,
+            "negativeIntervals": [],
+            "zeroIntervals": 8,
+            "scope": "Structural/raw timestamp inventory only; no time-weight qualification."
+          },
+          "source": {
+            "capturedSourceFiles": 24,
+            "debuggerSourceInventoryAvailable": true,
+            "sourceMapInventoryAvailable": true,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "windows": {
+            "before-window": {
+              "mainFrames": 227,
+              "axesFrames": 0,
+              "elapsedMs": 2008.6049999999814,
+              "mixerAdvance": 2.009095000000002,
+              "phaseErrorSeconds": 0.0,
+              "counters": null,
+              "countersPerMainFrame": null
+            },
+            "profile-observations": {
+              "mainFrames": 222,
+              "axesFrames": 0,
+              "elapsedMs": 2120.064999999944,
+              "mixerAdvance": 2.11654499999997,
+              "phaseErrorSeconds": 0.0,
+              "counters": null,
+              "countersPerMainFrame": null
+            },
+            "after-window": {
+              "mainFrames": 228,
+              "axesFrames": 0,
+              "elapsedMs": 2017.5400000000373,
+              "mixerAdvance": 2.007684999999979,
+              "phaseErrorSeconds": 0.0,
+              "counters": null,
+              "countersPerMainFrame": null
+            }
+          }
+        },
+        {
+          "engine": "prepared-js-r186",
+          "sequence": 2,
+          "round": 0,
+          "status": "captured",
+          "raw": {
+            "sha256": "fe7e63c0a0a8d7038f37f1137904d6bb8269fda5f90c5bc19608f43c2213c33a",
+            "samples": 16598,
+            "nodes": 495,
+            "negativeIntervals": [
+              {
+                "sampleIndex": 4036,
+                "nodeId": 72,
+                "rawTimeDelta": -1
+              }
+            ],
+            "zeroIntervals": 3,
+            "scope": "Structural/raw timestamp inventory only; no time-weight qualification."
+          },
+          "source": {
+            "capturedSourceFiles": 30,
+            "debuggerSourceInventoryAvailable": true,
+            "sourceMapInventoryAvailable": true,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "windows": {
+            "before-window": {
+              "mainFrames": 149,
+              "axesFrames": 0,
+              "elapsedMs": 2017.4849999998696,
+              "mixerAdvance": 2.016659999999934,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 149,
+                "matrixReads": 237655,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 30419840
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 0.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            },
+            "profile-observations": {
+              "mainFrames": 135,
+              "axesFrames": 0,
+              "elapsedMs": 2142.935000000056,
+              "mixerAdvance": 2.1327449999999857,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 135,
+                "matrixReads": 215325,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 27561600
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 0.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            },
+            "after-window": {
+              "mainFrames": 145,
+              "axesFrames": 0,
+              "elapsedMs": 2011.0800000000745,
+              "mixerAdvance": 2.012595000000047,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 145,
+                "matrixReads": 231275,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 29603200
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 0.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            }
+          }
+        },
+        {
+          "engine": "prepared-wasm-r186",
+          "sequence": 3,
+          "round": 0,
+          "status": "captured",
+          "raw": {
+            "sha256": "80a9d25c644c897fc38e560e9ab43c2213233cf6d2fa6ddd6a49d7745eac039f",
+            "samples": 16554,
+            "nodes": 505,
+            "negativeIntervals": [],
+            "zeroIntervals": 1,
+            "scope": "Structural/raw timestamp inventory only; no time-weight qualification."
+          },
+          "source": {
+            "capturedSourceFiles": 31,
+            "debuggerSourceInventoryAvailable": true,
+            "sourceMapInventoryAvailable": true,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "windows": {
+            "before-window": {
+              "mainFrames": 135,
+              "axesFrames": 0,
+              "elapsedMs": 2021.0849999999627,
+              "mixerAdvance": 2.01681999999996,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 945,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 135,
+                "matrixReads": 215325,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 27561600
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 7.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            },
+            "profile-observations": {
+              "mainFrames": 124,
+              "axesFrames": 0,
+              "elapsedMs": 2141.8799999998882,
+              "mixerAdvance": 2.1332949999999897,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 868,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 124,
+                "matrixReads": 197780,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 25315840
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 7.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            },
+            "after-window": {
+              "mainFrames": 135,
+              "axesFrames": 0,
+              "elapsedMs": 2006.0600000000559,
+              "mixerAdvance": 2.007415000000094,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 945,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 135,
+                "matrixReads": 215325,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 27561600
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 7.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            }
+          }
+        }
+      ],
+      "errors": [],
+      "browser": "Chrome/155.0.8059.86",
+      "GPU": "Apple M4 Pro / ANGLE Metal",
+      "environmentBefore": {
+        "file": "environment-before/runner.json",
+        "verifiedAC": true
+      },
+      "environmentAfter": {
+        "file": "environment-after/runner.json",
+        "verifiedAC": true
+      }
+    },
+    {
+      "label": "engine-full",
+      "status": "capture-complete-attribution-pending",
+      "toolSha": "7d4b24062466b15960fcf3e444fae99003c81f70",
+      "configuration": {
+        "mode": "full",
+        "repeats": 3,
+        "warmupFrames": 600,
+        "seconds": 12,
+        "samplingIntervalUs": 100,
+        "prePostObservationSeconds": 2,
+        "networkDiagnostic": "playwright",
+        "strictContent": true,
+        "pageDpr": 1,
+        "cssViewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "isolated": true,
+        "profiling": true,
+        "gpuQueriesInWindow": false,
+        "scope": "Diagnostic CPU sampling with uninstrumented native Viewer and GUI loops; not primary timing or FPS.",
+        "callbackQuantizationFloor": "2 * frozen callback count * observed minimum positive clock increment",
+        "nativeClock": "Unchanged native rAF timestamps; poses are not frame-matched across routes."
+      },
+      "oracleEntries": 6,
+      "oracles": [
+        {
+          "engine": "pure-r186",
+          "observer": false,
+          "source": {
+            "capturedSourceFiles": 23,
+            "debuggerSourceInventoryAvailable": false,
+            "sourceMapInventoryAvailable": false,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "poses": [
+            {
+              "pose": 0.25,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            },
+            {
+              "pose": 0.75,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            }
+          ]
+        },
+        {
+          "engine": "pure-r186",
+          "observer": true,
+          "source": {
+            "capturedSourceFiles": 23,
+            "debuggerSourceInventoryAvailable": false,
+            "sourceMapInventoryAvailable": false,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "poses": [
+            {
+              "pose": 0.25,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            },
+            {
+              "pose": 0.75,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            }
+          ]
+        },
+        {
+          "engine": "prepared-js-r186",
+          "observer": false,
+          "source": {
+            "capturedSourceFiles": 29,
+            "debuggerSourceInventoryAvailable": false,
+            "sourceMapInventoryAvailable": false,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "poses": [
+            {
+              "pose": 0.25,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            },
+            {
+              "pose": 0.75,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            }
+          ]
+        },
+        {
+          "engine": "prepared-js-r186",
+          "observer": true,
+          "source": {
+            "capturedSourceFiles": 29,
+            "debuggerSourceInventoryAvailable": false,
+            "sourceMapInventoryAvailable": false,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "poses": [
+            {
+              "pose": 0.25,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            },
+            {
+              "pose": 0.75,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            }
+          ]
+        },
+        {
+          "engine": "prepared-wasm-r186",
+          "observer": false,
+          "source": {
+            "capturedSourceFiles": 30,
+            "debuggerSourceInventoryAvailable": false,
+            "sourceMapInventoryAvailable": false,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "poses": [
+            {
+              "pose": 0.25,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            },
+            {
+              "pose": 0.75,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            }
+          ]
+        },
+        {
+          "engine": "prepared-wasm-r186",
+          "observer": true,
+          "source": {
+            "capturedSourceFiles": 30,
+            "debuggerSourceInventoryAvailable": false,
+            "sourceMapInventoryAvailable": false,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "poses": [
+            {
+              "pose": 0.25,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            },
+            {
+              "pose": 0.75,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            }
+          ]
+        }
+      ],
+      "profileEntries": 9,
+      "runs": [
+        {
+          "engine": "pure-r186",
+          "sequence": 1,
+          "round": 0,
+          "status": "captured",
+          "raw": {
+            "sha256": "209b8b9be62eb7c70a09ebe7bb18abcf26c1cc7d933a88e042de9614dac5b89b",
+            "samples": 103801,
+            "nodes": 643,
+            "negativeIntervals": [
+              {
+                "sampleIndex": 1030,
+                "nodeId": 24,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 11171,
+                "nodeId": 31,
+                "rawTimeDelta": -4
+              },
+              {
+                "sampleIndex": 16088,
+                "nodeId": 24,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 16356,
+                "nodeId": 24,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 17378,
+                "nodeId": 24,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 23641,
+                "nodeId": 24,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 29489,
+                "nodeId": 24,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 32218,
+                "nodeId": 24,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 37699,
+                "nodeId": 24,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 41343,
+                "nodeId": 24,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 52231,
+                "nodeId": 24,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 62491,
+                "nodeId": 24,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 65032,
+                "nodeId": 60,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 75187,
+                "nodeId": 60,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 80310,
+                "nodeId": 60,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 93535,
+                "nodeId": 24,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 94995,
+                "nodeId": 24,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 99930,
+                "nodeId": 60,
+                "rawTimeDelta": -1
+              }
+            ],
+            "zeroIntervals": 14,
+            "scope": "Structural/raw timestamp inventory only; no time-weight qualification."
+          },
+          "source": {
+            "capturedSourceFiles": 24,
+            "debuggerSourceInventoryAvailable": true,
+            "sourceMapInventoryAvailable": true,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "windows": {
+            "before-window": {
+              "mainFrames": 233,
+              "axesFrames": 0,
+              "elapsedMs": 2010.0800000000745,
+              "mixerAdvance": 2.0080899999999797,
+              "phaseErrorSeconds": 0.0,
+              "counters": null,
+              "countersPerMainFrame": null
+            },
+            "profile-observations": {
+              "mainFrames": 1398,
+              "axesFrames": 0,
+              "elapsedMs": 12119.919999999925,
+              "mixerAdvance": 12.115719999999996,
+              "phaseErrorSeconds": 0.0,
+              "counters": null,
+              "countersPerMainFrame": null
+            },
+            "after-window": {
+              "mainFrames": 237,
+              "axesFrames": 0,
+              "elapsedMs": 2006.2249999996275,
+              "mixerAdvance": 2.008344999999963,
+              "phaseErrorSeconds": 0.0,
+              "counters": null,
+              "countersPerMainFrame": null
+            }
+          }
+        },
+        {
+          "engine": "prepared-js-r186",
+          "sequence": 2,
+          "round": 0,
+          "status": "captured",
+          "raw": {
+            "sha256": "83cfb942c177492ca036c1efb6cfca4d6eab60cbeecb94e430d58698476a8acc",
+            "samples": 97030,
+            "nodes": 810,
+            "negativeIntervals": [
+              {
+                "sampleIndex": 7284,
+                "nodeId": 75,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 8561,
+                "nodeId": 30,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 12450,
+                "nodeId": 38,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 14395,
+                "nodeId": 75,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 35677,
+                "nodeId": 75,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 73488,
+                "nodeId": 75,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 85287,
+                "nodeId": 38,
+                "rawTimeDelta": -1
+              }
+            ],
+            "zeroIntervals": 7,
+            "scope": "Structural/raw timestamp inventory only; no time-weight qualification."
+          },
+          "source": {
+            "capturedSourceFiles": 30,
+            "debuggerSourceInventoryAvailable": true,
+            "sourceMapInventoryAvailable": true,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "windows": {
+            "before-window": {
+              "mainFrames": 145,
+              "axesFrames": 0,
+              "elapsedMs": 2016.7700000000186,
+              "mixerAdvance": 2.016670000000069,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 145,
+                "matrixReads": 231275,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 29603200
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 0.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            },
+            "profile-observations": {
+              "mainFrames": 796,
+              "axesFrames": 0,
+              "elapsedMs": 12139.149999999907,
+              "mixerAdvance": 12.142349999999958,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 796,
+                "matrixReads": 1269620,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 162511360
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 0.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            },
+            "after-window": {
+              "mainFrames": 145,
+              "axesFrames": 0,
+              "elapsedMs": 2015.1099999998696,
+              "mixerAdvance": 2.016660000000016,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 145,
+                "matrixReads": 231275,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 29603200
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 0.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            }
+          }
+        },
+        {
+          "engine": "prepared-wasm-r186",
+          "sequence": 3,
+          "round": 0,
+          "status": "captured",
+          "raw": {
+            "sha256": "74f3d73ee8671b913f87d46c80ac5878243677432a49556c17c6960cb588c61c",
+            "samples": 85206,
+            "nodes": 831,
+            "negativeIntervals": [
+              {
+                "sampleIndex": 37788,
+                "nodeId": 55,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 41191,
+                "nodeId": 55,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 55638,
+                "nodeId": 55,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 66525,
+                "nodeId": 85,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 70823,
+                "nodeId": 55,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 72588,
+                "nodeId": 55,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 78937,
+                "nodeId": 55,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 79670,
+                "nodeId": 56,
+                "rawTimeDelta": -3
+              }
+            ],
+            "zeroIntervals": 6,
+            "scope": "Structural/raw timestamp inventory only; no time-weight qualification."
+          },
+          "source": {
+            "capturedSourceFiles": 31,
+            "debuggerSourceInventoryAvailable": true,
+            "sourceMapInventoryAvailable": true,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "windows": {
+            "before-window": {
+              "mainFrames": 145,
+              "axesFrames": 0,
+              "elapsedMs": 2003.8149999999441,
+              "mixerAdvance": 2.012485000000069,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 1015,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 145,
+                "matrixReads": 231275,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 29603200
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 7.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            },
+            "profile-observations": {
+              "mainFrames": 827,
+              "axesFrames": 0,
+              "elapsedMs": 12143.410000000149,
+              "mixerAdvance": 12.140299999999904,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 5789,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 827,
+                "matrixReads": 1319065,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 168840320
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 7.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            },
+            "after-window": {
+              "mainFrames": 147,
+              "axesFrames": 0,
+              "elapsedMs": 2012.4899999997579,
+              "mixerAdvance": 2.0166850000000807,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 1029,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 147,
+                "matrixReads": 234465,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 30011520
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 7.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            }
+          }
+        },
+        {
+          "engine": "prepared-js-r186",
+          "sequence": 4,
+          "round": 1,
+          "status": "captured",
+          "raw": {
+            "sha256": "9def460e42d4b36548d37cbd8adaa496f569952872bc96d56b953a326ab0fdb9",
+            "samples": 83576,
+            "nodes": 747,
+            "negativeIntervals": [
+              {
+                "sampleIndex": 19886,
+                "nodeId": 49,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 34333,
+                "nodeId": 75,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 42613,
+                "nodeId": 49,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 81329,
+                "nodeId": 49,
+                "rawTimeDelta": -1
+              }
+            ],
+            "zeroIntervals": 7,
+            "scope": "Structural/raw timestamp inventory only; no time-weight qualification."
+          },
+          "source": {
+            "capturedSourceFiles": 30,
+            "debuggerSourceInventoryAvailable": true,
+            "sourceMapInventoryAvailable": true,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "windows": {
+            "before-window": {
+              "mainFrames": 109,
+              "axesFrames": 0,
+              "elapsedMs": 2006.820000000298,
+              "mixerAdvance": 2.008314999999996,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 109,
+                "matrixReads": 173855,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 22253440
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 0.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            },
+            "profile-observations": {
+              "mainFrames": 619,
+              "axesFrames": 0,
+              "elapsedMs": 12161.104999999981,
+              "mixerAdvance": 12.148570000000014,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 619,
+                "matrixReads": 987305,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 126375040
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 0.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            },
+            "after-window": {
+              "mainFrames": 108,
+              "axesFrames": 0,
+              "elapsedMs": 2008.8100000000559,
+              "mixerAdvance": 2.0083350000000024,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 108,
+                "matrixReads": 172260,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 22049280
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 0.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            }
+          }
+        },
+        {
+          "engine": "prepared-wasm-r186",
+          "sequence": 5,
+          "round": 1,
+          "status": "captured",
+          "raw": {
+            "sha256": "8908eab03db3d17770627a83ef2ebe190e5e6b45f0190de806d0aa4f98a98f4b",
+            "samples": 84979,
+            "nodes": 839,
+            "negativeIntervals": [
+              {
+                "sampleIndex": 9716,
+                "nodeId": 48,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 42684,
+                "nodeId": 48,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 48805,
+                "nodeId": 39,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 52017,
+                "nodeId": 48,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 64484,
+                "nodeId": 48,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 67156,
+                "nodeId": 50,
+                "rawTimeDelta": -2
+              },
+              {
+                "sampleIndex": 69757,
+                "nodeId": 39,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 80670,
+                "nodeId": 48,
+                "rawTimeDelta": -1
+              }
+            ],
+            "zeroIntervals": 7,
+            "scope": "Structural/raw timestamp inventory only; no time-weight qualification."
+          },
+          "source": {
+            "capturedSourceFiles": 31,
+            "debuggerSourceInventoryAvailable": true,
+            "sourceMapInventoryAvailable": true,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "windows": {
+            "before-window": {
+              "mainFrames": 141,
+              "axesFrames": 0,
+              "elapsedMs": 2004.9550000000745,
+              "mixerAdvance": 1.999940000000052,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 987,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 141,
+                "matrixReads": 224895,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 28786560
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 7.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            },
+            "profile-observations": {
+              "mainFrames": 795,
+              "axesFrames": 0,
+              "elapsedMs": 12136.654999999795,
+              "mixerAdvance": 12.127835000000047,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 5565,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 795,
+                "matrixReads": 1268025,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 162307200
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 7.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            },
+            "after-window": {
+              "mainFrames": 142,
+              "axesFrames": 0,
+              "elapsedMs": 2011.5949999997392,
+              "mixerAdvance": 2.0105250000000296,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 994,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 142,
+                "matrixReads": 226490,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 28990720
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 7.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            }
+          }
+        },
+        {
+          "engine": "pure-r186",
+          "sequence": 6,
+          "round": 1,
+          "status": "captured",
+          "raw": {
+            "sha256": "6cdd5dcda80ed12de5dc282ee86070f29249fb1efd41999100ddec1974e104ea",
+            "samples": 89687,
+            "nodes": 640,
+            "negativeIntervals": [
+              {
+                "sampleIndex": 1313,
+                "nodeId": 24,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 15850,
+                "nodeId": 52,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 36532,
+                "nodeId": 52,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 63424,
+                "nodeId": 26,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 69403,
+                "nodeId": 26,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 69523,
+                "nodeId": 26,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 77790,
+                "nodeId": 26,
+                "rawTimeDelta": -1
+              }
+            ],
+            "zeroIntervals": 17,
+            "scope": "Structural/raw timestamp inventory only; no time-weight qualification."
+          },
+          "source": {
+            "capturedSourceFiles": 24,
+            "debuggerSourceInventoryAvailable": true,
+            "sourceMapInventoryAvailable": true,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "windows": {
+            "before-window": {
+              "mainFrames": 233,
+              "axesFrames": 0,
+              "elapsedMs": 2009.5100000002421,
+              "mixerAdvance": 2.0099949999999236,
+              "phaseErrorSeconds": 0.0,
+              "counters": null,
+              "countersPerMainFrame": null
+            },
+            "profile-observations": {
+              "mainFrames": 1386,
+              "axesFrames": 0,
+              "elapsedMs": 12114.704999999609,
+              "mixerAdvance": 12.108264999999989,
+              "phaseErrorSeconds": 0.0,
+              "counters": null,
+              "countersPerMainFrame": null
+            },
+            "after-window": {
+              "mainFrames": 227,
+              "axesFrames": 0,
+              "elapsedMs": 2008.5400000000373,
+              "mixerAdvance": 2.016779999999976,
+              "phaseErrorSeconds": 0.0,
+              "counters": null,
+              "countersPerMainFrame": null
+            }
+          }
+        },
+        {
+          "engine": "prepared-wasm-r186",
+          "sequence": 7,
+          "round": 2,
+          "status": "captured",
+          "raw": {
+            "sha256": "8df9319f43a6c110c01162b3f579a8bc067cce0865a06b6d2a979e912cc58f96",
+            "samples": 84780,
+            "nodes": 805,
+            "negativeIntervals": [
+              {
+                "sampleIndex": 17484,
+                "nodeId": 79,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 44287,
+                "nodeId": 79,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 58593,
+                "nodeId": 54,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 58801,
+                "nodeId": 50,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 64362,
+                "nodeId": 79,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 70063,
+                "nodeId": 79,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 75218,
+                "nodeId": 79,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 79354,
+                "nodeId": 54,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 84709,
+                "nodeId": 50,
+                "rawTimeDelta": -1
+              }
+            ],
+            "zeroIntervals": 8,
+            "scope": "Structural/raw timestamp inventory only; no time-weight qualification."
+          },
+          "source": {
+            "capturedSourceFiles": 31,
+            "debuggerSourceInventoryAvailable": true,
+            "sourceMapInventoryAvailable": true,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "windows": {
+            "before-window": {
+              "mainFrames": 135,
+              "axesFrames": 0,
+              "elapsedMs": 2018.4550000000745,
+              "mixerAdvance": 2.0170000000000314,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 945,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 135,
+                "matrixReads": 215325,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 27561600
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 7.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            },
+            "profile-observations": {
+              "mainFrames": 762,
+              "axesFrames": 0,
+              "elapsedMs": 12148.060000000056,
+              "mixerAdvance": 12.139949999999892,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 5334,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 762,
+                "matrixReads": 1215390,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 155569920
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 7.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            },
+            "after-window": {
+              "mainFrames": 134,
+              "axesFrames": 0,
+              "elapsedMs": 2002.410000000149,
+              "mixerAdvance": 2.0080850000000297,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 938,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 134,
+                "matrixReads": 213730,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 27357440
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 7.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            }
+          }
+        },
+        {
+          "engine": "pure-r186",
+          "sequence": 8,
+          "round": 2,
+          "status": "captured",
+          "raw": {
+            "sha256": "c91e92720ccc1d9e64ec9e5f627a9be9ed0025dd96ca1b1b95fde429aa0bc521",
+            "samples": 89634,
+            "nodes": 621,
+            "negativeIntervals": [
+              {
+                "sampleIndex": 6729,
+                "nodeId": 27,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 10555,
+                "nodeId": 27,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 25770,
+                "nodeId": 24,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 26976,
+                "nodeId": 47,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 41051,
+                "nodeId": 24,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 44671,
+                "nodeId": 27,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 58520,
+                "nodeId": 47,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 65403,
+                "nodeId": 27,
+                "rawTimeDelta": -2
+              }
+            ],
+            "zeroIntervals": 18,
+            "scope": "Structural/raw timestamp inventory only; no time-weight qualification."
+          },
+          "source": {
+            "capturedSourceFiles": 24,
+            "debuggerSourceInventoryAvailable": true,
+            "sourceMapInventoryAvailable": true,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "windows": {
+            "before-window": {
+              "mainFrames": 233,
+              "axesFrames": 0,
+              "elapsedMs": 2009.6949999998324,
+              "mixerAdvance": 2.009419999999949,
+              "phaseErrorSeconds": 0.0,
+              "counters": null,
+              "countersPerMainFrame": null
+            },
+            "profile-observations": {
+              "mainFrames": 1377,
+              "axesFrames": 0,
+              "elapsedMs": 12128.310000000056,
+              "mixerAdvance": 12.129030000000046,
+              "phaseErrorSeconds": 0.0,
+              "counters": null,
+              "countersPerMainFrame": null
+            },
+            "after-window": {
+              "mainFrames": 233,
+              "axesFrames": 0,
+              "elapsedMs": 2008.720000000205,
+              "mixerAdvance": 2.0086899999999552,
+              "phaseErrorSeconds": 0.0,
+              "counters": null,
+              "countersPerMainFrame": null
+            }
+          }
+        },
+        {
+          "engine": "prepared-js-r186",
+          "sequence": 9,
+          "round": 2,
+          "status": "captured",
+          "raw": {
+            "sha256": "9fffc0f249fee0ea89c651b284a9deee0895b48d470d4b7b8a94a2a63f800f20",
+            "samples": 85257,
+            "nodes": 795,
+            "negativeIntervals": [
+              {
+                "sampleIndex": 11597,
+                "nodeId": 233,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 16779,
+                "nodeId": 38,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 29246,
+                "nodeId": 38,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 44055,
+                "nodeId": 38,
+                "rawTimeDelta": -2
+              },
+              {
+                "sampleIndex": 48603,
+                "nodeId": 38,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 67658,
+                "nodeId": 38,
+                "rawTimeDelta": -1
+              }
+            ],
+            "zeroIntervals": 13,
+            "scope": "Structural/raw timestamp inventory only; no time-weight qualification."
+          },
+          "source": {
+            "capturedSourceFiles": 30,
+            "debuggerSourceInventoryAvailable": true,
+            "sourceMapInventoryAvailable": true,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "windows": {
+            "before-window": {
+              "mainFrames": 146,
+              "axesFrames": 0,
+              "elapsedMs": 2013.660000000149,
+              "mixerAdvance": 2.016990000000064,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 146,
+                "matrixReads": 232870,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 29807360
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 0.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            },
+            "profile-observations": {
+              "mainFrames": 823,
+              "axesFrames": 0,
+              "elapsedMs": 12132.255000000354,
+              "mixerAdvance": 12.123449999999941,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 823,
+                "matrixReads": 1312685,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 168023680
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 0.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            },
+            "after-window": {
+              "mainFrames": 145,
+              "axesFrames": 0,
+              "elapsedMs": 2014.7700000000186,
+              "mixerAdvance": 2.022265000000047,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 145,
+                "matrixReads": 231275,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 29603200
+              },
+              "countersPerMainFrame": {
+                "wasmCalls": 0.0,
+                "preparedPasses": 0.0,
+                "preparedWasmCalls": 0.0,
+                "preparedFallbacks": 1.0,
+                "matrixReads": 1595.0,
+                "preparedMatrixReads": 0.0,
+                "materializedBytes": 204160.0
+              }
+            }
+          }
+        }
+      ],
+      "errors": [],
+      "browser": "Chrome/155.0.8059.86",
+      "GPU": "Apple M4 Pro / ANGLE Metal",
+      "environmentBefore": {
+        "file": "environment-before/runner.json",
+        "verifiedAC": true
+      },
+      "environmentAfter": {
+        "file": "environment-after/runner.json",
+        "verifiedAC": true
+      }
+    },
+    {
+      "label": "migration-full",
+      "status": "failed",
+      "toolSha": "b33cbb8d7cef1c92fdf475c9e12d830eb1ff7cd1",
+      "configuration": {
+        "mode": "full",
+        "repeats": 3,
+        "warmupFrames": 600,
+        "seconds": 12,
+        "samplingIntervalUs": 100,
+        "prePostObservationSeconds": 2,
+        "networkDiagnostic": "playwright",
+        "strictContent": true,
+        "pageDpr": 1,
+        "cssViewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "isolated": true,
+        "profiling": true,
+        "gpuQueriesInWindow": false,
+        "scope": "Diagnostic CPU sampling with uninstrumented native Viewer and GUI loops; not primary timing or FPS.",
+        "callbackQuantizationFloor": "2 * frozen callback count * observed minimum positive clock increment",
+        "nativeClock": "Unchanged native rAF timestamps; poses are not frame-matched across routes."
+      },
+      "oracleEntries": 6,
+      "oracles": [
+        {
+          "engine": "original-r176",
+          "observer": false,
+          "source": {
+            "capturedSourceFiles": 4,
+            "debuggerSourceInventoryAvailable": false,
+            "sourceMapInventoryAvailable": false,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "poses": [
+            {
+              "pose": 0.25,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            },
+            {
+              "pose": 0.75,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            }
+          ]
+        },
+        {
+          "engine": "original-r176",
+          "observer": true,
+          "source": {
+            "capturedSourceFiles": 4,
+            "debuggerSourceInventoryAvailable": false,
+            "sourceMapInventoryAvailable": false,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "poses": [
+            {
+              "pose": 0.25,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            },
+            {
+              "pose": 0.75,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            }
+          ]
+        },
+        {
+          "engine": "external-r176",
+          "observer": false,
+          "source": {
+            "capturedSourceFiles": 22,
+            "debuggerSourceInventoryAvailable": false,
+            "sourceMapInventoryAvailable": false,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "poses": [
+            {
+              "pose": 0.25,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            },
+            {
+              "pose": 0.75,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            }
+          ]
+        },
+        {
+          "engine": "external-r176",
+          "observer": true,
+          "source": {
+            "capturedSourceFiles": 22,
+            "debuggerSourceInventoryAvailable": false,
+            "sourceMapInventoryAvailable": false,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "poses": [
+            {
+              "pose": 0.25,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            },
+            {
+              "pose": 0.75,
+              "strictReferenceEquality": true,
+              "equal": true,
+              "differences": [],
+              "maxAbsoluteDifference": 0,
+              "numericValues": 74535,
+              "layoutEqual": true
+            }
+          ]
+        },
+        {
+          "engine": "pure-r186",
+          "observer": false,
+          "source": {
+            "capturedSourceFiles": 23,
+            "debuggerSourceInventoryAvailable": false,
+            "sourceMapInventoryAvailable": false,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "poses": [
+            {
+              "pose": 0.25,
+              "strictReferenceEquality": false,
+              "equal": false,
+              "differences": [
+                {
+                  "field": "numeric",
+                  "count": 31,
+                  "maxAbsoluteDifference": 1.933075735593981e-08
+                },
+                {
+                  "field": "main.pixelSha256"
+                },
+                {
+                  "field": "captureLayout"
+                }
+              ],
+              "maxAbsoluteDifference": 1.933075735593981e-08,
+              "numericValues": 74535,
+              "layoutEqual": false
+            },
+            {
+              "pose": 0.75,
+              "strictReferenceEquality": false,
+              "equal": false,
+              "differences": [
+                {
+                  "field": "numeric",
+                  "count": 34,
+                  "maxAbsoluteDifference": 1.0051162443146244e-07
+                },
+                {
+                  "field": "main.pixelSha256"
+                },
+                {
+                  "field": "captureLayout"
+                }
+              ],
+              "maxAbsoluteDifference": 1.0051162443146244e-07,
+              "numericValues": 74535,
+              "layoutEqual": false
+            }
+          ]
+        },
+        {
+          "engine": "pure-r186",
+          "observer": true,
+          "source": {
+            "capturedSourceFiles": 23,
+            "debuggerSourceInventoryAvailable": false,
+            "sourceMapInventoryAvailable": false,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "poses": [
+            {
+              "pose": 0.25,
+              "strictReferenceEquality": false,
+              "equal": false,
+              "differences": [
+                {
+                  "field": "numeric",
+                  "count": 31,
+                  "maxAbsoluteDifference": 1.933075735593981e-08
+                },
+                {
+                  "field": "main.pixelSha256"
+                },
+                {
+                  "field": "captureLayout"
+                }
+              ],
+              "maxAbsoluteDifference": 1.933075735593981e-08,
+              "numericValues": 74535,
+              "layoutEqual": false
+            },
+            {
+              "pose": 0.75,
+              "strictReferenceEquality": false,
+              "equal": false,
+              "differences": [
+                {
+                  "field": "numeric",
+                  "count": 34,
+                  "maxAbsoluteDifference": 1.0051162443146244e-07
+                },
+                {
+                  "field": "main.pixelSha256"
+                },
+                {
+                  "field": "captureLayout"
+                }
+              ],
+              "maxAbsoluteDifference": 1.0051162443146244e-07,
+              "numericValues": 74535,
+              "layoutEqual": false
+            }
+          ]
+        }
+      ],
+      "profileEntries": 2,
+      "runs": [
+        {
+          "engine": "original-r176",
+          "sequence": 1,
+          "round": 0,
+          "status": "captured",
+          "raw": {
+            "sha256": "fe674669955f297acfef924e11b5435f96755bb346b8553ba29b305a6aac0ef7",
+            "samples": 102477,
+            "nodes": 641,
+            "negativeIntervals": [
+              {
+                "sampleIndex": 1790,
+                "nodeId": 49,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 2064,
+                "nodeId": 22,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 11117,
+                "nodeId": 22,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 12897,
+                "nodeId": 22,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 13715,
+                "nodeId": 22,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 13995,
+                "nodeId": 20,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 23864,
+                "nodeId": 22,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 37623,
+                "nodeId": 22,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 46877,
+                "nodeId": 49,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 49993,
+                "nodeId": 49,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 59540,
+                "nodeId": 49,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 60889,
+                "nodeId": 22,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 79777,
+                "nodeId": 22,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 80583,
+                "nodeId": 22,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 81614,
+                "nodeId": 49,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 85539,
+                "nodeId": 49,
+                "rawTimeDelta": -1
+              }
+            ],
+            "zeroIntervals": 25,
+            "scope": "Structural/raw timestamp inventory only; no time-weight qualification."
+          },
+          "source": {
+            "capturedSourceFiles": 4,
+            "debuggerSourceInventoryAvailable": true,
+            "sourceMapInventoryAvailable": true,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "windows": {
+            "before-window": {
+              "mainFrames": 215,
+              "axesFrames": 0,
+              "elapsedMs": 2002.7949999999255,
+              "mixerAdvance": 2.004194999999939,
+              "phaseErrorSeconds": 0.0,
+              "counters": null,
+              "countersPerMainFrame": null
+            },
+            "profile-observations": {
+              "mainFrames": 1295,
+              "axesFrames": 0,
+              "elapsedMs": 12136.584999999963,
+              "mixerAdvance": 12.13322999999994,
+              "phaseErrorSeconds": 0.0,
+              "counters": null,
+              "countersPerMainFrame": null
+            },
+            "after-window": {
+              "mainFrames": 224,
+              "axesFrames": 0,
+              "elapsedMs": 2008.214999999851,
+              "mixerAdvance": 2.0249850000002034,
+              "phaseErrorSeconds": 0.0,
+              "counters": null,
+              "countersPerMainFrame": null
+            }
+          }
+        },
+        {
+          "engine": "external-r176",
+          "sequence": 2,
+          "round": 0,
+          "status": "failed",
+          "raw": {
+            "sha256": "5a3e7b1458ad9e2ea07ea7126ae4b492f0b4aca4bd697c74321608c97ed84609",
+            "samples": 95025,
+            "nodes": 651,
+            "negativeIntervals": [
+              {
+                "sampleIndex": 1028,
+                "nodeId": 56,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 21701,
+                "nodeId": 40,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 22033,
+                "nodeId": 56,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 26577,
+                "nodeId": 40,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 33670,
+                "nodeId": 40,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 43522,
+                "nodeId": 40,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 48162,
+                "nodeId": 29,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 71339,
+                "nodeId": 40,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 86608,
+                "nodeId": 40,
+                "rawTimeDelta": -1
+              },
+              {
+                "sampleIndex": 92295,
+                "nodeId": 40,
+                "rawTimeDelta": -1
+              }
+            ],
+            "zeroIntervals": 18,
+            "scope": "Structural/raw timestamp inventory only; no time-weight qualification."
+          },
+          "source": {
+            "capturedSourceFiles": 22,
+            "debuggerSourceInventoryAvailable": false,
+            "sourceMapInventoryAvailable": false,
+            "strictContentTransportPass": true,
+            "decodedImageDefinitions": 405,
+            "authoredClips": 13
+          },
+          "exclusion": "Failed after-window activity gate; raw sample inventory only. Debugger source and source-map inventories absent; no attribution reconstructed."
+        }
+      ],
+      "errors": [
+        "AssertionError [ERR_ASSERTION]: Viewer activity changed during observed window\n\n1 !== 0\n\n    at validateObservation (file://<tooling>/scripts/apps/viewer-profile.mjs:19:9)\n    at file://<tooling>/scripts/apps/viewer-profile.mjs:24:75\n    at preserveObservation (file://<tooling>/scripts/apps/candidate-profile-session.mjs:28:21)\n    at async profileCase (file://<tooling>/scripts/apps/viewer-profile.mjs:53:39)\n    at async file://<tooling>/scripts/apps/viewer-profile.mjs:79:125"
+      ],
+      "browser": "Chrome/155.0.8059.86",
+      "GPU": "Apple M4 Pro / ANGLE Metal",
+      "environmentBefore": {
+        "file": "environment-before/runner.json",
+        "verifiedAC": true
+      },
+      "environmentAfter": {
+        "file": "environment-after/runner.json",
+        "verifiedAC": true
+      }
+    }
+  ],
+  "smokePartialWeighted": {
+    "samples": 17175,
+    "nodes": 438,
+    "rawProfileSha256": "65361fd4e2c6719f3a396da8a4e8742b2a0597a7359ae57bcfcfc214b101006d",
+    "weightedMs": 2099.031,
+    "durationMs": 2099.149,
+    "activeMs": 1648.2699999999434,
+    "sampleGapsUs": {
+      "p50": 129.0,
+      "p95": 140.0,
+      "p99": 158.0,
+      "min": 0,
+      "max": 93636
+    },
+    "longGapsOver5000us": 1,
+    "sourceCoverage": {
+      "unresolved-script-unavailable": {
+        "sampledUs": 653414,
+        "samples": 4398
+      },
+      "verified-js": {
+        "sampledUs": 1445617,
+        "samples": 12777
+      }
+    },
+    "verifiedSourceFamiliesMs": {
+      "other verified JavaScript": 1445.6170000000009
+    },
+    "mappedNodePositionsChecked": 0,
+    "verifiedPreparedMaps": 1,
+    "sourceAudit": {
+      "payloadHashChecks": 29,
+      "servedSources": 24,
+      "scripts": 6
+    }
+  },
+  "engineSecondaryCounts": {
+    "status": "analysis-complete",
+    "strictWeightedStatus": "incomplete-invalid-profiles",
+    "weightedFailures": 9,
+    "unprocessed": [],
+    "runs": [
+      {
+        "engine": "pure-r186",
+        "round": 0,
+        "sequence": 1,
+        "samples": 103801,
+        "negativeIntervals": 18,
+        "sourceAudit": {
+          "capturedSources": 24,
+          "debuggerScripts": 6,
+          "exactSourceMapNodePositions": 0,
+          "scope": "Independent served/network/debugger/content-addressed byte binding, Wasm function/name/export resolution, and exact VLQ source positions. Recorded AST function labels were not independently reparsed."
+        },
+        "rawProfileSha256": "209b8b9be62eb7c70a09ebe7bb18abcf26c1cc7d933a88e042de9614dac5b89b",
+        "exclusiveCounts": {
+          "program/native-unresolved": 2059,
+          "animation/binding": 68,
+          "visibility/sort": 7167,
+          "verified JS other": 38497,
+          "render preparation/submission": 11479,
+          "source unresolved": 10193,
+          "render residual": 15105,
+          "transform/math": 6409,
+          "idle": 12389,
+          "GC": 435
+        },
+        "contextCounts": {
+          "unresolved context": 15871,
+          "animation/binding": 68,
+          "visibility/sort": 7758,
+          "render preparation/submission": 47073,
+          "render residual": 25706,
+          "transform/math": 7325
+        },
+        "sourceCounts": {
+          "unresolved-script-unavailable": 25076,
+          "verified-js": 78725
+        }
+      },
+      {
+        "engine": "prepared-js-r186",
+        "round": 0,
+        "sequence": 2,
+        "samples": 97030,
+        "negativeIntervals": 7,
+        "sourceAudit": {
+          "capturedSources": 30,
+          "debuggerScripts": 10,
+          "exactSourceMapNodePositions": 0,
+          "scope": "Independent served/network/debugger/content-addressed byte binding, Wasm function/name/export resolution, and exact VLQ source positions. Recorded AST function labels were not independently reparsed."
+        },
+        "rawProfileSha256": "83cfb942c177492ca036c1efb6cfca4d6eab60cbeecb94e430d58698476a8acc",
+        "exclusiveCounts": {
+          "program/native-unresolved": 1765,
+          "transform/math": 5854,
+          "facade operation preparation": 9201,
+          "facade scalar/input/flag tracking": 5911,
+          "render preparation/submission": 18821,
+          "visibility/sort": 12484,
+          "facade matrix materialization/proxy": 977,
+          "verified JS other": 23792,
+          "render residual": 7497,
+          "source unresolved": 7307,
+          "facade other": 2478,
+          "matched-JS kernel": 501,
+          "idle": 216,
+          "GC": 190,
+          "animation/binding": 35,
+          "shadow pass": 1
+        },
+        "contextCounts": {
+          "unresolved context": 3889,
+          "transform/math": 19959,
+          "render preparation/submission": 45617,
+          "visibility/sort": 13235,
+          "render residual": 14290,
+          "animation/binding": 39,
+          "shadow pass": 1
+        },
+        "sourceCounts": {
+          "unresolved-script-unavailable": 9478,
+          "verified-js": 87552
+        }
+      },
+      {
+        "engine": "prepared-wasm-r186",
+        "round": 0,
+        "sequence": 3,
+        "samples": 85206,
+        "negativeIntervals": 8,
+        "sourceAudit": {
+          "capturedSources": 31,
+          "debuggerScripts": 8,
+          "exactSourceMapNodePositions": 0,
+          "scope": "Independent served/network/debugger/content-addressed byte binding, Wasm function/name/export resolution, and exact VLQ source positions. Recorded AST function labels were not independently reparsed."
+        },
+        "rawProfileSha256": "74f3d73ee8671b913f87d46c80ac5878243677432a49556c17c6960cb588c61c",
+        "exclusiveCounts": {
+          "program/native-unresolved": 2026,
+          "source unresolved": 5764,
+          "facade operation preparation": 7817,
+          "verified JS other": 22126,
+          "Wasm verified function": 275,
+          "facade scalar/input/flag tracking": 2213,
+          "facade other": 5814,
+          "visibility/sort": 10807,
+          "transform/math": 5394,
+          "render preparation/submission": 15481,
+          "render residual": 6349,
+          "facade matrix materialization/proxy": 663,
+          "idle": 188,
+          "GC": 254,
+          "animation/binding": 31,
+          "Wasm unresolved": 4
+        },
+        "contextCounts": {
+          "unresolved context": 4201,
+          "transform/math": 18794,
+          "visibility/sort": 11472,
+          "render preparation/submission": 37439,
+          "render residual": 13264,
+          "animation/binding": 36
+        },
+        "sourceCounts": {
+          "unresolved-script-unavailable": 8232,
+          "verified-js": 76695,
+          "verified-wasm": 275,
+          "unresolved-wasm-function": 4
+        }
+      },
+      {
+        "engine": "prepared-js-r186",
+        "round": 1,
+        "sequence": 4,
+        "samples": 83576,
+        "negativeIntervals": 4,
+        "sourceAudit": {
+          "capturedSources": 30,
+          "debuggerScripts": 10,
+          "exactSourceMapNodePositions": 0,
+          "scope": "Independent served/network/debugger/content-addressed byte binding, Wasm function/name/export resolution, and exact VLQ source positions. Recorded AST function labels were not independently reparsed."
+        },
+        "rawProfileSha256": "9def460e42d4b36548d37cbd8adaa496f569952872bc96d56b953a326ab0fdb9",
+        "exclusiveCounts": {
+          "program/native-unresolved": 1106,
+          "transform/math": 2822,
+          "facade operation preparation": 9925,
+          "matched-JS kernel": 342,
+          "facade scalar/input/flag tracking": 3789,
+          "verified JS other": 18228,
+          "visibility/sort": 16233,
+          "render preparation/submission": 18544,
+          "source unresolved": 3486,
+          "render residual": 8317,
+          "GC": 206,
+          "facade other": 125,
+          "facade matrix materialization/proxy": 290,
+          "idle": 136,
+          "animation/binding": 26,
+          "shadow pass": 1
+        },
+        "contextCounts": {
+          "unresolved context": 2327,
+          "transform/math": 15690,
+          "visibility/sort": 18987,
+          "render preparation/submission": 34108,
+          "render residual": 12435,
+          "animation/binding": 28,
+          "shadow pass": 1
+        },
+        "sourceCounts": {
+          "unresolved-script-unavailable": 4934,
+          "verified-js": 78642
+        }
+      },
+      {
+        "engine": "prepared-wasm-r186",
+        "round": 1,
+        "sequence": 5,
+        "samples": 84979,
+        "negativeIntervals": 8,
+        "sourceAudit": {
+          "capturedSources": 31,
+          "debuggerScripts": 8,
+          "exactSourceMapNodePositions": 0,
+          "scope": "Independent served/network/debugger/content-addressed byte binding, Wasm function/name/export resolution, and exact VLQ source positions. Recorded AST function labels were not independently reparsed."
+        },
+        "rawProfileSha256": "8908eab03db3d17770627a83ef2ebe190e5e6b45f0190de806d0aa4f98a98f4b",
+        "exclusiveCounts": {
+          "program/native-unresolved": 2432,
+          "transform/math": 4467,
+          "facade scalar/input/flag tracking": 2234,
+          "facade other": 4874,
+          "facade operation preparation": 7770,
+          "verified JS other": 22114,
+          "visibility/sort": 9952,
+          "render preparation/submission": 16743,
+          "render residual": 5999,
+          "facade matrix materialization/proxy": 750,
+          "source unresolved": 6855,
+          "Wasm verified function": 270,
+          "GC": 273,
+          "idle": 195,
+          "animation/binding": 40,
+          "Wasm unresolved": 4,
+          "shadow pass": 5,
+          "facade ABI dispatch": 2
+        },
+        "contextCounts": {
+          "unresolved context": 4465,
+          "transform/math": 17861,
+          "visibility/sort": 10918,
+          "render preparation/submission": 40591,
+          "render residual": 11095,
+          "animation/binding": 44,
+          "shadow pass": 5
+        },
+        "sourceCounts": {
+          "unresolved-script-unavailable": 9755,
+          "verified-js": 74950,
+          "verified-wasm": 270,
+          "unresolved-wasm-function": 4
+        }
+      },
+      {
+        "engine": "pure-r186",
+        "round": 1,
+        "sequence": 6,
+        "samples": 89687,
+        "negativeIntervals": 7,
+        "sourceAudit": {
+          "capturedSources": 24,
+          "debuggerScripts": 6,
+          "exactSourceMapNodePositions": 0,
+          "scope": "Independent served/network/debugger/content-addressed byte binding, Wasm function/name/export resolution, and exact VLQ source positions. Recorded AST function labels were not independently reparsed."
+        },
+        "rawProfileSha256": "6cdd5dcda80ed12de5dc282ee86070f29249fb1efd41999100ddec1974e104ea",
+        "exclusiveCounts": {
+          "program/native-unresolved": 1778,
+          "source unresolved": 8004,
+          "transform/math": 5414,
+          "visibility/sort": 6159,
+          "verified JS other": 35467,
+          "render preparation/submission": 8931,
+          "render residual": 13397,
+          "animation/binding": 46,
+          "idle": 10049,
+          "GC": 441,
+          "shadow pass": 1
+        },
+        "contextCounts": {
+          "unresolved context": 13877,
+          "transform/math": 6028,
+          "visibility/sort": 6734,
+          "render preparation/submission": 40650,
+          "render residual": 22351,
+          "animation/binding": 46,
+          "shadow pass": 1
+        },
+        "sourceCounts": {
+          "unresolved-script-unavailable": 20272,
+          "verified-js": 69415
+        }
+      },
+      {
+        "engine": "prepared-wasm-r186",
+        "round": 2,
+        "sequence": 7,
+        "samples": 84780,
+        "negativeIntervals": 9,
+        "sourceAudit": {
+          "capturedSources": 31,
+          "debuggerScripts": 8,
+          "exactSourceMapNodePositions": 0,
+          "scope": "Independent served/network/debugger/content-addressed byte binding, Wasm function/name/export resolution, and exact VLQ source positions. Recorded AST function labels were not independently reparsed."
+        },
+        "rawProfileSha256": "8df9319f43a6c110c01162b3f579a8bc067cce0865a06b6d2a979e912cc58f96",
+        "exclusiveCounts": {
+          "program/native-unresolved": 1424,
+          "facade operation preparation": 9386,
+          "source unresolved": 6077,
+          "verified JS other": 21720,
+          "Wasm verified function": 288,
+          "facade scalar/input/flag tracking": 1635,
+          "render preparation/submission": 16453,
+          "visibility/sort": 11584,
+          "facade matrix materialization/proxy": 890,
+          "transform/math": 4113,
+          "render residual": 7201,
+          "facade other": 3607,
+          "idle": 195,
+          "GC": 182,
+          "animation/binding": 20,
+          "Wasm unresolved": 5
+        },
+        "contextCounts": {
+          "unresolved context": 3386,
+          "transform/math": 17666,
+          "render preparation/submission": 38879,
+          "visibility/sort": 12511,
+          "render residual": 12315,
+          "animation/binding": 23
+        },
+        "sourceCounts": {
+          "unresolved-script-unavailable": 7878,
+          "verified-js": 76609,
+          "verified-wasm": 288,
+          "unresolved-wasm-function": 5
+        }
+      },
+      {
+        "engine": "pure-r186",
+        "round": 2,
+        "sequence": 8,
+        "samples": 89634,
+        "negativeIntervals": 8,
+        "sourceAudit": {
+          "capturedSources": 24,
+          "debuggerScripts": 6,
+          "exactSourceMapNodePositions": 0,
+          "scope": "Independent served/network/debugger/content-addressed byte binding, Wasm function/name/export resolution, and exact VLQ source positions. Recorded AST function labels were not independently reparsed."
+        },
+        "rawProfileSha256": "c91e92720ccc1d9e64ec9e5f627a9be9ed0025dd96ca1b1b95fde429aa0bc521",
+        "exclusiveCounts": {
+          "program/native-unresolved": 1755,
+          "source unresolved": 8748,
+          "verified JS other": 35681,
+          "visibility/sort": 5989,
+          "render residual": 13334,
+          "render preparation/submission": 8908,
+          "transform/math": 5554,
+          "idle": 9212,
+          "GC": 387,
+          "animation/binding": 61,
+          "shadow pass": 5
+        },
+        "contextCounts": {
+          "unresolved context": 13010,
+          "transform/math": 6127,
+          "visibility/sort": 6560,
+          "render preparation/submission": 41761,
+          "render residual": 22110,
+          "animation/binding": 61,
+          "shadow pass": 5
+        },
+        "sourceCounts": {
+          "unresolved-script-unavailable": 20102,
+          "verified-js": 69532
+        }
+      },
+      {
+        "engine": "prepared-js-r186",
+        "round": 2,
+        "sequence": 9,
+        "samples": 85257,
+        "negativeIntervals": 6,
+        "sourceAudit": {
+          "capturedSources": 30,
+          "debuggerScripts": 10,
+          "exactSourceMapNodePositions": 0,
+          "scope": "Independent served/network/debugger/content-addressed byte binding, Wasm function/name/export resolution, and exact VLQ source positions. Recorded AST function labels were not independently reparsed."
+        },
+        "rawProfileSha256": "9fffc0f249fee0ea89c651b284a9deee0895b48d470d4b7b8a94a2a63f800f20",
+        "exclusiveCounts": {
+          "program/native-unresolved": 2383,
+          "source unresolved": 5875,
+          "facade operation preparation": 8267,
+          "verified JS other": 22334,
+          "facade scalar/input/flag tracking": 4625,
+          "transform/math": 5107,
+          "visibility/sort": 10314,
+          "render preparation/submission": 16696,
+          "render residual": 6508,
+          "facade matrix materialization/proxy": 871,
+          "matched-JS kernel": 439,
+          "facade other": 1406,
+          "GC": 244,
+          "idle": 161,
+          "animation/binding": 25,
+          "shadow pass": 2
+        },
+        "contextCounts": {
+          "unresolved context": 4374,
+          "transform/math": 17652,
+          "visibility/sort": 11328,
+          "render preparation/submission": 40069,
+          "render residual": 11803,
+          "animation/binding": 29,
+          "shadow pass": 2
+        },
+        "sourceCounts": {
+          "unresolved-script-unavailable": 8663,
+          "verified-js": 76594
+        }
+      }
+    ],
+    "scope": "Integer observation counts only; no sampled milliseconds or route-speed ranking."
+  },
+  "migrationSecondaryCounts": {
+    "status": "incomplete-capture",
+    "strictWeightedStatus": "incomplete-invalid-profiles",
+    "weightedFailures": 1,
+    "unprocessed": [
+      {
+        "sequence": 2,
+        "scenario": "bistro-native-first-clip",
+        "engine": "external-r176",
+        "round": 0,
+        "directory": "runs/002-bistro-native-first-clip-0-external-r176",
+        "status": "failed",
+        "rawProfile": "profile.cpuprofile",
+        "error": "AssertionError [ERR_ASSERTION]: Viewer activity changed during observed window\n\n1 !== 0\n\n    at validateObservation (file://<tooling>/scripts/apps/viewer-profile.mjs:19:9)\n    at file://<tooling>/scripts/apps/viewer-profile.mjs:24:75\n    at preserveObservation (file://<tooling>/scripts/apps/candidate-profile-session.mjs:28:21)\n    at async profileCase (file://<tooling>/scripts/apps/viewer-profile.mjs:53:39)\n    at async file://<tooling>/scripts/apps/viewer-profile.mjs:79:125",
+        "reason": "Incomplete capture is retained without attribution"
+      }
+    ],
+    "runs": [
+      {
+        "engine": "original-r176",
+        "round": 0,
+        "sequence": 1,
+        "samples": 102477,
+        "negativeIntervals": 16,
+        "sourceAudit": {
+          "capturedSources": 4,
+          "debuggerScripts": 2,
+          "exactSourceMapNodePositions": 0,
+          "scope": "Independent served/network/debugger/content-addressed byte binding, Wasm function/name/export resolution, and exact VLQ source positions. Recorded AST function labels were not independently reparsed."
+        },
+        "rawProfileSha256": "fe674669955f297acfef924e11b5435f96755bb346b8553ba29b305a6aac0ef7",
+        "exclusiveCounts": {
+          "program/native-unresolved": 2205,
+          "source unresolved": 8165,
+          "verified JS other": 68176,
+          "transform/math": 2120,
+          "render preparation/submission": 5103,
+          "idle": 16256,
+          "GC": 393,
+          "render residual": 41,
+          "animation/binding": 18
+        },
+        "contextCounts": {
+          "unresolved context": 21179,
+          "render residual": 13665,
+          "transform/math": 3100,
+          "render preparation/submission": 64515,
+          "animation/binding": 18
+        },
+        "sourceCounts": {
+          "unresolved-script-unavailable": 27019,
+          "verified-js": 75458
+        }
+      }
+    ],
+    "scope": "Integer observation counts only; no sampled milliseconds or route-speed ranking."
+  },
+  "independentAudits": {
+    "engine-count-audit": {
+      "status": "pass",
+      "inputHashesBound": 412,
+      "auditSha256": "7b95f6a310671b576216084e87950d41261d1406d80f6725170604002e76f2a5"
+    },
+    "migration-count-audit": {
+      "status": "pass",
+      "inputHashesBound": 24,
+      "auditSha256": "a33a2b2a9b3597833b547b6b426a75f5e225b3bee99d67972d9054f53df4e9be"
+    }
+  },
+  "limits": [
+    "Full weighted engine analysis fails all nine profiles and remains failed.",
+    "Migration is incomplete; one original count report and one excluded external raw profile do not form a route comparison.",
+    "The smoke weighted pure report is a tooling check, not an outcome selected for comparison.",
+    "Secondary counts do not measure time, speed, FPS, GPU cost or headroom.",
+    "AST function ownership labels are recorded analyzer output; byte binding and exact map positions are independently verified, not reparsed with a second AST implementation.",
+    "Huge ZIP and source asset bytes are excluded. Their recorded identities and prior ZIP audit are included; this verifier does not reacquire them."
+  ]
+}
