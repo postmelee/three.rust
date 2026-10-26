@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<audit-tools>/archive.py", line 310, in <module>
+    main()
+    ~~~~^^
+  File "<audit-tools>/archive.py", line 284, in main
+    assert sorted(str(f.relative_to(directory)) for f in directory.rglob('*')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                  if f.is_file()) == source_listing[label]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -1,0 +1,139 @@
+{
+  "status": "final-audit-passed",
+  "attempts": [
+    {
+      "step": "archive-build-001",
+      "result": "failed",
+      "reason": "Path-component ordering differed from lexical string ordering when a scenario name prefixes another; file membership and hashes were unchanged. Original failed archive retained; fresh archive002 rebuilt."
+    },
+    {
+      "step": "archive-build-002",
+      "result": "passed",
+      "payloads": 7522
+    },
+    {
+      "step": "archive-verify-001",
+      "result": "failed",
+      "reason": "Verifier incorrectly required a physical dat.gui adapted source. Capture preserves build-time transform original/adapted/patch bytes; verifier now verifies that declared transform."
+    },
+    {
+      "step": "archive-verify-002",
+      "result": "failed",
+      "reason": "Verifier incorrectly expected a runtime Git SHA on external-r176. Both r176 routes correctly retain null runtime metadata; r186 routes require exact candidate SHA."
+    },
+    {
+      "step": "archive-verify-003",
+      "result": "passed",
+      "captures": 4
+    },
+    {
+      "step": "numeric-tests-001",
+      "result": "passed",
+      "tests": 18
+    },
+    {
+      "step": "mutation-tests-001",
+      "result": "passed",
+      "tests": 11
+    }
+  ],
+  "logs": [
+    {
+      "file": "verification-logs/archive-build-001.txt",
+      "sourceSha256": "2a9c0e8a3c812f7dde991dc026ba7f4689dfd94a29d8f2ffac257cd5e353313e",
+      "sha256": "d9e1a5fff1aff0d5351b7709d0de5525afdab53b917d014d4f04c5ff0cd9764a",
+      "bytes": 456,
+      "normalized": true
+    },
+    {
+      "file": "verification-logs/archive-build-002.txt",
+      "sourceSha256": "3f901f514b9e5aaf69ce7ce06e8024da87bfb718ca0e1bbd30f02e0e0a694c7b",
+      "sha256": "3f901f514b9e5aaf69ce7ce06e8024da87bfb718ca0e1bbd30f02e0e0a694c7b",
+      "bytes": 86,
+      "normalized": false
+    },
+    {
+      "file": "verification-logs/archive-verify-001.txt",
+      "sourceSha256": "023ca061df29e85d913962b75dfcb883c6bade3e5d1e8e7f2460208ed7d24925",
+      "sha256": "51277ef10cd71db31ab2c19be1f001bae9c87baeed62816c0520548dcd2add6c",
+      "bytes": 1478,
+      "normalized": true
+    },
+    {
+      "file": "verification-logs/archive-verify-002.txt",
+      "sourceSha256": "fb5d4022ca46cc69d4f52a98b1a67303299c238fdebaf48494c33c056bac3e9e",
+      "sha256": "832ac30446f1a257c4572c8f9627b8dabeb42f4611aa17b7d56f3333e1838154",
+      "bytes": 924,
+      "normalized": true
+    },
+    {
+      "file": "verification-logs/archive-verify-003.txt",
+      "sourceSha256": "72dcdada0784e4107e01f1a0327d87bea6c88ea30b9413c8cae7ecddfd31a3ce",
+      "sha256": "72dcdada0784e4107e01f1a0327d87bea6c88ea30b9413c8cae7ecddfd31a3ce",
+      "bytes": 481,
+      "normalized": false
+    },
+    {
+      "file": "verification-logs/engine-full.txt",
+      "sourceSha256": "3d10414d72b1c27141698dd6addb3a6bf1d919d4a4db92673ff344b05ba8adb0",
+      "sha256": "3d10414d72b1c27141698dd6addb3a6bf1d919d4a4db92673ff344b05ba8adb0",
+      "bytes": 177,
+      "normalized": false
+    },
+    {
+      "file": "verification-logs/engine-smoke.txt",
+      "sourceSha256": "dc54ccbe788cf0d546e801dd4e8f2369b62f457daab2a82758bc10de885753ae",
+      "sha256": "dc54ccbe788cf0d546e801dd4e8f2369b62f457daab2a82758bc10de885753ae",
+      "bytes": 172,
+      "normalized": false
+    },
+    {
+      "file": "verification-logs/migration-full.txt",
+      "sourceSha256": "8ea1cf86e62dfe228090c03f3849565dbca6bfaceb1d7f705ee804b8dd0ac9d1",
+      "sha256": "8ea1cf86e62dfe228090c03f3849565dbca6bfaceb1d7f705ee804b8dd0ac9d1",
+      "bytes": 179,
+      "normalized": false
+    },
+    {
+      "file": "verification-logs/migration-smoke.txt",
+      "sourceSha256": "0f931134732cca3baec0cde64bf0390d844584ac75071e5bc0f4a4f43c04d21c",
+      "sha256": "0f931134732cca3baec0cde64bf0390d844584ac75071e5bc0f4a4f43c04d21c",
+      "bytes": 175,
+      "normalized": false
+    },
+    {
+      "file": "verification-logs/mutation-tests-001.txt",
+      "sourceSha256": "194c5bf394ef0b4f0e56b28077a5f0cad4950aeeaaab0d4a5ff8dd4ce41f0b41",
+      "sha256": "194c5bf394ef0b4f0e56b28077a5f0cad4950aeeaaab0d4a5ff8dd4ce41f0b41",
+      "bytes": 1268,
+      "normalized": false
+    },
+    {
+      "file": "verification-logs/numeric-tests-001.txt",
+      "sourceSha256": "9c82595ec56d7cc3b36940b986ee80a1a255469882f93e93eb0faa6d1dae30e3",
+      "sha256": "9c82595ec56d7cc3b36940b986ee80a1a255469882f93e93eb0faa6d1dae30e3",
+      "bytes": 117,
+      "normalized": false
+    },
+    {
+      "file": "verification-logs/archive-build-001-build-status.json.gz",
+      "sourceSha256": "4f124df22ff550dca74df15ada1e7af4879626eb2bd9131cb3acae2eea7ab0a5",
+      "sha256": "5926fdb51c37f6b39e4a9c99882fea4078b18159e0ebd69dad09544c1fc76a1e",
+      "decodedSha256": "4f124df22ff550dca74df15ada1e7af4879626eb2bd9131cb3acae2eea7ab0a5",
+      "bytes": 438,
+      "normalized": false,
+      "gzip": true
+    },
+    {
+      "file": "verification-logs/archive-build-001-partial-index.json.gz",
+      "sourceSha256": "ba8b8c07db655675960bd90e2165b272888be04b77ac10662129bd5c5be4fbb5",
+      "sha256": "9c0bbf64e3c0b8f1c54e4027bc7d2d01481fa1c8b36a067e8830e7f9cd0a31bc",
+      "decodedSha256": "ba8b8c07db655675960bd90e2165b272888be04b77ac10662129bd5c5be4fbb5",
+      "bytes": 810602,
+      "normalized": false,
+      "gzip": true
+    }
+  ],
+  "captureDataChanged": false,
+  "acceptanceCriteriaChanged": false
+}

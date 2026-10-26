@@ -1,0 +1,1 @@
+{"status": "numeric-audit-complete", "group": "engine", "mode": "smoke", "capturedRuns": 24, "measuredGroups": 720, "groupsIncludingWarmup": 960, "retainedArmingRows": 96}

@@ -1,0 +1,48 @@
+{
+  "status": "complete",
+  "sourceSuites": [
+    {
+      "label": "engine-smoke",
+      "sourceDirectory": "work/task49-viewer-robot-timing-smoke-001",
+      "captureStatus": "smoke-complete-not-performance-evidence",
+      "mode": "smoke",
+      "toolingSha": "42121c8ff9bc4e83a65991072a03d9514ce5823c",
+      "candidateSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "finishedAt": "2026-10-26T05:05:38.780Z",
+      "fileCount": 1736
+    },
+    {
+      "label": "engine-full",
+      "sourceDirectory": "work/task49-viewer-robot-timing-full-001",
+      "captureStatus": "screen-complete-unqualified",
+      "mode": "full",
+      "toolingSha": "42121c8ff9bc4e83a65991072a03d9514ce5823c",
+      "candidateSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "finishedAt": "2026-10-26T05:26:05.250Z",
+      "fileCount": 3716
+    },
+    {
+      "label": "migration-smoke",
+      "sourceDirectory": "work/task49-viewer-migration-timing-smoke-001",
+      "captureStatus": "smoke-complete-not-performance-evidence",
+      "mode": "smoke",
+      "toolingSha": "42121c8ff9bc4e83a65991072a03d9514ce5823c",
+      "candidateSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "finishedAt": "2026-10-26T05:27:37.483Z",
+      "fileCount": 627
+    },
+    {
+      "label": "migration-full",
+      "sourceDirectory": "work/task49-viewer-migration-timing-full-001",
+      "captureStatus": "screen-complete-unqualified",
+      "mode": "full",
+      "toolingSha": "42121c8ff9bc4e83a65991072a03d9514ce5823c",
+      "candidateSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "finishedAt": "2026-10-26T05:38:43.797Z",
+      "fileCount": 1317
+    }
+  ],
+  "payloads": 7522,
+  "sourceHashesRechecked": true,
+  "sourceListingsUnchanged": true
+}
