@@ -99,3 +99,110 @@ test(`${mode}: internal backing arrays never escape through overridden consumers
  root.matrixAutoUpdate=false;root.matrixWorldAutoUpdate=false;observed[12]=12;child.position.x=1;
  root.updateMatrixWorld(true);assert.equal(child.matrixWorld.elements[12],13);T.release(root);
 });
+
+// These calls select one operation even when the object has a parent/children.
+// The same assertions run in facade and prepared JS/Wasm workers.
+const oneOperation=()=>{
+ const d=T.diagnostics();
+ assert.equal(d.batches,1);assert.equal(d.nodes,1);assert.equal(d.operationBytes,28);assert.equal(d.fallbackRoots,0);
+ assert.equal(d.wasmCalls,mode.endsWith('-wasm')?1:0);assert.equal(d.wasmNodes,mode.endsWith('-wasm')?1:0);
+};
+test(`${mode}: one-node selective updates retain parent snapshots, flags and aliases`,()=>{
+ for(const auto of [false,true])for(const worldAuto of [false,true])for(const dirty of [false,true])for(const force of [false,true]){
+  const a=new T.Group(),b=new O.Group(),c=new T.Object3D(),d=new O.Object3D(),e=new T.Object3D(),f=new O.Object3D();
+  a.add(c);b.add(d);c.add(e);d.add(f);
+  const local=c.matrix.elements,world=c.matrixWorld.elements;
+  try{
+   for(const [root,child,leaf] of [[a,c,e],[b,d,f]]){
+    root.position.set(3,2,1);child.position.set(2,1,-1);leaf.position.x=4;root.updateMatrixWorld();
+    root.position.x=50;leaf.position.x=80; // Both remain unevaluated by the selective call.
+    child.position.set(7,-2,5);child.scale.set(-2,3,0.5);child.rotation.set(0.2,-0.4,0.1);
+    child.matrix.elements[12]=11;child.matrixWorld.elements[13]=13;
+    child.matrixAutoUpdate=auto;child.matrixWorldAutoUpdate=worldAuto;child.matrixWorldNeedsUpdate=dirty;
+   }
+   T.resetDiagnostics();c.updateWorldMatrix(false,false,force);d.updateWorldMatrix(false,false,force);oneOperation();
+   assert.equal(c.matrix.elements,local);assert.equal(c.matrixWorld.elements,world);
+   for(const [actual,expected] of [[a,b],[c,d],[e,f]]){
+    near(actual.matrix.elements,expected.matrix.elements);near(actual.matrixWorld.elements,expected.matrixWorld.elements);
+    assert.equal(actual.matrixWorldNeedsUpdate,expected.matrixWorldNeedsUpdate);
+   }
+  }finally{T.release(a);}
+ }
+ assert.equal(T.diagnostics().liveNodes,0);
+});
+test(`${mode}: one-node local compose keeps world and relatives stale`,()=>{
+ const a=new T.Group(),b=new O.Group(),c=new T.Object3D(),d=new O.Object3D(),e=new T.Object3D(),f=new O.Object3D();
+ a.add(c);b.add(d);c.add(e);d.add(f);
+ const local=c.matrix.elements,world=c.matrixWorld.elements;
+ try{
+  for(const [root,child,leaf,Vector] of [[a,c,e,T.Vector3],[b,d,f,O.Vector3]]){
+   root.position.x=3;child.position.x=2;leaf.position.x=4;root.updateMatrixWorld();
+   root.position.x=50;leaf.position.x=80;child.position.set(7,-2,5);child.scale.set(-2,3,0.5);
+   child.pivot=new Vector(1,2,3);child.matrixAutoUpdate=false;child.matrixWorldAutoUpdate=false;child.matrixWorldNeedsUpdate=false;
+  }
+  T.resetDiagnostics();c.updateMatrix();d.updateMatrix();oneOperation();
+  assert.equal(c.matrix.elements,local);assert.equal(c.matrixWorld.elements,world);
+  for(const [actual,expected] of [[a,b],[c,d],[e,f]]){
+   near(actual.matrix.elements,expected.matrix.elements);near(actual.matrixWorld.elements,expected.matrixWorld.elements);
+   assert.equal(actual.matrixWorldNeedsUpdate,expected.matrixWorldNeedsUpdate);
+  }
+  assert.equal(c.matrixWorldNeedsUpdate,true);
+ }finally{T.release(a);}
+ assert.equal(T.diagnostics().liveNodes,0);
+});
+test(`${mode}: one-node routes preserve replaced-array and override fallback`,()=>{
+ const a=new T.Group(),b=new O.Group(),c=new T.Object3D(),d=new O.Object3D();a.add(c);b.add(d);
+ try{
+  for(const [root,child] of [[a,c],[b,d]]){root.position.x=2;root.updateMatrixWorld();child.matrix.elements=new Float64Array(child.matrix.elements);child.matrix.elements[12]=9;child.matrixAutoUpdate=false;child.matrixWorldNeedsUpdate=true;}
+  const supplied=c.matrix.elements;
+  T.resetDiagnostics();c.updateWorldMatrix(false,false,true);d.updateWorldMatrix(false,false,true);
+  near(c.matrixWorld.elements,d.matrixWorld.elements);assert.equal(c.matrix.elements,supplied);
+  let counts=T.diagnostics();assert.ok(counts.fallbackRoots>0);assert.equal(counts.batches,0);assert.equal(counts.nodes,0);assert.equal(counts.operationBytes,0);
+ }finally{T.release(a);}
+ const o=new T.Object3D(),ref=new O.Object3D();let calls=0,expectedCalls=0;
+ o.updateMatrix=function(){calls++;T.Object3D.prototype.updateMatrix.call(this);};
+ ref.updateMatrix=function(){expectedCalls++;O.Object3D.prototype.updateMatrix.call(this);};
+ try{
+  o.position.x=ref.position.x=6;T.resetDiagnostics();o.updateWorldMatrix(false,false,true);ref.updateWorldMatrix(false,false,true);
+  assert.equal(calls,expectedCalls);assert.equal(calls,1);near(o.matrixWorld.elements,ref.matrixWorld.elements);
+  const counts=T.diagnostics();assert.ok(counts.fallbackRoots>0);assert.equal(counts.batches,0);assert.equal(counts.nodes,0);assert.equal(counts.operationBytes,0);
+ }finally{T.release(o);}
+ assert.equal(T.diagnostics().liveNodes,0);
+});
+test(`${mode}: one-node aliases survive arena growth and released slot reuse`,()=>{
+ const o=new T.Object3D(),ref=new O.Object3D(),local=o.matrix.elements,world=o.matrixWorld.elements,others=[];
+ try{
+  o.position.x=ref.position.x=3;o.updateWorldMatrix(false,false);ref.updateWorldMatrix(false,false);near(world,ref.matrixWorld.elements);
+  for(let i=0;i<80;i++){const object=new T.Object3D();others.push(object);object.position.x=i;object.updateMatrix();}
+  o.position.x=ref.position.x=7;T.resetDiagnostics();o.updateWorldMatrix(false,false,true);ref.updateWorldMatrix(false,false,true);oneOperation();
+  near(local,ref.matrix.elements);near(world,ref.matrixWorld.elements);
+  T.release(o);const replacement=new T.Object3D();others.push(replacement);replacement.position.x=100;replacement.updateWorldMatrix(false,false);
+  assert.equal(world[12],7);
+  o.position.x=ref.position.x=11;T.resetDiagnostics();o.updateWorldMatrix(false,false);ref.updateWorldMatrix(false,false);oneOperation();
+  assert.equal(o.matrix.elements,local);assert.equal(o.matrixWorld.elements,world);near(local,ref.matrix.elements);near(world,ref.matrixWorld.elements);
+ }finally{T.release(o);for(const object of others)T.release(object);}
+ assert.equal(T.diagnostics().liveNodes,0);
+});
+
+test(`${mode}: one-node parent reads retain public access and failure before evaluation`,()=>{
+ const a=new T.Group(),b=new O.Group(),c=new T.Object3D(),d=new O.Object3D();a.add(c);b.add(d);
+ let reads=0,indices=[],throwAt=-1;
+ for(const [root,child] of [[a,c],[b,d]]){root.position.x=2;child.position.x=3;root.updateMatrixWorld();root.position.x=50;child.position.x=7;}
+ const alias=c.matrixWorld.elements;assert.equal(alias[12],5);
+ const matrix=a.matrixWorld,descriptor=Object.getOwnPropertyDescriptor(matrix,'elements'),elements=matrix.elements;
+ const observed=new Proxy(elements,{get(target,key,receiver){
+  if(typeof key==='string'&&/^(?:[0-9]|1[0-5])$/.test(key)){indices.push(Number(key));if(Number(key)===throwAt)throw Error('parent read failed');}
+  return Reflect.get(target,key,receiver);
+ }});
+ Object.defineProperty(matrix,'elements',{configurable:true,enumerable:true,get(){reads++;return observed;}});
+ try{
+  throwAt=7;T.resetDiagnostics();assert.throws(()=>c.updateWorldMatrix(false,false),/parent read failed/);
+  assert.equal(reads,1);assert.deepEqual(indices,[0,1,2,3,4,5,6,7]);
+  const failed=T.diagnostics();assert.equal(failed.batches,0);assert.equal(failed.nodes,0);assert.equal(failed.operationBytes,0);assert.equal(failed.wasmCalls,0);assert.equal(alias[12],5);
+  throwAt=-1;reads=0;indices=[];T.resetDiagnostics();c.updateWorldMatrix(false,false);d.updateWorldMatrix(false,false);oneOperation();
+  assert.equal(reads,1);assert.deepEqual(indices,Array.from({length:16},(_,i)=>i));near(alias,d.matrixWorld.elements);
+  reads=0;indices=[];c.position.x=d.position.x=9;T.resetDiagnostics();c.updateMatrix();d.updateMatrix();oneOperation();
+  assert.equal(reads,0);assert.deepEqual(indices,[]);near(c.matrix.elements,d.matrix.elements);near(alias,d.matrixWorld.elements);
+ }finally{Object.defineProperty(matrix,'elements',descriptor);T.release(a);}
+ assert.equal(T.diagnostics().liveNodes,0);
+});
