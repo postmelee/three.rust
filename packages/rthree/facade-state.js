@@ -164,38 +164,6 @@ function upload(o,r,d){
  const hasParent=o.parent?1:0;
  if(d[b+49]!==hasParent){d[b+49]=hasParent;c.uploadedBytes+=8;}
 }
-// Preserve the generic one-operation semantics without allocating a traversal,
-// index Map or temporary command array for synchronous local/selective calls.
-function updateSingle(root,method,base,force){
- const start=now();
- if(!eligible(root,base,method)){config.counters.fallbackRoots++;return false;}
- register(records.get(root));reserve(nextSlot-1,1);
- const external=method==='local'?null:root.parent;
- let externalElements;
- if(external&&external!==root)externalElements=external.matrixWorld.elements;
- let d=view();
- if(externalElements){for(let j=0;j<16;j++)d[32+j]=externalElements[j];config.counters.uploadedBytes+=128;d=view();}
- // A one-entry generic index contains only root. Retain even invalid self-parent
- // operations so the existing evaluator rejects them in the same place.
- let r=records.get(root);
- const parent=root.parent===root?records.get(root.parent):undefined;
- upload(root,r,d);
- const ops=arena.ops;
- ops[0]=r.slot;ops[1]=r.generation;ops[2]=parent?.slot??0;ops[3]=parent?.generation??0;
- ops[4]=method==='local'?0:force?1:0;ops[5]=0;ops[6]=method==='local'?1:0;
- const synced=now();
- if(arena.id){if(!call(prepared()?'facade_update_versions':'facade_update',arena.id,1))throw Error('rthree invalid facade operations');config.counters.wasmCalls++;config.counters.wasmNodes++;}
- else (prepared()?evaluateVersions:evaluateFacade)(d,ops,1);
- observationEpoch++;
- const computed=now();
- r=records.get(root);const b=r.slot*64,mask=d[b+51];
- if(mask&1)r.matrices[0].valid=false;
- if(mask&2)r.matrices[1].valid=false;
- root.matrixWorldNeedsUpdate=!!(d[b+15]&4);r.flags=false;
- const c=config.counters;c.batches++;c.nodes++;c.operationBytes+=28;
- if(config.timings()){c.syncMs+=synced-start;c.kernelMs+=computed-synced;c.syncMs+=performance.now()-computed;}
- return true;
-}
 // method='local' is a synchronous local compose. Other methods retain upstream
 // ancestor/child selection and force propagation; direct property reads never call it.
 export function facadeUpdate(root,method,base,{force=false,parents=false,children=false}={}){
@@ -205,7 +173,6 @@ export function facadeUpdate(root,method,base,{force=false,parents=false,childre
  if(prepared()&&method==='updateMatrixWorld'&&children&&!root.parent){
   const plan=ensurePlan(root,base);if(plan)return updatePlan(plan,!!force);
  }
- if(method==='local'||method==='updateWorldMatrix'&&!parents&&!children)return updateSingle(root,method,base,force);
  const start=now(),nodes=[],ops=[],index=new Map();
  const add=(o,inherited,forced,kind)=>{
   if(!eligible(o,base,kind))return false;
