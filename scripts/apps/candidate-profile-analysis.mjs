@@ -156,6 +156,8 @@ function classify(node) {
  if(/runtime\.js$/.test(file)&&/facadeLocal|facadeSelective/.test(label))return 'facade ABI dispatch';
  return workCategory(label,file)||'verified JS other';
 }
+// Shared classification only; the strict weighted analyzer below is unchanged.
+export {classify as classifyCandidateProfileNode,workCategory as candidateProfileWorkCategory};
 function quantile(values,p) {
  if(!values.length)return null;const sorted=[...values].sort((a,b)=>a-b),at=(sorted.length-1)*p,lo=Math.floor(at);
  return sorted[lo]+(sorted[Math.ceil(at)]-sorted[lo])*(at-lo);
