@@ -1,0 +1,38 @@
+{
+  "format": 1,
+  "scope": "Public archive helpers and source provenance; no capture execution.",
+  "builder": {
+    "source": "archive.py",
+    "executedBuildAttempt": 2,
+    "earlierAttempt": "archive-build-failure/",
+    "allInputHashesAndListingsRechecked": true
+  },
+  "storage": {
+    "source": "storage.py",
+    "adaptedFrom": "bench/results/task49-bistro-timing-20261026/storage.py",
+    "changes": "Storage-only class retained; separate final integration proof functions. Explicit normalized execution-driver Python payload accepted."
+  },
+  "verifier": {
+    "source": "verify.py",
+    "method": "Replays exact independent auditor source with storage-only read/source adapter; full report equality. Hashes all archive payloads and support, decodes 268 PNGs; source/preparation/npm bytes and retained partial failure proof are checked."
+  },
+  "independentAuditor": {
+    "source": "editor-audit/auditor/audit.py",
+    "identicalCopy": "viewer-audit/auditor/audit.py",
+    "sha256": "a69b2e6ba728e43ee2130803dbd3c008f44780e29db98540dbd601d438d9e3d0",
+    "executedFromFrozenCaptureAudit": true
+  },
+  "tests": {
+    "source": "test_archive.py",
+    "count": 18,
+    "result": "passed",
+    "output": "test-results.txt"
+  },
+  "review": {
+    "mode": "Independent source-only review; no duplicate execution",
+    "findingsResolved": [
+      "Viewer A/A count explicitly 55 total",
+      "Every failed-build partial row and moved blob verified against final storage"
+    ]
+  }
+}

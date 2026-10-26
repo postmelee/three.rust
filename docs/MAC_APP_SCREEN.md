@@ -2,6 +2,8 @@
 
 This report covers the 2026-10-26 follow-up to the historical Fox result and the first prepared-engine Editor integration. **A stable hardware performance advantage is not established.** Historical-baseline lifecycle diagnostics and all four candidate-fixture A/A groups failed their prospective stability screens. The tested Editor interactions preserve images and numerical behavior. The completed native Editor callback-cost screen observed higher candidate CPU cost in all three continuous conditions, whose original A/A screens also failed. No FPS claim, ownership level or adoption gate advances from this evidence.
 
+This is the preserved Task #46 result. The subsequent [Task #49 two-app investigation](TWO_APP_CANDIDATE_REPORT.md) records a separate candidate, source-verified attribution and Viewer integration. Its findings do not rewrite the historical coverage, measurements or SHAs below.
+
 The [confirmed integration review](../mydocs/working/task_m6_46_integration_review.md) records PR [#47](https://github.com/postmelee/three.rust/pull/47), tested head `23a9096441b093d4e198547d44e819b9a3138a9c` and merge `fa4eead58d19720420a886fdbc898c0b9ebde321`. Integration preserves the research histories; it does not replace their immutable measurement SHAs with `main`.
 
 ## Evidence and pins
