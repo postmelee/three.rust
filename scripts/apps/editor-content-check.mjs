@@ -6,7 +6,7 @@ import {execFileSync} from 'node:child_process';
 import {boundedOperation} from './candidate-profile-session.mjs';
 import {openRun,hash} from './candidate-browser.mjs';
 import {readEditorContentPreparation,CONTENT_ROUTES} from './editor-content.mjs';
-import {setupEditorContent,captureEditorContentReadiness,assertEditorContentReadiness,editorContentOracle,compareEditorContentOracles,editorContentSnapshot,validateEditorContentWindow,warmEditorContentFrames} from './editor-content-session.mjs';
+import {setupEditorContent,captureEditorContentReadiness,assertEditorContentReadiness,editorContentOracle,compareEditorContentOracles,editorContentSnapshot,validateEditorContentWindow,warmEditorContentFrames,editorFocusDiagnosticCheckpoint} from './editor-content-session.mjs';
 
 export function editorContentRunOptions(args,{profile=false}={}) {
  const options={routes:CONTENT_ROUTES,mode:'smoke'};
@@ -15,6 +15,14 @@ export function editorContentRunOptions(args,{profile=false}={}) {
 }
 
 export function assertEditorContentEvents(events) {assert.deepEqual(events.requestFailed,[]);assert.deepEqual(events.dialogs,[]);assert.deepEqual(events.crashes,[]);assert(!events.console.some(row=>row.type==='error'));}
+
+export async function preserveEditorContentFailure(run,events,{focusDiagnostic=false}={}) {
+ const outcomes=[],attempts=[['native-events.json',()=>run.save('native-events.json',events)],...(focusDiagnostic?[['focus-diagnostic-failure.json',()=>editorFocusDiagnosticCheckpoint({...run,editorFocusDiagnostic:true},'failure')]]:[]),['partial-state.json',async()=>run.save('partial-state.json',await run.page.evaluate(editorContentSnapshot))],['failure-ui.png',()=>run.page.screenshot({path:path.join(run.out,'failure-ui.png')})]];
+ for(const [artifact,capture]of attempts)try{await capture();outcomes.push({artifact,status:'saved'});}catch(error){outcomes.push({artifact,status:'unavailable',errorName:error.name??'Error'});}
+ // Preserve all feasible evidence independently; a missing pre-import state
+ // must not suppress the input tail, screenshot or the caller's final cleanup.
+ try{await run.save('failure-capture-status.json',outcomes);}catch{}return outcomes;
+}
 
 export async function openEditorContentRun(apps,prepared,out,engine,options) {
  const run=await openRun(apps,out,{app:'editor',engine,candidateRoot:options.candidateRoot,candidateSha:options.candidateSha,browser:options.browser,isolated:true,deviceScaleFactor:1,captureSources:true,sourceOverlays:[],mode:'Native original-content ZIP compatibility or separate diagnostic CPU sampling; no primary timing'});
@@ -25,7 +33,7 @@ export async function openEditorContentRun(apps,prepared,out,engine,options) {
  run.page.on('dialog',async dialog=>{events.dialogs.push({phaseAtReceipt:phase,type:dialog.type(),message:clean(dialog.message())});await dialog.dismiss();});
  run.page.on('crash',()=>events.crashes.push({phaseAtReceipt:phase,event:'page-crash'}));
  run.page.on('response',response=>events.responses.push({phaseAtReceipt:phase,url:clean(response.url()).split(run.origin).join('<origin>'),status:response.status()}));
- return {...run,events,async close(){if(closePromise)return closePromise;closePromise=(async()=>{let failure;try{await run.save('native-events-before-close.json',{scope:'Events received before teardown begins; phase labels are receipt context, not a causal attribution.',events});}catch(error){failure=error;}phase='closing';try{await run.close();}catch(error){failure??=error;}finally{try{await run.save('native-events-after-close.json',{scope:'All events through context/browser closure; teardown observations remain strict failures and are not filtered.',events});}catch(error){failure??=error;}}if(failure)throw failure;})();return closePromise;},async verify(){await run.save('native-events.json',events);assertEditorContentEvents(events);assert.deepEqual(run.errors,[]);assert(!run.requests.some(row=>row.blocked));},async preserveFailure(){await run.save('native-events.json',events);try{await run.save('partial-state.json',await run.page.evaluate(editorContentSnapshot));await run.page.screenshot({path:path.join(out,'failure-ui.png')});}catch{}}};
+ return {...run,events,async close(){if(closePromise)return closePromise;closePromise=(async()=>{let failure;try{await run.save('native-events-before-close.json',{scope:'Events received before teardown begins; phase labels are receipt context, not a causal attribution.',events});}catch(error){failure=error;}phase='closing';try{await run.close();}catch(error){failure??=error;}finally{try{await run.save('native-events-after-close.json',{scope:'All events through context/browser closure; teardown observations remain strict failures and are not filtered.',events});}catch(error){failure??=error;}}if(failure)throw failure;})();return closePromise;},async verify(){await run.save('native-events.json',events);assertEditorContentEvents(events);assert.deepEqual(run.errors,[]);assert(!run.requests.some(row=>row.blocked));},async preserveFailure(){return preserveEditorContentFailure(run,events,{focusDiagnostic:options.focusDiagnostic===true});}};
 }
 
 export async function checkEditorContent(appsArg,preparedArg,outArg,options) {

@@ -5,8 +5,8 @@ import os from 'node:os';
 import path from 'node:path';
 import {editorContentExpectations} from '../scripts/apps/editor-content.mjs';
 import {validateEditorContentProtocol,EDITOR_CONTENT_PROFILE_SETTINGS} from '../scripts/apps/editor-content-profile.mjs';
-import {editorContentRunOptions,assertEditorContentEvents} from '../scripts/apps/editor-content-check.mjs';
-import {editorContentOracle,assertEditorContentReadiness,assertEditorNativeFirstClip,validateEditorContentWindow,compareEditorContentOracles} from '../scripts/apps/editor-content-session.mjs';
+import {editorContentRunOptions,assertEditorContentEvents,preserveEditorContentFailure} from '../scripts/apps/editor-content-check.mjs';
+import {editorContentOracle,assertEditorContentReadiness,assertEditorNativeFirstClip,validateEditorContentWindow,compareEditorContentOracles,chooseEditorContentZip} from '../scripts/apps/editor-content-session.mjs';
 
 
 const source=()=>({scene:0,scenes:[{name:'SourceScene',nodes:[0]}],nodes:[{name:'Root',children:[1]},{name:'Mesh',mesh:0}],meshes:[{primitives:[{material:0,attributes:{POSITION:0},indices:1}]}],accessors:[{count:3,type:'VEC3'},{count:3,type:'SCALAR'}],buffers:[{uri:'model.bin'}],images:[{uri:'Textures/a.jpg'}],textures:[{source:0,name:'authored-texture'}],materials:[{name:'Glass',pbrMetallicRoughness:{baseColorTexture:{index:0}},extensions:{KHR_materials_transmission:{transmissionFactor:0.8},KHR_materials_volume:{thicknessFactor:0.5,attenuationDistance:2,attenuationColor:[0.5,0.6,0.7]}}}],animations:[]});
@@ -62,4 +62,19 @@ test('oracle writes real PNG bytes and preserves invalid state before rejecting;
 test('request/console failures remain failures on either side of the explicit close boundary',()=>{
  const clean=()=>({console:[],requestFailed:[],dialogs:[],crashes:[]});assertEditorContentEvents(clean());
  for(const phaseAtReceipt of ['active','closing']){const failed=clean();failed.requestFailed.push({phaseAtReceipt,url:'blob:fixture',error:'net::ERR_ABORTED'});assert.throws(()=>assertEditorContentEvents(failed));const consoleFailure=clean();consoleFailure.console.push({phaseAtReceipt,type:'error',text:'Native error'});assert.throws(()=>assertEditorContentEvents(consoleFailure));}
+});
+
+test('native chooser rejection is handled immediately even while the click is blocked', {timeout:1000},async()=>{
+ const page={waitForEvent:async()=>{throw Error('Chooser timed out');},getByText:()=>({click:()=>new Promise(()=>{})})};
+ await assert.rejects(chooseEditorContentZip(page,'fixture.zip'),/Chooser timed out/);
+ const chooser=Promise.withResolvers();page.waitForEvent=()=>chooser.promise;page.getByText=()=>({click:async()=>{queueMicrotask(()=>chooser.reject(Error('Late chooser rejection')));throw Error('Click failed');}});
+ await assert.rejects(chooseEditorContentZip(page,'fixture.zip'),/Click failed/);
+ await new Promise(resolve=>setImmediate(resolve));
+});
+
+test('pre-import failure evidence remains independent of unavailable application state',async()=>{
+ const saved=[],events={requestFailed:[]},run={out:'/tmp/editor-failure-unit',save:async(file,data)=>{saved.push([file,data]);},page:{evaluate:async(_fn,phase)=>{if(phase==='failure')return {phase,eventOverflow:false,events:[{kind:'input',type:'pointerup'}]};throw ReferenceError('No imported state');},screenshot:async({path})=>saved.push(['screenshot',path])}};
+ const outcomes=await preserveEditorContentFailure(run,events,{focusDiagnostic:true});
+ assert.equal(outcomes.find(row=>row.artifact==='focus-diagnostic-failure.json').status,'saved');assert.equal(outcomes.find(row=>row.artifact==='partial-state.json').status,'unavailable');assert.equal(outcomes.find(row=>row.artifact==='failure-ui.png').status,'saved');assert(saved.some(([file])=>file==='native-events.json'));assert(saved.some(([file])=>file==='failure-capture-status.json'));
+ run.save=async(file)=>{if(file==='native-events.json')throw Error('Write unavailable');};const afterWriteFailure=await preserveEditorContentFailure(run,events);assert.equal(afterWriteFailure.find(row=>row.artifact==='failure-ui.png').status,'saved');
 });

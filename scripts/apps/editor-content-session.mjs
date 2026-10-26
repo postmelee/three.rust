@@ -17,10 +17,17 @@ function attachEditorFocusDiagnostic() {
  editor.signals.cameraChanged.add(()=>append({kind:'native-cameraChanged-signal',at:performance.now(),phase:state.phase,camera:camera()}));
 }
 
-async function editorFocusDiagnosticCheckpoint(run,phase) {
+export async function editorFocusDiagnosticCheckpoint(run,phase) {
  if(!run.editorFocusDiagnostic)return;
  const data=await run.page.evaluate(phase=>{const state=__editorFocusDiagnostic;state.phase=phase;const camera=editor.camera;return {phase,at:performance.now(),camera:{position:camera.position.toArray(),quaternion:camera.quaternion.toArray(),scale:camera.scale.toArray(),matrix:camera.matrix.toArray(),matrixWorld:camera.matrixWorld.toArray(),matrixWorldInverse:camera.matrixWorldInverse.toArray(),projectionMatrix:camera.projectionMatrix.toArray(),matrixAutoUpdate:camera.matrixAutoUpdate,matrixWorldAutoUpdate:camera.matrixWorldAutoUpdate,matrixWorldNeedsUpdate:camera.matrixWorldNeedsUpdate},controls:editor.controls?{enabled:editor.controls.enabled,center:editor.controls.center.toArray()}:null,selected:{name:editor.selected?.name??null,type:editor.selected?.type??null,isImportedRoot:editor.selected===globalThis.__editorContent?.root},viewHelper:{domPresent:Boolean(document.querySelector('#viewHelper')),animationState:'Unavailable without modifying the native Viewport closure.'},events:[...state.events],eventOverflow:state.overflow,scope:'Opt-in setup diagnosis; public matrix reads may materialize candidate values. No keyboard text or page contents are recorded; native controls/render/mixer are unchanged.'};},phase);
  await run.save('focus-diagnostic-'+phase+'.json',data);assert.equal(data.eventOverflow,false,'Focus diagnostic input buffer overflow');
+}
+
+export async function chooseEditorContentZip(page,zip) {
+ // Attach both rejection handlers in this turn. A chooser timeout must not
+ // become unhandled while Playwright is still waiting for a blocked click.
+ const [chooser]=await Promise.all([page.waitForEvent('filechooser'),page.getByText('Import',{exact:true}).click()]);
+ await chooser.setFiles(zip);
 }
 
 // Native signals and passive endpoint state only. No render/rAF/mixer wrappers.
@@ -50,7 +57,7 @@ export async function setupEditorContent(run,prepared,{play=false,observer=true,
  await page.evaluate(()=>{globalThis.__editorContentBeforeRoots=editor.scene.children.map(object=>object.uuid);});
  if(focusDiagnostic)await editorFocusDiagnosticCheckpoint(run,'before-native-import');
  await page.locator('#menubar .menu').filter({has:page.getByText('File',{exact:true})}).hover();
- const chooser=page.waitForEvent('filechooser');await page.getByText('Import',{exact:true}).click();await(await chooser).setFiles(prepared.zip);
+ await chooseEditorContentZip(page,prepared.zip);
  await page.locator('.Dialog').waitFor();assert.equal(await page.locator('.Dialog input[type=checkbox]').isChecked(),false,'Native ZIP import must remain asScene=false');
  await page.locator('.Dialog').getByRole('button',{name:'OK',exact:true}).click();
  await page.waitForFunction(()=>editor.scene.children.filter(object=>!__editorContentBeforeRoots.includes(object.uuid)).length===1,null,{timeout:180000});
