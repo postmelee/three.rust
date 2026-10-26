@@ -1,6 +1,6 @@
 # Task #49: attributable costs and a two-app candidate decision
 
-GitHub Issue: [#49](https://github.com/postmelee/three.rust/issues/49)  
+GitHub Issue: [#49](https://github.com/postmelee/three.rust/issues/49)
 Milestone: M6 — Product performance and release decision
 
 ## Purpose
