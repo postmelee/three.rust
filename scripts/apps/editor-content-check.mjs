@@ -9,9 +9,9 @@ import {readEditorContentPreparation,CONTENT_ROUTES} from './editor-content.mjs'
 import {setupEditorContent,captureEditorContentReadiness,assertEditorContentReadiness,editorContentOracle,compareEditorContentOracles,editorContentSnapshot,validateEditorContentWindow,warmEditorContentFrames,editorFocusDiagnosticCheckpoint} from './editor-content-session.mjs';
 
 export function editorContentRunOptions(args,{profile=false}={}) {
- const options={routes:CONTENT_ROUTES,mode:'smoke'};
- for(const arg of args){const at=arg.indexOf('='),key=arg.slice(0,at),value=arg.slice(at+1);assert(at>0&&value&&['candidateRoot','candidateSha','routes',...(profile?['mode','protocol']:['focusDiagnostic'])].includes(key)&&!Object.hasOwn(options,'provided-'+key),'Unknown/duplicate option');options['provided-'+key]=true;if(key==='focusDiagnostic'){assert.equal(value,'true','Only an explicit focusDiagnostic=true opts into setup diagnosis');options[key]=true;}else options[key]=key==='routes'?value.split(','):value;}
- assert(options.candidateRoot&&/^[0-9a-f]{40}$/.test(options.candidateSha??''));assert(options.routes.length&&new Set(options.routes).size===options.routes.length&&options.routes.every(route=>CONTENT_ROUTES.includes(route)));assert(['smoke','full'].includes(options.mode));return options;
+ const options={routes:CONTENT_ROUTES,mode:'smoke',input:'filechooser'};
+ for(const arg of args){const at=arg.indexOf('='),key=arg.slice(0,at),value=arg.slice(at+1);assert(at>0&&value&&['candidateRoot','candidateSha','routes',...(profile?['mode','protocol']:['focusDiagnostic','input'])].includes(key)&&!Object.hasOwn(options,'provided-'+key),'Unknown/duplicate option');options['provided-'+key]=true;if(key==='focusDiagnostic'){assert.equal(value,'true','Only an explicit focusDiagnostic=true opts into setup diagnosis');options[key]=true;}else options[key]=key==='routes'?value.split(','):value;}
+ assert(['filechooser','native-file-input'].includes(options.input));assert(options.candidateRoot&&/^[0-9a-f]{40}$/.test(options.candidateSha??''));assert(options.routes.length&&new Set(options.routes).size===options.routes.length&&options.routes.every(route=>CONTENT_ROUTES.includes(route)));assert(['smoke','full'].includes(options.mode));return options;
 }
 
 export function assertEditorContentEvents(events) {assert.deepEqual(events.requestFailed,[]);assert.deepEqual(events.dialogs,[]);assert.deepEqual(events.crashes,[]);assert(!events.console.some(row=>row.type==='error'));}
@@ -38,7 +38,7 @@ export async function openEditorContentRun(apps,prepared,out,engine,options) {
 
 export async function checkEditorContent(appsArg,preparedArg,outArg,options) {
  const apps=path.resolve(appsArg),out=path.resolve(outArg);await fs.mkdir(out,{recursive:false});
- const result={schema:1,kind:'native Editor unchanged-content ZIP correctness gate',status:'preparing',performanceEvidence:false,focusDiagnostic:options.focusDiagnostic===true,diagnosticScope:options.focusDiagnostic?'Additional setup snapshots and input/signal observations; public matrix reads may materialize values. Strict oracle criteria remain unchanged.':null,routes:[],comparisons:[]};const save=()=>fs.writeFile(path.join(out,'result.json'),JSON.stringify(result,null,2)+'\n');
+ const result={schema:1,kind:'native Editor unchanged-content ZIP correctness gate',status:'preparing',performanceEvidence:false,input:options.input,focusDiagnostic:options.focusDiagnostic===true,diagnosticScope:options.focusDiagnostic?'Additional setup snapshots and input/signal observations; public matrix reads may materialize values. Strict oracle criteria remain unchanged.':null,routes:[],comparisons:[]};const save=()=>fs.writeFile(path.join(out,'result.json'),JSON.stringify(result,null,2)+'\n');
  const toolRoot=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..'),files=['scripts/apps/editor-content.mjs','scripts/apps/editor-content-session.mjs','scripts/apps/editor-content-check.mjs','scripts/apps/candidate-browser.mjs'];
  await save();
  const source={dirty:Boolean(execFileSync('git',['status','--porcelain','--untracked-files=normal'],{cwd:toolRoot,encoding:'utf8'}).trim()),sha:execFileSync('git',['rev-parse','HEAD'],{cwd:toolRoot,encoding:'utf8'}).trim(),files:Object.fromEntries(await Promise.all(files.map(async file=>[file,hash(await fs.readFile(path.join(toolRoot,file)))])))};result.tooling=source;
@@ -49,7 +49,7 @@ export async function checkEditorContent(appsArg,preparedArg,outArg,options) {
   for(const engine of options.routes){
    const row={engine,status:'preparing'};result.routes.push(row);await save();let run;
    try{
-    run=await openEditorContentRun(apps,prepared,path.join(out,engine),engine,options);await setupEditorContent(run,prepared,{play,focusDiagnostic:options.focusDiagnostic===true});
+    run=await openEditorContentRun(apps,prepared,path.join(out,engine),engine,options);await setupEditorContent(run,prepared,{play,focusDiagnostic:options.focusDiagnostic===true,input:options.input});
     const readiness=await run.page.evaluate(captureEditorContentReadiness,prepared.manifest.expected);await run.save('source-readiness.json',readiness);row.sourceContract=assertEditorContentReadiness(prepared.manifest.expected,readiness);await run.verify();
     await run.save('native-observation.json',{before:await run.page.evaluate(editorContentSnapshot),after:null,status:'pending'});
     const observation=await boundedOperation(run.page.evaluate(warmEditorContentFrames,60),{timeoutMs:60000,label:'Native Editor content observation'});await run.save('native-observation.json',observation);row.nativeWork=validateEditorContentWindow(observation.before,observation.after,{play},engine);
@@ -66,6 +66,6 @@ export async function checkEditorContent(appsArg,preparedArg,outArg,options) {
 }
 
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
- assert(process.argv.length>=7,'Usage: node scripts/apps/editor-content-check.mjs APPS_ROOT PREPARED_ZIP_ROOT NEW_OUTPUT candidateRoot=... candidateSha=... [routes=original,prepared-js,prepared-wasm] [focusDiagnostic=true]');
+ assert(process.argv.length>=7,'Usage: node scripts/apps/editor-content-check.mjs APPS_ROOT PREPARED_ZIP_ROOT NEW_OUTPUT candidateRoot=... candidateSha=... [routes=original,prepared-js,prepared-wasm] [focusDiagnostic=true] [input=filechooser|native-file-input]');
  const result=await checkEditorContent(...process.argv.slice(2,5),editorContentRunOptions(process.argv.slice(5)));console.log(JSON.stringify({status:result.status,routes:result.routes.length,performanceEvidence:false}));
 }

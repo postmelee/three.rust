@@ -6,7 +6,7 @@ import path from 'node:path';
 import {editorContentExpectations} from '../scripts/apps/editor-content.mjs';
 import {validateEditorContentProtocol,EDITOR_CONTENT_PROFILE_SETTINGS} from '../scripts/apps/editor-content-profile.mjs';
 import {editorContentRunOptions,assertEditorContentEvents,preserveEditorContentFailure} from '../scripts/apps/editor-content-check.mjs';
-import {editorContentOracle,assertEditorContentReadiness,assertEditorNativeFirstClip,validateEditorContentWindow,compareEditorContentOracles,chooseEditorContentZip} from '../scripts/apps/editor-content-session.mjs';
+import {editorContentOracle,assertEditorContentReadiness,assertEditorNativeFirstClip,validateEditorContentWindow,compareEditorContentOracles,chooseEditorContentZip,setEditorContentNativeInput} from '../scripts/apps/editor-content-session.mjs';
 
 
 const source=()=>({scene:0,scenes:[{name:'SourceScene',nodes:[0]}],nodes:[{name:'Root',children:[1]},{name:'Mesh',mesh:0}],meshes:[{primitives:[{material:0,attributes:{POSITION:0},indices:1}]}],accessors:[{count:3,type:'VEC3'},{count:3,type:'SCALAR'}],buffers:[{uri:'model.bin'}],images:[{uri:'Textures/a.jpg'}],textures:[{source:0,name:'authored-texture'}],materials:[{name:'Glass',pbrMetallicRoughness:{baseColorTexture:{index:0}},extensions:{KHR_materials_transmission:{transmissionFactor:0.8},KHR_materials_volume:{thicknessFactor:0.5,attenuationDistance:2,attenuationColor:[0.5,0.6,0.7]}}}],animations:[]});
@@ -77,4 +77,14 @@ test('pre-import failure evidence remains independent of unavailable application
  const outcomes=await preserveEditorContentFailure(run,events,{focusDiagnostic:true});
  assert.equal(outcomes.find(row=>row.artifact==='focus-diagnostic-failure.json').status,'saved');assert.equal(outcomes.find(row=>row.artifact==='partial-state.json').status,'unavailable');assert.equal(outcomes.find(row=>row.artifact==='failure-ui.png').status,'saved');assert(saved.some(([file])=>file==='native-events.json'));assert(saved.some(([file])=>file==='failure-capture-status.json'));
  run.save=async(file)=>{if(file==='native-events.json')throw Error('Write unavailable');};const afterWriteFailure=await preserveEditorContentFailure(run,events);assert.equal(afterWriteFailure.find(row=>row.artifact==='failure-ui.png').status,'saved');
+});
+
+
+test('native input alternative requires the unique original import element and never invokes a chooser',async()=>{
+ let delivered=null;const descriptor={tag:'INPUT',type:'file',multiple:true,parentTag:'FORM',formDisplay:'none'};
+ const input={count:async()=>1,evaluate:async()=>descriptor,setInputFiles:async file=>{delivered=file;}};
+ const page={locator:selector=>{assert.equal(selector,'body > form > input[type="file"][multiple]');return input;},waitForEvent:()=>{throw Error('Chooser must not be invoked');}};
+ assert.deepEqual(await setEditorContentNativeInput(page,'unchanged.zip'),descriptor);assert.equal(delivered,'unchanged.zip');
+ input.count=async()=>2;delivered=null;await assert.rejects(setEditorContentNativeInput(page,'unchanged.zip'),/unique/);assert.equal(delivered,null);
+ const args=['candidateRoot=/not-read','candidateSha='+'c'.repeat(40),'input=native-file-input'];assert.equal(editorContentRunOptions(args).input,'native-file-input');assert.throws(()=>editorContentRunOptions(args,{profile:true}));
 });

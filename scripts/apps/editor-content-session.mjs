@@ -30,6 +30,16 @@ export async function chooseEditorContentZip(page,zip) {
  await chooser.setFiles(zip);
 }
 
+export async function setEditorContentNativeInput(page,zip) {
+ // The pinned Menubar.File creates this hidden input and its change handler.
+ // Exercise that same native loader/dialog without claiming OS chooser coverage.
+ const input=page.locator('body > form > input[type="file"][multiple]');
+ assert.equal(await input.count(),1,'Native Editor import input must be unique');
+ const descriptor=await input.evaluate(element=>({tag:element.tagName,type:element.type,multiple:element.multiple,parentTag:element.parentElement.tagName,formDisplay:element.parentElement.style.display}));
+ assert.deepEqual(descriptor,{tag:'INPUT',type:'file',multiple:true,parentTag:'FORM',formDisplay:'none'});
+ await input.setInputFiles(zip);return descriptor;
+}
+
 // Native signals and passive endpoint state only. No render/rAF/mixer wrappers.
 export function attachEditorContentState(observer=true) {
  const state=globalThis.__editorContent={renderer:null,root:null,clip:null,savingStarted:0,savingFinished:0,activity:[]};
@@ -48,7 +58,8 @@ export function attachEditorContentState(observer=true) {
  if(!select)throw Error('Native WebGLRenderer selection unavailable');select.value='WebGLRenderer';select.dispatchEvent(new Event('change'));
 }
 
-export async function setupEditorContent(run,prepared,{play=false,observer=true,focusDiagnostic=false}={}) {
+export async function setupEditorContent(run,prepared,{play=false,observer=true,focusDiagnostic=false,input='filechooser'}={}) {
+ assert(['filechooser','native-file-input'].includes(input));
  const page=run.page,expected=prepared.manifest.expected;
  await page.goto(run.origin+'/editor/editor/');await page.bringToFront();await page.waitForFunction(()=>globalThis.editor&&document.querySelector('#viewport canvas'));
  if(focusDiagnostic){run.editorFocusDiagnostic=true;await page.evaluate(attachEditorFocusDiagnostic);await editorFocusDiagnosticCheckpoint(run,'page-ready-before-renderer-selection');}
@@ -56,8 +67,9 @@ export async function setupEditorContent(run,prepared,{play=false,observer=true,
  if(focusDiagnostic)await editorFocusDiagnosticCheckpoint(run,'after-renderer-selection');
  await page.evaluate(()=>{globalThis.__editorContentBeforeRoots=editor.scene.children.map(object=>object.uuid);});
  if(focusDiagnostic)await editorFocusDiagnosticCheckpoint(run,'before-native-import');
- await page.locator('#menubar .menu').filter({has:page.getByText('File',{exact:true})}).hover();
- await chooseEditorContentZip(page,prepared.zip);
+ await run.save('input.json',{kind:input,scope:input==='filechooser'?'Native File menu and browser chooser before original ZIP import.':'Pinned Menubar.File hidden file input and original change handler; menu click and OS chooser are not exercised.',assetBytesChanged:false});
+ if(input==='native-file-input')await run.save('native-input-element.json',await setEditorContentNativeInput(page,prepared.zip));
+ else{await page.locator('#menubar .menu').filter({has:page.getByText('File',{exact:true})}).hover();await chooseEditorContentZip(page,prepared.zip);}
  await page.locator('.Dialog').waitFor();assert.equal(await page.locator('.Dialog input[type=checkbox]').isChecked(),false,'Native ZIP import must remain asScene=false');
  await page.locator('.Dialog').getByRole('button',{name:'OK',exact:true}).click();
  await page.waitForFunction(()=>editor.scene.children.filter(object=>!__editorContentBeforeRoots.includes(object.uuid)).length===1,null,{timeout:180000});
@@ -84,7 +96,7 @@ export async function setupEditorContent(run,prepared,{play=false,observer=true,
  }
  await page.bringToFront();await settle(page);await page.waitForTimeout(1600);await page.waitForFunction(()=>__editorContent.savingStarted===__editorContent.savingFinished);
  if(focusDiagnostic)await editorFocusDiagnosticCheckpoint(run,'setup-complete');
- const environment=await page.evaluate(editorContentSnapshot);assertEditorContentEnvironment(environment,{play},run.engine);await run.save('gpu.json',await gpu(page,'#viewport canvas'));await run.save('native-import.json',{imported,play,scope:'Native File→Import ZIP, unchanged asScene=false, root selection and focus. No extra lights/ground/shadows, no asset edits.',environment});
+ const environment=await page.evaluate(editorContentSnapshot);assertEditorContentEnvironment(environment,{play},run.engine);await run.save('gpu.json',await gpu(page,'#viewport canvas'));await run.save('native-import.json',{imported,play,input,scope:'Native import-input ZIP loader, unchanged asScene=false, root selection and focus. Menu/OS chooser coverage depends on the explicit input record. No extra lights/ground/shadows, no asset edits.',environment});
  return {imported,environment};
 }
 
