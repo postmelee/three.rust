@@ -61,3 +61,10 @@ test('Content-Length CLI diagnostic is explicit and restricted without changing 
  assert.throws(()=>viewerContentOptions(['content=bistro',...args.slice(1),'diagnosticContentLength=true']),/restricted/);
  assert.throws(()=>viewerContentOptions([...args.slice(0,2),'routes=external-r176','diagnosticContentLength=true']),/restricted/);
 });
+
+test('native ZIP input is separate from HTTP framing/interception experiments',()=>{
+ const args=['content=beautiful-game','contentRoot=/fixture','routes=original-r176','zipPrepared=/verified-zip'];
+ assert.equal(viewerContentOptions(args).zipPrepared,'/verified-zip');
+ assert.throws(()=>viewerContentOptions([...args,'diagnosticContentLength=false']),/separately from HTTP diagnostics/);
+ assert.throws(()=>viewerContentOptions([...args,'networkDiagnostic=proxy-cdp-remote']),/separately from HTTP diagnostics/);
+});
