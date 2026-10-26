@@ -1,0 +1,45 @@
+{
+  "scope": "Derived independent review/support artifacts; copied raw evidence is indexed separately.",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "b985498b37bf931e958ea434b96dd7ec2f3b830b124ac1bcfa243b24f835b687",
+      "bytes": 7663
+    },
+    {
+      "path": "INDEPENDENT_AUDIT.md",
+      "sha256": "86e3dfca4e9c6925f264baf45ae50177d3e7ffd910cf6e8ee1b3598258e6d3b5",
+      "bytes": 9275
+    },
+    {
+      "path": "independent-audit.json",
+      "sha256": "4984d57eb6562c483934748a57a2fd2fe89da5bbdecaae301d6f1a10d35b8013",
+      "bytes": 61843
+    },
+    {
+      "path": "task46-setup-fingerprint.json",
+      "sha256": "762808795c9aaeb471dfc516429afcd22b491b270a69e5aca0b009814a1455ec",
+      "bytes": 1202
+    },
+    {
+      "path": "verify.py",
+      "sha256": "d971731be49b5d4dbf00ac936115b69466d381df5b71d3ceb8a0b69a7b32324c",
+      "bytes": 15638
+    },
+    {
+      "path": "verification.json",
+      "sha256": "0d05304b420807eeebb2b2b683afc023f192a27f0e33e71c132ea2a0514b904c",
+      "bytes": 59918
+    },
+    {
+      "path": "licenses/THREE-LICENSE.txt",
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "bytes": 1081
+    },
+    {
+      "path": "licenses/RobotExpressive-LICENSE.md",
+      "sha256": "14687ac4a51d5e013b0fbc5486dabc743f76c1e37b7ca872af74cfb93115b4b2",
+      "bytes": 364
+    }
+  ]
+}
