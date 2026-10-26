@@ -1,0 +1,123 @@
+{
+  "scenario": {
+    "id": "E3-root-selected-shadow",
+    "selected": true,
+    "shadow": true,
+    "pixelRatio": 1
+  },
+  "sceneSetup": {
+    "shape": {
+      "skins": 4,
+      "morphMeshes": 3,
+      "clips": [
+        "Dance",
+        "Death",
+        "Idle",
+        "Jump",
+        "No",
+        "Punch",
+        "Running",
+        "Sitting",
+        "Standing",
+        "ThumbsUp",
+        "Walking",
+        "WalkJump",
+        "Wave",
+        "Yes"
+      ],
+      "vertices": 7214
+    },
+    "camera": [
+      5,
+      3.5,
+      7
+    ],
+    "target": [
+      0.02903489391441072,
+      2.210306801808131,
+      0.07344450557537341
+    ],
+    "shadow": true,
+    "shadowMapSize": [
+      1024,
+      1024
+    ]
+  },
+  "environment": {
+    "at": 2244.7999999970198,
+    "visibility": "visible",
+    "focused": true,
+    "crossOriginIsolated": true,
+    "dpr": 1,
+    "width": 930,
+    "height": 378,
+    "cssWidth": 930,
+    "cssHeight": 378,
+    "rendererPixelRatio": 1,
+    "renderInfo": {
+      "frame": 1014,
+      "calls": 9,
+      "triangles": 72,
+      "points": 0,
+      "lines": 0
+    },
+    "quality": {
+      "antialias": true,
+      "toneMapping": 7,
+      "exposure": 1,
+      "outputColorSpace": "srgb",
+      "shadows": true,
+      "shadowType": 1
+    },
+    "autosave": true,
+    "savingStarted": 1,
+    "savingFinished": 1,
+    "renderCount": 0,
+    "mixerTime": 1.666525000005961,
+    "selected": "RobotExpressive.glb",
+    "action": {
+      "name": "Walking",
+      "time": 0.7081916865408426,
+      "duration": 0.9583333134651184,
+      "paused": false,
+      "enabled": true,
+      "running": true,
+      "mixerTimeScale": 1
+    },
+    "diagnostics": null
+  },
+  "clock": {
+    "crossOriginIsolated": true,
+    "minPositiveDeltaMs": 0.004999995231628418,
+    "positiveDeltas": 2267,
+    "iterations": 100000,
+    "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+  },
+  "hardware": {
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+    "vendor": "Google Inc. (Apple)",
+    "attributes": {
+      "alpha": true,
+      "antialias": true,
+      "depth": true,
+      "desynchronized": false,
+      "failIfMajorPerformanceCaveat": false,
+      "powerPreference": "default",
+      "premultipliedAlpha": true,
+      "preserveDrawingBuffer": false,
+      "stencil": false,
+      "xrCompatible": false
+    },
+    "width": 930,
+    "height": 378,
+    "dpr": 1
+  },
+  "layout": {
+    "timelineHeight": 307,
+    "timelineContentHeight": 306,
+    "viewportWidth": 930,
+    "viewportHeight": 378,
+    "shading": "default",
+    "xr": false
+  }
+}

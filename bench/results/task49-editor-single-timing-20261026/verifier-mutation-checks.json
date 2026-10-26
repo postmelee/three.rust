@@ -1,0 +1,13 @@
+{
+  "originalPhaseAccepted": true,
+  "rejectedMutations": [
+    "frozen action",
+    "changed clip duration",
+    "nonadvancing mixer",
+    "missing callback",
+    "duplicate callback",
+    "overlapping callbacks",
+    "altered measured CPU"
+  ],
+  "count": 7
+}

@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "scope": "Derived support and visible notices; raw payload hashes and logical storage mappings are separately in archive-index.json. This file excludes itself.",
+  "files": [
+    {
+      "path": "INDEPENDENT_AUDIT.md",
+      "sha256": "15036c92063d36ef1659e6b41a659a4884e3e139548d5676a058ed530134dd29",
+      "bytes": 15917
+    },
+    {
+      "path": "README.md",
+      "sha256": "ecef63562764a2f1718e715f16e1a5ec823dee4924adf1c6a186d9642d725f7f",
+      "bytes": 5525
+    },
+    {
+      "path": "archive-index.json",
+      "sha256": "f41ef3b87bcc32a929a8672035b30166e025ff369c558997559ca7e656500897",
+      "bytes": 2321111
+    },
+    {
+      "path": "archive.py",
+      "sha256": "57ae68e58856a309dbcfd49c440ba274f555b2abf3b1df2845a7ccb110de3f6b",
+      "bytes": 15085
+    },
+    {
+      "path": "audit.json",
+      "sha256": "6f8c87b8e67c93b5bae02d66356f37a63ccfb3f69d965c96820ebfcebd82d920",
+      "bytes": 414298
+    },
+    {
+      "path": "build-status.json",
+      "sha256": "8503eeb99219fb5b076dc700bd3b4ec43d240059ac3e388cf02c433c13a3195c",
+      "bytes": 921
+    },
+    {
+      "path": "candidate-protocol.json",
+      "sha256": "740288d46cbb0c783a536cc45363ddeef25a134c7f14b5eea25be91b47f1dad3",
+      "bytes": 1598
+    },
+    {
+      "path": "licenses/RobotExpressive-LICENSE.md",
+      "sha256": "14687ac4a51d5e013b0fbc5486dabc743f76c1e37b7ca872af74cfb93115b4b2",
+      "bytes": 364
+    },
+    {
+      "path": "licenses/THREE-LICENSE.txt",
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "bytes": 1081
+    },
+    {
+      "path": "storage-conversion.json",
+      "sha256": "ccb9ffdd9819dcb668cee7852f4912429b1dee1110458c658aa1a1fc858e6ad0",
+      "bytes": 528
+    },
+    {
+      "path": "test-archive.py",
+      "sha256": "6fae66e76647b65c3ae43ab3065d6be18009cba3d12411185027d0c517a27f88",
+      "bytes": 2381
+    },
+    {
+      "path": "test-storage.py",
+      "sha256": "5630db347e384062382851ebff9e2974cc6aa48cb741e57cef00d110b181186a",
+      "bytes": 1395
+    },
+    {
+      "path": "test-verifier.py",
+      "sha256": "f3d07b3af839f6cf966370a6ba07334d314294836c59fcea94ad5c723f3714d1",
+      "bytes": 2210
+    },
+    {
+      "path": "verification.json",
+      "sha256": "cf5fd628381970a8567cd3b91771b34a91d5495a2669cdd792dbcb5dcf70082d",
+      "bytes": 2655
+    },
+    {
+      "path": "verifier-mutation-checks.json",
+      "sha256": "aa19af3932aa54f594083289cab34208f95b0a4f865a84c3856b2f818747d67d",
+      "bytes": 262
+    },
+    {
+      "path": "verify.py",
+      "sha256": "86f6b498a6a0536c02991d9a6ea0d220b19c76d3646b038ac567a3970acc6f9f",
+      "bytes": 41664
+    }
+  ]
+}
