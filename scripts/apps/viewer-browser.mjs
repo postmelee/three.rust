@@ -6,6 +6,7 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 import { gpu } from './browser.mjs';
+import { VIEWER_NETWORK_DIAGNOSTICS, createViewerDenyProxy, installViewerRemoteGuard } from './viewer-transport-guard.mjs';
 import { VIEWER_PIN, VIEWER_ROUTES, hash, injectViewerImportMap, viewerDistribution } from './viewer-adapter.mjs';
 
 export { gpu, hash };
@@ -107,7 +108,7 @@ export async function createViewerServer(appsArg, preparedArg, outArg, options =
   await save('index.original.html', originalIndex); await save('index.served.html', index);
   const metadata = { schema: 1, route: routeName, appPin: VIEWER_PIN, runtimeSha: runtimeState?.sha ?? null,
    revision: route.revision, threeVersion: route.version, engine: route.engine ?? 'original',
-   transportDiagnostic: { contentLength: diagnosticContentLength, scope: 'Successful allowlisted mounted-content GET/HEAD responses only; default framing elsewhere.', interception: 'Unchanged Playwright catch-all route and remote deny/mirror policy', performanceEvidence: false },
+   transportDiagnostic: { contentLength: diagnosticContentLength, scope: 'Successful allowlisted mounted-content GET/HEAD responses only; default framing elsewhere.', interception: options.networkDiagnostic ?? 'playwright', performanceEvidence: false },
    externalized: route.externalized, instrumentation: manifest.instrumentation ?? null, bundledTimingControl, preparationManifestSha256: hash(await fs.readFile(preparedManifestFile)),
    appBundleOutputs: manifest.outputs, originalDist: manifest.originalDist,
    index: { originalSha256: hash(originalIndex), originalBytes: originalIndex.length, servedSha256: hash(index), servedBytes: index.length },
@@ -117,7 +118,7 @@ export async function createViewerServer(appsArg, preparedArg, outArg, options =
   const toolingRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
   aliases.unshift([toolingRoot, '<tooling>']);
   metadata.tooling = { ...state(toolingRoot), files: [] };
-  for (const name of ['scripts/apps/viewer-browser.mjs', 'scripts/apps/viewer-adapter.mjs']) {
+  for (const name of ['scripts/apps/viewer-browser.mjs', 'scripts/apps/viewer-adapter.mjs', 'scripts/apps/viewer-transport-guard.mjs']) {
    const file = await safeViewerFile(toolingRoot, name);
    await remember(file, 'tooling/' + name); metadata.tooling.files.push(checked.get(file));
   }
@@ -210,17 +211,23 @@ export async function createViewerServer(appsArg, preparedArg, outArg, options =
 export async function openViewerRun(apps, prepared, out, options = {}) {
  const run = await createViewerServer(apps, prepared, out, options);
  const ownsBrowser = !options.browser;
- let browser, context;
+ const networkDiagnostic = options.networkDiagnostic ?? 'playwright';
+ if (!VIEWER_NETWORK_DIAGNOSTICS.includes(networkDiagnostic) || (networkDiagnostic !== 'playwright' && !ownsBrowser)) { await run.close(); throw Error('Network diagnostic requires a recognized mode and an owned browser'); }
+ let browser, context, denyProxy, remoteGuard;
  try {
   const executablePath = options.browserExecutablePath || process.env.RTHREE_CHROME || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
-  browser = options.browser ?? await chromium.launch({ executablePath, headless: false });
+  if (networkDiagnostic !== 'playwright') denyProxy = await createViewerDenyProxy(run.origin);
+  browser = options.browser ?? await chromium.launch({ executablePath, headless: false, ...(denyProxy ? { args: denyProxy.args } : {}) });
   context = await browser.newContext({ viewport: { width: 1280, height: 720 }, deviceScaleFactor: 1, colorScheme: 'light', locale: 'en-US', serviceWorkers: 'block' });
-  context.setDefaultTimeout(30000); await context.route('**/*', run.mirrorNetwork);
+  context.setDefaultTimeout(30000);
+  if (networkDiagnostic !== 'proxy-cdp-remote') await context.route('**/*', run.mirrorNetwork);
   const page = await context.newPage();
+  if (networkDiagnostic === 'proxy-cdp-remote') remoteGuard = await installViewerRemoteGuard(context, page, run);
   page.on('pageerror', error => run.errors.push(run.redact(error.stack || error.message).split(run.origin).join('<origin>')));
   page.on('response', response => { if (response.status() >= 400) run.errors.push(run.redact(`HTTP ${response.status()} ${response.url().replace(run.origin, '<origin>')}`)); });
   await run.save('environment.json', { browser: browser.version(), executablePath: run.redact(executablePath), headed: true,
    viewport: { width: 1280, height: 720 }, dpr: 1, isolated: options.isolated === true,
+   networkDiagnostic, networkDiagnosticScope: 'Optional deny-only proxy and remote-only CDP interception; no primary performance claim.', proxyArgs: denyProxy?.args ?? [],
    route: run.route, runtimeSha: run.metadata.runtimeSha, transportDiagnostic: run.metadata.transportDiagnostic, browserLifecycle: ownsBrowser ? 'owned-per-run' : 'caller-owned-process-fresh-context',
    helperSha256: hash(await fs.readFile(fileURLToPath(import.meta.url))), mode: options.mode ?? 'Viewer compatibility only; no profiles or frame timers' });
   const serverClose = run.close;
@@ -228,13 +235,22 @@ export async function openViewerRun(apps, prepared, out, options = {}) {
   return { ...run, page, context, browser, async close() {
    if (closed) return; closed = true;
    let failure;
-   try { await context.close(); } catch (error) { failure = error; run.errors.push(run.redact(error.message)); }
-   try { if (ownsBrowser) await browser.close(); } catch (error) { failure ??= error; run.errors.push(run.redact(error.message)); }
-   await serverClose();
+   const cleanup = async action => { try { await action(); } catch (error) { failure ??= error; run.errors.push(run.redact(error.message)); } };
+   await cleanup(() => remoteGuard?.close()); await cleanup(() => context.close());
+   await cleanup(async () => { if (ownsBrowser) await browser.close(); });
+   if (denyProxy) {
+    await cleanup(() => run.save('network-guard.json', { mode: networkDiagnostic, remotePauses: remoteGuard?.events ?? [], proxyBlocked: denyProxy.blocked }));
+    await cleanup(() => denyProxy.close());
+   }
+   await cleanup(serverClose);
    if (failure) throw failure;
   } };
  } catch (error) {
-  run.errors.push(run.redact(error.message)); await context?.close().catch(() => {}); if (ownsBrowser) await browser?.close().catch(() => {});
+  run.errors.push(run.redact(error.message));
+  await remoteGuard?.close().catch(error => run.errors.push(run.redact(error.message)));
+  await context?.close().catch(() => {}); if (ownsBrowser) await browser?.close().catch(() => {});
+  if (denyProxy) await run.save('network-guard.json', { mode: networkDiagnostic, remotePauses: remoteGuard?.events ?? [], proxyBlocked: denyProxy.blocked }).catch(error => run.errors.push(run.redact(error.message)));
+  await denyProxy?.close().catch(error => run.errors.push(run.redact(error.message)));
   await run.close(); throw error;
  }
 }

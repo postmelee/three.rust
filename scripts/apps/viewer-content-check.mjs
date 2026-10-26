@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import {fileURLToPath} from 'node:url';
 import {execFileSync} from 'node:child_process';
 import {openViewerRun,gpu} from './viewer-browser.mjs';
+import {VIEWER_NETWORK_DIAGNOSTICS} from './viewer-transport-guard.mjs';
 import {VIEWER_ROUTES,hash} from './viewer-adapter.mjs';
 import {captureViewerSnapshot,compareViewerSnapshots} from './viewer-oracle.mjs';
 import {VIEWER_CONTENT_PINS,createPinnedViewerContent,captureViewerContentReadiness,assertViewerContentReadiness,captureViewerNativeCacheChecksums} from './viewer-content.mjs';
@@ -14,11 +15,12 @@ const input=(page,name)=>page.getByText(name,{exact:true}).first().locator('..')
 
 export function viewerContentOptions(args) {
  const options={routes:Object.keys(VIEWER_ROUTES),timeoutMs:180000,diagnosticContentLength:false},seen=new Set();
- for(const arg of args){const at=arg.indexOf('='),key=arg.slice(0,at),value=arg.slice(at+1);if(at<1||!value||seen.has(key)||!['content','contentRoot','routes','runtimeRoot','runtimeSha','timeoutMs','diagnosticContentLength'].includes(key))throw Error('Expected unique content=, contentRoot=, routes=, runtimeRoot=, runtimeSha=, timeoutMs=, diagnosticContentLength=true|false options');seen.add(key);if(key==='diagnosticContentLength'&&!['true','false'].includes(value))throw Error('diagnosticContentLength must be true or false');options[key]=key==='routes'?value.split(','):key==='timeoutMs'?Number(value):key==='diagnosticContentLength'?value==='true':value;}
+ for(const arg of args){const at=arg.indexOf('='),key=arg.slice(0,at),value=arg.slice(at+1);if(at<1||!value||seen.has(key)||!['content','contentRoot','routes','runtimeRoot','runtimeSha','timeoutMs','diagnosticContentLength','networkDiagnostic'].includes(key))throw Error('Expected unique content=, contentRoot=, routes=, runtimeRoot=, runtimeSha=, timeoutMs=, diagnosticContentLength=true|false, networkDiagnostic= options');seen.add(key);if(key==='diagnosticContentLength'&&!['true','false'].includes(value))throw Error('diagnosticContentLength must be true or false');options[key]=key==='routes'?value.split(','):key==='timeoutMs'?Number(value):key==='diagnosticContentLength'?value==='true':value;}
  if(!VIEWER_CONTENT_PINS[options.content]||!options.contentRoot||!options.routes.length||new Set(options.routes).size!==options.routes.length||options.routes.some(route=>!VIEWER_ROUTES[route]))throw Error('Invalid content/root/routes');
  if(!Number.isSafeInteger(options.timeoutMs)||options.timeoutMs<30000||options.timeoutMs>600000)throw Error('timeoutMs must be between 30000 and 600000');
  if(options.routes.some(route=>VIEWER_ROUTES[route].revision==='186')&&(!options.runtimeRoot||!/^[a-f0-9]{40}$/.test(options.runtimeSha??'')))throw Error('r186 routes require an exact runtime SHA');
  options.contentFramingDiagnostic=seen.has('diagnosticContentLength');
+ if (options.networkDiagnostic !== undefined && (!VIEWER_NETWORK_DIAGNOSTICS.includes(options.networkDiagnostic) || options.content !== 'beautiful-game' || options.routes.length !== 1 || options.routes[0] !== 'original-r176')) throw Error('Network diagnostic requires original-r176 A Beautiful Game');
  if(options.contentFramingDiagnostic&&(options.content!=='beautiful-game'||options.routes.length!==1||options.routes[0]!=='original-r176'))throw Error('Content-Length diagnostic is restricted to the original-r176 A Beautiful Game whole-app load');
  return options;
 }
@@ -33,22 +35,22 @@ async function observeNativeAnimation(page) {
 
 export async function checkViewerContent(appsArg,preparedArg,outArg,options) {
  const apps=path.resolve(appsArg),prepared=path.resolve(preparedArg),out=path.resolve(outArg);await fs.mkdir(out,{recursive:false});
- const framingDiagnostic=options.contentFramingDiagnostic===true||options.diagnosticContentLength===true;
- const summary={schema:1,kind:'native Viewer original-content correctness gate',status:'running',performanceEvidence:false,transportDiagnostic:{enabled:framingDiagnostic,contentLength:options.diagnosticContentLength===true,scope:'Successful mounted-content responses only; app/asset/remote policy and strict failure gate unchanged.',existingFailedGatesUnchanged:true},content:options.content,runtimeSha:options.runtimeSha??null,routes:[],comparisons:[],limitations:['This gate does not establish CPU headroom, hardware throughput, or a stable performance advantage.','Texture readiness means decoded images attached to native scene material slots, plus served resource hash evidence. It does not claim a byte-exact inventory of GPU allocations.','The native validator runs unchanged and its warnings are retained. KTX2 conformance is outside that validator capability.','Fixed-pose mixer.setTime calls are diagnostic adaptations only, separated from native wall-clock playback checks.']};
+ const framingDiagnostic=options.contentFramingDiagnostic===true||options.diagnosticContentLength===true||options.networkDiagnostic!==undefined;
+ const summary={schema:1,kind:'native Viewer original-content correctness gate',status:'running',performanceEvidence:false,transportDiagnostic:{networkMode:options.networkDiagnostic??'playwright',enabled:framingDiagnostic,contentLength:options.diagnosticContentLength===true,scope:'Successful mounted-content responses only; app/asset and strict failure gate unchanged; network diagnostic records any transport guard substitution.',existingFailedGatesUnchanged:true},content:options.content,runtimeSha:options.runtimeSha??null,routes:[],comparisons:[],limitations:['This gate does not establish CPU headroom, hardware throughput, or a stable performance advantage.','Texture readiness means decoded images attached to native scene material slots, plus served resource hash evidence. It does not claim a byte-exact inventory of GPU allocations.','The native validator runs unchanged and its warnings are retained. KTX2 conformance is outside that validator capability.','Fixed-pose mixer.setTime calls are diagnostic adaptations only, separated from native wall-clock playback checks.']};
  const save=(file,value)=>fs.writeFile(path.join(out,file),JSON.stringify(value,null,2)+'\n');
  const redact=value=>String(value).split(apps).join('<apps>').split(prepared).join('<prepared>').split(out).join('<output>').split(path.resolve(options.contentRoot)).join('<content>');
  const routeData=new Map();let content;
  try {
   content=await createPinnedViewerContent(options.content,options.contentRoot);
   const {root,...publicContent}=content;await save('content.json',publicContent);summary.source=content.source;
-  const toolingRoot=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..'),files=['scripts/apps/viewer-content-check.mjs','scripts/apps/viewer-content.mjs','scripts/apps/viewer-oracle.mjs','scripts/apps/viewer-network.mjs'];
+  const toolingRoot=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..'),files=['scripts/apps/viewer-content-check.mjs','scripts/apps/viewer-content.mjs','scripts/apps/viewer-oracle.mjs','scripts/apps/viewer-network.mjs','scripts/apps/viewer-transport-guard.mjs'];
   summary.tooling={sha:execFileSync('git',['rev-parse','HEAD'],{cwd:toolingRoot,encoding:'utf8'}).trim(),dirty:Boolean(execFileSync('git',['status','--porcelain','--untracked-files=normal'],{cwd:toolingRoot,encoding:'utf8'}).trim()),files:[]};
   for(const file of files){const bytes=await fs.readFile(path.join(toolingRoot,file));summary.tooling.files.push({file,bytes:bytes.length,sha256:hash(bytes)});}
   for(const routeName of options.routes){
    const route=VIEWER_ROUTES[routeName],record={route:routeName,status:'running',checks:[]};summary.routes.push(record);await save('result.json',summary);
    let run,network,closing=false;const events={console:[],dialogs:[],responses:[],finished:[],failed:[],contextLoss:[],crashes:[]},captures={};
    try {
-    run=await openViewerRun(apps,prepared,path.join(out,routeName),{route:routeName,runtimeRoot:options.runtimeRoot,runtimeSha:options.runtimeSha,captureSources:true,contentRoots:[content],diagnosticContentLength:options.diagnosticContentLength,mode:'Native original-content import/feature gate only. No profiler or CPU timing collector.'});
+    run=await openViewerRun(apps,prepared,path.join(out,routeName),{route:routeName,runtimeRoot:options.runtimeRoot,runtimeSha:options.runtimeSha,captureSources:true,contentRoots:[content],diagnosticContentLength:options.diagnosticContentLength,networkDiagnostic:options.networkDiagnostic,mode:'Native original-content import/feature gate only. No profiler or CPU timing collector.'});
     const page=run.page;page.setDefaultTimeout(options.timeoutMs);
     const publicURL=url=>run.redact(url).split(run.origin).join('<origin>');
     network=await createViewerNetworkEvidence(await run.context.newCDPSession(page),publicURL);
@@ -140,6 +142,6 @@ export async function checkViewerContent(appsArg,preparedArg,outArg,options) {
 }
 
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
- if(process.argv.length<5)throw Error('Usage: node scripts/apps/viewer-content-check.mjs APPS_ROOT PREPARED_ROOT NEW_OUTPUT content=bistro|beautiful-game contentRoot=... [routes=...] [runtimeRoot=...] [runtimeSha=...] [timeoutMs=180000] [diagnosticContentLength=true|false]');
+ if(process.argv.length<5)throw Error('Usage: node scripts/apps/viewer-content-check.mjs APPS_ROOT PREPARED_ROOT NEW_OUTPUT content=bistro|beautiful-game contentRoot=... [routes=...] [runtimeRoot=...] [runtimeSha=...] [timeoutMs=180000] [diagnosticContentLength=true|false] [networkDiagnostic=proxy-playwright|proxy-cdp-remote]');
  const result=await checkViewerContent(process.argv[2],process.argv[3],process.argv[4],viewerContentOptions(process.argv.slice(5)));console.log(JSON.stringify({status:result.status,content:result.content,routes:result.routes.length,comparisons:result.comparisons.length,performanceEvidence:false}));
 }
