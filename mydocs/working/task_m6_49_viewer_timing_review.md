@@ -1,0 +1,36 @@
+# Task 49 Viewer callback/profiling source review
+
+Review mode: source-only while a separate Editor primary capture was active. No browser, build, syntax check, test, profile, archive compression or large hash pass was executed. Files were drafts being edited by the implementation owner; this review does not certify a final commit or executed behavior.
+
+## Actionable findings
+
+1. **P2 — Incomplete manifests could produce an A/A pass in independent summary use.** `summarizeViewerTiming()` originally filtered to captured records and required only a nonempty balanced subset for each engine. Missing A/B rounds or a missing pre/post bookend could therefore leave `aa.passes` true for `mode=full`. The live driver currently aborts on the first error and does not call summarize in that branch, so this is principally an independently called summary/failed-manifest risk. Require the exact frozen case set, label × round cardinality, one bookend on each side, no failed/running records, and consistent frozen callback contracts. The implementation owner acknowledged this and is adding the guards; not rechecked after final implementation yet.
+
+2. **Lower-priority failure-evidence gap — Profile warmup begins without a durable initial endpoint.** `warmViewerFrames()` retains `before` only inside its pending Promise. A 60-second timeout or interrupt therefore leaves no warmup JSON, unlike `observation()`, which saves its initial endpoint before waiting. Save the initial warmup observation before awaiting frames, then update with the complete result or an explicit endpoint-unavailable failure. This does not change successful-run arithmetic or create a false pass. Sent to the implementation owner; final disposition not checked.
+
+## Boundaries examined
+
+- Timing envelopes surround the entire native `Viewer.animate` body, including rAF scheduling, controls, Stats, mixer and both native renderer submissions. Separate dat.gui `updateDisplays` bodies, including their rescheduling, are measured per frozen native listening array. No global rAF/clock or Three.js prototype substitution was seen.
+- The collector groups exactly one animate plus all frozen GUI bodies by the native rAF timestamp. It checks duplicate kinds, missing groups, interval overlap, source Viewer identity and monotonic timestamps. First-timestamp arming rows are separately retained with a prospective reason, not retrospectively selected.
+- Invalid/duplicate callback rows are appended before validation failure. The driver exports complete/partial raw rows in `finally`; an unresponsive page is explicitly represented as export unavailable and `rawPreserved=false`. Capacity failure is explicit. No success is inferred from a missing buffer.
+- The measured CPU is a sum of disjoint synchronous callback-body durations. It excludes collector bookkeeping and asynchronous/browser/GPU work. Quantization floor is prospectively `2 * frozenCallbackCount * minPositiveDeltaMs`; run/block deviation checks retain the prior 5% criterion. A/A covers original A/B and pre/post bookends, subject to finding 1's completeness fix.
+- Per-row phase/frame validation checks mixer/rAF progression and Walking action phase, main renderer delta one and axes delta according to grid. Endpoint checks retain native state/quality/focus/backend/counters. Candidate fallback and paid-read counters remain endpoint counts rather than CPU or upload timers.
+- Fixed-state native versus timing/observer oracles run on separate pages. Both renderers have nonblank checks and the shared scene/identity oracle. Engine comparisons are strict within r186. r176 bundled/external/r186 migration is separately grouped, and its version differences are preserved rather than silently attributed to Rust.
+- Profile preparation requires an uninstrumented native bundle. Inside Profiler.start/stop, the driver performs only the awaited wall-clock delay; Debugger/source/source-map capture, endpoint work and file writes are outside that sampled interval. Raw profiles are saved before the post endpoint; interrupted profiles attempt an explicitly labeled partial capture.
+- Full capture requires exact committed protocol bytes, source/runtime pins, prepared-manifest hashes, declared asset/license records and dedicated output prefixes. The uninstrumented and timing preparations are distinct. Source/profile hashes and browser/environment evidence are retained.
+
+## Remaining limits
+
+This read-through does not replace syntax/unit checks, exact-source freezing, instrumented/off hardware oracles, smoke capture, independent raw recomputation or final tool provenance. Sampling/collector overhead remains uncalibrated. Fixed-pose parity is finite correctness and endpoint checks do not establish every intervening pose or interaction. CPU callback savings cannot establish FPS gains. The caller must preserve the negative/unstable historical evidence and keep migration effects separate from matched-engine effects.
+
+## Findings addressed and pre-freeze verification
+
+The implementation now rejects missing/duplicate/failed case, round, route and bookend records before computing full A/A. Tests exercise those incomplete manifests. Profile warmup saves an initial endpoint before awaiting frames and retains an explicit partial/end-unavailable record on failure. These changes preserve the successful raw arithmetic.
+
+The tool owner ran all four new timing/protocol/session/source-map unit files: 30/30 passed, together with syntax checks for fourteen source/test files. The first syntax/test attempt found a missing final collector brace; it was corrected before any Viewer timing/profile browser capture. Both failed and successful logs remain under `work/task49-setup/viewer-tools-001`. No browser performance result follows from these tests.
+
+The original three grid-on cases remain. A separately labeled native-default Walking/grid-off profile case is added to inspect default behavior and prepared/fallback coverage before freezing primary cases. Off-axis rendering is not fabricated: the existing renderer, context, identity, native style and buffer are retained, with zero axes frame advancement and blank output. Main and visible grid-on axes retain the CSS/DPR dimension checks.
+
+The offline Viewer analyzer additionally validates captured source maps against generated output hashes, prepared map proofs, sourcesContent input/adaptation hashes and original AST function ranges. Only proven mappings replace generated labels; unavailable/unmapped originals retain conservative generated attribution. Eleven of the thirty unit tests exercise this chain and malformed/bounded VLQ/source/hash/path cases. Existing Editor source attribution is unchanged. Native hardware oracle and full-capture audit remain required after this source freeze.
+
+The integration owner then ran the full infrastructure suite: 127/127 passed. The first combined invocation mistakenly included the explicit `tests/viewer-server.mjs` command without its required prepared-app arguments (127 pass, one command failure); this wiring error is retained in `infra-viewer-integration-001.log`. The server integration remains a separately executed five-check command, and the corrected normal CI unit list passes in `infra-viewer-integration-002.log`. Documentation and whitespace checks also pass.
