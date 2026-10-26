@@ -1,0 +1,46 @@
+{
+  "sourceRepository": "mrdoob/three.js",
+  "sourcePin": "9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8",
+  "sourcePath": "examples/models/gltf/LittlestTokyo.glb",
+  "bytes": 4133072,
+  "sha256": "8375c2aa6808e28ad1cb9c0d43e1513f57ffd7865244bf66bbbd5bb0e907e06d",
+  "asset": {
+    "extras": {
+      "author": "glenatron (https://sketchfab.com/glenatron)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/models/94b24a60dc1b48248de50bf087c0f042",
+      "title": "Littlest Tokyo"
+    },
+    "generator": "Sketchfab-3.24.2",
+    "version": "2.0"
+  },
+  "nodes": 214,
+  "meshes": 71,
+  "meshNodes": 71,
+  "primitives": 71,
+  "vertexDefinitions": 193125,
+  "skinMeshNodes": 8,
+  "skins": [
+    {
+      "joints": 32
+    }
+  ],
+  "morphMeshes": 0,
+  "animations": [
+    {
+      "name": "Take 001",
+      "channels": 96,
+      "targetNodes": 65,
+      "paths": [
+        "rotation",
+        "scale",
+        "translation"
+      ]
+    }
+  ],
+  "externalBufferURIs": [],
+  "externalImageURIs": [],
+  "extensionsRequired": [
+    "KHR_draco_mesh_compression"
+  ]
+}

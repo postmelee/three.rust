@@ -1,0 +1,883 @@
+{
+  "pin": "8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+  "CarConcept": {
+    "asset": {
+      "copyright": "© 2015, Khronos Group, Khronos logo. © 2017, Khronos Group, 3D Commerce logo. Asset is CC BY 4.0 International, created by Eric Chadwick of Darmstadt Graphics Group GmbH, 2024",
+      "generator": "Created by RapidPipeline 3D Processor v7.1.0 | rapidpipeline.com",
+      "version": "2.0"
+    },
+    "nodes": 101,
+    "meshes": 97,
+    "meshNodes": 97,
+    "primitives": 109,
+    "vertexDefinitions": 162766,
+    "vertexInstances": 162766,
+    "skins": 0,
+    "animations": 0,
+    "morphMeshes": 0,
+    "materials": 29,
+    "buffers": [
+      {
+        "byteLength": 8670516,
+        "uri": "CarConcept.data.bin"
+      }
+    ],
+    "images": 14,
+    "extensions": [
+      "KHR_materials_clearcoat",
+      "KHR_materials_emissive_strength",
+      "KHR_materials_iridescence",
+      "KHR_materials_transmission",
+      "KHR_materials_variants",
+      "KHR_texture_transform"
+    ]
+  },
+  "ABeautifulGame": {
+    "asset": {
+      "copyright": "Original assets by Moeen Sayed and Mujtaba Sayed for SideFX.",
+      "generator": "Khronos glTF Blender I/O v3.3.17",
+      "version": "2.0"
+    },
+    "nodes": 49,
+    "meshes": 15,
+    "meshNodes": 49,
+    "primitives": 15,
+    "vertexDefinitions": 408691,
+    "vertexInstances": 934309,
+    "skins": 0,
+    "animations": 0,
+    "morphMeshes": 0,
+    "materials": 15,
+    "buffers": [
+      {
+        "byteLength": 10829440,
+        "uri": "ABeautifulGame.bin"
+      }
+    ],
+    "images": 33,
+    "extensions": [
+      "KHR_materials_transmission",
+      "KHR_materials_volume"
+    ]
+  },
+  "CarConceptFiles": [
+    {
+      "name": "CarConcept.data.bin",
+      "path": "Models/CarConcept/glTF/CarConcept.data.bin",
+      "sha": "081d3598a400e43fbd6516c5036d2bbdf43ae96b",
+      "size": 8670516,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/CarConcept.data.bin?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/CarConcept.data.bin",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/081d3598a400e43fbd6516c5036d2bbdf43ae96b",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/CarConcept.data.bin",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/CarConcept.data.bin?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/081d3598a400e43fbd6516c5036d2bbdf43ae96b",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/CarConcept.data.bin"
+      }
+    },
+    {
+      "name": "CarConcept.gltf",
+      "path": "Models/CarConcept/glTF/CarConcept.gltf",
+      "sha": "02c769342fd03da1a104f7671993fcfeb011a7d6",
+      "size": 333111,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/CarConcept.gltf?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/CarConcept.gltf",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/02c769342fd03da1a104f7671993fcfeb011a7d6",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/CarConcept.gltf",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/CarConcept.gltf?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/02c769342fd03da1a104f7671993fcfeb011a7d6",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/CarConcept.gltf"
+      }
+    },
+    {
+      "name": "Dash_E.png",
+      "path": "Models/CarConcept/glTF/Dash_E.png",
+      "sha": "7e9ea973e20a52b5e0f85cc99fabf2b7dca3c26f",
+      "size": 27423,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Dash_E.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Dash_E.png",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/7e9ea973e20a52b5e0f85cc99fabf2b7dca3c26f",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Dash_E.png",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Dash_E.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/7e9ea973e20a52b5e0f85cc99fabf2b7dca3c26f",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Dash_E.png"
+      }
+    },
+    {
+      "name": "Dot_C.png",
+      "path": "Models/CarConcept/glTF/Dot_C.png",
+      "sha": "d76650934e99660523909c39a8ef0c30af89a167",
+      "size": 321,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Dot_C.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Dot_C.png",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/d76650934e99660523909c39a8ef0c30af89a167",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Dot_C.png",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Dot_C.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/d76650934e99660523909c39a8ef0c30af89a167",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Dot_C.png"
+      }
+    },
+    {
+      "name": "Dot_N.png",
+      "path": "Models/CarConcept/glTF/Dot_N.png",
+      "sha": "baf91313be0da7fa7549cfd81a1333231850efac",
+      "size": 7969,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Dot_N.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Dot_N.png",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/baf91313be0da7fa7549cfd81a1333231850efac",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Dot_N.png",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Dot_N.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/baf91313be0da7fa7549cfd81a1333231850efac",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Dot_N.png"
+      }
+    },
+    {
+      "name": "Hex_N.png",
+      "path": "Models/CarConcept/glTF/Hex_N.png",
+      "sha": "68784d61ec7670d4de5b4da6dec363ef21205118",
+      "size": 3331,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Hex_N.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Hex_N.png",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/68784d61ec7670d4de5b4da6dec363ef21205118",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Hex_N.png",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Hex_N.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/68784d61ec7670d4de5b4da6dec363ef21205118",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Hex_N.png"
+      }
+    },
+    {
+      "name": "Khronos_C.png",
+      "path": "Models/CarConcept/glTF/Khronos_C.png",
+      "sha": "02d2dccd5cffe8be0a0f38c70f5b2be06b143c55",
+      "size": 7087,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Khronos_C.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Khronos_C.png",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/02d2dccd5cffe8be0a0f38c70f5b2be06b143c55",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Khronos_C.png",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Khronos_C.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/02d2dccd5cffe8be0a0f38c70f5b2be06b143c55",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Khronos_C.png"
+      }
+    },
+    {
+      "name": "Mechanical_N.png",
+      "path": "Models/CarConcept/glTF/Mechanical_N.png",
+      "sha": "c50a60e78df6670432f2a5f0c6b276677bcf5be3",
+      "size": 251901,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Mechanical_N.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Mechanical_N.png",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/c50a60e78df6670432f2a5f0c6b276677bcf5be3",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Mechanical_N.png",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Mechanical_N.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/c50a60e78df6670432f2a5f0c6b276677bcf5be3",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Mechanical_N.png"
+      }
+    },
+    {
+      "name": "Mechanical_ORM.png",
+      "path": "Models/CarConcept/glTF/Mechanical_ORM.png",
+      "sha": "693af5987e9ffb0c91a487a57962a1a1b8dc2e90",
+      "size": 69809,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Mechanical_ORM.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Mechanical_ORM.png",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/693af5987e9ffb0c91a487a57962a1a1b8dc2e90",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Mechanical_ORM.png",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Mechanical_ORM.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/693af5987e9ffb0c91a487a57962a1a1b8dc2e90",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Mechanical_ORM.png"
+      }
+    },
+    {
+      "name": "Occlusion.png",
+      "path": "Models/CarConcept/glTF/Occlusion.png",
+      "sha": "96677815e989dfabd8a611909852c980a99ea4fd",
+      "size": 1411879,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Occlusion.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Occlusion.png",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/96677815e989dfabd8a611909852c980a99ea4fd",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Occlusion.png",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Occlusion.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/96677815e989dfabd8a611909852c980a99ea4fd",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Occlusion.png"
+      }
+    },
+    {
+      "name": "Powdercoat_N.png",
+      "path": "Models/CarConcept/glTF/Powdercoat_N.png",
+      "sha": "0226a9d885a4a222ba5cf5facbac785ba091b245",
+      "size": 41240,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Powdercoat_N.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Powdercoat_N.png",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/0226a9d885a4a222ba5cf5facbac785ba091b245",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Powdercoat_N.png",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Powdercoat_N.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/0226a9d885a4a222ba5cf5facbac785ba091b245",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Powdercoat_N.png"
+      }
+    },
+    {
+      "name": "Rib_N.png",
+      "path": "Models/CarConcept/glTF/Rib_N.png",
+      "sha": "cf131536e825dea6d2586d781a7d91f6e5209746",
+      "size": 143,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Rib_N.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Rib_N.png",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/cf131536e825dea6d2586d781a7d91f6e5209746",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Rib_N.png",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Rib_N.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/cf131536e825dea6d2586d781a7d91f6e5209746",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Rib_N.png"
+      }
+    },
+    {
+      "name": "Thickness.png",
+      "path": "Models/CarConcept/glTF/Thickness.png",
+      "sha": "6da884c32d72624f03371eb15798efa94482d40b",
+      "size": 137601,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Thickness.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Thickness.png",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/6da884c32d72624f03371eb15798efa94482d40b",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Thickness.png",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Thickness.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/6da884c32d72624f03371eb15798efa94482d40b",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Thickness.png"
+      }
+    },
+    {
+      "name": "Tireside_C.png",
+      "path": "Models/CarConcept/glTF/Tireside_C.png",
+      "sha": "07f5d74dd0d9f7f99dc80212b8ca5733d60ac845",
+      "size": 8094,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Tireside_C.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Tireside_C.png",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/07f5d74dd0d9f7f99dc80212b8ca5733d60ac845",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Tireside_C.png",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Tireside_C.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/07f5d74dd0d9f7f99dc80212b8ca5733d60ac845",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Tireside_C.png"
+      }
+    },
+    {
+      "name": "Tireside_N.png",
+      "path": "Models/CarConcept/glTF/Tireside_N.png",
+      "sha": "7f31f55134b99e420e0bc440fbb07db40f3be104",
+      "size": 396724,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Tireside_N.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Tireside_N.png",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/7f31f55134b99e420e0bc440fbb07db40f3be104",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Tireside_N.png",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Tireside_N.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/7f31f55134b99e420e0bc440fbb07db40f3be104",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Tireside_N.png"
+      }
+    },
+    {
+      "name": "Tiretread_N.png",
+      "path": "Models/CarConcept/glTF/Tiretread_N.png",
+      "sha": "d3b034c0871eb906dc77b07cb926a541a4adc2ba",
+      "size": 49131,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Tiretread_N.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Tiretread_N.png",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/d3b034c0871eb906dc77b07cb926a541a4adc2ba",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Tiretread_N.png",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/CarConcept/glTF/Tiretread_N.png?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/d3b034c0871eb906dc77b07cb926a541a4adc2ba",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/CarConcept/glTF/Tiretread_N.png"
+      }
+    }
+  ],
+  "ABeautifulGameFiles": [
+    {
+      "name": "ABeautifulGame.bin",
+      "path": "Models/ABeautifulGame/glTF/ABeautifulGame.bin",
+      "sha": "8308f62c8082f6c73022238b00f7a53cadd20e05",
+      "size": 10829440,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/ABeautifulGame.bin?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/ABeautifulGame.bin",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/8308f62c8082f6c73022238b00f7a53cadd20e05",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/ABeautifulGame.bin",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/ABeautifulGame.bin?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/8308f62c8082f6c73022238b00f7a53cadd20e05",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/ABeautifulGame.bin"
+      }
+    },
+    {
+      "name": "ABeautifulGame.gltf",
+      "path": "Models/ABeautifulGame/glTF/ABeautifulGame.gltf",
+      "sha": "0e8b4f99820db8758f5646d573d1f82e0918da21",
+      "size": 46214,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/ABeautifulGame.gltf?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/ABeautifulGame.gltf",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/0e8b4f99820db8758f5646d573d1f82e0918da21",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/ABeautifulGame.gltf",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/ABeautifulGame.gltf?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/0e8b4f99820db8758f5646d573d1f82e0918da21",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/ABeautifulGame.gltf"
+      }
+    },
+    {
+      "name": "Bishop_black_ORM.jpg",
+      "path": "Models/ABeautifulGame/glTF/Bishop_black_ORM.jpg",
+      "sha": "b06e49885ac765851028739f35afbc70a68733dd",
+      "size": 630950,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Bishop_black_ORM.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_black_ORM.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/b06e49885ac765851028739f35afbc70a68733dd",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_black_ORM.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Bishop_black_ORM.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/b06e49885ac765851028739f35afbc70a68733dd",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_black_ORM.jpg"
+      }
+    },
+    {
+      "name": "Bishop_black_base_color.jpg",
+      "path": "Models/ABeautifulGame/glTF/Bishop_black_base_color.jpg",
+      "sha": "4011467f5cf9d9b29c2bd2fddc7f321e7fa20a3f",
+      "size": 403990,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Bishop_black_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_black_base_color.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/4011467f5cf9d9b29c2bd2fddc7f321e7fa20a3f",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_black_base_color.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Bishop_black_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/4011467f5cf9d9b29c2bd2fddc7f321e7fa20a3f",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_black_base_color.jpg"
+      }
+    },
+    {
+      "name": "Bishop_black_normal.jpg",
+      "path": "Models/ABeautifulGame/glTF/Bishop_black_normal.jpg",
+      "sha": "76e45c0566b02817f97eb66fe268ee05ead9d3db",
+      "size": 850400,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Bishop_black_normal.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_black_normal.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/76e45c0566b02817f97eb66fe268ee05ead9d3db",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_black_normal.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Bishop_black_normal.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/76e45c0566b02817f97eb66fe268ee05ead9d3db",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_black_normal.jpg"
+      }
+    },
+    {
+      "name": "Bishop_white_ORM.jpg",
+      "path": "Models/ABeautifulGame/glTF/Bishop_white_ORM.jpg",
+      "sha": "512d7ac10056a32c0511ee00bb9717ba6810420a",
+      "size": 622771,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Bishop_white_ORM.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_white_ORM.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/512d7ac10056a32c0511ee00bb9717ba6810420a",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_white_ORM.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Bishop_white_ORM.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/512d7ac10056a32c0511ee00bb9717ba6810420a",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_white_ORM.jpg"
+      }
+    },
+    {
+      "name": "Bishop_white_base_color.jpg",
+      "path": "Models/ABeautifulGame/glTF/Bishop_white_base_color.jpg",
+      "sha": "907e057a16245e6053c5aa905a08795bd59263e0",
+      "size": 361127,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Bishop_white_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_white_base_color.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/907e057a16245e6053c5aa905a08795bd59263e0",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_white_base_color.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Bishop_white_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/907e057a16245e6053c5aa905a08795bd59263e0",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_white_base_color.jpg"
+      }
+    },
+    {
+      "name": "Bishop_white_normal.jpg",
+      "path": "Models/ABeautifulGame/glTF/Bishop_white_normal.jpg",
+      "sha": "d73a833d144592115cc76a30cad94aa714207886",
+      "size": 673915,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Bishop_white_normal.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_white_normal.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/d73a833d144592115cc76a30cad94aa714207886",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_white_normal.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Bishop_white_normal.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/d73a833d144592115cc76a30cad94aa714207886",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_white_normal.jpg"
+      }
+    },
+    {
+      "name": "Castle_ORM.jpg",
+      "path": "Models/ABeautifulGame/glTF/Castle_ORM.jpg",
+      "sha": "5c02b1ddfc0f3c165e5496e70b515918d276c4b7",
+      "size": 1371413,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Castle_ORM.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Castle_ORM.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/5c02b1ddfc0f3c165e5496e70b515918d276c4b7",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Castle_ORM.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Castle_ORM.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/5c02b1ddfc0f3c165e5496e70b515918d276c4b7",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Castle_ORM.jpg"
+      }
+    },
+    {
+      "name": "Castle_black_base_color.jpg",
+      "path": "Models/ABeautifulGame/glTF/Castle_black_base_color.jpg",
+      "sha": "f7b98a9444ebfa845beefd4ee9fbcf7aa37b6b20",
+      "size": 394527,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Castle_black_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Castle_black_base_color.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/f7b98a9444ebfa845beefd4ee9fbcf7aa37b6b20",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Castle_black_base_color.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Castle_black_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/f7b98a9444ebfa845beefd4ee9fbcf7aa37b6b20",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Castle_black_base_color.jpg"
+      }
+    },
+    {
+      "name": "Castle_normal.jpg",
+      "path": "Models/ABeautifulGame/glTF/Castle_normal.jpg",
+      "sha": "c3e22d0471f5f10f575f032388276a6b1d13279a",
+      "size": 491396,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Castle_normal.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Castle_normal.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/c3e22d0471f5f10f575f032388276a6b1d13279a",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Castle_normal.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Castle_normal.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/c3e22d0471f5f10f575f032388276a6b1d13279a",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Castle_normal.jpg"
+      }
+    },
+    {
+      "name": "Castle_white_base_color.jpg",
+      "path": "Models/ABeautifulGame/glTF/Castle_white_base_color.jpg",
+      "sha": "3548e2034a9d147405cee615266a8cd3dc943599",
+      "size": 334252,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Castle_white_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Castle_white_base_color.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/3548e2034a9d147405cee615266a8cd3dc943599",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Castle_white_base_color.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Castle_white_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/3548e2034a9d147405cee615266a8cd3dc943599",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Castle_white_base_color.jpg"
+      }
+    },
+    {
+      "name": "Chessboard_ORM.jpg",
+      "path": "Models/ABeautifulGame/glTF/Chessboard_ORM.jpg",
+      "sha": "a7a05c31c72bddbd0e394464f9f9dd0b4abf654b",
+      "size": 582751,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Chessboard_ORM.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Chessboard_ORM.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/a7a05c31c72bddbd0e394464f9f9dd0b4abf654b",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Chessboard_ORM.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Chessboard_ORM.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/a7a05c31c72bddbd0e394464f9f9dd0b4abf654b",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Chessboard_ORM.jpg"
+      }
+    },
+    {
+      "name": "Chessboard_base_color.jpg",
+      "path": "Models/ABeautifulGame/glTF/Chessboard_base_color.jpg",
+      "sha": "b85306f07f846f092d0714d6b2665f26eabb452e",
+      "size": 529405,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Chessboard_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Chessboard_base_color.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/b85306f07f846f092d0714d6b2665f26eabb452e",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Chessboard_base_color.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Chessboard_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/b85306f07f846f092d0714d6b2665f26eabb452e",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Chessboard_base_color.jpg"
+      }
+    },
+    {
+      "name": "Chessboard_normal.jpg",
+      "path": "Models/ABeautifulGame/glTF/Chessboard_normal.jpg",
+      "sha": "a58826c6f53f3a995876073299142e00e7bf92b0",
+      "size": 727372,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Chessboard_normal.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Chessboard_normal.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/a58826c6f53f3a995876073299142e00e7bf92b0",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Chessboard_normal.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Chessboard_normal.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/a58826c6f53f3a995876073299142e00e7bf92b0",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Chessboard_normal.jpg"
+      }
+    },
+    {
+      "name": "King_black_ORM.jpg",
+      "path": "Models/ABeautifulGame/glTF/King_black_ORM.jpg",
+      "sha": "210da263de0e525d8f813257d24801398f8a4bda",
+      "size": 782417,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/King_black_ORM.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_black_ORM.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/210da263de0e525d8f813257d24801398f8a4bda",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_black_ORM.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/King_black_ORM.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/210da263de0e525d8f813257d24801398f8a4bda",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_black_ORM.jpg"
+      }
+    },
+    {
+      "name": "King_black_base_color.jpg",
+      "path": "Models/ABeautifulGame/glTF/King_black_base_color.jpg",
+      "sha": "1ac5fa792d2db9874ba123538b30ac13492c86cf",
+      "size": 366216,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/King_black_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_black_base_color.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/1ac5fa792d2db9874ba123538b30ac13492c86cf",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_black_base_color.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/King_black_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/1ac5fa792d2db9874ba123538b30ac13492c86cf",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_black_base_color.jpg"
+      }
+    },
+    {
+      "name": "King_black_normal.jpg",
+      "path": "Models/ABeautifulGame/glTF/King_black_normal.jpg",
+      "sha": "c605ae26d59119a268d60d96147b683a92717053",
+      "size": 764089,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/King_black_normal.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_black_normal.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/c605ae26d59119a268d60d96147b683a92717053",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_black_normal.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/King_black_normal.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/c605ae26d59119a268d60d96147b683a92717053",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_black_normal.jpg"
+      }
+    },
+    {
+      "name": "King_white_ORM.jpg",
+      "path": "Models/ABeautifulGame/glTF/King_white_ORM.jpg",
+      "sha": "7f26fc05c2a24ea5707960db2de9e392c160ce64",
+      "size": 822486,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/King_white_ORM.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_white_ORM.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/7f26fc05c2a24ea5707960db2de9e392c160ce64",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_white_ORM.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/King_white_ORM.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/7f26fc05c2a24ea5707960db2de9e392c160ce64",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_white_ORM.jpg"
+      }
+    },
+    {
+      "name": "King_white_base_color.jpg",
+      "path": "Models/ABeautifulGame/glTF/King_white_base_color.jpg",
+      "sha": "224cba35045af8a21a756adf9caffa34df6c9867",
+      "size": 395138,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/King_white_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_white_base_color.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/224cba35045af8a21a756adf9caffa34df6c9867",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_white_base_color.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/King_white_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/224cba35045af8a21a756adf9caffa34df6c9867",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_white_base_color.jpg"
+      }
+    },
+    {
+      "name": "King_white_normal.jpg",
+      "path": "Models/ABeautifulGame/glTF/King_white_normal.jpg",
+      "sha": "8a8dcf7a3c3cbad08698b38b3a8a09f966c4cf28",
+      "size": 961725,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/King_white_normal.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_white_normal.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/8a8dcf7a3c3cbad08698b38b3a8a09f966c4cf28",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_white_normal.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/King_white_normal.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/8a8dcf7a3c3cbad08698b38b3a8a09f966c4cf28",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_white_normal.jpg"
+      }
+    },
+    {
+      "name": "Knight_ORM.jpg",
+      "path": "Models/ABeautifulGame/glTF/Knight_ORM.jpg",
+      "sha": "1fa040eeed73f1d40526bdf107c72dc7c9df3263",
+      "size": 350946,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Knight_ORM.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Knight_ORM.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/1fa040eeed73f1d40526bdf107c72dc7c9df3263",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Knight_ORM.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Knight_ORM.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/1fa040eeed73f1d40526bdf107c72dc7c9df3263",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Knight_ORM.jpg"
+      }
+    },
+    {
+      "name": "Knight_black_base_color.jpg",
+      "path": "Models/ABeautifulGame/glTF/Knight_black_base_color.jpg",
+      "sha": "5be5b9aa22cb8e250e45b5c7406306fcc89398e1",
+      "size": 244999,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Knight_black_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Knight_black_base_color.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/5be5b9aa22cb8e250e45b5c7406306fcc89398e1",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Knight_black_base_color.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Knight_black_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/5be5b9aa22cb8e250e45b5c7406306fcc89398e1",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Knight_black_base_color.jpg"
+      }
+    },
+    {
+      "name": "Knight_normal.jpg",
+      "path": "Models/ABeautifulGame/glTF/Knight_normal.jpg",
+      "sha": "a88f0a7c71f5a5cd16266e79b8f24a4bb24587a1",
+      "size": 215780,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Knight_normal.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Knight_normal.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/a88f0a7c71f5a5cd16266e79b8f24a4bb24587a1",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Knight_normal.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Knight_normal.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/a88f0a7c71f5a5cd16266e79b8f24a4bb24587a1",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Knight_normal.jpg"
+      }
+    },
+    {
+      "name": "Knight_white_base_color.jpg",
+      "path": "Models/ABeautifulGame/glTF/Knight_white_base_color.jpg",
+      "sha": "e590e396139e0bfda92e91e4a4b4e2ded7e93a52",
+      "size": 395645,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Knight_white_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Knight_white_base_color.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/e590e396139e0bfda92e91e4a4b4e2ded7e93a52",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Knight_white_base_color.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Knight_white_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/e590e396139e0bfda92e91e4a4b4e2ded7e93a52",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Knight_white_base_color.jpg"
+      }
+    },
+    {
+      "name": "Pawn_ORM.jpg",
+      "path": "Models/ABeautifulGame/glTF/Pawn_ORM.jpg",
+      "sha": "47faf7dfd51ab10f5c7fdbe7d9c9bd3c63f9f03d",
+      "size": 792174,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Pawn_ORM.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Pawn_ORM.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/47faf7dfd51ab10f5c7fdbe7d9c9bd3c63f9f03d",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Pawn_ORM.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Pawn_ORM.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/47faf7dfd51ab10f5c7fdbe7d9c9bd3c63f9f03d",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Pawn_ORM.jpg"
+      }
+    },
+    {
+      "name": "Pawn_black_base_color.jpg",
+      "path": "Models/ABeautifulGame/glTF/Pawn_black_base_color.jpg",
+      "sha": "5078a2ce44bfdc879d91d8c7b3c2809f5f113dd7",
+      "size": 315179,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Pawn_black_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Pawn_black_base_color.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/5078a2ce44bfdc879d91d8c7b3c2809f5f113dd7",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Pawn_black_base_color.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Pawn_black_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/5078a2ce44bfdc879d91d8c7b3c2809f5f113dd7",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Pawn_black_base_color.jpg"
+      }
+    },
+    {
+      "name": "Pawn_normal.jpg",
+      "path": "Models/ABeautifulGame/glTF/Pawn_normal.jpg",
+      "sha": "4cdc45070e1732707ec086dc2a9299b8ab9ec82c",
+      "size": 750313,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Pawn_normal.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Pawn_normal.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/4cdc45070e1732707ec086dc2a9299b8ab9ec82c",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Pawn_normal.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Pawn_normal.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/4cdc45070e1732707ec086dc2a9299b8ab9ec82c",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Pawn_normal.jpg"
+      }
+    },
+    {
+      "name": "Pawn_white_base_color.jpg",
+      "path": "Models/ABeautifulGame/glTF/Pawn_white_base_color.jpg",
+      "sha": "576de84a0d81cf3c530b167a4d4a749c7c64f64a",
+      "size": 303807,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Pawn_white_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Pawn_white_base_color.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/576de84a0d81cf3c530b167a4d4a749c7c64f64a",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Pawn_white_base_color.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Pawn_white_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/576de84a0d81cf3c530b167a4d4a749c7c64f64a",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Pawn_white_base_color.jpg"
+      }
+    },
+    {
+      "name": "Queen_black_ORM.jpg",
+      "path": "Models/ABeautifulGame/glTF/Queen_black_ORM.jpg",
+      "sha": "c130d53b243862fe4a0074255d177e9f28c18bc9",
+      "size": 741172,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Queen_black_ORM.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_black_ORM.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/c130d53b243862fe4a0074255d177e9f28c18bc9",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_black_ORM.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Queen_black_ORM.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/c130d53b243862fe4a0074255d177e9f28c18bc9",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_black_ORM.jpg"
+      }
+    },
+    {
+      "name": "Queen_black_base_color.jpg",
+      "path": "Models/ABeautifulGame/glTF/Queen_black_base_color.jpg",
+      "sha": "bbd230fc48691a6c90be4e86263c6f5e581bc00b",
+      "size": 295346,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Queen_black_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_black_base_color.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/bbd230fc48691a6c90be4e86263c6f5e581bc00b",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_black_base_color.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Queen_black_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/bbd230fc48691a6c90be4e86263c6f5e581bc00b",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_black_base_color.jpg"
+      }
+    },
+    {
+      "name": "Queen_black_normal.jpg",
+      "path": "Models/ABeautifulGame/glTF/Queen_black_normal.jpg",
+      "sha": "ffbc753426d02b544ad3d1daa9955aad01d04274",
+      "size": 777060,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Queen_black_normal.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_black_normal.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/ffbc753426d02b544ad3d1daa9955aad01d04274",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_black_normal.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Queen_black_normal.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/ffbc753426d02b544ad3d1daa9955aad01d04274",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_black_normal.jpg"
+      }
+    },
+    {
+      "name": "Queen_white_ORM.jpg",
+      "path": "Models/ABeautifulGame/glTF/Queen_white_ORM.jpg",
+      "sha": "0a1203df738dbbcfaf588128f072ef80889d7bae",
+      "size": 709227,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Queen_white_ORM.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_white_ORM.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/0a1203df738dbbcfaf588128f072ef80889d7bae",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_white_ORM.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Queen_white_ORM.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/0a1203df738dbbcfaf588128f072ef80889d7bae",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_white_ORM.jpg"
+      }
+    },
+    {
+      "name": "Queen_white_base_color.jpg",
+      "path": "Models/ABeautifulGame/glTF/Queen_white_base_color.jpg",
+      "sha": "d04ff2f6fd0138e9185a67ac8eb7b55b2566501b",
+      "size": 309191,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Queen_white_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_white_base_color.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/d04ff2f6fd0138e9185a67ac8eb7b55b2566501b",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_white_base_color.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Queen_white_base_color.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/d04ff2f6fd0138e9185a67ac8eb7b55b2566501b",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_white_base_color.jpg"
+      }
+    },
+    {
+      "name": "Queen_white_normal.jpg",
+      "path": "Models/ABeautifulGame/glTF/Queen_white_normal.jpg",
+      "sha": "4bb1b52164ffe9b50dedc6d756c897452636b379",
+      "size": 662916,
+      "url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Queen_white_normal.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+      "html_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_white_normal.jpg",
+      "git_url": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/4bb1b52164ffe9b50dedc6d756c897452636b379",
+      "download_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_white_normal.jpg",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/contents/Models/ABeautifulGame/glTF/Queen_white_normal.jpg?ref=8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+        "git": "https://api.github.com/repos/KhronosGroup/glTF-Sample-Assets/git/blobs/4bb1b52164ffe9b50dedc6d756c897452636b379",
+        "html": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_white_normal.jpg"
+      }
+    }
+  ]
+}

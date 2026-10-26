@@ -1,0 +1,2200 @@
+{
+  "sourcePin": "816a1d6533c55787b3fabc9b75660c0d0c57ebc6",
+  "gltfGitBlobSha1": "39acb5097d139c20ae65d52b6bb711569c7f0878",
+  "gltfBytes": 2830929,
+  "nodes": 1297,
+  "meshes": 1296,
+  "meshNodes": 1296,
+  "primitives": 1591,
+  "vertexDefinitions": 2920583,
+  "vertexInstances": 2920583,
+  "skins": 0,
+  "morphMeshes": 0,
+  "animations": [
+    {
+      "name": "Lantern_Wind_21|Take 001|BaseLayer",
+      "channels": 3,
+      "paths": [
+        "translation",
+        "rotation",
+        "scale"
+      ],
+      "targetNodes": 1
+    },
+    {
+      "name": "Lantern_Wind_22|Take 001|BaseLayer",
+      "channels": 3,
+      "paths": [
+        "translation",
+        "rotation",
+        "scale"
+      ],
+      "targetNodes": 1
+    },
+    {
+      "name": "Lantern_Wind_23|Take 001|BaseLayer",
+      "channels": 3,
+      "paths": [
+        "translation",
+        "rotation",
+        "scale"
+      ],
+      "targetNodes": 1
+    },
+    {
+      "name": "Lantern_Wind_24|Take 001|BaseLayer",
+      "channels": 3,
+      "paths": [
+        "translation",
+        "rotation",
+        "scale"
+      ],
+      "targetNodes": 1
+    },
+    {
+      "name": "Lantern_Wind_25|Take 001|BaseLayer",
+      "channels": 3,
+      "paths": [
+        "translation",
+        "rotation",
+        "scale"
+      ],
+      "targetNodes": 1
+    },
+    {
+      "name": "StringLight_Wind_14|Take 001|BaseLayer",
+      "channels": 3,
+      "paths": [
+        "translation",
+        "rotation",
+        "scale"
+      ],
+      "targetNodes": 1
+    },
+    {
+      "name": "StringLight_Wind_15|Take 001|BaseLayer",
+      "channels": 3,
+      "paths": [
+        "translation",
+        "rotation",
+        "scale"
+      ],
+      "targetNodes": 1
+    },
+    {
+      "name": "StringLight_Wind_18|Take 001|BaseLayer",
+      "channels": 3,
+      "paths": [
+        "translation",
+        "rotation",
+        "scale"
+      ],
+      "targetNodes": 1
+    },
+    {
+      "name": "StringLight_Wind_19|Take 001|BaseLayer",
+      "channels": 3,
+      "paths": [
+        "translation",
+        "rotation",
+        "scale"
+      ],
+      "targetNodes": 1
+    },
+    {
+      "name": "StringLight_Wind_20|Take 001|BaseLayer",
+      "channels": 3,
+      "paths": [
+        "translation",
+        "rotation",
+        "scale"
+      ],
+      "targetNodes": 1
+    },
+    {
+      "name": "StringLight_Wind_21|Take 001|BaseLayer",
+      "channels": 3,
+      "paths": [
+        "translation",
+        "rotation",
+        "scale"
+      ],
+      "targetNodes": 1
+    },
+    {
+      "name": "StringLight_Wind_22|Take 001|BaseLayer",
+      "channels": 3,
+      "paths": [
+        "translation",
+        "rotation",
+        "scale"
+      ],
+      "targetNodes": 1
+    },
+    {
+      "name": "StringLight_Wind_23|Take 001|BaseLayer",
+      "channels": 3,
+      "paths": [
+        "translation",
+        "rotation",
+        "scale"
+      ],
+      "targetNodes": 1
+    }
+  ],
+  "materials": 132,
+  "transmissionMaterials": [
+    0,
+    3,
+    27,
+    30,
+    49,
+    93
+  ],
+  "cameras": 0,
+  "buffers": [
+    {
+      "byteLength": 179963220,
+      "uri": "BistroExterior.bin"
+    }
+  ],
+  "uniqueImages": 405,
+  "imageBytes": 363478593,
+  "extensions": [
+    "KHR_materials_specular",
+    "KHR_texture_basisu",
+    "KHR_materials_transmission"
+  ],
+  "extensionsRequired": [
+    "KHR_texture_basisu"
+  ],
+  "totalReferencedBytes": 546272742,
+  "bufferLFS": "version https://git-lfs.github.com/spec/v1\noid sha256:46f97557874e1441b998c611314a755f9a3a4d52e5d405330edca5ac176cacdc\nsize 179963220\n",
+  "imageRecords": [
+    {
+      "uri": "Textures/Vespa_Headlight_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Vespa_Headlight_Normal.ktx2",
+      "bytes": 2666357,
+      "gitBlobSha1": "1686746eabbd15a600618d2112d14ad1267ebc78"
+    },
+    {
+      "uri": "Textures/Vespa_Headlight_BaseColor.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "50d49c397155c6eda3849d4e0ae0ac426ebb3022"
+    },
+    {
+      "uri": "Textures/Foliage_Leaves_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Foliage_Leaves_Normal.ktx2",
+      "bytes": 965056,
+      "gitBlobSha1": "6989391c6f9d204e32eda57723dd3fea3ede2b61"
+    },
+    {
+      "uri": "Textures/Foliage_Leaves_BaseColor.ktx2",
+      "bytes": 1055574,
+      "gitBlobSha1": "166dfe3535892870f9c7e6de96c54171ef13a4a8"
+    },
+    {
+      "uri": "Textures/Foliage_Trunk_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Foliage_Trunk_Normal.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "015009981e74e06c1a72b9109212360b22ec0fb7"
+    },
+    {
+      "uri": "Textures/Foliage_Trunk_BaseColor.ktx2",
+      "bytes": 1329443,
+      "gitBlobSha1": "daadfc859b0a75b822920bf6da37d9d4272e17cf"
+    },
+    {
+      "uri": "Textures/Vespa_Odometer_Glass_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Vespa_Odometer_Glass_Normal.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "015009981e74e06c1a72b9109212360b22ec0fb7"
+    },
+    {
+      "uri": "Textures/Vespa_Odometer_Glass_BaseColor.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "50d49c397155c6eda3849d4e0ae0ac426ebb3022"
+    },
+    {
+      "uri": "Textures/Vespa_Specular.ktx2",
+      "bytes": 558938,
+      "gitBlobSha1": "ba66f12fb1ba6ce77e5de73c8d18289a3e8b8b2a"
+    },
+    {
+      "uri": "Textures/Vespa_Normal.ktx2",
+      "bytes": 2666357,
+      "gitBlobSha1": "1686746eabbd15a600618d2112d14ad1267ebc78"
+    },
+    {
+      "uri": "Textures/Vespa_BaseColor.ktx2",
+      "bytes": 1179550,
+      "gitBlobSha1": "00b484a0cb23181a7d979c0c1c3a8fb2c1e2c195"
+    },
+    {
+      "uri": "Textures/Vespa_Odometer_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Vespa_Odometer_Normal.ktx2",
+      "bytes": 246696,
+      "gitBlobSha1": "7044fec0d8fecf812cdbf4b0e15dfce4a76ca9e3"
+    },
+    {
+      "uri": "Textures/Vespa_Odometer_BaseColor.ktx2",
+      "bytes": 691400,
+      "gitBlobSha1": "e9a2930b449b21a43cd9e6f31942e83aac71f4a0"
+    },
+    {
+      "uri": "Textures/Foliage_Bux_Hedges46_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Foliage_Bux_Hedges46_Normal.ktx2",
+      "bytes": 3587577,
+      "gitBlobSha1": "e44de9c3fd3cc498b3e653104c55fb4606f8f0ec"
+    },
+    {
+      "uri": "Textures/Foliage_Bux_Hedges46_BaseColor.ktx2",
+      "bytes": 1877154,
+      "gitBlobSha1": "41db1a1d6ea2f7b8551d6296879e58bb96089b48"
+    },
+    {
+      "uri": "Textures/Foliage_Ivy_leaf_a_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Foliage_Ivy_leaf_a_Normal.ktx2",
+      "bytes": 1579136,
+      "gitBlobSha1": "51f190b86df5c41443afde7d108b10cdb72ccc3c"
+    },
+    {
+      "uri": "Textures/Foliage_Ivy_leaf_a_BaseColor.ktx2",
+      "bytes": 664138,
+      "gitBlobSha1": "2f2e7416d5adad2bd4d7ca2551fae7a39d7f7c58"
+    },
+    {
+      "uri": "Textures/Foliage_Ivy_branches_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Foliage_Ivy_branches_Normal.ktx2",
+      "bytes": 3185786,
+      "gitBlobSha1": "d599b9e6a9f1cc0d7d3084c014650d920cc2d414"
+    },
+    {
+      "uri": "Textures/Foliage_Ivy_branches_BaseColor.ktx2",
+      "bytes": 1626877,
+      "gitBlobSha1": "6d12f9be95c636fc319e53778f252d95a1adba7c"
+    },
+    {
+      "uri": "Textures/Foliage_Linde_Tree_Large_Trunk_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Foliage_Linde_Tree_Large_Trunk_Normal.ktx2",
+      "bytes": 3768564,
+      "gitBlobSha1": "31bca932b89799cd8d62a492a7de8851195d58fc"
+    },
+    {
+      "uri": "Textures/Foliage_Linde_Tree_Large_Trunk_BaseColor.ktx2",
+      "bytes": 2401785,
+      "gitBlobSha1": "48751b41fffa410cacab44a94a574d6564b8e1b2"
+    },
+    {
+      "uri": "Textures/Foliage_Linde_Tree_Large_Orange_Leaves_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Foliage_Linde_Tree_Large_Orange_Leaves_Normal.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "015009981e74e06c1a72b9109212360b22ec0fb7"
+    },
+    {
+      "uri": "Textures/Foliage_Linde_Tree_Large_Orange_Leaves_BaseColor.ktx2",
+      "bytes": 536328,
+      "gitBlobSha1": "3f2c9c92600608033aae41d927a7f1cdf07c9177"
+    },
+    {
+      "uri": "Textures/Foliage_Linde_Tree_Large_Green_Leaves_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Foliage_Linde_Tree_Large_Green_Leaves_Normal.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "015009981e74e06c1a72b9109212360b22ec0fb7"
+    },
+    {
+      "uri": "Textures/Foliage_Linde_Tree_Large_Green_Leaves_BaseColor.ktx2",
+      "bytes": 577602,
+      "gitBlobSha1": "db4a9ad6dac39362bd73d51dc46a54167d3bcc25"
+    },
+    {
+      "uri": "Textures/Antenna_Metal_Specular.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "2df68780d3c6749dc1ad521cd35e31d409f08fb6"
+    },
+    {
+      "uri": "Textures/Antenna_Metal_Normal.ktx2",
+      "bytes": 1499244,
+      "gitBlobSha1": "08a6ae5078587a6c25a8e9d5f34412a74533cf1f"
+    },
+    {
+      "uri": "Textures/Antenna_Metal_BaseColor.ktx2",
+      "bytes": 444062,
+      "gitBlobSha1": "4fa14cfe6c0292e73a21eb1b1a8ee4f9d3379388"
+    },
+    {
+      "uri": "Textures/Antenna_Plastic_Blue_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Antenna_Plastic_Blue_Normal.ktx2",
+      "bytes": 153808,
+      "gitBlobSha1": "672701f5a91369eef27c28050dfc9d3b136214b7"
+    },
+    {
+      "uri": "Textures/Antenna_Plastic_Blue_BaseColor.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "1c7d3043a26611cd9ac94e98fba5f91f1a0702df"
+    },
+    {
+      "uri": "Textures/Antenna_Plastic_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Antenna_Plastic_Normal.ktx2",
+      "bytes": 153808,
+      "gitBlobSha1": "672701f5a91369eef27c28050dfc9d3b136214b7"
+    },
+    {
+      "uri": "Textures/Antenna_Plastic_BaseColor.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "1c7d3043a26611cd9ac94e98fba5f91f1a0702df"
+    },
+    {
+      "uri": "Textures/Ashtray_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Ashtray_Normal.ktx2",
+      "bytes": 1162835,
+      "gitBlobSha1": "c7a2aaa2ad2b7916fe827e7f971d763491bc382c"
+    },
+    {
+      "uri": "Textures/Ashtray_BaseColor.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "b476dfffdb99fa0d7c9d606102e244f3b2598b30"
+    },
+    {
+      "uri": "Textures/Awnings_Hotel_Fabric_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Awnings_Hotel_Fabric_Normal.ktx2",
+      "bytes": 2990052,
+      "gitBlobSha1": "1500ecf842c04f0fab3b2f6abc8db9fb9e90c97b"
+    },
+    {
+      "uri": "Textures/Awnings_Hotel_Fabric_BaseColor.ktx2",
+      "bytes": 1457034,
+      "gitBlobSha1": "4f6ae1bb0eee5074ba6951856540d50cbd83ea13"
+    },
+    {
+      "uri": "Textures/Awnings_Fabric_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Awnings_Fabric_Normal.ktx2",
+      "bytes": 875898,
+      "gitBlobSha1": "51936908f8c277a022464eecd9eef7a79f8284a9"
+    },
+    {
+      "uri": "Textures/Awnings_Fabric_BaseColor.ktx2",
+      "bytes": 1168659,
+      "gitBlobSha1": "575c5d4f60c9754c4d42fadf58c53d3ffb48d304"
+    },
+    {
+      "uri": "Textures/Awnings_Beams_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Awnings_Beams_Normal.ktx2",
+      "bytes": 1039722,
+      "gitBlobSha1": "7e5f06cecac555e4b75e9e0d1e992cdf6dcff401"
+    },
+    {
+      "uri": "Textures/Awnings_Beams_BaseColor.ktx2",
+      "bytes": 1012881,
+      "gitBlobSha1": "a5391bb5c24ddd2c476db9a7f2b77c9606ef3e84"
+    },
+    {
+      "uri": "Textures/Bistro_Sign_Main_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Bistro_Sign_Main_Normal.ktx2",
+      "bytes": 1075774,
+      "gitBlobSha1": "48ddcf3f399dcf66241637ba7b22368d54f1cfbb"
+    },
+    {
+      "uri": "Textures/Bistro_Sign_Main_BaseColor.ktx2",
+      "bytes": 658644,
+      "gitBlobSha1": "cb83622276c9f20d336d5fc58d48a3ff96ebd805"
+    },
+    {
+      "uri": "Textures/Bistro_Sign_Letters_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Bistro_Sign_Letters_Normal.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "015009981e74e06c1a72b9109212360b22ec0fb7"
+    },
+    {
+      "uri": "Textures/Bistro_Sign_Letters_BaseColor.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "cf2c697bca018fdd02a27e9688940acfcfef3c49"
+    },
+    {
+      "uri": "Textures/Banner_Metal_Specular.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "2df68780d3c6749dc1ad521cd35e31d409f08fb6"
+    },
+    {
+      "uri": "Textures/Banner_Metal_Normal.ktx2",
+      "bytes": 1299098,
+      "gitBlobSha1": "033025a18ee6d54726f1c0a2837c139b564f1a33"
+    },
+    {
+      "uri": "Textures/Banner_Metal_BaseColor.ktx2",
+      "bytes": 1147168,
+      "gitBlobSha1": "c29fd31f407c0971b0eca627c9f1f42ec8cc4af5"
+    },
+    {
+      "uri": "Textures/Bollards_Specular.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "2df68780d3c6749dc1ad521cd35e31d409f08fb6"
+    },
+    {
+      "uri": "Textures/Bollards_Normal.ktx2",
+      "bytes": 2044800,
+      "gitBlobSha1": "5be40258bbb89705cb581d22f3e3315b0d52b1bb"
+    },
+    {
+      "uri": "Textures/Bollards_BaseColor.ktx2",
+      "bytes": 1507021,
+      "gitBlobSha1": "da571cb3ceb38aefeaad852f5636c30574df9cbb"
+    },
+    {
+      "uri": "Textures/MASTER_Wood_Painted3_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Wood_Painted3_Normal.ktx2",
+      "bytes": 1754030,
+      "gitBlobSha1": "a8eae3bce08f956ec21afbe35b36360683ceb225"
+    },
+    {
+      "uri": "Textures/MASTER_Wood_Painted3_BaseColor.ktx2",
+      "bytes": 802959,
+      "gitBlobSha1": "8b4da298fdc0a42bbe4736cc88661e5ddd7a4507"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_Grooved_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_Grooved_Normal.ktx2",
+      "bytes": 3408785,
+      "gitBlobSha1": "5ff4412cd1a4b434dd8f3ce1b921797c641ac817"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_Grooved_BaseColor.ktx2",
+      "bytes": 2104323,
+      "gitBlobSha1": "4ca013f861e3df2217f72a82f81e2672d00da802"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_Smooth_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_Smooth_Normal.ktx2",
+      "bytes": 3087021,
+      "gitBlobSha1": "2fdbef080c5c14b3c9ccce9e597391f2097a0715"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_Smooth_BaseColor.ktx2",
+      "bytes": 1813628,
+      "gitBlobSha1": "0cbe0743071ea60fe3a15514f37ca97852e7f0bc"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_Plaster1_BLENDSHADER_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_Plaster1_BLENDSHADER_Normal.ktx2",
+      "bytes": 3354168,
+      "gitBlobSha1": "676e619602ac8071b004e090dac6bd428c9592bf"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_Plaster1_BLENDSHADER_BaseColor.ktx2",
+      "bytes": 1813628,
+      "gitBlobSha1": "0cbe0743071ea60fe3a15514f37ca97852e7f0bc"
+    },
+    {
+      "uri": "Textures/Spotlight_Glass_Emissive_Emissive.ktx2",
+      "bytes": 230,
+      "gitBlobSha1": "0214fc25e9886c22eb419bba9894c2693eeaa91c"
+    },
+    {
+      "uri": "Textures/Spotlight_Glass_Emissive_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Spotlight_Glass_Emissive_Normal.ktx2",
+      "bytes": 1539021,
+      "gitBlobSha1": "f10968a8ebfdce375850eed8df580843c54e48aa"
+    },
+    {
+      "uri": "Textures/Spotlight_Glass_Emissive_BaseColor.ktx2",
+      "bytes": 358146,
+      "gitBlobSha1": "b6491c1b6416712abf332d7b4fe61c2bd7bf2ab5"
+    },
+    {
+      "uri": "Textures/MASTER_Focus_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Focus_Normal.ktx2",
+      "bytes": 653453,
+      "gitBlobSha1": "5df540ec575d95a14fd65a91ae5d5c48febca5b8"
+    },
+    {
+      "uri": "Textures/MASTER_Focus_BaseColor.ktx2",
+      "bytes": 849640,
+      "gitBlobSha1": "b22f642881d0d1697f173a97d154b1044b8a1369"
+    },
+    {
+      "uri": "Textures/MASTER_Grain_Metal_Specular.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "2df68780d3c6749dc1ad521cd35e31d409f08fb6"
+    },
+    {
+      "uri": "Textures/MASTER_Grain_Metal_Normal.ktx2",
+      "bytes": 3318202,
+      "gitBlobSha1": "a80bd50e5c9a6b363ff1da30e380d0d1ed9e2ccb"
+    },
+    {
+      "uri": "Textures/MASTER_Grain_Metal_BaseColor.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "ce239ed6607f9548037af721f8b2e63049321a09"
+    },
+    {
+      "uri": "Textures/MASTER_Glass_Exterior_Specular.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "4a71e7bf6d5aedff9b1ef23187bb42f25cfd352e"
+    },
+    {
+      "uri": "Textures/MASTER_Glass_Exterior_Normal.ktx2",
+      "bytes": 573,
+      "gitBlobSha1": "de7d5a8ad2b1fca228e48d6ca5e71ce321d41e01"
+    },
+    {
+      "uri": "Textures/MASTER_Glass_Exterior_BaseColor.ktx2",
+      "bytes": 742727,
+      "gitBlobSha1": "8aeb93efaf69136ba16b9377d0f47d274bdbaaee"
+    },
+    {
+      "uri": "Textures/MASTER_Metal_Specular.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "2df68780d3c6749dc1ad521cd35e31d409f08fb6"
+    },
+    {
+      "uri": "Textures/MASTER_Metal_Normal.ktx2",
+      "bytes": 1299098,
+      "gitBlobSha1": "033025a18ee6d54726f1c0a2837c139b564f1a33"
+    },
+    {
+      "uri": "Textures/MASTER_Metal_BaseColor.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "f86953437b19d38969bb4609b9fc15db2b68d720"
+    },
+    {
+      "uri": "Textures/MASTER_Light_Bulb_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Light_Bulb_Normal.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "015009981e74e06c1a72b9109212360b22ec0fb7"
+    },
+    {
+      "uri": "Textures/MASTER_Light_Bulb_BaseColor.ktx2",
+      "bytes": 849640,
+      "gitBlobSha1": "b22f642881d0d1697f173a97d154b1044b8a1369"
+    },
+    {
+      "uri": "Textures/MASTER_Metal_Pipe_Specular.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "2df68780d3c6749dc1ad521cd35e31d409f08fb6"
+    },
+    {
+      "uri": "Textures/MASTER_Metal_Pipe_Normal.ktx2",
+      "bytes": 3318202,
+      "gitBlobSha1": "a80bd50e5c9a6b363ff1da30e380d0d1ed9e2ccb"
+    },
+    {
+      "uri": "Textures/MASTER_Metal_Pipe_BaseColor.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "ce239ed6607f9548037af721f8b2e63049321a09"
+    },
+    {
+      "uri": "Textures/MASTER_Forge_Metal_Specular.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "2df68780d3c6749dc1ad521cd35e31d409f08fb6"
+    },
+    {
+      "uri": "Textures/MASTER_Forge_Metal_Normal.ktx2",
+      "bytes": 820139,
+      "gitBlobSha1": "2b8dce9fa00c1ae5232d18483f3ba5ca6a51135c"
+    },
+    {
+      "uri": "Textures/MASTER_Forge_Metal_BaseColor.ktx2",
+      "bytes": 639831,
+      "gitBlobSha1": "65522c4fed99402734024683a2695c0d1908072c"
+    },
+    {
+      "uri": "Textures/MASTER_Focus_Ornament_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Focus_Ornament_Normal.ktx2",
+      "bytes": 2240026,
+      "gitBlobSha1": "9fcb0b14722ea5317559733aeca6cf832d6fd7b6"
+    },
+    {
+      "uri": "Textures/MASTER_Focus_Ornament_BaseColor.ktx2",
+      "bytes": 1298445,
+      "gitBlobSha1": "63a1deb6d17c7ce35411bc0e98b1d70589bbaad4"
+    },
+    {
+      "uri": "Textures/MASTER_Wood_Polished_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Wood_Polished_Normal.ktx2",
+      "bytes": 1062665,
+      "gitBlobSha1": "132b12412cc23de01475f394be989540314414bb"
+    },
+    {
+      "uri": "Textures/MASTER_Wood_Polished_BaseColor.ktx2",
+      "bytes": 1165259,
+      "gitBlobSha1": "ffd0afda365caab50e9d167ef27fc523c7a5d178"
+    },
+    {
+      "uri": "Textures/MASTER_Roofing_Shingle_Grey_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Roofing_Shingle_Grey_Normal.ktx2",
+      "bytes": 3644643,
+      "gitBlobSha1": "f1e08dcedab62a71c946b28c555e3cd3428dbbbf"
+    },
+    {
+      "uri": "Textures/MASTER_Roofing_Shingle_Grey_BaseColor.ktx2",
+      "bytes": 1951882,
+      "gitBlobSha1": "5baa263341a460bc91921bf2fb37bedeb65675cd"
+    },
+    {
+      "uri": "Textures/MASTER_Roofing_Shingle_Green_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Roofing_Shingle_Green_Normal.ktx2",
+      "bytes": 2092031,
+      "gitBlobSha1": "2fcd01163511568f703b2f7c5030c700303763d1"
+    },
+    {
+      "uri": "Textures/MASTER_Roofing_Shingle_Green_BaseColor.ktx2",
+      "bytes": 2434787,
+      "gitBlobSha1": "8e0751dfc78ed75a4cc0663074dd72f90b1d369b"
+    },
+    {
+      "uri": "Textures/MASTER_Plastic_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Plastic_Normal.ktx2",
+      "bytes": 3318202,
+      "gitBlobSha1": "a80bd50e5c9a6b363ff1da30e380d0d1ed9e2ccb"
+    },
+    {
+      "uri": "Textures/MASTER_Plastic_BaseColor.ktx2",
+      "bytes": 359674,
+      "gitBlobSha1": "49de146337b89da1df47f5d0ae12852d5452d814"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete1_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete1_Normal.ktx2",
+      "bytes": 1387377,
+      "gitBlobSha1": "6ae70f05b47e5d71a8b3e987a7f1f1dcd1f535ed"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete1_BaseColor.ktx2",
+      "bytes": 1759287,
+      "gitBlobSha1": "0193bf4c0743f1d21b0787ce1dacadfc9a203c0d"
+    },
+    {
+      "uri": "Textures/MASTER_Curtains_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Curtains_Normal.ktx2",
+      "bytes": 1907082,
+      "gitBlobSha1": "0039cf7af9640b6167efeb70992a714a1445653b"
+    },
+    {
+      "uri": "Textures/MASTER_Curtains_BaseColor.ktx2",
+      "bytes": 1314322,
+      "gitBlobSha1": "0ff56c291c91bda5707602c0abe4fb671b6e9bfa"
+    },
+    {
+      "uri": "Textures/MASTER_Glass_Dirty_MASKED_Specular.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "4a71e7bf6d5aedff9b1ef23187bb42f25cfd352e"
+    },
+    {
+      "uri": "Textures/MASTER_Glass_Dirty_MASKED_Normal.ktx2",
+      "bytes": 573,
+      "gitBlobSha1": "de7d5a8ad2b1fca228e48d6ca5e71ce321d41e01"
+    },
+    {
+      "uri": "Textures/MASTER_Glass_Dirty_MASKED_BaseColor.ktx2",
+      "bytes": 720578,
+      "gitBlobSha1": "612cf81c48f20193235a602958c5b670982879ea"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_Normal.ktx2",
+      "bytes": 3354168,
+      "gitBlobSha1": "676e619602ac8071b004e090dac6bd428c9592bf"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_BaseColor.ktx2",
+      "bytes": 2156805,
+      "gitBlobSha1": "f7f018b33dc180854d703e9a61060d9a9897cc17"
+    },
+    {
+      "uri": "Textures/MASTER_Bistro_Main_Door_Specular.ktx2",
+      "bytes": 3081,
+      "gitBlobSha1": "a7f103bfd934642ed803decf64e28cc14c4d195f"
+    },
+    {
+      "uri": "Textures/MASTER_Bistro_Main_Door_Normal.ktx2",
+      "bytes": 2471979,
+      "gitBlobSha1": "277936d5f7b4a775ac9a73505500271aac05ee9d"
+    },
+    {
+      "uri": "Textures/MASTER_Bistro_Main_Door_BaseColor.ktx2",
+      "bytes": 1029047,
+      "gitBlobSha1": "483e8867108e5213d6dc72e9065db2e480f68425"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_Yellow_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_Yellow_Normal.ktx2",
+      "bytes": 3354168,
+      "gitBlobSha1": "676e619602ac8071b004e090dac6bd428c9592bf"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_Yellow_BaseColor.ktx2",
+      "bytes": 974291,
+      "gitBlobSha1": "e63cb10a6d3fd47d3332e9afd83308f90abf524e"
+    },
+    {
+      "uri": "Textures/MASTER_Trim_Cornice_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Trim_Cornice_Normal.ktx2",
+      "bytes": 34891,
+      "gitBlobSha1": "838152449bc91de0f41b502f8175f13ed34a3391"
+    },
+    {
+      "uri": "Textures/MASTER_Trim_Cornice_BaseColor.ktx2",
+      "bytes": 33446,
+      "gitBlobSha1": "447139d22d335d480b3ecbeb4fc5ae09281364ae"
+    },
+    {
+      "uri": "Textures/Emissive_StreetLight_Emissive.ktx2",
+      "bytes": 230,
+      "gitBlobSha1": "48997410305d18cf23b906e21281d67428d70893"
+    },
+    {
+      "uri": "Textures/Emissive_StreetLight_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Emissive_StreetLight_Normal.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "015009981e74e06c1a72b9109212360b22ec0fb7"
+    },
+    {
+      "uri": "Textures/Emissive_StreetLight_BaseColor.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "2ef08ae46d4834544a18cd4f900e32e39c3058a2"
+    },
+    {
+      "uri": "Textures/MASTER_Side_Letters_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Side_Letters_Normal.ktx2",
+      "bytes": 1754030,
+      "gitBlobSha1": "a8eae3bce08f956ec21afbe35b36360683ceb225"
+    },
+    {
+      "uri": "Textures/MASTER_Side_Letters_BaseColor.ktx2",
+      "bytes": 653831,
+      "gitBlobSha1": "3b70e62945d482b600818397b3d99a53f4f7d70c"
+    },
+    {
+      "uri": "Textures/MASTER_Glass_Dirty_Specular.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "4a71e7bf6d5aedff9b1ef23187bb42f25cfd352e"
+    },
+    {
+      "uri": "Textures/MASTER_Glass_Dirty_Normal.ktx2",
+      "bytes": 573,
+      "gitBlobSha1": "de7d5a8ad2b1fca228e48d6ca5e71ce321d41e01"
+    },
+    {
+      "uri": "Textures/MASTER_Glass_Dirty_BaseColor.ktx2",
+      "bytes": 742727,
+      "gitBlobSha1": "8aeb93efaf69136ba16b9377d0f47d274bdbaaee"
+    },
+    {
+      "uri": "Textures/MASTER_Doors_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Doors_Normal.ktx2",
+      "bytes": 1448795,
+      "gitBlobSha1": "59c37ab2cb5a8bcd7814294e45596bca1a8f4507"
+    },
+    {
+      "uri": "Textures/MASTER_Doors_BaseColor.ktx2",
+      "bytes": 1165555,
+      "gitBlobSha1": "3d463b67f5592c623af517549866acebbb5e58a9"
+    },
+    {
+      "uri": "Textures/MASTER_Brick_Large_Beige_BLENDSHADER_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Brick_Large_Beige_BLENDSHADER_Normal.ktx2",
+      "bytes": 3563678,
+      "gitBlobSha1": "0c0b2b448e494ebb6b5322301a04519961c96763"
+    },
+    {
+      "uri": "Textures/MASTER_Brick_Large_Beige_BLENDSHADER_BaseColor.ktx2",
+      "bytes": 2317770,
+      "gitBlobSha1": "140cbb1148dd386c90fa1bd413ee950c9f29e9ce"
+    },
+    {
+      "uri": "Textures/MASTER_Wood_Brown_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Wood_Brown_Normal.ktx2",
+      "bytes": 1062665,
+      "gitBlobSha1": "132b12412cc23de01475f394be989540314414bb"
+    },
+    {
+      "uri": "Textures/MASTER_Wood_Brown_BaseColor.ktx2",
+      "bytes": 1165259,
+      "gitBlobSha1": "ffd0afda365caab50e9d167ef27fc523c7a5d178"
+    },
+    {
+      "uri": "Textures/MASTER_Brick_Small_Red_BLENDSHADER_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Brick_Small_Red_BLENDSHADER_Normal.ktx2",
+      "bytes": 3424829,
+      "gitBlobSha1": "9347963a13959c63bc2fa3b13f832eb64bece9a4"
+    },
+    {
+      "uri": "Textures/MASTER_Brick_Small_Red_BLENDSHADER_BaseColor.ktx2",
+      "bytes": 2376538,
+      "gitBlobSha1": "09d2eb6b1ab78b7dea5bea241ace2d19fcbd9f41"
+    },
+    {
+      "uri": "Textures/MASTER_Wood_Painted_Green_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Wood_Painted_Green_Normal.ktx2",
+      "bytes": 1754030,
+      "gitBlobSha1": "a8eae3bce08f956ec21afbe35b36360683ceb225"
+    },
+    {
+      "uri": "Textures/MASTER_Wood_Painted_Green_BaseColor.ktx2",
+      "bytes": 679501,
+      "gitBlobSha1": "7d3079d50da15b19cfb742d49eb5565304667cac"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_Plaster_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_Plaster_Normal.ktx2",
+      "bytes": 3087021,
+      "gitBlobSha1": "2fdbef080c5c14b3c9ccce9e597391f2097a0715"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_Plaster_BaseColor.ktx2",
+      "bytes": 1813628,
+      "gitBlobSha1": "0cbe0743071ea60fe3a15514f37ca97852e7f0bc"
+    },
+    {
+      "uri": "Textures/MASTER_Black_Metal_Specular.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "2df68780d3c6749dc1ad521cd35e31d409f08fb6"
+    },
+    {
+      "uri": "Textures/MASTER_Black_Metal_Normal.ktx2",
+      "bytes": 3318202,
+      "gitBlobSha1": "a80bd50e5c9a6b363ff1da30e380d0d1ed9e2ccb"
+    },
+    {
+      "uri": "Textures/MASTER_Black_Metal_BaseColor.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "ce239ed6607f9548037af721f8b2e63049321a09"
+    },
+    {
+      "uri": "Textures/MASTER_Brick_Large_White_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Brick_Large_White_Normal.ktx2",
+      "bytes": 1566013,
+      "gitBlobSha1": "c1dba8187682de9497f5ac56efa213fda82ed08f"
+    },
+    {
+      "uri": "Textures/MASTER_Brick_Large_White_BaseColor.ktx2",
+      "bytes": 812861,
+      "gitBlobSha1": "ddef6f3ea5075b9d98a12c95e3345f93b11c5ccd"
+    },
+    {
+      "uri": "Textures/MASTER_Building_Details_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Building_Details_Normal.ktx2",
+      "bytes": 2696148,
+      "gitBlobSha1": "22e947c006235475a51945c65b1aa32c77b66a5d"
+    },
+    {
+      "uri": "Textures/MASTER_Building_Details_BaseColor.ktx2",
+      "bytes": 1985962,
+      "gitBlobSha1": "be11b1bddb3c283e0671050b0577701339516228"
+    },
+    {
+      "uri": "Textures/MASTER_Wood_Painted_Cyan_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Wood_Painted_Cyan_Normal.ktx2",
+      "bytes": 1754030,
+      "gitBlobSha1": "a8eae3bce08f956ec21afbe35b36360683ceb225"
+    },
+    {
+      "uri": "Textures/MASTER_Wood_Painted_Cyan_BaseColor.ktx2",
+      "bytes": 555150,
+      "gitBlobSha1": "01dfeb3b2a37e4305d4fed31e6dbb9f5f43bb29c"
+    },
+    {
+      "uri": "Textures/MASTER_Brick_Small_Red_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Brick_Small_Red_Normal.ktx2",
+      "bytes": 3425329,
+      "gitBlobSha1": "4641b22adaaa008ffa156d6d596ee82588214ae2"
+    },
+    {
+      "uri": "Textures/MASTER_Brick_Small_Red_BaseColor.ktx2",
+      "bytes": 2196142,
+      "gitBlobSha1": "a62175bd9306a2d4f7155c01524a0024b393eda2"
+    },
+    {
+      "uri": "Textures/MASTER_Roofing_Metal_01_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Roofing_Metal_01_Normal.ktx2",
+      "bytes": 2807537,
+      "gitBlobSha1": "4daa40811974f50884e640a055f68fdb4514e575"
+    },
+    {
+      "uri": "Textures/MASTER_Roofing_Metal_01_BaseColor.ktx2",
+      "bytes": 1076220,
+      "gitBlobSha1": "9ec16da9040afa2e48369a84d8562304d9b56a67"
+    },
+    {
+      "uri": "Textures/MASTER_Room_Interior_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Room_Interior_Normal.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "015009981e74e06c1a72b9109212360b22ec0fb7"
+    },
+    {
+      "uri": "Textures/MASTER_Room_Interior_BaseColor.ktx2",
+      "bytes": 524580,
+      "gitBlobSha1": "4bfbd035edfbfcf29462cc0443641beb5564dc48"
+    },
+    {
+      "uri": "Textures/MASTER_Awning_Beams_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Awning_Beams_Normal.ktx2",
+      "bytes": 1039722,
+      "gitBlobSha1": "7e5f06cecac555e4b75e9e0d1e992cdf6dcff401"
+    },
+    {
+      "uri": "Textures/MASTER_Awning_Beams_BaseColor.ktx2",
+      "bytes": 1101663,
+      "gitBlobSha1": "f18224227d69f9edc0700414b169dc27fd64d866"
+    },
+    {
+      "uri": "Textures/MASTER_Boulangerie_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Boulangerie_Normal.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "015009981e74e06c1a72b9109212360b22ec0fb7"
+    },
+    {
+      "uri": "Textures/MASTER_Boulangerie_BaseColor.ktx2",
+      "bytes": 1418266,
+      "gitBlobSha1": "0045559baf1ecd3f38f54aa80bfc58a621e677f1"
+    },
+    {
+      "uri": "Textures/MASTER_Frosted_Glass_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Frosted_Glass_Normal.ktx2",
+      "bytes": 2771724,
+      "gitBlobSha1": "7e49f7a52e8567955abf1503da89a83dc848f8c1"
+    },
+    {
+      "uri": "Textures/MASTER_Frosted_Glass_BaseColor.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "8359f3b2f393138f9e6a1144706c2556a9ad7254"
+    },
+    {
+      "uri": "Textures/MASTER_Awning_Fabric_Cyan_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Awning_Fabric_Cyan_Normal.ktx2",
+      "bytes": 875898,
+      "gitBlobSha1": "51936908f8c277a022464eecd9eef7a79f8284a9"
+    },
+    {
+      "uri": "Textures/MASTER_Awning_Fabric_Cyan_BaseColor.ktx2",
+      "bytes": 1371489,
+      "gitBlobSha1": "13e7b3c131056e29e2e21de29822affaf488c82e"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_White_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_White_Normal.ktx2",
+      "bytes": 3354168,
+      "gitBlobSha1": "676e619602ac8071b004e090dac6bd428c9592bf"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_White_BaseColor.ktx2",
+      "bytes": 937507,
+      "gitBlobSha1": "5ea14b1d04f5e0b67a7a487e163a8004b1886585"
+    },
+    {
+      "uri": "Textures/MASTER_Bronze_BLENDSHADER_Specular.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "2df68780d3c6749dc1ad521cd35e31d409f08fb6"
+    },
+    {
+      "uri": "Textures/MASTER_Bronze_BLENDSHADER_Normal.ktx2",
+      "bytes": 1499244,
+      "gitBlobSha1": "08a6ae5078587a6c25a8e9d5f34412a74533cf1f"
+    },
+    {
+      "uri": "Textures/MASTER_Bronze_BLENDSHADER_BaseColor.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "76fa25defb46fe7c4a9a4f7b73735453ec2bf6af"
+    },
+    {
+      "uri": "Textures/MASTER_Awning_Fabric_Red_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Awning_Fabric_Red_Normal.ktx2",
+      "bytes": 875898,
+      "gitBlobSha1": "51936908f8c277a022464eecd9eef7a79f8284a9"
+    },
+    {
+      "uri": "Textures/MASTER_Awning_Fabric_Red_BaseColor.ktx2",
+      "bytes": 1168659,
+      "gitBlobSha1": "575c5d4f60c9754c4d42fadf58c53d3ffb48d304"
+    },
+    {
+      "uri": "Textures/MASTER_Book_Covers_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Book_Covers_Normal.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "015009981e74e06c1a72b9109212360b22ec0fb7"
+    },
+    {
+      "uri": "Textures/MASTER_Book_Covers_BaseColor.ktx2",
+      "bytes": 1911559,
+      "gitBlobSha1": "f2a40abdaf40f67cc342d017ad1d7bd00384b020"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_Smooth_BLENDSHADER_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_Smooth_BLENDSHADER_Normal.ktx2",
+      "bytes": 1297352,
+      "gitBlobSha1": "9df135a290fd0b0f2a03bfcf732b923aed3556f3"
+    },
+    {
+      "uri": "Textures/MASTER_Concrete_Smooth_BLENDSHADER_BaseColor.ktx2",
+      "bytes": 890290,
+      "gitBlobSha1": "3fc056205f618e5c66eac86d31016e15266dc14b"
+    },
+    {
+      "uri": "Textures/MASTER_Wood_Painted_Green_BLENDSHADER_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Wood_Painted_Green_BLENDSHADER_Normal.ktx2",
+      "bytes": 1754030,
+      "gitBlobSha1": "a8eae3bce08f956ec21afbe35b36360683ceb225"
+    },
+    {
+      "uri": "Textures/MASTER_Wood_Painted_Green_BLENDSHADER_BaseColor.ktx2",
+      "bytes": 802959,
+      "gitBlobSha1": "8b4da298fdc0a42bbe4736cc88661e5ddd7a4507"
+    },
+    {
+      "uri": "Textures/MASTER_Rollup_Door_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Rollup_Door_Normal.ktx2",
+      "bytes": 2444182,
+      "gitBlobSha1": "91a51cc87531376a252c98bb2b0c4855713e738e"
+    },
+    {
+      "uri": "Textures/MASTER_Rollup_Door_BaseColor.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "2ef08ae46d4834544a18cd4f900e32e39c3058a2"
+    },
+    {
+      "uri": "Textures/MASTER_Details_Dark_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MASTER_Details_Dark_Normal.ktx2",
+      "bytes": 2696148,
+      "gitBlobSha1": "22e947c006235475a51945c65b1aa32c77b66a5d"
+    },
+    {
+      "uri": "Textures/MASTER_Details_Dark_BaseColor.ktx2",
+      "bytes": 1985962,
+      "gitBlobSha1": "be11b1bddb3c283e0671050b0577701339516228"
+    },
+    {
+      "uri": "Textures/Paris_Chair_01_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Paris_Chair_01_Normal.ktx2",
+      "bytes": 2661609,
+      "gitBlobSha1": "2faa90a0a2e7e1505eafda9259efb9732a25896d"
+    },
+    {
+      "uri": "Textures/Paris_Chair_01_BaseColor.ktx2",
+      "bytes": 950427,
+      "gitBlobSha1": "7fc19b67ded785d5742eac1adf97480e4bc5dbfe"
+    },
+    {
+      "uri": "Textures/Concrete_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Concrete_Normal.ktx2",
+      "bytes": 3660521,
+      "gitBlobSha1": "3fad0940b50a1f9e71cc21b6d7ae428900dad790"
+    },
+    {
+      "uri": "Textures/Concrete_BaseColor.ktx2",
+      "bytes": 2156805,
+      "gitBlobSha1": "f7f018b33dc180854d703e9a61060d9a9897cc17"
+    },
+    {
+      "uri": "Textures/Plaster_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Plaster_Normal.ktx2",
+      "bytes": 3631531,
+      "gitBlobSha1": "61a3fbde91453d83b6d47db91a3c8b61492c9e38"
+    },
+    {
+      "uri": "Textures/Plaster_BaseColor.ktx2",
+      "bytes": 2388451,
+      "gitBlobSha1": "3fbbbcb99558054c555227e08938a97b4e9600be"
+    },
+    {
+      "uri": "Textures/Concrete2_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Concrete2_Normal.ktx2",
+      "bytes": 1297352,
+      "gitBlobSha1": "9df135a290fd0b0f2a03bfcf732b923aed3556f3"
+    },
+    {
+      "uri": "Textures/Concrete2_BaseColor.ktx2",
+      "bytes": 890290,
+      "gitBlobSha1": "3fc056205f618e5c66eac86d31016e15266dc14b"
+    },
+    {
+      "uri": "Textures/Chimneys_Metal_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Chimneys_Metal_Normal.ktx2",
+      "bytes": 3318202,
+      "gitBlobSha1": "a80bd50e5c9a6b363ff1da30e380d0d1ed9e2ccb"
+    },
+    {
+      "uri": "Textures/Chimneys_Metal_BaseColor.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "2ef08ae46d4834544a18cd4f900e32e39c3058a2"
+    },
+    {
+      "uri": "Textures/Concrete_Striped_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Concrete_Striped_Normal.ktx2",
+      "bytes": 3408785,
+      "gitBlobSha1": "5ff4412cd1a4b434dd8f3ce1b921797c641ac817"
+    },
+    {
+      "uri": "Textures/Concrete_Striped_BaseColor.ktx2",
+      "bytes": 2104323,
+      "gitBlobSha1": "4ca013f861e3df2217f72a82f81e2672d00da802"
+    },
+    {
+      "uri": "Textures/ElectricBox_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/ElectricBox_Normal.ktx2",
+      "bytes": 1226273,
+      "gitBlobSha1": "18293aa44640e6d702fdac70cde7e8381994687a"
+    },
+    {
+      "uri": "Textures/ElectricBox_BaseColor.ktx2",
+      "bytes": 977742,
+      "gitBlobSha1": "064807a7c92deafb86f1508ad33294af71b7869e"
+    },
+    {
+      "uri": "Textures/Foliage_Paris_Flowers_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Foliage_Paris_Flowers_Normal.ktx2",
+      "bytes": 2008231,
+      "gitBlobSha1": "726a961fef5003e7c4b6e07d01ef02b8c9748763"
+    },
+    {
+      "uri": "Textures/Foliage_Paris_Flowers_BaseColor.ktx2",
+      "bytes": 1553583,
+      "gitBlobSha1": "955da94c2be06944a946b7e863fe9fb2a10ab6dc"
+    },
+    {
+      "uri": "Textures/Foliage_Flowers_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Foliage_Flowers_Normal.ktx2",
+      "bytes": 1541987,
+      "gitBlobSha1": "39f0db7ea1dc248be48f24097b7b9af535375e19"
+    },
+    {
+      "uri": "Textures/Foliage_Flowers_BaseColor.ktx2",
+      "bytes": 927024,
+      "gitBlobSha1": "c2f0e6a5ee6f04002d7e69a06f07543acbb60c10"
+    },
+    {
+      "uri": "Textures/Paris_LiquorBottle_01_Glass_Wine_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Paris_LiquorBottle_01_Glass_Wine_Normal.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "015009981e74e06c1a72b9109212360b22ec0fb7"
+    },
+    {
+      "uri": "Textures/Paris_LiquorBottle_01_Glass_Wine_BaseColor.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "94753aa997309bbd7866b76e7d4e6ee719d7b38e"
+    },
+    {
+      "uri": "Textures/Paris_LiquorBottle_01_Caps_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Paris_LiquorBottle_01_Caps_Normal.ktx2",
+      "bytes": 1020569,
+      "gitBlobSha1": "ada8b554b5b57b30f876e91c3045f5797ff9f641"
+    },
+    {
+      "uri": "Textures/Paris_LiquorBottle_01_Caps_BaseColor.ktx2",
+      "bytes": 192867,
+      "gitBlobSha1": "a3a2910d5b7db9acd796ac8a999b72a7a3270ed3"
+    },
+    {
+      "uri": "Textures/Paris_LiquorBottle_01_Labels_Normal.ktx2",
+      "bytes": 573,
+      "gitBlobSha1": "026c1a5bbbc3c2d358bc119ea58f0255fd2f9ab6"
+    },
+    {
+      "uri": "Textures/Paris_LiquorBottle_01_Labels_BaseColor.ktx2",
+      "bytes": 217,
+      "gitBlobSha1": "558f8eb534e4b560ca9b78a1089e8af571942938"
+    },
+    {
+      "uri": "Textures/Balcony_Concrete_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Balcony_Concrete_Normal.ktx2",
+      "bytes": 795548,
+      "gitBlobSha1": "a33418b0dbd9a02ae3cf87984cf7829fcad31a29"
+    },
+    {
+      "uri": "Textures/Balcony_Concrete_BaseColor.ktx2",
+      "bytes": 1140126,
+      "gitBlobSha1": "1661fbdfea97c4eafed02d6f5183a62c4f091227"
+    },
+    {
+      "uri": "Textures/Balcony_Trims_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Balcony_Trims_Normal.ktx2",
+      "bytes": 2775563,
+      "gitBlobSha1": "74c6a1d2c728b84117e4dd27e0ebc8d10309318b"
+    },
+    {
+      "uri": "Textures/Balcony_Trims_BaseColor.ktx2",
+      "bytes": 1270254,
+      "gitBlobSha1": "fc2403dfe4768aa181a9a32f4d537236ad3d9af7"
+    },
+    {
+      "uri": "Textures/Balcony_Ornaments_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Balcony_Ornaments_Normal.ktx2",
+      "bytes": 3328725,
+      "gitBlobSha1": "11fdc05d5c0c256aecb7f1ecb1766f8a458ac628"
+    },
+    {
+      "uri": "Textures/Balcony_Ornaments_BaseColor.ktx2",
+      "bytes": 1415711,
+      "gitBlobSha1": "731e770ce92cf7bccb6f4f0e4260bc6ccbc04782"
+    },
+    {
+      "uri": "Textures/Balcony_Green_Wood_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Balcony_Green_Wood_Normal.ktx2",
+      "bytes": 573,
+      "gitBlobSha1": "de7d5a8ad2b1fca228e48d6ca5e71ce321d41e01"
+    },
+    {
+      "uri": "Textures/Balcony_Green_Wood_BaseColor.ktx2",
+      "bytes": 556778,
+      "gitBlobSha1": "77af586a14ca364b142247483b37a8f3483cff99"
+    },
+    {
+      "uri": "Textures/MenuSign_01_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MenuSign_01_Normal.ktx2",
+      "bytes": 2019590,
+      "gitBlobSha1": "002faae42e7e644f94437226f82fd249d30a508c"
+    },
+    {
+      "uri": "Textures/MenuSign_01_BaseColor.ktx2",
+      "bytes": 1567372,
+      "gitBlobSha1": "4d6f22af312fe34f0b6feaa37b0044ea884229fd"
+    },
+    {
+      "uri": "Textures/MenuSign_02_Mesh_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MenuSign_02_Mesh_Normal.ktx2",
+      "bytes": 1456531,
+      "gitBlobSha1": "54604bff385fc08cce77e7beaf636e84d7bedba8"
+    },
+    {
+      "uri": "Textures/MenuSign_02_Mesh_BaseColor.ktx2",
+      "bytes": 694968,
+      "gitBlobSha1": "39230322a4c85d71d56e9fe88dae5fc08c834f8c"
+    },
+    {
+      "uri": "Textures/MenuSign_02_Glass_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/MenuSign_02_Glass_Normal.ktx2",
+      "bytes": 573,
+      "gitBlobSha1": "de7d5a8ad2b1fca228e48d6ca5e71ce321d41e01"
+    },
+    {
+      "uri": "Textures/MenuSign_02_Glass_BaseColor.ktx2",
+      "bytes": 742727,
+      "gitBlobSha1": "8aeb93efaf69136ba16b9377d0f47d274bdbaaee"
+    },
+    {
+      "uri": "Textures/NapkinHolder_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/NapkinHolder_Normal.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "015009981e74e06c1a72b9109212360b22ec0fb7"
+    },
+    {
+      "uri": "Textures/NapkinHolder_BaseColor.ktx2",
+      "bytes": 649349,
+      "gitBlobSha1": "f3e6089333b1e168a752d61ce5b6a28eb65a2c60"
+    },
+    {
+      "uri": "Textures/Plantpots_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Plantpots_Normal.ktx2",
+      "bytes": 2828666,
+      "gitBlobSha1": "0c84325c84adb9a328c350d049d5fc218cb96b6f"
+    },
+    {
+      "uri": "Textures/Plantpots_BaseColor.ktx2",
+      "bytes": 2148050,
+      "gitBlobSha1": "6a428b56bd4ba942d44e5c44a129cfcdeed6482d"
+    },
+    {
+      "uri": "Textures/Shopsign_Bakery_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Shopsign_Bakery_Normal.ktx2",
+      "bytes": 92555,
+      "gitBlobSha1": "0517dcda801edf88bdda1c0d5b58dcbb9703a0a6"
+    },
+    {
+      "uri": "Textures/Shopsign_Bakery_BaseColor.ktx2",
+      "bytes": 1252518,
+      "gitBlobSha1": "f4eac4431a631badc5e8ff4db7a663bec06786a2"
+    },
+    {
+      "uri": "Textures/Shopsign_Ties_Shop_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Shopsign_Ties_Shop_Normal.ktx2",
+      "bytes": 447073,
+      "gitBlobSha1": "124ee3aa68bad6ff6d4bcbca0d56aa1a0c0e4552"
+    },
+    {
+      "uri": "Textures/Shopsign_Ties_Shop_BaseColor.ktx2",
+      "bytes": 98857,
+      "gitBlobSha1": "21583f92fa0958949a92e5cd65875dc8041edb07"
+    },
+    {
+      "uri": "Textures/Shopsign_Book_Store_Emissive_Emissive.ktx2",
+      "bytes": 1265380,
+      "gitBlobSha1": "a136238a103b8c84eaefbab1e3450f529693091d"
+    },
+    {
+      "uri": "Textures/Shopsign_Book_Store_Emissive_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Shopsign_Book_Store_Emissive_Normal.ktx2",
+      "bytes": 258938,
+      "gitBlobSha1": "a18bf5ac2e3c5cfde198965e061d791e7446f108"
+    },
+    {
+      "uri": "Textures/Shopsign_Book_Store_Emissive_BaseColor.ktx2",
+      "bytes": 1265380,
+      "gitBlobSha1": "a136238a103b8c84eaefbab1e3450f529693091d"
+    },
+    {
+      "uri": "Textures/Shopsign_Pharmacy_Emissive_Emissive.ktx2",
+      "bytes": 247614,
+      "gitBlobSha1": "72cfa97de4d0f0f8299614155250a91f8d2a6b03"
+    },
+    {
+      "uri": "Textures/Shopsign_Pharmacy_Emissive_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Shopsign_Pharmacy_Emissive_Normal.ktx2",
+      "bytes": 5038,
+      "gitBlobSha1": "cbc7e5169cd8092b6d4e1168b026ad91f67c3cf9"
+    },
+    {
+      "uri": "Textures/Shopsign_Pharmacy_Emissive_BaseColor.ktx2",
+      "bytes": 188689,
+      "gitBlobSha1": "b20744946f2959eab55a5f48aeca5d7d9a98e071"
+    },
+    {
+      "uri": "Textures/Sidewalkbarrier_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Sidewalkbarrier_Normal.ktx2",
+      "bytes": 2321264,
+      "gitBlobSha1": "ef60dae4717db00d20435b670798e08fa868cb34"
+    },
+    {
+      "uri": "Textures/Sidewalkbarrier_BaseColor.ktx2",
+      "bytes": 786815,
+      "gitBlobSha1": "f9e91e1f96246cb4f4d5591b606b5947c302b6c9"
+    },
+    {
+      "uri": "Textures/Pavement_Curbstones_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Pavement_Curbstones_Normal.ktx2",
+      "bytes": 2732807,
+      "gitBlobSha1": "2db4a765e70d1c597ddb570054a789449543901e"
+    },
+    {
+      "uri": "Textures/Pavement_Curbstones_BaseColor.ktx2",
+      "bytes": 1674939,
+      "gitBlobSha1": "19644fd7b0fc338ca4c38a8a37935e851069a6cd"
+    },
+    {
+      "uri": "Textures/Pavement_Cobblestone_Small_BLENDSHADER_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Pavement_Cobblestone_Small_BLENDSHADER_Normal.ktx2",
+      "bytes": 3596620,
+      "gitBlobSha1": "e9665168a4679b9ce317320ab84b026b04a9c3c9"
+    },
+    {
+      "uri": "Textures/Pavement_Cobblestone_Small_BLENDSHADER_BaseColor.ktx2",
+      "bytes": 1381439,
+      "gitBlobSha1": "2d6cc57fed8a3d21f43c17f0ba11e2627480e768"
+    },
+    {
+      "uri": "Textures/Pavement_Cobblestone_Big_BLENDSHADER_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Pavement_Cobblestone_Big_BLENDSHADER_Normal.ktx2",
+      "bytes": 3626308,
+      "gitBlobSha1": "f5be15ed921b6004635fd1acc8f1379d403232f8"
+    },
+    {
+      "uri": "Textures/Pavement_Cobblestone_Big_BLENDSHADER_BaseColor.ktx2",
+      "bytes": 1571035,
+      "gitBlobSha1": "ea8356fb09ab1e87fe2731112bd6e575f04512b7"
+    },
+    {
+      "uri": "Textures/Pavement_Brick_BLENDSHADER_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Pavement_Brick_BLENDSHADER_Normal.ktx2",
+      "bytes": 3759124,
+      "gitBlobSha1": "3e4c1b73ad3c9046ab984bcc994864462684ba2d"
+    },
+    {
+      "uri": "Textures/Pavement_Brick_BLENDSHADER_BaseColor.ktx2",
+      "bytes": 2230612,
+      "gitBlobSha1": "72be899f40873e84c97f59411fe22ec6beaa6199"
+    },
+    {
+      "uri": "Textures/Pavement_Cobblestone_02_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Pavement_Cobblestone_02_Normal.ktx2",
+      "bytes": 3772177,
+      "gitBlobSha1": "a4955e4299131f820eace29132b388197a64a7fc"
+    },
+    {
+      "uri": "Textures/Pavement_Cobblestone_02_BaseColor.ktx2",
+      "bytes": 2609409,
+      "gitBlobSha1": "86fe4ee0b261e2640e4a3da51d6ddb3ef90e72ef"
+    },
+    {
+      "uri": "Textures/Pavement_Ground_Wet_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Pavement_Ground_Wet_Normal.ktx2",
+      "bytes": 3634137,
+      "gitBlobSha1": "0f5cabeeacd05cede5abdac37acf762cc264c679"
+    },
+    {
+      "uri": "Textures/Pavement_Ground_Wet_BaseColor.ktx2",
+      "bytes": 2125173,
+      "gitBlobSha1": "0989ff840ea79b4a36cebdf6c0bbcee969eb2575"
+    },
+    {
+      "uri": "Textures/Pavement_Cobblestone_Wet_BLENDSHADER_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Pavement_Cobblestone_Wet_BLENDSHADER_Normal.ktx2",
+      "bytes": 3342906,
+      "gitBlobSha1": "5a8b568a200b4260d90a7718dc2e769a5e0c5d4e"
+    },
+    {
+      "uri": "Textures/Pavement_Cobblestone_Wet_BLENDSHADER_BaseColor.ktx2",
+      "bytes": 2321682,
+      "gitBlobSha1": "5c8be49c01191db7eeb625d61172dbcdbe7415c9"
+    },
+    {
+      "uri": "Textures/Pavement_Cobblestone_Wet_Leaves_BLENDSHADER_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Pavement_Cobblestone_Wet_Leaves_BLENDSHADER_Normal.ktx2",
+      "bytes": 3342906,
+      "gitBlobSha1": "5a8b568a200b4260d90a7718dc2e769a5e0c5d4e"
+    },
+    {
+      "uri": "Textures/Pavement_Cobblestone_Wet_Leaves_BLENDSHADER_BaseColor.ktx2",
+      "bytes": 2321682,
+      "gitBlobSha1": "5c8be49c01191db7eeb625d61172dbcdbe7415c9"
+    },
+    {
+      "uri": "Textures/Pavement_Cobble_Leaves_BLENDSHADER_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Pavement_Cobble_Leaves_BLENDSHADER_Normal.ktx2",
+      "bytes": 3371798,
+      "gitBlobSha1": "7927765044611aa800806a8b63bcaaebc1ef7998"
+    },
+    {
+      "uri": "Textures/Pavement_Cobble_Leaves_BLENDSHADER_BaseColor.ktx2",
+      "bytes": 2312792,
+      "gitBlobSha1": "d54bccb3f717245b72088b9cd956896ba7bb7607"
+    },
+    {
+      "uri": "Textures/Pavement_Cobblestone_01_BLENDSHADER_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Pavement_Cobblestone_01_BLENDSHADER_Normal.ktx2",
+      "bytes": 3371798,
+      "gitBlobSha1": "7927765044611aa800806a8b63bcaaebc1ef7998"
+    },
+    {
+      "uri": "Textures/Pavement_Cobblestone_01_BLENDSHADER_BaseColor.ktx2",
+      "bytes": 2312792,
+      "gitBlobSha1": "d54bccb3f717245b72088b9cd956896ba7bb7607"
+    },
+    {
+      "uri": "Textures/Concrete3_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Concrete3_Normal.ktx2",
+      "bytes": 3354168,
+      "gitBlobSha1": "676e619602ac8071b004e090dac6bd428c9592bf"
+    },
+    {
+      "uri": "Textures/Concrete3_BaseColor.ktx2",
+      "bytes": 2156805,
+      "gitBlobSha1": "f7f018b33dc180854d703e9a61060d9a9897cc17"
+    },
+    {
+      "uri": "Textures/Streetlight_Metal_Specular.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "2df68780d3c6749dc1ad521cd35e31d409f08fb6"
+    },
+    {
+      "uri": "Textures/Streetlight_Metal_Normal.ktx2",
+      "bytes": 3209501,
+      "gitBlobSha1": "58d5b5956c1360eb7258260b322192b97fc5da71"
+    },
+    {
+      "uri": "Textures/Streetlight_Metal_BaseColor.ktx2",
+      "bytes": 897014,
+      "gitBlobSha1": "49f45ccdc9332971cb77072743f8f77b60fd5bd8"
+    },
+    {
+      "uri": "Textures/Streetlight_Chains_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Streetlight_Chains_Normal.ktx2",
+      "bytes": 725267,
+      "gitBlobSha1": "c0dfd2fa6918073a7e2282effaf9963ff150c5af"
+    },
+    {
+      "uri": "Textures/Streetlight_Chains_BaseColor.ktx2",
+      "bytes": 69747,
+      "gitBlobSha1": "a2ecdbac48db9c450a23c83c1cb55f7ce80971f0"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_White_Color_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_White_Color_Normal.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "015009981e74e06c1a72b9109212360b22ec0fb7"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_White_Color_BaseColor.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "50d49c397155c6eda3849d4e0ae0ac426ebb3022"
+    },
+    {
+      "uri": "Textures/Streetlight_Support_Bulb_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Streetlight_Support_Bulb_Normal.ktx2",
+      "bytes": 573,
+      "gitBlobSha1": "de7d5a8ad2b1fca228e48d6ca5e71ce321d41e01"
+    },
+    {
+      "uri": "Textures/Streetlight_Support_Bulb_BaseColor.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "3be2686fdae3bfea36f5ada2c2ceb38161846bc8"
+    },
+    {
+      "uri": "Textures/Paris_StreetPivot_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Paris_StreetPivot_Normal.ktx2",
+      "bytes": 1438133,
+      "gitBlobSha1": "74ea822fd7362ae157bbef70e5feca5c47f3c15b"
+    },
+    {
+      "uri": "Textures/Paris_StreetPivot_BaseColor.ktx2",
+      "bytes": 551842,
+      "gitBlobSha1": "3ed8a5829b3a984100a2dcec224b700e6bb02d6b"
+    },
+    {
+      "uri": "Textures/Paris_StreetSign_01_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Paris_StreetSign_01_Normal.ktx2",
+      "bytes": 1914240,
+      "gitBlobSha1": "97ad880a6422ca901b94804971966a7efb569b9c"
+    },
+    {
+      "uri": "Textures/Paris_StreetSign_01_BaseColor.ktx2",
+      "bytes": 1083813,
+      "gitBlobSha1": "d55b4d665aec92df4a8aee86b0f5704044e079f5"
+    },
+    {
+      "uri": "Textures/Paris_Table_Terrace_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Paris_Table_Terrace_Normal.ktx2",
+      "bytes": 2996021,
+      "gitBlobSha1": "c3a54a5ddcf23b69d6fb7be62514577d97d809b2"
+    },
+    {
+      "uri": "Textures/Paris_Table_Terrace_BaseColor.ktx2",
+      "bytes": 1179579,
+      "gitBlobSha1": "be8075840294e05e1385173ab1679b9ed9f3a107"
+    },
+    {
+      "uri": "Textures/Paris_TrafficSign_A_Specular.ktx2",
+      "bytes": 63596,
+      "gitBlobSha1": "e66bf1177d55043574d47c76dc2acf159d659f15"
+    },
+    {
+      "uri": "Textures/Paris_TrafficSign_A_Normal.ktx2",
+      "bytes": 973433,
+      "gitBlobSha1": "3804ce9b69f37b9e8b486adf40d028208190160f"
+    },
+    {
+      "uri": "Textures/Paris_TrafficSign_A_BaseColor.ktx2",
+      "bytes": 135160,
+      "gitBlobSha1": "0088d0562239e971f3d5667d77f2165a2c3ca68d"
+    },
+    {
+      "uri": "Textures/Trashcan_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Trashcan_Normal.ktx2",
+      "bytes": 1800575,
+      "gitBlobSha1": "1cbdc77dc2a77e26d4ad8c28bb3e47552725208f"
+    },
+    {
+      "uri": "Textures/Trashcan_BaseColor.ktx2",
+      "bytes": 1603070,
+      "gitBlobSha1": "670e1a5e3b3e24a0ecfb55607ebb57234fa0c579"
+    },
+    {
+      "uri": "Textures/Spotlight_Main_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Spotlight_Main_Normal.ktx2",
+      "bytes": 653453,
+      "gitBlobSha1": "5df540ec575d95a14fd65a91ae5d5c48febca5b8"
+    },
+    {
+      "uri": "Textures/Spotlight_Main_BaseColor.ktx2",
+      "bytes": 849640,
+      "gitBlobSha1": "b22f642881d0d1697f173a97d154b1044b8a1369"
+    },
+    {
+      "uri": "Textures/Spotlight_Emissive_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Spotlight_Emissive_Normal.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "015009981e74e06c1a72b9109212360b22ec0fb7"
+    },
+    {
+      "uri": "Textures/Spotlight_Emissive_BaseColor.ktx2",
+      "bytes": 849640,
+      "gitBlobSha1": "b22f642881d0d1697f173a97d154b1044b8a1369"
+    },
+    {
+      "uri": "Textures/LanternEmissive_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/LanternEmissive_Normal.ktx2",
+      "bytes": 2539321,
+      "gitBlobSha1": "60ffab4b467209a945c9d128c8e49c593fef1e84"
+    },
+    {
+      "uri": "Textures/LanternEmissive_BaseColor.ktx2",
+      "bytes": 669009,
+      "gitBlobSha1": "bcc3ddfa397623f7a3dc9f1a036397012924fad6"
+    },
+    {
+      "uri": "Textures/Pavement_Manhole_Cover_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Pavement_Manhole_Cover_Normal.ktx2",
+      "bytes": 3469227,
+      "gitBlobSha1": "bfdf5f2d60182a124d2bbba968031df3795f83f8"
+    },
+    {
+      "uri": "Textures/Pavement_Manhole_Cover_BaseColor.ktx2",
+      "bytes": 2205256,
+      "gitBlobSha1": "9b26f7cc929cdcddfc7fb621e2c14b8718f763ce"
+    },
+    {
+      "uri": "Textures/Stringlights_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Stringlights_Normal.ktx2",
+      "bytes": 1490223,
+      "gitBlobSha1": "9178bdf9640333f02ac839e5d4af863b4cedd696"
+    },
+    {
+      "uri": "Textures/Stringlights_BaseColor.ktx2",
+      "bytes": 233324,
+      "gitBlobSha1": "dc52ecb58cd3446d343b6a64b865b8bbdd83d838"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_Orange_Color_Emissive_Emissive.ktx2",
+      "bytes": 230,
+      "gitBlobSha1": "087ec1da1c3378ce834609423ffe447f8a440c36"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_Orange_Color_Emissive_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_Orange_Color_Emissive_Normal.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "015009981e74e06c1a72b9109212360b22ec0fb7"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_Orange_Color_Emissive_BaseColor.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "eec8e0f98cec877acdfdb367ee92f25de6d80bb9"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_Red_Color_Emissive_Emissive.ktx2",
+      "bytes": 230,
+      "gitBlobSha1": "101114ccd84d3d35a59a831c45fcc7b45dbe9642"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_Red_Color_Emissive_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_Red_Color_Emissive_Normal.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "015009981e74e06c1a72b9109212360b22ec0fb7"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_Red_Color_Emissive_BaseColor.ktx2",
+      "bytes": 222,
+      "gitBlobSha1": "0b9e574597b33cc14a7e47c8fe6499f4288b7ac8"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_White_Color_Emissive_Emissive.ktx2",
+      "bytes": 230,
+      "gitBlobSha1": "0214fc25e9886c22eb419bba9894c2693eeaa91c"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_White_Color_Emissive_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_White_Color_Emissive_Normal.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "015009981e74e06c1a72b9109212360b22ec0fb7"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_White_Color_Emissive_BaseColor.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "50d49c397155c6eda3849d4e0ae0ac426ebb3022"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_Pink_Color_Emissive_Emissive.ktx2",
+      "bytes": 230,
+      "gitBlobSha1": "05f3f3982e669ffac378edd0a415681354e05104"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_Pink_Color_Emissive_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_Pink_Color_Emissive_Normal.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "015009981e74e06c1a72b9109212360b22ec0fb7"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_Pink_Color_Emissive_BaseColor.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "4ee9f9165efbfc48e6c9eb33835cfdfd199d4157"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_Blue_Color_Emissive_Emissive.ktx2",
+      "bytes": 230,
+      "gitBlobSha1": "f90fd6eb57c26d070df8c215588bf5b46ce6b6cf"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_Blue_Color_Emissive_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_Blue_Color_Emissive_Normal.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "015009981e74e06c1a72b9109212360b22ec0fb7"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_Blue_Color_Emissive_BaseColor.ktx2",
+      "bytes": 224,
+      "gitBlobSha1": "22633506c00f9c65a406be55f683966dfba32a88"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_Green_Color_Emissive_Emissive.ktx2",
+      "bytes": 230,
+      "gitBlobSha1": "0b1f0a1f6680fa6c6e7d62015754a814add3b98a"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_Green_Color_Emissive_Specular.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "e96391b15db7287297597bbfd426284c8d5b150d"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_Green_Color_Emissive_Normal.ktx2",
+      "bytes": 221,
+      "gitBlobSha1": "015009981e74e06c1a72b9109212360b22ec0fb7"
+    },
+    {
+      "uri": "Textures/Paris_StringLights_01_Green_Color_Emissive_BaseColor.ktx2",
+      "bytes": 223,
+      "gitBlobSha1": "eb0112077a0c50c8bff1681eea9b093eb52ff76a"
+    }
+  ]
+}
