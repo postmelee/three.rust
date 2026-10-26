@@ -7,6 +7,7 @@ import {openViewerRun,gpu} from './viewer-browser.mjs';
 import {VIEWER_ROUTES,hash} from './viewer-adapter.mjs';
 import {captureViewerSnapshot,compareViewerSnapshots} from './viewer-oracle.mjs';
 import {VIEWER_CONTENT_PINS,createPinnedViewerContent,captureViewerContentReadiness,assertViewerContentReadiness} from './viewer-content.mjs';
+import {createViewerNetworkEvidence,viewerPhaseClock} from './viewer-network.mjs';
 
 const nextFrames=page=>page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
 const input=(page,name)=>page.getByText(name,{exact:true}).first().locator('..').locator('input');
@@ -37,16 +38,18 @@ export async function checkViewerContent(appsArg,preparedArg,outArg,options) {
  try {
   content=await createPinnedViewerContent(options.content,options.contentRoot);
   const {root,...publicContent}=content;await save('content.json',publicContent);summary.source=content.source;
-  const toolingRoot=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..'),files=['scripts/apps/viewer-content-check.mjs','scripts/apps/viewer-content.mjs','scripts/apps/viewer-oracle.mjs'];
+  const toolingRoot=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..'),files=['scripts/apps/viewer-content-check.mjs','scripts/apps/viewer-content.mjs','scripts/apps/viewer-oracle.mjs','scripts/apps/viewer-network.mjs'];
   summary.tooling={sha:execFileSync('git',['rev-parse','HEAD'],{cwd:toolingRoot,encoding:'utf8'}).trim(),dirty:Boolean(execFileSync('git',['status','--porcelain','--untracked-files=normal'],{cwd:toolingRoot,encoding:'utf8'}).trim()),files:[]};
   for(const file of files){const bytes=await fs.readFile(path.join(toolingRoot,file));summary.tooling.files.push({file,bytes:bytes.length,sha256:hash(bytes)});}
   for(const routeName of options.routes){
    const route=VIEWER_ROUTES[routeName],record={route:routeName,status:'running',checks:[]};summary.routes.push(record);await save('result.json',summary);
-   let run,closing=false;const events={console:[],dialogs:[],responses:[],finished:[],failed:[],contextLoss:[],crashes:[]},captures={};
+   let run,network,closing=false;const events={console:[],dialogs:[],responses:[],finished:[],failed:[],contextLoss:[],crashes:[]},captures={};
    try {
     run=await openViewerRun(apps,prepared,path.join(out,routeName),{route:routeName,runtimeRoot:options.runtimeRoot,runtimeSha:options.runtimeSha,captureSources:true,contentRoots:[content],mode:'Native original-content import/feature gate only. No profiler or CPU timing collector.'});
     const page=run.page;page.setDefaultTimeout(options.timeoutMs);
     const publicURL=url=>run.redact(url).split(run.origin).join('<origin>');
+    network=await createViewerNetworkEvidence(await run.context.newCDPSession(page),publicURL);
+    const phase=name=>network.mark(name,()=>page.evaluate(viewerPhaseClock));
     page.on('console',message=>{if(['warning','error'].includes(message.type()))events.console.push({type:message.type(),text:publicURL(message.text()),location:{...message.location(),url:publicURL(message.location().url)}});});
     page.on('dialog',async dialog=>{events.dialogs.push({type:dialog.type(),message:publicURL(dialog.message())});await dialog.dismiss().catch(()=>{});});
     page.on('crash',()=>events.crashes.push({event:'page-crash'}));
@@ -54,9 +57,11 @@ export async function checkViewerContent(appsArg,preparedArg,outArg,options) {
     page.on('requestfinished',request=>{if(request.url().startsWith(run.origin+'/__viewer_content__/'))events.finished.push(publicURL(request.url()));});
     page.on('requestfailed',request=>events.failed.push({url:publicURL(request.url()),error:request.failure()?.errorText??null}));
     await page.addInitScript(()=>{globalThis.__viewerContentContextEvents=[];document.addEventListener('webglcontextlost',event=>__viewerContentContextEvents.push({type:event.type,at:performance.now(),width:event.target?.width??null,height:event.target?.height??null}),true);});
-    await page.goto(run.url);await page.bringToFront();await page.waitForFunction(()=>window.VIEWER?.app);await page.evaluate(()=>document.fonts.ready);
+    await phase('navigation');await page.goto(run.url);await page.bringToFront();await page.waitForFunction(()=>window.VIEWER?.app);await page.evaluate(()=>document.fonts.ready);
+    await phase('initial-load');
     await page.evaluate(url=>VIEWER.app.view(url,'',new Map()),run.origin+'/__viewer_content__/'+content.id+'/'+content.entry);
     await page.waitForFunction(()=>Boolean(VIEWER.app.viewer?.content&&VIEWER.json?.parser&&VIEWER.app.validator.report),null,{timeout:options.timeoutMs});
+    await phase('initial-ready');
     await nextFrames(page);
     await run.save('validator.json',await page.evaluate(()=>VIEWER.app.validator.report));
     await run.save('gpu-main.json',await gpu(page,'.viewer > canvas'));await run.save('gpu-axes.json',await gpu(page,'.axes canvas'));
@@ -67,15 +72,17 @@ export async function checkViewerContent(appsArg,preparedArg,outArg,options) {
     record.checks.push('Native App.view, unchanged GLTFLoader/validator, original scene material/texture/clip inventory, both hardware renderer contexts.');
     await page.getByText('Display',{exact:true}).click();await input(page,'grid').check();
     if(content.expected.animations.length){
+     await phase('live-autoplay');
      record.autoplay=await observeNativeAnimation(page);assert(record.autoplay.changedValues>0,'Autoplay must change original node TRS');
-     await page.getByText('Animation',{exact:true}).click();await page.getByText('playAll',{exact:true}).click();
+     await page.getByText('Animation',{exact:true}).click();await phase('live-play-all');await page.getByText('playAll',{exact:true}).click();
      record.playAll=await observeNativeAnimation(page);assert(record.playAll.changedValues>0);assert(record.playAll.actions.every(action=>action.running&&action.weight>0),'Every native authored wind clip must run after GUI playAll');
      await run.save('live-animation.json',{autoplay:record.autoplay,playAll:record.playAll,scope:'Natural wall-clock playback observations, retained separately from the fresh-load fixed-history oracle.'});
      // A new native loader scene/mixer separates the fixed oracle from any
      // property states saved at different phases during natural GUI playAll.
-     await page.evaluate(url=>{globalThis.__viewerPreviousContentUUID=VIEWER.app.viewer.content.uuid;globalThis.__viewerPreviousReport=VIEWER.app.validator.report;VIEWER.app.view(url,'',new Map());},run.origin+'/__viewer_content__/'+content.id+'/'+content.entry);
+     await phase('reload');await page.evaluate(url=>{globalThis.__viewerPreviousContentUUID=VIEWER.app.viewer.content.uuid;globalThis.__viewerPreviousReport=VIEWER.app.validator.report;VIEWER.app.view(url,'',new Map());},run.origin+'/__viewer_content__/'+content.id+'/'+content.entry);
      await page.waitForFunction(()=>VIEWER.app.viewer?.content?.uuid!==globalThis.__viewerPreviousContentUUID&&VIEWER.app.viewer?.content&&VIEWER.app.validator.report&&VIEWER.app.validator.report!==globalThis.__viewerPreviousReport,null,{timeout:options.timeoutMs});
      await page.evaluate(()=>{delete globalThis.__viewerPreviousContentUUID;delete globalThis.__viewerPreviousReport;});
+     await phase('reloaded-ready');
      await run.save('validator-reloaded.json',await page.evaluate(()=>VIEWER.app.validator.report));
      await input(page,'playbackSpeed').fill('0');await input(page,'playbackSpeed').press('Enter');
      await page.evaluate(()=>{const v=VIEWER.app.viewer;v.mixer.timeScale=1;v.mixer.setTime(0);v.mixer.timeScale=0;});
@@ -86,6 +93,7 @@ export async function checkViewerContent(appsArg,preparedArg,outArg,options) {
     }
     const cases=content.expected.animations.length?[['authored-wind-075',0.75],['authored-wind-150',1.5]]:[['authored-static',null]];
     for(const [name,time]of cases){
+     await phase('fixed-'+name);
      if(time!==null)await page.evaluate(time=>{const v=VIEWER.app.viewer;v.mixer.timeScale=1;v.mixer.setTime(time);v.mixer.timeScale=0;},time);
      await nextFrames(page);let reference;
      for(let repeat=0;repeat<2;repeat++){
@@ -95,15 +103,15 @@ export async function checkViewerContent(appsArg,preparedArg,outArg,options) {
      }
      captures[name]=reference;
     }
-    const finalReadiness=await page.evaluate(captureViewerContentReadiness);await run.save('native-final.json',finalReadiness);assertViewerContentReadiness(content.expected,finalReadiness);
+    await phase('final-checks');const finalReadiness=await page.evaluate(captureViewerContentReadiness);await run.save('native-final.json',finalReadiness);assertViewerContentReadiness(content.expected,finalReadiness);
     await page.screenshot({path:path.join(run.out,'native-ui.png')});events.contextLoss=await page.evaluate(()=>__viewerContentContextEvents);
     assert.deepEqual(events.contextLoss,[]);assert.deepEqual(events.dialogs,[]);assert.deepEqual(events.failed,[]);assert(!events.console.some(row=>row.type==='error'),'Native console errors retained in native-events.json');
     const prefix='<origin>/__viewer_content__/'+content.id+'/';const finished=new Set(events.finished.map(url=>decodeURIComponent(url.slice(prefix.length))));
     const missing=content.files.filter(file=>!finished.has(file.file)).map(file=>file.file);record.requestCoverage={allowlisted:content.files.length,uniqueFinished:finished.size,missing,scope:'Includes native loader and native validator requests; decoded material associations independently prove renderer-facing image readiness.'};assert.deepEqual(missing,[],'Every referenced resource request must finish');
-    await run.save('native-events.json',events);closing=true;await run.close();assert.deepEqual(run.errors,[]);assert(!run.requests.some(row=>row.blocked),'Unmirrored external request');
+    await run.save('native-events.json',events);closing=true;await phase('closing');await run.save('cdp-network-before-close.json',network.snapshot());await run.close();assert.deepEqual(run.errors,[]);assert(!run.requests.some(row=>row.blocked),'Unmirrored external request');
     record.status='passed';routeData.set(routeName,{captures,materials:finalReadiness.materials,textures:finalReadiness.textures});
    }catch(error){record.status='failed';record.error=redact(run?run.redact(error.stack??error):error.stack??error);if(run){try{events.contextLoss=await run.page.evaluate(()=>globalThis.__viewerContentContextEvents??[]);await run.page.screenshot({path:path.join(run.out,'failure-ui.png')});}catch{}try{await run.save('partial-native-state.json',await run.page.evaluate(captureViewerContentReadiness));}catch{}record.fatalResourceFailure=events.contextLoss.length>0||events.crashes.length>0||(!closing&&!run.browser.isConnected())||/out[_ ]of[_ ]memory|\boom\b|context lost|crash/i.test(record.error+' '+events.console.map(row=>row.text).join(' '));await run.save('native-events.json',events);}}
-   finally{if(run){try{await run.close();}catch(error){record.status='failed';record.closeError=redact(run.redact(error.stack??error));}await run.save('result.json',record);}await save('result.json',summary);}
+   finally{if(run){if(network&&!closing){closing=true;await network.mark('closing',()=>run.page.evaluate(viewerPhaseClock));await run.save('cdp-network-before-close.json',network.snapshot());}try{await run.close();}catch(error){record.status='failed';record.closeError=redact(run.redact(error.stack??error));}if(network){await run.save('cdp-network-after-close.json',network.snapshot());await network.dispose();}await run.save('result.json',record);}await save('result.json',summary);}
    if(record.fatalResourceFailure){summary.stoppedAfterFatalResourceFailure=true;break;}
   }
   for(const [reference,actual,requiredEqual,purpose]of [['original-r176','external-r176',true,'packaging parity'],['external-r176','pure-r186',false,'upstream migration'],['pure-r186','prepared-js-r186',true,'candidate JS equivalence'],['pure-r186','prepared-wasm-r186',true,'candidate Wasm equivalence']]){
