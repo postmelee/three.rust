@@ -1,0 +1,23 @@
+{
+  "engine": "original",
+  "app": "editor",
+  "scope": "Pinned Editor WebGL compatibility only",
+  "appSources": {
+    "viewer": "b5ee5dafe27f953ae1b55f42b5fa3697fef08683",
+    "editor": "9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8"
+  },
+  "editor": {
+    "file": "editor/editor/index.html",
+    "originalSha256": "1e186dca4fd7f15d3fea1f137406e250786b5fcd2451cf8677c65a77946aad36",
+    "originalBytes": 7720,
+    "servedSha256": "1e186dca4fd7f15d3fea1f137406e250786b5fcd2451cf8677c65a77946aad36",
+    "servedBytes": 7720,
+    "edits": []
+  },
+  "candidate": null,
+  "unchangedBackendsOutsideComparison": [
+    "WebGPU",
+    "path tracer"
+  ],
+  "viewer": "Original bundled application; candidate routes do not replace its engine"
+}

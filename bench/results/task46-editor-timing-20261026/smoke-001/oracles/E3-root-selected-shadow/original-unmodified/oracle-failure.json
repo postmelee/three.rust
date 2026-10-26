@@ -1,0 +1,8 @@
+{
+  "scenario": "E3-root-selected-shadow",
+  "engine": "original",
+  "instrumented": false,
+  "status": "failed",
+  "directory": "oracles/E3-root-selected-shadow/original-unmodified",
+  "error": "AssertionError [ERR_ASSERTION]: Timeline layout changed\n\n307 !== 306\n\n    at setup (file://<tooling>/scripts/apps/timing.mjs:242:29)\n    at async parity (file://<tooling>/scripts/apps/timing.mjs:292:5)\n    at async file://<tooling>/scripts/apps/timing.mjs:439:2"
+}

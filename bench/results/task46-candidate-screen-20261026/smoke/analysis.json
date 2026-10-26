@@ -1,0 +1,3806 @@
+{
+  "kind": "diagnostic-screen-only",
+  "fullPredeclaredMatrix": false,
+  "method": "Linearly interpolated per-run quantiles, then medians across runs; no pooled-frame inference. A/A uses all original-A/B runs and one scene-wide max(5% of original median p50, four maximum observed original clock increments) tolerance for both across-run and original block checks. Separate per-route block diagnostics use max(5% of own run p50, four own clock increments). Each block is contiguous 120 frames; partial smoke blocks are labeled.",
+  "aa": [
+    {
+      "scenario": "cubes",
+      "runCount": 2,
+      "medianP50": 1.7487499974668026,
+      "toleranceMs": 0.08743749987334014,
+      "clockIncrementMs": 0.004999995231628418,
+      "passed": false,
+      "runs": [
+        {
+          "file": "runs/cubes-original-A-0.json",
+          "route": "original-A",
+          "repeat": 0,
+          "p50": 1.8999999985098839,
+          "deltaMs": 0.15125000104308128,
+          "withinAcrossRunTolerance": false,
+          "blocks": [
+            {
+              "firstSample": 0,
+              "lastSample": 9,
+              "count": 10,
+              "fullBlock": false,
+              "p50": 1.8999999985098839,
+              "deltaMs": 0,
+              "withinTolerance": true,
+              "withinOriginalAaTolerance": true
+            }
+          ],
+          "blockScreenPassed": true
+        },
+        {
+          "file": "runs/cubes-original-B-0.json",
+          "route": "original-B",
+          "repeat": 0,
+          "p50": 1.5974999964237213,
+          "deltaMs": -0.15125000104308128,
+          "withinAcrossRunTolerance": false,
+          "blocks": [
+            {
+              "firstSample": 0,
+              "lastSample": 9,
+              "count": 10,
+              "fullBlock": false,
+              "p50": 1.5974999964237213,
+              "deltaMs": 0,
+              "withinTolerance": true,
+              "withinOriginalAaTolerance": true
+            }
+          ],
+          "blockScreenPassed": true
+        }
+      ]
+    },
+    {
+      "scenario": "hierarchy",
+      "runCount": 2,
+      "medianP50": 7.1012500040233135,
+      "toleranceMs": 0.3550625002011657,
+      "clockIncrementMs": 0.004999995231628418,
+      "passed": true,
+      "runs": [
+        {
+          "file": "runs/hierarchy-original-A-0.json",
+          "route": "original-A",
+          "repeat": 0,
+          "p50": 7.120000004768372,
+          "deltaMs": 0.01875000074505806,
+          "withinAcrossRunTolerance": true,
+          "blocks": [
+            {
+              "firstSample": 0,
+              "lastSample": 9,
+              "count": 10,
+              "fullBlock": false,
+              "p50": 7.120000004768372,
+              "deltaMs": 0,
+              "withinTolerance": true,
+              "withinOriginalAaTolerance": true
+            }
+          ],
+          "blockScreenPassed": true
+        },
+        {
+          "file": "runs/hierarchy-original-B-0.json",
+          "route": "original-B",
+          "repeat": 0,
+          "p50": 7.0825000032782555,
+          "deltaMs": -0.01875000074505806,
+          "withinAcrossRunTolerance": true,
+          "blocks": [
+            {
+              "firstSample": 0,
+              "lastSample": 9,
+              "count": 10,
+              "fullBlock": false,
+              "p50": 7.0825000032782555,
+              "deltaMs": 0,
+              "withinTolerance": true,
+              "withinOriginalAaTolerance": true
+            }
+          ],
+          "blockScreenPassed": true
+        }
+      ]
+    },
+    {
+      "scenario": "small",
+      "runCount": 2,
+      "medianP50": 0.30000000074505806,
+      "toleranceMs": 0.019999980926513672,
+      "clockIncrementMs": 0.004999995231628418,
+      "passed": true,
+      "runs": [
+        {
+          "file": "runs/small-original-A-0.json",
+          "route": "original-A",
+          "repeat": 0,
+          "p50": 0.3049999997019768,
+          "deltaMs": 0.004999998956918716,
+          "withinAcrossRunTolerance": true,
+          "blocks": [
+            {
+              "firstSample": 0,
+              "lastSample": 9,
+              "count": 10,
+              "fullBlock": false,
+              "p50": 0.3049999997019768,
+              "deltaMs": 0,
+              "withinTolerance": true,
+              "withinOriginalAaTolerance": true
+            }
+          ],
+          "blockScreenPassed": true
+        },
+        {
+          "file": "runs/small-original-B-0.json",
+          "route": "original-B",
+          "repeat": 0,
+          "p50": 0.29500000178813934,
+          "deltaMs": -0.004999998956918716,
+          "withinAcrossRunTolerance": true,
+          "blocks": [
+            {
+              "firstSample": 0,
+              "lastSample": 9,
+              "count": 10,
+              "fullBlock": false,
+              "p50": 0.29500000178813934,
+              "deltaMs": 0,
+              "withinTolerance": true,
+              "withinOriginalAaTolerance": true
+            }
+          ],
+          "blockScreenPassed": true
+        }
+      ]
+    },
+    {
+      "scenario": "shader",
+      "runCount": 2,
+      "medianP50": 0.1525000035762787,
+      "toleranceMs": 0.019999980926513672,
+      "clockIncrementMs": 0.004999995231628418,
+      "passed": false,
+      "runs": [
+        {
+          "file": "runs/shader-original-A-0.json",
+          "route": "original-A",
+          "repeat": 0,
+          "p50": 0.13250000029802322,
+          "deltaMs": -0.020000003278255463,
+          "withinAcrossRunTolerance": false,
+          "blocks": [
+            {
+              "firstSample": 0,
+              "lastSample": 9,
+              "count": 10,
+              "fullBlock": false,
+              "p50": 0.13250000029802322,
+              "deltaMs": 0,
+              "withinTolerance": true,
+              "withinOriginalAaTolerance": true
+            }
+          ],
+          "blockScreenPassed": true
+        },
+        {
+          "file": "runs/shader-original-B-0.json",
+          "route": "original-B",
+          "repeat": 0,
+          "p50": 0.17250000685453415,
+          "deltaMs": 0.020000003278255463,
+          "withinAcrossRunTolerance": false,
+          "blocks": [
+            {
+              "firstSample": 0,
+              "lastSample": 9,
+              "count": 10,
+              "fullBlock": false,
+              "p50": 0.17250000685453415,
+              "deltaMs": 0,
+              "withinTolerance": true,
+              "withinOriginalAaTolerance": true
+            }
+          ],
+          "blockScreenPassed": true
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "scenario": "cubes",
+      "route": "original-A",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 1.8999999985098839,
+          "p95": 2.1097499944269655,
+          "p99": 2.125949995070696,
+          "mean": 1.898999997973442
+        },
+        "rafInterval": {
+          "p50": 8.33250000000001,
+          "p95": 9.159500000000005,
+          "p99": 9.227900000000005,
+          "mean": 8.396
+        }
+      },
+      "p50Range": [
+        1.8999999985098839,
+        1.8999999985098839
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "cubes",
+      "route": "original-B",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 1.5974999964237213,
+          "p95": 1.8900000005960464,
+          "p99": 1.8900000005960464,
+          "mean": 1.6484999984502793
+        },
+        "rafInterval": {
+          "p50": 8.272500000000008,
+          "p95": 8.997499999999995,
+          "p99": 9.051499999999997,
+          "mean": 8.332999999999998
+        }
+      },
+      "p50Range": [
+        1.5974999964237213,
+        1.5974999964237213
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "cubes",
+      "route": "C3-JS",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 4.200000010430813,
+          "p95": 5.276000000536441,
+          "p99": 5.463200004398823,
+          "mean": 4.330000001192093
+        },
+        "rafInterval": {
+          "p50": 8.31750000000001,
+          "p95": 9.143249999999995,
+          "p99": 9.220650000000006,
+          "mean": 8.333000000000002
+        }
+      },
+      "p50Range": [
+        4.200000010430813,
+        4.200000010430813
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "cubes",
+      "route": "C3-Wasm",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 4.432500004768372,
+          "p95": 5.2349999994039536,
+          "p99": 5.343000003695488,
+          "mean": 4.3940000012516975
+        },
+        "rafInterval": {
+          "p50": 8.33250000000001,
+          "p95": 9.243749999999993,
+          "p99": 9.252749999999995,
+          "mean": 8.334
+        }
+      },
+      "p50Range": [
+        4.432500004768372,
+        4.432500004768372
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "cubes",
+      "route": "epoch-JS",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 4.170000001788139,
+          "p95": 4.572000007331371,
+          "p99": 4.586400004327297,
+          "mean": 4.1975000038743016
+        },
+        "rafInterval": {
+          "p50": 8.337500000000006,
+          "p95": 8.911999999999994,
+          "p99": 8.998400000000007,
+          "mean": 8.347
+        }
+      },
+      "p50Range": [
+        4.170000001788139,
+        4.170000001788139
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "cubes",
+      "route": "epoch-Wasm",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 4.317499995231628,
+          "p95": 5.072750005125999,
+          "p99": 5.074550003409386,
+          "mean": 4.492500002682209
+        },
+        "rafInterval": {
+          "p50": 8.33250000000001,
+          "p95": 9.217999999999993,
+          "p99": 9.275599999999992,
+          "mean": 8.4245
+        }
+      },
+      "p50Range": [
+        4.317499995231628,
+        4.317499995231628
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "hierarchy",
+      "route": "original-A",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 7.120000004768372,
+          "p95": 8.608250007778405,
+          "p99": 8.829650005847215,
+          "mean": 7.380499999225139
+        },
+        "rafInterval": {
+          "p50": 8.332499999999996,
+          "p95": 8.817000000000018,
+          "p99": 8.867400000000023,
+          "mean": 8.282499999999999
+        }
+      },
+      "p50Range": [
+        7.120000004768372,
+        7.120000004768372
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "hierarchy",
+      "route": "original-B",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 7.0825000032782555,
+          "p95": 8.458250001817941,
+          "p99": 8.787650004178285,
+          "mean": 7.249500001966953
+        },
+        "rafInterval": {
+          "p50": 8.327499999999986,
+          "p95": 8.567749999999995,
+          "p99": 8.569549999999994,
+          "mean": 8.353999999999996
+        }
+      },
+      "p50Range": [
+        7.0825000032782555,
+        7.0825000032782555
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "hierarchy",
+      "route": "C3-JS",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 14.935000002384186,
+          "p95": 15.57650000154972,
+          "p99": 15.803299999833108,
+          "mean": 14.602500000596047
+        },
+        "rafInterval": {
+          "p50": 16.660000000000025,
+          "p95": 16.716250000000006,
+          "p99": 16.74325,
+          "mean": 14.996500000000003
+        }
+      },
+      "p50Range": [
+        14.935000002384186,
+        14.935000002384186
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "hierarchy",
+      "route": "C3-Wasm",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 14.467500001192093,
+          "p95": 15.428750001639127,
+          "p99": 15.653750007003545,
+          "mean": 14.513999998569489
+        },
+        "rafInterval": {
+          "p50": 16.669999999999987,
+          "p95": 17.287499999999994,
+          "p99": 17.48550000000002,
+          "mean": 14.999500000000001
+        }
+      },
+      "p50Range": [
+        14.467500001192093,
+        14.467500001192093
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "hierarchy",
+      "route": "epoch-JS",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 15.037500001490116,
+          "p95": 15.382999995350838,
+          "p99": 15.404599996209145,
+          "mean": 14.9125
+        },
+        "rafInterval": {
+          "p50": 16.555000000000007,
+          "p95": 17.167500000000004,
+          "p99": 17.257500000000025,
+          "mean": 15.012500000000006
+        }
+      },
+      "p50Range": [
+        15.037500001490116,
+        15.037500001490116
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "hierarchy",
+      "route": "epoch-Wasm",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 15.342500001192093,
+          "p95": 16.48275000154972,
+          "p99": 16.592550004124643,
+          "mean": 15.36150000244379
+        },
+        "rafInterval": {
+          "p50": 16.662499999999994,
+          "p95": 21.64249999999997,
+          "p99": 24.324499999999954,
+          "mean": 16.664999999999992
+        }
+      },
+      "p50Range": [
+        15.342500001192093,
+        15.342500001192093
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "small",
+      "route": "original-A",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 0.3049999997019768,
+          "p95": 0.42775000259280205,
+          "p99": 0.4295500062406063,
+          "mean": 0.30450000166893004
+        },
+        "rafInterval": {
+          "p50": 8.337500000000006,
+          "p95": 8.915500000000007,
+          "p99": 8.919100000000014,
+          "mean": 8.386
+        }
+      },
+      "p50Range": [
+        0.3049999997019768,
+        0.3049999997019768
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "small",
+      "route": "original-B",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 0.29500000178813934,
+          "p95": 0.4642500057816505,
+          "p99": 0.47685000449419024,
+          "mean": 0.31000000089406965
+        },
+        "rafInterval": {
+          "p50": 8.3125,
+          "p95": 9.00550000000001,
+          "p99": 9.009100000000018,
+          "mean": 8.407000000000002
+        }
+      },
+      "p50Range": [
+        0.29500000178813934,
+        0.29500000178813934
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "small",
+      "route": "C3-JS",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 0.4775000065565109,
+          "p95": 0.6342500008642673,
+          "p99": 0.646850004941225,
+          "mean": 0.47450000047683716
+        },
+        "rafInterval": {
+          "p50": 8.332499999999996,
+          "p95": 9.18075,
+          "p99": 9.240149999999996,
+          "mean": 8.3255
+        }
+      },
+      "p50Range": [
+        0.4775000065565109,
+        0.4775000065565109
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "small",
+      "route": "C3-Wasm",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 0.29500000178813934,
+          "p95": 0.6364999927580355,
+          "p99": 0.7192999942600727,
+          "mean": 0.3365000009536743
+        },
+        "rafInterval": {
+          "p50": 8.332499999999996,
+          "p95": 9.159499999999989,
+          "p99": 9.227899999999979,
+          "mean": 8.3625
+        }
+      },
+      "p50Range": [
+        0.29500000178813934,
+        0.29500000178813934
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "small",
+      "route": "epoch-JS",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 0.35500000417232513,
+          "p95": 0.5602500051259994,
+          "p99": 0.5800500077009201,
+          "mean": 0.3950000062584877
+        },
+        "rafInterval": {
+          "p50": 8.329999999999998,
+          "p95": 9.092000000000008,
+          "p99": 9.250400000000019,
+          "mean": 8.283499999999998
+        }
+      },
+      "p50Range": [
+        0.35500000417232513,
+        0.35500000417232513
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "small",
+      "route": "epoch-Wasm",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 0.42000000178813934,
+          "p95": 0.4954999975860119,
+          "p99": 0.49909999951720235,
+          "mean": 0.4050000011920929
+        },
+        "rafInterval": {
+          "p50": 8.334999999999994,
+          "p95": 9.045750000000004,
+          "p99": 9.177150000000006,
+          "mean": 8.3355
+        }
+      },
+      "p50Range": [
+        0.42000000178813934,
+        0.42000000178813934
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "shader",
+      "route": "original-A",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 0.13250000029802322,
+          "p95": 0.24574999213218682,
+          "p99": 0.26914999127388,
+          "mean": 0.14849999845027922
+        },
+        "rafInterval": {
+          "p50": 8.304999999999993,
+          "p95": 9.096250000000001,
+          "p99": 9.231250000000012,
+          "mean": 8.375
+        }
+      },
+      "p50Range": [
+        0.13250000029802322,
+        0.13250000029802322
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "shader",
+      "route": "original-B",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 0.17250000685453415,
+          "p95": 0.24549999758601188,
+          "p99": 0.24909999951720238,
+          "mean": 0.171500001847744
+        },
+        "rafInterval": {
+          "p50": 8.330000000000013,
+          "p95": 9.122000000000002,
+          "p99": 9.280400000000006,
+          "mean": 8.303
+        }
+      },
+      "p50Range": [
+        0.17250000685453415,
+        0.17250000685453415
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "shader",
+      "route": "C3-JS",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 0.2150000035762787,
+          "p95": 0.3205000005662441,
+          "p99": 0.3241000024974346,
+          "mean": 0.221500001847744
+        },
+        "rafInterval": {
+          "p50": 8.335000000000008,
+          "p95": 9.116249999999994,
+          "p99": 9.215250000000006,
+          "mean": 8.297999999999998
+        }
+      },
+      "p50Range": [
+        0.2150000035762787,
+        0.2150000035762787
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "shader",
+      "route": "C3-Wasm",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 0.1875,
+          "p95": 0.4080000013113021,
+          "p99": 0.4296000021696091,
+          "mean": 0.22100000232458114
+        },
+        "rafInterval": {
+          "p50": 8.33250000000001,
+          "p95": 9.27624999999998,
+          "p99": 9.303249999999975,
+          "mean": 8.422500000000001
+        }
+      },
+      "p50Range": [
+        0.1875,
+        0.1875
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "shader",
+      "route": "epoch-JS",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 0.1900000050663948,
+          "p95": 0.32924999371170993,
+          "p99": 0.3418499977886677,
+          "mean": 0.21099999994039537
+        },
+        "rafInterval": {
+          "p50": 8.267499999999998,
+          "p95": 9.054500000000013,
+          "p99": 9.230900000000007,
+          "mean": 8.261000000000001
+        }
+      },
+      "p50Range": [
+        0.1900000050663948,
+        0.1900000050663948
+      ],
+      "allBlockScreensPassed": true
+    },
+    {
+      "scenario": "shader",
+      "route": "epoch-Wasm",
+      "runCount": 1,
+      "medianOfRunQuantiles": {
+        "cpu": {
+          "p50": 0.19999999552965164,
+          "p95": 0.3894999973475932,
+          "p99": 0.4218999932706356,
+          "mean": 0.23849999904632568
+        },
+        "rafInterval": {
+          "p50": 8.33999999999999,
+          "p95": 8.782249999999998,
+          "p99": 8.888449999999994,
+          "mean": 8.337999999999997
+        }
+      },
+      "p50Range": [
+        0.19999999552965164,
+        0.19999999552965164
+      ],
+      "allBlockScreensPassed": true
+    }
+  ],
+  "comparisons": [
+    {
+      "scenario": "cubes",
+      "baseline": "original-A",
+      "candidate": "C3-JS",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 1.8999999985098839,
+          "candidateMs": 4.200000010430813,
+          "savingMs": -2.300000011920929,
+          "reductionFraction": -1.2105263230130283
+        },
+        "p95": {
+          "baselineMs": 2.1097499944269655,
+          "candidateMs": 5.276000000536441,
+          "savingMs": -3.1662500061094754,
+          "reductionFraction": -1.500770240300187
+        },
+        "p99": {
+          "baselineMs": 2.125949995070696,
+          "candidateMs": 5.463200004398823,
+          "savingMs": -3.337250009328127,
+          "reductionFraction": -1.5697688172656907
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/cubes-original-A-0.json",
+          "candidateFile": "runs/cubes-C3-JS-0.json",
+          "p50SavingMs": -2.300000011920929,
+          "p95SavingMs": -3.1662500061094754
+        }
+      ]
+    },
+    {
+      "scenario": "cubes",
+      "baseline": "original-A",
+      "candidate": "C3-Wasm",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 1.8999999985098839,
+          "candidateMs": 4.432500004768372,
+          "savingMs": -2.5325000062584877,
+          "reductionFraction": -1.3328947411813976
+        },
+        "p95": {
+          "baselineMs": 2.1097499944269655,
+          "candidateMs": 5.2349999994039536,
+          "savingMs": -3.125250004976988,
+          "reductionFraction": -1.4813366575340814
+        },
+        "p99": {
+          "baselineMs": 2.125949995070696,
+          "candidateMs": 5.343000003695488,
+          "savingMs": -3.2170500086247924,
+          "reductionFraction": -1.513229387372215
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/cubes-original-A-0.json",
+          "candidateFile": "runs/cubes-C3-Wasm-0.json",
+          "p50SavingMs": -2.5325000062584877,
+          "p95SavingMs": -3.125250004976988
+        }
+      ]
+    },
+    {
+      "scenario": "cubes",
+      "baseline": "original-A",
+      "candidate": "epoch-JS",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 1.8999999985098839,
+          "candidateMs": 4.170000001788139,
+          "savingMs": -2.2700000032782555,
+          "reductionFraction": -1.194736844767659
+        },
+        "p95": {
+          "baselineMs": 2.1097499944269655,
+          "candidateMs": 4.572000007331371,
+          "savingMs": -2.4622500129044056,
+          "reductionFraction": -1.1670814169492074
+        },
+        "p99": {
+          "baselineMs": 2.125949995070696,
+          "candidateMs": 4.586400004327297,
+          "savingMs": -2.460450009256601,
+          "reductionFraction": -1.157341430871605
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/cubes-original-A-0.json",
+          "candidateFile": "runs/cubes-epoch-JS-0.json",
+          "p50SavingMs": -2.2700000032782555,
+          "p95SavingMs": -2.4622500129044056
+        }
+      ]
+    },
+    {
+      "scenario": "cubes",
+      "baseline": "original-A",
+      "candidate": "epoch-Wasm",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 1.8999999985098839,
+          "candidateMs": 4.317499995231628,
+          "savingMs": -2.4174999967217445,
+          "reductionFraction": -1.2723684203251164
+        },
+        "p95": {
+          "baselineMs": 2.1097499944269655,
+          "candidateMs": 5.072750005125999,
+          "savingMs": -2.9630000106990337,
+          "reductionFraction": -1.4044318134973246
+        },
+        "p99": {
+          "baselineMs": 2.125949995070696,
+          "candidateMs": 5.074550003409386,
+          "savingMs": -2.94860000833869,
+          "reductionFraction": -1.3869564266212375
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/cubes-original-A-0.json",
+          "candidateFile": "runs/cubes-epoch-Wasm-0.json",
+          "p50SavingMs": -2.4174999967217445,
+          "p95SavingMs": -2.9630000106990337
+        }
+      ]
+    },
+    {
+      "scenario": "cubes",
+      "baseline": "C3-JS",
+      "candidate": "epoch-JS",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 4.200000010430813,
+          "candidateMs": 4.170000001788139,
+          "savingMs": 0.030000008642673492,
+          "reductionFraction": 0.0071428591828970635
+        },
+        "p95": {
+          "baselineMs": 5.276000000536441,
+          "candidateMs": 4.572000007331371,
+          "savingMs": 0.7039999932050698,
+          "reductionFraction": 0.13343441871370168
+        },
+        "p99": {
+          "baselineMs": 5.463200004398823,
+          "candidateMs": 4.586400004327297,
+          "savingMs": 0.8768000000715261,
+          "reductionFraction": 0.16049201921319925
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/cubes-C3-JS-0.json",
+          "candidateFile": "runs/cubes-epoch-JS-0.json",
+          "p50SavingMs": 0.030000008642673492,
+          "p95SavingMs": 0.7039999932050698
+        }
+      ]
+    },
+    {
+      "scenario": "cubes",
+      "baseline": "C3-Wasm",
+      "candidate": "epoch-Wasm",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 4.432500004768372,
+          "candidateMs": 4.317499995231628,
+          "savingMs": 0.11500000953674316,
+          "reductionFraction": 0.025944728575979483
+        },
+        "p95": {
+          "baselineMs": 5.2349999994039536,
+          "candidateMs": 5.072750005125999,
+          "savingMs": 0.16224999427795428,
+          "reductionFraction": 0.030993313141628984
+        },
+        "p99": {
+          "baselineMs": 5.343000003695488,
+          "candidateMs": 5.074550003409386,
+          "savingMs": 0.26845000028610233,
+          "reductionFraction": 0.050243309021229414
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/cubes-C3-Wasm-0.json",
+          "candidateFile": "runs/cubes-epoch-Wasm-0.json",
+          "p50SavingMs": 0.11500000953674316,
+          "p95SavingMs": 0.16224999427795428
+        }
+      ]
+    },
+    {
+      "scenario": "cubes",
+      "baseline": "epoch-JS",
+      "candidate": "epoch-Wasm",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 4.170000001788139,
+          "candidateMs": 4.317499995231628,
+          "savingMs": -0.14749999344348907,
+          "reductionFraction": -0.035371701050417155
+        },
+        "p95": {
+          "baselineMs": 4.572000007331371,
+          "candidateMs": 5.072750005125999,
+          "savingMs": -0.5007499977946281,
+          "reductionFraction": -0.10952537117052866
+        },
+        "p99": {
+          "baselineMs": 4.586400004327297,
+          "candidateMs": 5.074550003409386,
+          "savingMs": -0.488149999082089,
+          "reductionFraction": -0.10643424006225284
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/cubes-epoch-JS-0.json",
+          "candidateFile": "runs/cubes-epoch-Wasm-0.json",
+          "p50SavingMs": -0.14749999344348907,
+          "p95SavingMs": -0.5007499977946281
+        }
+      ]
+    },
+    {
+      "scenario": "hierarchy",
+      "baseline": "original-A",
+      "candidate": "C3-JS",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 7.120000004768372,
+          "candidateMs": 14.935000002384186,
+          "savingMs": -7.814999997615814,
+          "reductionFraction": -1.0976123584806166
+        },
+        "p95": {
+          "baselineMs": 8.608250007778405,
+          "candidateMs": 15.57650000154972,
+          "savingMs": -6.968249993771314,
+          "reductionFraction": -0.8094850855254914
+        },
+        "p99": {
+          "baselineMs": 8.829650005847215,
+          "candidateMs": 15.803299999833108,
+          "savingMs": -6.973649993985893,
+          "reductionFraction": -0.7897991414572227
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/hierarchy-original-A-0.json",
+          "candidateFile": "runs/hierarchy-C3-JS-0.json",
+          "p50SavingMs": -7.814999997615814,
+          "p95SavingMs": -6.968249993771314
+        }
+      ]
+    },
+    {
+      "scenario": "hierarchy",
+      "baseline": "original-A",
+      "candidate": "C3-Wasm",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 7.120000004768372,
+          "candidateMs": 14.467500001192093,
+          "savingMs": -7.347499996423721,
+          "reductionFraction": -1.031952245997611
+        },
+        "p95": {
+          "baselineMs": 8.608250007778405,
+          "candidateMs": 15.428750001639127,
+          "savingMs": -6.820499993860722,
+          "reductionFraction": -0.7923213182351494
+        },
+        "p99": {
+          "baselineMs": 8.829650005847215,
+          "candidateMs": 15.653750007003545,
+          "savingMs": -6.82410000115633,
+          "reductionFraction": -0.7728618910871031
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/hierarchy-original-A-0.json",
+          "candidateFile": "runs/hierarchy-C3-Wasm-0.json",
+          "p50SavingMs": -7.347499996423721,
+          "p95SavingMs": -6.820499993860722
+        }
+      ]
+    },
+    {
+      "scenario": "hierarchy",
+      "baseline": "original-A",
+      "candidate": "epoch-JS",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 7.120000004768372,
+          "candidateMs": 15.037500001490116,
+          "savingMs": -7.9174999967217445,
+          "reductionFraction": -1.1120084257611342
+        },
+        "p95": {
+          "baselineMs": 8.608250007778405,
+          "candidateMs": 15.382999995350838,
+          "savingMs": -6.774749987572433,
+          "reductionFraction": -0.7870066484419918
+        },
+        "p99": {
+          "baselineMs": 8.829650005847215,
+          "candidateMs": 15.404599996209145,
+          "savingMs": -6.5749499903619295,
+          "reductionFraction": -0.7446444633714624
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/hierarchy-original-A-0.json",
+          "candidateFile": "runs/hierarchy-epoch-JS-0.json",
+          "p50SavingMs": -7.9174999967217445,
+          "p95SavingMs": -6.774749987572433
+        }
+      ]
+    },
+    {
+      "scenario": "hierarchy",
+      "baseline": "original-A",
+      "candidate": "epoch-Wasm",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 7.120000004768372,
+          "candidateMs": 15.342500001192093,
+          "savingMs": -8.222499996423721,
+          "reductionFraction": -1.1548455043422736
+        },
+        "p95": {
+          "baselineMs": 8.608250007778405,
+          "candidateMs": 16.48275000154972,
+          "savingMs": -7.874499993771316,
+          "reductionFraction": -0.9147620000181136
+        },
+        "p99": {
+          "baselineMs": 8.829650005847215,
+          "candidateMs": 16.592550004124643,
+          "savingMs": -7.762899998277428,
+          "reductionFraction": -0.8791854709005047
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/hierarchy-original-A-0.json",
+          "candidateFile": "runs/hierarchy-epoch-Wasm-0.json",
+          "p50SavingMs": -8.222499996423721,
+          "p95SavingMs": -7.874499993771316
+        }
+      ]
+    },
+    {
+      "scenario": "hierarchy",
+      "baseline": "C3-JS",
+      "candidate": "epoch-JS",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 14.935000002384186,
+          "candidateMs": 15.037500001490116,
+          "savingMs": -0.10249999910593033,
+          "reductionFraction": -0.006863073256750418
+        },
+        "p95": {
+          "baselineMs": 15.57650000154972,
+          "candidateMs": 15.382999995350838,
+          "savingMs": 0.19350000619888164,
+          "reductionFraction": 0.01242256002180401
+        },
+        "p99": {
+          "baselineMs": 15.803299999833108,
+          "candidateMs": 15.404599996209145,
+          "savingMs": 0.3987000036239632,
+          "reductionFraction": 0.025228908115910834
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/hierarchy-C3-JS-0.json",
+          "candidateFile": "runs/hierarchy-epoch-JS-0.json",
+          "p50SavingMs": -0.10249999910593033,
+          "p95SavingMs": 0.19350000619888164
+        }
+      ]
+    },
+    {
+      "scenario": "hierarchy",
+      "baseline": "C3-Wasm",
+      "candidate": "epoch-Wasm",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 14.467500001192093,
+          "candidateMs": 15.342500001192093,
+          "savingMs": -0.875,
+          "reductionFraction": -0.06048038706949382
+        },
+        "p95": {
+          "baselineMs": 15.428750001639127,
+          "candidateMs": 16.48275000154972,
+          "savingMs": -1.0539999999105945,
+          "reductionFraction": -0.06831402413018677
+        },
+        "p99": {
+          "baselineMs": 15.653750007003545,
+          "candidateMs": 16.592550004124643,
+          "savingMs": -0.9387999971210981,
+          "reductionFraction": -0.05997284974533741
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/hierarchy-C3-Wasm-0.json",
+          "candidateFile": "runs/hierarchy-epoch-Wasm-0.json",
+          "p50SavingMs": -0.875,
+          "p95SavingMs": -1.0539999999105945
+        }
+      ]
+    },
+    {
+      "scenario": "hierarchy",
+      "baseline": "epoch-JS",
+      "candidate": "epoch-Wasm",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 15.037500001490116,
+          "candidateMs": 15.342500001192093,
+          "savingMs": -0.3049999997019768,
+          "reductionFraction": -0.02028262674458875
+        },
+        "p95": {
+          "baselineMs": 15.382999995350838,
+          "candidateMs": 16.48275000154972,
+          "savingMs": -1.0997500061988834,
+          "reductionFraction": -0.07149125700651744
+        },
+        "p99": {
+          "baselineMs": 15.404599996209145,
+          "candidateMs": 16.592550004124643,
+          "savingMs": -1.1879500079154983,
+          "reductionFraction": -0.07711657610115395
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/hierarchy-epoch-JS-0.json",
+          "candidateFile": "runs/hierarchy-epoch-Wasm-0.json",
+          "p50SavingMs": -0.3049999997019768,
+          "p95SavingMs": -1.0997500061988834
+        }
+      ]
+    },
+    {
+      "scenario": "small",
+      "baseline": "original-A",
+      "candidate": "C3-JS",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 0.3049999997019768,
+          "candidateMs": 0.4775000065565109,
+          "savingMs": -0.17250000685453415,
+          "reductionFraction": -0.5655737935183223
+        },
+        "p95": {
+          "baselineMs": 0.42775000259280205,
+          "candidateMs": 0.6342500008642673,
+          "savingMs": -0.20649999827146526,
+          "reductionFraction": -0.482758613722426
+        },
+        "p99": {
+          "baselineMs": 0.4295500062406063,
+          "candidateMs": 0.646850004941225,
+          "savingMs": -0.21729999870061872,
+          "reductionFraction": -0.5058782343001555
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/small-original-A-0.json",
+          "candidateFile": "runs/small-C3-JS-0.json",
+          "p50SavingMs": -0.17250000685453415,
+          "p95SavingMs": -0.20649999827146526
+        }
+      ]
+    },
+    {
+      "scenario": "small",
+      "baseline": "original-A",
+      "candidate": "C3-Wasm",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 0.3049999997019768,
+          "candidateMs": 0.29500000178813934,
+          "savingMs": 0.009999997913837433,
+          "reductionFraction": 0.03278687843806126
+        },
+        "p95": {
+          "baselineMs": 0.42775000259280205,
+          "candidateMs": 0.6364999927580355,
+          "savingMs": -0.20874999016523343,
+          "reductionFraction": -0.4880186765631738
+        },
+        "p99": {
+          "baselineMs": 0.4295500062406063,
+          "candidateMs": 0.7192999942600727,
+          "savingMs": -0.28974998801946644,
+          "reductionFraction": -0.6745430888369424
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/small-original-A-0.json",
+          "candidateFile": "runs/small-C3-Wasm-0.json",
+          "p50SavingMs": 0.009999997913837433,
+          "p95SavingMs": -0.20874999016523343
+        }
+      ]
+    },
+    {
+      "scenario": "small",
+      "baseline": "original-A",
+      "candidate": "epoch-JS",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 0.3049999997019768,
+          "candidateMs": 0.35500000417232513,
+          "savingMs": -0.05000000447034836,
+          "reductionFraction": -0.16393444104657257
+        },
+        "p95": {
+          "baselineMs": 0.42775000259280205,
+          "candidateMs": 0.5602500051259994,
+          "savingMs": -0.13250000253319738,
+          "reductionFraction": -0.30976037809479845
+        },
+        "p99": {
+          "baselineMs": 0.4295500062406063,
+          "candidateMs": 0.5800500077009201,
+          "savingMs": -0.15050000146031378,
+          "reductionFraction": -0.3503666610960619
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/small-original-A-0.json",
+          "candidateFile": "runs/small-epoch-JS-0.json",
+          "p50SavingMs": -0.05000000447034836,
+          "p95SavingMs": -0.13250000253319738
+        }
+      ]
+    },
+    {
+      "scenario": "small",
+      "baseline": "original-A",
+      "candidate": "epoch-Wasm",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 0.3049999997019768,
+          "candidateMs": 0.42000000178813934,
+          "savingMs": -0.11500000208616257,
+          "reductionFraction": -0.37704918753617045
+        },
+        "p95": {
+          "baselineMs": 0.42775000259280205,
+          "candidateMs": 0.4954999975860119,
+          "savingMs": -0.06774999499320983,
+          "reductionFraction": -0.1583868955757895
+        },
+        "p99": {
+          "baselineMs": 0.4295500062406063,
+          "candidateMs": 0.49909999951720235,
+          "savingMs": -0.06954999327659606,
+          "reductionFraction": -0.16191361253906866
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/small-original-A-0.json",
+          "candidateFile": "runs/small-epoch-Wasm-0.json",
+          "p50SavingMs": -0.11500000208616257,
+          "p95SavingMs": -0.06774999499320983
+        }
+      ]
+    },
+    {
+      "scenario": "small",
+      "baseline": "C3-JS",
+      "candidate": "epoch-JS",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 0.4775000065565109,
+          "candidateMs": 0.35500000417232513,
+          "savingMs": 0.12250000238418579,
+          "reductionFraction": 0.25654450408827006
+        },
+        "p95": {
+          "baselineMs": 0.6342500008642673,
+          "candidateMs": 0.5602500051259994,
+          "savingMs": 0.07399999573826788,
+          "reductionFraction": 0.11667322922732522
+        },
+        "p99": {
+          "baselineMs": 0.646850004941225,
+          "candidateMs": 0.5800500077009201,
+          "savingMs": 0.06679999724030494,
+          "reductionFraction": 0.10326968652705601
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/small-C3-JS-0.json",
+          "candidateFile": "runs/small-epoch-JS-0.json",
+          "p50SavingMs": 0.12250000238418579,
+          "p95SavingMs": 0.07399999573826788
+        }
+      ]
+    },
+    {
+      "scenario": "small",
+      "baseline": "C3-Wasm",
+      "candidate": "epoch-Wasm",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 0.29500000178813934,
+          "candidateMs": 0.42000000178813934,
+          "savingMs": -0.125,
+          "reductionFraction": -0.4237288109908944
+        },
+        "p95": {
+          "baselineMs": 0.6364999927580355,
+          "candidateMs": 0.4954999975860119,
+          "savingMs": 0.1409999951720236,
+          "reductionFraction": 0.22152395408686917
+        },
+        "p99": {
+          "baselineMs": 0.7192999942600727,
+          "candidateMs": 0.49909999951720235,
+          "savingMs": 0.2201999947428704,
+          "reductionFraction": 0.30613095579040706
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/small-C3-Wasm-0.json",
+          "candidateFile": "runs/small-epoch-Wasm-0.json",
+          "p50SavingMs": -0.125,
+          "p95SavingMs": 0.1409999951720236
+        }
+      ]
+    },
+    {
+      "scenario": "small",
+      "baseline": "epoch-JS",
+      "candidate": "epoch-Wasm",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 0.35500000417232513,
+          "candidateMs": 0.42000000178813934,
+          "savingMs": -0.06499999761581421,
+          "reductionFraction": -0.1830985826813166
+        },
+        "p95": {
+          "baselineMs": 0.5602500051259994,
+          "candidateMs": 0.4954999975860119,
+          "savingMs": 0.06475000753998755,
+          "reductionFraction": 0.11557341713084923
+        },
+        "p99": {
+          "baselineMs": 0.5800500077009201,
+          "candidateMs": 0.49909999951720235,
+          "savingMs": 0.08095000818371773,
+          "reductionFraction": 0.13955694700284602
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/small-epoch-JS-0.json",
+          "candidateFile": "runs/small-epoch-Wasm-0.json",
+          "p50SavingMs": -0.06499999761581421,
+          "p95SavingMs": 0.06475000753998755
+        }
+      ]
+    },
+    {
+      "scenario": "shader",
+      "baseline": "original-A",
+      "candidate": "C3-JS",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 0.13250000029802322,
+          "candidateMs": 0.2150000035762787,
+          "savingMs": -0.08250000327825546,
+          "reductionFraction": -0.6226415327750477
+        },
+        "p95": {
+          "baselineMs": 0.24574999213218682,
+          "candidateMs": 0.3205000005662441,
+          "savingMs": -0.0747500084340573,
+          "reductionFraction": -0.30417094944951173
+        },
+        "p99": {
+          "baselineMs": 0.26914999127388,
+          "candidateMs": 0.3241000024974346,
+          "savingMs": -0.054950011223554585,
+          "reductionFraction": -0.20416129669363017
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/shader-original-A-0.json",
+          "candidateFile": "runs/shader-C3-JS-0.json",
+          "p50SavingMs": -0.08250000327825546,
+          "p95SavingMs": -0.0747500084340573
+        }
+      ]
+    },
+    {
+      "scenario": "shader",
+      "baseline": "original-A",
+      "candidate": "C3-Wasm",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 0.13250000029802322,
+          "candidateMs": 0.1875,
+          "savingMs": -0.054999999701976776,
+          "reductionFraction": -0.41509433643976623
+        },
+        "p95": {
+          "baselineMs": 0.24574999213218682,
+          "candidateMs": 0.4080000013113021,
+          "savingMs": -0.16225000917911528,
+          "reductionFraction": -0.6602238631683959
+        },
+        "p99": {
+          "baselineMs": 0.26914999127388,
+          "candidateMs": 0.4296000021696091,
+          "savingMs": -0.16045001089572908,
+          "reductionFraction": -0.596136043461578
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/shader-original-A-0.json",
+          "candidateFile": "runs/shader-C3-Wasm-0.json",
+          "p50SavingMs": -0.054999999701976776,
+          "p95SavingMs": -0.16225000917911528
+        }
+      ]
+    },
+    {
+      "scenario": "shader",
+      "baseline": "original-A",
+      "candidate": "epoch-JS",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 0.13250000029802322,
+          "candidateMs": 0.1900000050663948,
+          "savingMs": -0.05750000476837158,
+          "reductionFraction": -0.4339622991625716
+        },
+        "p95": {
+          "baselineMs": 0.24574999213218682,
+          "candidateMs": 0.32924999371170993,
+          "savingMs": -0.08350000157952311,
+          "reductionFraction": -0.33977621262591606
+        },
+        "p99": {
+          "baselineMs": 0.26914999127388,
+          "candidateMs": 0.3418499977886677,
+          "savingMs": -0.0727000065147877,
+          "reductionFraction": -0.2701096372721412
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/shader-original-A-0.json",
+          "candidateFile": "runs/shader-epoch-JS-0.json",
+          "p50SavingMs": -0.05750000476837158,
+          "p95SavingMs": -0.08350000157952311
+        }
+      ]
+    },
+    {
+      "scenario": "shader",
+      "baseline": "original-A",
+      "candidate": "epoch-Wasm",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 0.13250000029802322,
+          "candidateMs": 0.19999999552965164,
+          "savingMs": -0.06749999523162842,
+          "reductionFraction": -0.5094339251306058
+        },
+        "p95": {
+          "baselineMs": 0.24574999213218682,
+          "candidateMs": 0.3894999973475932,
+          "savingMs": -0.1437500052154064,
+          "reductionFraction": -0.5849440887798055
+        },
+        "p99": {
+          "baselineMs": 0.26914999127388,
+          "candidateMs": 0.4218999932706356,
+          "savingMs": -0.1527500019967556,
+          "reductionFraction": -0.5675274268960357
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/shader-original-A-0.json",
+          "candidateFile": "runs/shader-epoch-Wasm-0.json",
+          "p50SavingMs": -0.06749999523162842,
+          "p95SavingMs": -0.1437500052154064
+        }
+      ]
+    },
+    {
+      "scenario": "shader",
+      "baseline": "C3-JS",
+      "candidate": "epoch-JS",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 0.2150000035762787,
+          "candidateMs": 0.1900000050663948,
+          "savingMs": 0.02499999850988388,
+          "reductionFraction": 0.11627906090250024
+        },
+        "p95": {
+          "baselineMs": 0.3205000005662441,
+          "candidateMs": 0.32924999371170993,
+          "savingMs": -0.008749993145465818,
+          "reductionFraction": -0.027301070608445388
+        },
+        "p99": {
+          "baselineMs": 0.3241000024974346,
+          "candidateMs": 0.3418499977886677,
+          "savingMs": -0.01774999529123311,
+          "reductionFraction": -0.05476703225688377
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/shader-C3-JS-0.json",
+          "candidateFile": "runs/shader-epoch-JS-0.json",
+          "p50SavingMs": 0.02499999850988388,
+          "p95SavingMs": -0.008749993145465818
+        }
+      ]
+    },
+    {
+      "scenario": "shader",
+      "baseline": "C3-Wasm",
+      "candidate": "epoch-Wasm",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 0.1875,
+          "candidateMs": 0.19999999552965164,
+          "savingMs": -0.012499995529651642,
+          "reductionFraction": -0.06666664282480876
+        },
+        "p95": {
+          "baselineMs": 0.4080000013113021,
+          "candidateMs": 0.3894999973475932,
+          "savingMs": 0.018500003963708878,
+          "reductionFraction": 0.04534314682414293
+        },
+        "p99": {
+          "baselineMs": 0.4296000021696091,
+          "candidateMs": 0.4218999932706356,
+          "savingMs": 0.007700008898973487,
+          "reductionFraction": 0.017923670530926743
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/shader-C3-Wasm-0.json",
+          "candidateFile": "runs/shader-epoch-Wasm-0.json",
+          "p50SavingMs": -0.012499995529651642,
+          "p95SavingMs": 0.018500003963708878
+        }
+      ]
+    },
+    {
+      "scenario": "shader",
+      "baseline": "epoch-JS",
+      "candidate": "epoch-Wasm",
+      "quantiles": {
+        "p50": {
+          "baselineMs": 0.1900000050663948,
+          "candidateMs": 0.19999999552965164,
+          "savingMs": -0.009999990463256836,
+          "reductionFraction": -0.05263152735055126
+        },
+        "p95": {
+          "baselineMs": 0.32924999371170993,
+          "candidateMs": 0.3894999973475932,
+          "savingMs": -0.06025000363588329,
+          "reductionFraction": -0.1829916622219831
+        },
+        "p99": {
+          "baselineMs": 0.3418499977886677,
+          "candidateMs": 0.4218999932706356,
+          "savingMs": -0.0800499954819679,
+          "reductionFraction": -0.23416702062246303
+        }
+      },
+      "repeatPairs": [
+        {
+          "repeat": 0,
+          "baselineFile": "runs/shader-epoch-JS-0.json",
+          "candidateFile": "runs/shader-epoch-Wasm-0.json",
+          "p50SavingMs": -0.009999990463256836,
+          "p95SavingMs": -0.06025000363588329
+        }
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "file": "runs/cubes-original-A-0.json",
+      "scenario": "cubes",
+      "route": "original-A",
+      "repeat": 0,
+      "executionCoverage": null,
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1653,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 1.8999999985098839,
+        "p95": 2.1097499944269655,
+        "p99": 2.125949995070696,
+        "mean": 1.898999997973442,
+        "min": 1.4800000041723251,
+        "max": 2.1299999952316284
+      },
+      "rafInterval": {
+        "p50": 8.33250000000001,
+        "p95": 9.159500000000005,
+        "p99": 9.227900000000005,
+        "mean": 8.396,
+        "min": 7.425000000000011,
+        "max": 9.245000000000005
+      },
+      "blockToleranceMs": 0.0949999999254942,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 1.8999999985098839,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 548,
+        "triangles": 6576,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/cubes-original-B-0.json",
+      "scenario": "cubes",
+      "route": "original-B",
+      "repeat": 0,
+      "executionCoverage": null,
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1643,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 1.5974999964237213,
+        "p95": 1.8900000005960464,
+        "p99": 1.8900000005960464,
+        "mean": 1.6484999984502793,
+        "min": 1.4749999940395355,
+        "max": 1.8900000005960464
+      },
+      "rafInterval": {
+        "p50": 8.272500000000008,
+        "p95": 8.997499999999995,
+        "p99": 9.051499999999997,
+        "mean": 8.332999999999998,
+        "min": 7.599999999999994,
+        "max": 9.064999999999998
+      },
+      "blockToleranceMs": 0.07987499982118607,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 1.5974999964237213,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 548,
+        "triangles": 6576,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/cubes-epoch-Wasm-0.json",
+      "scenario": "cubes",
+      "route": "epoch-Wasm",
+      "repeat": 0,
+      "executionCoverage": {
+        "beforeWarmup": {
+          "backend": "prepared-wasm",
+          "wasmActive": true,
+          "batches": 1,
+          "nodes": 1,
+          "fallbackRoots": 0,
+          "wasmCalls": 1,
+          "wasmNodes": 1,
+          "uploadedBytes": 376,
+          "scannedBytes": 112,
+          "materializedBytes": 0,
+          "arenas": 1,
+          "syncMs": 0,
+          "kernelMs": 0,
+          "readMs": 0,
+          "abiCalls": 6,
+          "operationBytes": 28,
+          "matrixReads": 0,
+          "liveNodes": 1,
+          "topologyBuilds": 0,
+          "dirtyRecords": 0,
+          "retainedUpdates": 0,
+          "preparedInputBytes": 0,
+          "preparedFallbacks": 0,
+          "preparedWasmCalls": 0,
+          "prepareKernelMs": 0,
+          "prepareMs": 0,
+          "preparedReadMs": 0,
+          "preparedPasses": 0,
+          "preparedDraws": 0,
+          "preparedMatrixBytes": 0,
+          "preparedMatrixReads": 0,
+          "wasmMemoryBytes": 1179648
+        },
+        "first": {
+          "preparedPasses": 6,
+          "preparedWasmCalls": 6,
+          "preparedFallbacks": 0,
+          "wasmCalls": 25
+        },
+        "last": {
+          "preparedPasses": 15,
+          "preparedWasmCalls": 15,
+          "preparedFallbacks": 0,
+          "wasmCalls": 61
+        },
+        "delta": {
+          "preparedPasses": 9,
+          "preparedWasmCalls": 9,
+          "preparedFallbacks": 0,
+          "wasmCalls": 36
+        },
+        "consecutiveMeasuredIntervalsChecked": 9,
+        "meaning": "Every measured interval after the first advances prepared work. No fallback since page creation, including warmup. First row counters include warmup."
+      },
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1602,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 4.317499995231628,
+        "p95": 5.072750005125999,
+        "p99": 5.074550003409386,
+        "mean": 4.492500002682209,
+        "min": 4.030000001192093,
+        "max": 5.075000002980232
+      },
+      "rafInterval": {
+        "p50": 8.33250000000001,
+        "p95": 9.217999999999993,
+        "p99": 9.275599999999992,
+        "mean": 8.4245,
+        "min": 7.534999999999997,
+        "max": 9.289999999999992
+      },
+      "blockToleranceMs": 0.21587499976158142,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 4.317499995231628,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 548,
+        "triangles": 6576,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/cubes-C3-JS-0.json",
+      "scenario": "cubes",
+      "route": "C3-JS",
+      "repeat": 0,
+      "executionCoverage": {
+        "beforeWarmup": {
+          "backend": "prepared-js",
+          "wasmActive": false,
+          "batches": 1,
+          "nodes": 1,
+          "fallbackRoots": 0,
+          "wasmCalls": 0,
+          "wasmNodes": 0,
+          "uploadedBytes": 376,
+          "scannedBytes": 112,
+          "materializedBytes": 0,
+          "arenas": 1,
+          "syncMs": 0,
+          "kernelMs": 0,
+          "readMs": 0,
+          "abiCalls": 0,
+          "operationBytes": 28,
+          "matrixReads": 0,
+          "liveNodes": 1,
+          "topologyBuilds": 0,
+          "dirtyRecords": 0,
+          "retainedUpdates": 0,
+          "preparedInputBytes": 0,
+          "preparedFallbacks": 0,
+          "preparedWasmCalls": 0,
+          "prepareKernelMs": 0,
+          "prepareMs": 0,
+          "preparedReadMs": 0,
+          "preparedPasses": 0,
+          "preparedDraws": 0,
+          "preparedMatrixBytes": 0,
+          "preparedMatrixReads": 0,
+          "wasmMemoryBytes": 0
+        },
+        "first": {
+          "preparedPasses": 6,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "last": {
+          "preparedPasses": 15,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "delta": {
+          "preparedPasses": 9,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "consecutiveMeasuredIntervalsChecked": 9,
+        "meaning": "Every measured interval after the first advances prepared work. No fallback since page creation, including warmup. First row counters include warmup."
+      },
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1642,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 4.200000010430813,
+        "p95": 5.276000000536441,
+        "p99": 5.463200004398823,
+        "mean": 4.330000001192093,
+        "min": 3.679999992251396,
+        "max": 5.510000005364418
+      },
+      "rafInterval": {
+        "p50": 8.31750000000001,
+        "p95": 9.143249999999995,
+        "p99": 9.220650000000006,
+        "mean": 8.333000000000002,
+        "min": 7.424999999999983,
+        "max": 9.240000000000009
+      },
+      "blockToleranceMs": 0.21000000052154066,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 4.200000010430813,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 548,
+        "triangles": 6576,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/cubes-epoch-JS-0.json",
+      "scenario": "cubes",
+      "route": "epoch-JS",
+      "repeat": 0,
+      "executionCoverage": {
+        "beforeWarmup": {
+          "backend": "prepared-js",
+          "wasmActive": false,
+          "batches": 1,
+          "nodes": 1,
+          "fallbackRoots": 0,
+          "wasmCalls": 0,
+          "wasmNodes": 0,
+          "uploadedBytes": 376,
+          "scannedBytes": 112,
+          "materializedBytes": 0,
+          "arenas": 1,
+          "syncMs": 0,
+          "kernelMs": 0,
+          "readMs": 0,
+          "abiCalls": 0,
+          "operationBytes": 28,
+          "matrixReads": 0,
+          "liveNodes": 1,
+          "topologyBuilds": 0,
+          "dirtyRecords": 0,
+          "retainedUpdates": 0,
+          "preparedInputBytes": 0,
+          "preparedFallbacks": 0,
+          "preparedWasmCalls": 0,
+          "prepareKernelMs": 0,
+          "prepareMs": 0,
+          "preparedReadMs": 0,
+          "preparedPasses": 0,
+          "preparedDraws": 0,
+          "preparedMatrixBytes": 0,
+          "preparedMatrixReads": 0,
+          "wasmMemoryBytes": 0
+        },
+        "first": {
+          "preparedPasses": 6,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "last": {
+          "preparedPasses": 15,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "delta": {
+          "preparedPasses": 9,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "consecutiveMeasuredIntervalsChecked": 9,
+        "meaning": "Every measured interval after the first advances prepared work. No fallback since page creation, including warmup. First row counters include warmup."
+      },
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1635,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 4.170000001788139,
+        "p95": 4.572000007331371,
+        "p99": 4.586400004327297,
+        "mean": 4.1975000038743016,
+        "min": 3.7550000101327896,
+        "max": 4.590000003576279
+      },
+      "rafInterval": {
+        "p50": 8.337500000000006,
+        "p95": 8.911999999999994,
+        "p99": 8.998400000000007,
+        "mean": 8.347,
+        "min": 7.680000000000007,
+        "max": 9.02000000000001
+      },
+      "blockToleranceMs": 0.20850000008940697,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 4.170000001788139,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 548,
+        "triangles": 6576,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/cubes-C3-Wasm-0.json",
+      "scenario": "cubes",
+      "route": "C3-Wasm",
+      "repeat": 0,
+      "executionCoverage": {
+        "beforeWarmup": {
+          "backend": "prepared-wasm",
+          "wasmActive": true,
+          "batches": 1,
+          "nodes": 1,
+          "fallbackRoots": 0,
+          "wasmCalls": 1,
+          "wasmNodes": 1,
+          "uploadedBytes": 376,
+          "scannedBytes": 112,
+          "materializedBytes": 0,
+          "arenas": 1,
+          "syncMs": 0,
+          "kernelMs": 0,
+          "readMs": 0,
+          "abiCalls": 6,
+          "operationBytes": 28,
+          "matrixReads": 0,
+          "liveNodes": 1,
+          "topologyBuilds": 0,
+          "dirtyRecords": 0,
+          "retainedUpdates": 0,
+          "preparedInputBytes": 0,
+          "preparedFallbacks": 0,
+          "preparedWasmCalls": 0,
+          "prepareKernelMs": 0,
+          "prepareMs": 0,
+          "preparedReadMs": 0,
+          "preparedPasses": 0,
+          "preparedDraws": 0,
+          "preparedMatrixBytes": 0,
+          "preparedMatrixReads": 0,
+          "wasmMemoryBytes": 1179648
+        },
+        "first": {
+          "preparedPasses": 6,
+          "preparedWasmCalls": 6,
+          "preparedFallbacks": 0,
+          "wasmCalls": 25
+        },
+        "last": {
+          "preparedPasses": 15,
+          "preparedWasmCalls": 15,
+          "preparedFallbacks": 0,
+          "wasmCalls": 61
+        },
+        "delta": {
+          "preparedPasses": 9,
+          "preparedWasmCalls": 9,
+          "preparedFallbacks": 0,
+          "wasmCalls": 36
+        },
+        "consecutiveMeasuredIntervalsChecked": 9,
+        "meaning": "Every measured interval after the first advances prepared work. No fallback since page creation, including warmup. First row counters include warmup."
+      },
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1665,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 4.432500004768372,
+        "p95": 5.2349999994039536,
+        "p99": 5.343000003695488,
+        "mean": 4.3940000012516975,
+        "min": 3.7250000089406967,
+        "max": 5.370000004768372
+      },
+      "rafInterval": {
+        "p50": 8.33250000000001,
+        "p95": 9.243749999999993,
+        "p99": 9.252749999999995,
+        "mean": 8.334,
+        "min": 7.435000000000002,
+        "max": 9.254999999999995
+      },
+      "blockToleranceMs": 0.22162500023841858,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 4.432500004768372,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 548,
+        "triangles": 6576,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/hierarchy-original-A-0.json",
+      "scenario": "hierarchy",
+      "route": "original-A",
+      "repeat": 0,
+      "executionCoverage": null,
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1649,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 7.120000004768372,
+        "p95": 8.608250007778405,
+        "p99": 8.829650005847215,
+        "mean": 7.380499999225139,
+        "min": 6.364999994635582,
+        "max": 8.885000005364418
+      },
+      "rafInterval": {
+        "p50": 8.332499999999996,
+        "p95": 8.817000000000018,
+        "p99": 8.867400000000023,
+        "mean": 8.282499999999999,
+        "min": 7.419999999999959,
+        "max": 8.880000000000024
+      },
+      "blockToleranceMs": 0.3560000002384186,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 7.120000004768372,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 2766,
+        "triangles": 33192,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/hierarchy-original-B-0.json",
+      "scenario": "hierarchy",
+      "route": "original-B",
+      "repeat": 0,
+      "executionCoverage": null,
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1642,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 7.0825000032782555,
+        "p95": 8.458250001817941,
+        "p99": 8.787650004178285,
+        "mean": 7.249500001966953,
+        "min": 6.2650000005960464,
+        "max": 8.870000004768372
+      },
+      "rafInterval": {
+        "p50": 8.327499999999986,
+        "p95": 8.567749999999995,
+        "p99": 8.569549999999994,
+        "mean": 8.353999999999996,
+        "min": 8.115000000000009,
+        "max": 8.569999999999993
+      },
+      "blockToleranceMs": 0.3541250001639128,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 7.0825000032782555,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 2766,
+        "triangles": 33192,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/hierarchy-epoch-Wasm-0.json",
+      "scenario": "hierarchy",
+      "route": "epoch-Wasm",
+      "repeat": 0,
+      "executionCoverage": {
+        "beforeWarmup": {
+          "backend": "prepared-wasm",
+          "wasmActive": true,
+          "batches": 1,
+          "nodes": 1,
+          "fallbackRoots": 0,
+          "wasmCalls": 1,
+          "wasmNodes": 1,
+          "uploadedBytes": 376,
+          "scannedBytes": 112,
+          "materializedBytes": 0,
+          "arenas": 1,
+          "syncMs": 0,
+          "kernelMs": 0,
+          "readMs": 0,
+          "abiCalls": 6,
+          "operationBytes": 28,
+          "matrixReads": 0,
+          "liveNodes": 1,
+          "topologyBuilds": 0,
+          "dirtyRecords": 0,
+          "retainedUpdates": 0,
+          "preparedInputBytes": 0,
+          "preparedFallbacks": 0,
+          "preparedWasmCalls": 0,
+          "prepareKernelMs": 0,
+          "prepareMs": 0,
+          "preparedReadMs": 0,
+          "preparedPasses": 0,
+          "preparedDraws": 0,
+          "preparedMatrixBytes": 0,
+          "preparedMatrixReads": 0,
+          "wasmMemoryBytes": 1179648
+        },
+        "first": {
+          "preparedPasses": 6,
+          "preparedWasmCalls": 6,
+          "preparedFallbacks": 0,
+          "wasmCalls": 25
+        },
+        "last": {
+          "preparedPasses": 15,
+          "preparedWasmCalls": 15,
+          "preparedFallbacks": 0,
+          "wasmCalls": 61
+        },
+        "delta": {
+          "preparedPasses": 9,
+          "preparedWasmCalls": 9,
+          "preparedFallbacks": 0,
+          "wasmCalls": 36
+        },
+        "consecutiveMeasuredIntervalsChecked": 9,
+        "meaning": "Every measured interval after the first advances prepared work. No fallback since page creation, including warmup. First row counters include warmup."
+      },
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1677,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 15.342500001192093,
+        "p95": 16.48275000154972,
+        "p99": 16.592550004124643,
+        "mean": 15.36150000244379,
+        "min": 14.474999994039536,
+        "max": 16.62000000476837
+      },
+      "rafInterval": {
+        "p50": 16.662499999999994,
+        "p95": 21.64249999999997,
+        "p99": 24.324499999999954,
+        "mean": 16.664999999999992,
+        "min": 8.349999999999966,
+        "max": 24.994999999999948
+      },
+      "blockToleranceMs": 0.7671250000596047,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 15.342500001192093,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 2766,
+        "triangles": 33192,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/hierarchy-C3-JS-0.json",
+      "scenario": "hierarchy",
+      "route": "C3-JS",
+      "repeat": 0,
+      "executionCoverage": {
+        "beforeWarmup": {
+          "backend": "prepared-js",
+          "wasmActive": false,
+          "batches": 1,
+          "nodes": 1,
+          "fallbackRoots": 0,
+          "wasmCalls": 0,
+          "wasmNodes": 0,
+          "uploadedBytes": 376,
+          "scannedBytes": 112,
+          "materializedBytes": 0,
+          "arenas": 1,
+          "syncMs": 0,
+          "kernelMs": 0,
+          "readMs": 0,
+          "abiCalls": 0,
+          "operationBytes": 28,
+          "matrixReads": 0,
+          "liveNodes": 1,
+          "topologyBuilds": 0,
+          "dirtyRecords": 0,
+          "retainedUpdates": 0,
+          "preparedInputBytes": 0,
+          "preparedFallbacks": 0,
+          "preparedWasmCalls": 0,
+          "prepareKernelMs": 0,
+          "prepareMs": 0,
+          "preparedReadMs": 0,
+          "preparedPasses": 0,
+          "preparedDraws": 0,
+          "preparedMatrixBytes": 0,
+          "preparedMatrixReads": 0,
+          "wasmMemoryBytes": 0
+        },
+        "first": {
+          "preparedPasses": 6,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "last": {
+          "preparedPasses": 15,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "delta": {
+          "preparedPasses": 9,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "consecutiveMeasuredIntervalsChecked": 9,
+        "meaning": "Every measured interval after the first advances prepared work. No fallback since page creation, including warmup. First row counters include warmup."
+      },
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1636,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 14.935000002384186,
+        "p95": 15.57650000154972,
+        "p99": 15.803299999833108,
+        "mean": 14.602500000596047,
+        "min": 13.465000003576279,
+        "max": 15.859999999403954
+      },
+      "rafInterval": {
+        "p50": 16.660000000000025,
+        "p95": 16.716250000000006,
+        "p99": 16.74325,
+        "mean": 14.996500000000003,
+        "min": 8.319999999999993,
+        "max": 16.75
+      },
+      "blockToleranceMs": 0.7467500001192093,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 14.935000002384186,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 2766,
+        "triangles": 33192,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/hierarchy-epoch-JS-0.json",
+      "scenario": "hierarchy",
+      "route": "epoch-JS",
+      "repeat": 0,
+      "executionCoverage": {
+        "beforeWarmup": {
+          "backend": "prepared-js",
+          "wasmActive": false,
+          "batches": 1,
+          "nodes": 1,
+          "fallbackRoots": 0,
+          "wasmCalls": 0,
+          "wasmNodes": 0,
+          "uploadedBytes": 376,
+          "scannedBytes": 112,
+          "materializedBytes": 0,
+          "arenas": 1,
+          "syncMs": 0,
+          "kernelMs": 0,
+          "readMs": 0,
+          "abiCalls": 0,
+          "operationBytes": 28,
+          "matrixReads": 0,
+          "liveNodes": 1,
+          "topologyBuilds": 0,
+          "dirtyRecords": 0,
+          "retainedUpdates": 0,
+          "preparedInputBytes": 0,
+          "preparedFallbacks": 0,
+          "preparedWasmCalls": 0,
+          "prepareKernelMs": 0,
+          "prepareMs": 0,
+          "preparedReadMs": 0,
+          "preparedPasses": 0,
+          "preparedDraws": 0,
+          "preparedMatrixBytes": 0,
+          "preparedMatrixReads": 0,
+          "wasmMemoryBytes": 0
+        },
+        "first": {
+          "preparedPasses": 6,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "last": {
+          "preparedPasses": 15,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "delta": {
+          "preparedPasses": 9,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "consecutiveMeasuredIntervalsChecked": 9,
+        "meaning": "Every measured interval after the first advances prepared work. No fallback since page creation, including warmup. First row counters include warmup."
+      },
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1623,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 15.037500001490116,
+        "p95": 15.382999995350838,
+        "p99": 15.404599996209145,
+        "mean": 14.9125,
+        "min": 14.094999998807907,
+        "max": 15.409999996423721
+      },
+      "rafInterval": {
+        "p50": 16.555000000000007,
+        "p95": 17.167500000000004,
+        "p99": 17.257500000000025,
+        "mean": 15.012500000000006,
+        "min": 8.349999999999966,
+        "max": 17.28000000000003
+      },
+      "blockToleranceMs": 0.7518750000745058,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 15.037500001490116,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 2766,
+        "triangles": 33192,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/hierarchy-C3-Wasm-0.json",
+      "scenario": "hierarchy",
+      "route": "C3-Wasm",
+      "repeat": 0,
+      "executionCoverage": {
+        "beforeWarmup": {
+          "backend": "prepared-wasm",
+          "wasmActive": true,
+          "batches": 1,
+          "nodes": 1,
+          "fallbackRoots": 0,
+          "wasmCalls": 1,
+          "wasmNodes": 1,
+          "uploadedBytes": 376,
+          "scannedBytes": 112,
+          "materializedBytes": 0,
+          "arenas": 1,
+          "syncMs": 0,
+          "kernelMs": 0,
+          "readMs": 0,
+          "abiCalls": 6,
+          "operationBytes": 28,
+          "matrixReads": 0,
+          "liveNodes": 1,
+          "topologyBuilds": 0,
+          "dirtyRecords": 0,
+          "retainedUpdates": 0,
+          "preparedInputBytes": 0,
+          "preparedFallbacks": 0,
+          "preparedWasmCalls": 0,
+          "prepareKernelMs": 0,
+          "prepareMs": 0,
+          "preparedReadMs": 0,
+          "preparedPasses": 0,
+          "preparedDraws": 0,
+          "preparedMatrixBytes": 0,
+          "preparedMatrixReads": 0,
+          "wasmMemoryBytes": 1179648
+        },
+        "first": {
+          "preparedPasses": 6,
+          "preparedWasmCalls": 6,
+          "preparedFallbacks": 0,
+          "wasmCalls": 25
+        },
+        "last": {
+          "preparedPasses": 15,
+          "preparedWasmCalls": 15,
+          "preparedFallbacks": 0,
+          "wasmCalls": 61
+        },
+        "delta": {
+          "preparedPasses": 9,
+          "preparedWasmCalls": 9,
+          "preparedFallbacks": 0,
+          "wasmCalls": 36
+        },
+        "consecutiveMeasuredIntervalsChecked": 9,
+        "meaning": "Every measured interval after the first advances prepared work. No fallback since page creation, including warmup. First row counters include warmup."
+      },
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1631,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 14.467500001192093,
+        "p95": 15.428750001639127,
+        "p99": 15.653750007003545,
+        "mean": 14.513999998569489,
+        "min": 13.534999996423721,
+        "max": 15.71000000834465
+      },
+      "rafInterval": {
+        "p50": 16.669999999999987,
+        "p95": 17.287499999999994,
+        "p99": 17.48550000000002,
+        "mean": 14.999500000000001,
+        "min": 7.430000000000007,
+        "max": 17.535000000000025
+      },
+      "blockToleranceMs": 0.7233750000596046,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 14.467500001192093,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 2766,
+        "triangles": 33192,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/small-original-A-0.json",
+      "scenario": "small",
+      "route": "original-A",
+      "repeat": 0,
+      "executionCoverage": null,
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1645,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 0.3049999997019768,
+        "p95": 0.42775000259280205,
+        "p99": 0.4295500062406063,
+        "mean": 0.30450000166893004,
+        "min": 0.1599999964237213,
+        "max": 0.4300000071525574
+      },
+      "rafInterval": {
+        "p50": 8.337500000000006,
+        "p95": 8.915500000000007,
+        "p99": 8.919100000000014,
+        "mean": 8.386,
+        "min": 7.7099999999999795,
+        "max": 8.920000000000016
+      },
+      "blockToleranceMs": 0.019999980926513672,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 0.3049999997019768,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/small-original-B-0.json",
+      "scenario": "small",
+      "route": "original-B",
+      "repeat": 0,
+      "executionCoverage": null,
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1646,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 0.29500000178813934,
+        "p95": 0.4642500057816505,
+        "p99": 0.47685000449419024,
+        "mean": 0.31000000089406965,
+        "min": 0.16499999165534973,
+        "max": 0.48000000417232513
+      },
+      "rafInterval": {
+        "p50": 8.3125,
+        "p95": 9.00550000000001,
+        "p99": 9.009100000000018,
+        "mean": 8.407000000000002,
+        "min": 7.780000000000001,
+        "max": 9.01000000000002
+      },
+      "blockToleranceMs": 0.019999980926513672,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 0.29500000178813934,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/small-epoch-Wasm-0.json",
+      "scenario": "small",
+      "route": "epoch-Wasm",
+      "repeat": 0,
+      "executionCoverage": {
+        "beforeWarmup": {
+          "backend": "prepared-wasm",
+          "wasmActive": true,
+          "batches": 1,
+          "nodes": 1,
+          "fallbackRoots": 0,
+          "wasmCalls": 1,
+          "wasmNodes": 1,
+          "uploadedBytes": 376,
+          "scannedBytes": 112,
+          "materializedBytes": 0,
+          "arenas": 1,
+          "syncMs": 0,
+          "kernelMs": 0,
+          "readMs": 0,
+          "abiCalls": 6,
+          "operationBytes": 28,
+          "matrixReads": 0,
+          "liveNodes": 1,
+          "topologyBuilds": 0,
+          "dirtyRecords": 0,
+          "retainedUpdates": 0,
+          "preparedInputBytes": 0,
+          "preparedFallbacks": 0,
+          "preparedWasmCalls": 0,
+          "prepareKernelMs": 0,
+          "prepareMs": 0,
+          "preparedReadMs": 0,
+          "preparedPasses": 0,
+          "preparedDraws": 0,
+          "preparedMatrixBytes": 0,
+          "preparedMatrixReads": 0,
+          "wasmMemoryBytes": 1179648
+        },
+        "first": {
+          "preparedPasses": 6,
+          "preparedWasmCalls": 6,
+          "preparedFallbacks": 0,
+          "wasmCalls": 25
+        },
+        "last": {
+          "preparedPasses": 15,
+          "preparedWasmCalls": 15,
+          "preparedFallbacks": 0,
+          "wasmCalls": 61
+        },
+        "delta": {
+          "preparedPasses": 9,
+          "preparedWasmCalls": 9,
+          "preparedFallbacks": 0,
+          "wasmCalls": 36
+        },
+        "consecutiveMeasuredIntervalsChecked": 9,
+        "meaning": "Every measured interval after the first advances prepared work. No fallback since page creation, including warmup. First row counters include warmup."
+      },
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1665,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 0.42000000178813934,
+        "p95": 0.4954999975860119,
+        "p99": 0.49909999951720235,
+        "mean": 0.4050000011920929,
+        "min": 0.2550000101327896,
+        "max": 0.5
+      },
+      "rafInterval": {
+        "p50": 8.334999999999994,
+        "p95": 9.045750000000004,
+        "p99": 9.177150000000006,
+        "mean": 8.3355,
+        "min": 7.605000000000018,
+        "max": 9.210000000000008
+      },
+      "blockToleranceMs": 0.02100000008940697,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 0.42000000178813934,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/small-C3-JS-0.json",
+      "scenario": "small",
+      "route": "C3-JS",
+      "repeat": 0,
+      "executionCoverage": {
+        "beforeWarmup": {
+          "backend": "prepared-js",
+          "wasmActive": false,
+          "batches": 1,
+          "nodes": 1,
+          "fallbackRoots": 0,
+          "wasmCalls": 0,
+          "wasmNodes": 0,
+          "uploadedBytes": 376,
+          "scannedBytes": 112,
+          "materializedBytes": 0,
+          "arenas": 1,
+          "syncMs": 0,
+          "kernelMs": 0,
+          "readMs": 0,
+          "abiCalls": 0,
+          "operationBytes": 28,
+          "matrixReads": 0,
+          "liveNodes": 1,
+          "topologyBuilds": 0,
+          "dirtyRecords": 0,
+          "retainedUpdates": 0,
+          "preparedInputBytes": 0,
+          "preparedFallbacks": 0,
+          "preparedWasmCalls": 0,
+          "prepareKernelMs": 0,
+          "prepareMs": 0,
+          "preparedReadMs": 0,
+          "preparedPasses": 0,
+          "preparedDraws": 0,
+          "preparedMatrixBytes": 0,
+          "preparedMatrixReads": 0,
+          "wasmMemoryBytes": 0
+        },
+        "first": {
+          "preparedPasses": 6,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "last": {
+          "preparedPasses": 15,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "delta": {
+          "preparedPasses": 9,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "consecutiveMeasuredIntervalsChecked": 9,
+        "meaning": "Every measured interval after the first advances prepared work. No fallback since page creation, including warmup. First row counters include warmup."
+      },
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1620,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 0.4775000065565109,
+        "p95": 0.6342500008642673,
+        "p99": 0.646850004941225,
+        "mean": 0.47450000047683716,
+        "min": 0.3049999922513962,
+        "max": 0.6500000059604645
+      },
+      "rafInterval": {
+        "p50": 8.332499999999996,
+        "p95": 9.18075,
+        "p99": 9.240149999999996,
+        "mean": 8.3255,
+        "min": 7.409999999999997,
+        "max": 9.254999999999995
+      },
+      "blockToleranceMs": 0.02387500032782555,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 0.4775000065565109,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/small-epoch-JS-0.json",
+      "scenario": "small",
+      "route": "epoch-JS",
+      "repeat": 0,
+      "executionCoverage": {
+        "beforeWarmup": {
+          "backend": "prepared-js",
+          "wasmActive": false,
+          "batches": 1,
+          "nodes": 1,
+          "fallbackRoots": 0,
+          "wasmCalls": 0,
+          "wasmNodes": 0,
+          "uploadedBytes": 376,
+          "scannedBytes": 112,
+          "materializedBytes": 0,
+          "arenas": 1,
+          "syncMs": 0,
+          "kernelMs": 0,
+          "readMs": 0,
+          "abiCalls": 0,
+          "operationBytes": 28,
+          "matrixReads": 0,
+          "liveNodes": 1,
+          "topologyBuilds": 0,
+          "dirtyRecords": 0,
+          "retainedUpdates": 0,
+          "preparedInputBytes": 0,
+          "preparedFallbacks": 0,
+          "preparedWasmCalls": 0,
+          "prepareKernelMs": 0,
+          "prepareMs": 0,
+          "preparedReadMs": 0,
+          "preparedPasses": 0,
+          "preparedDraws": 0,
+          "preparedMatrixBytes": 0,
+          "preparedMatrixReads": 0,
+          "wasmMemoryBytes": 0
+        },
+        "first": {
+          "preparedPasses": 6,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "last": {
+          "preparedPasses": 15,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "delta": {
+          "preparedPasses": 9,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "consecutiveMeasuredIntervalsChecked": 9,
+        "meaning": "Every measured interval after the first advances prepared work. No fallback since page creation, including warmup. First row counters include warmup."
+      },
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1643,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 0.35500000417232513,
+        "p95": 0.5602500051259994,
+        "p99": 0.5800500077009201,
+        "mean": 0.3950000062584877,
+        "min": 0.2850000113248825,
+        "max": 0.5850000083446503
+      },
+      "rafInterval": {
+        "p50": 8.329999999999998,
+        "p95": 9.092000000000008,
+        "p99": 9.250400000000019,
+        "mean": 8.283499999999998,
+        "min": 7.430000000000007,
+        "max": 9.29000000000002
+      },
+      "blockToleranceMs": 0.019999980926513672,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 0.35500000417232513,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/small-C3-Wasm-0.json",
+      "scenario": "small",
+      "route": "C3-Wasm",
+      "repeat": 0,
+      "executionCoverage": {
+        "beforeWarmup": {
+          "backend": "prepared-wasm",
+          "wasmActive": true,
+          "batches": 1,
+          "nodes": 1,
+          "fallbackRoots": 0,
+          "wasmCalls": 1,
+          "wasmNodes": 1,
+          "uploadedBytes": 376,
+          "scannedBytes": 112,
+          "materializedBytes": 0,
+          "arenas": 1,
+          "syncMs": 0,
+          "kernelMs": 0,
+          "readMs": 0,
+          "abiCalls": 6,
+          "operationBytes": 28,
+          "matrixReads": 0,
+          "liveNodes": 1,
+          "topologyBuilds": 0,
+          "dirtyRecords": 0,
+          "retainedUpdates": 0,
+          "preparedInputBytes": 0,
+          "preparedFallbacks": 0,
+          "preparedWasmCalls": 0,
+          "prepareKernelMs": 0,
+          "prepareMs": 0,
+          "preparedReadMs": 0,
+          "preparedPasses": 0,
+          "preparedDraws": 0,
+          "preparedMatrixBytes": 0,
+          "preparedMatrixReads": 0,
+          "wasmMemoryBytes": 1179648
+        },
+        "first": {
+          "preparedPasses": 6,
+          "preparedWasmCalls": 6,
+          "preparedFallbacks": 0,
+          "wasmCalls": 25
+        },
+        "last": {
+          "preparedPasses": 15,
+          "preparedWasmCalls": 15,
+          "preparedFallbacks": 0,
+          "wasmCalls": 61
+        },
+        "delta": {
+          "preparedPasses": 9,
+          "preparedWasmCalls": 9,
+          "preparedFallbacks": 0,
+          "wasmCalls": 36
+        },
+        "consecutiveMeasuredIntervalsChecked": 9,
+        "meaning": "Every measured interval after the first advances prepared work. No fallback since page creation, including warmup. First row counters include warmup."
+      },
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1670,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 0.29500000178813934,
+        "p95": 0.6364999927580355,
+        "p99": 0.7192999942600727,
+        "mean": 0.3365000009536743,
+        "min": 0.1550000011920929,
+        "max": 0.739999994635582
+      },
+      "rafInterval": {
+        "p50": 8.332499999999996,
+        "p95": 9.159499999999989,
+        "p99": 9.227899999999979,
+        "mean": 8.3625,
+        "min": 7.689999999999998,
+        "max": 9.244999999999976
+      },
+      "blockToleranceMs": 0.019999980926513672,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 0.29500000178813934,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 2,
+        "triangles": 24,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/shader-original-A-0.json",
+      "scenario": "shader",
+      "route": "original-A",
+      "repeat": 0,
+      "executionCoverage": null,
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1679,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 0.13250000029802322,
+        "p95": 0.24574999213218682,
+        "p99": 0.26914999127388,
+        "mean": 0.14849999845027922,
+        "min": 0.06999999284744263,
+        "max": 0.2749999910593033
+      },
+      "rafInterval": {
+        "p50": 8.304999999999993,
+        "p95": 9.096250000000001,
+        "p99": 9.231250000000012,
+        "mean": 8.375,
+        "min": 7.659999999999997,
+        "max": 9.265000000000015
+      },
+      "blockToleranceMs": 0.019999980926513672,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 0.13250000029802322,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/shader-original-B-0.json",
+      "scenario": "shader",
+      "route": "original-B",
+      "repeat": 0,
+      "executionCoverage": null,
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1629,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 0.17250000685453415,
+        "p95": 0.24549999758601188,
+        "p99": 0.24909999951720238,
+        "mean": 0.171500001847744,
+        "min": 0.09999999403953552,
+        "max": 0.25
+      },
+      "rafInterval": {
+        "p50": 8.330000000000013,
+        "p95": 9.122000000000002,
+        "p99": 9.280400000000006,
+        "mean": 8.303,
+        "min": 7.4950000000000045,
+        "max": 9.320000000000007
+      },
+      "blockToleranceMs": 0.019999980926513672,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 0.17250000685453415,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/shader-epoch-Wasm-0.json",
+      "scenario": "shader",
+      "route": "epoch-Wasm",
+      "repeat": 0,
+      "executionCoverage": {
+        "beforeWarmup": {
+          "backend": "prepared-wasm",
+          "wasmActive": true,
+          "batches": 0,
+          "nodes": 0,
+          "fallbackRoots": 0,
+          "wasmCalls": 0,
+          "wasmNodes": 0,
+          "uploadedBytes": 0,
+          "scannedBytes": 0,
+          "materializedBytes": 0,
+          "arenas": 0,
+          "syncMs": 0,
+          "kernelMs": 0,
+          "readMs": 0,
+          "abiCalls": 0,
+          "operationBytes": 0,
+          "matrixReads": 0,
+          "liveNodes": 0,
+          "topologyBuilds": 0,
+          "dirtyRecords": 0,
+          "retainedUpdates": 0,
+          "preparedInputBytes": 0,
+          "preparedFallbacks": 0,
+          "preparedWasmCalls": 0,
+          "prepareKernelMs": 0,
+          "prepareMs": 0,
+          "preparedReadMs": 0,
+          "preparedPasses": 0,
+          "preparedDraws": 0,
+          "preparedMatrixBytes": 0,
+          "preparedMatrixReads": 0,
+          "wasmMemoryBytes": 1114112
+        },
+        "first": {
+          "preparedPasses": 6,
+          "preparedWasmCalls": 6,
+          "preparedFallbacks": 0,
+          "wasmCalls": 12
+        },
+        "last": {
+          "preparedPasses": 15,
+          "preparedWasmCalls": 15,
+          "preparedFallbacks": 0,
+          "wasmCalls": 30
+        },
+        "delta": {
+          "preparedPasses": 9,
+          "preparedWasmCalls": 9,
+          "preparedFallbacks": 0,
+          "wasmCalls": 18
+        },
+        "consecutiveMeasuredIntervalsChecked": 9,
+        "meaning": "Every measured interval after the first advances prepared work. No fallback since page creation, including warmup. First row counters include warmup."
+      },
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1665,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 0.19999999552965164,
+        "p95": 0.3894999973475932,
+        "p99": 0.4218999932706356,
+        "mean": 0.23849999904632568,
+        "min": 0.14999999105930328,
+        "max": 0.4299999922513962
+      },
+      "rafInterval": {
+        "p50": 8.33999999999999,
+        "p95": 8.782249999999998,
+        "p99": 8.888449999999994,
+        "mean": 8.337999999999997,
+        "min": 7.590000000000003,
+        "max": 8.914999999999992
+      },
+      "blockToleranceMs": 0.019999980926513672,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 0.19999999552965164,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/shader-C3-JS-0.json",
+      "scenario": "shader",
+      "route": "C3-JS",
+      "repeat": 0,
+      "executionCoverage": {
+        "beforeWarmup": {
+          "backend": "prepared-js",
+          "wasmActive": false,
+          "batches": 0,
+          "nodes": 0,
+          "fallbackRoots": 0,
+          "wasmCalls": 0,
+          "wasmNodes": 0,
+          "uploadedBytes": 0,
+          "scannedBytes": 0,
+          "materializedBytes": 0,
+          "arenas": 0,
+          "syncMs": 0,
+          "kernelMs": 0,
+          "readMs": 0,
+          "abiCalls": 0,
+          "operationBytes": 0,
+          "matrixReads": 0,
+          "liveNodes": 0,
+          "topologyBuilds": 0,
+          "dirtyRecords": 0,
+          "retainedUpdates": 0,
+          "preparedInputBytes": 0,
+          "preparedFallbacks": 0,
+          "preparedWasmCalls": 0,
+          "prepareKernelMs": 0,
+          "prepareMs": 0,
+          "preparedReadMs": 0,
+          "preparedPasses": 0,
+          "preparedDraws": 0,
+          "preparedMatrixBytes": 0,
+          "preparedMatrixReads": 0,
+          "wasmMemoryBytes": 0
+        },
+        "first": {
+          "preparedPasses": 6,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "last": {
+          "preparedPasses": 15,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "delta": {
+          "preparedPasses": 9,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "consecutiveMeasuredIntervalsChecked": 9,
+        "meaning": "Every measured interval after the first advances prepared work. No fallback since page creation, including warmup. First row counters include warmup."
+      },
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1693,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 0.2150000035762787,
+        "p95": 0.3205000005662441,
+        "p99": 0.3241000024974346,
+        "mean": 0.221500001847744,
+        "min": 0.14499999582767487,
+        "max": 0.32500000298023224
+      },
+      "rafInterval": {
+        "p50": 8.335000000000008,
+        "p95": 9.116249999999994,
+        "p99": 9.215250000000006,
+        "mean": 8.297999999999998,
+        "min": 7.349999999999994,
+        "max": 9.240000000000009
+      },
+      "blockToleranceMs": 0.019999980926513672,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 0.2150000035762787,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/shader-epoch-JS-0.json",
+      "scenario": "shader",
+      "route": "epoch-JS",
+      "repeat": 0,
+      "executionCoverage": {
+        "beforeWarmup": {
+          "backend": "prepared-js",
+          "wasmActive": false,
+          "batches": 0,
+          "nodes": 0,
+          "fallbackRoots": 0,
+          "wasmCalls": 0,
+          "wasmNodes": 0,
+          "uploadedBytes": 0,
+          "scannedBytes": 0,
+          "materializedBytes": 0,
+          "arenas": 0,
+          "syncMs": 0,
+          "kernelMs": 0,
+          "readMs": 0,
+          "abiCalls": 0,
+          "operationBytes": 0,
+          "matrixReads": 0,
+          "liveNodes": 0,
+          "topologyBuilds": 0,
+          "dirtyRecords": 0,
+          "retainedUpdates": 0,
+          "preparedInputBytes": 0,
+          "preparedFallbacks": 0,
+          "preparedWasmCalls": 0,
+          "prepareKernelMs": 0,
+          "prepareMs": 0,
+          "preparedReadMs": 0,
+          "preparedPasses": 0,
+          "preparedDraws": 0,
+          "preparedMatrixBytes": 0,
+          "preparedMatrixReads": 0,
+          "wasmMemoryBytes": 0
+        },
+        "first": {
+          "preparedPasses": 6,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "last": {
+          "preparedPasses": 15,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "delta": {
+          "preparedPasses": 9,
+          "preparedWasmCalls": 0,
+          "preparedFallbacks": 0,
+          "wasmCalls": 0
+        },
+        "consecutiveMeasuredIntervalsChecked": 9,
+        "meaning": "Every measured interval after the first advances prepared work. No fallback since page creation, including warmup. First row counters include warmup."
+      },
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1653,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 0.1900000050663948,
+        "p95": 0.32924999371170993,
+        "p99": 0.3418499977886677,
+        "mean": 0.21099999994039537,
+        "min": 0.125,
+        "max": 0.3449999988079071
+      },
+      "rafInterval": {
+        "p50": 8.267499999999998,
+        "p95": 9.054500000000013,
+        "p99": 9.230900000000007,
+        "mean": 8.261000000000001,
+        "min": 7.605000000000018,
+        "max": 9.275000000000006
+      },
+      "blockToleranceMs": 0.019999980926513672,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 0.1900000050663948,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "file": "runs/shader-C3-Wasm-0.json",
+      "scenario": "shader",
+      "route": "C3-Wasm",
+      "repeat": 0,
+      "executionCoverage": {
+        "beforeWarmup": {
+          "backend": "prepared-wasm",
+          "wasmActive": true,
+          "batches": 0,
+          "nodes": 0,
+          "fallbackRoots": 0,
+          "wasmCalls": 0,
+          "wasmNodes": 0,
+          "uploadedBytes": 0,
+          "scannedBytes": 0,
+          "materializedBytes": 0,
+          "arenas": 0,
+          "syncMs": 0,
+          "kernelMs": 0,
+          "readMs": 0,
+          "abiCalls": 0,
+          "operationBytes": 0,
+          "matrixReads": 0,
+          "liveNodes": 0,
+          "topologyBuilds": 0,
+          "dirtyRecords": 0,
+          "retainedUpdates": 0,
+          "preparedInputBytes": 0,
+          "preparedFallbacks": 0,
+          "preparedWasmCalls": 0,
+          "prepareKernelMs": 0,
+          "prepareMs": 0,
+          "preparedReadMs": 0,
+          "preparedPasses": 0,
+          "preparedDraws": 0,
+          "preparedMatrixBytes": 0,
+          "preparedMatrixReads": 0,
+          "wasmMemoryBytes": 1114112
+        },
+        "first": {
+          "preparedPasses": 6,
+          "preparedWasmCalls": 6,
+          "preparedFallbacks": 0,
+          "wasmCalls": 12
+        },
+        "last": {
+          "preparedPasses": 15,
+          "preparedWasmCalls": 15,
+          "preparedFallbacks": 0,
+          "wasmCalls": 30
+        },
+        "delta": {
+          "preparedPasses": 9,
+          "preparedWasmCalls": 9,
+          "preparedFallbacks": 0,
+          "wasmCalls": 18
+        },
+        "consecutiveMeasuredIntervalsChecked": 9,
+        "meaning": "Every measured interval after the first advances prepared work. No fallback since page creation, including warmup. First row counters include warmup."
+      },
+      "clock": {
+        "crossOriginIsolated": true,
+        "minPositiveDeltaMs": 0.004999995231628418,
+        "positiveDeltas": 1676,
+        "iterations": 100000,
+        "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+      },
+      "cpu": {
+        "p50": 0.1875,
+        "p95": 0.4080000013113021,
+        "p99": 0.4296000021696091,
+        "mean": 0.22100000232458114,
+        "min": 0.11500000953674316,
+        "max": 0.4350000023841858
+      },
+      "rafInterval": {
+        "p50": 8.33250000000001,
+        "p95": 9.27624999999998,
+        "p99": 9.303249999999975,
+        "mean": 8.422500000000001,
+        "min": 7.350000000000023,
+        "max": 9.309999999999974
+      },
+      "blockToleranceMs": 0.019999980926513672,
+      "blocks": [
+        {
+          "firstSample": 0,
+          "lastSample": 9,
+          "count": 10,
+          "fullBlock": false,
+          "p50": 0.1875,
+          "deltaMs": 0,
+          "withinTolerance": true
+        }
+      ],
+      "blockScreenPassed": true,
+      "draws": {
+        "calls": 1,
+        "triangles": 2,
+        "points": 0,
+        "lines": 0
+      }
+    }
+  ],
+  "verdict": "No product, FPS or Rust-default qualification. Preserve every run and failed stability screen."
+}

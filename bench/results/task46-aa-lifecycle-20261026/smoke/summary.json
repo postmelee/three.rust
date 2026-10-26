@@ -1,0 +1,361 @@
+{
+  "method": "Run-level linearly interpolated quantiles; median of run p50s per lifecycle. Every run/block retained. Diagnostic reproducibility screen, not statistical significance or product qualification.",
+  "rule": "Every run p50 within max(5% of its condition median p50, four maximum observed clock increments) of that condition median; every contiguous 600-frame block p50 within the same absolute tolerance of its own run p50. Partial blocks in smoke are identified.",
+  "classification": "Smoke/short lifecycle diagnostic only; no performance qualification",
+  "finalStateHashes": [
+    "4e2a5ad7a5f29b9592bc9bffc915d5b69c5e66194984d2033ef4b669a218e8db"
+  ],
+  "identicalFinalState": true,
+  "groups": [
+    {
+      "condition": "same-page",
+      "runs": 1,
+      "medianP50": 0.625,
+      "p50Range": [
+        0.625,
+        0.625
+      ],
+      "toleranceMs": 0.03125,
+      "maximumObservedClockIncrementMs": 0.004999995231628418,
+      "diagnosticScreenPass": true,
+      "checks": [
+        {
+          "file": "0-same-page-owned-js.json",
+          "runDeviationMs": 0,
+          "runPass": true,
+          "blocks": [
+            {
+              "firstFrame": 0,
+              "samples": 120,
+              "deviationMs": 0,
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": "new-page",
+      "runs": 1,
+      "medianP50": 0.3050000071525574,
+      "p50Range": [
+        0.3050000071525574,
+        0.3050000071525574
+      ],
+      "toleranceMs": 0.019999980926513672,
+      "maximumObservedClockIncrementMs": 0.004999995231628418,
+      "diagnosticScreenPass": true,
+      "checks": [
+        {
+          "file": "0-new-page-owned-js.json",
+          "runDeviationMs": 0,
+          "runPass": true,
+          "blocks": [
+            {
+              "firstFrame": 0,
+              "samples": 120,
+              "deviationMs": 0,
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": "new-browser",
+      "runs": 1,
+      "medianP50": 0.317500002682209,
+      "p50Range": [
+        0.317500002682209,
+        0.317500002682209
+      ],
+      "toleranceMs": 0.019999980926513672,
+      "maximumObservedClockIncrementMs": 0.004999995231628418,
+      "diagnosticScreenPass": true,
+      "checks": [
+        {
+          "file": "0-new-browser-owned-js.json",
+          "runDeviationMs": 0,
+          "runPass": true,
+          "blocks": [
+            {
+              "firstFrame": 0,
+              "samples": 120,
+              "deviationMs": 0,
+              "pass": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "file": "0-same-page-owned-js.json",
+      "condition": "same-page",
+      "round": 0,
+      "cpu": {
+        "p50": 0.625,
+        "p95": 0.8559999898076057,
+        "p99": 0.9873999914526941,
+        "min": 0.23000000417232513,
+        "max": 1.3599999994039536,
+        "mean": 0.5901666663587093
+      },
+      "callbackInterval": {
+        "p50": 8.299999997019768,
+        "p95": 9.865000003576277,
+        "p99": 10.346399996578691,
+        "min": 6.50500001013279,
+        "max": 10.734999999403954,
+        "mean": 8.346722689120709
+      },
+      "rafInterval": {
+        "p50": 8.329999999999927,
+        "p95": 9.90249999999998,
+        "p99": 10.216199999999988,
+        "min": 6.595000000000027,
+        "max": 10.279999999999973,
+        "mean": 8.344915966386555
+      },
+      "callbackArrival": {
+        "p50": 0.26999999970195177,
+        "p95": 0.41524999636411053,
+        "p99": 0.6636499925911441,
+        "min": 0.07499999165537474,
+        "max": 0.7599999910593169,
+        "mean": 0.2647499937464763
+      },
+      "blocks": [
+        {
+          "firstFrame": 0,
+          "samples": 120,
+          "complete600": false,
+          "cpu": {
+            "p50": 0.625,
+            "p95": 0.8559999898076057,
+            "p99": 0.9873999914526941,
+            "min": 0.23000000417232513,
+            "max": 1.3599999994039536,
+            "mean": 0.5901666663587093
+          },
+          "callbackArrival": {
+            "p50": 0.26999999970195177,
+            "p95": 0.41524999636411053,
+            "p99": 0.6636499925911441,
+            "min": 0.07499999165537474,
+            "max": 0.7599999910593169,
+            "mean": 0.2647499937464763
+          }
+        }
+      ],
+      "observedClockIncrementMs": 0.004999995231628418,
+      "finalStateSha256": "4e2a5ad7a5f29b9592bc9bffc915d5b69c5e66194984d2033ef4b669a218e8db",
+      "workload": {
+        "draws": 16,
+        "triangles": 9216,
+        "readCount": 2,
+        "diagnosticsDelta": {
+          "nodes": 0,
+          "rigs": 0,
+          "clips": 0,
+          "revision": 120,
+          "steps": 120,
+          "wasmCalls": 0,
+          "wasmMemoryBytes": 0,
+          "initialBytes": 0,
+          "commandBatches": 120,
+          "commandBytes": 2158080,
+          "readBytes": 216832,
+          "paletteBytes": 2949120,
+          "rootBytes": 245760
+        },
+        "adapterDeltaIncludingWarmup": {
+          "presentationMeshes": 0,
+          "ordinaryBones": 0,
+          "paletteConsumes": 2080,
+          "paddedPaletteBytes": 0,
+          "appliedRevision": 132
+        }
+      }
+    },
+    {
+      "file": "0-new-page-owned-js.json",
+      "condition": "new-page",
+      "round": 0,
+      "cpu": {
+        "p50": 0.3050000071525574,
+        "p95": 0.7312499903142452,
+        "p99": 0.8564500063657762,
+        "min": 0.12999999523162842,
+        "max": 1.1000000089406967,
+        "mean": 0.388250000278155
+      },
+      "callbackInterval": {
+        "p50": 8.32999999821186,
+        "p95": 9.876999999582768,
+        "p99": 10.176500011980533,
+        "min": 1.239999994635582,
+        "max": 140.29999999701977,
+        "mean": 9.383319327811233
+      },
+      "rafInterval": {
+        "p50": 8.330000000000155,
+        "p95": 9.85100000000001,
+        "p99": 10.147399999999958,
+        "min": 6.680000000000064,
+        "max": 133.25,
+        "mean": 9.383823529411764
+      },
+      "callbackArrival": {
+        "p50": 0.14250000029801413,
+        "p95": 0.4252500046492173,
+        "p99": 0.4752499946355738,
+        "min": 0.04499999880795258,
+        "max": 7.160000000000082,
+        "mean": 0.24312500035266094
+      },
+      "blocks": [
+        {
+          "firstFrame": 0,
+          "samples": 120,
+          "complete600": false,
+          "cpu": {
+            "p50": 0.3050000071525574,
+            "p95": 0.7312499903142452,
+            "p99": 0.8564500063657762,
+            "min": 0.12999999523162842,
+            "max": 1.1000000089406967,
+            "mean": 0.388250000278155
+          },
+          "callbackArrival": {
+            "p50": 0.14250000029801413,
+            "p95": 0.4252500046492173,
+            "p99": 0.4752499946355738,
+            "min": 0.04499999880795258,
+            "max": 7.160000000000082,
+            "mean": 0.24312500035266094
+          }
+        }
+      ],
+      "observedClockIncrementMs": 0.004999995231628418,
+      "finalStateSha256": "4e2a5ad7a5f29b9592bc9bffc915d5b69c5e66194984d2033ef4b669a218e8db",
+      "workload": {
+        "draws": 16,
+        "triangles": 9216,
+        "readCount": 2,
+        "diagnosticsDelta": {
+          "nodes": 0,
+          "rigs": 0,
+          "clips": 0,
+          "revision": 120,
+          "steps": 120,
+          "wasmCalls": 0,
+          "wasmMemoryBytes": 0,
+          "initialBytes": 0,
+          "commandBatches": 120,
+          "commandBytes": 2158080,
+          "readBytes": 216832,
+          "paletteBytes": 2949120,
+          "rootBytes": 245760
+        },
+        "adapterDeltaIncludingWarmup": {
+          "presentationMeshes": 0,
+          "ordinaryBones": 0,
+          "paletteConsumes": 2080,
+          "paddedPaletteBytes": 0,
+          "appliedRevision": 132
+        }
+      }
+    },
+    {
+      "file": "0-new-browser-owned-js.json",
+      "condition": "new-browser",
+      "round": 0,
+      "cpu": {
+        "p50": 0.317500002682209,
+        "p95": 0.7607499912381172,
+        "p99": 0.9424500116705898,
+        "min": 0.15000000596046448,
+        "max": 0.9950000047683716,
+        "mean": 0.3767083333184322
+      },
+      "callbackInterval": {
+        "p50": 8.325000002980232,
+        "p95": 9.82750000655651,
+        "p99": 10.206399994194507,
+        "min": 6.064999997615814,
+        "max": 10.299999997019768,
+        "mean": 8.333025210169183
+      },
+      "rafInterval": {
+        "p50": 8.334999999999809,
+        "p95": 9.59799999999984,
+        "p99": 10.14279999999987,
+        "min": 6.345000000000027,
+        "max": 10.325000000000045,
+        "mean": 8.333235294117646
+      },
+      "callbackArrival": {
+        "p50": 0.11499999582770215,
+        "p95": 0.3749999923407472,
+        "p99": 0.4883499996304318,
+        "min": 0.039999993443416315,
+        "max": 0.7099999868869418,
+        "mean": 0.1571666610787266
+      },
+      "blocks": [
+        {
+          "firstFrame": 0,
+          "samples": 120,
+          "complete600": false,
+          "cpu": {
+            "p50": 0.317500002682209,
+            "p95": 0.7607499912381172,
+            "p99": 0.9424500116705898,
+            "min": 0.15000000596046448,
+            "max": 0.9950000047683716,
+            "mean": 0.3767083333184322
+          },
+          "callbackArrival": {
+            "p50": 0.11499999582770215,
+            "p95": 0.3749999923407472,
+            "p99": 0.4883499996304318,
+            "min": 0.039999993443416315,
+            "max": 0.7099999868869418,
+            "mean": 0.1571666610787266
+          }
+        }
+      ],
+      "observedClockIncrementMs": 0.004999995231628418,
+      "finalStateSha256": "4e2a5ad7a5f29b9592bc9bffc915d5b69c5e66194984d2033ef4b669a218e8db",
+      "workload": {
+        "draws": 16,
+        "triangles": 9216,
+        "readCount": 2,
+        "diagnosticsDelta": {
+          "nodes": 0,
+          "rigs": 0,
+          "clips": 0,
+          "revision": 120,
+          "steps": 120,
+          "wasmCalls": 0,
+          "wasmMemoryBytes": 0,
+          "initialBytes": 0,
+          "commandBatches": 120,
+          "commandBytes": 2158080,
+          "readBytes": 216832,
+          "paletteBytes": 2949120,
+          "rootBytes": 245760
+        },
+        "adapterDeltaIncludingWarmup": {
+          "presentationMeshes": 0,
+          "ordinaryBones": 0,
+          "paletteConsumes": 2080,
+          "paddedPaletteBytes": 0,
+          "appliedRevision": 132
+        }
+      }
+    }
+  ]
+}

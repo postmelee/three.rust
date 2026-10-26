@@ -1,0 +1,545 @@
+{
+  "format": 1,
+  "kind": "Task46 Stage2A lifecycle diagnostics",
+  "normalizationPolicy": "Only absolute checkout/home/ephemeral profile paths and a battery instance identifier are normalized or redacted. Raw measured values, timestamps, lifecycle identifiers and all numerical results are preserved. Browser process metadata contains only this experiment browser's process types, transient numeric IDs and CPU durations; no unrelated process names or browser contents. Source SHA-256 identifies untouched local originals; decoded SHA-256 identifies public normalized bytes.",
+  "files": [
+    {
+      "path": "smoke/0-new-browser-owned-js.json.gz",
+      "sourcePath": "work/aa-lifecycle-smoke-001/0-new-browser-owned-js.json",
+      "sourceSha256": "1b6771fb018ec3dbfda2ce6745eb2863eda50938936d14214252baf1233d1b75",
+      "decodedSha256": "1b6771fb018ec3dbfda2ce6745eb2863eda50938936d14214252baf1233d1b75",
+      "sha256": "7fe032bc19c9ced6f8c510573aa6626d246a5e78eb5af9c9e9fecf27cb06f9fa",
+      "sourceBytes": 376207,
+      "decodedBytes": 376207,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "smoke/0-new-page-owned-js.json.gz",
+      "sourcePath": "work/aa-lifecycle-smoke-001/0-new-page-owned-js.json",
+      "sourceSha256": "89b23d81ae7c498b63c48d0a74e60035e607a0e85dd5e6edcd29901a2b313206",
+      "decodedSha256": "89b23d81ae7c498b63c48d0a74e60035e607a0e85dd5e6edcd29901a2b313206",
+      "sha256": "10533b33b15dc2d0dbfdd0c2599ca32410c6b20b634f5dbf49d5b5b1645cc2e8",
+      "sourceBytes": 376154,
+      "decodedBytes": 376154,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "smoke/0-same-page-owned-js.json.gz",
+      "sourcePath": "work/aa-lifecycle-smoke-001/0-same-page-owned-js.json",
+      "sourceSha256": "d5c48c4eab7313cae9836816365872ed5ec1b1434b8030ef230d1b989088a292",
+      "decodedSha256": "d5c48c4eab7313cae9836816365872ed5ec1b1434b8030ef230d1b989088a292",
+      "sha256": "f9948cbf42652ad7f5afc46c7a541c36b29bf8e65a37c94844ec9f536f76b709",
+      "sourceBytes": 375975,
+      "decodedBytes": 375975,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "smoke/environment-after/runner.json",
+      "sourcePath": "work/aa-lifecycle-smoke-001/environment-after/runner.json",
+      "sourceSha256": "a9c18ca7119b5ec5ef11efa17e0b1851bb867c68a6278e2a330e65cb079a0064",
+      "decodedSha256": "7cefb0196983c4a2f1916ded7ef141a16da0842e4ca5a88878a0f8edbeead429",
+      "sha256": "7cefb0196983c4a2f1916ded7ef141a16da0842e4ca5a88878a0f8edbeead429",
+      "sourceBytes": 2256,
+      "decodedBytes": 2258,
+      "gzip": false,
+      "normalizations": [
+        "Battery instance identifier redacted; power status and settings retained"
+      ]
+    },
+    {
+      "path": "smoke/environment-before/runner.json",
+      "sourcePath": "work/aa-lifecycle-smoke-001/environment-before/runner.json",
+      "sourceSha256": "c943af676e0f1ae590cecda960764d1b9451eb83b1e99a46b0ab5f5ec82ad6cc",
+      "decodedSha256": "818ced81f1e82aca8168bb5d86791e2aac7cf98c6b81130e74f0df3c12409081",
+      "sha256": "818ced81f1e82aca8168bb5d86791e2aac7cf98c6b81130e74f0df3c12409081",
+      "sourceBytes": 2256,
+      "decodedBytes": 2258,
+      "gzip": false,
+      "normalizations": [
+        "Battery instance identifier redacted; power status and settings retained"
+      ]
+    },
+    {
+      "path": "smoke/manifest.json",
+      "sourcePath": "work/aa-lifecycle-smoke-001/manifest.json",
+      "sourceSha256": "ef222885291156d60b57a6119f9afe822d75733ad612b7d35ba1eb6ea2dc1073",
+      "decodedSha256": "67a0bb6785c9df435259512b090c5debe01cd8cf2111580416acf59d2beaacd8",
+      "sha256": "67a0bb6785c9df435259512b090c5debe01cd8cf2111580416acf59d2beaacd8",
+      "sourceBytes": 35904,
+      "decodedBytes": 35417,
+      "gzip": false,
+      "normalizations": [
+        "Absolute checkout path normalized to <reference-checkout>",
+        "Absolute checkout path normalized to <tooling-checkout>",
+        "Ephemeral Chrome profile paths normalized; all other launch arguments retained"
+      ]
+    },
+    {
+      "path": "smoke/summary.json",
+      "sourcePath": "work/aa-lifecycle-smoke-001/summary.json",
+      "sourceSha256": "d555ac861d7d72f350c4fb14cdb1a7407aadd1668ecac887c0c730eb97dacc5e",
+      "decodedSha256": "d555ac861d7d72f350c4fb14cdb1a7407aadd1668ecac887c0c730eb97dacc5e",
+      "sha256": "d555ac861d7d72f350c4fb14cdb1a7407aadd1668ecac887c0c730eb97dacc5e",
+      "sourceBytes": 10494,
+      "decodedBytes": 10494,
+      "gzip": false,
+      "normalizations": []
+    },
+    {
+      "path": "js/0-new-browser-owned-js.json.gz",
+      "sourcePath": "work/aa-lifecycle-js-001/0-new-browser-owned-js.json",
+      "sourceSha256": "4732f83d0af7cbe9e98c52bb9ae25c835d54aebc9a133da98f5891acffdcb989",
+      "decodedSha256": "4732f83d0af7cbe9e98c52bb9ae25c835d54aebc9a133da98f5891acffdcb989",
+      "sha256": "0053396f46d6bc3e37e75fbd0c7e6a508632d0cd09e9f183b723313f4155fcda",
+      "sourceBytes": 735074,
+      "decodedBytes": 735074,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "js/0-new-page-owned-js.json.gz",
+      "sourcePath": "work/aa-lifecycle-js-001/0-new-page-owned-js.json",
+      "sourceSha256": "0a39152052def94f8ea0dcfb3aeebcf4eddd8c09399b81424d75b2e1bbb73d2f",
+      "decodedSha256": "0a39152052def94f8ea0dcfb3aeebcf4eddd8c09399b81424d75b2e1bbb73d2f",
+      "sha256": "f2de97ab99f87f47121a5f80e5f3bcb7ce711833d231ed4807cfaf9eada197b5",
+      "sourceBytes": 735180,
+      "decodedBytes": 735180,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "js/0-same-page-owned-js.json.gz",
+      "sourcePath": "work/aa-lifecycle-js-001/0-same-page-owned-js.json",
+      "sourceSha256": "c996f4842addc1d34c98b16704f6c463df4eb88e9ecceb30fecd2cda4dca5b80",
+      "decodedSha256": "c996f4842addc1d34c98b16704f6c463df4eb88e9ecceb30fecd2cda4dca5b80",
+      "sha256": "bd819c7eb185908ad15aba0921eaadb9536b6292cea5505e28f23d83607c823b",
+      "sourceBytes": 735306,
+      "decodedBytes": 735306,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "js/1-new-browser-owned-js.json.gz",
+      "sourcePath": "work/aa-lifecycle-js-001/1-new-browser-owned-js.json",
+      "sourceSha256": "b05c3b6214b9126bad98a03ad6143a298c676986f983fc8a2a1c5b1c473616fc",
+      "decodedSha256": "b05c3b6214b9126bad98a03ad6143a298c676986f983fc8a2a1c5b1c473616fc",
+      "sha256": "62e65cce7c9651281c6557013415d29d8a34bcd19e58bb44c47aa79f268b10b5",
+      "sourceBytes": 735773,
+      "decodedBytes": 735773,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "js/1-new-page-owned-js.json.gz",
+      "sourcePath": "work/aa-lifecycle-js-001/1-new-page-owned-js.json",
+      "sourceSha256": "cc04088285b478f6b11549f6dd69bedc2e428dae79ecd0312520356c2ff58d8f",
+      "decodedSha256": "cc04088285b478f6b11549f6dd69bedc2e428dae79ecd0312520356c2ff58d8f",
+      "sha256": "2dd3827b58f3ec7d53930344ba869c78869a7a4bf280fbd1d299e9bce5f3ab7b",
+      "sourceBytes": 735147,
+      "decodedBytes": 735147,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "js/1-same-page-owned-js.json.gz",
+      "sourcePath": "work/aa-lifecycle-js-001/1-same-page-owned-js.json",
+      "sourceSha256": "86eecdefe9e8ecb6e32c8b73e0f12a0e2d4661a43521b9882d515548010d5764",
+      "decodedSha256": "86eecdefe9e8ecb6e32c8b73e0f12a0e2d4661a43521b9882d515548010d5764",
+      "sha256": "22920e9c0528834afcd10c227ac8c53f0ef741a8183c3122d071935008565005",
+      "sourceBytes": 739478,
+      "decodedBytes": 739478,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "js/2-new-browser-owned-js.json.gz",
+      "sourcePath": "work/aa-lifecycle-js-001/2-new-browser-owned-js.json",
+      "sourceSha256": "6fe75a7962c88d58e9eb6b7ee7104aa080bdf54e3f5b6b059c99ae523a5bed9c",
+      "decodedSha256": "6fe75a7962c88d58e9eb6b7ee7104aa080bdf54e3f5b6b059c99ae523a5bed9c",
+      "sha256": "718a69f6d5f41209fd660e8d9e0ac520e70e3cf766268f610d01b85976ada78f",
+      "sourceBytes": 735405,
+      "decodedBytes": 735405,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "js/2-new-page-owned-js.json.gz",
+      "sourcePath": "work/aa-lifecycle-js-001/2-new-page-owned-js.json",
+      "sourceSha256": "46dba6f15c8b9d0b334a53fc4f7e7ba5ab17995148a8601c544823f921ec7694",
+      "decodedSha256": "46dba6f15c8b9d0b334a53fc4f7e7ba5ab17995148a8601c544823f921ec7694",
+      "sha256": "dc2d35cbc19b20381580d8a0a402590adc1b8a13e519eb71d1753c9e34a239df",
+      "sourceBytes": 735325,
+      "decodedBytes": 735325,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "js/2-same-page-owned-js.json.gz",
+      "sourcePath": "work/aa-lifecycle-js-001/2-same-page-owned-js.json",
+      "sourceSha256": "f13ef1c6cfaca87d776e7dc384fb4b2be3276f62c62419e26b72ebdf1d45cbd3",
+      "decodedSha256": "f13ef1c6cfaca87d776e7dc384fb4b2be3276f62c62419e26b72ebdf1d45cbd3",
+      "sha256": "703ecf8e0163fa9ffdcf95988522843afc848fcc3e1b878a7f02b6b203276af8",
+      "sourceBytes": 737924,
+      "decodedBytes": 737924,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "js/environment-after/runner.json",
+      "sourcePath": "work/aa-lifecycle-js-001/environment-after/runner.json",
+      "sourceSha256": "3b6d87a90ff1d49ace2ff9bcf78d49faecd41c2944f3be8ca96ee260de674e06",
+      "decodedSha256": "8a162c1e3eb49cecebced99d5da665cabf66a87a7fed1399689d1ee8cfbd35c1",
+      "sha256": "8a162c1e3eb49cecebced99d5da665cabf66a87a7fed1399689d1ee8cfbd35c1",
+      "sourceBytes": 2256,
+      "decodedBytes": 2258,
+      "gzip": false,
+      "normalizations": [
+        "Battery instance identifier redacted; power status and settings retained"
+      ]
+    },
+    {
+      "path": "js/environment-before/runner.json",
+      "sourcePath": "work/aa-lifecycle-js-001/environment-before/runner.json",
+      "sourceSha256": "50b6ffb4f3f3e8da46e1dd211c1a74e1e8303c44c9728d55f13a7da3c125e2bd",
+      "decodedSha256": "e5bd374ebeb5b2a77a85bcc419bf9c091e507f9f5f0861aaea78cd7280f62dca",
+      "sha256": "e5bd374ebeb5b2a77a85bcc419bf9c091e507f9f5f0861aaea78cd7280f62dca",
+      "sourceBytes": 2256,
+      "decodedBytes": 2258,
+      "gzip": false,
+      "normalizations": [
+        "Battery instance identifier redacted; power status and settings retained"
+      ]
+    },
+    {
+      "path": "js/manifest.json",
+      "sourcePath": "work/aa-lifecycle-js-001/manifest.json",
+      "sourceSha256": "b9777d95219d4ce39e6861d2f8335210306bc02062110a1311951f2477cd5f69",
+      "decodedSha256": "2b405ceb1fab53308b1d75053df09c8674b8804d8ef8a904dade4c6be7541540",
+      "sha256": "2b405ceb1fab53308b1d75053df09c8674b8804d8ef8a904dade4c6be7541540",
+      "sourceBytes": 57221,
+      "decodedBytes": 56466,
+      "gzip": false,
+      "normalizations": [
+        "Absolute checkout path normalized to <reference-checkout>",
+        "Absolute checkout path normalized to <tooling-checkout>",
+        "Ephemeral Chrome profile paths normalized; all other launch arguments retained"
+      ]
+    },
+    {
+      "path": "js/summary.json",
+      "sourcePath": "work/aa-lifecycle-js-001/summary.json",
+      "sourceSha256": "ecfca85e4cd13cb596da4a386217d6e88bb3ce9177da955e62812e567c008659",
+      "decodedSha256": "ecfca85e4cd13cb596da4a386217d6e88bb3ce9177da955e62812e567c008659",
+      "sha256": "ecfca85e4cd13cb596da4a386217d6e88bb3ce9177da955e62812e567c008659",
+      "sourceBytes": 65379,
+      "decodedBytes": 65379,
+      "gzip": false,
+      "normalizations": []
+    },
+    {
+      "path": "original/0-new-browser-original.json.gz",
+      "sourcePath": "work/aa-lifecycle-original-001/0-new-browser-original.json",
+      "sourceSha256": "2f2776d601823db135e61f1f20c1dbc419d32097733d26226c32d526cd96b05f",
+      "decodedSha256": "2f2776d601823db135e61f1f20c1dbc419d32097733d26226c32d526cd96b05f",
+      "sha256": "e9ed4af34e883a869b92d4f142db0d73631029a0c165c4f34fdaa4aa30b222fe",
+      "sourceBytes": 732909,
+      "decodedBytes": 732909,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "original/0-new-page-original.json.gz",
+      "sourcePath": "work/aa-lifecycle-original-001/0-new-page-original.json",
+      "sourceSha256": "4fb9ced9e2f5814944b199c675a350a1a8cbd17f6f984f7d9e85acaef4924282",
+      "decodedSha256": "4fb9ced9e2f5814944b199c675a350a1a8cbd17f6f984f7d9e85acaef4924282",
+      "sha256": "d2b1db57d625721d33f39cd5d3438ec8e891ace8a4e49bc9074f278a24ad8da0",
+      "sourceBytes": 733072,
+      "decodedBytes": 733072,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "original/0-same-page-original.json.gz",
+      "sourcePath": "work/aa-lifecycle-original-001/0-same-page-original.json",
+      "sourceSha256": "afad3a30a037b73c05bb9de42ff76c445387e4207e901317e94edd506db4359c",
+      "decodedSha256": "afad3a30a037b73c05bb9de42ff76c445387e4207e901317e94edd506db4359c",
+      "sha256": "5a9dc5a5d7c835071c8293fa61bdfc73c0057c99a551433579dbac7f09a79ff1",
+      "sourceBytes": 733896,
+      "decodedBytes": 733896,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "original/1-new-browser-original.json.gz",
+      "sourcePath": "work/aa-lifecycle-original-001/1-new-browser-original.json",
+      "sourceSha256": "22b3c86a7a2bc5b4534b830df2f9e6e825b15695ff23e5b08c1f48fe845be85f",
+      "decodedSha256": "22b3c86a7a2bc5b4534b830df2f9e6e825b15695ff23e5b08c1f48fe845be85f",
+      "sha256": "79cd10262939e844102656210a15e6da8dc0f259b97fcecfacf356caa0cc3ee7",
+      "sourceBytes": 732965,
+      "decodedBytes": 732965,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "original/1-new-page-original.json.gz",
+      "sourcePath": "work/aa-lifecycle-original-001/1-new-page-original.json",
+      "sourceSha256": "0fbed61325d76e03db7c2eb701587a1343c39dd5c3233c801387697ca85274d3",
+      "decodedSha256": "0fbed61325d76e03db7c2eb701587a1343c39dd5c3233c801387697ca85274d3",
+      "sha256": "47b369f14aecb38c6c73b541cea1cfeedb5a9027124e18f7fed80532d86fcd33",
+      "sourceBytes": 733057,
+      "decodedBytes": 733057,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "original/1-same-page-original.json.gz",
+      "sourcePath": "work/aa-lifecycle-original-001/1-same-page-original.json",
+      "sourceSha256": "344cd2be8fb4ca3d6708dce01d908e8cc7ac6dc65b9948df44df3ea484e9e2d6",
+      "decodedSha256": "344cd2be8fb4ca3d6708dce01d908e8cc7ac6dc65b9948df44df3ea484e9e2d6",
+      "sha256": "dda1b25149901bb7f4611487b554aa7f04f33fe12b888621a0c67f3aa62984e6",
+      "sourceBytes": 737348,
+      "decodedBytes": 737348,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "original/2-new-browser-original.json.gz",
+      "sourcePath": "work/aa-lifecycle-original-001/2-new-browser-original.json",
+      "sourceSha256": "0e0a8bbfb8442508006c1c9cf9da107e95be61f5f1e4f1a2bf9e83995cdc1b22",
+      "decodedSha256": "0e0a8bbfb8442508006c1c9cf9da107e95be61f5f1e4f1a2bf9e83995cdc1b22",
+      "sha256": "5c0e428390bc803c2b68e1c2e08048390461d3bd6688a7f81a13c1d9252d3b6e",
+      "sourceBytes": 733101,
+      "decodedBytes": 733101,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "original/2-new-page-original.json.gz",
+      "sourcePath": "work/aa-lifecycle-original-001/2-new-page-original.json",
+      "sourceSha256": "46fb50626671876660b88b854dfddac0c8a44287fcd3625fba1c5a93957b51de",
+      "decodedSha256": "46fb50626671876660b88b854dfddac0c8a44287fcd3625fba1c5a93957b51de",
+      "sha256": "348fca80542d395271d18acde8fcb25485837a4b387aab9879670bbd2109cc14",
+      "sourceBytes": 733499,
+      "decodedBytes": 733499,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "original/2-same-page-original.json.gz",
+      "sourcePath": "work/aa-lifecycle-original-001/2-same-page-original.json",
+      "sourceSha256": "a9f770414fe4b594ac35b1c9ca93645e28f76af2a0c0f2eba64dd0302d901f9c",
+      "decodedSha256": "a9f770414fe4b594ac35b1c9ca93645e28f76af2a0c0f2eba64dd0302d901f9c",
+      "sha256": "d29591a02aed004bec68d4894dba60aa259ab7cffc1740f5c183493bf6961bfd",
+      "sourceBytes": 735978,
+      "decodedBytes": 735978,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "original/environment-after/runner.json",
+      "sourcePath": "work/aa-lifecycle-original-001/environment-after/runner.json",
+      "sourceSha256": "d6e065e00bc71c85a0e129081181bb676f7ed317ec71bbc68aaee287ec1777e6",
+      "decodedSha256": "65055458bbf71a93fdddb6cf13aafef01c2b3207f8bd89d4f4cf736320710a97",
+      "sha256": "65055458bbf71a93fdddb6cf13aafef01c2b3207f8bd89d4f4cf736320710a97",
+      "sourceBytes": 2256,
+      "decodedBytes": 2258,
+      "gzip": false,
+      "normalizations": [
+        "Battery instance identifier redacted; power status and settings retained"
+      ]
+    },
+    {
+      "path": "original/environment-before/runner.json",
+      "sourcePath": "work/aa-lifecycle-original-001/environment-before/runner.json",
+      "sourceSha256": "2e1e414bd8dd0f6904cafd3124cdd62e91acc4c002b33dca35d8dbe316b5a0e5",
+      "decodedSha256": "e76f915e36a337c9568d8c8a99b43183b931bfe00c8542797109ade0b099cecf",
+      "sha256": "e76f915e36a337c9568d8c8a99b43183b931bfe00c8542797109ade0b099cecf",
+      "sourceBytes": 2256,
+      "decodedBytes": 2258,
+      "gzip": false,
+      "normalizations": [
+        "Battery instance identifier redacted; power status and settings retained"
+      ]
+    },
+    {
+      "path": "original/manifest.json",
+      "sourcePath": "work/aa-lifecycle-original-001/manifest.json",
+      "sourceSha256": "95b8837f6dd472fe6e39c767d6ba67597a4994312c361e6da51d2cefd06dc33c",
+      "decodedSha256": "37d2bbe213c6b489b5141dbf40caae72b5bd395a25112e011e89dc422d3a00bd",
+      "sha256": "37d2bbe213c6b489b5141dbf40caae72b5bd395a25112e011e89dc422d3a00bd",
+      "sourceBytes": 57221,
+      "decodedBytes": 56466,
+      "gzip": false,
+      "normalizations": [
+        "Absolute checkout path normalized to <reference-checkout>",
+        "Absolute checkout path normalized to <tooling-checkout>",
+        "Ephemeral Chrome profile paths normalized; all other launch arguments retained"
+      ]
+    },
+    {
+      "path": "original/summary.json",
+      "sourcePath": "work/aa-lifecycle-original-001/summary.json",
+      "sourceSha256": "30462c6908a05d1e4d844548895df031e48e63a7de8cfef734848a04acf454d1",
+      "decodedSha256": "30462c6908a05d1e4d844548895df031e48e63a7de8cfef734848a04acf454d1",
+      "sha256": "30462c6908a05d1e4d844548895df031e48e63a7de8cfef734848a04acf454d1",
+      "sourceBytes": 60324,
+      "decodedBytes": 60324,
+      "gzip": false,
+      "normalizations": []
+    },
+    {
+      "path": "js-long-warmup/0-new-browser-owned-js.json.gz",
+      "sourcePath": "work/aa-lifecycle-js-long-warmup-001/0-new-browser-owned-js.json",
+      "sourceSha256": "4ad9545a946e2103be369c08396f88a3ff0d02beec31588c97a22cb210f4669e",
+      "decodedSha256": "4ad9545a946e2103be369c08396f88a3ff0d02beec31588c97a22cb210f4669e",
+      "sha256": "aab5092c31d4ecb6730a32bf6e42faf5dde164cd3e6a460a1809381707c4fd7e",
+      "sourceBytes": 733674,
+      "decodedBytes": 733674,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "js-long-warmup/0-new-page-owned-js.json.gz",
+      "sourcePath": "work/aa-lifecycle-js-long-warmup-001/0-new-page-owned-js.json",
+      "sourceSha256": "64d633c063b8e6760cec37f4ba0961abc480797ded4acfbf2c87801ec77beee1",
+      "decodedSha256": "64d633c063b8e6760cec37f4ba0961abc480797ded4acfbf2c87801ec77beee1",
+      "sha256": "97d1caa0fa89c5a9845a7a16b2621a75a6b88a816e9d5ddde2c272024ce684ae",
+      "sourceBytes": 733528,
+      "decodedBytes": 733528,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "js-long-warmup/0-same-page-owned-js.json.gz",
+      "sourcePath": "work/aa-lifecycle-js-long-warmup-001/0-same-page-owned-js.json",
+      "sourceSha256": "592b587cd741f0e9d7229f57fc0cbb04fc5053796f5ffd1dc62e75c7d50a1a6e",
+      "decodedSha256": "592b587cd741f0e9d7229f57fc0cbb04fc5053796f5ffd1dc62e75c7d50a1a6e",
+      "sha256": "8e1d82bafb3d80bafef29294238b5366198e0e3b3f89560db656df83d42c5efe",
+      "sourceBytes": 733874,
+      "decodedBytes": 733874,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "js-long-warmup/1-new-browser-owned-js.json.gz",
+      "sourcePath": "work/aa-lifecycle-js-long-warmup-001/1-new-browser-owned-js.json",
+      "sourceSha256": "26a1fb2cd01281ef736d3bd8d3e08d1c86c02509820aeabca933ed69fe474dcb",
+      "decodedSha256": "26a1fb2cd01281ef736d3bd8d3e08d1c86c02509820aeabca933ed69fe474dcb",
+      "sha256": "0ee821620bbee2f3d809d5bfa8ab562be112ad982bc96f63addd52861d0286e0",
+      "sourceBytes": 733763,
+      "decodedBytes": 733763,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "js-long-warmup/1-new-page-owned-js.json.gz",
+      "sourcePath": "work/aa-lifecycle-js-long-warmup-001/1-new-page-owned-js.json",
+      "sourceSha256": "19a66ad5e19c88dfa6601476626e1e7abe929aab4b4e808b459848dad02e09fb",
+      "decodedSha256": "19a66ad5e19c88dfa6601476626e1e7abe929aab4b4e808b459848dad02e09fb",
+      "sha256": "36b1aaaba5affc9c23a86865a83ca676a34688ab1c995c072c45134d0b964432",
+      "sourceBytes": 733964,
+      "decodedBytes": 733964,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "js-long-warmup/1-same-page-owned-js.json.gz",
+      "sourcePath": "work/aa-lifecycle-js-long-warmup-001/1-same-page-owned-js.json",
+      "sourceSha256": "a2ab1a39b06861dcbcb9efc6a18e6d0b8aa69c03736a9485e737fa809e28dd85",
+      "decodedSha256": "a2ab1a39b06861dcbcb9efc6a18e6d0b8aa69c03736a9485e737fa809e28dd85",
+      "sha256": "500cfd98f87822057037544650e8452e8402287cb341f451317251a3c5856d92",
+      "sourceBytes": 737770,
+      "decodedBytes": 737770,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "js-long-warmup/2-new-browser-owned-js.json.gz",
+      "sourcePath": "work/aa-lifecycle-js-long-warmup-001/2-new-browser-owned-js.json",
+      "sourceSha256": "68edeede79bc9a71118c54a29cd9bce325edb6483810d88ead39d6790049b259",
+      "decodedSha256": "68edeede79bc9a71118c54a29cd9bce325edb6483810d88ead39d6790049b259",
+      "sha256": "d8ce6d87a32a4565f14003dae1930940283bff7a96419ed049f4fd20b807f461",
+      "sourceBytes": 734540,
+      "decodedBytes": 734540,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "js-long-warmup/2-new-page-owned-js.json.gz",
+      "sourcePath": "work/aa-lifecycle-js-long-warmup-001/2-new-page-owned-js.json",
+      "sourceSha256": "ad13338df66551b39d178d8285ba1d0f0d95e979ecd861b0f163cb3ed6ce0fe6",
+      "decodedSha256": "ad13338df66551b39d178d8285ba1d0f0d95e979ecd861b0f163cb3ed6ce0fe6",
+      "sha256": "63bdffa2a7bfd733c4691c0a748218f3dc1bb53b5b80f77ef2aaf1bb3dccfc1d",
+      "sourceBytes": 737008,
+      "decodedBytes": 737008,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "js-long-warmup/2-same-page-owned-js.json.gz",
+      "sourcePath": "work/aa-lifecycle-js-long-warmup-001/2-same-page-owned-js.json",
+      "sourceSha256": "919899cfbdf84291af56bc17caeff23511ec2b9dad6c5cb42fba330db57a2779",
+      "decodedSha256": "919899cfbdf84291af56bc17caeff23511ec2b9dad6c5cb42fba330db57a2779",
+      "sha256": "7f0c8d43f1a67c8eb3b9fbdc2b7706e2df8059d71cf643e8ffb9d014ba423b64",
+      "sourceBytes": 738697,
+      "decodedBytes": 738697,
+      "gzip": true,
+      "normalizations": []
+    },
+    {
+      "path": "js-long-warmup/environment-after/runner.json",
+      "sourcePath": "work/aa-lifecycle-js-long-warmup-001/environment-after/runner.json",
+      "sourceSha256": "f4e24484c89599383c0145bdf58a7c6017cf493135684ab3d7635a6f47eddf47",
+      "decodedSha256": "3d741f86c39aaa1752428fc675486ffc65762c3cdc863a489028c9d37e5302a2",
+      "sha256": "3d741f86c39aaa1752428fc675486ffc65762c3cdc863a489028c9d37e5302a2",
+      "sourceBytes": 2256,
+      "decodedBytes": 2258,
+      "gzip": false,
+      "normalizations": [
+        "Battery instance identifier redacted; power status and settings retained"
+      ]
+    },
+    {
+      "path": "js-long-warmup/environment-before/runner.json",
+      "sourcePath": "work/aa-lifecycle-js-long-warmup-001/environment-before/runner.json",
+      "sourceSha256": "c8d4068b50d03e389000d613521511d7a48671768e40fb67cd6c0b396f0f1035",
+      "decodedSha256": "9703cdf060f39241fe2ad1a96dd2725ecc2f56151a645752008e5d8e2ba04084",
+      "sha256": "9703cdf060f39241fe2ad1a96dd2725ecc2f56151a645752008e5d8e2ba04084",
+      "sourceBytes": 2256,
+      "decodedBytes": 2258,
+      "gzip": false,
+      "normalizations": [
+        "Battery instance identifier redacted; power status and settings retained"
+      ]
+    },
+    {
+      "path": "js-long-warmup/manifest.json",
+      "sourcePath": "work/aa-lifecycle-js-long-warmup-001/manifest.json",
+      "sourceSha256": "4942be8fbe69fdd5dac55776ff97e6d14ec4f3d0c9e29269046b58b9028fe2cd",
+      "decodedSha256": "b3b3b5e8f00a248b566bbe2ece167a874c7d3f57754d0c400a02184c634c56c4",
+      "sha256": "b3b3b5e8f00a248b566bbe2ece167a874c7d3f57754d0c400a02184c634c56c4",
+      "sourceBytes": 57220,
+      "decodedBytes": 56465,
+      "gzip": false,
+      "normalizations": [
+        "Absolute checkout path normalized to <reference-checkout>",
+        "Absolute checkout path normalized to <tooling-checkout>",
+        "Ephemeral Chrome profile paths normalized; all other launch arguments retained"
+      ]
+    },
+    {
+      "path": "js-long-warmup/summary.json",
+      "sourcePath": "work/aa-lifecycle-js-long-warmup-001/summary.json",
+      "sourceSha256": "d22888b2d933888f6e0ca2a28b13f615e94af7049afb9fdb48c9d800bcb58bf1",
+      "decodedSha256": "d22888b2d933888f6e0ca2a28b13f615e94af7049afb9fdb48c9d800bcb58bf1",
+      "sha256": "d22888b2d933888f6e0ca2a28b13f615e94af7049afb9fdb48c9d800bcb58bf1",
+      "sourceBytes": 65565,
+      "decodedBytes": 65565,
+      "gzip": false,
+      "normalizations": []
+    }
+  ]
+}

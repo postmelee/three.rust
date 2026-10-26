@@ -15,6 +15,13 @@ remains about 2.1 times original CPU time; smaller controls retain regressions.
 [The earlier C2 report](FACADE_REPORT.md) is preserved separately. Neither cloud
 software-renderer experiment adds a hardware acceleration claim to this report.
 
+The [2026-10-26 Mac candidate/application screen](MAC_APP_SCREEN.md) records
+higher observed prepared-engine costs versus upstream in both fixtures and the
+native Editor animation/timeline path. Editor correctness passed, but all
+continuous app A/A groups failed stability. These findings establish neither a
+useful Rust advantage nor an FPS gain and do not replace the historical Fox
+numbers below. The candidate remains an optional experiment.
+
 ## The useful result
 
 On an Apple M4 Pro MacBook Pro, the 16-Fox replay took **0.45 ms in Three.js,
@@ -66,7 +73,9 @@ for numerical/image correctness, unfavorable tails and raw evidence.
 
 ## Next physical Mac run
 
-This follow-up resolves the current Rust-versus-JS difference. Wider engine
+A follow-up must first establish stable A/A conditions before resolving the
+Rust-versus-JS difference; the [recorded diagnostics](MAC_APP_SCREEN.md) have not
+done so. Wider engine
 experiments may proceed alongside it under [ADR 0005](adr/0005-wide-engine-investigation.md). The new optional isolation mode may expose finer browser timers; it records
 the actual increment rather than assuming precision. This changes the hosting
 policy for every Fox path equally. It is a measurement condition, not an engine

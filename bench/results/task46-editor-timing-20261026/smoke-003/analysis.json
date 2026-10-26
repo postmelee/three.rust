@@ -1,0 +1,742 @@
+{
+  "qualification": false,
+  "mode": "smoke",
+  "scope": "Sum of disjoint Viewport.animate and Animation.updateTime synchronous callback bodies; not entire browser CPU, display latency or FPS",
+  "scenarios": [
+    {
+      "scenario": "E3-root-selected-shadow",
+      "auxiliary": false,
+      "engines": {
+        "original": {
+          "independentRuns": 2,
+          "medianRunCpu": {
+            "p50": 1.268750000745058,
+            "p95": 1.4318749986588954,
+            "p99": 1.4960750023275615
+          },
+          "medianRunRafIntervals": {
+            "p50": 8.335000000000036,
+            "p95": 9.26800000000012,
+            "p99": 9.347600000000147
+          },
+          "medianRunCallbackStartIntervals": {
+            "p50": 8.320000000298023,
+            "p95": 9.271499998867512,
+            "p99": 9.584100002944469
+          },
+          "p50Range": [
+            1.2650000005960464,
+            1.2725000008940697
+          ],
+          "ownRunBlockStable": false
+        },
+        "prepared-js": {
+          "independentRuns": 1,
+          "medianRunCpu": {
+            "p50": 2.947499990463257,
+            "p95": 3.1377500027418135,
+            "p99": 3.1648499980568885
+          },
+          "medianRunRafIntervals": {
+            "p50": 8.335000000000036,
+            "p95": 8.642000000000188,
+            "p99": 8.861599999999962
+          },
+          "medianRunCallbackStartIntervals": {
+            "p50": 8.334999993443489,
+            "p95": 8.681999996304512,
+            "p99": 8.937999991774559
+          },
+          "p50Range": [
+            2.947499990463257,
+            2.947499990463257
+          ],
+          "ownRunBlockStable": false
+        },
+        "prepared-wasm": {
+          "independentRuns": 1,
+          "medianRunCpu": {
+            "p50": 3.0099999979138374,
+            "p95": 3.22975000590086,
+            "p99": 3.2819499906897547
+          },
+          "medianRunRafIntervals": {
+            "p50": 8.335000000000036,
+            "p95": 10.122000000000115,
+            "p99": 10.274000000000123
+          },
+          "medianRunCallbackStartIntervals": {
+            "p50": 8.334999993443489,
+            "p95": 10.166999995708466,
+            "p99": 10.328199994564056
+          },
+          "p50Range": [
+            3.0099999979138374,
+            3.0099999979138374
+          ],
+          "ownRunBlockStable": false
+        }
+      },
+      "jsVersusOriginal": {
+        "p50": {
+          "absoluteMs": 1.6787499897181988,
+          "relativeChangePercent": 132.3152700478718
+        },
+        "p95": {
+          "absoluteMs": 1.705875004082918,
+          "relativeChangePercent": 119.13574897813379
+        },
+        "p99": {
+          "absoluteMs": 1.668774995729327,
+          "relativeChangePercent": 111.54353846786307
+        }
+      },
+      "wasmVersusOriginal": {
+        "p50": {
+          "absoluteMs": 1.7412499971687794,
+          "relativeChangePercent": 137.2413790066011
+        },
+        "p95": {
+          "absoluteMs": 1.7978750072419645,
+          "relativeChangePercent": 125.56089106422468
+        },
+        "p99": {
+          "absoluteMs": 1.7858749883621932,
+          "relativeChangePercent": 119.37068566641157
+        }
+      },
+      "wasmVersusMatchedJS": {
+        "p50": {
+          "absoluteMs": 0.0625000074505806,
+          "relativeChangePercent": 2.1204413113757976
+        },
+        "p95": {
+          "absoluteMs": 0.09200000315904644,
+          "relativeChangePercent": 2.932037385982167
+        },
+        "p99": {
+          "absoluteMs": 0.11709999263286619,
+          "relativeChangePercent": 3.700017147882574
+        }
+      },
+      "aa": {
+        "allOriginalMedian": 1.268750000745058,
+        "includesBookendsInTolerance": true,
+        "toleranceMs": 0.0634375000372529,
+        "originals": [
+          {
+            "purpose": "balanced",
+            "directory": "runs/002-E3-root-selected-shadow-balanced-original-A",
+            "cpu": {
+              "p50": 1.2725000008940697,
+              "p95": 1.4055000007152556,
+              "p99": 1.5094000074267389,
+              "mean": 1.2869999984900156,
+              "min": 1.104999989271164,
+              "max": 1.550000011920929
+            },
+            "withinTolerance": true,
+            "blocksWithinSceneTolerance": true,
+            "sceneToleranceMs": 0.0634375000372529,
+            "ownRunBlockStable": true
+          },
+          {
+            "purpose": "balanced",
+            "directory": "runs/004-E3-root-selected-shadow-balanced-original-B",
+            "cpu": {
+              "p50": 1.2650000005960464,
+              "p95": 1.4582499966025353,
+              "p99": 1.482749997228384,
+              "mean": 1.2816666677594184,
+              "min": 1.094999998807907,
+              "max": 1.489999994635582
+            },
+            "withinTolerance": true,
+            "blocksWithinSceneTolerance": false,
+            "sceneToleranceMs": 0.0634375000372529,
+            "ownRunBlockStable": false
+          }
+        ],
+        "bookends": [
+          {
+            "purpose": "bookend-before",
+            "directory": "runs/001-E3-root-selected-shadow-bookend-before-original-pre",
+            "cpu": {
+              "p50": 1.2999999970197678,
+              "p95": 1.3777499973773957,
+              "p99": 1.4190499897301199,
+              "mean": 1.2856666634480158,
+              "min": 1.1199999898672104,
+              "max": 1.4349999874830246
+            },
+            "withinTolerance": true,
+            "blocksWithinSceneTolerance": false,
+            "sceneToleranceMs": 0.0634375000372529,
+            "ownRunBlockStable": false
+          },
+          {
+            "purpose": "bookend-after",
+            "directory": "runs/006-E3-root-selected-shadow-bookend-after-original-post",
+            "cpu": {
+              "p50": 1.2575000002980232,
+              "p95": 1.451999995857477,
+              "p99": 1.5161500076949597,
+              "mean": 1.2695000012715658,
+              "min": 1.0900000184774399,
+              "max": 1.5350000113248825
+            },
+            "withinTolerance": true,
+            "blocksWithinSceneTolerance": true,
+            "sceneToleranceMs": 0.0634375000372529,
+            "ownRunBlockStable": true
+          }
+        ],
+        "passes": false
+      },
+      "interpretation": "Observed callback costs only. A/A or block failures preclude a stable speedup claim. Native phase coverage and intervals remain per-run; no FPS claim."
+    },
+    {
+      "scenario": "E3-root-selected-no-shadow",
+      "auxiliary": false,
+      "engines": {
+        "original": {
+          "independentRuns": 2,
+          "medianRunCpu": {
+            "p50": 1.2300000004470348,
+            "p95": 1.4049999978393317,
+            "p99": 1.4653500018268824
+          },
+          "medianRunRafIntervals": {
+            "p50": 8.332499999999754,
+            "p95": 10.054500000000052,
+            "p99": 10.250499999999985
+          },
+          "medianRunCallbackStartIntervals": {
+            "p50": 8.320000000298023,
+            "p95": 10.064500004053116,
+            "p99": 10.372100001573562
+          },
+          "p50Range": [
+            1.192500002682209,
+            1.2674999982118607
+          ],
+          "ownRunBlockStable": false
+        },
+        "prepared-js": {
+          "independentRuns": 1,
+          "medianRunCpu": {
+            "p50": 2.807499997317791,
+            "p95": 2.980999996513128,
+            "p99": 3.096499998867512
+          },
+          "medianRunRafIntervals": {
+            "p50": 8.329999999999927,
+            "p95": 10.307999999999902,
+            "p99": 10.313599999999697
+          },
+          "medianRunCallbackStartIntervals": {
+            "p50": 8.345000013709068,
+            "p95": 10.230999997258186,
+            "p99": 10.252999992966652
+          },
+          "p50Range": [
+            2.807499997317791,
+            2.807499997317791
+          ],
+          "ownRunBlockStable": false
+        },
+        "prepared-wasm": {
+          "independentRuns": 1,
+          "medianRunCpu": {
+            "p50": 2.910000003874302,
+            "p95": 3.122749991714954,
+            "p99": 3.1806499873101712
+          },
+          "medianRunRafIntervals": {
+            "p50": 8.329999999999927,
+            "p95": 9.591000000000257,
+            "p99": 10.16420000000011
+          },
+          "medianRunCallbackStartIntervals": {
+            "p50": 8.320000007748604,
+            "p95": 9.78199999630451,
+            "p99": 10.347999998927117
+          },
+          "p50Range": [
+            2.910000003874302,
+            2.910000003874302
+          ],
+          "ownRunBlockStable": false
+        }
+      },
+      "jsVersusOriginal": {
+        "p50": {
+          "absoluteMs": 1.5774999968707561,
+          "relativeChangePercent": 128.25203221930283
+        },
+        "p95": {
+          "absoluteMs": 1.5759999986737965,
+          "relativeChangePercent": 112.17081858344739
+        },
+        "p99": {
+          "absoluteMs": 1.6311499970406296,
+          "relativeChangePercent": 111.31470263125131
+        }
+      },
+      "wasmVersusOriginal": {
+        "p50": {
+          "absoluteMs": 1.680000003427267,
+          "relativeChangePercent": 136.58536608265715
+        },
+        "p95": {
+          "absoluteMs": 1.7177499938756222,
+          "relativeChangePercent": 122.2597862289858
+        },
+        "p99": {
+          "absoluteMs": 1.7152999854832889,
+          "relativeChangePercent": 117.05735717369834
+        }
+      },
+      "wasmVersusMatchedJS": {
+        "p50": {
+          "absoluteMs": 0.10250000655651093,
+          "relativeChangePercent": 3.6509352325712072
+        },
+        "p95": {
+          "absoluteMs": 0.14174999520182574,
+          "relativeChangePercent": 4.755115577579018
+        },
+        "p99": {
+          "absoluteMs": 0.08414998844265931,
+          "relativeChangePercent": 2.717583997204444
+        }
+      },
+      "aa": {
+        "allOriginalMedian": 1.1512500010430813,
+        "includesBookendsInTolerance": true,
+        "toleranceMs": 0.05756250005215407,
+        "originals": [
+          {
+            "purpose": "balanced",
+            "directory": "runs/008-E3-root-selected-no-shadow-balanced-original-A",
+            "cpu": {
+              "p50": 1.192500002682209,
+              "p95": 1.3799999952316284,
+              "p99": 1.4580999948084354,
+              "mean": 1.2041666681567829,
+              "min": 1.010000005364418,
+              "max": 1.489999994635582
+            },
+            "withinTolerance": true,
+            "blocksWithinSceneTolerance": false,
+            "sceneToleranceMs": 0.05756250005215407,
+            "ownRunBlockStable": false
+          },
+          {
+            "purpose": "balanced",
+            "directory": "runs/010-E3-root-selected-no-shadow-balanced-original-B",
+            "cpu": {
+              "p50": 1.2674999982118607,
+              "p95": 1.4300000004470348,
+              "p99": 1.4726000088453293,
+              "mean": 1.2605000014106433,
+              "min": 1.0750000029802322,
+              "max": 1.4900000095367432
+            },
+            "withinTolerance": false,
+            "blocksWithinSceneTolerance": false,
+            "sceneToleranceMs": 0.05756250005215407,
+            "ownRunBlockStable": false
+          }
+        ],
+        "bookends": [
+          {
+            "purpose": "bookend-before",
+            "directory": "runs/007-E3-root-selected-no-shadow-bookend-before-original-pre",
+            "cpu": {
+              "p50": 1.1099999994039536,
+              "p95": 1.3080000072717666,
+              "p99": 1.4450500091910363,
+              "mean": 1.1150000010927519,
+              "min": 0.9199999868869781,
+              "max": 1.4900000095367432
+            },
+            "withinTolerance": true,
+            "blocksWithinSceneTolerance": false,
+            "sceneToleranceMs": 0.05756250005215407,
+            "ownRunBlockStable": false
+          },
+          {
+            "purpose": "bookend-after",
+            "directory": "runs/012-E3-root-selected-no-shadow-bookend-after-original-post",
+            "cpu": {
+              "p50": 0.9675000011920929,
+              "p95": 1.1192500069737434,
+              "p99": 1.1953499901294709,
+              "mean": 0.9606666679183642,
+              "min": 0.7700000107288361,
+              "max": 1.219999983906746
+            },
+            "withinTolerance": false,
+            "blocksWithinSceneTolerance": false,
+            "sceneToleranceMs": 0.05756250005215407,
+            "ownRunBlockStable": false
+          }
+        ],
+        "passes": false
+      },
+      "interpretation": "Observed callback costs only. A/A or block failures preclude a stable speedup claim. Native phase coverage and intervals remain per-run; no FPS claim."
+    },
+    {
+      "scenario": "E3-root-selected-high-resolution",
+      "auxiliary": false,
+      "engines": {
+        "original": {
+          "independentRuns": 2,
+          "medianRunCpu": {
+            "p50": 1.1912500001490116,
+            "p95": 1.3001250017434356,
+            "p99": 1.317824989631772
+          },
+          "medianRunRafIntervals": {
+            "p50": 8.334999999999809,
+            "p95": 9.146000000000004,
+            "p99": 9.868799999999936
+          },
+          "medianRunCallbackStartIntervals": {
+            "p50": 8.35249999910593,
+            "p95": 9.210999996960162,
+            "p99": 9.858599998056887
+          },
+          "p50Range": [
+            1.0575000047683716,
+            1.3249999955296516
+          ],
+          "ownRunBlockStable": false
+        },
+        "prepared-js": {
+          "independentRuns": 1,
+          "medianRunCpu": {
+            "p50": 2.6024999991059303,
+            "p95": 2.793749997764826,
+            "p99": 2.8227500113844872
+          },
+          "medianRunRafIntervals": {
+            "p50": 8.330000000000382,
+            "p95": 10.186999999999989,
+            "p99": 10.318599999999806
+          },
+          "medianRunCallbackStartIntervals": {
+            "p50": 8.344999998807907,
+            "p95": 10.184999999403953,
+            "p99": 10.304599995017051
+          },
+          "p50Range": [
+            2.6024999991059303,
+            2.6024999991059303
+          ],
+          "ownRunBlockStable": true
+        },
+        "prepared-wasm": {
+          "independentRuns": 1,
+          "medianRunCpu": {
+            "p50": 2.9724999964237213,
+            "p95": 3.2599999986588957,
+            "p99": 3.341649990975857
+          },
+          "medianRunRafIntervals": {
+            "p50": 8.335000000000036,
+            "p95": 10.327000000000044,
+            "p99": 10.335000000000036
+          },
+          "medianRunCallbackStartIntervals": {
+            "p50": 8.334999993443489,
+            "p95": 10.364999994635582,
+            "p99": 10.434600000977516
+          },
+          "p50Range": [
+            2.9724999964237213,
+            2.9724999964237213
+          ],
+          "ownRunBlockStable": false
+        }
+      },
+      "jsVersusOriginal": {
+        "p50": {
+          "absoluteMs": 1.4112499989569187,
+          "relativeChangePercent": 118.46799570034733
+        },
+        "p95": {
+          "absoluteMs": 1.4936249960213903,
+          "relativeChangePercent": 114.88318384912805
+        },
+        "p99": {
+          "absoluteMs": 1.5049250217527153,
+          "relativeChangePercent": 114.19763880583436
+        }
+      },
+      "wasmVersusOriginal": {
+        "p50": {
+          "absoluteMs": 1.7812499962747097,
+          "relativeChangePercent": 149.5278065940731
+        },
+        "p95": {
+          "absoluteMs": 1.95987499691546,
+          "relativeChangePercent": 150.7451202220799
+        },
+        "p99": {
+          "absoluteMs": 2.023825001344085,
+          "relativeChangePercent": 153.57312368993578
+        }
+      },
+      "wasmVersusMatchedJS": {
+        "p50": {
+          "absoluteMs": 0.369999997317791,
+          "relativeChangePercent": 14.21709884514512
+        },
+        "p95": {
+          "absoluteMs": 0.46625000089406976,
+          "relativeChangePercent": 16.689038076674677
+        },
+        "p99": {
+          "absoluteMs": 0.5188999795913696,
+          "relativeChangePercent": 18.382781950175684
+        }
+      },
+      "aa": {
+        "allOriginalMedian": 1.0724999979138374,
+        "includesBookendsInTolerance": true,
+        "toleranceMs": 0.053624999895691874,
+        "originals": [
+          {
+            "purpose": "balanced",
+            "directory": "runs/014-E3-root-selected-high-resolution-balanced-original-A",
+            "cpu": {
+              "p50": 1.0575000047683716,
+              "p95": 1.190499997138977,
+              "p99": 1.202099986076355,
+              "mean": 1.0463333318630854,
+              "min": 0.7650000005960464,
+              "max": 1.2049999833106995
+            },
+            "withinTolerance": true,
+            "blocksWithinSceneTolerance": false,
+            "sceneToleranceMs": 0.053624999895691874,
+            "ownRunBlockStable": false
+          },
+          {
+            "purpose": "balanced",
+            "directory": "runs/016-E3-root-selected-high-resolution-balanced-original-B",
+            "cpu": {
+              "p50": 1.3249999955296516,
+              "p95": 1.4097500063478945,
+              "p99": 1.4335499931871891,
+              "mean": 1.2898333350817361,
+              "min": 1.0449999868869781,
+              "max": 1.4349999874830246
+            },
+            "withinTolerance": false,
+            "blocksWithinSceneTolerance": false,
+            "sceneToleranceMs": 0.053624999895691874,
+            "ownRunBlockStable": false
+          }
+        ],
+        "bookends": [
+          {
+            "purpose": "bookend-before",
+            "directory": "runs/013-E3-root-selected-high-resolution-bookend-before-original-pre",
+            "cpu": {
+              "p50": 1.0399999991059303,
+              "p95": 1.156499994546175,
+              "p99": 1.2196999967098237,
+              "mean": 1.0305000007152558,
+              "min": 0.8349999934434891,
+              "max": 1.239999994635582
+            },
+            "withinTolerance": true,
+            "blocksWithinSceneTolerance": false,
+            "sceneToleranceMs": 0.053624999895691874,
+            "ownRunBlockStable": false
+          },
+          {
+            "purpose": "bookend-after",
+            "directory": "runs/018-E3-root-selected-high-resolution-bookend-after-original-post",
+            "cpu": {
+              "p50": 1.0874999910593033,
+              "p95": 1.2869999960064886,
+              "p99": 1.3369500041007996,
+              "mean": 1.0851666649182639,
+              "min": 0.8449999988079071,
+              "max": 1.3500000089406967
+            },
+            "withinTolerance": true,
+            "blocksWithinSceneTolerance": false,
+            "sceneToleranceMs": 0.053624999895691874,
+            "ownRunBlockStable": false
+          }
+        ],
+        "passes": false
+      },
+      "interpretation": "Observed callback costs only. A/A or block failures preclude a stable speedup claim. Native phase coverage and intervals remain per-run; no FPS claim."
+    },
+    {
+      "scenario": "E1-idle",
+      "auxiliary": true,
+      "engines": {
+        "original": {
+          "independentRuns": 2,
+          "medianRunCpu": {
+            "p50": 0.009999997913837433,
+            "p95": 0.01637501418590545,
+            "p99": 0.01927501142024994
+          },
+          "medianRunRafIntervals": {
+            "p50": 8.327499999999873,
+            "p95": 10.133499999999822,
+            "p99": 10.279699999999973
+          },
+          "medianRunCallbackStartIntervals": {
+            "p50": 8.337499998509884,
+            "p95": 10.235999998450279,
+            "p99": 10.349199995398521
+          },
+          "p50Range": [
+            0.009999990463256836,
+            0.01000000536441803
+          ],
+          "ownRunBlockStable": true
+        },
+        "prepared-js": {
+          "independentRuns": 1,
+          "medianRunCpu": {
+            "p50": 0.007500000298023224,
+            "p95": 0.017749997973442063,
+            "p99": 0.019999995827674866
+          },
+          "medianRunRafIntervals": {
+            "p50": 8.335000000000036,
+            "p95": 10.179000000000178,
+            "p99": 10.315000000000055
+          },
+          "medianRunCallbackStartIntervals": {
+            "p50": 8.390000000596046,
+            "p95": 10.340000000596046,
+            "p99": 10.359999999403954
+          },
+          "p50Range": [
+            0.007500000298023224,
+            0.007500000298023224
+          ],
+          "ownRunBlockStable": true
+        },
+        "prepared-wasm": {
+          "independentRuns": 1,
+          "medianRunCpu": {
+            "p50": 0.009999997913837433,
+            "p95": 0.015000015497207642,
+            "p99": 0.015000015497207642
+          },
+          "medianRunRafIntervals": {
+            "p50": 8.335000000000036,
+            "p95": 9.230000000000018,
+            "p99": 9.522399999999998
+          },
+          "medianRunCallbackStartIntervals": {
+            "p50": 8.33500000834465,
+            "p95": 10.29500000178814,
+            "p99": 10.3274000030756
+          },
+          "p50Range": [
+            0.009999997913837433,
+            0.009999997913837433
+          ],
+          "ownRunBlockStable": true
+        }
+      },
+      "jsVersusOriginal": {
+        "p50": {
+          "absoluteMs": -0.002499997615814209,
+          "relativeChangePercent": null
+        },
+        "p95": {
+          "absoluteMs": 0.001374983787536612,
+          "relativeChangePercent": null
+        },
+        "p99": {
+          "absoluteMs": 0.0007249844074249251,
+          "relativeChangePercent": null
+        }
+      },
+      "wasmVersusOriginal": {
+        "p50": {
+          "absoluteMs": 0,
+          "relativeChangePercent": null
+        },
+        "p95": {
+          "absoluteMs": -0.0013749986886978094,
+          "relativeChangePercent": null
+        },
+        "p99": {
+          "absoluteMs": -0.004274995923042299,
+          "relativeChangePercent": null
+        }
+      },
+      "wasmVersusMatchedJS": {
+        "p50": {
+          "absoluteMs": 0.002499997615814209,
+          "relativeChangePercent": null
+        },
+        "p95": {
+          "absoluteMs": -0.0027499824762344215,
+          "relativeChangePercent": null
+        },
+        "p99": {
+          "absoluteMs": -0.004999980330467224,
+          "relativeChangePercent": null
+        }
+      },
+      "aa": {
+        "allOriginalMedian": 0.009999997913837433,
+        "includesBookendsInTolerance": true,
+        "toleranceMs": 0.019999980926513672,
+        "originals": [
+          {
+            "purpose": "balanced",
+            "directory": "runs/019-E1-idle-balanced-original-A",
+            "cpu": {
+              "p50": 0.009999990463256836,
+              "p95": 0.017750012874603257,
+              "p99": 0.02000001072883606,
+              "mean": 0.008000001311302185,
+              "min": 0,
+              "max": 0.02000001072883606
+            },
+            "withinTolerance": true,
+            "blocksWithinSceneTolerance": true,
+            "sceneToleranceMs": 0.019999980926513672,
+            "ownRunBlockStable": true
+          },
+          {
+            "purpose": "balanced",
+            "directory": "runs/021-E1-idle-balanced-original-B",
+            "cpu": {
+              "p50": 0.01000000536441803,
+              "p95": 0.015000015497207642,
+              "p99": 0.01855001211166382,
+              "mean": 0.010333335399627686,
+              "min": 0.004999995231628418,
+              "max": 0.02000001072883606
+            },
+            "withinTolerance": true,
+            "blocksWithinSceneTolerance": true,
+            "sceneToleranceMs": 0.019999980926513672,
+            "ownRunBlockStable": true
+          }
+        ],
+        "bookends": [],
+        "passes": false
+      },
+      "interpretation": "Observed callback costs only. A/A or block failures preclude a stable speedup claim. Native phase coverage and intervals remain per-run; no FPS claim."
+    }
+  ]
+}

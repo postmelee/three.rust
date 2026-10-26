@@ -1,0 +1,150 @@
+{
+  "status": "passed",
+  "engine": "prepared-wasm",
+  "app": "editor",
+  "candidateSha": "6990fd92f61a031c8c2ba7a8282cfb63684e6dfb",
+  "assetConformance": "Known upstream failure: 752 nonnormalized weight errors, four skin-node warnings; unchanged asset. Runtime normalized weights checked separately.",
+  "scope": "Candidate correctness preparation with within-route A/A; no cross-engine equivalence or performance qualification",
+  "checks": [
+    {
+      "name": "E1 pointer picking and shift selection 0",
+      "pass": true
+    },
+    {
+      "name": "E1 command transforms/undo/redo/synchronous reads 0",
+      "pass": true
+    },
+    {
+      "name": "E1 idle render suppression 0",
+      "pass": true,
+      "renderNotifications": 0
+    },
+    {
+      "name": "editor upstream loader skin-weight normalization 0",
+      "pass": true,
+      "vertices": 1108,
+      "geometries": 4,
+      "maxSumError": 4.470348358154297e-8
+    },
+    {
+      "name": "E2 native loader/playback/selected bounds/shadows/visibility 0",
+      "pass": true,
+      "skins": 4,
+      "morphs": 3,
+      "clips": 14,
+      "selected": "SkinnedMesh"
+    },
+    {
+      "name": "E1 pointer picking and shift selection 1",
+      "pass": true
+    },
+    {
+      "name": "E1 command transforms/undo/redo/synchronous reads 1",
+      "pass": true
+    },
+    {
+      "name": "E1-small-static exact fixed-state A/A",
+      "pass": true,
+      "numericValues": 284,
+      "pixelSha256": "b001b032daac9a61676de7588a76fc53b87aea730470e574c36a23940f0777e3"
+    },
+    {
+      "name": "E1 idle render suppression 1",
+      "pass": true,
+      "renderNotifications": 0
+    },
+    {
+      "name": "editor upstream loader skin-weight normalization 1",
+      "pass": true,
+      "vertices": 1108,
+      "geometries": 4,
+      "maxSumError": 4.470348358154297e-8
+    },
+    {
+      "name": "E2-animated-selected-shadow exact fixed-state A/A",
+      "pass": true,
+      "numericValues": 7833,
+      "pixelSha256": "d8dfb4e3f21db7e409f098d24ef4274ac394f2dbcb3b7277e6e292b58e0c215a"
+    },
+    {
+      "name": "E2-shadow-disabled-control exact fixed-state A/A",
+      "pass": true,
+      "numericValues": 7833,
+      "pixelSha256": "fcbcf541e6b99f9d6766af42a1e853f1181c25230c0ba6eb5373bbc1a2b598cd"
+    },
+    {
+      "name": "E2-hidden-control exact fixed-state A/A",
+      "pass": true,
+      "numericValues": 7833,
+      "pixelSha256": "b3ea75f653655d1b40c84e87d3bffb062713c5c7739436968cee81a0776abaad"
+    },
+    {
+      "name": "E2 native loader/playback/selected bounds/shadows/visibility 1",
+      "pass": true,
+      "skins": 4,
+      "morphs": 3,
+      "clips": 14,
+      "selected": "SkinnedMesh"
+    }
+  ],
+  "actions": [
+    {
+      "scenario": "E1",
+      "repeat": 0,
+      "inputs": [
+        "authored two cubes/ground/directional/ambient lights via AddObjectCommand",
+        "pointer select Left cube",
+        "shift-click Right cube",
+        "SetPosition/SetRotation commands; undo/redo",
+        "deselect and observe 12 rAF callbacks"
+      ],
+      "limitations": [
+        "gizmo drag and focus UI replay not yet automated"
+      ]
+    },
+    {
+      "scenario": "E2",
+      "repeat": 0,
+      "inputs": [
+        "native Loader.loadFiles RobotExpressive",
+        "authored ground, raster shadow light and ambient via AddObjectCommand",
+        "Walking action, select SkinnedMesh",
+        "fixed pose 0.75 seconds",
+        "shadow off/on, model visible off/on"
+      ],
+      "limitations": [
+        "programmatic native APIs; timeline and light GUI replay not yet automated",
+        "raster shadow workload is GPU-oriented, not proven GPU-bound"
+      ]
+    },
+    {
+      "scenario": "E1",
+      "repeat": 1,
+      "inputs": [
+        "authored two cubes/ground/directional/ambient lights via AddObjectCommand",
+        "pointer select Left cube",
+        "shift-click Right cube",
+        "SetPosition/SetRotation commands; undo/redo",
+        "deselect and observe 12 rAF callbacks"
+      ],
+      "limitations": [
+        "gizmo drag and focus UI replay not yet automated"
+      ]
+    },
+    {
+      "scenario": "E2",
+      "repeat": 1,
+      "inputs": [
+        "native Loader.loadFiles RobotExpressive",
+        "authored ground, raster shadow light and ambient via AddObjectCommand",
+        "Walking action, select SkinnedMesh",
+        "fixed pose 0.75 seconds",
+        "shadow off/on, model visible off/on"
+      ],
+      "limitations": [
+        "programmatic native APIs; timeline and light GUI replay not yet automated",
+        "raster shadow workload is GPU-oriented, not proven GPU-bound"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,465 @@
+{
+  "status": "passed",
+  "engine": "original",
+  "app": "editor",
+  "candidateSha": null,
+  "scope": "Native UI correctness only; no timing/profile/engine candidate",
+  "checks": [
+    {
+      "name": "translate pointer gizmo + keyboard undo/redo 0",
+      "command": "SetPositionCommand"
+    },
+    {
+      "name": "rotate pointer gizmo + keyboard undo/redo 0",
+      "command": "SetRotationCommand"
+    },
+    {
+      "name": "scale pointer gizmo + keyboard undo/redo 0",
+      "command": "SetScaleCommand"
+    },
+    {
+      "name": "translate pointer gizmo + keyboard undo/redo 0-group",
+      "command": "MultiCmdsCommand"
+    },
+    {
+      "name": "multi-selection pointer transform 0"
+    },
+    {
+      "name": "keyboard focus preserves objects 0"
+    },
+    {
+      "name": "outliner double-click focus 0"
+    },
+    {
+      "name": "synchronous pointer world reads 0",
+      "events": 56
+    },
+    {
+      "name": "light intensity sidebar 0"
+    },
+    {
+      "name": "light cast-shadow sidebar 0"
+    },
+    {
+      "name": "light visibility sidebar 0"
+    },
+    {
+      "name": "timeline play/pause 0"
+    },
+    {
+      "name": "timeline resume 0"
+    },
+    {
+      "name": "timeline time-scale UI 0"
+    },
+    {
+      "name": "timeline pointer scrubbing 0"
+    },
+    {
+      "name": "timeline stop 0"
+    },
+    {
+      "name": "timeline restart after stop 0"
+    },
+    {
+      "name": "timeline clip switch stops previous without autoplay 0"
+    },
+    {
+      "name": "translate pointer gizmo + keyboard undo/redo 1",
+      "command": "SetPositionCommand"
+    },
+    {
+      "name": "rotate pointer gizmo + keyboard undo/redo 1",
+      "command": "SetRotationCommand"
+    },
+    {
+      "name": "scale pointer gizmo + keyboard undo/redo 1",
+      "command": "SetScaleCommand"
+    },
+    {
+      "name": "translate pointer gizmo + keyboard undo/redo 1-group",
+      "command": "MultiCmdsCommand"
+    },
+    {
+      "name": "multi-selection pointer transform 1"
+    },
+    {
+      "name": "keyboard focus preserves objects 1"
+    },
+    {
+      "name": "focused-static exact reload A/A"
+    },
+    {
+      "name": "outliner double-click focus 1"
+    },
+    {
+      "name": "synchronous pointer world reads 1",
+      "events": 56
+    },
+    {
+      "name": "light intensity sidebar 1"
+    },
+    {
+      "name": "light cast-shadow sidebar 1"
+    },
+    {
+      "name": "light visibility sidebar 1"
+    },
+    {
+      "name": "light-controls exact reload A/A"
+    },
+    {
+      "name": "timeline play/pause 1"
+    },
+    {
+      "name": "timeline resume 1"
+    },
+    {
+      "name": "timeline time-scale UI 1"
+    },
+    {
+      "name": "timeline-0.25 exact reload A/A"
+    },
+    {
+      "name": "timeline-0.75 exact reload A/A"
+    },
+    {
+      "name": "timeline pointer scrubbing 1"
+    },
+    {
+      "name": "timeline stop 1"
+    },
+    {
+      "name": "timeline restart after stop 1"
+    },
+    {
+      "name": "timeline clip switch stops previous without autoplay 1"
+    }
+  ],
+  "inputs": [
+    {
+      "select": "Left cube",
+      "via": "outliner click"
+    },
+    {
+      "label": "translate/X",
+      "from": {
+        "x": 480.33804230535196,
+        "y": 346.3838960722141,
+        "score": 0.007691852580023806,
+        "center": {
+          "x": 415.33804230535196,
+          "y": 347.3838960722141
+        }
+      },
+      "to": {
+        "x": 518.338042305352,
+        "y": 324.3838960722141
+      },
+      "steps": 12
+    },
+    {
+      "key": "Meta+z"
+    },
+    {
+      "key": "Meta+Shift+z"
+    },
+    {
+      "key": "Meta+z"
+    },
+    {
+      "label": "rotate/Z",
+      "from": {
+        "x": 480.33804230535196,
+        "y": 346.3838960722141,
+        "score": 0.007691852580023806,
+        "center": {
+          "x": 415.33804230535196,
+          "y": 347.3838960722141
+        }
+      },
+      "to": {
+        "x": 480.73804230535194,
+        "y": 372.3838960722141
+      },
+      "steps": 12
+    },
+    {
+      "key": "Meta+z"
+    },
+    {
+      "key": "Meta+Shift+z"
+    },
+    {
+      "key": "Meta+z"
+    },
+    {
+      "label": "scale/X",
+      "from": {
+        "x": 480.33804230535196,
+        "y": 346.3838960722141,
+        "score": 0.007691852580023806,
+        "center": {
+          "x": 415.33804230535196,
+          "y": 347.3838960722141
+        }
+      },
+      "to": {
+        "x": 518.338042305352,
+        "y": 324.3838960722141
+      },
+      "steps": 12
+    },
+    {
+      "key": "Meta+z"
+    },
+    {
+      "key": "Meta+Shift+z"
+    },
+    {
+      "key": "Meta+z"
+    },
+    {
+      "label": "translate/X",
+      "from": {
+        "x": 529.9999999999999,
+        "y": 359,
+        "score": 0.007691852580023806,
+        "center": {
+          "x": 464.9999999999999,
+          "y": 360
+        }
+      },
+      "to": {
+        "x": 567.9999999999999,
+        "y": 337
+      },
+      "steps": 12
+    },
+    {
+      "key": "Meta+z"
+    },
+    {
+      "key": "Meta+Shift+z"
+    },
+    {
+      "key": "Meta+z"
+    },
+    {
+      "select": "Left cube",
+      "via": "outliner click"
+    },
+    {
+      "key": "f"
+    },
+    {
+      "select": "Key light",
+      "via": "outliner click"
+    },
+    {
+      "select": "RobotExpressive.glb",
+      "via": "outliner click"
+    },
+    {
+      "key": "f"
+    },
+    {
+      "label": "expand timeline",
+      "from": {
+        "x": 465,
+        "y": 684
+      },
+      "to": {
+        "x": 465,
+        "y": 414
+      },
+      "steps": 12
+    },
+    {
+      "label": "timeline scrub 0.25",
+      "from": {
+        "x": 228,
+        "y": 585.5
+      },
+      "to": {
+        "x": 345,
+        "y": 585.5
+      },
+      "steps": 12
+    },
+    {
+      "label": "timeline scrub 0.75",
+      "from": {
+        "x": 228,
+        "y": 585.5
+      },
+      "to": {
+        "x": 735,
+        "y": 585.5
+      },
+      "steps": 12
+    },
+    {
+      "select": "Left cube",
+      "via": "outliner click"
+    },
+    {
+      "label": "translate/X",
+      "from": {
+        "x": 480.33804230535196,
+        "y": 346.3838960722141,
+        "score": 0.007691852580023806,
+        "center": {
+          "x": 415.33804230535196,
+          "y": 347.3838960722141
+        }
+      },
+      "to": {
+        "x": 518.338042305352,
+        "y": 324.3838960722141
+      },
+      "steps": 12
+    },
+    {
+      "key": "Meta+z"
+    },
+    {
+      "key": "Meta+Shift+z"
+    },
+    {
+      "key": "Meta+z"
+    },
+    {
+      "label": "rotate/Z",
+      "from": {
+        "x": 480.33804230535196,
+        "y": 346.3838960722141,
+        "score": 0.007691852580023806,
+        "center": {
+          "x": 415.33804230535196,
+          "y": 347.3838960722141
+        }
+      },
+      "to": {
+        "x": 480.73804230535194,
+        "y": 372.3838960722141
+      },
+      "steps": 12
+    },
+    {
+      "key": "Meta+z"
+    },
+    {
+      "key": "Meta+Shift+z"
+    },
+    {
+      "key": "Meta+z"
+    },
+    {
+      "label": "scale/X",
+      "from": {
+        "x": 480.33804230535196,
+        "y": 346.3838960722141,
+        "score": 0.007691852580023806,
+        "center": {
+          "x": 415.33804230535196,
+          "y": 347.3838960722141
+        }
+      },
+      "to": {
+        "x": 518.338042305352,
+        "y": 324.3838960722141
+      },
+      "steps": 12
+    },
+    {
+      "key": "Meta+z"
+    },
+    {
+      "key": "Meta+Shift+z"
+    },
+    {
+      "key": "Meta+z"
+    },
+    {
+      "label": "translate/X",
+      "from": {
+        "x": 529.9999999999999,
+        "y": 359,
+        "score": 0.007691852580023806,
+        "center": {
+          "x": 464.9999999999999,
+          "y": 360
+        }
+      },
+      "to": {
+        "x": 567.9999999999999,
+        "y": 337
+      },
+      "steps": 12
+    },
+    {
+      "key": "Meta+z"
+    },
+    {
+      "key": "Meta+Shift+z"
+    },
+    {
+      "key": "Meta+z"
+    },
+    {
+      "select": "Left cube",
+      "via": "outliner click"
+    },
+    {
+      "key": "f"
+    },
+    {
+      "select": "Key light",
+      "via": "outliner click"
+    },
+    {
+      "select": "RobotExpressive.glb",
+      "via": "outliner click"
+    },
+    {
+      "key": "f"
+    },
+    {
+      "label": "expand timeline",
+      "from": {
+        "x": 465,
+        "y": 684
+      },
+      "to": {
+        "x": 465,
+        "y": 414
+      },
+      "steps": 12
+    },
+    {
+      "label": "timeline scrub 0.25",
+      "from": {
+        "x": 228,
+        "y": 585.5
+      },
+      "to": {
+        "x": 345,
+        "y": 585.5
+      },
+      "steps": 12
+    },
+    {
+      "label": "timeline scrub 0.75",
+      "from": {
+        "x": 228,
+        "y": 585.5
+      },
+      "to": {
+        "x": 735,
+        "y": 585.5
+      },
+      "steps": 12
+    }
+  ]
+}

@@ -29,6 +29,7 @@ Exclude automatic npm publication, broad G1–G6 qualification, a general render
 | Raw samples, manifests, images | Reproducible evidence | Fresh bench/results directories with hashes; local originals retained |
 | Affected engine/app contract | Public integration contract | Existing docs/ pages, only when behavior changes and after reading them |
 | Protocol code | Measurement tooling | bench/ and scripts/apps; separate commits from engine changes |
+| `docs/MAC_APP_SCREEN.md` and small links in existing performance/CI/compatibility pages | Current public measurement evidence and integration guidance | `docs/` is the established canonical root; summarize verified outcomes and link dated task reports/raw archives without moving historical evidence |
 
 No personal session instructions or prompts are published. Product status and ownership counts only change with the specific gate's evidence, never merely because integration succeeds.
 

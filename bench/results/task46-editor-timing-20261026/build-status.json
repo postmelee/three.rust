@@ -1,0 +1,48 @@
+{
+  "status": "complete",
+  "sourceSuites": [
+    {
+      "label": "smoke-001",
+      "sourceDirectory": "work/task46-editor-timing-smoke-001",
+      "captureStatus": "failed",
+      "mode": "smoke",
+      "toolingSha": "8ab6874ee3087da0d0d88e5e0fd07b7ed026f83f",
+      "candidateSha": "6990fd92f61a031c8c2ba7a8282cfb63684e6dfb",
+      "finishedAt": "2026-10-25T22:52:58.445Z",
+      "fileCount": 14
+    },
+    {
+      "label": "smoke-002",
+      "sourceDirectory": "work/task46-editor-timing-smoke-002",
+      "captureStatus": "failed",
+      "mode": "smoke",
+      "toolingSha": "1881908125e16ba3f68887a1cf13d92f2f8f753e",
+      "candidateSha": "6990fd92f61a031c8c2ba7a8282cfb63684e6dfb",
+      "finishedAt": "2026-10-25T22:55:03.377Z",
+      "fileCount": 122
+    },
+    {
+      "label": "smoke-003",
+      "sourceDirectory": "work/task46-editor-timing-smoke-003",
+      "captureStatus": "smoke-complete-not-performance-evidence",
+      "mode": "smoke",
+      "toolingSha": "a1aad46f2bf8d74176b2b5e2836cbdd1ff34678a",
+      "candidateSha": "6990fd92f61a031c8c2ba7a8282cfb63684e6dfb",
+      "finishedAt": "2026-10-25T23:10:46.787Z",
+      "fileCount": 864
+    },
+    {
+      "label": "full",
+      "sourceDirectory": "work/task46-editor-timing-screen-001",
+      "captureStatus": "screen-complete-unqualified",
+      "mode": "full",
+      "toolingSha": "a1aad46f2bf8d74176b2b5e2836cbdd1ff34678a",
+      "candidateSha": "6990fd92f61a031c8c2ba7a8282cfb63684e6dfb",
+      "finishedAt": "2026-10-25T23:33:41.654Z",
+      "fileCount": 1824
+    }
+  ],
+  "payloads": 2826,
+  "sourceHashesRechecked": true,
+  "sourceListingsUnchanged": true
+}

@@ -11,7 +11,7 @@ results; historical experiments describe their recorded scope and commit.
 | What API works today? | [Compatibility](COMPATIBILITY.md), [explicit owned animation](OWNED_ANIMATION.md) |
 | What do the optional engines support? | [C2 transform facade](PERSISTENT_FACADE.md), [C3 prepared main pass](PREPARED_PASS.md), [observable contract](FACADE_CONTRACT.md) |
 | What runs in Rust? | [Current architecture](ARCHITECTURE.md), [ownership map and definitions](PROGRESS.md) |
-| How fast is it, and under which conditions? | [Performance summary](PERFORMANCE.md), [C3 results](PREPARED_REPORT.md), [C2 regression report](FACADE_REPORT.md), [physical Mac report](MAC_HARDWARE_REPORT.md) |
+| How fast is it, and under which conditions? | [Performance summary](PERFORMANCE.md), [Mac candidate/app screen](MAC_APP_SCREEN.md), [C3 results](PREPARED_REPORT.md), [C2 regression report](FACADE_REPORT.md), [physical Mac report](MAC_HARDWARE_REPORT.md) |
 | What must it achieve to replace Three.js? | [Product goals](PRODUCT_GOALS.md), [milestones](PROJECT_PLAN.md) |
 | What is the next architecture experiment? | [Rust engine direction](RUST_ENGINE_STRATEGY.md), [ADR 0005](adr/0005-wide-engine-investigation.md) |
 | How do I test, measure or publish status? | [CI entry point](CI.md), [Mac](CI_MAC.md), [GPU runner](CI_GPU.md), [Pages](CI_PAGES.md) |

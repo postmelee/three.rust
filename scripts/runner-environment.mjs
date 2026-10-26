@@ -60,6 +60,9 @@ if (process.platform === "darwin") {
           [
             "_name",
             "spdisplays_resolution",
+            "_spdisplays_pixels",
+            "_spdisplays_resolution",
+            "spdisplays_pixelresolution",
             "spdisplays_refresh_rate",
             "spdisplays_main",
             "spdisplays_online",

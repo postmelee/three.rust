@@ -1,0 +1,101 @@
+{
+  "scenario": {
+    "id": "E1-idle",
+    "idle": true,
+    "selected": false,
+    "shadow": true,
+    "pixelRatio": 1
+  },
+  "sceneSetup": {
+    "shape": {
+      "skins": 0,
+      "morphMeshes": 0,
+      "clips": [],
+      "vertices": 0
+    },
+    "camera": [
+      6,
+      4,
+      8
+    ],
+    "target": [
+      0,
+      0.4,
+      0
+    ],
+    "shadow": true,
+    "shadowMapSize": [
+      1024,
+      1024
+    ]
+  },
+  "environment": {
+    "at": 1920.5199999958277,
+    "visibility": "visible",
+    "focused": true,
+    "crossOriginIsolated": true,
+    "dpr": 1,
+    "width": 930,
+    "height": 648,
+    "cssWidth": 930,
+    "cssHeight": 648,
+    "rendererPixelRatio": 1,
+    "renderInfo": {
+      "frame": 150,
+      "calls": 9,
+      "triangles": 72,
+      "points": 0,
+      "lines": 0
+    },
+    "quality": {
+      "antialias": true,
+      "toneMapping": 7,
+      "exposure": 1,
+      "outputColorSpace": "srgb",
+      "shadows": true,
+      "shadowType": 1
+    },
+    "autosave": true,
+    "savingStarted": 1,
+    "savingFinished": 1,
+    "renderCount": 26,
+    "mixerTime": 0,
+    "selected": null,
+    "action": null,
+    "diagnostics": null
+  },
+  "clock": {
+    "crossOriginIsolated": true,
+    "minPositiveDeltaMs": 0.004999995231628418,
+    "positiveDeltas": 2365,
+    "iterations": 100000,
+    "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+  },
+  "hardware": {
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+    "vendor": "Google Inc. (Apple)",
+    "attributes": {
+      "alpha": true,
+      "antialias": true,
+      "depth": true,
+      "desynchronized": false,
+      "failIfMajorPerformanceCaveat": false,
+      "powerPreference": "default",
+      "premultipliedAlpha": true,
+      "preserveDrawingBuffer": false,
+      "stencil": false,
+      "xrCompatible": false
+    },
+    "width": 930,
+    "height": 648,
+    "dpr": 1
+  },
+  "layout": {
+    "timelineHeight": 37,
+    "timelineContentHeight": 36,
+    "viewportWidth": 930,
+    "viewportHeight": 648,
+    "shading": "default",
+    "xr": false
+  }
+}
