@@ -1,0 +1,9 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "bench/results/task49-viewer-profile-20261026/test_verify.py"
+  ],
+  "exitCode": 0,
+  "log": "06-unit-python.log"
+}

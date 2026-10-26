@@ -1,0 +1,30 @@
+[
+  {
+    "command": [
+      "node",
+      "--check",
+      "bench/results/task49-viewer-profile-20261026/archive.mjs"
+    ],
+    "exitCode": 0,
+    "log": "00.log"
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "-c",
+      "from pathlib import Path; [compile(p.read_text(),str(p),'exec') for p in Path('bench/results/task49-viewer-profile-20261026').glob('*.py')]"
+    ],
+    "exitCode": 0,
+    "log": "01.log"
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "bench/results/task49-viewer-profile-20261026/test_verify.py"
+    ],
+    "exitCode": 0,
+    "log": "02.log"
+  }
+]

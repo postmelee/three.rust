@@ -1,0 +1,13 @@
+{
+  "command": [
+    "node",
+    "bench/results/task49-viewer-profile-20261026/archive.mjs",
+    "verify",
+    "--out",
+    "<fresh-archive>",
+    "--source-root",
+    "<tooling-checkout>"
+  ],
+  "exitCode": 0,
+  "log": "04-verify-node.log"
+}
