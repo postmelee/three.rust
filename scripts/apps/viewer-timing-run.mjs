@@ -23,6 +23,7 @@ export async function createViewerCapture(kind, argv) {
  else assert(!options.timingPrepared && !options.timingOriginal, 'CPU profiles must use uninstrumented app bundles');
  const networkDiagnostic = options.networkDiagnostic ?? protocol.evidence?.protocol.transport?.network ?? 'playwright';
  assert(['playwright', 'proxy-cdp-remote'].includes(networkDiagnostic));
+ if (protocol.evidence?.protocol.transport) assert.equal(networkDiagnostic, protocol.evidence.protocol.transport.network, 'Network mode cannot override a committed transport contract');
  if (networkDiagnostic !== 'playwright') { assert.equal(kind, 'profile'); if (protocol.evidence) assert.equal(protocol.evidence.protocol.transport?.network, networkDiagnostic); }
  const strictContent = networkDiagnostic !== 'playwright';
  const preparedRoots = { native: prepared };
@@ -75,6 +76,7 @@ export async function createViewerCapture(kind, argv) {
    const failed = request => failures.push({ url: run.redact(request.url()).split(run.origin).join('<origin>'), error: request.failure()?.errorText ?? null });
    const logged = message => { if (message.type() === 'error') consoleErrors.push(run.redact(message.text()).split(run.origin).join('<origin>')); };
    run.page.on('requestfailed', failed); run.page.on('console', logged);
+   run.verifyContent = async () => { await run.save('content-transport-preflight.json', { failures: [...failures], consoleErrors: [...consoleErrors], strict: true }); assert.deepEqual(failures, [], 'Content transport failed before sampling'); assert.deepEqual(consoleErrors, [], 'Content console failed before sampling'); };
    const nativeClose = run.close; let closed = false;
    run.close = async () => {
     if (closed) return; closed = true;

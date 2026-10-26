@@ -57,6 +57,7 @@ export async function setupViewerCapture(run, scenario, asset) {
  await run.save('gpu-main.json', await gpu(run.page, '.viewer > canvas')); await run.save('gpu-axes.json', await gpu(run.page, '.axes canvas'));
  const snapshot = await run.page.evaluate(() => __rthreeViewerTiming.snapshot());
  assertViewerEnvironment(snapshot, scenario, run.route);
+ await run.verifyContent?.();
  return prepared;
 }
 export async function fixedViewerOracle(run, scenario, pose) {
@@ -71,6 +72,7 @@ export async function fixedViewerOracle(run, scenario, pose) {
  const result = await run.page.evaluate(captureViewerSnapshot);
  const environment = await run.page.evaluate(() => __rthreeViewerTiming.snapshot());
  result.captureLayout = Object.fromEntries(Object.entries(environment.renderers).map(([name, renderer]) => [name, Object.fromEntries(['width', 'height', 'cssWidth', 'cssHeight', 'pixelRatio', 'layout'].map(key => [key, renderer[key]]))]));
+ await run.save(`oracle-${pose}-unchecked.json`, result);
  assert.deepEqual(result.identityFailures, []); assert(result.controlsCameraIdentity); assert(result.axesCameraUpIdentity);
  for (const name of ['main', 'axes']) {
   const renderer = result.renderers[name];

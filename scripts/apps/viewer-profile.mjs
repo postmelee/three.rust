@@ -38,6 +38,7 @@ async function profileCase(scenario, engine, round) {
   await preserveObservation(warmup, value => run.save('warmup.json', value), value => validateObservation(value, scenario, engine));
   assert.equal(warmup.frames, configuration.warmupFrames); assert(warmup.after.renderers.main.frame - warmup.before.renderers.main.frame >= configuration.warmupFrames);
   await observation(run, 'before-window.json', scenario, engine);
+  await run.verifyContent?.();
   cdp = await run.context.newCDPSession(run.page); await cdp.send('Profiler.enable'); await cdp.send('Profiler.setSamplingInterval', { interval: configuration.samplingIntervalUs });
   const before = await endpoint(run.page); await run.save('profile-observations.json', { before, after: null });
   const wallStart = Date.now(); await cdp.send('Profiler.start'); profiling = true; entry.status = 'sampling';
