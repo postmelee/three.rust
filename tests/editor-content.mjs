@@ -6,7 +6,7 @@ import path from 'node:path';
 import {editorContentExpectations} from '../scripts/apps/editor-content.mjs';
 import {validateEditorContentProtocol,EDITOR_CONTENT_PROFILE_SETTINGS} from '../scripts/apps/editor-content-profile.mjs';
 import {editorContentRunOptions,assertEditorContentEvents} from '../scripts/apps/editor-content-check.mjs';
-import {editorContentOracle,assertEditorContentReadiness,validateEditorContentWindow,compareEditorContentOracles} from '../scripts/apps/editor-content-session.mjs';
+import {editorContentOracle,assertEditorContentReadiness,assertEditorNativeFirstClip,validateEditorContentWindow,compareEditorContentOracles} from '../scripts/apps/editor-content-session.mjs';
 
 
 const source=()=>({scene:0,scenes:[{name:'SourceScene',nodes:[0]}],nodes:[{name:'Root',children:[1]},{name:'Mesh',mesh:0}],meshes:[{primitives:[{material:0,attributes:{POSITION:0},indices:1}]}],accessors:[{count:3,type:'VEC3'},{count:3,type:'SCALAR'}],buffers:[{uri:'model.bin'}],images:[{uri:'Textures/a.jpg'}],textures:[{source:0,name:'authored-texture'}],materials:[{name:'Glass',pbrMetallicRoughness:{baseColorTexture:{index:0}},extensions:{KHR_materials_transmission:{transmissionFactor:0.8},KHR_materials_volume:{thicknessFactor:0.5,attenuationDistance:2,attenuationColor:[0.5,0.6,0.7]}}}],animations:[]});
@@ -27,6 +27,10 @@ test('animated content phase requires actual selected-root native action and ren
  const before={...idle(),actionsInUse:1,action:{name:'Authored wind',duration:10,time:1,running:true,paused:false,enabled:true,timeScale:1}},after=structuredClone(before);after.at=101;after.mixerTime=1;after.action.time=2;after.render.frame=11;
  assert.equal(validateEditorContentWindow(before,after,{play:true},'original').renderPasses,1);after.action.time=1;assert.throws(()=>validateEditorContentWindow(before,after,{play:true},'original'),/phase/);
 });
+test('native first-clip selection must be retained before Play instead of toggled off by another label click',()=>{
+ const clip={name:'Wind',tracks:3},selection={selectedRoot:true,name:'Wind',tracks:3,duration:10,row:{background:'rgba(0, 136, 255, 0.1)'},actionsInUse:0,action:{time:0,running:false,paused:false,enabled:true,timeScale:1,weight:1}};assert.doesNotThrow(()=>assertEditorNativeFirstClip(selection,clip));
+ for(const mutate of [s=>s.row.background='',s=>s.action=null,s=>s.action.running=true,s=>s.actionsInUse=1,s=>s.name='Other',s=>s.action.time=2]){const bad=structuredClone(selection);mutate(bad);assert.throws(()=>assertEditorNativeFirstClip(bad,clip));}
+});
 test('fixed oracle comparison rejects pixel and numerical changes',()=>{
  const a={pixelSha256:'a',width:1,height:1,objects:[],history:['AddObjectCommand'],selectedRoot:true,numeric:[1,2,3]};assert.equal(compareEditorContentOracles(a,structuredClone(a)).equal,true);assert.throws(()=>compareEditorContentOracles(a,{...a,pixelSha256:'b'}));assert.throws(()=>compareEditorContentOracles(a,{...a,numeric:[1,2,4]}));
 });
@@ -39,6 +43,7 @@ test('content profile protocol pins unchanged import, quality, prepared asset an
  for(const mutate of [p=>p.candidateSha='d'.repeat(40),p=>p.contents[0].zipSha256='f'.repeat(64),p=>p.import='asScene=true',p=>p.settings.full.seconds=1,p=>p.contents[0].playback='forced-render']){const bad=structuredClone(protocol);mutate(bad);assert.throws(()=>validateEditorContentProtocol(bad,prepared,options,'task49-editor-content-profile-chess-001'));}
  assert.throws(()=>validateEditorContentProtocol(protocol,prepared,options,'robot-primary-001'));
  const args=['candidateRoot=/not-read','candidateSha='+options.candidateSha];assert.throws(()=>editorContentRunOptions([...args,'mode=full']));assert.equal(editorContentRunOptions([...args,'mode=full'],{profile:true}).mode,'full');
+ assert.equal(editorContentRunOptions([...args,'focusDiagnostic=true']).focusDiagnostic,true);assert.throws(()=>editorContentRunOptions([...args,'focusDiagnostic=false']));assert.throws(()=>editorContentRunOptions([...args,'focusDiagnostic=true'],{profile:true}));assert.equal(editorContentRunOptions(args).focusDiagnostic,undefined);
 });
 
 test('oracle writes real PNG bytes and preserves invalid state before rejecting; capture IDs never repeat',async()=>{

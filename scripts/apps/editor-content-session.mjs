@@ -6,6 +6,23 @@ import {assertBackend} from './editor-scenario.mjs';
 
 const settle=page=>page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
 
+// Opt-in correctness diagnosis only. These observations may materialize public
+// matrices; they never enter the profile/primary paths or replace native input.
+function attachEditorFocusDiagnostic() {
+ const state=globalThis.__editorFocusDiagnostic={phase:'page-ready-before-renderer-selection',events:[],overflow:false};
+ const camera=()=>({position:editor.camera.position.toArray(),quaternion:editor.camera.quaternion.toArray(),scale:editor.camera.scale.toArray()});
+ const append=row=>{if(state.events.length<10000)state.events.push(row);else state.overflow=true;};
+ const targetRole=target=>{if(!(target instanceof Element))return {tag:null,role:'non-element'};const roles=['viewHelper','outliner','animation','menubar','viewport'];return {tag:target.tagName.toLowerCase(),role:roles.find(id=>target.closest('#'+id))??(target.closest('.Dialog')?'import-dialog':'other')};};
+ for(const type of ['pointerdown','pointerup','pointermove','pointercancel','wheel'])addEventListener(type,event=>append({kind:'input',type,at:performance.now(),phase:state.phase,target:targetRole(event.target),clientX:event.clientX,clientY:event.clientY,button:event.button,buttons:event.buttons,pointerType:event.pointerType??null,isTrusted:event.isTrusted,...(type==='wheel'?{deltaX:event.deltaX,deltaY:event.deltaY,deltaMode:event.deltaMode}:{}),camera:camera()}),{capture:true,passive:true});
+ editor.signals.cameraChanged.add(()=>append({kind:'native-cameraChanged-signal',at:performance.now(),phase:state.phase,camera:camera()}));
+}
+
+async function editorFocusDiagnosticCheckpoint(run,phase) {
+ if(!run.editorFocusDiagnostic)return;
+ const data=await run.page.evaluate(phase=>{const state=__editorFocusDiagnostic;state.phase=phase;const camera=editor.camera;return {phase,at:performance.now(),camera:{position:camera.position.toArray(),quaternion:camera.quaternion.toArray(),scale:camera.scale.toArray(),matrix:camera.matrix.toArray(),matrixWorld:camera.matrixWorld.toArray(),matrixWorldInverse:camera.matrixWorldInverse.toArray(),projectionMatrix:camera.projectionMatrix.toArray(),matrixAutoUpdate:camera.matrixAutoUpdate,matrixWorldAutoUpdate:camera.matrixWorldAutoUpdate,matrixWorldNeedsUpdate:camera.matrixWorldNeedsUpdate},controls:editor.controls?{enabled:editor.controls.enabled,center:editor.controls.center.toArray()}:null,selected:{name:editor.selected?.name??null,type:editor.selected?.type??null,isImportedRoot:editor.selected===globalThis.__editorContent?.root},viewHelper:{domPresent:Boolean(document.querySelector('#viewHelper')),animationState:'Unavailable without modifying the native Viewport closure.'},events:[...state.events],eventOverflow:state.overflow,scope:'Opt-in setup diagnosis; public matrix reads may materialize candidate values. No keyboard text or page contents are recorded; native controls/render/mixer are unchanged.'};},phase);
+ await run.save('focus-diagnostic-'+phase+'.json',data);assert.equal(data.eventOverflow,false,'Focus diagnostic input buffer overflow');
+}
+
 // Native signals and passive endpoint state only. No render/rAF/mixer wrappers.
 export function attachEditorContentState(observer=true) {
  const state=globalThis.__editorContent={renderer:null,root:null,clip:null,savingStarted:0,savingFinished:0,activity:[]};
@@ -24,37 +41,51 @@ export function attachEditorContentState(observer=true) {
  if(!select)throw Error('Native WebGLRenderer selection unavailable');select.value='WebGLRenderer';select.dispatchEvent(new Event('change'));
 }
 
-export async function setupEditorContent(run,prepared,{play=false,observer=true}={}) {
+export async function setupEditorContent(run,prepared,{play=false,observer=true,focusDiagnostic=false}={}) {
  const page=run.page,expected=prepared.manifest.expected;
  await page.goto(run.origin+'/editor/editor/');await page.bringToFront();await page.waitForFunction(()=>globalThis.editor&&document.querySelector('#viewport canvas'));
+ if(focusDiagnostic){run.editorFocusDiagnostic=true;await page.evaluate(attachEditorFocusDiagnostic);await editorFocusDiagnosticCheckpoint(run,'page-ready-before-renderer-selection');}
  await page.evaluate(attachEditorContentState,observer);await page.waitForFunction(()=>__editorContent.renderer);
+ if(focusDiagnostic)await editorFocusDiagnosticCheckpoint(run,'after-renderer-selection');
  await page.evaluate(()=>{globalThis.__editorContentBeforeRoots=editor.scene.children.map(object=>object.uuid);});
+ if(focusDiagnostic)await editorFocusDiagnosticCheckpoint(run,'before-native-import');
  await page.locator('#menubar .menu').filter({has:page.getByText('File',{exact:true})}).hover();
  const chooser=page.waitForEvent('filechooser');await page.getByText('Import',{exact:true}).click();await(await chooser).setFiles(prepared.zip);
  await page.locator('.Dialog').waitFor();assert.equal(await page.locator('.Dialog input[type=checkbox]').isChecked(),false,'Native ZIP import must remain asScene=false');
  await page.locator('.Dialog').getByRole('button',{name:'OK',exact:true}).click();
  await page.waitForFunction(()=>editor.scene.children.filter(object=>!__editorContentBeforeRoots.includes(object.uuid)).length===1,null,{timeout:180000});
  const imported=await page.evaluate(()=>{const roots=editor.scene.children.filter(object=>!__editorContentBeforeRoots.includes(object.uuid));delete globalThis.__editorContentBeforeRoots;if(roots.length!==1)throw Error('Expected one native AddObjectCommand import');__editorContent.root=roots[0];return {name:roots[0].name,id:roots[0].id,clips:roots[0].animations.map(clip=>({name:clip.name,duration:clip.duration,tracks:clip.tracks.length})),history:editor.history.undos.map(command=>command.type)};});
+ if(focusDiagnostic)await editorFocusDiagnosticCheckpoint(run,'after-native-import');
  assert.deepEqual(imported.history,['AddObjectCommand']);assert.deepEqual(imported.clips.map(clip=>({name:clip.name,tracks:clip.tracks})),expected.editorAnimations.map(({name,tracks})=>({name,tracks})));
+ // AddObjectCommand selects the imported root synchronously. Preserve loader
+ // output before rejecting so texture failures cannot become timeline timeouts.
+ const importedReadiness=await page.evaluate(captureEditorContentReadiness,expected);await run.save('source-readiness-after-import.json',importedReadiness);await run.verify();assertEditorContentReadiness(expected,importedReadiness);
  // The native outliner has object IDs as DOM option values; do not rename a
  // source scene to make it selectable or choose the global Scene by its label.
  const option=page.locator('#outliner .option').filter({hasText:imported.name});
  const ids=await option.evaluateAll(nodes=>nodes.map(node=>({value:node.value,text:node.textContent})));await run.save('native-outliner-options.json',ids);
- const index=ids.findIndex(item=>Number(item.value)===imported.id);assert(index>=0,'Imported root has no native outliner option');await option.nth(index).click();await page.keyboard.press('f');await settle(page);
+ const index=ids.findIndex(item=>Number(item.value)===imported.id);assert(index>=0,'Imported root has no native outliner option');if(focusDiagnostic)await editorFocusDiagnosticCheckpoint(run,'before-outliner-click');await option.nth(index).click();if(focusDiagnostic){await editorFocusDiagnosticCheckpoint(run,'after-outliner-click');await editorFocusDiagnosticCheckpoint(run,'before-focus-key');}await page.keyboard.press('f');if(focusDiagnostic)await editorFocusDiagnosticCheckpoint(run,'immediately-after-focus-key');await settle(page);if(focusDiagnostic)await editorFocusDiagnosticCheckpoint(run,'after-focus-settle');
  assert.equal(await page.evaluate(()=>editor.selected===__editorContent.root),true);
  if(play){
   assert(expected.editorAnimations.length>0,'Animated content required');
   const bar=await page.locator('#animation-resizer').boundingBox();assert(bar);await page.mouse.move(bar.x+bar.width/2,bar.y+bar.height/2);await page.mouse.down();await page.mouse.move(bar.x+bar.width/2,bar.y+bar.height/2-270,{steps:12});await page.mouse.up();
-  const clip=expected.editorAnimations[0];await page.locator('#animation').getByText(clip.name,{exact:true}).click();
-  await page.evaluate(name=>{__editorContent.clip=__editorContent.root.animations.find(clip=>clip.name===name);},clip.name);
+  // Animation.onObjectSelected already selects the first authored clip. A
+  // second click on its label toggles it off; preserve that native selection.
+  const clip=expected.editorAnimations[0],selection=await page.evaluate(()=>{const s=__editorContent;s.clip=s.root.animations[0];const action=editor.mixer.existingAction(s.clip,s.root);return {selectedRoot:editor.selected===s.root,name:s.clip.name,tracks:s.clip.tracks.length,duration:s.clip.duration,actionsInUse:editor.mixer.stats.actions.inUse,action:action?{time:action.time,running:action.isRunning(),paused:action.paused,enabled:action.enabled,timeScale:action.getEffectiveTimeScale(),weight:action.getEffectiveWeight()}:null};});
+  selection.row=await page.locator('#animation').getByText(clip.name,{exact:true}).evaluate(label=>({background:label.parentElement.style.background}));await run.save('native-first-clip-selection.json',selection);assertEditorNativeFirstClip(selection,clip);
   await page.locator('#animation button').nth(0).click();await page.waitForFunction(()=>editor.mixer.existingAction(__editorContent.clip,__editorContent.root)?.time>0.05);
  }
  await page.bringToFront();await settle(page);await page.waitForTimeout(1600);await page.waitForFunction(()=>__editorContent.savingStarted===__editorContent.savingFinished);
+ if(focusDiagnostic)await editorFocusDiagnosticCheckpoint(run,'setup-complete');
  const environment=await page.evaluate(editorContentSnapshot);assertEditorContentEnvironment(environment,{play},run.engine);await run.save('gpu.json',await gpu(page,'#viewport canvas'));await run.save('native-import.json',{imported,play,scope:'Native File→Import ZIP, unchanged asScene=false, root selection and focus. No extra lights/ground/shadows, no asset edits.',environment});
  return {imported,environment};
 }
 
 export function editorContentSnapshot() { return __editorContent.snapshot(); }
+
+export function assertEditorNativeFirstClip(selection,clip) {
+ assert.equal(selection.selectedRoot,true);assert.equal(selection.name,clip.name);assert.equal(selection.tracks,clip.tracks);assert(Number.isFinite(selection.duration)&&selection.duration>0);assert.equal(selection.row.background,'rgba(0, 136, 255, 0.1)','Native first authored clip must already be selected');assert.equal(selection.actionsInUse,0);assert(selection.action,'Native auto-selection did not create its action');assert.equal(selection.action.running,false);assert.equal(selection.action.paused,false);assert.equal(selection.action.enabled,true);assert.equal(selection.action.time,0);assert.equal(selection.action.timeScale,1);assert.equal(selection.action.weight,1);
+}
 
 export function assertEditorContentEnvironment(state,scenario,engine) {
  assert.equal(state.visibility,'visible');assert.equal(state.focused,true);assert.equal(state.isolated,true);assert.equal(state.dpr,1);assert.equal(state.pixelRatio,1);assert(state.width>0&&state.height>0&&state.cssWidth>0&&state.cssHeight>0);assert.equal(state.selectedRoot,true);assert.equal(state.contextLost,false);assert.equal(state.autosave,true);assert.equal(state.savingStarted,state.savingFinished);assertBackend(engine,state.diagnostics);
