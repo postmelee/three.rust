@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "scope": "Support files outside copied-payload archive-index.json; raw blobs retain their own hash index.",
+  "files": [
+    {
+      "path": "INDEPENDENT_AUDIT.md",
+      "sha256": "49a6d28094cc7aaa14e0774810efd01204820e75e881186a60cf414154b1d56a",
+      "bytes": 7790
+    },
+    {
+      "path": "README.md",
+      "sha256": "5fac64a3136bfec6e500c904a83b51c2867cd80cacff300638b9823092a3836a",
+      "bytes": 7205
+    },
+    {
+      "path": "candidate-protocol.json",
+      "sha256": "740288d46cbb0c783a536cc45363ddeef25a134c7f14b5eea25be91b47f1dad3",
+      "bytes": 1598
+    },
+    {
+      "path": "compare.py",
+      "sha256": "4ba5e0f483d15c840ed1c27dab532cebe804f6521cb9e4be9abc405a4a6a14c6",
+      "bytes": 6114
+    },
+    {
+      "path": "comparison.json",
+      "sha256": "d11bc284e8889a26d4aecdc63ae1c06cd8d1b7f73cb237e0d8df947d01cf9d2e",
+      "bytes": 16125
+    },
+    {
+      "path": "independent-audit.json",
+      "sha256": "78f7169e54b097f295560536f3c5c834ecd51bfd57cf92f65552fa743382b2c1",
+      "bytes": 61616
+    },
+    {
+      "path": "licenses/RobotExpressive-LICENSE.md",
+      "sha256": "14687ac4a51d5e013b0fbc5486dabc743f76c1e37b7ca872af74cfb93115b4b2",
+      "bytes": 364
+    },
+    {
+      "path": "licenses/THREE-LICENSE.txt",
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "bytes": 1081
+    },
+    {
+      "path": "task46-setup-fingerprint.json",
+      "sha256": "762808795c9aaeb471dfc516429afcd22b491b270a69e5aca0b009814a1455ec",
+      "bytes": 1202
+    },
+    {
+      "path": "verification.json",
+      "sha256": "cb5e464bc6cae5fb66085c6c0528bcb3518829c29456d6573bbb3832a67405a5",
+      "bytes": 730
+    },
+    {
+      "path": "verify.py",
+      "sha256": "1302ecf116c64db73e4fdebe2b26fe4581c5a5ab470b832877ed304f047b8fcb",
+      "bytes": 16538
+    }
+  ]
+}

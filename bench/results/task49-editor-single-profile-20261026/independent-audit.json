@@ -1,0 +1,1936 @@
+{
+  "status": "verified",
+  "scope": "Independent Python raw audit; no browser/build/test; New-candidate analysis001 includes updateSingle in operation preparation; no invalid analysis is included here.",
+  "historicalSetupFingerprint": {
+    "scenario": {
+      "id": "E3-root-selected-shadow",
+      "selected": true,
+      "shadow": true,
+      "pixelRatio": 1
+    },
+    "sceneSetup": {
+      "shape": {
+        "skins": 4,
+        "morphMeshes": 3,
+        "clips": [
+          "Dance",
+          "Death",
+          "Idle",
+          "Jump",
+          "No",
+          "Punch",
+          "Running",
+          "Sitting",
+          "Standing",
+          "ThumbsUp",
+          "Walking",
+          "WalkJump",
+          "Wave",
+          "Yes"
+        ],
+        "vertices": 7214
+      },
+      "camera": [
+        5,
+        3.5,
+        7
+      ],
+      "target": [
+        0.02903489391441072,
+        2.210306801808131,
+        0.07344450557537341
+      ],
+      "shadow": true,
+      "shadowMapSize": [
+        1024,
+        1024
+      ]
+    },
+    "layout": {
+      "timelineHeight": 307,
+      "timelineContentHeight": 306,
+      "viewportWidth": 930,
+      "viewportHeight": 378,
+      "shading": "default",
+      "xr": false
+    },
+    "quality": {
+      "antialias": true,
+      "toneMapping": 7,
+      "exposure": 1,
+      "outputColorSpace": "srgb",
+      "shadows": true,
+      "shadowType": 1
+    },
+    "geometry": {
+      "width": 930,
+      "height": 378,
+      "cssWidth": 930,
+      "cssHeight": 378,
+      "dpr": 1,
+      "rendererPixelRatio": 1
+    }
+  },
+  "captures": [
+    {
+      "label": "smoke",
+      "manifestSha256": "8d0dabcc87d03fd1213153c7a3db4587fb67173fa301ba4f9378959aade97422",
+      "toolSha": "e9b736a47f48bc2512476f8966d285d0153419f7",
+      "candidateSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "startedAt": "2026-10-26T02:55:18.481Z",
+      "finishedAt": "2026-10-26T02:56:32.967Z",
+      "runs": [
+        {
+          "engine": "original",
+          "round": 0,
+          "rawProfileSha256": "d5e33cc1d8d96784871b5c14c8d718119b4fc276d0e3886a5d4d653cca88f428",
+          "samples": 12631,
+          "nodes": 499,
+          "durationMs": 2127.615,
+          "weightedMs": 2127.442,
+          "gapUs": {
+            "p50": 156.0,
+            "p95": 177.0,
+            "p99": 225.70000000000073,
+            "min": 16,
+            "max": 125930
+          },
+          "coverage": {
+            "unresolved-script-unavailable": {
+              "sampledUs": 1889059,
+              "samples": 11172
+            },
+            "verified-js": {
+              "sampledUs": 238383,
+              "samples": 1459
+            }
+          },
+          "nativePseudoFrameUs": {
+            "(program)": 312237,
+            "(garbage collector)": 4656,
+            "(idle)": 1534227
+          },
+          "unresolvedWasmNames": [],
+          "sourceAudit": {
+            "payloadHashChecks": 146,
+            "bytesHashed": 10206724,
+            "servedSources": 137,
+            "unavailableScriptIds": [
+              "0"
+            ]
+          },
+          "windows": {
+            "warmup": {
+              "elapsedMs": 493.98499999940395,
+              "mixerAdvanceSeconds": 0.49995499999821114,
+              "renderPasses": 240,
+              "nativeFrames": 60.0,
+              "phaseErrorSeconds": 9.43689570931383e-16,
+              "counters": null
+            },
+            "before-window": {
+              "elapsedMs": 2005.7299999892712,
+              "mixerAdvanceSeconds": 2.0076949999928466,
+              "renderPasses": 964,
+              "nativeFrames": 241.0,
+              "phaseErrorSeconds": 9.43689570931383e-16,
+              "counters": null
+            },
+            "profile-observations": {
+              "elapsedMs": 2135.8250000029802,
+              "mixerAdvanceSeconds": 2.1341249999999983,
+              "renderPasses": 972,
+              "nativeFrames": 243.0,
+              "phaseErrorSeconds": 1.7763568394002505e-15,
+              "counters": null
+            },
+            "after-window": {
+              "elapsedMs": 2003.0699999928474,
+              "mixerAdvanceSeconds": 2.0062949999868938,
+              "renderPasses": 964,
+              "nativeFrames": 241.0,
+              "phaseErrorSeconds": 7.216449660063518e-15,
+              "counters": null
+            }
+          },
+          "historicalSetupMatches": true,
+          "analysis001SelfInclusiveCoverageMatched": true,
+          "maximumGapSample": {
+            "index": 0,
+            "nodeId": 2,
+            "functionName": "(program)"
+          }
+        },
+        {
+          "engine": "prepared-js",
+          "round": 0,
+          "rawProfileSha256": "e975e0f6ea635fc39ca3312687862751fa2cf4174262269fd3703ededc3824cb",
+          "samples": 12691,
+          "nodes": 905,
+          "durationMs": 2127.882,
+          "weightedMs": 2127.756,
+          "gapUs": {
+            "p50": 155.0,
+            "p95": 174.0,
+            "p99": 214.0,
+            "min": 29,
+            "max": 127139
+          },
+          "coverage": {
+            "unresolved-script-unavailable": {
+              "sampledUs": 1516145,
+              "samples": 8825
+            },
+            "verified-js": {
+              "sampledUs": 611611,
+              "samples": 3866
+            }
+          },
+          "nativePseudoFrameUs": {
+            "(program)": 324516,
+            "(idle)": 1148362,
+            "(garbage collector)": 4737
+          },
+          "unresolvedWasmNames": [],
+          "sourceAudit": {
+            "payloadHashChecks": 157,
+            "bytesHashed": 10997883,
+            "servedSources": 145,
+            "unavailableScriptIds": [
+              "0"
+            ]
+          },
+          "windows": {
+            "warmup": {
+              "elapsedMs": 498.5700000077486,
+              "mixerAdvanceSeconds": 0.5017499999999999,
+              "renderPasses": 240,
+              "nativeFrames": 60.0,
+              "phaseErrorSeconds": 0.0,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 240,
+                "matrixReads": 12300,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 1574400
+              }
+            },
+            "before-window": {
+              "elapsedMs": 2006.4099999964237,
+              "mixerAdvanceSeconds": 2.008375,
+              "renderPasses": 964,
+              "nativeFrames": 241.0,
+              "phaseErrorSeconds": 2.7755575615628914e-16,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 964,
+                "matrixReads": 49405,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 6323840
+              }
+            },
+            "profile-observations": {
+              "elapsedMs": 2143.2900000065565,
+              "mixerAdvanceSeconds": 2.1438649999946398,
+              "renderPasses": 972,
+              "nativeFrames": 243.0,
+              "phaseErrorSeconds": 4.3298697960381105e-15,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 972,
+                "matrixReads": 49815,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 6376320
+              }
+            },
+            "after-window": {
+              "elapsedMs": 2007.1749999970198,
+              "mixerAdvanceSeconds": 2.0073250000029823,
+              "renderPasses": 964,
+              "nativeFrames": 241.0,
+              "phaseErrorSeconds": 1.887379141862766e-15,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 964,
+                "matrixReads": 49405,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 6323840
+              }
+            }
+          },
+          "historicalSetupMatches": true,
+          "analysis001SelfInclusiveCoverageMatched": true,
+          "maximumGapSample": {
+            "index": 0,
+            "nodeId": 2,
+            "functionName": "(program)"
+          }
+        },
+        {
+          "engine": "prepared-wasm",
+          "round": 0,
+          "rawProfileSha256": "4411c69d259356e3d6009b30b38a8d8d062180888102676ac2a24da5f3fea599",
+          "samples": 12715,
+          "nodes": 1137,
+          "durationMs": 2132.772,
+          "weightedMs": 2132.548,
+          "gapUs": {
+            "p50": 155.0,
+            "p95": 174.0,
+            "p99": 214.0,
+            "min": 23,
+            "max": 127964
+          },
+          "coverage": {
+            "unresolved-script-unavailable": {
+              "sampledUs": 1505241,
+              "samples": 8745
+            },
+            "verified-js": {
+              "sampledUs": 622455,
+              "samples": 3939
+            },
+            "verified-wasm": {
+              "sampledUs": 4538,
+              "samples": 29
+            },
+            "unresolved-wasm-function": {
+              "sampledUs": 314,
+              "samples": 2
+            }
+          },
+          "nativePseudoFrameUs": {
+            "(program)": 327350,
+            "(garbage collector)": 11927,
+            "(idle)": 1123337
+          },
+          "unresolvedWasmNames": [
+            "js-to-wasm:ii:i"
+          ],
+          "sourceAudit": {
+            "payloadHashChecks": 157,
+            "bytesHashed": 11154625,
+            "servedSources": 146,
+            "unavailableScriptIds": [
+              "0"
+            ]
+          },
+          "windows": {
+            "warmup": {
+              "elapsedMs": 498.75999999046326,
+              "mixerAdvanceSeconds": 0.5015800000131119,
+              "renderPasses": 240,
+              "nativeFrames": 60.0,
+              "phaseErrorSeconds": 9.992007221626409e-16,
+              "counters": {
+                "wasmCalls": 8100,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 240,
+                "matrixReads": 12300,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 1574400
+              }
+            },
+            "before-window": {
+              "elapsedMs": 2005.7300000041723,
+              "mixerAdvanceSeconds": 2.0082749999910634,
+              "renderPasses": 964,
+              "nativeFrames": 241.0,
+              "phaseErrorSeconds": 4.496403249731884e-15,
+              "counters": {
+                "wasmCalls": 32535,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 964,
+                "matrixReads": 49405,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 6323840
+              }
+            },
+            "profile-observations": {
+              "elapsedMs": 2147.689999997616,
+              "mixerAdvanceSeconds": 2.1501850000023834,
+              "renderPasses": 976,
+              "nativeFrames": 244.0,
+              "phaseErrorSeconds": 4.440892098500626e-16,
+              "counters": {
+                "wasmCalls": 32940,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 976,
+                "matrixReads": 50020,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 6402560
+              }
+            },
+            "after-window": {
+              "elapsedMs": 2006.3849999904633,
+              "mixerAdvanceSeconds": 2.0081850000023795,
+              "renderPasses": 964,
+              "nativeFrames": 241.0,
+              "phaseErrorSeconds": 4.6629367034256575e-15,
+              "counters": {
+                "wasmCalls": 32535,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 964,
+                "matrixReads": 49405,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 6323840
+              }
+            }
+          },
+          "historicalSetupMatches": true,
+          "analysis001SelfInclusiveCoverageMatched": true,
+          "maximumGapSample": {
+            "index": 0,
+            "nodeId": 2,
+            "functionName": "(program)"
+          }
+        }
+      ],
+      "oracles": [
+        {
+          "engine": "original",
+          "observer": false,
+          "poses": [
+            {
+              "time": 0.25,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+              "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+            },
+            {
+              "time": 0.75,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+              "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+            }
+          ],
+          "passCount": 4,
+          "passDraws": [
+            {
+              "calls": 39,
+              "triangles": 6476,
+              "points": 0,
+              "lines": 0
+            },
+            {
+              "calls": 2,
+              "triangles": 0,
+              "points": 0,
+              "lines": 76
+            },
+            {
+              "calls": 20,
+              "triangles": 224,
+              "points": 0,
+              "lines": 223
+            },
+            {
+              "calls": 9,
+              "triangles": 72,
+              "points": 0,
+              "lines": 0
+            }
+          ]
+        },
+        {
+          "engine": "original",
+          "observer": true,
+          "poses": [
+            {
+              "time": 0.25,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+              "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+            },
+            {
+              "time": 0.75,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+              "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+            }
+          ],
+          "passCount": 4,
+          "passDraws": [
+            {
+              "calls": 39,
+              "triangles": 6476,
+              "points": 0,
+              "lines": 0
+            },
+            {
+              "calls": 2,
+              "triangles": 0,
+              "points": 0,
+              "lines": 76
+            },
+            {
+              "calls": 20,
+              "triangles": 224,
+              "points": 0,
+              "lines": 223
+            },
+            {
+              "calls": 9,
+              "triangles": 72,
+              "points": 0,
+              "lines": 0
+            }
+          ]
+        },
+        {
+          "engine": "prepared-js",
+          "observer": false,
+          "poses": [
+            {
+              "time": 0.25,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+              "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+            },
+            {
+              "time": 0.75,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+              "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+            }
+          ],
+          "passCount": 4,
+          "passDraws": [
+            {
+              "calls": 39,
+              "triangles": 6476,
+              "points": 0,
+              "lines": 0
+            },
+            {
+              "calls": 2,
+              "triangles": 0,
+              "points": 0,
+              "lines": 76
+            },
+            {
+              "calls": 20,
+              "triangles": 224,
+              "points": 0,
+              "lines": 223
+            },
+            {
+              "calls": 9,
+              "triangles": 72,
+              "points": 0,
+              "lines": 0
+            }
+          ]
+        },
+        {
+          "engine": "prepared-js",
+          "observer": true,
+          "poses": [
+            {
+              "time": 0.25,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+              "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+            },
+            {
+              "time": 0.75,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+              "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+            }
+          ],
+          "passCount": 4,
+          "passDraws": [
+            {
+              "calls": 39,
+              "triangles": 6476,
+              "points": 0,
+              "lines": 0
+            },
+            {
+              "calls": 2,
+              "triangles": 0,
+              "points": 0,
+              "lines": 76
+            },
+            {
+              "calls": 20,
+              "triangles": 224,
+              "points": 0,
+              "lines": 223
+            },
+            {
+              "calls": 9,
+              "triangles": 72,
+              "points": 0,
+              "lines": 0
+            }
+          ]
+        },
+        {
+          "engine": "prepared-wasm",
+          "observer": false,
+          "poses": [
+            {
+              "time": 0.25,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+              "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+            },
+            {
+              "time": 0.75,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+              "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+            }
+          ],
+          "passCount": 4,
+          "passDraws": [
+            {
+              "calls": 39,
+              "triangles": 6476,
+              "points": 0,
+              "lines": 0
+            },
+            {
+              "calls": 2,
+              "triangles": 0,
+              "points": 0,
+              "lines": 76
+            },
+            {
+              "calls": 20,
+              "triangles": 224,
+              "points": 0,
+              "lines": 223
+            },
+            {
+              "calls": 9,
+              "triangles": 72,
+              "points": 0,
+              "lines": 0
+            }
+          ]
+        },
+        {
+          "engine": "prepared-wasm",
+          "observer": true,
+          "poses": [
+            {
+              "time": 0.25,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+              "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+            },
+            {
+              "time": 0.75,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+              "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+            }
+          ],
+          "passCount": 4,
+          "passDraws": [
+            {
+              "calls": 39,
+              "triangles": 6476,
+              "points": 0,
+              "lines": 0
+            },
+            {
+              "calls": 2,
+              "triangles": 0,
+              "points": 0,
+              "lines": 76
+            },
+            {
+              "calls": 20,
+              "triangles": 224,
+              "points": 0,
+              "lines": 223
+            },
+            {
+              "calls": 9,
+              "triangles": 72,
+              "points": 0,
+              "lines": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "full",
+      "manifestSha256": "ebd14d9b2967db89d94b2265d71185b81ab930f423dfa52fe6ecdf01f9d8b09f",
+      "toolSha": "e9b736a47f48bc2512476f8966d285d0153419f7",
+      "candidateSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "startedAt": "2026-10-26T02:57:25.447Z",
+      "finishedAt": "2026-10-26T03:01:48.468Z",
+      "runs": [
+        {
+          "engine": "original",
+          "round": 0,
+          "rawProfileSha256": "b318009e5b9a3adfc2d52030cc30795489954dd50b9840095db738c46a8075cd",
+          "samples": 75490,
+          "nodes": 932,
+          "durationMs": 12128.799,
+          "weightedMs": 12128.698,
+          "gapUs": {
+            "p50": 156.0,
+            "p95": 180.0,
+            "p99": 229.0,
+            "min": 50,
+            "max": 127189
+          },
+          "coverage": {
+            "unresolved-script-unavailable": {
+              "sampledUs": 10743118,
+              "samples": 67155
+            },
+            "verified-js": {
+              "sampledUs": 1385580,
+              "samples": 8335
+            }
+          },
+          "nativePseudoFrameUs": {
+            "(program)": 1235050,
+            "(idle)": 9256946,
+            "(garbage collector)": 27241
+          },
+          "unresolvedWasmNames": [],
+          "sourceAudit": {
+            "payloadHashChecks": 146,
+            "bytesHashed": 10206724,
+            "servedSources": 137,
+            "unavailableScriptIds": [
+              "0"
+            ]
+          },
+          "windows": {
+            "warmup": {
+              "elapsedMs": 4997.625,
+              "mixerAdvanceSeconds": 5.000180000007152,
+              "renderPasses": 2400,
+              "nativeFrames": 600.0,
+              "phaseErrorSeconds": 8.881784197001252e-16,
+              "counters": null
+            },
+            "before-window": {
+              "elapsedMs": 2005.6599999964237,
+              "mixerAdvanceSeconds": 2.00781499999761,
+              "renderPasses": 964,
+              "nativeFrames": 241.0,
+              "phaseErrorSeconds": 6.00908212078366e-15,
+              "counters": null
+            },
+            "profile-observations": {
+              "elapsedMs": 12147.70000000298,
+              "mixerAdvanceSeconds": 12.150105000004162,
+              "renderPasses": 5776,
+              "nativeFrames": 1444.0,
+              "phaseErrorSeconds": 1.1213252548714081e-14,
+              "counters": null
+            },
+            "after-window": {
+              "elapsedMs": 2001.3800000101328,
+              "mixerAdvanceSeconds": 2.000200000002991,
+              "renderPasses": 960,
+              "nativeFrames": 240.0,
+              "phaseErrorSeconds": 1.0325074129013956e-14,
+              "counters": null
+            }
+          },
+          "historicalSetupMatches": true,
+          "analysis001SelfInclusiveCoverageMatched": true,
+          "maximumGapSample": {
+            "index": 0,
+            "nodeId": 2,
+            "functionName": "(program)"
+          }
+        },
+        {
+          "engine": "prepared-js",
+          "round": 0,
+          "rawProfileSha256": "0d5772e4b5b209f19cbdbd1dbb1579ca0aee03a76fad08a4bd717eb9a0f89e22",
+          "samples": 76171,
+          "nodes": 1793,
+          "durationMs": 12132.577,
+          "weightedMs": 12132.396,
+          "gapUs": {
+            "p50": 155.0,
+            "p95": 174.0,
+            "p99": 216.0,
+            "min": 55,
+            "max": 131409
+          },
+          "coverage": {
+            "unresolved-script-unavailable": {
+              "sampledUs": 8563523,
+              "samples": 53476
+            },
+            "verified-js": {
+              "sampledUs": 3568873,
+              "samples": 22695
+            }
+          },
+          "nativePseudoFrameUs": {
+            "(program)": 1354374,
+            "(idle)": 6899844,
+            "(garbage collector)": 52225
+          },
+          "unresolvedWasmNames": [],
+          "sourceAudit": {
+            "payloadHashChecks": 159,
+            "bytesHashed": 11009925,
+            "servedSources": 145,
+            "unavailableScriptIds": [
+              "0"
+            ]
+          },
+          "windows": {
+            "warmup": {
+              "elapsedMs": 4996.875,
+              "mixerAdvanceSeconds": 5.000620000004769,
+              "renderPasses": 2400,
+              "nativeFrames": 600.0,
+              "phaseErrorSeconds": 2.220446049250313e-16,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 2400,
+                "matrixReads": 123000,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 15744000
+              }
+            },
+            "before-window": {
+              "elapsedMs": 2002.4549999982119,
+              "mixerAdvanceSeconds": 2.0000049999952267,
+              "renderPasses": 960,
+              "nativeFrames": 240.0,
+              "phaseErrorSeconds": 4.704570066849101e-15,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 960,
+                "matrixReads": 49200,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 6297600
+              }
+            },
+            "profile-observations": {
+              "elapsedMs": 12156.29999999702,
+              "mixerAdvanceSeconds": 12.157635000005339,
+              "renderPasses": 5780,
+              "nativeFrames": 1445.0,
+              "phaseErrorSeconds": 2.6423307986078726e-14,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 5780,
+                "matrixReads": 296225,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 37916800
+              }
+            },
+            "after-window": {
+              "elapsedMs": 2004.1800000071526,
+              "mixerAdvanceSeconds": 2.000314999997588,
+              "renderPasses": 960,
+              "nativeFrames": 240.0,
+              "phaseErrorSeconds": 2.6645352591003757e-14,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 960,
+                "matrixReads": 49200,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 6297600
+              }
+            }
+          },
+          "historicalSetupMatches": true,
+          "analysis001SelfInclusiveCoverageMatched": true,
+          "maximumGapSample": {
+            "index": 0,
+            "nodeId": 2,
+            "functionName": "(program)"
+          }
+        },
+        {
+          "engine": "prepared-wasm",
+          "round": 0,
+          "rawProfileSha256": "748e132294d8a6313d3b9b720770f3d9203a74f98bae684c0d459eec5797ad9a",
+          "samples": 76178,
+          "nodes": 2263,
+          "durationMs": 12128.961,
+          "weightedMs": 12128.852,
+          "gapUs": {
+            "p50": 155.0,
+            "p95": 175.0,
+            "p99": 215.0,
+            "min": 12,
+            "max": 127192
+          },
+          "coverage": {
+            "unresolved-script-unavailable": {
+              "sampledUs": 8419337,
+              "samples": 52629
+            },
+            "verified-js": {
+              "sampledUs": 3682092,
+              "samples": 23377
+            },
+            "verified-wasm": {
+              "sampledUs": 25672,
+              "samples": 161
+            },
+            "unresolved-wasm-function": {
+              "sampledUs": 1751,
+              "samples": 11
+            }
+          },
+          "nativePseudoFrameUs": {
+            "(program)": 1314066,
+            "(idle)": 6804007,
+            "(garbage collector)": 53766
+          },
+          "unresolvedWasmNames": [
+            "js-to-wasm:ii:i",
+            "js-to-wasm:iii:i"
+          ],
+          "sourceAudit": {
+            "payloadHashChecks": 158,
+            "bytesHashed": 11165280,
+            "servedSources": 146,
+            "unavailableScriptIds": [
+              "0"
+            ]
+          },
+          "windows": {
+            "warmup": {
+              "elapsedMs": 4996.810000002384,
+              "mixerAdvanceSeconds": 5.000679999992246,
+              "renderPasses": 2400,
+              "nativeFrames": 600.0,
+              "phaseErrorSeconds": 3.3306690738754696e-15,
+              "counters": {
+                "wasmCalls": 81000,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 2400,
+                "matrixReads": 123000,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 15744000
+              }
+            },
+            "before-window": {
+              "elapsedMs": 2006.5900000035763,
+              "mixerAdvanceSeconds": 2.008300000011914,
+              "renderPasses": 964,
+              "nativeFrames": 241.0,
+              "phaseErrorSeconds": 6.897260540483785e-15,
+              "counters": {
+                "wasmCalls": 32535,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 964,
+                "matrixReads": 49405,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 6323840
+              }
+            },
+            "profile-observations": {
+              "elapsedMs": 12155.159999996424,
+              "mixerAdvanceSeconds": 12.158349999994055,
+              "renderPasses": 5780,
+              "nativeFrames": 1445.0,
+              "phaseErrorSeconds": 1.63202784619898e-14,
+              "counters": {
+                "wasmCalls": 195075,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 5780,
+                "matrixReads": 296225,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 37916800
+              }
+            },
+            "after-window": {
+              "elapsedMs": 2006.5649999976158,
+              "mixerAdvanceSeconds": 2.007670000001795,
+              "renderPasses": 964,
+              "nativeFrames": 241.0,
+              "phaseErrorSeconds": 6.5503158452884236e-15,
+              "counters": {
+                "wasmCalls": 32535,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 964,
+                "matrixReads": 49405,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 6323840
+              }
+            }
+          },
+          "historicalSetupMatches": true,
+          "analysis001SelfInclusiveCoverageMatched": true,
+          "maximumGapSample": {
+            "index": 0,
+            "nodeId": 2,
+            "functionName": "(program)"
+          }
+        },
+        {
+          "engine": "prepared-js",
+          "round": 1,
+          "rawProfileSha256": "7e4d7bd17e65a89796fbdb77bbe4e4c2aa9dbb2bbd76c43ed71aa0c0e4d2350b",
+          "samples": 76031,
+          "nodes": 1985,
+          "durationMs": 12125.33,
+          "weightedMs": 12125.119,
+          "gapUs": {
+            "p50": 155.0,
+            "p95": 175.0,
+            "p99": 219.0,
+            "min": 22,
+            "max": 123391
+          },
+          "coverage": {
+            "unresolved-script-unavailable": {
+              "sampledUs": 8452525,
+              "samples": 52694
+            },
+            "verified-js": {
+              "sampledUs": 3672594,
+              "samples": 23337
+            }
+          },
+          "nativePseudoFrameUs": {
+            "(program)": 1342658,
+            "(idle)": 6802784,
+            "(garbage collector)": 56634
+          },
+          "unresolvedWasmNames": [],
+          "sourceAudit": {
+            "payloadHashChecks": 158,
+            "bytesHashed": 10999270,
+            "servedSources": 145,
+            "unavailableScriptIds": [
+              "0"
+            ]
+          },
+          "windows": {
+            "warmup": {
+              "elapsedMs": 4998.120000004768,
+              "mixerAdvanceSeconds": 4.9994750000089425,
+              "renderPasses": 2400,
+              "nativeFrames": 600.0,
+              "phaseErrorSeconds": 8.881784197001252e-16,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 2400,
+                "matrixReads": 123000,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 15744000
+              }
+            },
+            "before-window": {
+              "elapsedMs": 2006.5750000029802,
+              "mixerAdvanceSeconds": 2.0083599999994064,
+              "renderPasses": 964,
+              "nativeFrames": 241.0,
+              "phaseErrorSeconds": 2.2343238370581275e-15,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 964,
+                "matrixReads": 49405,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 6323840
+              }
+            },
+            "profile-observations": {
+              "elapsedMs": 12150.354999989271,
+              "mixerAdvanceSeconds": 12.151219999998776,
+              "renderPasses": 5780,
+              "nativeFrames": 1445.0,
+              "phaseErrorSeconds": 3.319566843629218e-14,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 5780,
+                "matrixReads": 296225,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 37916800
+              }
+            },
+            "after-window": {
+              "elapsedMs": 2002.5450000017881,
+              "mixerAdvanceSeconds": 2.0001199999898773,
+              "renderPasses": 960,
+              "nativeFrames": 240.0,
+              "phaseErrorSeconds": 1.0103029524088925e-14,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 960,
+                "matrixReads": 49200,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 6297600
+              }
+            }
+          },
+          "historicalSetupMatches": true,
+          "analysis001SelfInclusiveCoverageMatched": true,
+          "maximumGapSample": {
+            "index": 0,
+            "nodeId": 2,
+            "functionName": "(program)"
+          }
+        },
+        {
+          "engine": "prepared-wasm",
+          "round": 1,
+          "rawProfileSha256": "3b53721cc8c166201ad11db3ce8737f5943222385a742b0746c12803a20a1b32",
+          "samples": 75631,
+          "nodes": 2338,
+          "durationMs": 12151.792,
+          "weightedMs": 12151.547,
+          "gapUs": {
+            "p50": 155.0,
+            "p95": 179.0,
+            "p99": 226.0,
+            "min": 11,
+            "max": 148564
+          },
+          "coverage": {
+            "unresolved-script-unavailable": {
+              "sampledUs": 8187962,
+              "samples": 50876
+            },
+            "verified-js": {
+              "sampledUs": 3930958,
+              "samples": 24553
+            },
+            "verified-wasm": {
+              "sampledUs": 28622,
+              "samples": 178
+            },
+            "unresolved-wasm-function": {
+              "sampledUs": 4005,
+              "samples": 24
+            }
+          },
+          "nativePseudoFrameUs": {
+            "(program)": 1420448,
+            "(garbage collector)": 50905,
+            "(idle)": 6419504
+          },
+          "unresolvedWasmNames": [
+            "js-to-wasm:ii:i",
+            "js-to-wasm:iii:i"
+          ],
+          "sourceAudit": {
+            "payloadHashChecks": 158,
+            "bytesHashed": 11165280,
+            "servedSources": 146,
+            "unavailableScriptIds": [
+              "0"
+            ]
+          },
+          "windows": {
+            "warmup": {
+              "elapsedMs": 5016.240000009537,
+              "mixerAdvanceSeconds": 5.016645000010731,
+              "renderPasses": 2400,
+              "nativeFrames": 600.0,
+              "phaseErrorSeconds": 2.3314683517128287e-15,
+              "counters": {
+                "wasmCalls": 81000,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 2400,
+                "matrixReads": 123000,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 15744000
+              }
+            },
+            "before-window": {
+              "elapsedMs": 2005.3550000041723,
+              "mixerAdvanceSeconds": 2.0083849999904606,
+              "renderPasses": 964,
+              "nativeFrames": 241.0,
+              "phaseErrorSeconds": 2.9698465908722937e-15,
+              "counters": {
+                "wasmCalls": 32535,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 964,
+                "matrixReads": 49405,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 6323840
+              }
+            },
+            "profile-observations": {
+              "elapsedMs": 12182.140000000596,
+              "mixerAdvanceSeconds": 12.18153499999647,
+              "renderPasses": 5784,
+              "nativeFrames": 1446.0,
+              "phaseErrorSeconds": 4.418687638008123e-14,
+              "counters": {
+                "wasmCalls": 195210,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 5784,
+                "matrixReads": 296430,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 37943040
+              }
+            },
+            "after-window": {
+              "elapsedMs": 2008.765000000596,
+              "mixerAdvanceSeconds": 2.0095500000119273,
+              "renderPasses": 964,
+              "nativeFrames": 241.0,
+              "phaseErrorSeconds": 6.217248937900877e-15,
+              "counters": {
+                "wasmCalls": 32535,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 964,
+                "matrixReads": 49405,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 6323840
+              }
+            }
+          },
+          "historicalSetupMatches": true,
+          "analysis001SelfInclusiveCoverageMatched": true,
+          "maximumGapSample": {
+            "index": 0,
+            "nodeId": 2,
+            "functionName": "(program)"
+          }
+        },
+        {
+          "engine": "original",
+          "round": 1,
+          "rawProfileSha256": "b8d8e3595bdf1a449eb84afb56f5064a70827bc8c6bad879cc7fa9c8d8f466d4",
+          "samples": 76488,
+          "nodes": 950,
+          "durationMs": 12130.239,
+          "weightedMs": 12130.118,
+          "gapUs": {
+            "p50": 155.0,
+            "p95": 173.0,
+            "p99": 201.0,
+            "min": 0,
+            "max": 126574
+          },
+          "coverage": {
+            "unresolved-script-unavailable": {
+              "sampledUs": 10690924,
+              "samples": 67356
+            },
+            "verified-js": {
+              "sampledUs": 1439194,
+              "samples": 9132
+            }
+          },
+          "nativePseudoFrameUs": {
+            "(program)": 1414030,
+            "(garbage collector)": 32618,
+            "(idle)": 8967162
+          },
+          "unresolvedWasmNames": [],
+          "sourceAudit": {
+            "payloadHashChecks": 147,
+            "bytesHashed": 10217379,
+            "servedSources": 137,
+            "unavailableScriptIds": [
+              "0"
+            ]
+          },
+          "windows": {
+            "warmup": {
+              "elapsedMs": 4996.804999992251,
+              "mixerAdvanceSeconds": 5.000414999991668,
+              "renderPasses": 2400,
+              "nativeFrames": 600.0,
+              "phaseErrorSeconds": 1.27675647831893e-14,
+              "counters": null
+            },
+            "before-window": {
+              "elapsedMs": 2004.5250000059605,
+              "mixerAdvanceSeconds": 2.006525000005964,
+              "renderPasses": 964,
+              "nativeFrames": 241.0,
+              "phaseErrorSeconds": 3.4833247397614286e-15,
+              "counters": null
+            },
+            "profile-observations": {
+              "elapsedMs": 12150.655000001192,
+              "mixerAdvanceSeconds": 12.151739999994618,
+              "renderPasses": 5776,
+              "nativeFrames": 1444.0,
+              "phaseErrorSeconds": 1.6653345369377348e-14,
+              "counters": null
+            },
+            "after-window": {
+              "elapsedMs": 2001.0399999916553,
+              "mixerAdvanceSeconds": 2.000060000002371,
+              "renderPasses": 960,
+              "nativeFrames": 240.0,
+              "phaseErrorSeconds": 1.27675647831893e-14,
+              "counters": null
+            }
+          },
+          "historicalSetupMatches": true,
+          "analysis001SelfInclusiveCoverageMatched": true,
+          "maximumGapSample": {
+            "index": 0,
+            "nodeId": 2,
+            "functionName": "(program)"
+          }
+        },
+        {
+          "engine": "prepared-wasm",
+          "round": 2,
+          "rawProfileSha256": "9d9bdbe8882aa5bbca836e43523d844032def9d13bd869fbfae4b6e812a0491b",
+          "samples": 76760,
+          "nodes": 2288,
+          "durationMs": 12131.475,
+          "weightedMs": 12131.379,
+          "gapUs": {
+            "p50": 154.0,
+            "p95": 172.0,
+            "p99": 198.0,
+            "min": 0,
+            "max": 126636
+          },
+          "coverage": {
+            "unresolved-script-unavailable": {
+              "sampledUs": 8291463,
+              "samples": 52042
+            },
+            "verified-js": {
+              "sampledUs": 3810334,
+              "samples": 24528
+            },
+            "verified-wasm": {
+              "sampledUs": 26431,
+              "samples": 170
+            },
+            "unresolved-wasm-function": {
+              "sampledUs": 3151,
+              "samples": 20
+            }
+          },
+          "nativePseudoFrameUs": {
+            "(program)": 1391357,
+            "(garbage collector)": 46879,
+            "(idle)": 6552827
+          },
+          "unresolvedWasmNames": [
+            "js-to-wasm:ii:i",
+            "js-to-wasm:iii:i"
+          ],
+          "sourceAudit": {
+            "payloadHashChecks": 158,
+            "bytesHashed": 11165280,
+            "servedSources": 146,
+            "unavailableScriptIds": [
+              "0"
+            ]
+          },
+          "windows": {
+            "warmup": {
+              "elapsedMs": 5000.930000007153,
+              "mixerAdvanceSeconds": 5.0016749999970225,
+              "renderPasses": 2400,
+              "nativeFrames": 600.0,
+              "phaseErrorSeconds": 1.9984014443252818e-15,
+              "counters": {
+                "wasmCalls": 81000,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 2400,
+                "matrixReads": 123000,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 15744000
+              }
+            },
+            "before-window": {
+              "elapsedMs": 2001.4500000029802,
+              "mixerAdvanceSeconds": 1.9995600000023783,
+              "renderPasses": 960,
+              "nativeFrames": 240.0,
+              "phaseErrorSeconds": 5.717648576819556e-15,
+              "counters": {
+                "wasmCalls": 32400,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 960,
+                "matrixReads": 49200,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 6297600
+              }
+            },
+            "profile-observations": {
+              "elapsedMs": 12160.394999995828,
+              "mixerAdvanceSeconds": 12.15912999999518,
+              "renderPasses": 5780,
+              "nativeFrames": 1445.0,
+              "phaseErrorSeconds": 5.1181281435219717e-14,
+              "counters": {
+                "wasmCalls": 195075,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 5780,
+                "matrixReads": 296225,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 37916800
+              }
+            },
+            "after-window": {
+              "elapsedMs": 2004.0450000017881,
+              "mixerAdvanceSeconds": 2.008584999993438,
+              "renderPasses": 964,
+              "nativeFrames": 241.0,
+              "phaseErrorSeconds": 4.9960036108132044e-15,
+              "counters": {
+                "wasmCalls": 32535,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 964,
+                "matrixReads": 49405,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 6323840
+              }
+            }
+          },
+          "historicalSetupMatches": true,
+          "analysis001SelfInclusiveCoverageMatched": true,
+          "maximumGapSample": {
+            "index": 0,
+            "nodeId": 2,
+            "functionName": "(program)"
+          }
+        },
+        {
+          "engine": "original",
+          "round": 2,
+          "rawProfileSha256": "994939536aeecc7771e4ec932f58986bac97eb28e4410dfdb6bdb3ba7913024b",
+          "samples": 76156,
+          "nodes": 911,
+          "durationMs": 12127.824,
+          "weightedMs": 12127.674,
+          "gapUs": {
+            "p50": 155.0,
+            "p95": 174.0,
+            "p99": 206.0,
+            "min": 3,
+            "max": 124198
+          },
+          "coverage": {
+            "unresolved-script-unavailable": {
+              "sampledUs": 10686466,
+              "samples": 67082
+            },
+            "verified-js": {
+              "sampledUs": 1441208,
+              "samples": 9074
+            }
+          },
+          "nativePseudoFrameUs": {
+            "(program)": 1391637,
+            "(garbage collector)": 30968,
+            "(idle)": 8994388
+          },
+          "unresolvedWasmNames": [],
+          "sourceAudit": {
+            "payloadHashChecks": 147,
+            "bytesHashed": 10217379,
+            "servedSources": 137,
+            "unavailableScriptIds": [
+              "0"
+            ]
+          },
+          "windows": {
+            "warmup": {
+              "elapsedMs": 4997.594999998808,
+              "mixerAdvanceSeconds": 5.0022150000035746,
+              "renderPasses": 2400,
+              "nativeFrames": 600.0,
+              "phaseErrorSeconds": 1.6653345369377348e-15,
+              "counters": null
+            },
+            "before-window": {
+              "elapsedMs": 2005.1050000041723,
+              "mixerAdvanceSeconds": 2.0067499999999994,
+              "renderPasses": 964,
+              "nativeFrames": 241.0,
+              "phaseErrorSeconds": 4.163336342344337e-16,
+              "counters": null
+            },
+            "profile-observations": {
+              "elapsedMs": 12148.469999998808,
+              "mixerAdvanceSeconds": 12.151150000006007,
+              "renderPasses": 5780,
+              "nativeFrames": 1445.0,
+              "phaseErrorSeconds": 4.785061236134425e-14,
+              "counters": null
+            },
+            "after-window": {
+              "elapsedMs": 2002.359999999404,
+              "mixerAdvanceSeconds": 2.000004999995248,
+              "renderPasses": 960,
+              "nativeFrames": 240.0,
+              "phaseErrorSeconds": 1.587618925213974e-14,
+              "counters": null
+            }
+          },
+          "historicalSetupMatches": true,
+          "analysis001SelfInclusiveCoverageMatched": true,
+          "maximumGapSample": {
+            "index": 0,
+            "nodeId": 2,
+            "functionName": "(program)"
+          }
+        },
+        {
+          "engine": "prepared-js",
+          "round": 2,
+          "rawProfileSha256": "678cc5b345a573802a565ce94d766be04648284a834979afa6a7f2d09911a8f9",
+          "samples": 75756,
+          "nodes": 1842,
+          "durationMs": 12137.718,
+          "weightedMs": 12137.589,
+          "gapUs": {
+            "p50": 155.0,
+            "p95": 177.0,
+            "p99": 223.0,
+            "min": 19,
+            "max": 136799
+          },
+          "coverage": {
+            "unresolved-script-unavailable": {
+              "sampledUs": 8298294,
+              "samples": 51660
+            },
+            "verified-js": {
+              "sampledUs": 3839295,
+              "samples": 24096
+            }
+          },
+          "nativePseudoFrameUs": {
+            "(program)": 1398671,
+            "(idle)": 6572297,
+            "(garbage collector)": 52865
+          },
+          "unresolvedWasmNames": [],
+          "sourceAudit": {
+            "payloadHashChecks": 159,
+            "bytesHashed": 11009925,
+            "servedSources": 145,
+            "unavailableScriptIds": [
+              "0"
+            ]
+          },
+          "windows": {
+            "warmup": {
+              "elapsedMs": 4998.7750000059605,
+              "mixerAdvanceSeconds": 5.001085000008349,
+              "renderPasses": 2400,
+              "nativeFrames": 600.0,
+              "phaseErrorSeconds": 4.6629367034256575e-15,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 2400,
+                "matrixReads": 123000,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 15744000
+              }
+            },
+            "before-window": {
+              "elapsedMs": 2006.8299999982119,
+              "mixerAdvanceSeconds": 2.008209999993449,
+              "renderPasses": 964,
+              "nativeFrames": 241.0,
+              "phaseErrorSeconds": 5.3013149425851225e-15,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 964,
+                "matrixReads": 49405,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 6323840
+              }
+            },
+            "profile-observations": {
+              "elapsedMs": 12165.844999998808,
+              "mixerAdvanceSeconds": 12.164990000009556,
+              "renderPasses": 5780,
+              "nativeFrames": 1445.0,
+              "phaseErrorSeconds": 2.0761170560490427e-14,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 5780,
+                "matrixReads": 296225,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 37916800
+              }
+            },
+            "after-window": {
+              "elapsedMs": 2004.9350000023842,
+              "mixerAdvanceSeconds": 2.0100649999976348,
+              "renderPasses": 964,
+              "nativeFrames": 241.0,
+              "phaseErrorSeconds": 1.887379141862766e-14,
+              "counters": {
+                "wasmCalls": 0,
+                "preparedPasses": 0,
+                "preparedWasmCalls": 0,
+                "preparedFallbacks": 964,
+                "matrixReads": 49405,
+                "preparedMatrixReads": 0,
+                "materializedBytes": 6323840
+              }
+            }
+          },
+          "historicalSetupMatches": true,
+          "analysis001SelfInclusiveCoverageMatched": true,
+          "maximumGapSample": {
+            "index": 0,
+            "nodeId": 2,
+            "functionName": "(program)"
+          }
+        }
+      ],
+      "oracles": [
+        {
+          "engine": "original",
+          "observer": false,
+          "poses": [
+            {
+              "time": 0.25,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+              "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+            },
+            {
+              "time": 0.75,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+              "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+            }
+          ],
+          "passCount": 4,
+          "passDraws": [
+            {
+              "calls": 39,
+              "triangles": 6476,
+              "points": 0,
+              "lines": 0
+            },
+            {
+              "calls": 2,
+              "triangles": 0,
+              "points": 0,
+              "lines": 76
+            },
+            {
+              "calls": 20,
+              "triangles": 224,
+              "points": 0,
+              "lines": 223
+            },
+            {
+              "calls": 9,
+              "triangles": 72,
+              "points": 0,
+              "lines": 0
+            }
+          ]
+        },
+        {
+          "engine": "original",
+          "observer": true,
+          "poses": [
+            {
+              "time": 0.25,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+              "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+            },
+            {
+              "time": 0.75,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+              "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+            }
+          ],
+          "passCount": 4,
+          "passDraws": [
+            {
+              "calls": 39,
+              "triangles": 6476,
+              "points": 0,
+              "lines": 0
+            },
+            {
+              "calls": 2,
+              "triangles": 0,
+              "points": 0,
+              "lines": 76
+            },
+            {
+              "calls": 20,
+              "triangles": 224,
+              "points": 0,
+              "lines": 223
+            },
+            {
+              "calls": 9,
+              "triangles": 72,
+              "points": 0,
+              "lines": 0
+            }
+          ]
+        },
+        {
+          "engine": "prepared-js",
+          "observer": false,
+          "poses": [
+            {
+              "time": 0.25,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+              "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+            },
+            {
+              "time": 0.75,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+              "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+            }
+          ],
+          "passCount": 4,
+          "passDraws": [
+            {
+              "calls": 39,
+              "triangles": 6476,
+              "points": 0,
+              "lines": 0
+            },
+            {
+              "calls": 2,
+              "triangles": 0,
+              "points": 0,
+              "lines": 76
+            },
+            {
+              "calls": 20,
+              "triangles": 224,
+              "points": 0,
+              "lines": 223
+            },
+            {
+              "calls": 9,
+              "triangles": 72,
+              "points": 0,
+              "lines": 0
+            }
+          ]
+        },
+        {
+          "engine": "prepared-js",
+          "observer": true,
+          "poses": [
+            {
+              "time": 0.25,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+              "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+            },
+            {
+              "time": 0.75,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+              "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+            }
+          ],
+          "passCount": 4,
+          "passDraws": [
+            {
+              "calls": 39,
+              "triangles": 6476,
+              "points": 0,
+              "lines": 0
+            },
+            {
+              "calls": 2,
+              "triangles": 0,
+              "points": 0,
+              "lines": 76
+            },
+            {
+              "calls": 20,
+              "triangles": 224,
+              "points": 0,
+              "lines": 223
+            },
+            {
+              "calls": 9,
+              "triangles": 72,
+              "points": 0,
+              "lines": 0
+            }
+          ]
+        },
+        {
+          "engine": "prepared-wasm",
+          "observer": false,
+          "poses": [
+            {
+              "time": 0.25,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+              "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+            },
+            {
+              "time": 0.75,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+              "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+            }
+          ],
+          "passCount": 4,
+          "passDraws": [
+            {
+              "calls": 39,
+              "triangles": 6476,
+              "points": 0,
+              "lines": 0
+            },
+            {
+              "calls": 2,
+              "triangles": 0,
+              "points": 0,
+              "lines": 76
+            },
+            {
+              "calls": 20,
+              "triangles": 224,
+              "points": 0,
+              "lines": 223
+            },
+            {
+              "calls": 9,
+              "triangles": 72,
+              "points": 0,
+              "lines": 0
+            }
+          ]
+        },
+        {
+          "engine": "prepared-wasm",
+          "observer": true,
+          "poses": [
+            {
+              "time": 0.25,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+              "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+            },
+            {
+              "time": 0.75,
+              "numericValues": 7833,
+              "maxAbsoluteError": 0,
+              "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+              "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+            }
+          ],
+          "passCount": 4,
+          "passDraws": [
+            {
+              "calls": 39,
+              "triangles": 6476,
+              "points": 0,
+              "lines": 0
+            },
+            {
+              "calls": 2,
+              "triangles": 0,
+              "points": 0,
+              "lines": 76
+            },
+            {
+              "calls": 20,
+              "triangles": 224,
+              "points": 0,
+              "lines": 223
+            },
+            {
+              "calls": 9,
+              "triangles": 72,
+              "points": 0,
+              "lines": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "historicalReferenceRead": "The archived Task46 setup fingerprint is compared with every capture setup; the preserved 6990-to-85 fixed-pose comparison is separately reproducible with compare.py and recorded in comparison.json. This verifier does not reread Task46 images."
+}
