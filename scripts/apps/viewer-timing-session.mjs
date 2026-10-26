@@ -6,15 +6,18 @@ import { captureViewerSnapshot, compareViewerSnapshots as compareBaseViewerSnaps
 
 // Setup uses the native App loader and dat.gui controller handlers. Fixed-pose
 // oracle work is deliberately separate from natural wall-clock capture pages.
+export async function importViewerCaptureContent(run, asset) {
+ await run.page.evaluate(() => { const app = VIEWER.app; globalThis.__viewerPreviousContent = app.viewer?.content; globalThis.__viewerPreviousReport = app.validator.report; });
+ if (asset.zipPreparation) await run.page.locator('#file-input').setInputFiles(asset.zipPreparation.zip);
+ else await run.page.evaluate(url => VIEWER.app.view(url, '', new Map()), run.origin + '/__viewer_content__/' + asset.id + '/' + asset.entry);
+}
 export async function setupViewerCapture(run, scenario, asset) {
  await run.page.goto(run.url); await run.page.bringToFront();
  await run.page.waitForFunction(() => window.VIEWER?.app); await run.page.evaluate(() => document.fonts.ready);
- await run.page.evaluate(url => {
-  const app = VIEWER.app; globalThis.__viewerPreviousContent = app.viewer?.content; globalThis.__viewerPreviousReport = app.validator.report;
-  app.view(url, '', new Map());
- }, run.origin + '/__viewer_content__/' + asset.id + '/' + asset.entry);
- await run.page.waitForFunction(() => VIEWER.app.viewer?.content && VIEWER.app.viewer.content !== globalThis.__viewerPreviousContent && VIEWER.app.validator.report !== null && VIEWER.app.validator.report !== globalThis.__viewerPreviousReport);
+ await importViewerCaptureContent(run, asset);
+ await run.page.waitForFunction(() => VIEWER.app.viewer?.content && VIEWER.app.viewer.content !== globalThis.__viewerPreviousContent && VIEWER.app.validator.report !== null && VIEWER.app.validator.report !== globalThis.__viewerPreviousReport, null, asset.zipPreparation ? { timeout: 180000 } : undefined);
  await run.save('validator.json', await run.page.evaluate(() => VIEWER.app.validator.report));
+ if (asset.zipPreparation) await run.save('native-initial-playback.json', await run.page.evaluate(() => { const v = VIEWER.app.viewer; return { mixerTime: v.mixer?.time ?? null, renderFrame: v.renderer.info.render.frame, state: { ...v.state.actionStates }, clips: v.clips.map(clip => { const action = v.mixer?.existingAction(clip); return { name: clip.name, duration: clip.duration, running: action?.isRunning() ?? false, time: action?.time ?? null, weight: action?.getEffectiveWeight() ?? null }; }), scope: 'Initial native App.load and first-clip autoplay state, before scenario GUI setup; no stop/replay was applied.' }; }));
  if (asset.expected) { const readiness = await run.page.evaluate(captureViewerContentReadiness); await run.save('content-readiness.json', readiness); assertViewerContentReadiness(asset.expected, readiness); }
  const prepared = await run.page.evaluate(config => {
   delete globalThis.__viewerPreviousContent; delete globalThis.__viewerPreviousReport;

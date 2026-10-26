@@ -3,6 +3,7 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { createPinnedViewerContent } from './viewer-content.mjs';
+import { readEditorContentPreparation } from './editor-content.mjs';
 import { VIEWER_PIN, hash } from './viewer-adapter.mjs';
 
 export const VIEWER_CAPTURE_SETTINGS = Object.freeze({
@@ -53,9 +54,10 @@ export function validateViewerProtocol(value, { kind, mode, output, runtimeSha, 
   for (const row of asset.files) { assert(typeof row.file === 'string' && !row.file.startsWith('/') && !row.file.split('/').includes('..')); assert.match(row.sha256, /^[0-9a-f]{64}$/); assert(Number.isSafeInteger(row.bytes) && row.bytes > 0); }
   assert(asset.source && (typeof asset.source === 'string' || typeof asset.source === 'object' && asset.source.pin && asset.source.repository));
   assert(typeof (asset.license ?? asset.source?.license) === 'string' && (asset.license ?? asset.source?.license));
-  assert(!Object.hasOwn(asset, 'root'), 'Public protocol assets use hashes and IDs; local roots belong in the invocation descriptor');
+  for (const key of ['root', 'zipPrepared', 'zipPreparation']) assert(!Object.hasOwn(asset, key), 'Public protocol assets must exclude local input paths: ' + key);
+  if (asset.input) { assert.equal(kind, 'profile', 'Native ZIP is a diagnostic profile input, not a new primary timing protocol'); validateViewerZipInput(asset.input); assert.equal(value.transport?.network ?? 'playwright', 'playwright', 'Native ZIP preserves the original Playwright mirror policy'); }
  }
- for (const item of value.cases) assert(value.assets.some(asset => asset.id === item.asset), 'Case asset missing from protocol');
+ for (const item of value.cases) { const asset = value.assets.find(asset => asset.id === item.asset); assert(asset, 'Case asset missing from protocol'); if (asset.input) validateViewerZipCase(item); }
  assert.match(value.outputPrefixes?.[kind]?.[group] ?? '', /^task[0-9]+-viewer-[a-z0-9-]+-$/);
  assert(path.basename(path.resolve(output)).startsWith(value.outputPrefixes[kind][group]), 'Use the frozen dedicated Viewer output prefix');
  assert(['full', 'smoke'].includes(mode));
@@ -79,6 +81,44 @@ export async function resolveViewerProtocol(toolRoot, options) {
  return { evidence: { file: relative, sha256: hash(bytes), protocol: value, verifiedAtToolSha: git('rev-parse', 'HEAD').toString().trim() }, cases: value.cases,
   config: { mode, ...VIEWER_CAPTURE_SETTINGS[kind][mode] }, files: [relative] };
 }
+// Local preparation paths never enter the public input contract. The original
+// Editor-pinned ZIP writer and Viewer-native zip-js decoder remain distinct.
+export function validateViewerZipInput(input) {
+ assert.deepEqual(Object.keys(input).sort(), ['assetBytesChanged', 'kind', 'preparationManifestSha256', 'zip']);
+ assert.equal(input.kind, 'native-file-input ZIP'); assert.equal(input.assetBytesChanged, false);
+ assert.match(input.preparationManifestSha256, /^[0-9a-f]{64}$/);
+ assert.deepEqual(Object.keys(input.zip).sort(), ['bytes', 'file', 'sha256']);
+ assert.match(input.zip.file, /^[a-z][a-z0-9-]*\.zip$/); assert.match(input.zip.sha256, /^[0-9a-f]{64}$/);
+ assert(Number.isSafeInteger(input.zip.bytes) && input.zip.bytes > 0); return input;
+}
+export function bindViewerZipInput(asset, prepared) {
+ assert.equal(prepared.manifest.content, asset.id); assert.equal(prepared.manifest.entry, asset.entry);
+ assert.deepEqual(prepared.manifest.files, asset.files, 'ZIP and mounted original source inventories differ');
+ const input = { kind: 'native-file-input ZIP', preparationManifestSha256: prepared.manifestSha256,
+  zip: { file: prepared.manifest.zip.file, bytes: prepared.manifest.zip.bytes, sha256: prepared.manifest.zip.sha256 }, assetBytesChanged: false };
+ validateViewerZipInput(input); if (asset.input) assert.deepEqual(asset.input, input, 'ZIP input evidence differs'); asset.input = input; return input;
+}
+export function publicViewerContent(asset) {
+ return Object.fromEntries(['id', 'entry', 'files', 'license', 'source', 'expected', 'input'].filter(key => Object.hasOwn(asset, key)).map(key => [key, asset[key]]));
+}
+export function validateViewerZipCase(scenario, asset) {
+ assert.equal(scenario.grid, false, 'Native content profiles retain shipped grid-off quality'); assert.equal(scenario.pixelRatio, 1);
+ if (scenario.asset === 'bistro') { assert.equal(scenario.playback, 'clip'); assert.equal(scenario.nativeDefaultClip, true, 'Retain initial first-clip autoplay'); }
+ else { assert.equal(scenario.asset, 'beautiful-game'); assert.equal(scenario.playback, 'static'); }
+ if (asset) {
+  if (scenario.playback === 'static') assert.equal(asset.expected.animations.length, 0, 'Static Chess source unexpectedly contains animation');
+  else assert.equal(scenario.clip, asset.expected.animations[0].nativeName, 'Pin the first native authored clip');
+ }
+}
+export async function verifyViewerZipInputs(contents, apps) {
+ const evidence = [];
+ for (const asset of contents.filter(item => item.zipPrepared)) {
+  const prepared = await readEditorContentPreparation(asset.zipPrepared, apps);
+  assert.deepEqual(bindViewerZipInput({ ...asset }, prepared), asset.input, 'ZIP input changed during capture');
+  evidence.push({ id: asset.id, input: asset.input, verifiedOriginalFiles: prepared.manifest.files.length, verifiedZipEntries: prepared.manifest.verifiedEntries.length });
+ }
+ return evidence;
+}
 export async function loadViewerContents(apps, extraFile, declared) {
  const file = path.join(apps, 'editor/examples/models/gltf/RobotExpressive/RobotExpressive.glb'), bytes = await fs.readFile(file);
  assert.equal(hash(bytes), '047f5e5fb3bb6d378bd1df16ca6137f2a596c99b3a1b5690b4020c05aaf6f319');
@@ -92,7 +132,12 @@ export async function loadViewerContents(apps, extraFile, declared) {
   assert(Array.isArray(item.files) && item.files.some(file => file.file === item.entry), 'Content entry must be allowlisted');
   item.root = await fs.realpath(path.resolve(item.root));
   if (['bistro', 'beautiful-game'].includes(item.id)) { const pinned = await createPinnedViewerContent(item.id, item.root); for (const key of ['entry', 'files', 'source']) assert.deepEqual(item[key], pinned[key], 'Content differs from native feature contract: ' + key); item.expected = pinned.expected; }
-  if (declared) { const pin = declared.find(row => row.id === item.id); if (pin) { for (const key of ['entry', 'files', 'source']) assert.deepEqual(item[key], pin[key], 'Content differs from protocol: ' + item.id + '.' + key); assert.equal(item.license, pin.license ?? pin.source?.license, 'Content license differs from protocol'); } }
+  if (item.zipPrepared) {
+   assert(item.expected, 'Native ZIP profile inputs require the pinned authored-content feature contract');
+   item.zipPreparation = await readEditorContentPreparation(item.zipPrepared, apps);
+   item.zipPrepared = item.zipPreparation.root; bindViewerZipInput(item, item.zipPreparation);
+  } else assert(!item.input && !item.zipPreparation, 'ZIP input evidence requires a verified local preparation');
+  if (declared) { const pin = declared.find(row => row.id === item.id); if (pin) { for (const key of ['entry', 'files', 'source', 'input']) assert.deepEqual(item[key], pin[key], 'Content differs from protocol: ' + item.id + '.' + key); assert.equal(item.license, pin.license ?? pin.source?.license, 'Content license differs from protocol'); } }
  }
  if (declared) for (const item of declared) assert(contents.some(row => row.id === item.id), 'Missing declared content: ' + item.id);
  return contents;

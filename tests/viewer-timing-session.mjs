@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { validateViewerWindow } from '../scripts/apps/viewer-timing-session.mjs';
+import { validateViewerWindow, importViewerCaptureContent } from '../scripts/apps/viewer-timing-session.mjs';
 
 const scenario = { playback: 'walking', pixelRatio: 1, grid: true };
 function endpoints() {
@@ -43,4 +43,13 @@ test('static content without an animation mixer still requires native rendering'
  const { before, after } = endpoints(); for (const value of [before, after]) { value.mixerTime = null; value.mixerTimeScale = null; value.action = null; value.state.actionStates = {}; }
  assert.equal(validateViewerWindow(before, after, { ...scenario, playback: 'static' }, 'pure-r186').mixerAdvance, null);
  after.renderers.main.frame = before.renderers.main.frame; assert.throws(() => validateViewerWindow(before, after, { ...scenario, playback: 'static' }, 'pure-r186'));
+});
+
+test('ZIP input calls the native file chooser and never dispatches an HTTP App.view import', async () => {
+ const observed = [], app = { validator: { report: null }, view(...args) { observed.push(['view', ...args]); } };
+ const run = { origin: 'http://local.test', page: { evaluate: async (fn, value) => { globalThis.VIEWER = { app }; try { return fn(value); } finally { delete globalThis.VIEWER; delete globalThis.__viewerPreviousContent; delete globalThis.__viewerPreviousReport; } }, locator: selector => ({ setInputFiles: async file => observed.push(['file', selector, file]) }) } };
+ await importViewerCaptureContent(run, { id: 'beautiful-game', entry: 'scene.gltf', zipPreparation: { zip: '/private/prepared/beautiful-game.zip' } });
+ assert.deepEqual(observed, [['file', '#file-input', '/private/prepared/beautiful-game.zip']]); observed.length = 0;
+ await importViewerCaptureContent(run, { id: 'robot', entry: 'RobotExpressive.glb' });
+ assert.equal(observed.length, 1); assert.deepEqual(observed[0], ['view', 'http://local.test/__viewer_content__/robot/RobotExpressive.glb', '', new Map()]);
 });

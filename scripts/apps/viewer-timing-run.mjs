@@ -7,7 +7,7 @@ import { execFileSync } from 'node:child_process';
 import { chromium } from 'playwright';
 import { openViewerRun } from './viewer-browser.mjs';
 import { VIEWER_PIN, hash } from './viewer-adapter.mjs';
-import { VIEWER_GROUPS, resolveViewerProtocol, loadViewerContents } from './viewer-timing-protocol.mjs';
+import { VIEWER_GROUPS, resolveViewerProtocol, loadViewerContents, publicViewerContent, validateViewerZipCase, verifyViewerZipInputs } from './viewer-timing-protocol.mjs';
 import { installViewerTimingCollector } from './viewer-timing-collector.mjs';
 import { installViewerProfileObserver, setupViewerCapture, fixedViewerOracle, compareViewerSnapshots } from './viewer-timing-session.mjs';
 
@@ -25,14 +25,16 @@ export async function createViewerCapture(kind, argv) {
  assert(['playwright', 'proxy-cdp-remote'].includes(networkDiagnostic));
  if (protocol.evidence?.protocol.transport) assert.equal(networkDiagnostic, protocol.evidence.protocol.transport.network, 'Network mode cannot override a committed transport contract');
  if (networkDiagnostic !== 'playwright') { assert.equal(kind, 'profile'); if (protocol.evidence) assert.equal(protocol.evidence.protocol.transport?.network, networkDiagnostic); }
- const strictContent = networkDiagnostic !== 'playwright';
+ const ownedProcessPerRun = networkDiagnostic !== 'playwright';
  const preparedRoots = { native: prepared };
  for (const [key, value] of [['timing', options.timingPrepared], ['timingOriginal', options.timingOriginal]]) if (value) preparedRoots[key] = await fs.realpath(path.resolve(value));
  const contents = await loadViewerContents(apps, options.contents, protocol.evidence?.protocol.assets);
  for (const scenario of protocol.cases) assert(contents.some(asset => asset.id === scenario.asset), 'Missing case content: ' + scenario.asset);
- if (protocol.cases.some(scenario => contents.find(asset => asset.id === scenario.asset)?.expected)) assert(strictContent, 'Pinned authored content requires its prospective strict transport/readiness profile path');
+ const zipContents = contents.filter(asset => asset.zipPrepared), strictContent = ownedProcessPerRun || zipContents.length > 0;
+ if (zipContents.length) { assert.equal(kind, 'profile', 'ZIP input is currently diagnostic profiling only'); assert.equal(networkDiagnostic, 'playwright', 'ZIP input preserves the original mirror policy'); }
+ for (const scenario of protocol.cases) { const asset = contents.find(asset => asset.id === scenario.asset); if (asset.zipPrepared) validateViewerZipCase(scenario, asset); else if (asset.expected) assert(ownedProcessPerRun, 'Mounted authored content requires its prospective strict transport/readiness profile path'); }
  await fs.mkdir(out, { recursive: false });
- const aliases = [[apps, '<apps>'], [runtimeRoot, '<runtime>'], [toolRoot, '<tooling>'], ...Object.entries(preparedRoots).map(([name, root]) => [root, '<prepared-' + name + '>']), ...contents.map(asset => [asset.root, '<content-' + asset.id + '>']), [out, '<output>'], [os.homedir(), '<home>']];
+ const aliases = [[apps, '<apps>'], [runtimeRoot, '<runtime>'], [toolRoot, '<tooling>'], ...Object.entries(preparedRoots).map(([name, root]) => [root, '<prepared-' + name + '>']), ...contents.map(asset => [asset.root, '<content-' + asset.id + '>']), ...zipContents.map(asset => [asset.zipPrepared, '<zip-preparation-' + asset.id + '>']), [out, '<output>'], [os.homedir(), '<home>']];
  const redact = value => aliases.reduce((text, [from, to]) => text.split(from).join(to), String(value));
  const save = async (name, value) => { const file = path.join(out, name); await fs.mkdir(path.dirname(file), { recursive: true }); await fs.writeFile(file, typeof value === 'string' ? value : JSON.stringify(value, null, 2) + '\n'); };
  const configuration = { ...protocol.config, networkDiagnostic, strictContent, pageDpr: 1, cssViewport: { width: 1280, height: 720 }, isolated: true, profiling: kind === 'profile', gpuQueriesInWindow: false,
@@ -40,7 +42,8 @@ export async function createViewerCapture(kind, argv) {
   callbackQuantizationFloor: '2 * frozen callback count * observed minimum positive clock increment', nativeClock: 'Unchanged native rAF timestamps; poses are not frame-matched across routes.' };
  const routes = VIEWER_GROUPS[group], engines = [...new Set(routes.map(route => route.engine))];
  const manifest = { status: 'preparing', kind: 'viewer-' + kind + (mode === 'smoke' ? '-smoke-only' : '-unqualified'), candidateSha: options.runtimeSha, group, configuration, config: configuration,
-  protocol: protocol.evidence, smokeCaseInput: protocol.caseEvidence ?? null, cases: protocol.cases, routes, assets: contents.map(({ root, ...asset }) => asset), startedAt: new Date().toISOString(),
+  inputPolicy: zipContents.length ? 'Native file input → SimpleDropzone ZIP → App.load; unchanged original bytes and Playwright mirror policy; no mounted-content HTTP import.' : 'Native App.view mounted HTTP URL',
+  protocol: protocol.evidence, smokeCaseInput: protocol.caseEvidence ?? null, cases: protocol.cases, routes, assets: contents.map(publicViewerContent), startedAt: new Date().toISOString(),
   originalVersionControl: 'original-r176, external-r176 and pure-r186 comparisons are migration evidence, never candidate engine effects.',
   oracles: [], runs: [], errors: [], coverageExclusions: ['asynchronous loader/validator/UI/browser tasks outside the declared bodies', 'paint/compositor/GPU', 'collector bookkeeping'],
   overhead: 'Timing envelope and collector overhead are uncalibrated and outside reported body CPU except boundary timer reads. Profiler/observer overhead is uncalibrated; before/after cadence cannot calibrate CPU overhead.' };
@@ -69,21 +72,28 @@ export async function createViewerCapture(kind, argv) {
   const root = instrumented ? preparedRoots[engine === 'original-r176' ? 'timingOriginal' : 'timing'] : preparedRoots.native;
   assert(root, 'Missing required prepared bundle');
   const run = await openViewerRun(apps, root, path.join(out, directory), { route: engine, runtimeRoot, runtimeSha: options.runtimeSha, browser, networkDiagnostic,
-   isolated: true, captureSources: kind === 'profile' || instrumented, contentRoots: scenario ? contents.filter(asset => asset.id === scenario.asset) : contents, mode: instrumented ? 'Native Viewer and dat.gui callback timing; no profiler' : 'Uninstrumented Viewer oracle or diagnostic profile' });
+   isolated: true, captureSources: kind === 'profile' || instrumented, contentRoots: (scenario ? contents.filter(asset => asset.id === scenario.asset) : contents).filter(asset => !asset.zipPrepared), mode: instrumented ? 'Native Viewer and dat.gui callback timing; no profiler' : 'Uninstrumented Viewer oracle or diagnostic profile' });
   current = run;
+  const selectedAsset = scenario && contents.find(asset => asset.id === scenario.asset);
+  await run.save('input.json', selectedAsset?.input ?? { kind: 'native App.view HTTP URL', assetBytesChanged: false });
   if (strictContent) {
-   const failures = [], consoleErrors = [];
-   const failed = request => failures.push({ url: run.redact(request.url()).split(run.origin).join('<origin>'), error: request.failure()?.errorText ?? null });
-   const logged = message => { if (message.type() === 'error') consoleErrors.push(run.redact(message.text()).split(run.origin).join('<origin>')); };
-   run.page.on('requestfailed', failed); run.page.on('console', logged);
-   run.verifyContent = async () => { await run.save('content-transport-preflight.json', { failures: [...failures], consoleErrors: [...consoleErrors], strict: true }); assert.deepEqual(failures, [], 'Content transport failed before sampling'); assert.deepEqual(consoleErrors, [], 'Content console failed before sampling'); };
-   const nativeClose = run.close; let closed = false;
-   run.close = async () => {
-    if (closed) return; closed = true;
-    run.page.off('requestfailed', failed); run.page.off('console', logged);
-    try { await run.save('content-transport.json', { failures, consoleErrors, strict: true }); if (failures.length || consoleErrors.length) run.errors.push('Strict content transport/console gate failed'); }
-    finally { await nativeClose(); }
-   };
+   const failures = [], consoleErrors = [], mountedRequests = []; let phase = 'active';
+   const publicText = value => redact(run.redact(value).split(run.origin).join('<origin>'));
+   const failed = request => failures.push({ url: publicText(request.url()), error: request.failure()?.errorText ?? null, phaseAtReceipt: phase });
+   const logged = message => { if (message.type() === 'error') consoleErrors.push({ text: publicText(message.text()), phaseAtReceipt: phase }); };
+   const requested = request => { if (request.url().startsWith(run.origin + '/__viewer_content__/')) mountedRequests.push(publicText(request.url())); };
+   run.page.on('requestfailed', failed); run.page.on('console', logged); run.page.on('request', requested);
+   const evidence = () => ({ failures: [...failures], consoleErrors: [...consoleErrors], mountedRequests: [...mountedRequests], strict: true, input: selectedAsset?.input ?? { kind: 'native App.view HTTP URL' }, phaseAtReceiptScope: 'Receipt boundary only; closing events remain strict failures, not waived or assigned a causal origin.' });
+   const verify = () => { assert.deepEqual(failures, [], 'Content transport failed'); assert.deepEqual(consoleErrors, [], 'Content console failed'); if (selectedAsset?.zipPrepared) assert.deepEqual(mountedRequests, [], 'Native ZIP input unexpectedly fetched mounted HTTP content'); };
+   run.verifyContent = async () => { await run.save('content-transport-preflight.json', evidence()); verify(); };
+   const nativeClose = run.close; let closing;
+   run.close = () => { if (closing) return closing.catch(() => {}); closing = (async () => {
+    let failure; try { await run.save('content-transport-before-close.json', evidence()); verify(); } catch (error) { failure = error; }
+    phase = 'closing'; try { await nativeClose(); } catch (error) { failure ??= error; }
+    try { await run.save('content-transport.json', evidence()); verify(); } catch (error) { failure ??= error; }
+    finally { run.page.off('requestfailed', failed); run.page.off('console', logged); run.page.off('request', requested); }
+    if (failure) { run.errors.push('Strict content transport/console gate failed: ' + publicText(failure.message)); throw failure; }
+   })(); return closing; };
    await run.save('browser-process.json', await browserEvidence(run.browser));
   }
   await run.context.addInitScript(installViewerTimingCollector); if (observer) await run.context.addInitScript(installViewerProfileObserver); return run;
@@ -120,7 +130,7 @@ export async function createViewerCapture(kind, argv) {
  async function prepare() {
   manifest.sourceBefore = pins();
   const scriptNames = (await fs.readdir(path.join(toolRoot, 'scripts/apps'))).filter(name => name.startsWith('viewer-') && name.endsWith('.mjs')).map(name => 'scripts/apps/' + name);
-  const files = [...protocol.files, ...scriptNames, 'scripts/apps/candidate-profile-sources.mjs', 'scripts/apps/candidate-profile-analysis.mjs', 'scripts/apps/candidate-profile-session.mjs', 'scripts/apps/browser.mjs', 'scripts/apps/resources.json', 'scripts/runner-environment.mjs', 'package-lock.json'];
+  const files = [...protocol.files, ...scriptNames, 'scripts/apps/editor-content.mjs', 'scripts/apps/candidate-profile-sources.mjs', 'scripts/apps/candidate-profile-analysis.mjs', 'scripts/apps/candidate-profile-session.mjs', 'scripts/apps/browser.mjs', 'scripts/apps/resources.json', 'scripts/runner-environment.mjs', 'package-lock.json'];
   manifest.toolHashes = Object.fromEntries(await Promise.all(files.map(async file => [file, hash(await fs.readFile(path.join(toolRoot, file)))])));
   manifest.preparedManifests = {};
   manifest.preparedManifestFiles = {};
@@ -135,9 +145,10 @@ export async function createViewerCapture(kind, argv) {
    if (key === 'native') assert(!instrumentation || instrumentation === 'none', 'Native/profile bundle must not include timing instrumentation');
    else assert.equal(instrumentation, 'timing', 'Timing bundle lacks explicit instrumentation provenance');
   }
+  manifest.inputIntegrityBefore = await verifyViewerZipInputs(contents, apps);
   manifest.environmentBefore = await environment('before'); await persist();
   const executablePath = process.env.RTHREE_CHROME || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
-  if (strictContent) manifest.browser = { executablePath: redact(executablePath), lifecycle: 'Owned process per run; exact origin-only proxy bypass; process evidence in each run' };
+  if (ownedProcessPerRun) manifest.browser = { executablePath: redact(executablePath), lifecycle: 'Owned process per run; exact origin-only proxy bypass; process evidence in each run' };
   else { browser = await chromium.launch({ executablePath, headless: false }); manifest.browser = { executablePath: redact(executablePath), lifecycle: 'One process; sequential fresh contexts', ...await browserEvidence(browser) }; }
   await persist(); await parity();
  }
@@ -148,6 +159,7 @@ export async function createViewerCapture(kind, argv) {
    manifest.sourceAfter = pins(); if (manifest.sourceBefore) assert.deepEqual(manifest.sourceAfter, manifest.sourceBefore);
    for (const [file, expected] of Object.entries(manifest.toolHashes ?? {})) assert.equal(hash(await fs.readFile(path.join(toolRoot, file))), expected, 'Tool bytes changed: ' + file);
    for (const [key, expected] of Object.entries(manifest.preparedManifests ?? {})) assert.equal(hash(await fs.readFile(path.join(preparedRoots[key], 'manifest.json'))), expected);
+   manifest.inputIntegrityAfter = await verifyViewerZipInputs(contents, apps); assert.deepEqual(manifest.inputIntegrityAfter, manifest.inputIntegrityBefore ?? []);
    manifest.sourceIntegrity = 'passed'; manifest.environmentAfter = await environment('after');
   } catch (error) { manifest.errors.push(redact(error.stack || error)); manifest.status = 'failed'; }
   manifest.finishedAt = new Date().toISOString(); await persist(); process.removeListener('SIGINT', interrupt); process.removeListener('SIGTERM', interrupt);
