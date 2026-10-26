@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "bench/results/task49-viewer-profile-20261026/verify.py",
+    "--archive",
+    "<fresh-archive>",
+    "--out",
+    "<fresh-audit-002>"
+  ],
+  "exitCode": 0,
+  "log": "07-audit-python.log"
+}

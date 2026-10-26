@@ -1,0 +1,1 @@
+{"status": "verified", "logicalFiles": 4852, "physicalBlobs": 649, "captures": [{"label": "smoke", "runs": 12, "oracles": 24, "samples": 150204}, {"label": "full", "runs": 36, "oracles": 24, "samples": 2728100}]}

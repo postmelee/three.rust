@@ -1,0 +1,193 @@
+{
+  "schema": 1,
+  "contract": "native-viewer-callbacks-v1",
+  "viewerSha": "b5ee5dafe27f953ae1b55f42b5fa3697fef08683",
+  "runtimeSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+  "adoptionPolicy": "adoption-v1",
+  "settings": {
+    "timing": {
+      "full": {
+        "rounds": 4,
+        "warmup": 600,
+        "samples": 1200,
+        "blockSize": 300
+      },
+      "smoke": {
+        "rounds": 1,
+        "warmup": 10,
+        "samples": 30,
+        "blockSize": 10
+      }
+    },
+    "profile": {
+      "full": {
+        "repeats": 3,
+        "warmupFrames": 600,
+        "seconds": 12,
+        "samplingIntervalUs": 100,
+        "prePostObservationSeconds": 2
+      },
+      "smoke": {
+        "repeats": 1,
+        "warmupFrames": 60,
+        "seconds": 2,
+        "samplingIntervalUs": 100,
+        "prePostObservationSeconds": 2
+      }
+    }
+  },
+  "boundary": "Viewer.animate plus every frozen native dat.gui.updateDisplays rAF body",
+  "quantizationFloor": "2 * frozenCallbackCount * minPositiveDeltaMs",
+  "cases": [
+    {
+      "id": "robot-static",
+      "asset": "robot",
+      "playback": "static",
+      "pixelRatio": 1,
+      "grid": true,
+      "guiLoops": [
+        {
+          "path": "root/Lighting",
+          "controllers": [
+            "punctualLights"
+          ]
+        },
+        {
+          "path": "root/Animation",
+          "controllers": [
+            "1. Dance",
+            "2. Death",
+            "3. Idle",
+            "4. Jump",
+            "5. No",
+            "6. Punch",
+            "7. Running",
+            "8. Sitting",
+            "9. Standing",
+            "10. ThumbsUp",
+            "11. Walking",
+            "12. WalkJump",
+            "13. Wave",
+            "14. Yes"
+          ]
+        },
+        {
+          "path": "root/Morph Targets",
+          "controllers": [
+            "0",
+            "1",
+            "2",
+            "0",
+            "1",
+            "2",
+            "0",
+            "1",
+            "2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "robot-walking-grid-off",
+      "asset": "robot",
+      "playback": "walking",
+      "pixelRatio": 1,
+      "grid": false,
+      "scope": "Shipped grid-off behavior with Walking explicitly selected; the three grid-on feature/control cases remain separate.",
+      "guiLoops": [
+        {
+          "path": "root/Lighting",
+          "controllers": [
+            "punctualLights"
+          ]
+        },
+        {
+          "path": "root/Animation",
+          "controllers": [
+            "1. Dance",
+            "2. Death",
+            "3. Idle",
+            "4. Jump",
+            "5. No",
+            "6. Punch",
+            "7. Running",
+            "8. Sitting",
+            "9. Standing",
+            "10. ThumbsUp",
+            "11. Walking",
+            "12. WalkJump",
+            "13. Wave",
+            "14. Yes"
+          ]
+        },
+        {
+          "path": "root/Morph Targets",
+          "controllers": [
+            "0",
+            "1",
+            "2",
+            "0",
+            "1",
+            "2",
+            "0",
+            "1",
+            "2"
+          ]
+        }
+      ]
+    }
+  ],
+  "preparedManifests": {
+    "native": "954c67cb23bc135213eb4085a014f5669bb202b016b06634cbe400944373571e",
+    "timing": "d1b3760063f6e370c5a0ab03b98026063851fe91ddb6ea5434531d42ebf36c82",
+    "timingOriginal": "7a5311c3c9e898f7c1fb7fb943990fdc3e32a48e6e5f95296dbbd8f8560519d1"
+  },
+  "assets": [
+    {
+      "id": "robot",
+      "entry": "RobotExpressive.glb",
+      "files": [
+        {
+          "file": "RobotExpressive.glb",
+          "bytes": 463988,
+          "sha256": "047f5e5fb3bb6d378bd1df16ca6137f2a596c99b3a1b5690b4020c05aaf6f319"
+        }
+      ],
+      "license": "CC0",
+      "source": "Pinned Three.js Editor RobotExpressive fixture"
+    }
+  ],
+  "outputPrefixes": {
+    "profile": {
+      "engine": "task49-viewer-robot-profile-",
+      "migration": "task49-viewer-migration-profile-"
+    },
+    "timing": {
+      "engine": "task49-viewer-robot-timing-",
+      "migration": "task49-viewer-migration-timing-"
+    }
+  },
+  "purpose": "Primary complete native Viewer and GUI callback screen under the prospective Task #49 decision appendix. Four engine cases; version migration uses a separate two-case protocol. Profiles and smoke are not primary samples.",
+  "discovery": {
+    "capture": "work/task49-viewer-profile-smoke-001",
+    "toolSha": "fbeb5b2a327e5ebd5eb5eebbaa09a453c5b1bdd4",
+    "oracles": 24,
+    "shortProfiles": 12,
+    "guiLoops": 3,
+    "callbackCount": 4,
+    "result": "Native/observer fixed-state gates, phase/pass checks, AC and source integrity passed. Smoke is not performance evidence."
+  },
+  "limitations": [
+    "One Mac/date/Chrome only",
+    "Profiler overhead uncalibrated",
+    "No frame-matched natural playback across routes",
+    "GPU-bound status is not assumed from high raster resolution",
+    "Larger-content gates and protocols are separate",
+    "Native callback timing overhead is uncalibrated and collector bookkeeping is outside the covered body sum",
+    "Matched-JS repeat/block screen is not a dedicated JS A/A calibration; a promising G2 result requires the appendix follow-up",
+    "No startup, memory, long-duration or cross-device qualification"
+  ],
+  "decisionAppendix": "mydocs/plans/task_m6_49_viewer_decision.md",
+  "decisionAppendixSha256": "04f9a4114dfbddabc683963386a206eb40cbb2294e0d8904c53f174c93e4e7df",
+  "matrixGroup": "migration"
+}

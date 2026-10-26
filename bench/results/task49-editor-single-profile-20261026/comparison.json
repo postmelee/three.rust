@@ -1,0 +1,483 @@
+{
+  "status": "verified",
+  "baselineIndexSha256": "f1131859613236efe882cdca02dcce03cd82c2ea638ef888a363a1adf6572190",
+  "candidateIndexSha256": "08ed998fe02d6c6a7c2e3b875f1ed07124a4423ebcebdc0472bf547970d15261",
+  "beforeCandidateSha": "6990fd92f61a031c8c2ba7a8282cfb63684e6dfb",
+  "afterCandidateSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+  "beforeCaptureToolSha": "489736e4549083a199babfeea0d6104cf2d45904",
+  "afterCaptureToolSha": "e9b736a47f48bc2512476f8966d285d0153419f7",
+  "sameConfigurationAndOrders": true,
+  "oraclePairs": [
+    {
+      "engine": "original",
+      "observer": false,
+      "time": 0.25,
+      "numericValues": 7833,
+      "maxAbsoluteError": 0,
+      "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+      "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+    },
+    {
+      "engine": "original",
+      "observer": false,
+      "time": 0.75,
+      "numericValues": 7833,
+      "maxAbsoluteError": 0,
+      "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+      "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+    },
+    {
+      "engine": "original",
+      "observer": true,
+      "time": 0.25,
+      "numericValues": 7833,
+      "maxAbsoluteError": 0,
+      "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+      "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+    },
+    {
+      "engine": "original",
+      "observer": true,
+      "time": 0.75,
+      "numericValues": 7833,
+      "maxAbsoluteError": 0,
+      "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+      "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+    },
+    {
+      "engine": "prepared-js",
+      "observer": false,
+      "time": 0.25,
+      "numericValues": 7833,
+      "maxAbsoluteError": 0,
+      "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+      "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+    },
+    {
+      "engine": "prepared-js",
+      "observer": false,
+      "time": 0.75,
+      "numericValues": 7833,
+      "maxAbsoluteError": 0,
+      "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+      "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+    },
+    {
+      "engine": "prepared-js",
+      "observer": true,
+      "time": 0.25,
+      "numericValues": 7833,
+      "maxAbsoluteError": 0,
+      "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+      "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+    },
+    {
+      "engine": "prepared-js",
+      "observer": true,
+      "time": 0.75,
+      "numericValues": 7833,
+      "maxAbsoluteError": 0,
+      "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+      "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+    },
+    {
+      "engine": "prepared-wasm",
+      "observer": false,
+      "time": 0.25,
+      "numericValues": 7833,
+      "maxAbsoluteError": 0,
+      "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+      "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+    },
+    {
+      "engine": "prepared-wasm",
+      "observer": false,
+      "time": 0.75,
+      "numericValues": 7833,
+      "maxAbsoluteError": 0,
+      "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+      "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+    },
+    {
+      "engine": "prepared-wasm",
+      "observer": true,
+      "time": 0.25,
+      "numericValues": 7833,
+      "maxAbsoluteError": 0,
+      "pixelSha256": "59af7d686bae99f3b3a34627f025fd616c23bc9fab511d4f9c38005895f473e6",
+      "pngSha256": "4f4096f5441f5c74cd8f6e43da4658c38d30130c1585275ff463dd4fc8a94d12"
+    },
+    {
+      "engine": "prepared-wasm",
+      "observer": true,
+      "time": 0.75,
+      "numericValues": 7833,
+      "maxAbsoluteError": 0,
+      "pixelSha256": "29f110bd694c1e1bb98590f1831a59ffad031b2790c8865185c8f8677ba46027",
+      "pngSha256": "3eb1e0f369ab30fd74ab53cfeebf1bd0cdd83159dad33a0c66c5a6140af326b4"
+    }
+  ],
+  "runs": [
+    {
+      "engine": "original",
+      "round": 0,
+      "before": {
+        "rawProfileSha256": "34e961331604363317ded39225f43f82979aabc0ca98b88b62bbe3c12f9e1a3f",
+        "samples": 75943,
+        "durationMs": 12124.811,
+        "nativeFramesInEndpointWindow": 1444.0,
+        "perFrameCounters": null,
+        "phaseErrorSeconds": 1.2212453270876722e-15
+      },
+      "after": {
+        "rawProfileSha256": "b318009e5b9a3adfc2d52030cc30795489954dd50b9840095db738c46a8075cd",
+        "samples": 75490,
+        "durationMs": 12128.799,
+        "nativeFramesInEndpointWindow": 1444.0,
+        "perFrameCounters": null,
+        "phaseErrorSeconds": 1.1213252548714081e-14
+      }
+    },
+    {
+      "engine": "prepared-js",
+      "round": 0,
+      "before": {
+        "rawProfileSha256": "5027b9b772b13f1f36442b5c7ea302eb5b022b1c91ccb0339a754fbc445df564",
+        "samples": 76311,
+        "durationMs": 12134.256,
+        "nativeFramesInEndpointWindow": 1444.0,
+        "perFrameCounters": {
+          "preparedPasses": 0.0,
+          "preparedFallbacks": 4.0,
+          "preparedWasmCalls": 0.0,
+          "matrixReads": 205.0,
+          "preparedMatrixReads": 0.0,
+          "materializedBytes": 26240.0,
+          "wasmCalls": 0.0
+        },
+        "phaseErrorSeconds": 4.6629367034256575e-15
+      },
+      "after": {
+        "rawProfileSha256": "0d5772e4b5b209f19cbdbd1dbb1579ca0aee03a76fad08a4bd717eb9a0f89e22",
+        "samples": 76171,
+        "durationMs": 12132.577,
+        "nativeFramesInEndpointWindow": 1445.0,
+        "perFrameCounters": {
+          "preparedPasses": 0.0,
+          "preparedFallbacks": 4.0,
+          "preparedWasmCalls": 0.0,
+          "matrixReads": 205.0,
+          "preparedMatrixReads": 0.0,
+          "materializedBytes": 26240.0,
+          "wasmCalls": 0.0
+        },
+        "phaseErrorSeconds": 2.6423307986078726e-14
+      }
+    },
+    {
+      "engine": "prepared-wasm",
+      "round": 0,
+      "before": {
+        "rawProfileSha256": "bd2a876eaa7e0d2ef0a9ed8a0c2d6ce7c9ddaee5a0af89e68721736d13600ef1",
+        "samples": 76377,
+        "durationMs": 12131.776,
+        "nativeFramesInEndpointWindow": 1445.0,
+        "perFrameCounters": {
+          "preparedPasses": 0.0,
+          "preparedFallbacks": 4.0,
+          "preparedWasmCalls": 0.0,
+          "matrixReads": 205.0,
+          "preparedMatrixReads": 0.0,
+          "materializedBytes": 26240.0,
+          "wasmCalls": 135.0
+        },
+        "phaseErrorSeconds": 3.574918139293004e-14
+      },
+      "after": {
+        "rawProfileSha256": "748e132294d8a6313d3b9b720770f3d9203a74f98bae684c0d459eec5797ad9a",
+        "samples": 76178,
+        "durationMs": 12128.961,
+        "nativeFramesInEndpointWindow": 1445.0,
+        "perFrameCounters": {
+          "preparedPasses": 0.0,
+          "preparedFallbacks": 4.0,
+          "preparedWasmCalls": 0.0,
+          "matrixReads": 205.0,
+          "preparedMatrixReads": 0.0,
+          "materializedBytes": 26240.0,
+          "wasmCalls": 135.0
+        },
+        "phaseErrorSeconds": 1.63202784619898e-14
+      }
+    },
+    {
+      "engine": "prepared-js",
+      "round": 1,
+      "before": {
+        "rawProfileSha256": "0137cd881454f28d8fd17968b99547d5b7a321442d47045be2a16e097f3d6da5",
+        "samples": 76377,
+        "durationMs": 12139.256,
+        "nativeFramesInEndpointWindow": 1445.0,
+        "perFrameCounters": {
+          "preparedPasses": 0.0,
+          "preparedFallbacks": 4.0,
+          "preparedWasmCalls": 0.0,
+          "matrixReads": 205.0,
+          "preparedMatrixReads": 0.0,
+          "materializedBytes": 26240.0,
+          "wasmCalls": 0.0
+        },
+        "phaseErrorSeconds": 1.1546319456101628e-14
+      },
+      "after": {
+        "rawProfileSha256": "7e4d7bd17e65a89796fbdb77bbe4e4c2aa9dbb2bbd76c43ed71aa0c0e4d2350b",
+        "samples": 76031,
+        "durationMs": 12125.33,
+        "nativeFramesInEndpointWindow": 1445.0,
+        "perFrameCounters": {
+          "preparedPasses": 0.0,
+          "preparedFallbacks": 4.0,
+          "preparedWasmCalls": 0.0,
+          "matrixReads": 205.0,
+          "preparedMatrixReads": 0.0,
+          "materializedBytes": 26240.0,
+          "wasmCalls": 0.0
+        },
+        "phaseErrorSeconds": 3.319566843629218e-14
+      }
+    },
+    {
+      "engine": "prepared-wasm",
+      "round": 1,
+      "before": {
+        "rawProfileSha256": "2a27fe569b9388fe813163856bc3f14432e818125f9f3b09decb43a4dad081f0",
+        "samples": 76338,
+        "durationMs": 12134.163,
+        "nativeFramesInEndpointWindow": 1444.0,
+        "perFrameCounters": {
+          "preparedPasses": 0.0,
+          "preparedFallbacks": 4.0,
+          "preparedWasmCalls": 0.0,
+          "matrixReads": 205.0,
+          "preparedMatrixReads": 0.0,
+          "materializedBytes": 26240.0,
+          "wasmCalls": 135.0
+        },
+        "phaseErrorSeconds": 4.8405723873656825e-14
+      },
+      "after": {
+        "rawProfileSha256": "3b53721cc8c166201ad11db3ce8737f5943222385a742b0746c12803a20a1b32",
+        "samples": 75631,
+        "durationMs": 12151.792,
+        "nativeFramesInEndpointWindow": 1446.0,
+        "perFrameCounters": {
+          "preparedPasses": 0.0,
+          "preparedFallbacks": 4.0,
+          "preparedWasmCalls": 0.0,
+          "matrixReads": 205.0,
+          "preparedMatrixReads": 0.0,
+          "materializedBytes": 26240.0,
+          "wasmCalls": 135.0
+        },
+        "phaseErrorSeconds": 4.418687638008123e-14
+      }
+    },
+    {
+      "engine": "original",
+      "round": 1,
+      "before": {
+        "rawProfileSha256": "e522ac08f3d9d594127735ff3a33e76072928c67a359d96a114d92b81d922331",
+        "samples": 75911,
+        "durationMs": 12126.397,
+        "nativeFramesInEndpointWindow": 1444.0,
+        "perFrameCounters": null,
+        "phaseErrorSeconds": 4.807265696626928e-14
+      },
+      "after": {
+        "rawProfileSha256": "b8d8e3595bdf1a449eb84afb56f5064a70827bc8c6bad879cc7fa9c8d8f466d4",
+        "samples": 76488,
+        "durationMs": 12130.239,
+        "nativeFramesInEndpointWindow": 1444.0,
+        "perFrameCounters": null,
+        "phaseErrorSeconds": 1.6653345369377348e-14
+      }
+    },
+    {
+      "engine": "prepared-wasm",
+      "round": 2,
+      "before": {
+        "rawProfileSha256": "76048529245fc097ac311f05e4eb424a7c13ba49458fff166b032e89a6ad3e2c",
+        "samples": 76262,
+        "durationMs": 12132.493,
+        "nativeFramesInEndpointWindow": 1445.0,
+        "perFrameCounters": {
+          "preparedPasses": 0.0,
+          "preparedFallbacks": 4.0,
+          "preparedWasmCalls": 0.0,
+          "matrixReads": 205.0,
+          "preparedMatrixReads": 0.0,
+          "materializedBytes": 26240.0,
+          "wasmCalls": 135.0
+        },
+        "phaseErrorSeconds": 1.709743457922741e-14
+      },
+      "after": {
+        "rawProfileSha256": "9d9bdbe8882aa5bbca836e43523d844032def9d13bd869fbfae4b6e812a0491b",
+        "samples": 76760,
+        "durationMs": 12131.475,
+        "nativeFramesInEndpointWindow": 1445.0,
+        "perFrameCounters": {
+          "preparedPasses": 0.0,
+          "preparedFallbacks": 4.0,
+          "preparedWasmCalls": 0.0,
+          "matrixReads": 205.0,
+          "preparedMatrixReads": 0.0,
+          "materializedBytes": 26240.0,
+          "wasmCalls": 135.0
+        },
+        "phaseErrorSeconds": 5.1181281435219717e-14
+      }
+    },
+    {
+      "engine": "original",
+      "round": 2,
+      "before": {
+        "rawProfileSha256": "01e44d1aab80790118d3fa7918f3efed5b43a6d65250813aa1044fbc90085afd",
+        "samples": 75875,
+        "durationMs": 12126.71,
+        "nativeFramesInEndpointWindow": 1444.0,
+        "perFrameCounters": null,
+        "phaseErrorSeconds": 1.2545520178264269e-14
+      },
+      "after": {
+        "rawProfileSha256": "994939536aeecc7771e4ec932f58986bac97eb28e4410dfdb6bdb3ba7913024b",
+        "samples": 76156,
+        "durationMs": 12127.824,
+        "nativeFramesInEndpointWindow": 1445.0,
+        "perFrameCounters": null,
+        "phaseErrorSeconds": 4.785061236134425e-14
+      }
+    },
+    {
+      "engine": "prepared-js",
+      "round": 2,
+      "before": {
+        "rawProfileSha256": "4c1175e58fd011a0778c389b187f4c0190e5cac70a74bc1a341dc38ba7f8c23e",
+        "samples": 76341,
+        "durationMs": 12130.327,
+        "nativeFramesInEndpointWindow": 1445.0,
+        "perFrameCounters": {
+          "preparedPasses": 0.0,
+          "preparedFallbacks": 4.0,
+          "preparedWasmCalls": 0.0,
+          "matrixReads": 205.0,
+          "preparedMatrixReads": 0.0,
+          "materializedBytes": 26240.0,
+          "wasmCalls": 0.0
+        },
+        "phaseErrorSeconds": 3.7192471324942744e-14
+      },
+      "after": {
+        "rawProfileSha256": "678cc5b345a573802a565ce94d766be04648284a834979afa6a7f2d09911a8f9",
+        "samples": 75756,
+        "durationMs": 12137.718,
+        "nativeFramesInEndpointWindow": 1445.0,
+        "perFrameCounters": {
+          "preparedPasses": 0.0,
+          "preparedFallbacks": 4.0,
+          "preparedWasmCalls": 0.0,
+          "matrixReads": 205.0,
+          "preparedMatrixReads": 0.0,
+          "materializedBytes": 26240.0,
+          "wasmCalls": 0.0
+        },
+        "phaseErrorSeconds": 2.0761170560490427e-14
+      }
+    }
+  ],
+  "moduleHashes": {
+    "before": {
+      "candidate/packages/rthree/core.js": "38047dc221ea8b3d029c33bb413e0fe602a160aa714462dc1c6bd3316a3cd777",
+      "candidate/packages/rthree/facade-state.js": "d759cdae29dac35b7e30711c16810dbad968625e461cdf5940cb0dc4388af12b",
+      "candidate/packages/rthree/scene_core.wasm": "95f7aa7a807bd0bd4c9b45f0a855d2305c262cf5b7fef35a2d9dd9dfa889cdd9"
+    },
+    "after": {
+      "candidate/packages/rthree/core.js": "38047dc221ea8b3d029c33bb413e0fe602a160aa714462dc1c6bd3316a3cd777",
+      "candidate/packages/rthree/facade-state.js": "87e251fe1f40bb182cdea62092c58f3d622bccc40a4e77daaa728f1dec0066a2",
+      "candidate/packages/rthree/scene_core.wasm": "95f7aa7a807bd0bd4c9b45f0a855d2305c262cf5b7fef35a2d9dd9dfa889cdd9"
+    }
+  },
+  "limits": [
+    "Diagnostic captures only, with uncalibrated overhead and separate wall-clock windows. No primary CPU, FPS or stable improvement inference.",
+    "Old valid attribution is analysis002; new valid attribution is analysis001. updateSingle retains the operation-preparation category.",
+    "Unresolved native/Wasm frames and all samples remain retained."
+  ],
+  "updateSingleClassification": [
+    {
+      "engine": "original",
+      "round": 0,
+      "updateSingleNodes": 0,
+      "categories": []
+    },
+    {
+      "engine": "prepared-js",
+      "round": 0,
+      "updateSingleNodes": 32,
+      "categories": [
+        "facade operation preparation"
+      ]
+    },
+    {
+      "engine": "prepared-wasm",
+      "round": 0,
+      "updateSingleNodes": 34,
+      "categories": [
+        "facade operation preparation"
+      ]
+    },
+    {
+      "engine": "prepared-js",
+      "round": 1,
+      "updateSingleNodes": 32,
+      "categories": [
+        "facade operation preparation"
+      ]
+    },
+    {
+      "engine": "prepared-wasm",
+      "round": 1,
+      "updateSingleNodes": 33,
+      "categories": [
+        "facade operation preparation"
+      ]
+    },
+    {
+      "engine": "original",
+      "round": 1,
+      "updateSingleNodes": 0,
+      "categories": []
+    },
+    {
+      "engine": "prepared-wasm",
+      "round": 2,
+      "updateSingleNodes": 34,
+      "categories": [
+        "facade operation preparation"
+      ]
+    },
+    {
+      "engine": "original",
+      "round": 2,
+      "updateSingleNodes": 0,
+      "categories": []
+    },
+    {
+      "engine": "prepared-js",
+      "round": 2,
+      "updateSingleNodes": 34,
+      "categories": [
+        "facade operation preparation"
+      ]
+    }
+  ]
+}

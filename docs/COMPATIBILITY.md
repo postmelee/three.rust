@@ -42,6 +42,27 @@ prepared-JS and prepared-Wasm interactions preserve fixed images/numerics with
 unsupported renderer paths retained as fallback. This is bounded WebGL coverage,
 not complete compatibility or a performance qualification.
 
+The [Task #49 Viewer adapter](TWO_APP_CANDIDATE_REPORT.md#viewer-integration-and-diagnostic-attribution)
+tests the pinned glTF Viewer in five separate routes: preserved bundled r176,
+externalized r176, pure r186.1, and same-version prepared JS/Wasm. It awaits
+initialization before app module evaluation and keeps root/addon core identity.
+Eleven native states cover clips/speed/play-all, morphs, camera controls, grid/axes,
+helpers/wireframe, Neutral/None environments, resize and reload. Required fixed
+within-version image/numeric comparisons pass; r176-to-r186 RoomEnvironment
+changes remain separate migration evidence. The sampled Robot windows retain
+renderer fallback. External HDR environments, arbitrary content, long-running
+lifecycle and full ecosystem compatibility are not established by these checks.
+
+Additional [native content checks](TWO_APP_CANDIDATE_REPORT.md#larger-content-investigation)
+preserve Bistro's KTX2/transmission materials in the Viewer ZIP path, with all
+five routes and required same-version fixed comparisons passing. This finite
+asset coverage does not qualify all compressed formats or prepared rendering.
+Chess Viewer cross-page images remain unstable by four pixels even between
+pure-r186 pages. Original Editor Bistro retains twelve Blob texture failures;
+Editor Chess passes a separate native-file-input route while the initial camera
+divergence and OS chooser reliability remain unresolved. No degraded scene is
+accepted as equivalent input for performance evidence.
+
 A import change alone cannot repair third-party internal `three` imports,
 direct `node_modules/three/build/...` URLs, or duplicate package versions.
 Alias both `three` and `rthree` to the same entry and both addon prefixes to the
@@ -57,7 +78,8 @@ module internals, multiple engine modes in one module graph. A prototype overrid
 may evade the identity guard; it is not a guaranteed fallback. Unverified:
 XR, React Three Fiber, SSR/hydration, context loss/restoration, compressed GLTF
 extensions, multi-material/transmission edge cases, every addon, Firefox/Safari,
-real mobile and hardware GPUs. No full upstream test suite completion claim.
+real mobile and broader hardware/GPU classes beyond the explicitly recorded
+Mac/Chrome checks. No full upstream test suite completion claim.
 
 Rust owns persistent f64 arena storage, not authoritative JS properties.
 Each update reconciles hierarchy and scans public values. No JS compose/multiply

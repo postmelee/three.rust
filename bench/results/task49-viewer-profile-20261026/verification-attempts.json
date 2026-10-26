@@ -1,0 +1,118 @@
+{
+  "status": "verified",
+  "sourceRecords": [
+    {
+      "sourcePath": "work/task49-setup/viewer-profile-archive-001/00.log",
+      "sourceSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publicPath": "verification-logs/00.log",
+      "publicSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "normalizations": []
+    },
+    {
+      "sourcePath": "work/task49-setup/viewer-profile-archive-001/01.log",
+      "sourceSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publicPath": "verification-logs/01.log",
+      "publicSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "normalizations": []
+    },
+    {
+      "sourcePath": "work/task49-setup/viewer-profile-archive-001/02.log",
+      "sourceSha256": "c6b9b1f09add0403cc07e90bfdf272129b1ddfa2f8f7675ea8218862f2516371",
+      "publicPath": "verification-logs/02.log",
+      "publicSha256": "c6b9b1f09add0403cc07e90bfdf272129b1ddfa2f8f7675ea8218862f2516371",
+      "normalizations": []
+    },
+    {
+      "sourcePath": "work/task49-setup/viewer-profile-archive-001/03-build.log",
+      "sourceSha256": "9baa0a2c5546d00c92d5656e3789c2f7e207cdc85f6cf39b4f248210d17ed0d1",
+      "publicPath": "verification-logs/03-build.log",
+      "publicSha256": "9baa0a2c5546d00c92d5656e3789c2f7e207cdc85f6cf39b4f248210d17ed0d1",
+      "normalizations": []
+    },
+    {
+      "sourcePath": "work/task49-setup/viewer-profile-archive-001/03-command.json",
+      "sourceSha256": "be72e6d81ad88b33064c2b16e62c933a92ae3925a5babf9a2a3ee4b3b3b60669",
+      "publicPath": "verification-logs/03-command.json",
+      "publicSha256": "e39866b98f67ab8859232c06e62cca01aad4b6e7689ee37770c45e73b377e619",
+      "normalizations": [
+        "literal-local-paths-in-archive-command-metadata-only"
+      ]
+    },
+    {
+      "sourcePath": "work/task49-setup/viewer-profile-archive-001/04-verify-node-command.json",
+      "sourceSha256": "454001817de2264a49c213e662e82ca1397f4de9538367672e62870ae7d93867",
+      "publicPath": "verification-logs/04-verify-node-command.json",
+      "publicSha256": "18340c60789429f16a2d4a70c884d61c828723e68fd569e5ed3ae5cebb978140",
+      "normalizations": [
+        "literal-local-paths-in-archive-command-metadata-only"
+      ]
+    },
+    {
+      "sourcePath": "work/task49-setup/viewer-profile-archive-001/04-verify-node.log",
+      "sourceSha256": "a2a2bdcd92fc34b5fa23fb708589b0c347a408578bed1c12696e8ca6beb4137c",
+      "publicPath": "verification-logs/04-verify-node.log",
+      "publicSha256": "a2a2bdcd92fc34b5fa23fb708589b0c347a408578bed1c12696e8ca6beb4137c",
+      "normalizations": []
+    },
+    {
+      "sourcePath": "work/task49-setup/viewer-profile-archive-001/05-audit-python-command.json",
+      "sourceSha256": "dc36ec7a5eff194bf617fa3b2aaa3cb3f78781a4a97672871771a601a35b3624",
+      "publicPath": "verification-logs/05-audit-python-command.json",
+      "publicSha256": "bd7ac2c4fc9349073b1da942039d11be858866b3528944fc284c866a2b0a2642",
+      "normalizations": [
+        "literal-local-paths-in-archive-command-metadata-only"
+      ]
+    },
+    {
+      "sourcePath": "work/task49-setup/viewer-profile-archive-001/05-audit-python.log",
+      "sourceSha256": "825b77d55c75aaa7ecfb3ca49a7f89529d8217764049574cce66c1cde32957b5",
+      "publicPath": "verification-logs/05-audit-python.log",
+      "publicSha256": "8413e7e52092ccd3397fb4672f4207f6af9857851e12e1bf2e9294a86d385b23",
+      "normalizations": [
+        "literal-local-paths-in-archive-command-metadata-only"
+      ]
+    },
+    {
+      "sourcePath": "work/task49-setup/viewer-profile-archive-001/06-unit-python-command.json",
+      "sourceSha256": "7e7b24e1b9b0e3c99b3e60fdc4ac179eebfdc1b75215b0419786df22d1794896",
+      "publicPath": "verification-logs/06-unit-python-command.json",
+      "publicSha256": "7e7b24e1b9b0e3c99b3e60fdc4ac179eebfdc1b75215b0419786df22d1794896",
+      "normalizations": []
+    },
+    {
+      "sourcePath": "work/task49-setup/viewer-profile-archive-001/06-unit-python.log",
+      "sourceSha256": "fe836cbecd3b6b4f70bec51b58d30c3e45ad72ae7fb3cb63421a0f7337e651ae",
+      "publicPath": "verification-logs/06-unit-python.log",
+      "publicSha256": "fe836cbecd3b6b4f70bec51b58d30c3e45ad72ae7fb3cb63421a0f7337e651ae",
+      "normalizations": []
+    },
+    {
+      "sourcePath": "work/task49-setup/viewer-profile-archive-001/07-audit-python-command.json",
+      "sourceSha256": "c3d154587a036d8f0943fa10e75390323ebc1b3da08b8193b15901e3f191c52f",
+      "publicPath": "verification-logs/07-audit-python-command.json",
+      "publicSha256": "b5f00e6bea1993e868c851c6a492c8f6bc83485c744d4373d9a0205d4fc9d11d",
+      "normalizations": [
+        "literal-local-paths-in-archive-command-metadata-only"
+      ]
+    },
+    {
+      "sourcePath": "work/task49-setup/viewer-profile-archive-001/07-audit-python.log",
+      "sourceSha256": "a3150a16f10c9b4532423bb2e80c9f4ae302aafa143ab46677fcf4ee970dd4ea",
+      "publicPath": "verification-logs/07-audit-python.log",
+      "publicSha256": "a3150a16f10c9b4532423bb2e80c9f4ae302aafa143ab46677fcf4ee970dd4ea",
+      "normalizations": []
+    },
+    {
+      "sourcePath": "work/task49-setup/viewer-profile-archive-001/commands.json",
+      "sourceSha256": "aba56a63b5f0ccdb8e42888764d47f75d13b557b9e3fa7c50c50d9d678bde6b2",
+      "publicPath": "verification-logs/commands.json",
+      "publicSha256": "aba56a63b5f0ccdb8e42888764d47f75d13b557b9e3fa7c50c50d9d678bde6b2",
+      "normalizations": []
+    }
+  ],
+  "notes": [
+    "First independent audit failed on parsed:null CDP unavailable-script metadata; original log retained.",
+    "Verifier repair added a dedicated regression; seven tests and independent audit subsequently passed.",
+    "No capture or analysis bytes changed."
+  ]
+}

@@ -77,7 +77,9 @@ async function staticUI(repeat){
 async function actionState(){return r.page.evaluate(()=>{const model=editor.scene.getObjectByName('RobotExpressive.glb');const clip=model.animations.find(c=>c.name==='Walking');const a=editor.mixer.existingAction(clip,model);return {time:a?.time,paused:a?.paused,running:a?.isRunning(),enabled:a?.enabled,timeScale:editor.mixer.timeScale,duration:clip.duration,active:editor.mixer.stats.actions.inUse};});}
 async function timelineUI(repeat){
  await fresh();
- await r.page.locator('#menubar .menu').filter({has:r.page.getByText('File',{exact:true})}).hover();const chooser=r.page.waitForEvent('filechooser');await r.page.getByText('Import',{exact:true}).click();await(await chooser).setFiles(r.root+'/editor/examples/models/gltf/RobotExpressive/RobotExpressive.glb');await r.page.locator('.Dialog').getByRole('button',{name:'OK',exact:true}).click();await r.page.waitForFunction(()=>editor.scene.children.some(o=>o.animations.length===14));
+ await r.page.locator('#menubar .menu').filter({has:r.page.getByText('File',{exact:true})}).hover();
+ const [chooser]=await Promise.all([r.page.waitForEvent('filechooser'),r.page.getByText('Import',{exact:true}).click()]);
+ await chooser.setFiles(r.root+'/editor/examples/models/gltf/RobotExpressive/RobotExpressive.glb');await r.page.locator('.Dialog').getByRole('button',{name:'OK',exact:true}).click();await r.page.waitForFunction(()=>editor.scene.children.some(o=>o.animations.length===14));
  await select('RobotExpressive.glb');await key('f');
  const box=await r.page.locator('#animation-resizer').boundingBox();await drag({x:box.x+box.width/2,y:box.y+box.height/2},{x:box.x+box.width/2,y:box.y+box.height/2-270},'expand timeline');
  await r.page.locator('#animation').getByText('Walking',{exact:true}).click();

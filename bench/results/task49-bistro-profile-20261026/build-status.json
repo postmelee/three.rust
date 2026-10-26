@@ -1,0 +1,119 @@
+{
+  "status": "complete",
+  "inputs": [
+    {
+      "label": "smoke-ac-failure",
+      "sourcePath": "work/task49-viewer-bistro-zip-profile-smoke-001",
+      "kind": "capture",
+      "recordedStatus": "failed",
+      "recordedToolSha": "d1def5a2b1845cb0a398bdb5d2528d0fbee69929",
+      "files": 4,
+      "performanceQualification": false
+    },
+    {
+      "label": "smoke",
+      "sourcePath": "work/task49-viewer-bistro-zip-profile-smoke-002",
+      "kind": "capture",
+      "recordedStatus": "capture-complete-attribution-pending",
+      "recordedToolSha": "d1def5a2b1845cb0a398bdb5d2528d0fbee69929",
+      "files": 535,
+      "performanceQualification": false
+    },
+    {
+      "label": "smoke-partial-weighted",
+      "sourcePath": "work/task49-viewer-bistro-zip-profile-smoke-analysis-001",
+      "kind": "partial-analysis",
+      "recordedStatus": "partial-analysis-without-summary",
+      "recordedToolSha": "d1def5a2b1845cb0a398bdb5d2528d0fbee69929",
+      "files": 4,
+      "performanceQualification": false
+    },
+    {
+      "label": "engine-full",
+      "sourcePath": "work/task49-viewer-bistro-zip-engine-profile-full-001",
+      "kind": "capture",
+      "recordedStatus": "capture-complete-attribution-pending",
+      "recordedToolSha": "7d4b24062466b15960fcf3e444fae99003c81f70",
+      "files": 921,
+      "performanceQualification": false
+    },
+    {
+      "label": "engine-strict",
+      "sourcePath": "work/task49-viewer-bistro-zip-engine-profile-full-analysis-001",
+      "kind": "analysis",
+      "recordedStatus": "incomplete-invalid-profiles",
+      "recordedToolSha": "63be1aa120546fa5517ee75cd8247e8a995351d5",
+      "files": 10,
+      "performanceQualification": false
+    },
+    {
+      "label": "engine-counts",
+      "sourcePath": "work/task49-viewer-bistro-zip-engine-count-analysis-001",
+      "kind": "analysis",
+      "recordedStatus": "analysis-complete",
+      "recordedToolSha": "b33cbb8d7cef1c92fdf475c9e12d830eb1ff7cd1",
+      "files": 10,
+      "performanceQualification": false
+    },
+    {
+      "label": "engine-count-audit",
+      "sourcePath": "work/task49-viewer-bistro-count-audit-001",
+      "kind": "audit",
+      "recordedStatus": "pass",
+      "recordedToolSha": null,
+      "files": 8,
+      "performanceQualification": false
+    },
+    {
+      "label": "profile-validity",
+      "sourcePath": "work/task49-viewer-bistro-profile-validity-001",
+      "kind": "audit",
+      "recordedStatus": "derived-audit",
+      "recordedToolSha": null,
+      "files": 1,
+      "performanceQualification": false
+    },
+    {
+      "label": "migration-full",
+      "sourcePath": "work/task49-viewer-bistro-zip-migration-profile-full-001",
+      "kind": "capture",
+      "recordedStatus": "failed",
+      "recordedToolSha": "b33cbb8d7cef1c92fdf475c9e12d830eb1ff7cd1",
+      "files": 359,
+      "performanceQualification": false
+    },
+    {
+      "label": "migration-strict",
+      "sourcePath": "work/task49-viewer-bistro-zip-migration-profile-analysis-001",
+      "kind": "analysis",
+      "recordedStatus": "incomplete-invalid-profiles",
+      "recordedToolSha": "b33cbb8d7cef1c92fdf475c9e12d830eb1ff7cd1",
+      "files": 2,
+      "performanceQualification": false
+    },
+    {
+      "label": "migration-counts",
+      "sourcePath": "work/task49-viewer-bistro-zip-migration-count-analysis-001",
+      "kind": "analysis",
+      "recordedStatus": "incomplete-capture",
+      "recordedToolSha": "b33cbb8d7cef1c92fdf475c9e12d830eb1ff7cd1",
+      "files": 2,
+      "performanceQualification": false
+    },
+    {
+      "label": "migration-count-audit",
+      "sourcePath": "work/task49-viewer-bistro-migration-audit-001",
+      "kind": "audit",
+      "recordedStatus": "pass",
+      "recordedToolSha": null,
+      "files": 9,
+      "performanceQualification": false
+    }
+  ],
+  "logicalFiles": 1990,
+  "uniqueBlobs": 495,
+  "storedBytes": 23084948,
+  "normalizedFiles": 11,
+  "sourceHashesRechecked": true,
+  "sourceListingsUnchanged": true
+}

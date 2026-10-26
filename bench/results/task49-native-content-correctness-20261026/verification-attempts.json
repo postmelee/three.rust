@@ -1,0 +1,99 @@
+{
+  "attempts": [
+    {
+      "kind": "archive-builder",
+      "attempt": 1,
+      "status": "failed",
+      "sourceRawUnchanged": true,
+      "retainedStatus": {
+        "status": "failed",
+        "inputs": [
+          {
+            "label": "chess-guarded-correctness-001",
+            "sourceDirectory": "work/task49-viewer-chess-guarded-correctness-001",
+            "files": 251,
+            "recordedStatus": "failed",
+            "recordedToolSha": "5d1f3bc42d1b78d1fa1b1ada84bbe5d0150c6b11",
+            "runtimeSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+            "guardToolOwnerRecord": null
+          },
+          {
+            "label": "chess-zip-correctness-001",
+            "sourceDirectory": "work/task49-viewer-chess-zip-correctness-001",
+            "files": 230,
+            "recordedStatus": "failed",
+            "recordedToolSha": "d8cef95bcc906b7e20a248c3f8b3193fcffdfcbd",
+            "runtimeSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+            "guardToolOwnerRecord": null
+          },
+          {
+            "label": "chess-zip-pure-aa-001",
+            "sourceDirectory": "work/task49-viewer-chess-zip-pure-aa-001",
+            "files": 49,
+            "recordedStatus": "passed",
+            "recordedToolSha": "d8cef95bcc906b7e20a248c3f8b3193fcffdfcbd",
+            "runtimeSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+            "guardToolOwnerRecord": null
+          },
+          {
+            "label": "chess-zip-pure-aa-002",
+            "sourceDirectory": "work/task49-viewer-chess-zip-pure-aa-002",
+            "files": 49,
+            "recordedStatus": "passed",
+            "recordedToolSha": "d8cef95bcc906b7e20a248c3f8b3193fcffdfcbd",
+            "runtimeSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+            "guardToolOwnerRecord": null
+          },
+          {
+            "label": "bistro-zip-correctness-001",
+            "sourceDirectory": "work/task49-viewer-bistro-zip-correctness-001",
+            "files": 285,
+            "recordedStatus": "passed",
+            "recordedToolSha": "d8cef95bcc906b7e20a248c3f8b3193fcffdfcbd",
+            "runtimeSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+            "guardToolOwnerRecord": null
+          }
+        ],
+        "errorType": "KeyError",
+        "error": "'path'",
+        "copiedFiles": 36
+      },
+      "reason": "Builder ZIP-entry loop reused the archive entry list name, causing KeyError path. No input was written. Failed partial output retained separately; variable renamed before fresh build."
+    },
+    {
+      "kind": "archive-builder",
+      "attempt": 2,
+      "status": "complete",
+      "sourceRawUnchanged": true
+    },
+    {
+      "kind": "offline-verifier",
+      "attempt": 1,
+      "status": "passed",
+      "decodedPngs": 88,
+      "runtimeBrowserExecution": false
+    },
+    {
+      "kind": "unit-mutation-tests",
+      "attempt": 1,
+      "status": "passed",
+      "tests": 18,
+      "log": "verification-logs/tests.txt"
+    },
+    {
+      "kind": "offline-verifier",
+      "attempt": 2,
+      "status": "passed",
+      "decodedPngs": 88,
+      "log": "verification-logs/offline-verification.txt",
+      "runtimeBrowserExecution": false
+    },
+    {
+      "kind": "independent-source-document-review",
+      "status": "no-blocking-findings",
+      "executionByReviewer": false,
+      "record": "INDEPENDENT_REVIEW.md"
+    }
+  ],
+  "applicationStatusesUnchanged": true
+}

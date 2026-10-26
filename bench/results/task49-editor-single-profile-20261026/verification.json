@@ -1,0 +1,15 @@
+{
+  "status": "verified",
+  "archiveIndexSha256": "08ed998fe02d6c6a7c2e3b875f1ed07124a4423ebcebdc0472bf547970d15261",
+  "logicalFiles": 3154,
+  "uniqueBlobs": 347,
+  "compressedBytes": 6143434,
+  "checks": [
+    "All original input hashes and complete listings rechecked; source-root verify passed.",
+    "Public/stored hashes and recursive JSON numeric/null/boolean/path invariance passed.",
+    "Independent Python raw self/inclusive/source/phase/counter/oracle verification passed.",
+    "Independent baseline configuration/order/output/counter/updateSingle-classification comparison passed.",
+    "All 13 capture-tool hashes matched exact e9b736a Git blobs; protocol exact bytes matched."
+  ],
+  "sourceFilesChanged": false
+}

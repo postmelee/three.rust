@@ -1,0 +1,28 @@
+{
+  "status": "complete",
+  "sourceSuites": [
+    {
+      "label": "smoke",
+      "sourceDirectory": "work/task49-editor-single-timing-smoke-001",
+      "captureStatus": "smoke-complete-not-performance-evidence",
+      "mode": "smoke",
+      "toolingSha": "e9b736a47f48bc2512476f8966d285d0153419f7",
+      "candidateSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "finishedAt": "2026-10-26T03:34:56.020Z",
+      "fileCount": 864
+    },
+    {
+      "label": "full",
+      "sourceDirectory": "work/task49-editor-single-timing-full-001",
+      "captureStatus": "screen-complete-unqualified",
+      "mode": "full",
+      "toolingSha": "e9b736a47f48bc2512476f8966d285d0153419f7",
+      "candidateSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "finishedAt": "2026-10-26T03:57:26.324Z",
+      "fileCount": 1824
+    }
+  ],
+  "payloads": 2690,
+  "sourceHashesRechecked": true,
+  "sourceListingsUnchanged": true
+}

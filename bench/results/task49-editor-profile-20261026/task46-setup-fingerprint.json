@@ -1,0 +1,70 @@
+{
+  "scenario": {
+    "id": "E3-root-selected-shadow",
+    "selected": true,
+    "shadow": true,
+    "pixelRatio": 1
+  },
+  "sceneSetup": {
+    "shape": {
+      "skins": 4,
+      "morphMeshes": 3,
+      "clips": [
+        "Dance",
+        "Death",
+        "Idle",
+        "Jump",
+        "No",
+        "Punch",
+        "Running",
+        "Sitting",
+        "Standing",
+        "ThumbsUp",
+        "Walking",
+        "WalkJump",
+        "Wave",
+        "Yes"
+      ],
+      "vertices": 7214
+    },
+    "camera": [
+      5,
+      3.5,
+      7
+    ],
+    "target": [
+      0.02903489391441072,
+      2.210306801808131,
+      0.07344450557537341
+    ],
+    "shadow": true,
+    "shadowMapSize": [
+      1024,
+      1024
+    ]
+  },
+  "layout": {
+    "timelineHeight": 307,
+    "timelineContentHeight": 306,
+    "viewportWidth": 930,
+    "viewportHeight": 378,
+    "shading": "default",
+    "xr": false
+  },
+  "quality": {
+    "antialias": true,
+    "toneMapping": 7,
+    "exposure": 1,
+    "outputColorSpace": "srgb",
+    "shadows": true,
+    "shadowType": 1
+  },
+  "geometry": {
+    "width": 930,
+    "height": 378,
+    "cssWidth": 930,
+    "cssHeight": 378,
+    "dpr": 1,
+    "rendererPixelRatio": 1
+  }
+}

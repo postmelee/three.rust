@@ -20,7 +20,10 @@ higher observed prepared-engine costs versus upstream in both fixtures and the
 native Editor animation/timeline path. Editor correctness passed, but all
 continuous app A/A groups failed stability. These findings establish neither a
 useful Rust advantage nor an FPS gain and do not replace the historical Fox
-numbers below. The candidate remains an optional experiment.
+numbers below. The candidate remains an optional experiment. The subsequent
+[two-app candidate investigation](TWO_APP_CANDIDATE_REPORT.md) separates native
+Editor and Viewer costs, version migration and real-content limitations. Its
+experimental source pins and raw failures remain distinct from the Fox baseline.
 
 ## The useful result
 

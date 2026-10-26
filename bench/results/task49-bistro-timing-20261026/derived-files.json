@@ -1,0 +1,240 @@
+{
+  "kind": "All visible support files; original payloads and failed-builder payload linkage are bound separately by archive-index.json",
+  "files": [
+    {
+      "file": "INDEPENDENT_AUDIT.md",
+      "bytes": 5722,
+      "sha256": "dcf7a0cddec574667682dbf0290bfe6bb09a92c8dd33dfea8bdfdb5fcaca5159"
+    },
+    {
+      "file": "README.md",
+      "bytes": 10407,
+      "sha256": "a3573c528bdd76b8328daaaaeea1e059ca01beb14585f4cb215b0ba6589ef183"
+    },
+    {
+      "file": "analyze.py",
+      "bytes": 29640,
+      "sha256": "dc2bb0083438bd09beffa2f17df16feb64f051d562ec898b8b6b6a7b6f75aa97"
+    },
+    {
+      "file": "archive-executed.py",
+      "bytes": 14009,
+      "sha256": "efec84450e6a0e40d6741bd053b0464ae467823fa1810708b5797d495d4649e9"
+    },
+    {
+      "file": "archive-index.json",
+      "bytes": 1772844,
+      "sha256": "d70f357d8b31acbed24fe0232fcfc1599388aeb3255cbaa4b006ef508152ae5b"
+    },
+    {
+      "file": "archive.py",
+      "bytes": 14269,
+      "sha256": "ee83aa3c04c4cbec82f1978c480ef38a0a33ab5748aeab2f95e37e6c1b9494b8"
+    },
+    {
+      "file": "asset-provenance/task49-content-preparation-20261026/bistro-fetch-manifest.json",
+      "bytes": 187151,
+      "sha256": "dc7aa76a5e270c7460921590df8953c9483f86ea48ce1cbbb48f671b2fa6d564"
+    },
+    {
+      "file": "asset-provenance/task49-editor-bistro-zip-001/manifest.json",
+      "bytes": 2651431,
+      "sha256": "d522db96e9d3480ef128a1291acfc734bbe85bbd8ebaa1ade22b22a985e370f7"
+    },
+    {
+      "file": "asset-provenance/task49-native-content-correctness-20261026/zip-input-audit.json",
+      "bytes": 89947,
+      "sha256": "70da5493ddb4d173e5d37d50fb5f85cfa8840ee151c67109523cec049e1ab2ab"
+    },
+    {
+      "file": "audit.json",
+      "bytes": 294535,
+      "sha256": "0579b330b0d01f0899a268f8905409599641dcb97425b0395d63dc25a2c8c543"
+    },
+    {
+      "file": "audit_listing.py",
+      "bytes": 2621,
+      "sha256": "34e9a628fe76161b83f81b1076b24f1a06368344ec78029d7f0613a6f8e8fac3"
+    },
+    {
+      "file": "build-status.json",
+      "bytes": 1020,
+      "sha256": "7183f534675037eca1d4568d432e669e6d961479663ddb42feb43600c895d498"
+    },
+    {
+      "file": "helper-provenance.json",
+      "bytes": 1181,
+      "sha256": "2b806da1eceaa2a147155c89001c992f17666585a073c1fbc03f22c0e0391f44"
+    },
+    {
+      "file": "licenses/RobotExpressive-LICENSE.md",
+      "bytes": 364,
+      "sha256": "14687ac4a51d5e013b0fbc5486dabc743f76c1e37b7ca872af74cfb93115b4b2"
+    },
+    {
+      "file": "licenses/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    {
+      "file": "licenses/Viewer-LICENSE",
+      "bytes": 1078,
+      "sha256": "b951340896f853eeba83f72e442a2b254d0b581fda9ec80f0a70a53cd278893d"
+    },
+    {
+      "file": "licenses/bistro-conversion-LICENSE.txt",
+      "bytes": 18648,
+      "sha256": "2635b6e6f0dc38a089250a0c6e22b212d27cccb7bbad8e7e8e7ebbcce8951908"
+    },
+    {
+      "file": "licenses/bistro-conversion-README.md",
+      "bytes": 1818,
+      "sha256": "a1b5467206707b37c61ce1342ca69d50a784f5c6509c46274fab83cdecbe0679"
+    },
+    {
+      "file": "licenses/viewer/node_modules/dat.gui/LICENSE",
+      "bytes": 11343,
+      "sha256": "47754d3064047c300714af25258efa782e144fdf1e835bfd1edbeb7f8f4ef9e4"
+    },
+    {
+      "file": "licenses/viewer/node_modules/dat.gui/licenseBanner.txt",
+      "bytes": 375,
+      "sha256": "4789565738fe109a8195bb059dd1679cea98f5180649f84cabf56a6b4b0f1523"
+    },
+    {
+      "file": "licenses/viewer/node_modules/dat.gui/package.json",
+      "bytes": 2608,
+      "sha256": "6be31710032102b7971d74fc88103c86602a476ac612fedaa905797573a8c89f"
+    },
+    {
+      "file": "licenses/viewer/node_modules/decode-uri-component/license",
+      "bytes": 1139,
+      "sha256": "ed7a9a0f74e43951b2520efe1a4349cb9ed5f3dff0b0f268e2e51a4d38df7ea4"
+    },
+    {
+      "file": "licenses/viewer/node_modules/decode-uri-component/package.json",
+      "bytes": 893,
+      "sha256": "bbfe289eb81bfc95849c6585e73a0de05bb95eafa6a6f31ee72092b2cc89096d"
+    },
+    {
+      "file": "licenses/viewer/node_modules/filter-obj/license",
+      "bytes": 1117,
+      "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+    },
+    {
+      "file": "licenses/viewer/node_modules/filter-obj/package.json",
+      "bytes": 789,
+      "sha256": "6316eec6f45f82bf07d5b3094b6c02791fc242cc2876f5c52ce7d49ce60d4ba5"
+    },
+    {
+      "file": "licenses/viewer/node_modules/gltf-validator/LICENSE",
+      "bytes": 11560,
+      "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5"
+    },
+    {
+      "file": "licenses/viewer/node_modules/gltf-validator/NOTICES",
+      "bytes": 22286,
+      "sha256": "933f161ca1e7b3ead5a6cf93ebb3bf6cb67f0e79b38e08d2046f8cdc41cb78a3"
+    },
+    {
+      "file": "licenses/viewer/node_modules/gltf-validator/package.json",
+      "bytes": 618,
+      "sha256": "3578d16153fa237c72784588da2e8fcccc9cd3c1c58ef34c7912f0732d2f5fa6"
+    },
+    {
+      "file": "licenses/viewer/node_modules/query-string/license",
+      "bytes": 1117,
+      "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+    },
+    {
+      "file": "licenses/viewer/node_modules/query-string/package.json",
+      "bytes": 1180,
+      "sha256": "36b08fa8de8ca87098bcc436d5017f466d0e918bf3ebdcf69d3eeacf007893a3"
+    },
+    {
+      "file": "licenses/viewer/node_modules/simple-dropzone/LICENSE",
+      "bytes": 1079,
+      "sha256": "229caa70521f32e5bd45ff29acca37f159ac2643159f85c94e9c18c19cd36006"
+    },
+    {
+      "file": "licenses/viewer/node_modules/simple-dropzone/package.json",
+      "bytes": 1241,
+      "sha256": "3577200dbf380592d034a38bbc46f3d556548d1e246852de6840c448012e8019"
+    },
+    {
+      "file": "licenses/viewer/node_modules/split-on-first/license",
+      "bytes": 1117,
+      "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+    },
+    {
+      "file": "licenses/viewer/node_modules/split-on-first/package.json",
+      "bytes": 741,
+      "sha256": "eb06aa8e20790efa5585af02547ef429f2eed53a32770fcfa12d117072fcb00e"
+    },
+    {
+      "file": "licenses/viewer/node_modules/three/LICENSE",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "file": "licenses/viewer/node_modules/three/package.json",
+      "bytes": 4505,
+      "sha256": "a20c25fc0c638080e322422d39dcb8f2bf3be49fa6452694597fbd43e6c12d50"
+    },
+    {
+      "file": "licenses/viewer/node_modules/vhtml/LICENSE",
+      "bytes": 1079,
+      "sha256": "f1f6a1f3170072992cfdbbd59b125a04b9e810f6d1e08bb459741f54904a3460"
+    },
+    {
+      "file": "licenses/viewer/node_modules/vhtml/package.json",
+      "bytes": 2161,
+      "sha256": "bf456a01f5e5b663009a85a9e6a66b8a8f12262b446c63c7e433fd69f65f202c"
+    },
+    {
+      "file": "numeric_verify.py",
+      "bytes": 25640,
+      "sha256": "43f957c72358383a08eab3f5c1091fd5290285f9650b68285ca770dcdba8ee03"
+    },
+    {
+      "file": "png.py",
+      "bytes": 2267,
+      "sha256": "3adc01a23ee73700327daf938cef15b2f30252da4d49f86d02e4ac72eca2211c"
+    },
+    {
+      "file": "preparation-links.json",
+      "bytes": 2169,
+      "sha256": "3145b2e1b2244f3c612b3ca87d045ea49abe002baf4486a342df0aaa8fb344c0"
+    },
+    {
+      "file": "protocols/task_m6_49_viewer_protocol_bistro-timing.json",
+      "bytes": 197935,
+      "sha256": "be967daa44d52689f9f82dbabe7f9e9d107abc3447bdda5ce1f5e1cae36a2651"
+    },
+    {
+      "file": "source-listing-audit.json",
+      "bytes": 2861,
+      "sha256": "641817cc3175ad1ab6f39145248f68319acbdf9f32814ae54ff9935c45b85de9"
+    },
+    {
+      "file": "storage.py",
+      "bytes": 5687,
+      "sha256": "9acd5222e4a54272f4988a6cd36e3a8849ec0bf14e3adc6ba3355d15ecb00ce3"
+    },
+    {
+      "file": "test-results.txt",
+      "bytes": 115,
+      "sha256": "d5b7036bbe23fe70d9478fd0fdcfe83ae4a268ef56cfc06a95c1c08d0049033a"
+    },
+    {
+      "file": "test_storage.py",
+      "bytes": 4886,
+      "sha256": "d7f2a0eb69d5d4bac6058a42d916a3ba204edc4e48b34eb161b02e6f9bda2c24"
+    },
+    {
+      "file": "verify.py",
+      "bytes": 9028,
+      "sha256": "da491a7001e86c61f0c59520f6799d98fd965a0355285d3dfa62df0141b2c9ff"
+    }
+  ]
+}

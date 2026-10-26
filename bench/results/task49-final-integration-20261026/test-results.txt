@@ -1,0 +1,23 @@
+test_battery_field_only (__main__.Checks.test_battery_field_only) ... ok
+test_command_path_allowed (__main__.Checks.test_command_path_allowed) ... ok
+test_corrupt_blob_rejected (__main__.Checks.test_corrupt_blob_rejected) ... ok
+test_driver_exact_alias_only (__main__.Checks.test_driver_exact_alias_only) ... ok
+test_exact_extract_fresh_destination (__main__.Checks.test_exact_extract_fresh_destination) ... ok
+test_home_suffix_and_numeric_order (__main__.Checks.test_home_suffix_and_numeric_order) ... ok
+test_log_home_only (__main__.Checks.test_log_home_only) ... ok
+test_paths (__main__.Checks.test_paths) ... ok
+test_private_identity_rejected (__main__.Checks.test_private_identity_rejected) ... ok
+test_status_line_shape (__main__.Checks.test_status_line_shape) ... ok
+test_status_log_hash_bound (__main__.Checks.test_status_log_hash_bound) ... ok
+test_support_hash_rejected (__main__.Checks.test_support_hash_rejected) ... ok
+test_temporary_path_rejected (__main__.Checks.test_temporary_path_rejected) ... ok
+test_unexpected_battery_rejected (__main__.Checks.test_unexpected_battery_rejected) ... ok
+test_unindexed_blob_rejected (__main__.Checks.test_unindexed_blob_rejected) ... ok
+test_unknown_private_field_rejected (__main__.Checks.test_unknown_private_field_rejected) ... ok
+test_unknown_source_home_rejected (__main__.Checks.test_unknown_source_home_rejected) ... ok
+test_uuid_unchanged (__main__.Checks.test_uuid_unchanged) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.007s
+
+OK

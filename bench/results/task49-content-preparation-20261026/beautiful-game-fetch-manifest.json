@@ -1,0 +1,303 @@
+{
+  "schema": 1,
+  "asset": "A Beautiful Game",
+  "variant": "glTF",
+  "repository": "KhronosGroup/glTF-Sample-Assets",
+  "sourcePin": "8f492390ddc7a2ae221a1369ef560589cf8c70fb",
+  "sourceMetadataSHA256": "73d5e5bf3540ab4eca399deba52589ae58beefa39a079a0e11b08daa30b8d77e",
+  "expectedFiles": 35,
+  "expectedBytes": 29805749,
+  "license": "CC-BY-4.0",
+  "noticeSource": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/README.md",
+  "startedAt": "2026-10-26T01:59:28.882881+00:00",
+  "status": "complete",
+  "files": [
+    {
+      "path": "Models/ABeautifulGame/glTF/ABeautifulGame.bin",
+      "localPath": "ABeautifulGame.bin",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/ABeautifulGame.bin",
+      "bytes": 10829440,
+      "gitBlobSha1": "8308f62c8082f6c73022238b00f7a53cadd20e05",
+      "sha256": "727eea28752b2b0c35cad89e726f0bc6a1800c3fa8696867ccf3d0c39933f5fb"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/ABeautifulGame.gltf",
+      "localPath": "ABeautifulGame.gltf",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/ABeautifulGame.gltf",
+      "bytes": 46214,
+      "gitBlobSha1": "0e8b4f99820db8758f5646d573d1f82e0918da21",
+      "sha256": "2e1b63ae34173c6e3251f749b1b8b97a32e92517aab2cfd4bfffd9158f4dd278"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Bishop_black_ORM.jpg",
+      "localPath": "Bishop_black_ORM.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_black_ORM.jpg",
+      "bytes": 630950,
+      "gitBlobSha1": "b06e49885ac765851028739f35afbc70a68733dd",
+      "sha256": "2e02bf8975c9d0585b1b0a4fbb0448b99a20ce888b8065d37d71d2a6bb26a869"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Bishop_black_base_color.jpg",
+      "localPath": "Bishop_black_base_color.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_black_base_color.jpg",
+      "bytes": 403990,
+      "gitBlobSha1": "4011467f5cf9d9b29c2bd2fddc7f321e7fa20a3f",
+      "sha256": "3ebe3fe7859d6ae50327033fd4cb61253e81f2441baa3ae752edf309b7491973"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Bishop_black_normal.jpg",
+      "localPath": "Bishop_black_normal.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_black_normal.jpg",
+      "bytes": 850400,
+      "gitBlobSha1": "76e45c0566b02817f97eb66fe268ee05ead9d3db",
+      "sha256": "243ed45b4e752f1dd6aa67673239afc8d54ce821ce081d1c8f8d8b877f4c5a3c"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Bishop_white_ORM.jpg",
+      "localPath": "Bishop_white_ORM.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_white_ORM.jpg",
+      "bytes": 622771,
+      "gitBlobSha1": "512d7ac10056a32c0511ee00bb9717ba6810420a",
+      "sha256": "08fa51b364f6a4484bec3c9e1e3ce8cd0371d0959f38799acbde06e9b910806d"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Bishop_white_base_color.jpg",
+      "localPath": "Bishop_white_base_color.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_white_base_color.jpg",
+      "bytes": 361127,
+      "gitBlobSha1": "907e057a16245e6053c5aa905a08795bd59263e0",
+      "sha256": "f1df1e4b755e95741a4170c73281fb5532394026f2683e5bd5478af053a4c40a"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Bishop_white_normal.jpg",
+      "localPath": "Bishop_white_normal.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Bishop_white_normal.jpg",
+      "bytes": 673915,
+      "gitBlobSha1": "d73a833d144592115cc76a30cad94aa714207886",
+      "sha256": "ffe7997b80f831d099d386483fe195beeee1ff37a11e5e95dad5a830975ec312"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Castle_ORM.jpg",
+      "localPath": "Castle_ORM.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Castle_ORM.jpg",
+      "bytes": 1371413,
+      "gitBlobSha1": "5c02b1ddfc0f3c165e5496e70b515918d276c4b7",
+      "sha256": "1e00bd2b6cc122da8fb77f4bf5db590ec10cea609719a334518b6cae7f416d0c"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Castle_black_base_color.jpg",
+      "localPath": "Castle_black_base_color.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Castle_black_base_color.jpg",
+      "bytes": 394527,
+      "gitBlobSha1": "f7b98a9444ebfa845beefd4ee9fbcf7aa37b6b20",
+      "sha256": "025fdde8ae3a97c8d430e1ca2539acc36d071886ed4ff7c0396751094031b479"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Castle_normal.jpg",
+      "localPath": "Castle_normal.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Castle_normal.jpg",
+      "bytes": 491396,
+      "gitBlobSha1": "c3e22d0471f5f10f575f032388276a6b1d13279a",
+      "sha256": "91342101f6e3fdced973c247165d4e244c4410e647a524d23a763b122e9881ed"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Castle_white_base_color.jpg",
+      "localPath": "Castle_white_base_color.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Castle_white_base_color.jpg",
+      "bytes": 334252,
+      "gitBlobSha1": "3548e2034a9d147405cee615266a8cd3dc943599",
+      "sha256": "56aa97849639f9e5def51dd55edd1550038ec31cdd3a362060258ffa526b60ca"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Chessboard_ORM.jpg",
+      "localPath": "Chessboard_ORM.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Chessboard_ORM.jpg",
+      "bytes": 582751,
+      "gitBlobSha1": "a7a05c31c72bddbd0e394464f9f9dd0b4abf654b",
+      "sha256": "18c357a7aa4beac43c604ebd73dca129e0db505adc74c19dfd3767f8df3d51c5"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Chessboard_base_color.jpg",
+      "localPath": "Chessboard_base_color.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Chessboard_base_color.jpg",
+      "bytes": 529405,
+      "gitBlobSha1": "b85306f07f846f092d0714d6b2665f26eabb452e",
+      "sha256": "31a0a9e3d82958f310ec6c817f13968bdddab4efe5b612d471b1c6177156a0a6"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Chessboard_normal.jpg",
+      "localPath": "Chessboard_normal.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Chessboard_normal.jpg",
+      "bytes": 727372,
+      "gitBlobSha1": "a58826c6f53f3a995876073299142e00e7bf92b0",
+      "sha256": "b496ad48f281a4ccbcf2b08378ac4693f21c3942e34340e9cbcd8bec18765bc1"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/King_black_ORM.jpg",
+      "localPath": "King_black_ORM.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_black_ORM.jpg",
+      "bytes": 782417,
+      "gitBlobSha1": "210da263de0e525d8f813257d24801398f8a4bda",
+      "sha256": "e77a83078879b7068420d2f7ad76a02c3fc78bcf752e82e037754a242895f3da"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/King_black_base_color.jpg",
+      "localPath": "King_black_base_color.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_black_base_color.jpg",
+      "bytes": 366216,
+      "gitBlobSha1": "1ac5fa792d2db9874ba123538b30ac13492c86cf",
+      "sha256": "68d65ffad3ddae474e17a7c028c0ec65af0a15b0a46a5fb03b856eb40f8fe725"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/King_black_normal.jpg",
+      "localPath": "King_black_normal.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_black_normal.jpg",
+      "bytes": 764089,
+      "gitBlobSha1": "c605ae26d59119a268d60d96147b683a92717053",
+      "sha256": "2fdf5d40f38cac95175f2e685476e28f12c7e0555fb4345df34cc05420cef66e"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/King_white_ORM.jpg",
+      "localPath": "King_white_ORM.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_white_ORM.jpg",
+      "bytes": 822486,
+      "gitBlobSha1": "7f26fc05c2a24ea5707960db2de9e392c160ce64",
+      "sha256": "a9b0bde70cc75d7763dd658a2d5f26f9edb2739f453a88291071e20111b4581c"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/King_white_base_color.jpg",
+      "localPath": "King_white_base_color.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_white_base_color.jpg",
+      "bytes": 395138,
+      "gitBlobSha1": "224cba35045af8a21a756adf9caffa34df6c9867",
+      "sha256": "f64a03112150d2e55bf716b11467a18cf30cab799f9081c2236b8f4ff668fa53"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/King_white_normal.jpg",
+      "localPath": "King_white_normal.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/King_white_normal.jpg",
+      "bytes": 961725,
+      "gitBlobSha1": "8a8dcf7a3c3cbad08698b38b3a8a09f966c4cf28",
+      "sha256": "9e9630daee38e7eb3e7188540a1a7be1f49187a13cd4b72588ec709f53ce0cea"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Knight_ORM.jpg",
+      "localPath": "Knight_ORM.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Knight_ORM.jpg",
+      "bytes": 350946,
+      "gitBlobSha1": "1fa040eeed73f1d40526bdf107c72dc7c9df3263",
+      "sha256": "64db87cfd2c2b31400248035817da7fc6e88e58f27ee02b540283e3aa38afc8e"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Knight_black_base_color.jpg",
+      "localPath": "Knight_black_base_color.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Knight_black_base_color.jpg",
+      "bytes": 244999,
+      "gitBlobSha1": "5be5b9aa22cb8e250e45b5c7406306fcc89398e1",
+      "sha256": "68db3a457ad7d7e2c6ef19320614cb0976038a9b5d10dc596ef9fa8e0efe71ff"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Knight_normal.jpg",
+      "localPath": "Knight_normal.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Knight_normal.jpg",
+      "bytes": 215780,
+      "gitBlobSha1": "a88f0a7c71f5a5cd16266e79b8f24a4bb24587a1",
+      "sha256": "28d817c0e3179b1bd76c99a8b634ab17cbdd55b9594ef4ec5843ff8cb2811f9f"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Knight_white_base_color.jpg",
+      "localPath": "Knight_white_base_color.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Knight_white_base_color.jpg",
+      "bytes": 395645,
+      "gitBlobSha1": "e590e396139e0bfda92e91e4a4b4e2ded7e93a52",
+      "sha256": "89ab1100fce0e724249e433cdf4089a3edfdcd4d9aec9f14ba44f83b7284181e"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Pawn_ORM.jpg",
+      "localPath": "Pawn_ORM.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Pawn_ORM.jpg",
+      "bytes": 792174,
+      "gitBlobSha1": "47faf7dfd51ab10f5c7fdbe7d9c9bd3c63f9f03d",
+      "sha256": "bb7ac27d4b650cf533e398e0477c9fbf129846d566e706d76146cdb947c3f17a"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Pawn_black_base_color.jpg",
+      "localPath": "Pawn_black_base_color.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Pawn_black_base_color.jpg",
+      "bytes": 315179,
+      "gitBlobSha1": "5078a2ce44bfdc879d91d8c7b3c2809f5f113dd7",
+      "sha256": "e3a42ac61d090cf23b5722e20b8b993f087ca09689500b74dde61c8a28899e26"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Pawn_normal.jpg",
+      "localPath": "Pawn_normal.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Pawn_normal.jpg",
+      "bytes": 750313,
+      "gitBlobSha1": "4cdc45070e1732707ec086dc2a9299b8ab9ec82c",
+      "sha256": "c1e2e201efcdc9184da793f6fe98bc54dace592274842dd7e42427a9294277c3"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Pawn_white_base_color.jpg",
+      "localPath": "Pawn_white_base_color.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Pawn_white_base_color.jpg",
+      "bytes": 303807,
+      "gitBlobSha1": "576de84a0d81cf3c530b167a4d4a749c7c64f64a",
+      "sha256": "46153b809dfcc35f1a3c3508310a25dc423062204e95b328dddd420cb3d60952"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Queen_black_ORM.jpg",
+      "localPath": "Queen_black_ORM.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_black_ORM.jpg",
+      "bytes": 741172,
+      "gitBlobSha1": "c130d53b243862fe4a0074255d177e9f28c18bc9",
+      "sha256": "4df982f977eae6da3239e9e7a02534633f07473010025cd742d55ad4d85976ca"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Queen_black_base_color.jpg",
+      "localPath": "Queen_black_base_color.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_black_base_color.jpg",
+      "bytes": 295346,
+      "gitBlobSha1": "bbd230fc48691a6c90be4e86263c6f5e581bc00b",
+      "sha256": "26132e8fb23808295c7d77fedf1e760730d097d138e66a5947e0cc3a7f9302ed"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Queen_black_normal.jpg",
+      "localPath": "Queen_black_normal.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_black_normal.jpg",
+      "bytes": 777060,
+      "gitBlobSha1": "ffbc753426d02b544ad3d1daa9955aad01d04274",
+      "sha256": "b2dfb93933b47ff4589eca6acd8c96b9b17521e024060e7e0fca1a7f95a9401e"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Queen_white_ORM.jpg",
+      "localPath": "Queen_white_ORM.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_white_ORM.jpg",
+      "bytes": 709227,
+      "gitBlobSha1": "0a1203df738dbbcfaf588128f072ef80889d7bae",
+      "sha256": "07fba609ee23a02ea22a3d1f6d76df87a0cfa8eca5bc38ddbe7a1258d7448b33"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Queen_white_base_color.jpg",
+      "localPath": "Queen_white_base_color.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_white_base_color.jpg",
+      "bytes": 309191,
+      "gitBlobSha1": "d04ff2f6fd0138e9185a67ac8eb7b55b2566501b",
+      "sha256": "2cc4b5295ff58d920cc23c13ee089821e193f6006c966af395824fc1c94ce4e0"
+    },
+    {
+      "path": "Models/ABeautifulGame/glTF/Queen_white_normal.jpg",
+      "localPath": "Queen_white_normal.jpg",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/glTF/Queen_white_normal.jpg",
+      "bytes": 662916,
+      "gitBlobSha1": "4bb1b52164ffe9b50dedc6d756c897452636b379",
+      "sha256": "5270859cd49784272da97b92d9aeef4d6008033d654014b34328c7ea961cb282"
+    }
+  ],
+  "failures": [],
+  "referenceCheck": {
+    "uniqueExternalReferences": 34,
+    "allManifestFilesReferencedOrRootJSON": true
+  },
+  "downloadedBytes": 29805749,
+  "finishedAt": "2026-10-26T01:59:48.298748+00:00"
+}

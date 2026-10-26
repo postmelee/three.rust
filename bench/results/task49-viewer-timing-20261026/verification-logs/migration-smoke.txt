@@ -1,0 +1,1 @@
+{"status": "numeric-audit-complete", "group": "migration", "mode": "smoke", "capturedRuns": 12, "measuredGroups": 360, "groupsIncludingWarmup": 480, "retainedArmingRows": 48}

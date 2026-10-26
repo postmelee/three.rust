@@ -1,0 +1,30 @@
+)]}'
+{
+  "commit": "712e1808de2d7416f1276d0deb1ee4ac978132b8",
+  "tree": "1da85242fe60408e1d460c971af514c7112ea8f2",
+  "parents": [
+    "f308dfd569db008afc34159b02ae003c95bca12d"
+  ],
+  "author": {
+    "name": "V8 Autoroll",
+    "email": "v8-ci-autoroll-builder@chops-service-accounts.iam.gserviceaccount.com",
+    "time": "Tue Oct 13 10:30:23 2026"
+  },
+  "committer": {
+    "name": "v8-ci-autoroll-builder@chops-service-accounts.iam.gserviceaccount.com",
+    "email": "v8-ci-autoroll-builder@chops-service-accounts.iam.gserviceaccount.com",
+    "time": "Tue Oct 13 10:30:38 2026"
+  },
+  "message": "Version 15.5.35.25\n\nVersion incremented at https://cr-buildbucket.appspot.com/build/8668063692119092577\n\nChange-Id: I0280b51f7d8164bb1ba207fd70e41b474eff9df7\nReviewed-on: https://chromium-review.googlesource.com/c/v8/v8/+/8557682\nBot-Commit: v8-ci-autoroll-builder@chops-service-accounts.iam.gserviceaccount.com \u003cv8-ci-autoroll-builder@chops-service-accounts.iam.gserviceaccount.com\u003e\nCr-Commit-Position: refs/branch-heads/15.5@{#53}\nCr-Branched-From: 17abeb50acb4563e253edebd0db09062d39c8c91-refs/heads/15.5.35@{#1}\nCr-Branched-From: 9f9b3ebe0a8137c2a344d1a84536068231af632f-refs/heads/main@{#109811}\n",
+  "tree_diff": [
+    {
+      "type": "modify",
+      "old_id": "726fd6be8ebab94a4f4ad8b08f45ff8c6c955a48",
+      "old_mode": 33188,
+      "old_path": "include/v8-version.h",
+      "new_id": "d6224cd01f1cbf7acfc90b1dc962707b3b9f4af6",
+      "new_mode": 33188,
+      "new_path": "include/v8-version.h"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "files": [
+    {
+      "file": "Tokyo-LittlestTokyo.glb",
+      "bytes": 4133072,
+      "sha256": "8375c2aa6808e28ad1cb9c0d43e1513f57ffd7865244bf66bbbd5bb0e907e06d"
+    },
+    {
+      "file": "Bistro-README.md",
+      "bytes": 458,
+      "sha256": "a754164a11b1f49581a830b2a7174cb093c8c9cf847b3f23feb6922d06db5569"
+    },
+    {
+      "file": "Bistro-scene-LICENSE.txt",
+      "bytes": 18648,
+      "sha256": "2635b6e6f0dc38a089250a0c6e22b212d27cccb7bbad8e7e8e7ebbcce8951908"
+    },
+    {
+      "file": "initial-attempt-failure.json",
+      "bytes": 234,
+      "sha256": "a5d5ecb5bd52877b4fd397b5e9ed5281350e894a6a5b4cda29f2868dffd708d9"
+    },
+    {
+      "file": "second-attempt-failure.json",
+      "bytes": 110,
+      "sha256": "0eb10f972fa85ea8b29ed5efc0305ec5e2c6686687381fc3cb0d5f7fc345935f"
+    },
+    {
+      "file": "Bistro-scene-README.md",
+      "bytes": 1818,
+      "sha256": "a1b5467206707b37c61ce1342ca69d50a784f5c6509c46274fab83cdecbe0679"
+    },
+    {
+      "file": "Tokyo-upstream-example.html",
+      "bytes": 4121,
+      "sha256": "68dd0cf9d8dd135628bfe70a4f06f7d637d6b29c806af9beec2be701decf7106"
+    }
+  ],
+  "noticeEncoding": {
+    "Bistro-scene-LICENSE.txt": "cp1252"
+  },
+  "thirdAttemptError": "UTF-8 display decode failed after original license bytes were saved; decoded as cp1252 without changing source bytes."
+}

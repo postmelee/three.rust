@@ -1,0 +1,39 @@
+)]}'
+{
+  "commit": "a7b389bcb341f6e5e1bfa107992d3c327db75736",
+  "tree": "e936d7eb4f5d33be17677d8c38eab78ca2d1f933",
+  "parents": [
+    "cd7bfad9bba968ac23ba67e538f9e1d499991d25"
+  ],
+  "author": {
+    "name": "Danil Somsikov",
+    "email": "dsv@chromium.org",
+    "time": "Tue Oct 13 12:57:50 2026"
+  },
+  "committer": {
+    "name": "devtools-frontend-scoped@luci-project-accounts.iam.gserviceaccount.com",
+    "email": "devtools-frontend-scoped@luci-project-accounts.iam.gserviceaccount.com",
+    "time": "Wed Oct 14 06:05:27 2026"
+  },
+  "message": "[M155][console] Restore DOM node context menu on standalone ElementsTreeOutline\n\nWhen ElementsTreeOutline is instantiated without a parent DOMTreeWidget\n(as in ConsoleViewMessage.formatParameterAsNode on M155), listen for\ncontextmenu events and delegate to DOMTreeContextMenu via a detached\nDOMTreeWidget.\n\nBug: 571177790\nFixed: 572653055\nChange-Id: I5fffd87e20d5dfe7e96bcb926bb01f5a724f82e0\nReviewed-on: https://chromium-review.googlesource.com/c/devtools/devtools-frontend/+/8557838\nReviewed-by: Alex Rudenko \u003calexrudenko@chromium.org\u003e\nCommit-Queue: Danil Somsikov \u003cdsv@chromium.org\u003e\nReviewed-by: Mathias Bynens \u003cmathias@chromium.org\u003e\n",
+  "tree_diff": [
+    {
+      "type": "modify",
+      "old_id": "ac932021d2950a6ccbab63a639fe933f82c7fbc5",
+      "old_mode": 33188,
+      "old_path": "front_end/panels/console/ConsoleViewMessage.test.ts",
+      "new_id": "8fb19953d955c864a2b08f85086d19a6b252df4c",
+      "new_mode": 33188,
+      "new_path": "front_end/panels/console/ConsoleViewMessage.test.ts"
+    },
+    {
+      "type": "modify",
+      "old_id": "f48db5e1ac11b72f045945ebcf7f5a9f7ebd8cd3",
+      "old_mode": 33188,
+      "old_path": "front_end/panels/elements/ElementsTreeOutline.ts",
+      "new_id": "d8fb2126d7bb6fa43385832c9b33500ec045a3dc",
+      "new_mode": 33188,
+      "new_path": "front_end/panels/elements/ElementsTreeOutline.ts"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "links": [
+    {
+      "path": "preparation/native/source/node_modules",
+      "sourcePath": "final/work/task49-final-viewer-native-001/source/node_modules",
+      "originalTargetSha256": "7a39d0a21d0b60c5804dd68f5a3f733ed3b9581e199815ffde45ca5775472571",
+      "originalTargetBytes": 107,
+      "publicTarget": "<pinned-viewer>/node_modules",
+      "viewerSha": "b5ee5dafe27f953ae1b55f42b5fa3697fef08683",
+      "kind": "external dependency directory symlink",
+      "handling": "Not traversed. Only exact manifest build-input files and original package/lock bytes are copied separately; complete node_modules installation is excluded."
+    },
+    {
+      "path": "preparation/timing/source/node_modules",
+      "sourcePath": "final/work/task49-bistro-timing-preparation-001/source/node_modules",
+      "originalTargetSha256": "7a39d0a21d0b60c5804dd68f5a3f733ed3b9581e199815ffde45ca5775472571",
+      "originalTargetBytes": 107,
+      "publicTarget": "<pinned-viewer>/node_modules",
+      "viewerSha": "b5ee5dafe27f953ae1b55f42b5fa3697fef08683",
+      "kind": "external dependency directory symlink",
+      "handling": "Not traversed. Only exact manifest build-input files and original package/lock bytes are copied separately; complete node_modules installation is excluded."
+    }
+  ],
+  "originalTargetHashesRechecked": true,
+  "targetDirectoryTraversal": false,
+  "manifestDependencyFiles": [
+    "viewer/node_modules/dat.gui/build/dat.gui.module.js",
+    "viewer/node_modules/decode-uri-component/index.js",
+    "viewer/node_modules/filter-obj/index.js",
+    "viewer/node_modules/gltf-validator/gltf_validator.dart.js",
+    "viewer/node_modules/gltf-validator/module.mjs",
+    "viewer/node_modules/query-string/base.js",
+    "viewer/node_modules/query-string/index.js",
+    "viewer/node_modules/simple-dropzone/dist/simple-dropzone.module.js",
+    "viewer/node_modules/split-on-first/index.js",
+    "viewer/node_modules/vhtml/src/empty-tags.js",
+    "viewer/node_modules/vhtml/src/vhtml.js",
+    "viewer/package.json",
+    "viewer/yarn.lock"
+  ],
+  "originalViewerSourceSha": "b5ee5dafe27f953ae1b55f42b5fa3697fef08683",
+  "originalTrackedViewerClean": true
+}

@@ -1,0 +1,50 @@
+{
+  "status": "verified",
+  "scope": "Final96 finite Robot/static correctness and software/build records only; no performance qualification",
+  "runtimeSha": "96b0b4c0e7d55c22c1f2c22955356b9822e67d22",
+  "logicalFiles": 1236,
+  "uniqueBlobs": 715,
+  "apps": [
+    {
+      "app": "editor",
+      "auditSha256": "3f420fda6a21818da9762eda0256a831cd96e0fbad07c98ce9977f76fc99c04a",
+      "counts": {
+        "datasets": 6,
+        "checks": 162,
+        "crossComparisons": 72,
+        "imageComparisons": 32,
+        "semanticComparisons": 40,
+        "numericValues": 149328,
+        "pauseExceptions": 4
+      },
+      "inputFiles": 264,
+      "sourceFiles": 29,
+      "decodedPNGs": 48
+    },
+    {
+      "app": "viewer",
+      "auditSha256": "fb2efcfbe37d431a532247aaffb84271d582f89c906c68a1337df01b754c0992",
+      "counts": {
+        "routes": 5,
+        "fixedCases": 11,
+        "withinRouteComparisons": 55,
+        "crossComparisons": 44,
+        "decodedPNGs": 220
+      },
+      "inputFiles": 519,
+      "sourceFiles": 32,
+      "decodedPNGs": 220
+    }
+  ],
+  "preparation": {
+    "manifestSha256": "9f5c12a3f2e861f97f46eddd248f4f93aca7418652ed3c2fe9ecec128258a241",
+    "byteChecks": 34,
+    "recordedDependencyLinks": 1
+  },
+  "failedBuild": {
+    "archiveOnlyFailurePreserved": true,
+    "copiedPayloads": 884,
+    "movedPhysicalFiles": 441,
+    "partialRowsMatchFinalPayloads": true
+  }
+}

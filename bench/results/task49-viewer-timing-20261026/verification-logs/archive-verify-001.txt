@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "<archive>/verify.py", line 183, in <module>
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--archive',type=Path,default=Path(__file__).resolve().parent);p.add_argument('--out',type=Path);args=p.parse_args();r=verify(args.archive)
+                                                                                                                                                                                         ~~~~~~^^^^^^^^^^^^^^
+  File "<archive>/verify.py", line 163, in verify
+    A=Archive(root);result={'status':'verified','qualification':False,'logicalFiles':len(A.files),'physicalBlobs':len(A.blobs),'captures':[],'preparation':preparation_audit(A)}
+                                                                                                                                                           ~~~~~~~~~~~~~~~~~^^^
+  File "<archive>/verify.py", line 153, in preparation_audit
+    assert A.B(base+'/source/'+row['file'])==after
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<archive>/verify.py", line 41, in B
+    def B(self,p):return self.blobs[self.entry(p)['storage']]
+                                    ~~~~~~~~~~^^^
+  File "<archive>/verify.py", line 40, in entry
+    safe(p);return self.files[p if p in self.files else p+'.gz']
+                   ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'preparation/timing/source/node_modules/dat.gui/build/dat.gui.module.js.gz'

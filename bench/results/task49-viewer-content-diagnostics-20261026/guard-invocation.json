@@ -1,0 +1,9 @@
+{
+  "kind": "Separate execution-owner provenance; absent fields are not inserted into original result",
+  "resultRecordsToolSha": false,
+  "ownerRecordedToolSha": "6e9e857748ec0c5380430026b7c24ca8bf6726f3",
+  "ownerRecordedCleanWorkingTree": true,
+  "commandShape": "node tests/viewer-transport-guard-browser.mjs NEW_OUTPUT",
+  "committedSource": "tool-sources/6e9e857748ec0c5380430026b7c24ca8bf6726f3/tests/viewer-transport-guard-browser.mjs",
+  "stdout": "verification-logs/network-guard-browser-001.txt"
+}

@@ -1,0 +1,17 @@
+test_before_after_close_prefix_and_late_failure (__main__.EvidenceTests.test_before_after_close_prefix_and_late_failure) ... ok
+test_cache_digest_observation_does_not_rewrite_failure (__main__.EvidenceTests.test_cache_digest_observation_does_not_rewrite_failure) ... ok
+test_fixed_numeric_semantic_and_image_difference (__main__.EvidenceTests.test_fixed_numeric_semantic_and_image_difference) ... ok
+test_framing_recomputed_from_headers (__main__.EvidenceTests.test_framing_recomputed_from_headers) ... ok
+test_missing_old_cdp_stays_unavailable (__main__.EvidenceTests.test_missing_old_cdp_stays_unavailable) ... ok
+test_nonfinite_oracle_rejected (__main__.EvidenceTests.test_nonfinite_oracle_rejected) ... ok
+test_guard_source_payload_and_missing_provenance (__main__.GuardTests.test_guard_source_payload_and_missing_provenance) ... ok
+test_wrong_hash_external_connection_or_bypass_rejected (__main__.GuardTests.test_wrong_hash_external_connection_or_bypass_rejected) ... ok
+test_denied_nonce_only_preserves_numeric_tokens (__main__.PrivacyTests.test_denied_nonce_only_preserves_numeric_tokens) ... ok
+test_private_stack_path_changes_only_string (__main__.PrivacyTests.test_private_stack_path_changes_only_string) ... ok
+test_public_scene_and_cdp_ids_preserved (__main__.PrivacyTests.test_public_scene_and_cdp_ids_preserved) ... ok
+test_unexpected_identity_private_field_rejected (__main__.PrivacyTests.test_unexpected_identity_private_field_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+OK

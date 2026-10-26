@@ -1,0 +1,15 @@
+{
+  "status": "verified",
+  "sourceFormat": 1,
+  "destinationFormat": 2,
+  "sourceIndexSha256": "e60249fe5445d38e351937589a853949b2150a256cafe6485508315c98fa599f",
+  "destinationIndexSha256": "f41ef3b87bcc32a929a8672035b30166e025ff369c558997559ca7e656500897",
+  "logicalPayloads": 2690,
+  "uniqueBlobs": 530,
+  "logicalStoredBytes": 44176644,
+  "uniqueStoredBytes": 10736200,
+  "allOrderedSourceEntriesIdenticalExceptStorage": true,
+  "everyStoredByteIdentical": true,
+  "recompressed": false,
+  "sourceArchiveRetained": true
+}

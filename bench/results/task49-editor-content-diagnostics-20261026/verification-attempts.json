@@ -1,0 +1,61 @@
+{
+  "applicationStatusesUnchanged": true,
+  "attempts": [
+    {
+      "kind": "initial-three-capture-draft-archive",
+      "status": "complete",
+      "sourceRawUnchanged": true,
+      "publicFinalScope": false
+    },
+    {
+      "kind": "draft-offline-verifier",
+      "attempt": 1,
+      "status": "failed",
+      "errorType": "KeyError",
+      "error": "bytes",
+      "reason": "The copied source checker assumed Editor mirrored-network rows contain a byte count. Actual rows preserve a digest only. Captured source byte lengths remain separately available.",
+      "rawSourceModified": false,
+      "failedVerifierSource": "verification-logs/initial-verifier.py.txt",
+      "failedVerifierSourceSha256": "da1c6c69ae76110d342295f034e4a2438f911125bc3c758e34d1e0099efee7c0"
+    },
+    {
+      "kind": "draft-offline-verifier",
+      "attempt": 2,
+      "status": "passed",
+      "correction": "Check mirrored digest and recorded captured-source byte count independently without inventing a missing field."
+    },
+    {
+      "kind": "final-eight-capture-archive",
+      "status": "complete",
+      "sourceRawUnchanged": true
+    },
+    {
+      "kind": "final-offline-verifier",
+      "attempt": 1,
+      "status": "passed",
+      "decodedPngs": 22,
+      "log": "verification-logs/verification-001.txt"
+    },
+    {
+      "kind": "unit-mutation-tests",
+      "status": "passed",
+      "tests": 13,
+      "log": "verification-logs/tests.txt"
+    },
+    {
+      "kind": "final-offline-verifier",
+      "attempt": 2,
+      "status": "passed",
+      "decodedPngs": 22,
+      "additionalCheck": "Every captured source blob filename independently matches its content SHA, including partial sources without a final URL inventory.",
+      "log": "verification-logs/verification-002.txt"
+    },
+    {
+      "kind": "independent-source-and-document-review",
+      "status": "no-blocking-findings",
+      "executionByReviewer": false,
+      "record": "INDEPENDENT_REVIEW.md",
+      "wordingClarificationApplied": "Distinguish original File\u2192Import menu attempts from separately labeled native-input/change-handler attempts."
+    }
+  ]
+}

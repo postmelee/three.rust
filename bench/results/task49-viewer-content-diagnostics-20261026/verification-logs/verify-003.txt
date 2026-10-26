@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<archive>/verify.py", line 244, in <module>
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--archive',type=Path,default=Path(__file__).resolve().parent);p.add_argument('--out',type=Path);p.add_argument('--extract',type=Path);args=p.parse_args();report=verify(args.archive)
+                                                                                                                                                                                                                                    ~~~~~~^^^^^^^^^^^^^^
+  File "<archive>/verify.py", line 238, in verify
+    if row['probe'] is None:row['gate']=audit_gate(A,label,result)
+                                        ~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "<archive>/verify.py", line 199, in audit_gate
+    route=record['route'];base=label+'/'+route;assert A.J(base+'/result.json')==record;provenance=source_audit(A,base,route,result['tooling']['sha'])
+                                                                                                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<archive>/verify.py", line 69, in source_audit
+    environment=A.J(base+'/environment.json');assert environment['headed'] and environment['isolated'] and environment['route']==route
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

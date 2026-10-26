@@ -1,0 +1,156 @@
+{
+  "scenario": {
+    "id": "E3-root-selected-high-resolution",
+    "selected": true,
+    "shadow": true,
+    "pixelRatio": 2
+  },
+  "sceneSetup": {
+    "shape": {
+      "skins": 4,
+      "morphMeshes": 3,
+      "clips": [
+        "Dance",
+        "Death",
+        "Idle",
+        "Jump",
+        "No",
+        "Punch",
+        "Running",
+        "Sitting",
+        "Standing",
+        "ThumbsUp",
+        "Walking",
+        "WalkJump",
+        "Wave",
+        "Yes"
+      ],
+      "vertices": 7214
+    },
+    "camera": [
+      5,
+      3.5,
+      7
+    ],
+    "target": [
+      0.02903489391441072,
+      2.210306801808131,
+      0.07344450557537341
+    ],
+    "shadow": true,
+    "shadowMapSize": [
+      1024,
+      1024
+    ]
+  },
+  "environment": {
+    "at": 2329.964999988675,
+    "visibility": "visible",
+    "focused": true,
+    "crossOriginIsolated": true,
+    "dpr": 1,
+    "width": 1860,
+    "height": 756,
+    "cssWidth": 930,
+    "cssHeight": 378,
+    "rendererPixelRatio": 2,
+    "renderInfo": {
+      "frame": 1052,
+      "calls": 9,
+      "triangles": 72,
+      "points": 0,
+      "lines": 0
+    },
+    "quality": {
+      "antialias": true,
+      "toneMapping": 7,
+      "exposure": 1,
+      "outputColorSpace": "srgb",
+      "shadows": true,
+      "shadowType": 1
+    },
+    "autosave": true,
+    "savingStarted": 1,
+    "savingFinished": 1,
+    "renderCount": 0,
+    "mixerTime": 1.6662849999964233,
+    "selected": "RobotExpressive.glb",
+    "action": {
+      "name": "Walking",
+      "time": 0.7079516865313057,
+      "duration": 0.9583333134651184,
+      "paused": false,
+      "enabled": true,
+      "running": true,
+      "mixerTimeScale": 1
+    },
+    "diagnostics": {
+      "backend": "prepared-js",
+      "wasmActive": false,
+      "batches": 29623,
+      "nodes": 102160,
+      "fallbackRoots": 8445,
+      "wasmCalls": 0,
+      "wasmNodes": 0,
+      "uploadedBytes": 5111080,
+      "scannedBytes": 1323728,
+      "materializedBytes": 5890560,
+      "arenas": 1,
+      "syncMs": 0,
+      "kernelMs": 0,
+      "readMs": 0,
+      "abiCalls": 0,
+      "operationBytes": 2698612,
+      "matrixReads": 46020,
+      "liveNodes": 207,
+      "topologyBuilds": 76,
+      "dirtyRecords": 237,
+      "retainedUpdates": 865,
+      "preparedInputBytes": 58576,
+      "preparedFallbacks": 1005,
+      "preparedWasmCalls": 0,
+      "prepareKernelMs": 0,
+      "prepareMs": 0,
+      "preparedReadMs": 0,
+      "preparedPasses": 97,
+      "preparedDraws": 84,
+      "preparedMatrixBytes": 16800,
+      "preparedMatrixReads": 84,
+      "wasmMemoryBytes": 0
+    }
+  },
+  "clock": {
+    "crossOriginIsolated": true,
+    "minPositiveDeltaMs": 0.004999995231628418,
+    "positiveDeltas": 2053,
+    "iterations": 100000,
+    "meaning": "Observed minimum clock increment, not accuracy or statistical confidence"
+  },
+  "hardware": {
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+    "vendor": "Google Inc. (Apple)",
+    "attributes": {
+      "alpha": true,
+      "antialias": true,
+      "depth": true,
+      "desynchronized": false,
+      "failIfMajorPerformanceCaveat": false,
+      "powerPreference": "default",
+      "premultipliedAlpha": true,
+      "preserveDrawingBuffer": false,
+      "stencil": false,
+      "xrCompatible": false
+    },
+    "width": 1860,
+    "height": 756,
+    "dpr": 1
+  },
+  "layout": {
+    "timelineHeight": 307,
+    "timelineContentHeight": 306,
+    "viewportWidth": 930,
+    "viewportHeight": 378,
+    "shading": "default",
+    "xr": false
+  }
+}

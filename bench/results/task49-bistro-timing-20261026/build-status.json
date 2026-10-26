@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "sourceSuites": [
+    {
+      "label": "smoke",
+      "sourceDirectory": "repository/work/task49-viewer-bistro-zip-engine-timing-smoke-001",
+      "captureStatus": "smoke-complete-not-performance-evidence",
+      "mode": "smoke",
+      "toolingSha": "58b7cdce62ab15f1507dd76255840f406cee6287",
+      "candidateSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "finishedAt": "2026-10-26T12:58:45.461Z",
+      "fileCount": 557
+    },
+    {
+      "label": "full",
+      "sourceDirectory": "repository/work/task49-viewer-bistro-zip-engine-timing-full-001",
+      "captureStatus": "screen-complete-unqualified",
+      "mode": "full",
+      "toolingSha": "58b7cdce62ab15f1507dd76255840f406cee6287",
+      "candidateSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "finishedAt": "2026-10-26T13:25:54.140Z",
+      "fileCount": 1160
+    }
+  ],
+  "payloads": 1911,
+  "uniqueBlobs": 462,
+  "uniqueStoredBytes": 18039214,
+  "sourceHashesRechecked": true,
+  "sourceListingsUnchanged": true
+}

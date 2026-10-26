@@ -1,0 +1,30 @@
+{
+  "format": 1,
+  "freshOutputRequired": true,
+  "sourceRoots": {
+    "repository": "The Task49 archival checkout",
+    "final": "The separate clean final96 validation checkout",
+    "pinned-apps": "The original app-reproduction-002 Editor/Viewer roots"
+  },
+  "treeArguments": [
+    "editor=repository:work/task49-final-editor-correctness-001",
+    "viewer=repository:work/task49-final-viewer-correctness-001",
+    "execution=repository:work/task49-final-app-execution-001",
+    "editor-audit=repository:work/task49-final-editor-audit-001",
+    "viewer-audit=repository:work/task49-final-viewer-audit-001",
+    "preparation=final:work/task49-final-viewer-native-001",
+    "build=final:work/task49-final-build-001",
+    "node=final:work/task49-final-node-001",
+    "browser=final:work/task49-final-browser-001",
+    "software-suite=final:work/task49-final-suite-001",
+    "analyzer-checks=repository:work/task49-profile-completeness-node-001",
+    "publication-failed=repository:work/task49-final-publication-check-001",
+    "publication-passed=repository:work/task49-final-publication-check-002",
+    "archive-build-failure=repository:work/task49-final-integration-archive-build-001/build-failure-001"
+  ],
+  "fileArguments": [
+    "execution-driver/run.py=repository:work/task49-final-app-execution-plan-001/run.py"
+  ],
+  "command": "python3 -B archive.py --root \"$REPOSITORY_ROOT\" --final-root \"$FINAL_ROOT\" --apps-root \"$PINNED_APPS_ROOT\" --out \"$NEW_ARCHIVE_DIRECTORY\" [--tree and --file arguments below]",
+  "afterBuild": "Add the unchanged support sources, run verify.py --out FRESH_AUDIT_JSON, run test_archive.py, and hash every visible support file into derived-files.json. Do not overwrite previous result directories."
+}

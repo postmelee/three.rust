@@ -1,0 +1,126 @@
+{
+  "status": "complete",
+  "inputs": [
+    {
+      "label": "bistro-correctness-001",
+      "sourceDirectory": "work/task49-viewer-bistro-correctness-001",
+      "files": 285,
+      "recordedStatus": "failed",
+      "recordedToolSha": "fbeb5b2a327e5ebd5eb5eebbaa09a453c5b1bdd4",
+      "runtimeSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "guardToolOwnerRecord": null
+    },
+    {
+      "label": "chess-correctness-001",
+      "sourceDirectory": "work/task49-viewer-chess-correctness-001",
+      "files": 190,
+      "recordedStatus": "failed",
+      "recordedToolSha": "fbeb5b2a327e5ebd5eb5eebbaa09a453c5b1bdd4",
+      "runtimeSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "guardToolOwnerRecord": null
+    },
+    {
+      "label": "bistro-transport-diagnostic-002",
+      "sourceDirectory": "work/task49-viewer-bistro-transport-diagnostic-002",
+      "files": 43,
+      "recordedStatus": "failed",
+      "recordedToolSha": "3d7453d5a509ac93212a31fd1cc2678e89d77c2b",
+      "runtimeSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "guardToolOwnerRecord": null
+    },
+    {
+      "label": "chess-transport-diagnostic-002",
+      "sourceDirectory": "work/task49-viewer-chess-transport-diagnostic-002",
+      "files": 32,
+      "recordedStatus": "failed",
+      "recordedToolSha": "3d7453d5a509ac93212a31fd1cc2678e89d77c2b",
+      "runtimeSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "guardToolOwnerRecord": null
+    },
+    {
+      "label": "transport-probe-001",
+      "sourceDirectory": "work/task49-viewer-transport-probe-001",
+      "files": 21,
+      "recordedStatus": "collected",
+      "recordedToolSha": "42121c8ff9bc4e83a65991072a03d9514ce5823c",
+      "runtimeSha": null,
+      "guardToolOwnerRecord": null
+    },
+    {
+      "label": "chess-default-framing-diagnostic-001",
+      "sourceDirectory": "work/task49-viewer-chess-default-framing-diagnostic-001",
+      "files": 34,
+      "recordedStatus": "failed",
+      "recordedToolSha": "ecf353ed9cfecdf7a0d2070ef7d84b769053b352",
+      "runtimeSha": null,
+      "guardToolOwnerRecord": null
+    },
+    {
+      "label": "chess-content-length-diagnostic-001",
+      "sourceDirectory": "work/task49-viewer-chess-content-length-diagnostic-001",
+      "files": 34,
+      "recordedStatus": "failed",
+      "recordedToolSha": "ecf353ed9cfecdf7a0d2070ef7d84b769053b352",
+      "runtimeSha": null,
+      "guardToolOwnerRecord": null
+    },
+    {
+      "label": "network-guard-browser-001",
+      "sourceDirectory": "work/task49-viewer-network-guard-browser-001",
+      "files": 1,
+      "recordedStatus": null,
+      "recordedToolSha": null,
+      "runtimeSha": null,
+      "guardToolOwnerRecord": "6e9e857748ec0c5380430026b7c24ca8bf6726f3"
+    },
+    {
+      "label": "chess-proxy-playwright-diagnostic-001",
+      "sourceDirectory": "work/task49-viewer-chess-proxy-playwright-diagnostic-001",
+      "files": 33,
+      "recordedStatus": "passed",
+      "recordedToolSha": "6e9e857748ec0c5380430026b7c24ca8bf6726f3",
+      "runtimeSha": null,
+      "guardToolOwnerRecord": null
+    },
+    {
+      "label": "chess-proxy-cdp-diagnostic-001",
+      "sourceDirectory": "work/task49-viewer-chess-proxy-cdp-diagnostic-001",
+      "files": 33,
+      "recordedStatus": "passed",
+      "recordedToolSha": "6e9e857748ec0c5380430026b7c24ca8bf6726f3",
+      "runtimeSha": null,
+      "guardToolOwnerRecord": null
+    },
+    {
+      "label": "chess-default-framing-diagnostic-002",
+      "sourceDirectory": "work/task49-viewer-chess-default-framing-diagnostic-002",
+      "files": 34,
+      "recordedStatus": "failed",
+      "recordedToolSha": "6e9e857748ec0c5380430026b7c24ca8bf6726f3",
+      "runtimeSha": null,
+      "guardToolOwnerRecord": null
+    },
+    {
+      "label": "chess-proxy-playwright-diagnostic-002",
+      "sourceDirectory": "work/task49-viewer-chess-proxy-playwright-diagnostic-002",
+      "files": 35,
+      "recordedStatus": "failed",
+      "recordedToolSha": "6e9e857748ec0c5380430026b7c24ca8bf6726f3",
+      "runtimeSha": null,
+      "guardToolOwnerRecord": null
+    },
+    {
+      "label": "chess-proxy-cdp-diagnostic-002",
+      "sourceDirectory": "work/task49-viewer-chess-proxy-cdp-diagnostic-002",
+      "files": 33,
+      "recordedStatus": "passed",
+      "recordedToolSha": "6e9e857748ec0c5380430026b7c24ca8bf6726f3",
+      "runtimeSha": null,
+      "guardToolOwnerRecord": null
+    }
+  ],
+  "logicalFiles": 845,
+  "physicalBlobs": 371,
+  "sourceHashesRechecked": true,
+  "sourceListingsUnchanged": true
+}

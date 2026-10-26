@@ -1,0 +1,105 @@
+{
+  "attempts": [
+    {
+      "step": "build-001",
+      "result": "passed",
+      "logicalFiles": 845
+    },
+    {
+      "step": "verify-001",
+      "result": "failed",
+      "reason": "Verifier expected Chess acquisition schema sourcePin/localPath for Bistro, whose preserved schema is pin/uri."
+    },
+    {
+      "step": "verify-002",
+      "result": "passed"
+    },
+    {
+      "step": "verify-003",
+      "result": "failed",
+      "reason": "Expanded verifier incorrectly required primary timing isolation for correctness diagnostics recorded as isolated:false."
+    },
+    {
+      "step": "verify-004",
+      "result": "passed",
+      "attempts": 13
+    },
+    {
+      "step": "tests-001",
+      "result": "passed",
+      "tests": 12
+    },
+    {
+      "step": "tests-002",
+      "result": "passed",
+      "tests": 15
+    }
+  ],
+  "captureDataChanged": false,
+  "recordedGateStatusesChanged": false,
+  "logs": [
+    {
+      "file": "verification-logs/network-guard-browser-001.txt",
+      "sourceSha256": "283c8b1a1b827b159cc4d1d31e9b82077a244f05d3d96f18e1bfa67015adaa2f",
+      "sha256": "283c8b1a1b827b159cc4d1d31e9b82077a244f05d3d96f18e1bfa67015adaa2f",
+      "bytes": 39,
+      "normalized": false
+    },
+    {
+      "file": "verification-logs/build-001.txt",
+      "sourceSha256": "dbda182e328a98d50847d060ec7380e9a97945f5a5c4ed10d5d5d2712fd52870",
+      "sha256": "dbda182e328a98d50847d060ec7380e9a97945f5a5c4ed10d5d5d2712fd52870",
+      "bytes": 104,
+      "normalized": false
+    },
+    {
+      "file": "verification-logs/final-verify.txt",
+      "sourceSha256": "0f9935f41a8069c54c3a166ada3f4b2a822eabde45656c177e67ee63e7669d89",
+      "sha256": "0f9935f41a8069c54c3a166ada3f4b2a822eabde45656c177e67ee63e7669d89",
+      "bytes": 112,
+      "normalized": false
+    },
+    {
+      "file": "verification-logs/tests-001.txt",
+      "sourceSha256": "5f166b0ff02cbde789409a8178e1234216e4035b5cfbcb1e5978c698fb7e3d60",
+      "sha256": "5f166b0ff02cbde789409a8178e1234216e4035b5cfbcb1e5978c698fb7e3d60",
+      "bytes": 1559,
+      "normalized": false
+    },
+    {
+      "file": "verification-logs/tests-002.txt",
+      "sourceSha256": "ebafea5c3c0cb3fdf9b85a2b7a2efc9bdd78d9dde160d1b58bab7fe0d16535cf",
+      "sha256": "ebafea5c3c0cb3fdf9b85a2b7a2efc9bdd78d9dde160d1b58bab7fe0d16535cf",
+      "bytes": 1880,
+      "normalized": false
+    },
+    {
+      "file": "verification-logs/verify-001.txt",
+      "sourceSha256": "c05ae8ca64abbd8afc0b74b06b53bcd569f73163f8bc708b30fa03dbe4995836",
+      "sha256": "744f5e6497a35943129c94d4107b9c7de6da27b84888431ad73b1bb3a2368e53",
+      "bytes": 1069,
+      "normalized": true
+    },
+    {
+      "file": "verification-logs/verify-002.txt",
+      "sourceSha256": "0f9935f41a8069c54c3a166ada3f4b2a822eabde45656c177e67ee63e7669d89",
+      "sha256": "0f9935f41a8069c54c3a166ada3f4b2a822eabde45656c177e67ee63e7669d89",
+      "bytes": 112,
+      "normalized": false
+    },
+    {
+      "file": "verification-logs/verify-003.txt",
+      "sourceSha256": "4338d05c930a9246b7ebdd71bdfd9c1a4789d0c8fdd7d69c8271f7b8688d0ad4",
+      "sha256": "192f3c1a820b4057eedd6679a838f4c9a884b5e1d2fc8f49ccab05b42d1ac06c",
+      "bytes": 1463,
+      "normalized": true
+    },
+    {
+      "file": "verification-logs/verify-004.txt",
+      "sourceSha256": "0f9935f41a8069c54c3a166ada3f4b2a822eabde45656c177e67ee63e7669d89",
+      "sha256": "0f9935f41a8069c54c3a166ada3f4b2a822eabde45656c177e67ee63e7669d89",
+      "bytes": 112,
+      "normalized": false
+    }
+  ]
+}

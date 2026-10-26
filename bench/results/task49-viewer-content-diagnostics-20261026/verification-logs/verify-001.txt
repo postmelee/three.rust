@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "<archive>/verify.py", line 238, in <module>
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--archive',type=Path,default=Path(__file__).resolve().parent);p.add_argument('--out',type=Path);p.add_argument('--extract',type=Path);args=p.parse_args();report=verify(args.archive)
+                                                                                                                                                                                                                                    ~~~~~~^^^^^^^^^^^^^^
+  File "<archive>/verify.py", line 232, in verify
+    if row['probe'] is None:row['gate']=audit_gate(A,label,result)
+                                        ~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "<archive>/verify.py", line 187, in audit_gate
+    assert H(fb)==source['fetchManifestSha256'] and fetch['sourcePin']==source['pin'];files={x.get('localPath',x.get('file')):x for x in fetch['files']}
+                                                    ~~~~~^^^^^^^^^^^^^
+KeyError: 'sourcePin'

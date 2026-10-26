@@ -1,0 +1,453 @@
+{
+  "status": "verified",
+  "scope": "Final96 finite Robot/static correctness and software/build records only; no performance qualification",
+  "runtimeSha": "96b0b4c0e7d55c22c1f2c22955356b9822e67d22",
+  "logicalFiles": 1236,
+  "uniqueBlobs": 715,
+  "apps": [
+    {
+      "app": "editor",
+      "auditSha256": "3f420fda6a21818da9762eda0256a831cd96e0fbad07c98ce9977f76fc99c04a",
+      "counts": {
+        "datasets": 6,
+        "checks": 162,
+        "crossComparisons": 72,
+        "imageComparisons": 32,
+        "semanticComparisons": 40,
+        "numericValues": 149328,
+        "pauseExceptions": 4
+      },
+      "inputFiles": 264,
+      "sourceFiles": 29,
+      "decodedPNGs": 48
+    },
+    {
+      "app": "viewer",
+      "auditSha256": "fb2efcfbe37d431a532247aaffb84271d582f89c906c68a1337df01b754c0992",
+      "counts": {
+        "routes": 5,
+        "fixedCases": 11,
+        "withinRouteComparisons": 55,
+        "crossComparisons": 44,
+        "decodedPNGs": 220
+      },
+      "inputFiles": 519,
+      "sourceFiles": 32,
+      "decodedPNGs": 220
+    }
+  ],
+  "preparation": {
+    "manifestSha256": "9f5c12a3f2e861f97f46eddd248f4f93aca7418652ed3c2fe9ecec128258a241",
+    "byteChecks": 34,
+    "recordedDependencyLinks": 1
+  },
+  "execution": {
+    "nativeAppCommands": 7,
+    "allNativeAppExitCodesZero": true,
+    "sourceBeforeAfterIdentical": true,
+    "ACBeforeAfter": true,
+    "buildAndTestCommands": {
+      "build": [
+        {
+          "command": [
+            "npm",
+            "ci"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "fixtures"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "build"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "npm",
+            "test"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "cargo",
+            "fmt",
+            "--check"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "cargo",
+            "clippy",
+            "--all-targets",
+            "--",
+            "-D",
+            "warnings"
+          ],
+          "exitCode": 0
+        }
+      ],
+      "node": [
+        {
+          "command": [
+            "npm",
+            "run",
+            "test:infra"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "test:facade"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "test:browser-path"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "test:timing"
+          ],
+          "exitCode": 1
+        }
+      ],
+      "browser": [
+        {
+          "command": [
+            "npm",
+            "run",
+            "test:prepared"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "test:compatibility"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "test:browser"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "test:package"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "test:demo"
+          ],
+          "exitCode": 0
+        }
+      ],
+      "software-suite": [
+        {
+          "command": [
+            "npm",
+            "run",
+            "test:timing"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "test:owned"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "test:fox"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "test:pipeline"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "test:gpu-guard"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "test:progress"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "bundle:status"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "test:status"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "bundle:demo"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "test:bundle"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "npm",
+            "pack",
+            "./packages/rthree",
+            "--pack-destination",
+            "<home>/.codex/worktrees/task49-final-validation/three.rust/work/task49-final-suite-001/package"
+          ],
+          "exitCode": 0
+        }
+      ],
+      "analyzer-checks": [
+        {
+          "command": [
+            "node",
+            "--check",
+            "scripts/apps/viewer-profile-analysis-runs.mjs"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "node",
+            "--check",
+            "scripts/apps/viewer-profile-analyze.mjs"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "node",
+            "--check",
+            "scripts/apps/viewer-profile-count-analyze.mjs"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "node",
+            "--check",
+            "tests/viewer-profile-analysis-runs.mjs"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "node",
+            "--test",
+            "tests/viewer-profile-analysis-runs.mjs",
+            "tests/candidate-profile-count-analysis.mjs",
+            "tests/candidate-profile-analysis.mjs",
+            "tests/viewer-profile-source-maps.mjs"
+          ],
+          "exitCode": 0
+        }
+      ],
+      "publication-failed": [
+        {
+          "command": [
+            "npm",
+            "run",
+            "test:infra"
+          ],
+          "exitCode": 1
+        }
+      ],
+      "publication-passed": [
+        {
+          "command": [
+            "npm",
+            "run",
+            "test:infra"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "docs:check"
+          ],
+          "exitCode": 0
+        }
+      ]
+    },
+    "initialTimingTestFailureRetained": true,
+    "sandboxLoopbackFailureRetained": true,
+    "analyzerCheckBaseSha": "7600d911bebac638605da993d38639617f04b964"
+  },
+  "failedBuild": {
+    "archiveOnlyFailurePreserved": true,
+    "copiedPayloads": 884,
+    "movedPhysicalFiles": 441,
+    "partialRowsMatchFinalPayloads": true
+  },
+  "normalizedFiles": [
+    {
+      "path": "execution/commands.json.gz",
+      "sourceSha256": "bffb92d8666732914af5d1dcb337e19e6d3600e467a14fd38b8bd7a5cab63ef0",
+      "publicSha256": "458600da29125c29fae7357f5c409f4bbaf39449fa478067d8a91f3d8bb12276",
+      "normalizations": [
+        "Approved home prefix in explicit command/error/path metadata; suffix and numeric values preserved"
+      ]
+    },
+    {
+      "path": "execution/environment-after/runner.json.gz",
+      "sourceSha256": "37758eefb2e170b10752267993e2572e4463618188944373a49446cb74de2595",
+      "publicSha256": "324fd8ed6f0b647d47ec0f9068245b60d5d5b2c7b01992925e0aab3c6a09e55b",
+      "normalizations": [
+        "Battery instance ID in explicit environment power output only"
+      ]
+    },
+    {
+      "path": "execution/environment-before/runner.json.gz",
+      "sourceSha256": "8db2b838586b6ae37cf17bb63ffaa75aaa9408b234fe09bfc3f5850587abebb3",
+      "publicSha256": "34453a1d699bde5522db7f656ae6343853dd8b1a4c154bdcad1226b37fc3dcab",
+      "normalizations": [
+        "Battery instance ID in explicit environment power output only"
+      ]
+    },
+    {
+      "path": "build/03.log.gz",
+      "sourceSha256": "852a4c9f952ef8255513b836ee0920d62150ea4d397fab3d2d238a394d001068",
+      "publicSha256": "b3a74eac87cc6aa467293703c981efabb729be791082f8699e5e59bd845b4604",
+      "normalizations": [
+        "Approved traceback/build log home prefix normalized; suffix and numbers preserved"
+      ]
+    },
+    {
+      "path": "build/04.log.gz",
+      "sourceSha256": "0c606f79c4046e497846b0dab97fc1a56b51449f91c4cf000cb467e4bb838e4f",
+      "publicSha256": "e4262a25722173f8c76935f0913a33415a88222c1402347e9895596c962c70c3",
+      "normalizations": [
+        "Approved traceback/build log home prefix normalized; suffix and numbers preserved"
+      ]
+    },
+    {
+      "path": "build/06.log.gz",
+      "sourceSha256": "d385fc3256aa0ce82353f732dc66d0aeb363eb065414a512a187e25d6307f850",
+      "publicSha256": "16a999551bda02a7d1275ee26c8f34b202672ea853c19060c62d092566390e0f",
+      "normalizations": [
+        "Approved traceback/build log home prefix normalized; suffix and numbers preserved"
+      ]
+    },
+    {
+      "path": "node/04.log.gz",
+      "sourceSha256": "980338f230fd8566cdbb8a40a7eabd6bcff29795587194deec1e13350a2db3aa",
+      "publicSha256": "5587056522518a893fe056aa501d97eb66e5f3aa9d2296067ec82d4d1a7e1b5b",
+      "normalizations": [
+        "Approved traceback/build log home prefix normalized; suffix and numbers preserved"
+      ]
+    },
+    {
+      "path": "software-suite/08.log.gz",
+      "sourceSha256": "4c40d906b1ddf305e224843378f456548aab2fd6859c598a03950c9738e70f40",
+      "publicSha256": "0cabaecf5c249bca22dfb6df92a9be72616b310d7dd90c83abc90d9e284ca996",
+      "normalizations": [
+        "Approved status-site temporary root only; /site suffix and 2 real daily points unchanged"
+      ]
+    },
+    {
+      "path": "software-suite/commands.json.gz",
+      "sourceSha256": "65ba7b71acc4f3a07a9c57e27e6dc8a79841a206ff95479ec3261bacfd12148a",
+      "publicSha256": "560e95cce552e0d8a4f77995ecf1732272a62a0106b153c175add67f675fa9c8",
+      "normalizations": [
+        "Approved home prefix in explicit command/error/path metadata; suffix and numeric values preserved"
+      ]
+    },
+    {
+      "path": "publication-failed/infra.log.gz",
+      "sourceSha256": "9f0564d0f2c5065874d40620c52b823d4027944929f2000f6b19134a51dab26e",
+      "publicSha256": "67cc5345a7da2bcc351668b3b56e63f0f29ff91129d155f024f8489518b1c548",
+      "normalizations": [
+        "Approved traceback/build log home prefix normalized; suffix and numbers preserved"
+      ]
+    },
+    {
+      "path": "archive-build-failure/build.log.gz",
+      "sourceSha256": "f2688d3ddd9ca2340183af658766c49966c102bb6b6a99b898194771957d1e84",
+      "publicSha256": "ab9c8353c5e77db9c2fbb66d0de362b42114502c915f9694647e54a51b341e70",
+      "normalizations": [
+        "Approved traceback/build log home prefix normalized; suffix and numbers preserved"
+      ]
+    },
+    {
+      "path": "execution-driver/run.py.gz",
+      "sourceSha256": "f22a57b1c693a670fd433f6d1d3f65c564255a9858dd914e7eb35a0ab4f907d3",
+      "publicSha256": "60b0aee5721fc54b106f3a3ce9079455abfc68f6d8fb78e314f319525c085239",
+      "normalizations": [
+        "Driver path substituted with <repository>; restore local checkout paths before execution",
+        "Driver path substituted with <final-checkout>; restore local checkout paths before execution",
+        "Driver path substituted with <pinned-apps>; restore local checkout paths before execution"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "format": 1,
+  "scope": "Support files; copied payloads have separate hashes in archive-index.json.",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "87f6ebef694e10e3c969379b90ec4f32bff0c90b9b9fc0340116d1fee40f4774",
+      "bytes": 6524
+    },
+    {
+      "path": "audit.json",
+      "sha256": "db2b7c545d2e73c640cbb78ab0c746d0e06a6f0dac124378b09142e9dae33630",
+      "bytes": 83221
+    },
+    {
+      "path": "build-status.json",
+      "sha256": "96fc41f0f099727846f5abc1c77ccf9dd2460a9a0ce17b41d33745ade00d9ac1",
+      "bytes": 165
+    },
+    {
+      "path": "build.py",
+      "sha256": "8d793cc3f6308ceb957076700578f094a09f65387739d1149ff57a171c7d8d15",
+      "bytes": 6169
+    },
+    {
+      "path": "licenses/RobotExpressive-LICENSE.md",
+      "sha256": "14687ac4a51d5e013b0fbc5486dabc743f76c1e37b7ca872af74cfb93115b4b2",
+      "bytes": 364
+    },
+    {
+      "path": "licenses/THREE-LICENSE.txt",
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "bytes": 1081
+    },
+    {
+      "path": "test_build.py",
+      "sha256": "e9ce711f4f3d9a1fb5edb29a57288a90e9c981381363612b38b4a9ef55135706",
+      "bytes": 2844
+    },
+    {
+      "path": "verify.py",
+      "sha256": "5560c2024cd3e158cd934334cb62a524077dd610d82503744fc781528caa7fe6",
+      "bytes": 9496
+    }
+  ]
+}

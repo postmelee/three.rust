@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "contract": "native-editor-e3-v1",
+  "editorSha": "9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8",
+  "candidateSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+  "adoptionPolicy": "adoption-v1",
+  "scene": "Task46 native E3 RobotExpressive and E1 idle; unchanged callbacks, viewport and quality controls",
+  "settings": {
+    "profile": {
+      "full": {
+        "repeats": 3,
+        "warmupFrames": 600,
+        "seconds": 12,
+        "samplingIntervalUs": 100,
+        "prePostObservationSeconds": 2
+      },
+      "smoke": {
+        "repeats": 1,
+        "warmupFrames": 60,
+        "seconds": 2,
+        "samplingIntervalUs": 100,
+        "prePostObservationSeconds": 2
+      }
+    },
+    "timing": {
+      "full": {
+        "rounds": 4,
+        "warmup": 600,
+        "samples": 1200,
+        "idleWarmup": 120,
+        "idleSamples": 240
+      },
+      "smoke": {
+        "rounds": 1,
+        "warmup": 10,
+        "samples": 30,
+        "idleWarmup": 10,
+        "idleSamples": 30
+      }
+    }
+  },
+  "outputPrefixes": {
+    "profile": "task49-editor-single-profile-",
+    "timing": "task49-editor-single-timing-"
+  },
+  "purpose": "Diagnose the single-node preparation change, then compare the same native complete callback boundaries against original and algorithm-matched JS. Profiling is separate; all failures and original A/A bookends are retained.",
+  "limitations": [
+    "Single Mac/date/browser only",
+    "Native wall-clock phases are not frame-matched across routes",
+    "Profile overhead uncalibrated",
+    "Historical unstable results remain unchanged"
+  ]
+}

@@ -1,0 +1,14 @@
+E1 pointer picking and shift selection 0
+E1 command transforms/undo/redo/synchronous reads 0
+E1 idle render suppression 0
+editor upstream loader skin-weight normalization 0
+E2 native loader/playback/selected bounds/shadows/visibility 0
+E1 pointer picking and shift selection 1
+E1 command transforms/undo/redo/synchronous reads 1
+E1-small-static exact fixed-state A/A
+E1 idle render suppression 1
+editor upstream loader skin-weight normalization 1
+E2-animated-selected-shadow exact fixed-state A/A
+E2-shadow-disabled-control exact fixed-state A/A
+E2-hidden-control exact fixed-state A/A
+E2 native loader/playback/selected bounds/shadows/visibility 1

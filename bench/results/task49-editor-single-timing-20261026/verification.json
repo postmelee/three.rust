@@ -1,0 +1,97 @@
+{
+  "status": "verified",
+  "archiveIndexSha256": "f41ef3b87bcc32a929a8672035b30166e025ff369c558997559ca7e656500897",
+  "copiedPayloads": 2690,
+  "normalizedPayloads": [
+    "smoke/environment-after/runner.json.gz",
+    "smoke/environment-before/runner.json.gz",
+    "smoke/manifest.json",
+    "full/environment-after/runner.json.gz",
+    "full/environment-before/runner.json.gz",
+    "full/manifest.json"
+  ],
+  "originalSourcesHashRechecked": true,
+  "numericTokensAndTypesValuesSignsUnchanged": true,
+  "commands": [
+    {
+      "command": "python3 verify.py",
+      "status": "passed",
+      "auditComparedWithoutModification": true
+    },
+    {
+      "command": "python3 test-verifier.py",
+      "status": "passed",
+      "mutationCases": 7
+    },
+    {
+      "command": "python3 test-archive.py",
+      "status": "passed",
+      "cases": 4
+    },
+    {
+      "command": "python3 test-storage.py",
+      "status": "passed",
+      "cases": 5
+    }
+  ],
+  "full": {
+    "capturedRuns": 70,
+    "failedRuns": 0,
+    "measuredPairs": 68640,
+    "allPairsIncludingWarmup": 102960,
+    "retainedArmingRows": 140,
+    "passedOraclePages": 24,
+    "fixedPoses": 42,
+    "maxAbsoluteOracleError": 0,
+    "aaAndBlockChecks": [
+      {
+        "scenario": "E3-root-selected-shadow",
+        "originalRuns": 10,
+        "failedOriginalRuns": 3,
+        "originalBlocks": 40,
+        "failedOriginalBlocks": 14,
+        "allRouteBlocks": 72,
+        "failedOwnRunBlocks": 16,
+        "aaPass": false
+      },
+      {
+        "scenario": "E3-root-selected-no-shadow",
+        "originalRuns": 10,
+        "failedOriginalRuns": 1,
+        "originalBlocks": 40,
+        "failedOriginalBlocks": 3,
+        "allRouteBlocks": 72,
+        "failedOwnRunBlocks": 4,
+        "aaPass": false
+      },
+      {
+        "scenario": "E3-root-selected-high-resolution",
+        "originalRuns": 10,
+        "failedOriginalRuns": 1,
+        "originalBlocks": 40,
+        "failedOriginalBlocks": 0,
+        "allRouteBlocks": 72,
+        "failedOwnRunBlocks": 0,
+        "aaPass": false
+      },
+      {
+        "scenario": "E1-idle",
+        "originalRuns": 8,
+        "failedOriginalRuns": 0,
+        "originalBlocks": 32,
+        "failedOriginalBlocks": 0,
+        "allRouteBlocks": 64,
+        "failedOwnRunBlocks": 0,
+        "aaPass": true
+      }
+    ]
+  },
+  "storage": {
+    "uniqueBlobs": 530,
+    "uniqueStoredBytes": 10736200,
+    "logicalStoredBytes": 44176644,
+    "conversionProof": "storage-conversion.json"
+  },
+  "logicalStoredPayloadBytes": 44176644,
+  "auditSha256UnchangedByStorageConversion": "6f8c87b8e67c93b5bae02d66356f37a63ccfb3f69d965c96820ebfcebd82d920"
+}

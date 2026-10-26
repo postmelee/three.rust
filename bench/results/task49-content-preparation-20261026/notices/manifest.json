@@ -1,0 +1,50 @@
+{
+  "note": "Exact upstream response bytes, losslessly gzip-compressed. Original encoding and SHA256 retained; no newline normalization. Earlier research snapshots remain in local temporary research files.",
+  "sources": [
+    {
+      "file": "bistro-conversion-README.md.gz",
+      "sourceURL": "https://raw.githubusercontent.com/qian-o/GLTF-Assets/816a1d6533c55787b3fabc9b75660c0d0c57ebc6/Bistro/README.md",
+      "originalBytes": 1818,
+      "originalSHA256": "a1b5467206707b37c61ce1342ca69d50a784f5c6509c46274fab83cdecbe0679",
+      "storedBytes": 939,
+      "storedSHA256": "b7a4650176ea3174432c3d959180a22808922602e2ccf55c5741a152a9dd906c",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "bistro-conversion-LICENSE.txt.gz",
+      "sourceURL": "https://raw.githubusercontent.com/qian-o/GLTF-Assets/816a1d6533c55787b3fabc9b75660c0d0c57ebc6/Bistro/LICENSE.txt",
+      "originalBytes": 18648,
+      "originalSHA256": "2635b6e6f0dc38a089250a0c6e22b212d27cccb7bbad8e7e8e7ebbcce8951908",
+      "storedBytes": 5916,
+      "storedSHA256": "1bbe231a292b4f123d7e95764f09a6b52d9468f8d1f1dbd1aed9d33d7238c269",
+      "encoding": "cp1252"
+    },
+    {
+      "file": "a-beautiful-game-README.md.gz",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/ABeautifulGame/README.md",
+      "originalBytes": 3783,
+      "originalSHA256": "35b650cc930a9c86de184f28e973e5122e26a0c20b88175e7c362e1faf97596b",
+      "storedBytes": 1816,
+      "storedSHA256": "36be7699be6fe591045c14ee566f77f07889c5e61a45cfe8671afcd505da0b6b",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "brainstem-excluded-README.md.gz",
+      "sourceURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/8f492390ddc7a2ae221a1369ef560589cf8c70fb/Models/BrainStem/README.md",
+      "originalBytes": 909,
+      "originalSHA256": "0ed81a9f099b7cfeb551fdf55598486622b86959a1a0885089092b2573e46fe9",
+      "storedBytes": 479,
+      "storedSHA256": "3a93b200de79ec486c9256fdc131a14faf454f288d7c868a51d2e449bca18555",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "littlest-tokyo-three-example.html.gz",
+      "sourceURL": "https://raw.githubusercontent.com/mrdoob/three.js/9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8/examples/webgl_animation_keyframes.html",
+      "originalBytes": 4121,
+      "originalSHA256": "68dd0cf9d8dd135628bfe70a4f06f7d637d6b29c806af9beec2be701decf7106",
+      "storedBytes": 1574,
+      "storedSHA256": "cf528847afd13b2abe677f571254079bf9a379876a515f4dacd2b12f43866abd",
+      "encoding": "utf-8"
+    }
+  ]
+}
