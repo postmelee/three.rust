@@ -1,0 +1,95 @@
+{
+  "kind": "Support file hashes; excludes this manifest and indexed content-addressed blobs",
+  "files": [
+    {
+      "file": "INDEPENDENT_REVIEW.md",
+      "bytes": 1087,
+      "sha256": "9c4e251ca87932c3a27f6a23ce9c235bec6b76e1abaf40f26bf20c0bf6cf0f6e"
+    },
+    {
+      "file": "README.md",
+      "bytes": 10894,
+      "sha256": "5db30a6d749616a0bbc176311d39539d89e409a0d7b18f6d7351ee5e776902d7"
+    },
+    {
+      "file": "archive-index.json",
+      "bytes": 769075,
+      "sha256": "5014378825b0a0645d7341ad82ba4f1602468c646bdd2e3193affb27aa85d749"
+    },
+    {
+      "file": "archive.py",
+      "bytes": 12886,
+      "sha256": "865934ac5e073b6fcb16165e5b3c85453e06afde6e113ece70ac35fb7eaa929c"
+    },
+    {
+      "file": "audit.json",
+      "bytes": 246696,
+      "sha256": "ad280fe40ec870bfb4a2b837567f57b60e7ecdb37e7fdd37a304b310f06da5e5"
+    },
+    {
+      "file": "build-status.json",
+      "bytes": 1912,
+      "sha256": "09f53f5f480b263d7cc1ddea840ce0b092cd4be529f041eac412c099d7d15844"
+    },
+    {
+      "file": "notices/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    {
+      "file": "notices/Viewer-LICENSE",
+      "bytes": 1078,
+      "sha256": "b951340896f853eeba83f72e442a2b254d0b581fda9ec80f0a70a53cd278893d"
+    },
+    {
+      "file": "notices/a-beautiful-game-README.md.gz",
+      "bytes": 1816,
+      "sha256": "36be7699be6fe591045c14ee566f77f07889c5e61a45cfe8671afcd505da0b6b"
+    },
+    {
+      "file": "notices/bistro-conversion-LICENSE.txt.gz",
+      "bytes": 5916,
+      "sha256": "1bbe231a292b4f123d7e95764f09a6b52d9468f8d1f1dbd1aed9d33d7238c269"
+    },
+    {
+      "file": "notices/bistro-conversion-README.md.gz",
+      "bytes": 939,
+      "sha256": "b7a4650176ea3174432c3d959180a22808922602e2ccf55c5741a152a9dd906c"
+    },
+    {
+      "file": "protocol_audit.py",
+      "bytes": 25540,
+      "sha256": "9d920c72feb3cc2f4a9c3d6789a2ccaf85f0cdd152e5b0c6d819da800609f798"
+    },
+    {
+      "file": "test_verify.py",
+      "bytes": 9795,
+      "sha256": "ea74ed21b5c77ee38393ac36559560f080f710ed770ca95697fec7f935cdb09a"
+    },
+    {
+      "file": "verification-attempts.json",
+      "bytes": 3431,
+      "sha256": "096d260f24b891cda0695ece91f0d45b8fc6237b5714268c3201c1ad8a54c5c0"
+    },
+    {
+      "file": "verification-logs/offline-verification.txt",
+      "bytes": 130,
+      "sha256": "799910e2ec5bcd65384c7ca7f236f1deace341f7cb1b64facc6eda045f4e4960"
+    },
+    {
+      "file": "verification-logs/tests.txt",
+      "bytes": 117,
+      "sha256": "9c82595ec56d7cc3b36940b986ee80a1a255469882f93e93eb0faa6d1dae30e3"
+    },
+    {
+      "file": "verify.py",
+      "bytes": 9573,
+      "sha256": "e734cf73a7e5bdace2a8913d746fabfd168ea4032353f20fac9421017f2ed10b"
+    },
+    {
+      "file": "zip-input-audit.json",
+      "bytes": 89947,
+      "sha256": "70da5493ddb4d173e5d37d50fb5f85cfa8840ee151c67109523cec049e1ab2ab"
+    }
+  ]
+}

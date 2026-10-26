@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "inputs": [
+    {
+      "label": "chess-guarded-correctness-001",
+      "sourceDirectory": "work/task49-viewer-chess-guarded-correctness-001",
+      "files": 251,
+      "recordedStatus": "failed",
+      "recordedToolSha": "5d1f3bc42d1b78d1fa1b1ada84bbe5d0150c6b11",
+      "runtimeSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "guardToolOwnerRecord": null
+    },
+    {
+      "label": "chess-zip-correctness-001",
+      "sourceDirectory": "work/task49-viewer-chess-zip-correctness-001",
+      "files": 230,
+      "recordedStatus": "failed",
+      "recordedToolSha": "d8cef95bcc906b7e20a248c3f8b3193fcffdfcbd",
+      "runtimeSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "guardToolOwnerRecord": null
+    },
+    {
+      "label": "chess-zip-pure-aa-001",
+      "sourceDirectory": "work/task49-viewer-chess-zip-pure-aa-001",
+      "files": 49,
+      "recordedStatus": "passed",
+      "recordedToolSha": "d8cef95bcc906b7e20a248c3f8b3193fcffdfcbd",
+      "runtimeSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "guardToolOwnerRecord": null
+    },
+    {
+      "label": "chess-zip-pure-aa-002",
+      "sourceDirectory": "work/task49-viewer-chess-zip-pure-aa-002",
+      "files": 49,
+      "recordedStatus": "passed",
+      "recordedToolSha": "d8cef95bcc906b7e20a248c3f8b3193fcffdfcbd",
+      "runtimeSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "guardToolOwnerRecord": null
+    },
+    {
+      "label": "bistro-zip-correctness-001",
+      "sourceDirectory": "work/task49-viewer-bistro-zip-correctness-001",
+      "files": 285,
+      "recordedStatus": "passed",
+      "recordedToolSha": "d8cef95bcc906b7e20a248c3f8b3193fcffdfcbd",
+      "runtimeSha": "85e2c5d500edb0b92ea4ecb997087fded3fed45b",
+      "guardToolOwnerRecord": null
+    }
+  ],
+  "logicalFiles": 918,
+  "physicalBlobs": 352,
+  "sourceHashesRechecked": true,
+  "sourceListingsUnchanged": true
+}
