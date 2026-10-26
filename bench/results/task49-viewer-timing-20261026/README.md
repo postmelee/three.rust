@@ -14,6 +14,7 @@ The [independent audit](INDEPENDENT_AUDIT.md) contains complete CPU p50/p95/p99,
 | Three versions | Engine comparison 0.186.1; separate migration original/external 0.176.0 → pure 0.186.1 |
 | Robot fixture source | Editor `9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8`; RobotExpressive 463,988 bytes, SHA-256 `047f5e5fb3bb6d378bd1df16ca6137f2a596c99b3a1b5690b4020c05aaf6f319` (CC0) |
 | Engine protocol SHA-256 | `8cd25f2342e855d6ade425302b7da159b15f3f2acf2ad51ffaac77d3d2dab28d` |
+| Migration protocol SHA-256 | `696888f5b6f01b76c213d4286d580f6f0c3be7eb72ecd5d7cd2327d9c9805ef3` |
 | Prepared native manifest SHA-256 | `954c67cb23bc135213eb4085a014f5669bb202b016b06634cbe400944373571e` |
 | Prepared timing manifest SHA-256 | `d1b3760063f6e370c5a0ab03b98026063851fe91ddb6ea5434531d42ebf36c82` |
 | Bundled-r176 timing manifest SHA-256 | `7a5311c3c9e898f7c1fb7fb943990fdc3e32a48e6e5f95296dbbd8f8560519d1` |
@@ -41,7 +42,7 @@ caffeinate -di node scripts/apps/viewer-timing.mjs "$APPS_ROOT" "$NATIVE_PREPARE
 caffeinate -di node scripts/apps/viewer-timing.mjs "$APPS_ROOT" "$NATIVE_PREPARED" work/task49-viewer-migration-timing-full-001 runtimeRoot="$RUNTIME_ROOT" runtimeSha=85e2c5d500edb0b92ea4ecb997087fded3fed45b mode=full group=migration protocol=mydocs/plans/task_m6_49_viewer_protocol_migration-timing.json timingPrepared="$TIMING_PREPARED" timingOriginal="$BUNDLED_TIMING_PREPARED"
 ```
 
-The callback envelope includes Viewer.animate plus all native GUI listening callbacks; it excludes asynchronous browser/compositor/GPU work. Measurements and profiling/compilation/offline analysis were separated. Native mixer time follows actual rAF arrival; dynamic phases are not artificially frame-matched. Instrumentation overhead is uncalibrated.
+CPU here is synchronous callback elapsed duration measured with performance.now(), not thread CPU time or cycles. The callback envelope includes Viewer.animate plus all native GUI listening callbacks; it excludes asynchronous browser/compositor/GPU work. Measurements and profiling/compilation/offline analysis were separated. Native mixer time follows actual rAF arrival; dynamic phases are not artificially frame-matched. Instrumentation overhead is uncalibrated.
 
 ## Lossless archive and offline audit
 
